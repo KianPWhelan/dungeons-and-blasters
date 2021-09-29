@@ -11,6 +11,10 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private FloatVariable jumpPower;
 
+    [Tooltip("Number of jumps")]
+    [SerializeField]
+    private IntVariable numberOfJumps;
+
     [Tooltip("Rotation speed")]
     [SerializeField]
     private FloatVariable rotationSpeed;
@@ -19,9 +23,15 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private FloatVariable moveSpeed;
 
+    // Current jumps used
+    private int jumpsUsed = 0;
+
     // Rotation values of object
     private float xRotation = 0.0f;
     private float yRotation = 0.0f;
+
+    // Previous position
+    private Vector3 previousPosition;
 
     public void Start()
     {
@@ -33,7 +43,11 @@ public class Movement : MonoBehaviour
     /// </summary>
     public void Jump()
     {
-        body.AddForce(new Vector3(0, jumpPower.runtimeValue, 0));
+        if (jumpsUsed < numberOfJumps.runtimeValue)
+        {
+            body.AddForce(new Vector3(0, jumpPower.runtimeValue, 0));
+            jumpsUsed += 1;
+        }
     }
 
     /// <summary>
@@ -63,5 +77,13 @@ public class Movement : MonoBehaviour
         xRotation -= y * rotationSpeed.runtimeValue;
         xRotation = Mathf.Clamp(xRotation, -90, 90);
         body.transform.eulerAngles = new Vector3(xRotation, yRotation, 0.0f);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag == "Ground")
+        {
+            jumpsUsed = 0;
+        }
     }
 }
