@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f088ffb4a70f944d9b48f502281f171, type: 3}
   m_Name: Jump Power
   m_EditorClassIdentifier: 
-  initialValue: 30
+  initialValue: 90
