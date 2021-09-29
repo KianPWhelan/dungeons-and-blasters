@@ -24,6 +24,13 @@ public class Controller : MonoBehaviour
         ProcessMovement();
     }
 
+    public void GameOver()
+    {
+        Debug.Log("Game has ended");
+        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
+
     /// <summary>
     /// Check for key presses from 
     /// </summary>

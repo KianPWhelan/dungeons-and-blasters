@@ -21,7 +21,6 @@ public class ColliderTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided");
         if(gameEvent == null)
         {
             Debug.LogWarning("No event set");
