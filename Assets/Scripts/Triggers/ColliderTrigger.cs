@@ -11,11 +11,11 @@ public class ColliderTrigger : MonoBehaviour
 
     private bool hasBeenTriggered;
 
-    [Tooltip("Game event to fire when triggered, leave empty for anything")]
+    [Tooltip("Game event to fire when triggered")]
     [SerializeField]
     private GameEvent gameEvent;
 
-    [Tooltip("Tags that can trigger the game event")]
+    [Tooltip("Tags that can trigger the game event, leave empty for anything")]
     [SerializeField]
     private List<string> tags = new List<string>();
 
