@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1827838073590080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4379394209354988}
+  - component: {fileID: 114919965371366234}
+  m_Layer: 0
+  m_Name: DungeonGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4379394209354988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827838073590080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114919965371366234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827838073590080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e741153f5d7854483f8e951cf81de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dungeonName: 'Dungeon - '
+  tilePrefab: {fileID: 1031655237637254, guid: 7a9c00b2e123c4a4a9a750fb0630a48a, type: 3}
+  wallPrefabs:
+  - {fileID: 1654338501702496, guid: 1ce5e1af2fe243544b1703473cff9513, type: 3}
+  doorPrefabs:
+  - {fileID: 1684235076845352, guid: f979a57bbb960b548add76826aef7fd6, type: 3}
+  cornerPrefabs:
+  - {fileID: 1052145729096644, guid: 1c217dc9a274a924fbf4e07b1e5013bf, type: 3}
+  totalLines: 3
+  maxTilesPerLine: 50
+  boundariesOn: 0
+  boundsX: 0
+  boundsZ: 0
+  terminateAtBounds: 0
+  changeDirChance: 20
+  doorSpawnChance: 100
+  roomSpawnChance: 50
+  deleteDungeonOnNew: 1
+  allowParallelLinesToTouch: 0
+  generateContinuous: 0
+  generateRooms: 1
+  generateWalls: 1
+  generateCorners: 1
+  onlySpawnDoorsAtHallEnds: 1
+  minRoomLength: 5
+  maxRoomLength: 10
+  minRoomWidth: 2
+  maxRoomWidth: 4
+  roomMinDistanceEndOfLine: 5
+  roomMinDistanceFromLast: 10
+  manualModeTemplatePrefab: {fileID: 1031655237637254, guid: fb21a2ceecd65334c9ab56197501e213, type: 3}
+  defaultTemplatePosX: 0
+  defaultTemplatePosZ: 0
+  manualModeOn: 0
+  tileSize: 0
+  tileHeight: 0
+  allWalls:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  allDoors:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  allCorners:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  clearTileList: 1
+  dungeonParent: {fileID: 0}
+  dungeonsSpawned: 1
+  currentTemplates: []
