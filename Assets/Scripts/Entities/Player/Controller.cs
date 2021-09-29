@@ -19,6 +19,11 @@ public class Controller : MonoBehaviour
         ProcessInputs();
     }
 
+    public void FixedUpdate()
+    {
+        ProcessMovement();
+    }
+
     /// <summary>
     /// Check for key presses from 
     /// </summary>
@@ -28,7 +33,10 @@ public class Controller : MonoBehaviour
         {
             movement.Jump();   
         }
+    }
 
+    private void ProcessMovement()
+    {
         var mouseX = Input.GetAxis("Mouse X");
         var mouseY = Input.GetAxis("Mouse Y");
         movement.Rotate(mouseX, 0.0f);

@@ -42,7 +42,14 @@ public class Movement : MonoBehaviour
     public void Move(float x, float y)
     {
         var transform = body.transform;
-        body.MovePosition(transform.position + (transform.forward * y * moveSpeed.runtimeValue) + (transform.right * x * moveSpeed.runtimeValue));
+        var desiredPosition = transform.position + (transform.forward * y * moveSpeed.runtimeValue) + (transform.right * x * moveSpeed.runtimeValue);
+        var direction = desiredPosition - transform.position;
+        Ray ray = new Ray(transform.position, direction);
+        RaycastHit hit;
+        if (!Physics.Raycast(ray, out hit, direction.magnitude))
+            body.MovePosition(desiredPosition);
+        else
+            body.MovePosition(hit.point);
     }
 
     /// <summary>
