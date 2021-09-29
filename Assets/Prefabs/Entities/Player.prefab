@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 2705640985885996168}
   - component: {fileID: 2705640985885996165}
   - component: {fileID: 2705640985885996162}
+  - component: {fileID: -3016581500895162571}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +144,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8379535459e0de643b2ae6819dd577f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3016581500895162571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705640985885996171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279c0e2aba5b1c544b293aba97308e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event: {fileID: 11400000, guid: 9f7a18d25ef83a64884ca3fe212dbeaa, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2705640985885996162}
+        m_TargetAssemblyTypeName: Controller, Assembly-CSharp
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2705640986178534465
 GameObject:
   m_ObjectHideFlags: 0
