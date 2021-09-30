@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Modules/Weapons/Damage/Damage")]
 public class Damage : ScriptableObject
 {
     [Tooltip("Type of damage this damage instance deals")]
