@@ -14,18 +14,18 @@ public class IdleState : State
         }
     }
 
-    public override void OnStateEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
+    public override void OnEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Enemy " + self.GetInstanceID() + " has entered " + name);
     }
 
-    public override void OnStateExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
+    public override void OnExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
-        throw new System.NotImplementedException();
+
     }
 
     public override void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
-        throw new System.NotImplementedException();
+        
     }
 }

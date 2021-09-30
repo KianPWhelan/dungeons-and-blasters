@@ -14,7 +14,7 @@ public abstract class State : ScriptableObject
 
     public abstract void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
 
-    public abstract void OnStateEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
+    public abstract void OnEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
 
-    public abstract void OnStateExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
+    public abstract void OnExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
 }

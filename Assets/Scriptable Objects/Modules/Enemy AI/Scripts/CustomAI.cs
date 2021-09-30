@@ -204,7 +204,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         if(currentState == null)
         {
             currentState = defaultState;
-            currentState.OnStateEnter(localSelf, localTarget, localAgent, localMovement);
+            currentState.OnEnter(localSelf, localTarget, localAgent, localMovement);
             releventTransitions = GetReleventTransitions(currentState);
             return true;
         }
@@ -213,9 +213,10 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         {
             if(ProcessConditionals(transition.transitionComponents))
             {
-                currentState.OnStateExit(localSelf, localTarget, localAgent, localMovement);
+                currentState.OnExit(localSelf, localTarget, localAgent, localMovement);
                 currentState = transition.toState;
-                currentState.OnStateEnter(localSelf, localTarget, localAgent, localMovement);
+                currentState.OnEnter(localSelf, localTarget, localAgent, localMovement);
+                releventTransitions = GetReleventTransitions(currentState);
                 return true;
             }
         }

@@ -10,42 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcba69ad7de6f72458d35edd642b5685, type: 3}
-  m_Name: New Custom AI
+  m_Name: New Custom AI 1
   m_EditorClassIdentifier: 
   states:
   - {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
   - {fileID: 11400000, guid: 98ec32da2fdb41e4db4e12fd447e229e, type: 2}
-  defaultState: {fileID: 0}
+  defaultState: {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
   transitions:
-  - 'currentState: IdleState conditions: targetIsVisible > 1 || ( targetIsVisible
-    == 1 && ( targetIsVisible <= 1 && targetIsVisible > 0 ) ) => ChaseTargetState'
-  - 'currentState: ChaseTargetState conditions: targetIsVisible == True => IdleState'
+  - 'currentState: IdleState conditions: targetIsVisible == True => ChaseTargetState'
+  - 'currentState: ChaseTargetState conditions: targetIsVisible == False => IdleState'
   stateMachine:
   - fromState: {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
     toState: {fileID: 11400000, guid: 98ec32da2fdb41e4db4e12fd447e229e, type: 2}
     transitionComponents:
     - targetIsVisible
-    - '>'
-    - 1
-    - '||'
-    - (
-    - targetIsVisible
     - ==
-    - 1
-    - '&&'
-    - (
-    - targetIsVisible
-    - <=
-    - 1
-    - '&&'
-    - targetIsVisible
-    - '>'
-    - 0
-    - )
-    - )
+    - True
   - fromState: {fileID: 11400000, guid: 98ec32da2fdb41e4db4e12fd447e229e, type: 2}
     toState: {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
     transitionComponents:
     - targetIsVisible
     - ==
-    - True
+    - False

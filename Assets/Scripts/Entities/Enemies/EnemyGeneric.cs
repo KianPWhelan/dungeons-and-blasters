@@ -23,6 +23,7 @@ public class EnemyGeneric : MonoBehaviour
     {
         agent = gameObject.GetComponent<NavMeshAgent>();
         movement = gameObject.GetComponent<Movement>();
+        Debug.Log(agent.ToString());
     }
 
     // Update is called once per frame
