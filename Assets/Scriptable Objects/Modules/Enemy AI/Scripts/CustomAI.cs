@@ -24,11 +24,21 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     [SerializeField]
     public List<StateTransition> stateMachine = new List<StateTransition>();
 
+    // Valid values that can be called from transitions
     private static string[] vals = { "targetDistance", "targetIsVisible" };
     private List<string> callable = new List<string>(vals);
 
+    // Valid conditions that can be called from transitions
     private static string[] cond = { "==", "<", ">", "<=", ">=", "&&", "||" };
     private List<string> conditionals = new List<string>(cond);
+
+    // Current valid state transitions
+    private List<StateTransition> releventTransitions;
+
+    private GameObject localTarget;
+    private GameObject localSelf;
+    private NavMeshAgent localAgent;
+    private Movement localMovement;
 
     [System.Serializable]
     public class StateTransition
@@ -49,7 +59,15 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
 
     public override void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
-        throw new System.NotImplementedException();
+        localSelf = self;
+        localTarget = target;
+        localAgent = agent;
+        localMovement = movement;
+
+        if(!CheckStateChanges())
+        {
+            currentState.Tick(self, target, agent, movement);
+        }
     }
 
     public void BuildStateMachine()
@@ -123,8 +141,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
             {
                 // Debug.Log("Setting value");
                 //Debug.Log(conditions[i]);
-                // TODO: Process variable to string
-                conditions[i] = "1";
+                conditions[i] = GetValue(conditions[i]);
                 //Debug.Log(conditions[i]);
             }
             
@@ -182,6 +199,42 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         return bool.Parse(conditions[0]);
     }
 
+    private bool CheckStateChanges()
+    {
+        if(currentState == null)
+        {
+            currentState = defaultState;
+            currentState.OnStateEnter(localSelf, localTarget, localAgent, localMovement);
+            releventTransitions = GetReleventTransitions(currentState);
+            return true;
+        }
+
+        foreach(StateTransition transition in releventTransitions)
+        {
+            if(ProcessConditionals(transition.transitionComponents))
+            {
+                currentState.OnStateExit(localSelf, localTarget, localAgent, localMovement);
+                currentState = transition.toState;
+                currentState.OnStateEnter(localSelf, localTarget, localAgent, localMovement);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private List<StateTransition> GetReleventTransitions(State state)
+    {
+        var list = stateMachine.FindAll(x => x.fromState.name == state.name);
+        
+        if(list.Count == 0)
+        {
+            Debug.LogError("Did not find relevent state transitions for state " + state.name);
+        }
+
+        return list;
+    }
+
     private bool Compare(string val1, string val2, string condition)
     {
         float num1, num2;
@@ -234,5 +287,20 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         }
 
         return false;
+    }
+
+    private string GetValue(string variable)
+    {
+        if(variable == "targetDistance")
+        {
+            return Vector3.Distance(localSelf.transform.position, localTarget.transform.position).ToString();
+        }
+
+        else if(variable == "targetIsVisible")
+        {
+            return Helpers.CheckLineOfSight(localSelf.transform, localTarget.transform).ToString();
+        }
+
+        return "None";
     }
 }

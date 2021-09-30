@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 
 [System.Serializable]
@@ -11,9 +12,9 @@ public abstract class State : ScriptableObject
         get;
     }
 
-    public abstract void Tick();
+    public abstract void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
 
-    public abstract void OnStateEnter();
+    public abstract void OnStateEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
 
-    public abstract void OnStateExit();
+    public abstract void OnStateExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
 }
