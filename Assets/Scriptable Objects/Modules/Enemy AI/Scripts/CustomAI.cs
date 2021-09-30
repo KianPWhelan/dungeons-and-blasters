@@ -45,6 +45,9 @@ public class CustomAI : EnemyAI
         throw new System.NotImplementedException();
     }
 
+    /// <summary>
+    /// Constructs the state machine based on the configuration provided through the editor
+    /// </summary>
     public void BuildStateMachine()
     {
         stateMachine = new List<StateTransition>();

@@ -12,4 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcba69ad7de6f72458d35edd642b5685, type: 3}
   m_Name: New Custom AI
   m_EditorClassIdentifier: 
-  transitions: []
+  states:
+  - {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
+  - {fileID: 11400000, guid: 98ec32da2fdb41e4db4e12fd447e229e, type: 2}
+  defaultState: {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
+  transitions:
+  - 'currentState == IdleState conditions: targetIsVisible == true => ChaseTargetState'
+  - 'currentState == ChaseTargetState conditions: targetIsVisible == false => IdleState'
+  stateMachine:
+  - fromState: {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
+    toState: {fileID: 11400000, guid: 98ec32da2fdb41e4db4e12fd447e229e, type: 2}
+    transitionComponents:
+    - targetIsVisible
+    - ==
+    - true
+  - fromState: {fileID: 11400000, guid: 98ec32da2fdb41e4db4e12fd447e229e, type: 2}
+    toState: {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
+    transitionComponents:
+    - targetIsVisible
+    - ==
+    - false
