@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [Tooltip("FloatVariable reference for health point")]
-    public FloatVariable health;
+    [Tooltip("FloatVariable reference for health point (Leave blank to use normal float)")]
+    private FloatVariable health;
+
+    [Tooltip("Normal float, does not exist outside of behavior")]
+    [SerializeField]
+    private float floatHealth;
 
     /// <summary>
     /// Adjusts health value by amount provided, can be negative
@@ -13,6 +17,24 @@ public class Health : MonoBehaviour
     /// <param name="amount"></param>
     public void AdjustHealth(float amount)
     {
-        health.runtimeValue += amount;
+        if(health != null)
+        {
+            health.runtimeValue += amount;
+        }
+
+        else
+        {
+            floatHealth += amount;
+        }
+    }
+
+    public float GetHealth()
+    {
+        if(health != null)
+        {
+            return health.runtimeValue;
+        }
+
+        return floatHealth;
     }
 }
