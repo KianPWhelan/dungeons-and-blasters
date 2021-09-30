@@ -14,5 +14,10 @@ public class CustomAIEditor : Editor
         {
             customAI.BuildStateMachine();
         }
+
+        if(GUILayout.Button("ProcessConditional()"))
+        {
+            customAI.ProcessConditionals(customAI.stateMachine[0].transitionComponents);
+        }
     }
 }

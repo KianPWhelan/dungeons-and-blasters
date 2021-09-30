@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [CreateAssetMenu(menuName = "Modules/AI/Custom AI")]
-public class CustomAI : EnemyAI
+public class CustomAI : EnemyAI, ISerializationCallbackReceiver
 {
     [Tooltip("All states that this AI can use")]
     [SerializeField]
@@ -14,7 +14,7 @@ public class CustomAI : EnemyAI
     [SerializeField]
     private State defaultState;
 
-    [Tooltip("Transition conditions between states (E.G currentState == <current state name> conditions: targetDistance < i => <new state name>)")]
+    [Tooltip("Transition conditions between states (E.G currentState: <current state name> conditions: targetDistance < i => <new state name>)")]
     [TextArea(minLines: 0, maxLines: 5)]
     [SerializeField]
     private List<string> transitions = new List<string>();
@@ -22,23 +22,30 @@ public class CustomAI : EnemyAI
     private State currentState;
 
     [SerializeField]
-    private List<StateTransition> stateMachine = new List<StateTransition>();
+    public List<StateTransition> stateMachine = new List<StateTransition>();
+
+    private static string[] vals = { "targetDistance", "targetIsVisible" };
+    private List<string> callable = new List<string>(vals);
+
+    private static string[] cond = { "==", "<", ">", "<=", ">=", "&&", "||" };
+    private List<string> conditionals = new List<string>(cond);
 
     [System.Serializable]
-    private class StateTransition
+    public class StateTransition
     {
         public State fromState;
         public State toState;
         public List<string> transitionComponents = new List<string>();
     }
 
-    //public void OnAfterDeserialize()
-    //{
-    //    stateMachine = new List<StateTransition>();
-    //    BuildStateMachine();
-    //}
+    public void OnAfterDeserialize()
+    { }
 
-    //public void OnBeforeSerialize() { }
+    public void OnBeforeSerialize() 
+    {
+        callable = new List<string>(vals);
+        conditionals = new List<string>(cond);
+    }
 
     public override void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
@@ -54,16 +61,16 @@ public class CustomAI : EnemyAI
             StateTransition stateTransition = new StateTransition();
             for(int i = 0; i < components.Length; i++)
             {
-                if(i == 2 && components[i - 2] == "currentState")
+                if(components[i] == "currentState:")
                 {
-                    stateTransition.fromState = states.Find(x => x.name == components[i]);
+                    stateTransition.fromState = states.Find(x => x.name == components[i + 1]);
                     if(stateTransition.fromState == null)
                     {
                         Debug.LogError("Could not find fromState " + components[i] + " in list of states for transition " + transition);
                     }
                 }
 
-                else if(i > 3 && components[i] != "=>")
+                else if(i > 2 && components[i] != "=>")
                 {
                     stateTransition.transitionComponents.Add(components[i]);
                 }
@@ -85,5 +92,147 @@ public class CustomAI : EnemyAI
             }
             stateMachine.Add(stateTransition);
         }
+    }
+
+    public bool ProcessConditionals(List<string> transitionComponents)
+    {
+        List<string> conditions = new List<string>(transitionComponents);
+        int i = 0;
+        int infiniteLoopDetector = 0;
+        while(conditions.Count > 1)
+        {
+            if(infiniteLoopDetector > 10000)
+            {
+                Debug.LogError("Infinite loop detected processing conditionals");
+                foreach(string condition in conditions)
+                {
+                    Debug.Log(condition);
+                }
+                return false;
+            }
+
+            if(i >= conditions.Count)
+            {
+                i = 0;
+            }
+
+            // Debug.Log("Current condition: " + conditions[i]);
+
+            // If current index is a callable value, process that value
+            if (callable.Contains(conditions[i]))
+            {
+                // Debug.Log("Setting value");
+                //Debug.Log(conditions[i]);
+                // TODO: Process variable to string
+                conditions[i] = "1";
+                //Debug.Log(conditions[i]);
+            }
+            
+            // If current index is a conditional and the previous and next values are processed, perform comparison
+            else if(conditionals.Contains(conditions[i]) && !callable.Contains(conditions[i - 1]) && !callable.Contains(conditions[i + 1]) && conditionals[i] != "(" && conditionals[i] != ")")
+            {
+                // Debug.Log("Processing " + conditions[i]);
+                var result = Compare(conditions[i - 1], conditions[i + 1], conditions[i]);
+                conditions[i - 1] = result.ToString();
+                conditions.RemoveRange(i, 2);
+            }
+
+            else if(conditions[i] == "(")
+            {
+                // Debug.Log("Processing sub condition: ");
+                List<string> subCondition = new List<string>();
+                int count = i + 1;
+                int numSubs = 1;
+
+                while(conditions[count] != ")" || numSubs > 1)
+                {
+                    if(conditions[count] == "(")
+                    {
+                        numSubs += 1;
+                    }
+
+                    else if(conditions[count] == ")")
+                    {
+                        numSubs -= 1;
+                    }
+
+                    subCondition.Add(conditions[count]);
+                    count += 1;
+                }
+
+                foreach(string condition in subCondition)
+                {
+                    Debug.Log(condition);
+                }
+
+                conditions[i] = ProcessConditionals(subCondition).ToString();
+                // Debug.Log("Up one level");
+                conditions.RemoveRange(i + 1, count - i);
+            }
+
+            i += 1;
+            infiniteLoopDetector += 1;
+            var current = string.Join(" ", conditions);
+            // Debug.Log("Current full: " + current);
+            // Debug.Log("Length: " + conditions.Count);
+        }
+
+        // Debug.Log(conditions.Count);
+        // Debug.Log(conditions[0]);
+        return bool.Parse(conditions[0]);
+    }
+
+    private bool Compare(string val1, string val2, string condition)
+    {
+        float num1, num2;
+
+        // Check if values are numeric
+        if(float.TryParse(val1, out num1) && float.TryParse(val2, out num2))
+        {
+            Debug.Log(num1);
+            Debug.Log(num2);
+            if(condition == "==")
+            {
+                return num1 == num2;
+            }
+
+            else if(condition == "<")
+            {
+                return num1 < num2;
+            }
+
+            else if(condition == ">")
+            {
+                return num1 > num2;
+            }
+
+            else if(condition == "<=")
+            {
+                return num1 <= num2;
+            }
+
+            else if(condition == ">=")
+            {
+                return num1 >= num2;
+            }
+        }
+
+        // If values are not numeric, the only valid conditionals are ==, &&, and ||
+        if(condition == "==")
+        {
+            return val1 == val2;
+        }
+
+        else if(condition == "&&" && val1 == "True" && val2 == "True")
+        {
+            return true;
+        }
+
+        else if(condition == "||" && (val1 == "True" || val2 == "True"))
+        {
+            return true;
+        }
+
+        return false;
     }
 }
