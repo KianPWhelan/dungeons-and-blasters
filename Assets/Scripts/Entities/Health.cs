@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
 
     [Tooltip("Entity has infinite health")]
     [SerializeField]
-    private bool infiniteHealth = true;
+    private bool infiniteHealth = false;
 
     /// <summary>
     /// Adjusts health value by amount provided, can be negative
