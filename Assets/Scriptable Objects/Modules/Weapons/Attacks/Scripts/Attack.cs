@@ -18,7 +18,9 @@ public class Attack : ScriptableObject
     /// </summary>
     public void PerformAttack(GameObject self, string targetTag = "none")
     {
-        GameObject attackObject = attackPool.Spawn(self.transform.position, self.transform.rotation);
+        Debug.Log("Performing attack");
+        Debug.Log(attackPool);
+        GameObject attackObject = attackPool.Spawn(self.transform.position, self.transform.rotation, self.transform);
         var attackScript = attackObject.GetComponent<AttackScript>();
         attackScript.SetAttack(this);
         attackScript.SetValidTag(targetTag);

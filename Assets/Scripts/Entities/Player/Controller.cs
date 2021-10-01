@@ -7,11 +7,13 @@ public class Controller : MonoBehaviour
 {
     private Movement movement;
     private PlayerCamera playerCam;
+    private WeaponHolder weaponHolder;
 
     public void Start()
     {
         movement = gameObject.GetComponent<Movement>();
         playerCam = gameObject.transform.GetComponentInChildren<PlayerCamera>();
+        weaponHolder = gameObject.GetComponent<WeaponHolder>();
     }
 
     public void Update()
@@ -39,6 +41,12 @@ public class Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             movement.Jump();   
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Debug.Log("Weapon button pressed");
+            weaponHolder.UseWeapon(0);
         }
     }
 

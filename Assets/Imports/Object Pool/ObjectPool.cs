@@ -45,7 +45,7 @@ public class ObjectPool : ScriptableObject
     /// <param name="position"></param>
     /// <param name="rotation"></param>
     /// <returns></returns>
-    public GameObject Spawn(Vector3 position, Quaternion rotation)
+    public GameObject Spawn(Vector3 position, Quaternion rotation, Transform parent = null)
     {
         // Find available object
         GameObject obj = pool.Find(x => !x.activeInHierarchy);
@@ -53,13 +53,18 @@ public class ObjectPool : ScriptableObject
         // If no available object, instantiate new one
         if(!obj)
         {
-            obj = InstantiateObject(position, rotation);
+            obj = InstantiateObject(position, rotation, parent);
         } 
         // If available object found, set it to active and set its transform
         else
         {
-            obj.SetActive(true);
+            if (parent)
+            {
+                Debug.Log("here1");
+                obj.transform.SetParent(parent);
+            }
             obj.transform.SetPositionAndRotation(position, rotation);
+            obj.SetActive(true);
         }
 
         return obj;
@@ -72,6 +77,9 @@ public class ObjectPool : ScriptableObject
     public void Despawn(GameObject obj)
     {
         obj.SetActive(false);
+        obj.transform.SetParent(this.parent);
+        obj.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+        obj.transform.localRotation = Quaternion.EulerAngles(0.0f, 0.0f, 0.0f);
     }
 
     /// <summary>
@@ -88,16 +96,27 @@ public class ObjectPool : ScriptableObject
     /// <summary>
     /// Instantiates a new object and adds it to the object pool
     /// </summary>
-    private GameObject InstantiateObject(Vector3 position, Quaternion rotation)
+    private GameObject InstantiateObject(Vector3 position, Quaternion rotation, Transform parent = null)
     {
         // If parent has not yet been defined, create a new parent object
-        if (!parent)
+        if (!this.parent)
         {
-            parent = new GameObject(prefab.name + "ObjectPool").transform;
+            this.parent = new GameObject(prefab.name + "ObjectPool").transform;
+        }
+
+        GameObject obj;
+
+        if(parent)
+        {
+            Debug.Log(parent.name);
+            obj = Instantiate(prefab, parent);
+            obj.transform.SetPositionAndRotation(position, rotation);
+            pool.Add(obj);
+            return obj;
         }
 
         // Instantiate object and add it to the list
-        GameObject obj = Instantiate(prefab, parent);
+        obj = Instantiate(prefab, this.parent);
         obj.transform.SetPositionAndRotation(position, rotation);
         pool.Add(obj);
         return obj;

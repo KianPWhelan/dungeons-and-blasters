@@ -60,10 +60,13 @@ public class Movement : MonoBehaviour
         var direction = desiredPosition - transform.position;
         Ray ray = new Ray(transform.position, direction);
         RaycastHit hit;
-        if (!Physics.Raycast(ray, out hit, direction.magnitude))
+        if (!Physics.Raycast(ray, out hit, direction.magnitude, ~0, QueryTriggerInteraction.Ignore))
             body.MovePosition(desiredPosition);
         else
+        {
+            Debug.Log("Ray hit");
             body.MovePosition(hit.point);
+        }
     }
 
     /// <summary>

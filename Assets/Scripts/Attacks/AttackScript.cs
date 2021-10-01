@@ -5,13 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class AttackScript : MonoBehaviour
 {
+    public ObjectPool pool;
+
     public float attackDuration;
 
     public Vector3 localStartingPosition;
 
-    public bool destroyOnHit = false;
+    public bool destroyOnHit;
 
-    public bool canHitSameTargetMoreThanOnce = false;
+    public bool canHitSameTargetMoreThanOnce;
 
     private string validTag;
 
@@ -21,11 +23,18 @@ public class AttackScript : MonoBehaviour
 
     private List<GameObject> hitList = new List<GameObject>();
 
+    public void Start()
+    {
+        hitList = new List<GameObject>();
+        startingTime = Time.time;
+        transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
+    }
+
     public void OnEnable()
     {
         hitList = new List<GameObject>();
         startingTime = Time.time;
-        gameObject.transform.position += localStartingPosition;
+        transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
     }
 
     public void OnDisable()
@@ -41,9 +50,10 @@ public class AttackScript : MonoBehaviour
 
     public virtual void Tick()
     {
-        if (startingTime + attackDuration > Time.time)
+        if (startingTime + attackDuration <= Time.time)
         {
-            gameObject.SetActive(false);
+            Debug.Log("here");
+            pool.Despawn(gameObject);
         }
     }
 
@@ -52,21 +62,23 @@ public class AttackScript : MonoBehaviour
         this.attack = attack;
     }
 
-    public void SetValidTag(string tags)
+    public void SetValidTag(string tag)
     {
         validTag = tag;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(attack != null && validTag != null && (other.tag == validTag || other.tag == "none") && !hitList.Contains(other.gameObject))
+        Debug.Log("Valid tag: " + validTag+ "  Other tag: " + other.tag + "  Other name: " + other.name);
+        if(attack != null && validTag != null && (other.tag == validTag || validTag == "none") && (!hitList.Contains(other.gameObject) || canHitSameTargetMoreThanOnce))
         {
+            Debug.Log("Collision with valid tag");
             attack.ApplyEffects(other.gameObject, validTag);
             hitList.Add(other.gameObject);
 
             if(destroyOnHit)
             {
-                gameObject.SetActive(false);
+                pool.Despawn(gameObject);
             }
         }
     }

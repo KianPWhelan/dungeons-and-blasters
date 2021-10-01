@@ -51,7 +51,7 @@ public class StatusEffects : MonoBehaviour
 
             else
             {
-                effectDetails.Add(effect, new Container(Time.time, Time.time, targetTag));
+                effectDetails.Add(effect, new Container(Time.time, 0, targetTag));
             }
         }
     }
@@ -68,25 +68,39 @@ public class StatusEffects : MonoBehaviour
 
     private void ProcessStatusEffects()
     {
+        List<Effect> remove = null;
+
         foreach (Effect effect in statusEffects)
         {
             var currentTime = Time.time;
 
             // If the effect has lasted its duration, remove it
-            if(effectDetails[effect].durationTime + effect.GetDuration() >= currentTime)
+            if(effectDetails[effect].durationTime + effect.GetDuration() <= currentTime)
             {
-                statusEffects.Remove(effect);
+                if(remove == null)
+                {
+                    remove = new List<Effect>();
+                }
+                remove.Add(effect);
                 continue;
             }
             
             // If effect has reached its proc interval, check immunities and apply
-            if(effectDetails[effect].intervalTime + effect.GetInterval() >= currentTime)
+            if(effectDetails[effect].intervalTime + effect.GetInterval() <= currentTime)
             {
-                if(immunities.Contains(effect))
+                if(!immunities.Contains(effect))
                 {
                     effect.ApplyEffect(gameObject, gameObject.GetComponent<Health>(), this, effectDetails[effect].targetTag);
                     effectDetails[effect].intervalTime = currentTime;
                 }
+            }
+        }
+
+        if(remove != null)
+        {
+            foreach(Effect effect in remove)
+            {
+                statusEffects.Remove(effect);
             }
         }
     }
