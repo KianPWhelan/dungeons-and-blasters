@@ -11,12 +11,21 @@ public class Health : MonoBehaviour
     [SerializeField]
     private float floatHealth;
 
+    [Tooltip("Entity has infinite health")]
+    [SerializeField]
+    private bool infiniteHealth = true;
+
     /// <summary>
     /// Adjusts health value by amount provided, can be negative
     /// </summary>
     /// <param name="amount"></param>
     public void AdjustHealth(float amount)
     {
+        if(infiniteHealth)
+        {
+            return;
+        }
+
         if(health != null)
         {
             health.runtimeValue += amount;
@@ -30,6 +39,11 @@ public class Health : MonoBehaviour
 
     public float GetHealth()
     {
+        if(infiniteHealth)
+        {
+            return Mathf.Infinity;
+        }
+
         if(health != null)
         {
             return health.runtimeValue;
