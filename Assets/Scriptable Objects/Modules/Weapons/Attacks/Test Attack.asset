@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Test Attack
   m_EditorClassIdentifier: 
-  attackPool: {fileID: 0}
-  effects: []
+  attackPool: {fileID: 11400000, guid: afec1f09e71d24b4bac7c356ba3c0eec, type: 2}
+  effects:
+  - {fileID: 11400000, guid: a834b0da37ba35b47b23803319897aa4, type: 2}
