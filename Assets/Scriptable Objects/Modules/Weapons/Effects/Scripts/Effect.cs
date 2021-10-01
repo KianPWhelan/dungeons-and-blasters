@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Modules/Weapons/Effects/Effect")]
-public class Effect : ScriptableObject
+public class Effect : ScriptableObject, ISerializationCallbackReceiver
 {
     [Tooltip("Damage instances that this effect causes")]
     [SerializeField]
@@ -24,6 +24,8 @@ public class Effect : ScriptableObject
     [Tooltip("Additional effects that this effect applies")]
     [SerializeField]
     private List<Effect> recursiveEffects = new List<Effect>();
+
+    private bool warningDisplayed;
 
     /// <summary>
     /// Applies all of the logic relating to the effect on the target
@@ -65,7 +67,7 @@ public class Effect : ScriptableObject
         // Apply recursive effects
         foreach(Effect effect in recursiveEffects)
         {
-            ApplyEffect(target, health, statusEffects, targetTag);
+            effect.ApplyEffect(target, health, statusEffects, targetTag);
         }
     }
 
@@ -85,5 +87,19 @@ public class Effect : ScriptableObject
     public float GetDuration()
     {
         return duration.runtimeValue;
+    }
+
+    public void OnBeforeSerialize()
+    {
+        if (recursiveEffects.Contains(this) && !warningDisplayed)
+        {
+            Debug.LogError("Effect " + name + " calls itself recursively, this will cause extreme lag, stack overflows, and likely crash the editor");
+            warningDisplayed = true;
+        }
+    }
+
+    public void OnAfterDeserialize()
+    {
+        warningDisplayed = false;
     }
 }
