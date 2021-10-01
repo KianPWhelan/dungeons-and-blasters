@@ -13,17 +13,19 @@ public class StatusEffects : MonoBehaviour
     [SerializeField]
     private List<Effect> immunities = new List<Effect>();
 
-    private Dictionary<Effect, Container> effectDurations = new Dictionary<Effect, Container>();
+    private Dictionary<Effect, Container> effectDetails = new Dictionary<Effect, Container>();
 
     private class Container
     {
         public float durationTime;
         public float intervalTime;
+        public string targetTag;
 
-        public Container(float durationTime, float intervalTime)
+        public Container(float durationTime, float intervalTime, string targetTag = "none")
         {
             this.durationTime = durationTime;
             this.intervalTime = intervalTime;
+            this.targetTag = targetTag;
         }
     }
 
@@ -37,19 +39,19 @@ public class StatusEffects : MonoBehaviour
     /// Applies the provided effect as a status effect to the entity
     /// </summary>
     /// <param name="effect"></param>
-    public void ApplyStatusEffect(Effect effect)
+    public void ApplyStatusEffect(Effect effect, string targetTag = "none")
     {
         if(!statusEffects.Contains(effect))
         {
             statusEffects.Add(effect);
-            if(effectDurations.ContainsKey(effect))
+            if(effectDetails.ContainsKey(effect))
             {
-                effectDurations[effect].durationTime = Time.time;
+                effectDetails[effect].durationTime = Time.time;
             }
 
             else
             {
-                effectDurations.Add(effect, new Container(Time.time, Time.time));
+                effectDetails.Add(effect, new Container(Time.time, Time.time, targetTag));
             }
         }
     }
@@ -71,19 +73,19 @@ public class StatusEffects : MonoBehaviour
             var currentTime = Time.time;
 
             // If the effect has lasted its duration, remove it
-            if(effectDurations[effect].durationTime + effect.GetDuration() >= currentTime)
+            if(effectDetails[effect].durationTime + effect.GetDuration() >= currentTime)
             {
                 statusEffects.Remove(effect);
                 continue;
             }
             
             // If effect has reached its proc interval, check immunities and apply
-            if(effectDurations[effect].intervalTime + effect.GetInterval() >= currentTime)
+            if(effectDetails[effect].intervalTime + effect.GetInterval() >= currentTime)
             {
                 if(immunities.Contains(effect))
                 {
-                    effect.ApplyEffect(gameObject, gameObject.GetComponent<Health>(), this);
-                    effectDurations[effect].intervalTime = currentTime;
+                    effect.ApplyEffect(gameObject, gameObject.GetComponent<Health>(), this, effectDetails[effect].targetTag);
+                    effectDetails[effect].intervalTime = currentTime;
                 }
             }
         }

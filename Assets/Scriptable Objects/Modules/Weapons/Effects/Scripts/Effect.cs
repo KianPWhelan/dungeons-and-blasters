@@ -31,12 +31,13 @@ public class Effect : ScriptableObject
     /// <param name="target"></param>
     /// <param name="health"></param>
     /// <param name="statusEffects"></param>
-    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects)
+    /// <param name="targetTag"></param>
+    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, string targetTag = "none")
     {
         if(statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this))
         {
             // Apply status effect if not already applied
-            statusEffects.ApplyStatusEffect(this);
+            statusEffects.ApplyStatusEffect(this, targetTag);
 
             // We can now leave it to the status effect behavior to apply the rest of the effects
             return;
