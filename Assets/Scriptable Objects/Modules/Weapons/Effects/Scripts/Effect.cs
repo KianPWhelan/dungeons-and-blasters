@@ -25,6 +25,12 @@ public class Effect : ScriptableObject
     [SerializeField]
     private List<Effect> recursiveEffects = new List<Effect>();
 
+    /// <summary>
+    /// Applies all of the logic relating to the effect on the target
+    /// </summary>
+    /// <param name="target"></param>
+    /// <param name="health"></param>
+    /// <param name="statusEffects"></param>
     public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects)
     {
         if(statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this))
@@ -60,5 +66,23 @@ public class Effect : ScriptableObject
         {
             ApplyEffect(target, health, statusEffects);
         }
+    }
+
+    /// <summary>
+    /// Returns the delay between procs for the status effect in seconds
+    /// </summary>
+    /// <returns></returns>
+    public float GetInterval()
+    {
+        return interval.runtimeValue;
+    }
+
+    /// <summary>
+    /// Returns the duration of the status effect in seconds
+    /// </summary>
+    /// <returns></returns>
+    public float GetDuration()
+    {
+        return duration.runtimeValue;
     }
 }
