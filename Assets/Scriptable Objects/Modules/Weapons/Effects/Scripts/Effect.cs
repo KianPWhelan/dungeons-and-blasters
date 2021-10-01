@@ -65,7 +65,7 @@ public class Effect : ScriptableObject
         // Apply recursive effects
         foreach(Effect effect in recursiveEffects)
         {
-            ApplyEffect(target, health, statusEffects);
+            ApplyEffect(target, health, statusEffects, targetTag);
         }
     }
 
