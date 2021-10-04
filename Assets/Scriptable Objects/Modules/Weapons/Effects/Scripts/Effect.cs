@@ -91,7 +91,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnBeforeSerialize()
     {
-        if (recursiveEffects.Contains(this) && !warningDisplayed)
+        if (!warningDisplayed && recursiveEffects.Contains(this))
         {
             Debug.LogError("Effect " + name + " calls itself recursively, this will cause extreme lag, stack overflows, and likely crash the editor");
             warningDisplayed = true;

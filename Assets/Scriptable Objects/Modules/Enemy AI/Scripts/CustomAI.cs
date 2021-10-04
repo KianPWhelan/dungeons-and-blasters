@@ -10,6 +10,10 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     [SerializeField]
     private List<State> states = new List<State>();
 
+    [Tooltip("Sub AI's which can be used the same as states")]
+    [SerializeField]
+    private List<EnemyAI> subAis = new List<EnemyAI>();
+
     [Tooltip("Default state the AI always starts in")]
     [SerializeField]
     private State defaultState;
