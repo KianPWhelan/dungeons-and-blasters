@@ -28,6 +28,26 @@ public class Helpers
         return closest;
     }
 
+    public static GameObject FindClosestVisible(Transform myPosition, string tag)
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag(tag);
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = myPosition.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance && CheckLineOfSight(myPosition, go.transform))
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
+    }
+
     /// <summary>
     /// Returns true if there is line of sight between the from and to transforms
     /// </summary>
