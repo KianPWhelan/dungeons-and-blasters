@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAPI;
 
 [RequireComponent(typeof(Movement))]
-public class Controller : MonoBehaviour
+public class Controller : NetworkBehaviour
 {
     private Movement movement;
     private PlayerCamera playerCam;
@@ -14,6 +15,10 @@ public class Controller : MonoBehaviour
         movement = gameObject.GetComponent<Movement>();
         playerCam = gameObject.transform.GetComponentInChildren<PlayerCamera>();
         weaponHolder = gameObject.GetComponent<WeaponHolder>();
+        if(!IsLocalPlayer)
+        {
+            playerCam.gameObject.SetActive(false);
+        }
     }
 
     public void Update()
