@@ -30,7 +30,9 @@ public class Controller : MonoBehaviour
     {
         Debug.Log("Game has ended");
         Application.Quit();
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
     /// <summary>
