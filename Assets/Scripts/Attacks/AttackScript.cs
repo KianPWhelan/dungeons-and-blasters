@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAPI;
 
 [RequireComponent(typeof(Collider))]
 public class AttackScript : MonoBehaviour
@@ -25,6 +26,7 @@ public class AttackScript : MonoBehaviour
 
     public void Start()
     {
+        //FindObjectOfType<Spawner>().Spawn(gameObject.GetComponent<NetworkObject>());
         hitList = new List<GameObject>();
         startingTime = Time.time;
         transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\

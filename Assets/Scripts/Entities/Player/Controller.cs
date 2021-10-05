@@ -23,7 +23,10 @@ public class Controller : NetworkBehaviour
 
     public void Update()
     {
-        ProcessInputs();
+        if(IsLocalPlayer)
+        {
+            ProcessInputs();
+        }
     }
 
     public void FixedUpdate()

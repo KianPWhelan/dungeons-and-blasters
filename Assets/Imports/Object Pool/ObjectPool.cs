@@ -10,6 +10,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MLAPI;
 
 [CreateAssetMenu(fileName = "ObjectPool", menuName = "Object Pool")]
 public class ObjectPool : ScriptableObject
@@ -18,6 +19,10 @@ public class ObjectPool : ScriptableObject
     [SerializeField]
     private GameObject prefab;
 
+    [Tooltip("Object pool prefab for network syncing")]
+    [SerializeField]
+    private GameObject poolPrefab;
+
     [Tooltip("(Optional) Parent to place objects under, will create a new parent if none is defined")]
     [SerializeField]
     private Transform parent;
@@ -25,6 +30,8 @@ public class ObjectPool : ScriptableObject
     [Tooltip("Currently instantiated objects")]
     [SerializeField]
     private List<GameObject> pool = new List<GameObject>();
+
+    private Spawner spawner;
 
     /// <summary>
     /// Remove missing game objects when enabled
@@ -47,6 +54,11 @@ public class ObjectPool : ScriptableObject
     /// <returns></returns>
     public GameObject Spawn(Vector3 position, Quaternion rotation, Transform parent = null)
     {
+        if(!spawner)
+        {
+            spawner = FindObjectOfType<Spawner>();
+        }
+
         // Find available object
         GameObject obj = pool.Find(x => !x.activeInHierarchy);
         
@@ -54,7 +66,7 @@ public class ObjectPool : ScriptableObject
         if(!obj)
         {
             obj = InstantiateObject(position, rotation, parent);
-        } 
+        }
         // If available object found, set it to active and set its transform
         else
         {
@@ -101,7 +113,10 @@ public class ObjectPool : ScriptableObject
         // If parent has not yet been defined, create a new parent object
         if (!this.parent)
         {
-            this.parent = new GameObject(prefab.name + "ObjectPool").transform;
+            Debug.Log("Here generating pool");
+            this.parent = spawner.Spawn(poolPrefab, new Vector3(0.0f, 0.0f, 0.0f), new Quaternion(0.0f, 0.0f, 0.0f, 0.0f)).transform;
+            this.parent.name = prefab.name + "ObjectPool";
+            Debug.Log(this.parent.name);
         }
 
         GameObject obj;

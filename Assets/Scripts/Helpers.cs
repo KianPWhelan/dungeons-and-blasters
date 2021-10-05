@@ -68,4 +68,12 @@ public class Helpers
 
         return false;
     }
+
+    public static UnityEngine.Object FindObjectFromInstanceID(int iid)
+    {
+        return (UnityEngine.Object)typeof(UnityEngine.Object)
+                .GetMethod("FindObjectFromInstanceID", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static)
+                .Invoke(null, new object[] { iid });
+
+    }
 }
