@@ -18,9 +18,14 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     public List<GameObject> enemyPrefabs;
 
+    [SerializeField]
+    private int currentSelection = 0;
+
     private Rigidbody body;
 
     private float startHeight;
+
+    private Camera camera;
 
     public void Awake()
     {
@@ -44,6 +49,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
         body = GetComponent<Rigidbody>();
         startHeight = transform.position.y;
+        camera = gameObject.GetComponentInChildren<Camera>();
 
         var prefabs = Resources.LoadAll("", typeof(GameObject));
         // Debug.Log(prefabs.Length);
@@ -114,6 +120,11 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            SpawnEnemy();
+        }
     }
 
     private void ProcessMovement()
@@ -121,6 +132,19 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         var moveX = Input.GetAxis("Horizontal");
         var moveY = Input.GetAxis("Vertical");
         body.velocity = new Vector3(moveX * panSpeed.runtimeValue, 0f, moveY * panSpeed.runtimeValue);
+    }
+
+    private void SpawnEnemy()
+    {
+        GameObject enemyToSpawn = enemyPrefabs[currentSelection];
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 1000))
+        {
+            Debug.Log(hit.transform.name);
+            Debug.Log("hit");
+            PhotonNetwork.InstantiateRoomObject(enemyToSpawn.name, hit.transform.position, hit.transform.rotation, 0);
+        }
     }
 
 #if UNITY_5_4_OR_NEWER
