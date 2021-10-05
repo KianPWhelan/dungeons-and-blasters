@@ -48,6 +48,12 @@ public class Controller : MonoBehaviour
             Debug.Log("Weapon button pressed");
             weaponHolder.UseWeapon(0);
         }
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     private void ProcessMovement()
