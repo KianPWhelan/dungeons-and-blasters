@@ -19,4 +19,3 @@ MonoBehaviour:
   duration: {fileID: 11400000, guid: b4dfb7de97a992842b5446718f46573b, type: 2}
   recursiveEffects:
   - {fileID: 11400000, guid: a834b0da37ba35b47b23803319897aa4, type: 2}
-  - {fileID: 11400000}
