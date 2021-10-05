@@ -14,7 +14,7 @@ public class FloatVariable : ScriptableObject, ISerializationCallbackReceiver
     public float initialValue;
 
     [Tooltip("Current value of variable in runtime (Methods should generally modify this)")]
-    [NonSerialized]
+    // [NonSerialized]
     public float runtimeValue;
 
     public void OnAfterDeserialize()

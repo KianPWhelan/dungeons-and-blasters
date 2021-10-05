@@ -24,6 +24,9 @@ namespace Com.OfTomorrowInc.DMShooter
         [SerializeField]
         private GameObject progressLabel;
 
+        [SerializeField]
+        private BoolVariable isDungeonMaster;
+
         #endregion
 
 
@@ -99,6 +102,16 @@ namespace Com.OfTomorrowInc.DMShooter
                 isConnecting = PhotonNetwork.ConnectUsingSettings();
                 PhotonNetwork.GameVersion = gameVersion;
             }
+        }
+
+
+        /// <summary>
+        /// Start the connection process for dungeon master
+        /// </summary>
+        public void ConnectAsDungeonMaster()
+        {
+            isDungeonMaster.runtimeValue = true;
+            Connect();
         }
 
 

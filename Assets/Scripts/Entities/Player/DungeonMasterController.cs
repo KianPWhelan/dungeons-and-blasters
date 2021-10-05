@@ -1,0 +1,139 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Photon.Pun;
+
+public class DungeonMasterController : MonoBehaviourPunCallbacks
+{
+    [Tooltip("Panning speed of the master")]
+    [SerializeField]
+    private FloatVariable panSpeed;
+
+    [Tooltip("Zooming speed of the master")]
+    [SerializeField]
+    private FloatVariable zoomStep;
+
+    [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
+    public static GameObject LocalPlayerInstance;
+
+    private Rigidbody body;
+
+    private float startHeight;
+
+    public void Awake()
+    {
+        // #Important
+        // used in GameManager.cs: we keep track of the localPlayer instance to prevent instantiation when levels are synchronized
+        if (photonView.IsMine)
+        {
+            LocalPlayerInstance = this.gameObject;
+        }
+        // #Critical
+        // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void Start()
+    {
+        if (!photonView.IsMine)
+        {
+            gameObject.SetActive(false);
+        }
+
+        body = GetComponent<Rigidbody>();
+        startHeight = transform.position.y;
+
+#if UNITY_5_4_OR_NEWER
+        // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+#endif
+    }
+
+    public void Update()
+    {
+        if (photonView.IsMine)
+        {
+            ProcessInputs();
+        }
+    }
+
+    public void FixedUpdate()
+    {
+        if (photonView.IsMine)
+        {
+            ProcessMovement();
+        }
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("Game has ended");
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+
+    /// <summary>
+    /// Check for key presses from 
+    /// </summary>
+    private void ProcessInputs()
+    {
+        var scroll = Input.mouseScrollDelta.y;
+
+        if(scroll < 0)
+        {
+            body.transform.position = body.transform.position + new Vector3(0f, zoomStep.runtimeValue, 0f);
+        }
+
+        else if(scroll > 0)
+        {
+            body.transform.position = body.transform.position + new Vector3(0f, -zoomStep.runtimeValue, 0f);
+        }
+        var change = panSpeed.initialValue + body.transform.position.y - startHeight;
+        // Debug.Log(change);
+        panSpeed.runtimeValue = change;
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
+    private void ProcessMovement()
+    {
+        var moveX = Input.GetAxis("Horizontal");
+        var moveY = Input.GetAxis("Vertical");
+        body.velocity = new Vector3(moveX * panSpeed.runtimeValue, 0f, moveY * panSpeed.runtimeValue);
+    }
+
+#if UNITY_5_4_OR_NEWER
+    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode loadingMode)
+    {
+        this.CalledOnLevelWasLoaded(scene.buildIndex);
+    }
+
+    /// <summary>See CalledOnLevelWasLoaded. Outdated in Unity 5.4.</summary>
+    void OnLevelWasLoaded(int level)
+    {
+        this.CalledOnLevelWasLoaded(level);
+    }
+
+    public override void OnDisable()
+    {
+        // Always call the base to remove callbacks
+        base.OnDisable();
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+#endif
+
+    void CalledOnLevelWasLoaded(int level)
+    {
+        // check if we are outside the Arena and if it's the case, spawn around the center of the arena in a safe zone
+        if (!Physics.Raycast(transform.position, -Vector3.up, 50f))
+        {
+            transform.position = new Vector3(0f, 50f, 0f);
+        }
+    }
+}

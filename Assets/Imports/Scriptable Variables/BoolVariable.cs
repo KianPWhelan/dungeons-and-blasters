@@ -14,7 +14,7 @@ public class BoolVariable : ScriptableObject, ISerializationCallbackReceiver
     public bool initialValue;
 
     [Tooltip("Current value of variable in runtime (Methods should generally modify this)")]
-    [NonSerialized]
+    //[NonSerialized]
     public bool runtimeValue;
 
     public void OnAfterDeserialize()
