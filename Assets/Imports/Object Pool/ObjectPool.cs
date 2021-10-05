@@ -10,13 +10,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 [CreateAssetMenu(fileName = "ObjectPool", menuName = "Object Pool")]
 public class ObjectPool : ScriptableObject
 {
     [Tooltip("Object for this pool")]
     [SerializeField]
-    private GameObject prefab;
+    public GameObject prefab;
+
+    [Tooltip("Object pool prefab fro synchronization")]
+    [SerializeField]
+    public GameObject poolPrefab;
 
     [Tooltip("(Optional) Parent to place objects under, will create a new parent if none is defined")]
     [SerializeField]
@@ -101,7 +106,9 @@ public class ObjectPool : ScriptableObject
         // If parent has not yet been defined, create a new parent object
         if (!this.parent)
         {
-            this.parent = new GameObject(prefab.name + "ObjectPool").transform;
+            var poolObj = PhotonNetwork.Instantiate(this.poolPrefab.name, new Vector3(0f, 0f, 0f), new Quaternion(0f, 0f, 0f, 0f), 0);
+            this.parent = poolObj.transform;
+            // this.parent.name = prefab.name + "ObjectPool";
         }
 
         GameObject obj;
@@ -109,14 +116,16 @@ public class ObjectPool : ScriptableObject
         if(parent)
         {
             Debug.Log(parent.name);
-            obj = Instantiate(prefab, parent);
+            obj = PhotonNetwork.Instantiate(prefab.name, new Vector3(0f, 0f, 0f), new Quaternion(0f, 0f, 0f, 0f), 0);
+            obj.transform.parent = parent;
             obj.transform.SetPositionAndRotation(position, rotation);
             pool.Add(obj);
             return obj;
         }
 
         // Instantiate object and add it to the list
-        obj = Instantiate(prefab, this.parent);
+        obj = PhotonNetwork.Instantiate(prefab.name, new Vector3(0f, 0f, 0f), new Quaternion(0f, 0f, 0f, 0f), 0);
+        obj.transform.SetParent(this.parent);
         obj.transform.SetPositionAndRotation(position, rotation);
         pool.Add(obj);
         return obj;

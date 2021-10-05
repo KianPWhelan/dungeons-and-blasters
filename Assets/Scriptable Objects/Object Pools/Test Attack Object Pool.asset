@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Test Attack Object Pool
   m_EditorClassIdentifier: 
   prefab: {fileID: 7880976810065528573, guid: 340be5ffbca1bdf49816c0fb01e6766d, type: 3}
+  poolPrefab: {fileID: 4089613355405675193, guid: 4c91ea51040af3b41b34b8909f51be5b, type: 3}
   parent: {fileID: 0}
   pool: []

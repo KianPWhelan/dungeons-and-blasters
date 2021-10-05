@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 [RequireComponent(typeof(Collider))]
-public class AttackScript : MonoBehaviour
+public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback
 {
-    public ObjectPool pool;
+    public Attack attack;
 
     public float attackDuration;
 
@@ -17,27 +18,30 @@ public class AttackScript : MonoBehaviour
 
     private string validTag;
 
-    private Attack attack;
-
     private float startingTime;
 
     private List<GameObject> hitList = new List<GameObject>();
 
+    private int parentId;
+
     public void Start()
     {
+        transform.SetParent(PhotonView.Find(parentId).transform);
         hitList = new List<GameObject>();
         startingTime = Time.time;
+        transform.position = transform.parent.position;
+        transform.rotation = transform.parent.rotation;
         transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
     }
 
-    public void OnEnable()
+    public override void OnEnable()
     {
         hitList = new List<GameObject>();
         startingTime = Time.time;
         transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
     }
 
-    public void OnDisable()
+    public override void OnDisable()
     {
         attack = null;
         validTag = null;
@@ -53,7 +57,7 @@ public class AttackScript : MonoBehaviour
         if (startingTime + attackDuration <= Time.time)
         {
             Debug.Log("here");
-            pool.Despawn(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 
@@ -78,8 +82,15 @@ public class AttackScript : MonoBehaviour
 
             if(destroyOnHit)
             {
-                pool.Despawn(gameObject);
+                PhotonNetwork.Destroy(gameObject);
             }
         }
+    }
+
+    public void OnPhotonInstantiate(PhotonMessageInfo info)
+    {
+        object[] instantiationData = info.photonView.InstantiationData;
+        parentId = (int)instantiationData[0];
+        validTag = (string)instantiationData[1];
     }
 }

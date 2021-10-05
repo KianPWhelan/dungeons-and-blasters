@@ -299,6 +299,11 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
 
         else if(variable == "targetIsVisible")
         {
+            if(!localTarget)
+            {
+                return "False";
+            }
+
             return Helpers.CheckLineOfSight(localSelf.transform, localTarget.transform).ToString();
         }
 

@@ -28,13 +28,13 @@ public class Helpers
         return closest;
     }
 
-    /// <summary>
-    /// Returns true if there is line of sight between the from and to transforms
-    /// </summary>
-    /// <param name="from"></param>
-    /// <param name="to"></param>
-    /// <returns></returns>
-    public static bool CheckLineOfSight(Transform from, Transform to)
+        /// <summary>
+        /// Returns true if there is line of sight between the from and to transforms
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <returns></returns>
+        public static bool CheckLineOfSight(Transform from, Transform to)
     {
         var rayDirection = to.position - from.position;
         RaycastHit hit;

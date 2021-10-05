@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Example Attack
   m_EditorClassIdentifier: 
-  attackPool: {fileID: 11400000, guid: afec1f09e71d24b4bac7c356ba3c0eec, type: 2}
+  attack: {fileID: 7880976810065528573, guid: 340be5ffbca1bdf49816c0fb01e6766d, type: 3}
   effects:
   - {fileID: 11400000, guid: a83a60d43f2b81a4cb9ee51a7f5a0c63, type: 2}
