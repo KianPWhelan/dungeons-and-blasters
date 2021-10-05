@@ -16,6 +16,8 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
     [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
     public static GameObject LocalPlayerInstance;
 
+    public List<GameObject> enemyPrefabs;
+
     private Rigidbody body;
 
     private float startHeight;
@@ -42,6 +44,19 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
         body = GetComponent<Rigidbody>();
         startHeight = transform.position.y;
+
+        var prefabs = Resources.LoadAll("", typeof(GameObject));
+        // Debug.Log(prefabs.Length);
+
+        for(int i = 0; i < prefabs.Length; i++)
+        {
+            GameObject p = (GameObject)prefabs[i];
+            // Debug.Log(p.name);
+            if(p.TryGetComponent(out EnemyGeneric c))
+            {
+                enemyPrefabs.Add(p);
+            }
+        }
 
 #if UNITY_5_4_OR_NEWER
         // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
