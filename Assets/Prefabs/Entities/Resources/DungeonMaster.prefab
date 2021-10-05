@@ -66,6 +66,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panSpeed: {fileID: 11400000, guid: 663455f68227f1748ae91487bee781e5, type: 2}
   zoomStep: {fileID: 11400000, guid: 9c90f4745d4f3634786dc30e7c22ce1e, type: 2}
+  enemyPrefabs: []
+  currentSelection: 0
 --- !u!114 &4082791460092488234
 MonoBehaviour:
   m_ObjectHideFlags: 0

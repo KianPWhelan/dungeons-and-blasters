@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f088ffb4a70f944d9b48f502281f171, type: 3}
   m_Name: Pan Speed
   m_EditorClassIdentifier: 
-  initialValue: 70
+  initialValue: 100
+  runtimeValue: 128
