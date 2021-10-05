@@ -125,6 +125,11 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         {
             SpawnEnemy();
         }
+
+        if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            DespawnEnemy();
+        }
     }
 
     private void ProcessMovement()
@@ -144,6 +149,21 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
             Debug.Log(hit.transform.name);
             Debug.Log("hit");
             PhotonNetwork.InstantiateRoomObject(enemyToSpawn.name, hit.transform.position, hit.transform.rotation, 0);
+        }
+    }
+
+    private void DespawnEnemy()
+    {
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 1000))
+        {
+            Debug.Log(hit.transform.name);
+            Debug.Log("hit");
+            if(hit.collider.gameObject.TryGetComponent(out EnemyGeneric c))
+            {
+                PhotonNetwork.Destroy(hit.collider.gameObject);
+            }
         }
     }
 
