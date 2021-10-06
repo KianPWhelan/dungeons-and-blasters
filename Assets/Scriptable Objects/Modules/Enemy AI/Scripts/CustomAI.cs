@@ -240,8 +240,8 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         // Check if values are numeric
         if(float.TryParse(val1, out num1) && float.TryParse(val2, out num2))
         {
-            Debug.Log(num1);
-            Debug.Log(num2);
+            // Debug.Log(num1);
+            // Debug.Log(num2);
             if(condition == "==")
             {
                 return num1 == num2;

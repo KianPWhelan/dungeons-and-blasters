@@ -15,10 +15,14 @@ MonoBehaviour:
   states:
   - {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
   - {fileID: 11400000, guid: 98ec32da2fdb41e4db4e12fd447e229e, type: 2}
+  - {fileID: 11400000, guid: 52bc5b5abc9e80543aeee18cce28cb4e, type: 2}
   defaultState: {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
   transitions:
   - 'currentState: IdleState conditions: targetIsVisible == True => ChaseTargetState'
   - 'currentState: ChaseTargetState conditions: targetIsVisible == False => IdleState'
+  - 'currentState: ChaseTargetState conditions: targetDistance < 2 => AttackState'
+  - 'currentState: AttackState conditions: targetIsVisible == True || targetIsVisible
+    == False => ChaseTargetState'
   stateMachine:
   - fromState: {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
     toState: {fileID: 11400000, guid: 98ec32da2fdb41e4db4e12fd447e229e, type: 2}

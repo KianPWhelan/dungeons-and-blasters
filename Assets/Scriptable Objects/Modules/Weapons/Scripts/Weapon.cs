@@ -13,17 +13,16 @@ public class Weapon : ScriptableObject
     [SerializeField]
     private List<float> cooldowns = new List<float>();
 
-    private static Dictionary<Attack, Container> map;
+    private Dictionary<Attack, Container> map;
 
     private class Container
     {
         public float cooldown;
-        public float lastUseTime;
+        public Dictionary<GameObject, float> lastUseTime = new Dictionary<GameObject, float>();
 
         public Container(float cooldown)
         {
             this.cooldown = cooldown;
-            lastUseTime = 0;
         }
     }
 
@@ -37,11 +36,17 @@ public class Weapon : ScriptableObject
         Debug.Log("Using weapon " + this.name);
         foreach(Attack attack in attacks)
         {
+            if(!map[attack].lastUseTime.ContainsKey(self))
+            {
+                map[attack].lastUseTime.Add(self, 0f);
+            }
+
             var currentTime = Time.time;
-            if(map[attack].lastUseTime + map[attack].cooldown <= currentTime)
+
+            if(map[attack].lastUseTime[self] + map[attack].cooldown <= currentTime)
             {
                 attack.PerformAttack(self, targetTag);
-                map[attack].lastUseTime = currentTime;
+                map[attack].lastUseTime[self] = currentTime;
             }
             
             else
@@ -66,9 +71,7 @@ public class Weapon : ScriptableObject
 
     public void OnEnable()
     {
-        if (map == null)
-        {
-            Map();
-        }
+        Debug.Log("Mapping " + name);
+        Map();
     }
 }
