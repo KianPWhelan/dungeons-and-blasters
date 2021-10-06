@@ -16,21 +16,25 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
     public bool canHitSameTargetMoreThanOnce;
 
-    private string validTag;
+    [HideInInspector]
+    public string validTag;
 
-    private float startingTime;
+    [HideInInspector]
+    public float startingTime;
 
-    private List<GameObject> hitList = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> hitList = new List<GameObject>();
 
-    private int parentId;
+    [HideInInspector]
+    public int parentId;
 
-    public void Start()
+    public virtual void Start()
     {
         transform.SetParent(PhotonView.Find(parentId).transform);
         hitList = new List<GameObject>();
         startingTime = Time.time;
         transform.position = transform.parent.position;
-        transform.rotation = transform.parent.rotation;
+        transform.rotation = transform.parent.GetComponentInChildren<Rotater>().transform.rotation;
         transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
     }
 
@@ -71,7 +75,7 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         validTag = tag;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         Debug.Log("Valid tag: " + validTag+ "  Other tag: " + other.tag + "  Other name: " + other.name);
         if(attack != null && validTag != null && (other.tag == validTag || validTag == "none") && (!hitList.Contains(other.gameObject) || canHitSameTargetMoreThanOnce))

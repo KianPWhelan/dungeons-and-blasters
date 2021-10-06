@@ -8,6 +8,7 @@ public class Controller : MonoBehaviourPunCallbacks
 {
     private Movement movement;
     private PlayerCamera playerCam;
+    private Rotater rotater;
     private WeaponHolder weaponHolder;
 
     [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
@@ -30,6 +31,7 @@ public class Controller : MonoBehaviourPunCallbacks
     {
         movement = gameObject.GetComponent<Movement>();
         playerCam = gameObject.transform.GetComponentInChildren<PlayerCamera>();
+        rotater = gameObject.transform.GetComponentInChildren<Rotater>();
         weaponHolder = gameObject.GetComponent<WeaponHolder>();
 
         if(!photonView.IsMine)
@@ -96,7 +98,7 @@ public class Controller : MonoBehaviourPunCallbacks
         var mouseX = Input.GetAxis("Mouse X");
         var mouseY = Input.GetAxis("Mouse Y");
         movement.Rotate(mouseX, 0.0f);
-        playerCam.Rotate(mouseX, mouseY);
+        rotater.Rotate(mouseX, mouseY);
         var moveX = Input.GetAxis("Horizontal");
         var moveY = Input.GetAxis("Vertical");
         movement.Move(moveX, moveY);
