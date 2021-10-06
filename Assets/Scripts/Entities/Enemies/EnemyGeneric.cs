@@ -18,6 +18,12 @@ public class EnemyGeneric : MonoBehaviour
     private NavMeshAgent agent;
     private Movement movement;
 
+    public State currentState;
+
+    // Current valid state transitions
+    // [HideInInspector]
+    public List<StateTransition> releventTransitions;
+
     // Start is called before the first frame update
     void Start()
     {

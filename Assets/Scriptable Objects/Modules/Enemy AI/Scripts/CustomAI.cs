@@ -40,14 +40,6 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     private NavMeshAgent localAgent;
     private Movement localMovement;
 
-    [System.Serializable]
-    public class StateTransition
-    {
-        public State fromState;
-        public State toState;
-        public List<string> transitionComponents = new List<string>();
-    }
-
     public void OnAfterDeserialize()
     { }
 
@@ -63,6 +55,9 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         localTarget = target;
         localAgent = agent;
         localMovement = movement;
+        var enemyComponent = self.GetComponent<EnemyGeneric>();
+        currentState = enemyComponent.currentState;
+        releventTransitions = enemyComponent.releventTransitions;
 
         if(!CheckStateChanges())
         {
@@ -205,7 +200,8 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         {
             currentState = defaultState;
             currentState.OnEnter(localSelf, localTarget, localAgent, localMovement);
-            releventTransitions = GetReleventTransitions(currentState);
+            localSelf.GetComponent<EnemyGeneric>().currentState = currentState;
+            localSelf.GetComponent<EnemyGeneric>().releventTransitions = GetReleventTransitions(currentState);
             return true;
         }
 
@@ -216,7 +212,8 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
                 currentState.OnExit(localSelf, localTarget, localAgent, localMovement);
                 currentState = transition.toState;
                 currentState.OnEnter(localSelf, localTarget, localAgent, localMovement);
-                releventTransitions = GetReleventTransitions(currentState);
+                localSelf.GetComponent<EnemyGeneric>().currentState = currentState;
+                localSelf.GetComponent<EnemyGeneric>().releventTransitions = GetReleventTransitions(currentState);
                 return true;
             }
         }
