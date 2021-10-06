@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
 
 public class DungeonMasterController : MonoBehaviourPunCallbacks
 {
@@ -27,6 +28,8 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     private Camera camera;
 
+    private GameObject canvas;
+
     public void Awake()
     {
         // #Important
@@ -42,9 +45,12 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     public void Start()
     {
+        canvas = gameObject.GetComponentInChildren<Canvas>().gameObject;
+
         if (!photonView.IsMine)
         {
             gameObject.SetActive(false);
+            canvas.SetActive(false);
         }
 
         body = GetComponent<Rigidbody>();
@@ -54,7 +60,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         var prefabs = Resources.LoadAll("", typeof(GameObject));
         // Debug.Log(prefabs.Length);
 
-        for(int i = 0; i < prefabs.Length; i++)
+        for (int i = 0; i < prefabs.Length; i++)
         {
             GameObject p = (GameObject)prefabs[i];
             // Debug.Log(p.name);
@@ -63,6 +69,9 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
                 enemyPrefabs.Add(p);
             }
         }
+
+        var selectionText = canvas.transform.Find("Current Selection Text");
+        selectionText.GetComponent<Text>().text = "Current Selection: " + enemyPrefabs[currentSelection].name;
 
 #if UNITY_5_4_OR_NEWER
         // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
@@ -115,10 +124,10 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         // Debug.Log(change);
         panSpeed.runtimeValue = change;
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            Cursor.visible = !Cursor.visible;
         }
 
         if(Input.GetKeyDown(KeyCode.Mouse0))
@@ -129,6 +138,26 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
             DespawnEnemy();
+        }
+
+        if(Input.GetKey(KeyCode.E))
+        {
+            if(currentSelection < enemyPrefabs.Count - 1)
+            {
+                currentSelection++;
+                var selectionText = canvas.transform.Find("Current Selection Text");
+                selectionText.GetComponent<Text>().text = "Current Selection: " + enemyPrefabs[currentSelection].name;
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            if(currentSelection > 0)
+            {
+                currentSelection--;
+                var selectionText = canvas.transform.Find("Current Selection Text");
+                selectionText.GetComponent<Text>().text = "Current Selection: " + enemyPrefabs[currentSelection].name;
+            }
         }
     }
 

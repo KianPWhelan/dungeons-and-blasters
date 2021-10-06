@@ -17,7 +17,11 @@ public class AttackState : State
     public override void OnEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
         Debug.Log("Enemy " + self.GetInstanceID() + " has entered " + name);
-        self.GetComponent<WeaponHolder>().UseWeapon(0);
+        var weapons = self.GetComponent<WeaponHolder>();
+        for(int i = 0; i < weapons.GetWeapons().Count; i++)
+        {
+            weapons.UseWeapon(i);
+        }
     }
 
     public override void OnExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
