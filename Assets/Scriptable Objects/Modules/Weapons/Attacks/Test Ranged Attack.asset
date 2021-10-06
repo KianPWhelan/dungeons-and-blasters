@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Test Ranged Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 3807866404001653414, guid: 5be4b7d4875ca93438d938b348821bcd, type: 3}
+  attack: {fileID: 3047516110385557448, guid: 2f177c21a92f5944996ffb2762a44fb3, type: 3}
   effects:
   - {fileID: 11400000, guid: a834b0da37ba35b47b23803319897aa4, type: 2}

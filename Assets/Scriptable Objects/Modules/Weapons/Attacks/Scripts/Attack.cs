@@ -17,13 +17,38 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(GameObject self, string targetTag = "none")
+    public void PerformAttack(GameObject self, string targetTag = "none", bool useSelfAsParent = true)
     {
         Debug.Log("Performing attack");
         Debug.Log(attack);
-        object[] info = new object[] { self.GetComponent<PhotonView>().ViewID, targetTag };
+        object[] info;
+        if(useSelfAsParent)
+        {
+            info = new object[] { self.GetComponent<PhotonView>().ViewID, targetTag };
+        }
+
+        else
+        {
+            info = new object[] { null, targetTag };
+        }
+        
         GameObject attackObject = PhotonNetwork.Instantiate(attack.name, self.transform.position, self.transform.rotation, 0, info);
         attackObject.transform.SetParent(self.transform);
+        var attackScript = attackObject.GetComponent<AttackScript>();
+        attackScript.SetAttack(this);
+        attackScript.SetValidTag(targetTag);
+    }
+
+    /// <summary>
+    /// Performs the actual attack in the scene
+    /// </summary>
+    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, string targetTag = "none")
+    {
+        Debug.Log("Performing attack");
+        Debug.Log(attack);
+        object[] info;
+        info = new object[] { null, targetTag };
+        GameObject attackObject = PhotonNetwork.Instantiate(attack.name, selfPosition, selfRotation, 0, info);
         var attackScript = attackObject.GetComponent<AttackScript>();
         attackScript.SetAttack(this);
         attackScript.SetValidTag(targetTag);

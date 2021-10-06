@@ -8,6 +8,12 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 {
     public Attack attack;
 
+    public List<Attack> subAttacks = new List<Attack>();
+
+    public bool subAttacksOnHit;
+
+    public bool subAttacksOnEnd;
+
     public float attackDuration;
 
     public Vector3 localStartingPosition;
@@ -30,11 +36,15 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
     public virtual void Start()
     {
-        transform.SetParent(PhotonView.Find(parentId).transform);
+        if(parentId != 0)
+        {
+            transform.SetParent(PhotonView.Find(parentId).transform);
+            transform.position = transform.parent.position;
+            transform.rotation = transform.parent.GetComponentInChildren<Rotater>().transform.rotation;
+        }
+        
         hitList = new List<GameObject>();
         startingTime = Time.time;
-        transform.position = transform.parent.position;
-        transform.rotation = transform.parent.GetComponentInChildren<Rotater>().transform.rotation;
         transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
     }
 
@@ -62,6 +72,11 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         {
             Debug.Log("here");
             PhotonNetwork.Destroy(gameObject);
+
+            if(subAttacksOnEnd)
+            {
+                SpawnSubAttacks();
+            }
         }
     }
 
@@ -84,6 +99,11 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
             attack.ApplyEffects(other.gameObject, validTag);
             hitList.Add(other.gameObject);
 
+            if(subAttacksOnHit)
+            {
+                SpawnSubAttacks();
+            }
+
             if(destroyOnHit)
             {
                 PhotonNetwork.Destroy(gameObject);
@@ -94,7 +114,28 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
     public void OnPhotonInstantiate(PhotonMessageInfo info)
     {
         object[] instantiationData = info.photonView.InstantiationData;
-        parentId = (int)instantiationData[0];
+
+        if(instantiationData[0] != null)
+        {
+            parentId = (int)instantiationData[0];
+        }
+        
         validTag = (string)instantiationData[1];
+    }
+
+    public void SpawnSubAttacks()
+    {
+        foreach(Attack attack in subAttacks)
+        {
+            if(transform.parent != null)
+            {
+                attack.PerformAttack(transform.parent.gameObject, validTag);
+            }
+
+            else
+            {
+                attack.PerformAttack(transform.position, transform.rotation, validTag);
+            }
+        }
     }
 }

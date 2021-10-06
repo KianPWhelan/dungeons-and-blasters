@@ -21,6 +21,10 @@ public class ProjectileAttackScript : AttackScript
         {
             Debug.Log("here");
             PhotonNetwork.Destroy(gameObject);
+            if (subAttacksOnEnd)
+            {
+                SpawnSubAttacks();
+            }
         }
 
         else
@@ -36,6 +40,11 @@ public class ProjectileAttackScript : AttackScript
         if(!canGoThroughObjects && other.tag == "Wall" || other.tag == "Ground")
         {
             PhotonNetwork.Destroy(gameObject);
+
+            if(subAttacksOnEnd)
+            {
+                SpawnSubAttacks();
+            }
         }
     }
 }
