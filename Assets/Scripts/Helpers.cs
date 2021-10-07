@@ -29,6 +29,33 @@ public class Helpers
     }
 
     /// <summary>
+    /// Gets the closest game object with the desired tag
+    /// </summary>
+    /// <returns></returns>
+    public static List<GameObject> FindAllInRange(Transform myPosition, float range, string tag)
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag(tag);
+        Vector3 position = myPosition.position;
+        List<GameObject> valid = new List<GameObject>();
+
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            // Debug.Log("Distance: " + curDistance);
+
+            if(curDistance <= range)
+            {
+                // Debug.Log("Adding tile");
+                valid.Add(go);
+            }
+        }
+
+        return valid;
+    }
+
+    /// <summary>
     /// Returns true if there is line of sight between the from and to transforms
     /// </summary>
     /// <param name="from"></param>

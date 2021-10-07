@@ -253,8 +253,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &3922463
 MeshRenderer:
@@ -463,8 +463,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &9137920
 MeshRenderer:
@@ -673,8 +673,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &10201718
 MeshRenderer:
@@ -768,8 +768,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &10741686
 MeshRenderer:
@@ -863,8 +863,8 @@ GameObject:
   m_Name: DoorWall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &12570239
 Transform:
@@ -1188,8 +1188,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &13199737
 MeshRenderer:
@@ -1398,8 +1398,8 @@ GameObject:
   m_Name: DoorWall (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &22223978
 Transform:
@@ -1493,8 +1493,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &26692646
 MeshRenderer:
@@ -1588,8 +1588,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &27469446
 MeshRenderer:
@@ -1683,8 +1683,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &27560455
 MeshRenderer:
@@ -1778,8 +1778,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &27647092
 MeshRenderer:
@@ -1987,8 +1987,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &29329716
 MeshRenderer:
@@ -2082,8 +2082,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &30248222
 MeshRenderer:
@@ -2177,8 +2177,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &31064644
 MeshRenderer:
@@ -2272,8 +2272,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &33062951
 MeshRenderer:
@@ -2481,8 +2481,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &38579928
 MeshRenderer:
@@ -2576,8 +2576,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &42159771
 MeshRenderer:
@@ -2671,8 +2671,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &44848005
 MeshRenderer:
@@ -2879,8 +2879,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &46682555
 MeshRenderer:
@@ -2974,8 +2974,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &47290500
 MeshRenderer:
@@ -3069,8 +3069,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &50064552
 MeshRenderer:
@@ -3164,8 +3164,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &51100802
 MeshRenderer:
@@ -3259,8 +3259,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &51200894
 MeshRenderer:
@@ -3583,8 +3583,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &52149800
 MeshRenderer:
@@ -3908,8 +3908,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &54484024
 MeshRenderer:
@@ -4003,8 +4003,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &56089431
 MeshRenderer:
@@ -4098,8 +4098,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &57762952
 MeshRenderer:
@@ -4308,8 +4308,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &61733801
 MeshRenderer:
@@ -4403,8 +4403,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &64489386
 MeshRenderer:
@@ -4613,8 +4613,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &66515617
 MeshRenderer:
@@ -4823,8 +4823,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &70161590
 MeshRenderer:
@@ -4918,8 +4918,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &71696903
 MeshRenderer:
@@ -5013,8 +5013,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &76697804
 MeshRenderer:
@@ -5108,8 +5108,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &80776814
 MeshRenderer:
@@ -5203,8 +5203,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &82873759
 MeshRenderer:
@@ -5298,8 +5298,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &87277948
 MeshRenderer:
@@ -5508,8 +5508,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &90978490
 MeshRenderer:
@@ -5603,8 +5603,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &99140282
 MeshRenderer:
@@ -5698,8 +5698,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &100446333
 MeshRenderer:
@@ -6023,8 +6023,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &109806733
 MeshRenderer:
@@ -6232,8 +6232,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &115711512
 MeshRenderer:
@@ -6327,8 +6327,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &118903847
 MeshRenderer:
@@ -6422,8 +6422,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &121009521
 MeshRenderer:
@@ -6747,8 +6747,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &125360583
 MeshRenderer:
@@ -6957,8 +6957,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &128611485
 MeshRenderer:
@@ -7052,8 +7052,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &131082735
 MeshRenderer:
@@ -7147,8 +7147,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &134292159
 MeshRenderer:
@@ -7357,8 +7357,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &136470334
 MeshRenderer:
@@ -7566,8 +7566,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &138603967
 MeshRenderer:
@@ -7661,8 +7661,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &143713694
 MeshRenderer:
@@ -7756,8 +7756,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &144007823
 MeshRenderer:
@@ -7851,8 +7851,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &144077062
 MeshRenderer:
@@ -7946,8 +7946,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &145710915
 MeshRenderer:
@@ -8041,8 +8041,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &146469932
 MeshRenderer:
@@ -8136,8 +8136,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &151990197
 MeshRenderer:
@@ -8231,8 +8231,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &152201744
 MeshRenderer:
@@ -8671,8 +8671,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &160131034
 MeshRenderer:
@@ -8766,8 +8766,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &160842294
 MeshRenderer:
@@ -8976,8 +8976,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &165335926
 MeshRenderer:
@@ -9071,8 +9071,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &165352376
 MeshRenderer:
@@ -9280,8 +9280,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &167505587
 MeshRenderer:
@@ -9604,8 +9604,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &176843891
 MeshRenderer:
@@ -9699,8 +9699,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &177787187
 MeshRenderer:
@@ -10139,8 +10139,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &183693294
 MeshRenderer:
@@ -10349,8 +10349,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &185494698
 MeshRenderer:
@@ -10444,8 +10444,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &190666408
 MeshRenderer:
@@ -10539,8 +10539,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &190867995
 MeshRenderer:
@@ -10634,8 +10634,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &191910214
 MeshRenderer:
@@ -11073,8 +11073,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &198938035
 MeshRenderer:
@@ -11168,8 +11168,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &199789539
 MeshRenderer:
@@ -11263,8 +11263,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &203044620
 MeshRenderer:
@@ -11358,8 +11358,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &203680734
 MeshRenderer:
@@ -11453,8 +11453,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &206685481
 MeshRenderer:
@@ -11662,8 +11662,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &209958887
 MeshRenderer:
@@ -11757,8 +11757,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &213527463
 MeshRenderer:
@@ -11967,8 +11967,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &217022084
 MeshRenderer:
@@ -12062,8 +12062,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &221103269
 MeshRenderer:
@@ -12386,8 +12386,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &223917631
 MeshRenderer:
@@ -12596,8 +12596,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &224550937
 MeshRenderer:
@@ -12691,8 +12691,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &228877922
 MeshRenderer:
@@ -13015,8 +13015,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &231003257
 MeshRenderer:
@@ -13453,8 +13453,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &240033812
 MeshRenderer:
@@ -13548,8 +13548,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &241057029
 MeshRenderer:
@@ -13643,8 +13643,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &241448640
 MeshRenderer:
@@ -13738,8 +13738,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &241823692
 MeshRenderer:
@@ -13833,8 +13833,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &242094002
 MeshRenderer:
@@ -14041,8 +14041,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &244049815
 MeshRenderer:
@@ -14136,8 +14136,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &245948824
 MeshRenderer:
@@ -14345,8 +14345,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &246138071
 MeshRenderer:
@@ -14440,8 +14440,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &247407383
 MeshRenderer:
@@ -14535,8 +14535,8 @@ GameObject:
   m_Name: DoorWall (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &249094297
 Transform:
@@ -14744,8 +14744,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &255870042
 MeshRenderer:
@@ -15067,8 +15067,8 @@ GameObject:
   m_Name: DoorWall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &259130838
 Transform:
@@ -15162,8 +15162,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &261199857
 MeshRenderer:
@@ -15257,8 +15257,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &262463274
 MeshRenderer:
@@ -15352,8 +15352,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &263894389
 MeshRenderer:
@@ -15447,8 +15447,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &264835006
 MeshRenderer:
@@ -16000,8 +16000,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &270701812
 MeshRenderer:
@@ -16439,8 +16439,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &283414726
 MeshRenderer:
@@ -16649,8 +16649,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &284434336
 MeshRenderer:
@@ -16744,8 +16744,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &295031876
 MeshRenderer:
@@ -17069,8 +17069,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &302349256
 MeshRenderer:
@@ -17164,8 +17164,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &302840061
 MeshRenderer:
@@ -17259,8 +17259,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &308779157
 MeshRenderer:
@@ -17468,8 +17468,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &316901158
 MeshRenderer:
@@ -17563,8 +17563,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &319443594
 MeshRenderer:
@@ -17658,8 +17658,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &327373477
 MeshRenderer:
@@ -17753,8 +17753,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &327480310
 MeshRenderer:
@@ -17848,8 +17848,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &327796587
 MeshRenderer:
@@ -18173,8 +18173,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &329237709
 MeshRenderer:
@@ -18383,8 +18383,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &331407566
 MeshRenderer:
@@ -18478,8 +18478,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &333908997
 MeshRenderer:
@@ -18573,8 +18573,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &337646011
 MeshRenderer:
@@ -18668,8 +18668,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &337747787
 MeshRenderer:
@@ -18878,8 +18878,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &341183913
 MeshRenderer:
@@ -18973,8 +18973,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &341359214
 MeshRenderer:
@@ -19183,8 +19183,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &342683110
 MeshRenderer:
@@ -19278,8 +19278,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &342697175
 MeshRenderer:
@@ -19488,8 +19488,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &345213966
 MeshRenderer:
@@ -19697,8 +19697,8 @@ GameObject:
   m_Name: DoorWall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &352243021
 Transform:
@@ -19907,8 +19907,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &355012504
 MeshRenderer:
@@ -20002,8 +20002,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &356315708
 MeshRenderer:
@@ -20210,8 +20210,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &358757967
 MeshRenderer:
@@ -20420,8 +20420,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &359162881
 MeshRenderer:
@@ -20515,8 +20515,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &363283625
 MeshRenderer:
@@ -20610,8 +20610,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &363543119
 MeshRenderer:
@@ -20819,8 +20819,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &367439037
 MeshRenderer:
@@ -21029,8 +21029,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &374951197
 MeshRenderer:
@@ -21124,8 +21124,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &375091632
 MeshRenderer:
@@ -21333,8 +21333,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &379349951
 MeshRenderer:
@@ -21428,8 +21428,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &379676066
 MeshRenderer:
@@ -21523,8 +21523,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &380951569
 MeshRenderer:
@@ -22307,8 +22307,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &389733064
 MeshRenderer:
@@ -22402,8 +22402,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &389859991
 MeshRenderer:
@@ -22612,8 +22612,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &403433750
 MeshRenderer:
@@ -22707,8 +22707,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &406951475
 MeshRenderer:
@@ -22802,8 +22802,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &413935774
 MeshRenderer:
@@ -23128,8 +23128,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &416435868
 MeshRenderer:
@@ -23223,8 +23223,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &418695704
 MeshRenderer:
@@ -23318,8 +23318,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &418711804
 MeshRenderer:
@@ -23413,8 +23413,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &421302442
 MeshRenderer:
@@ -23508,8 +23508,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &422653284
 MeshRenderer:
@@ -24176,8 +24176,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &441550804
 MeshRenderer:
@@ -24388,8 +24388,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &441739739
 MeshRenderer:
@@ -24711,8 +24711,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &450638604
 MeshRenderer:
@@ -24806,8 +24806,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &453438249
 MeshRenderer:
@@ -24901,8 +24901,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &453813254
 MeshRenderer:
@@ -25111,8 +25111,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &456926870
 MeshRenderer:
@@ -25206,8 +25206,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &458214226
 MeshRenderer:
@@ -25301,8 +25301,8 @@ GameObject:
   m_Name: DoorWall (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &460118449
 Transform:
@@ -25396,8 +25396,8 @@ GameObject:
   m_Name: DoorWall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &460345918
 Transform:
@@ -25607,8 +25607,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &463550536
 MeshRenderer:
@@ -25816,8 +25816,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &466181452
 MeshRenderer:
@@ -25911,8 +25911,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &467638505
 MeshRenderer:
@@ -26006,8 +26006,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &471255819
 MeshRenderer:
@@ -26101,8 +26101,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &471593616
 MeshRenderer:
@@ -26311,8 +26311,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &473064045
 MeshRenderer:
@@ -26519,8 +26519,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &476765605
 MeshRenderer:
@@ -27073,8 +27073,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &487236854
 MeshRenderer:
@@ -27168,8 +27168,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &488149654
 MeshRenderer:
@@ -27263,8 +27263,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &488151600
 MeshRenderer:
@@ -27358,8 +27358,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &488882790
 MeshRenderer:
@@ -27453,8 +27453,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &491539964
 MeshRenderer:
@@ -27663,8 +27663,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &498235006
 MeshRenderer:
@@ -27758,8 +27758,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &503111450
 MeshRenderer:
@@ -28082,8 +28082,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &512770508
 MeshRenderer:
@@ -28177,8 +28177,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &512915803
 MeshRenderer:
@@ -28272,8 +28272,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &517998529
 MeshRenderer:
@@ -28482,8 +28482,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &519901417
 MeshRenderer:
@@ -28577,8 +28577,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &520899668
 MeshRenderer:
@@ -28672,8 +28672,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &522799054
 MeshRenderer:
@@ -28767,8 +28767,8 @@ GameObject:
   m_Name: DoorWall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &523390954
 Transform:
@@ -28862,8 +28862,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &523914373
 MeshRenderer:
@@ -28957,8 +28957,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &524996463
 MeshRenderer:
@@ -29052,8 +29052,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &526732159
 MeshRenderer:
@@ -29147,8 +29147,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &527260506
 MeshRenderer:
@@ -29357,8 +29357,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &528710340
 MeshRenderer:
@@ -29452,8 +29452,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &529739501
 MeshRenderer:
@@ -29547,8 +29547,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &530388529
 MeshRenderer:
@@ -29755,8 +29755,8 @@ GameObject:
   m_Name: DoorWall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &534377599
 Transform:
@@ -29850,8 +29850,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &535605315
 MeshRenderer:
@@ -30059,8 +30059,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &538757357
 MeshRenderer:
@@ -30154,8 +30154,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &539999005
 MeshRenderer:
@@ -30249,8 +30249,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &540392110
 MeshRenderer:
@@ -30344,8 +30344,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &542781364
 MeshRenderer:
@@ -30439,8 +30439,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &544443525
 MeshRenderer:
@@ -30534,8 +30534,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &547138592
 MeshRenderer:
@@ -30629,8 +30629,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &548580425
 MeshRenderer:
@@ -30724,8 +30724,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &550585232
 MeshRenderer:
@@ -30934,8 +30934,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &551808964
 MeshRenderer:
@@ -31029,8 +31029,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &553763870
 MeshRenderer:
@@ -31468,8 +31468,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &565468220
 MeshRenderer:
@@ -31677,8 +31677,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &581784249
 MeshRenderer:
@@ -32118,8 +32118,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &590573299
 MeshRenderer:
@@ -32213,8 +32213,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &593060296
 MeshRenderer:
@@ -32995,8 +32995,8 @@ GameObject:
   m_Name: DoorWall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &611300105
 Transform:
@@ -33090,8 +33090,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &611546674
 MeshRenderer:
@@ -33185,8 +33185,8 @@ GameObject:
   m_Name: DoorWall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &613854573
 Transform:
@@ -33280,8 +33280,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &617092994
 MeshRenderer:
@@ -33375,8 +33375,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &620114225
 MeshRenderer:
@@ -33470,8 +33470,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &623614255
 MeshRenderer:
@@ -33565,8 +33565,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &626497340
 MeshRenderer:
@@ -33660,8 +33660,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &627400770
 MeshRenderer:
@@ -33755,8 +33755,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &629156889
 MeshRenderer:
@@ -33965,8 +33965,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &631227298
 MeshRenderer:
@@ -34060,8 +34060,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &633814647
 MeshRenderer:
@@ -34269,8 +34269,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &641194234
 MeshRenderer:
@@ -34364,8 +34364,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &644986616
 MeshRenderer:
@@ -34686,8 +34686,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &653542080
 Transform:
@@ -34781,8 +34781,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &655675596
 MeshRenderer:
@@ -34990,8 +34990,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &669766743
 MeshRenderer:
@@ -35200,8 +35200,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &672821951
 MeshRenderer:
@@ -35295,8 +35295,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &673367125
 MeshRenderer:
@@ -35620,8 +35620,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &677889201
 MeshRenderer:
@@ -35715,8 +35715,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &681366028
 MeshRenderer:
@@ -35810,8 +35810,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &681651609
 MeshRenderer:
@@ -36167,8 +36167,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &688141088
 MeshRenderer:
@@ -36605,8 +36605,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &697424851
 MeshRenderer:
@@ -37257,8 +37257,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &711198581
 MeshRenderer:
@@ -37581,8 +37581,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &713389153
 MeshRenderer:
@@ -37791,8 +37791,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &715490109
 MeshRenderer:
@@ -38001,8 +38001,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &717946595
 MeshRenderer:
@@ -38211,8 +38211,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &721641540
 MeshRenderer:
@@ -38420,8 +38420,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &724111690
 MeshRenderer:
@@ -38630,8 +38630,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &725562356
 MeshRenderer:
@@ -38725,8 +38725,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &729442030
 MeshRenderer:
@@ -38820,8 +38820,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &732898040
 MeshRenderer:
@@ -39031,8 +39031,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &735038337
 MeshRenderer:
@@ -39355,8 +39355,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &740504709
 MeshRenderer:
@@ -39450,8 +39450,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &741940053
 MeshRenderer:
@@ -39660,8 +39660,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &742877440
 Transform:
@@ -39755,8 +39755,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &746237898
 MeshRenderer:
@@ -39850,8 +39850,8 @@ GameObject:
   m_Name: DoorWall (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &753034545
 Transform:
@@ -39945,8 +39945,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &754617569
 MeshRenderer:
@@ -40040,8 +40040,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &759412895
 MeshRenderer:
@@ -40135,8 +40135,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &760981668
 MeshRenderer:
@@ -40230,8 +40230,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &763207069
 MeshRenderer:
@@ -40440,8 +40440,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &765076474
 MeshRenderer:
@@ -40535,8 +40535,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &769785789
 MeshRenderer:
@@ -40744,8 +40744,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &773762703
 MeshRenderer:
@@ -40952,8 +40952,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &781044092
 MeshRenderer:
@@ -41047,8 +41047,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &786132438
 MeshRenderer:
@@ -41142,8 +41142,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &786907596
 MeshRenderer:
@@ -41351,8 +41351,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &791629910
 MeshRenderer:
@@ -41446,8 +41446,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &793785625
 MeshRenderer:
@@ -41541,8 +41541,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &794278819
 MeshRenderer:
@@ -41636,8 +41636,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &804469960
 MeshRenderer:
@@ -41844,8 +41844,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &811193501
 MeshRenderer:
@@ -41939,8 +41939,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &812531487
 MeshRenderer:
@@ -42110,8 +42110,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &817575006
 MeshRenderer:
@@ -42205,8 +42205,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &820136642
 MeshRenderer:
@@ -42300,8 +42300,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &821934915
 MeshRenderer:
@@ -42395,8 +42395,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &824080504
 MeshRenderer:
@@ -42833,8 +42833,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &828969816
 MeshRenderer:
@@ -43042,8 +43042,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &829117153
 MeshRenderer:
@@ -43137,8 +43137,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &830054853
 MeshRenderer:
@@ -43232,8 +43232,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &833548554
 MeshRenderer:
@@ -43327,8 +43327,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &834494863
 MeshRenderer:
@@ -43422,8 +43422,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &835584553
 MeshRenderer:
@@ -43746,8 +43746,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &841612110
 MeshRenderer:
@@ -43874,8 +43874,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &849177616
 MeshRenderer:
@@ -44084,8 +44084,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &852210778
 MeshRenderer:
@@ -44294,8 +44294,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &852725793
 MeshRenderer:
@@ -44503,8 +44503,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &854031554
 MeshRenderer:
@@ -44598,8 +44598,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &855442989
 MeshRenderer:
@@ -44924,8 +44924,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &862136207
 MeshRenderer:
@@ -45019,8 +45019,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &863225346
 MeshRenderer:
@@ -45229,8 +45229,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &870068271
 MeshRenderer:
@@ -45324,8 +45324,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &871501444
 MeshRenderer:
@@ -45419,8 +45419,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &877792710
 MeshRenderer:
@@ -45514,8 +45514,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &882864867
 MeshRenderer:
@@ -45609,8 +45609,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &886711529
 MeshRenderer:
@@ -45704,8 +45704,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &887063821
 MeshRenderer:
@@ -46144,8 +46144,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &903206689
 MeshRenderer:
@@ -46239,8 +46239,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &903949746
 MeshRenderer:
@@ -46334,8 +46334,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &905947207
 MeshRenderer:
@@ -47303,8 +47303,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &915113145
 MeshRenderer:
@@ -47398,8 +47398,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &919678442
 MeshRenderer:
@@ -47493,8 +47493,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &921236885
 MeshRenderer:
@@ -47701,8 +47701,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &924321373
 MeshRenderer:
@@ -47796,8 +47796,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &931123938
 MeshRenderer:
@@ -47891,8 +47891,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &932627972
 MeshRenderer:
@@ -47986,8 +47986,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &932743693
 MeshRenderer:
@@ -48196,8 +48196,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &938864174
 MeshRenderer:
@@ -48291,8 +48291,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &939973627
 MeshRenderer:
@@ -49011,8 +49011,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &955000796
 MeshRenderer:
@@ -49106,8 +49106,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &957246476
 MeshRenderer:
@@ -49316,8 +49316,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &960583647
 MeshRenderer:
@@ -49640,8 +49640,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &961954953
 MeshRenderer:
@@ -49818,8 +49818,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &964615962
 MeshRenderer:
@@ -49913,8 +49913,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &973021200
 MeshRenderer:
@@ -50008,8 +50008,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &975346262
 MeshRenderer:
@@ -50103,8 +50103,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &977225679
 MeshRenderer:
@@ -50426,8 +50426,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &981507254
 MeshRenderer:
@@ -50636,8 +50636,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &987588604
 MeshRenderer:
@@ -51305,8 +51305,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &998980644
 MeshRenderer:
@@ -51400,8 +51400,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1007657045
 MeshRenderer:
@@ -51725,8 +51725,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1015159978
 MeshRenderer:
@@ -51820,8 +51820,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1017069725
 MeshRenderer:
@@ -51915,8 +51915,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1017249814
 MeshRenderer:
@@ -52125,8 +52125,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1023718090
 MeshRenderer:
@@ -52335,8 +52335,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1027846293
 MeshRenderer:
@@ -52430,8 +52430,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1027869382
 MeshRenderer:
@@ -52525,8 +52525,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1029412812
 MeshRenderer:
@@ -52846,8 +52846,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1031832150
 Transform:
@@ -52941,8 +52941,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1032659357
 MeshRenderer:
@@ -53036,8 +53036,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1032890364
 MeshRenderer:
@@ -53131,8 +53131,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1037126511
 MeshRenderer:
@@ -53226,8 +53226,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1040028990
 MeshRenderer:
@@ -53321,8 +53321,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1040877756
 MeshRenderer:
@@ -53646,8 +53646,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1044193634
 MeshRenderer:
@@ -53741,8 +53741,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1047010647
 MeshRenderer:
@@ -53836,8 +53836,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1049194537
 MeshRenderer:
@@ -54159,8 +54159,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1058402017
 MeshRenderer:
@@ -54597,8 +54597,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1068625881
 MeshRenderer:
@@ -54692,8 +54692,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1069046158
 MeshRenderer:
@@ -54902,8 +54902,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1071761691
 MeshRenderer:
@@ -54997,8 +54997,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1073351166
 MeshRenderer:
@@ -55092,8 +55092,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1076258584
 MeshRenderer:
@@ -55187,8 +55187,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1080223243
 MeshRenderer:
@@ -55282,8 +55282,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1081993890
 MeshRenderer:
@@ -55492,8 +55492,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1082524053
 MeshRenderer:
@@ -55587,8 +55587,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1082783142
 MeshRenderer:
@@ -55911,8 +55911,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1089570373
 MeshRenderer:
@@ -56120,8 +56120,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1090256526
 MeshRenderer:
@@ -56215,8 +56215,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1093060735
 MeshRenderer:
@@ -56425,8 +56425,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1098522703
 MeshRenderer:
@@ -56865,8 +56865,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1102006184
 MeshRenderer:
@@ -57076,8 +57076,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1104113886
 MeshRenderer:
@@ -57171,8 +57171,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1104133023
 MeshRenderer:
@@ -57266,8 +57266,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1110537382
 MeshRenderer:
@@ -57475,8 +57475,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1112578737
 MeshRenderer:
@@ -57570,8 +57570,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1114384707
 MeshRenderer:
@@ -57742,8 +57742,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1119349328
 MeshRenderer:
@@ -57837,8 +57837,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1119627702
 MeshRenderer:
@@ -57932,8 +57932,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1119867324
 MeshRenderer:
@@ -58140,8 +58140,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1120955838
 MeshRenderer:
@@ -58235,8 +58235,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1121415365
 MeshRenderer:
@@ -58330,8 +58330,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1121961750
 MeshRenderer:
@@ -58425,8 +58425,8 @@ GameObject:
   m_Name: DoorWall (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1122241845
 Transform:
@@ -58749,8 +58749,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1129161315
 MeshRenderer:
@@ -58844,8 +58844,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1129227269
 MeshRenderer:
@@ -58939,8 +58939,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1130564262
 MeshRenderer:
@@ -59839,8 +59839,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1151259186
 MeshRenderer:
@@ -59934,8 +59934,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1156932176
 MeshRenderer:
@@ -60029,8 +60029,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1157566857
 MeshRenderer:
@@ -60124,8 +60124,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1158352996
 MeshRenderer:
@@ -60219,8 +60219,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1158632892
 MeshRenderer:
@@ -60314,8 +60314,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1159291151
 MeshRenderer:
@@ -60409,8 +60409,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1161722312
 MeshRenderer:
@@ -60504,8 +60504,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1165164049
 MeshRenderer:
@@ -60714,8 +60714,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1167857198
 MeshRenderer:
@@ -60923,8 +60923,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1171427462
 MeshRenderer:
@@ -61247,8 +61247,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1182453652
 MeshRenderer:
@@ -61342,8 +61342,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1185620246
 MeshRenderer:
@@ -61437,8 +61437,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1186236226
 MeshRenderer:
@@ -61532,8 +61532,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1187244240
 MeshRenderer:
@@ -61627,8 +61627,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1188092794
 MeshRenderer:
@@ -61722,8 +61722,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1192238775
 MeshRenderer:
@@ -61931,8 +61931,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1203579819
 MeshRenderer:
@@ -62257,8 +62257,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1212207861
 MeshRenderer:
@@ -62695,8 +62695,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1216579587
 MeshRenderer:
@@ -62790,8 +62790,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1219111114
 MeshRenderer:
@@ -62999,8 +62999,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1223956725
 MeshRenderer:
@@ -63323,8 +63323,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1225369416
 MeshRenderer:
@@ -63532,8 +63532,8 @@ GameObject:
   m_Name: DoorWall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1226661729
 Transform:
@@ -63627,8 +63627,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1228131300
 MeshRenderer:
@@ -63951,8 +63951,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1231344112
 MeshRenderer:
@@ -64046,8 +64046,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1232872278
 MeshRenderer:
@@ -64141,8 +64141,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1236541749
 MeshRenderer:
@@ -64236,8 +64236,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1236762296
 MeshRenderer:
@@ -64446,8 +64446,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1240002907
 MeshRenderer:
@@ -64541,8 +64541,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1240387010
 MeshRenderer:
@@ -64978,8 +64978,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1248352683
 MeshRenderer:
@@ -65073,8 +65073,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1249442300
 MeshRenderer:
@@ -65283,8 +65283,8 @@ GameObject:
   m_Name: DoorWall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1255537796
 Transform:
@@ -65378,8 +65378,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1269638843
 MeshRenderer:
@@ -65963,8 +65963,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1276984476
 MeshRenderer:
@@ -66404,8 +66404,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1283084148
 MeshRenderer:
@@ -66499,8 +66499,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1283306644
 MeshRenderer:
@@ -66594,8 +66594,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1286094973
 MeshRenderer:
@@ -66919,8 +66919,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1296131533
 MeshRenderer:
@@ -67014,8 +67014,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1296564657
 MeshRenderer:
@@ -67224,8 +67224,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1298386458
 MeshRenderer:
@@ -67433,8 +67433,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1301976170
 MeshRenderer:
@@ -67870,8 +67870,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1310735897
 MeshRenderer:
@@ -67965,8 +67965,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1312793674
 MeshRenderer:
@@ -68060,8 +68060,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1314423730
 MeshRenderer:
@@ -68155,8 +68155,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1316672795
 MeshRenderer:
@@ -68250,8 +68250,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1321280101
 MeshRenderer:
@@ -68459,8 +68459,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1324930175
 MeshRenderer:
@@ -68669,8 +68669,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1332873348
 MeshRenderer:
@@ -68993,8 +68993,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1340021687
 MeshRenderer:
@@ -69088,8 +69088,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1341157168
 MeshRenderer:
@@ -69411,8 +69411,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1350978944
 MeshRenderer:
@@ -69621,8 +69621,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1353226616
 MeshRenderer:
@@ -69716,8 +69716,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1357051866
 MeshRenderer:
@@ -69811,8 +69811,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1357680622
 MeshRenderer:
@@ -70021,8 +70021,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1360483340
 MeshRenderer:
@@ -70116,8 +70116,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1362851863
 MeshRenderer:
@@ -70211,8 +70211,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1364372002
 MeshRenderer:
@@ -70419,8 +70419,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1368307536
 MeshRenderer:
@@ -70514,8 +70514,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1369770105
 MeshRenderer:
@@ -70609,8 +70609,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1371794949
 MeshRenderer:
@@ -70818,8 +70818,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1375072688
 MeshRenderer:
@@ -70913,8 +70913,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1375801100
 MeshRenderer:
@@ -71008,8 +71008,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1376036949
 MeshRenderer:
@@ -71103,8 +71103,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1376264751
 MeshRenderer:
@@ -71314,8 +71314,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1379977866
 MeshRenderer:
@@ -71524,8 +71524,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1392378768
 MeshRenderer:
@@ -71619,8 +71619,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1392543337
 MeshRenderer:
@@ -71714,8 +71714,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1392884473
 MeshRenderer:
@@ -71809,8 +71809,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1393619310
 MeshRenderer:
@@ -71904,8 +71904,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1394404148
 MeshRenderer:
@@ -71999,8 +71999,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1399770494
 MeshRenderer:
@@ -72094,8 +72094,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1401547178
 MeshRenderer:
@@ -72189,8 +72189,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1403158410
 MeshRenderer:
@@ -72399,8 +72399,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1409077667
 MeshRenderer:
@@ -72608,8 +72608,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1410160864
 MeshRenderer:
@@ -72703,8 +72703,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1411154183
 MeshRenderer:
@@ -72798,8 +72798,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1411252849
 MeshRenderer:
@@ -73119,8 +73119,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1416536042
 MeshRenderer:
@@ -73214,8 +73214,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1416797424
 MeshRenderer:
@@ -73423,8 +73423,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1421482316
 MeshRenderer:
@@ -73518,8 +73518,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1423758834
 MeshRenderer:
@@ -73613,8 +73613,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1424286153
 MeshRenderer:
@@ -73823,8 +73823,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1427468577
 MeshRenderer:
@@ -73918,8 +73918,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1427877531
 MeshRenderer:
@@ -74013,8 +74013,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1429908883
 MeshRenderer:
@@ -74336,8 +74336,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1442049866
 MeshRenderer:
@@ -74431,8 +74431,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1444258274
 MeshRenderer:
@@ -74640,8 +74640,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1447216278
 MeshRenderer:
@@ -74735,8 +74735,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1450142524
 MeshRenderer:
@@ -74943,8 +74943,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1451226596
 MeshRenderer:
@@ -75038,8 +75038,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1455618847
 MeshRenderer:
@@ -75133,8 +75133,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1456425479
 MeshRenderer:
@@ -75343,8 +75343,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1459905379
 MeshRenderer:
@@ -75553,8 +75553,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1465952053
 MeshRenderer:
@@ -75648,8 +75648,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1467051606
 MeshRenderer:
@@ -75857,8 +75857,8 @@ GameObject:
   m_Name: DoorWall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1470493123
 Transform:
@@ -76065,8 +76065,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1477343133
 MeshRenderer:
@@ -76160,8 +76160,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1477509454
 MeshRenderer:
@@ -76370,8 +76370,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1478938083
 MeshRenderer:
@@ -76465,8 +76465,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1480802289
 MeshRenderer:
@@ -76593,8 +76593,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1482136928
 MeshRenderer:
@@ -77146,8 +77146,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1498504897
 MeshRenderer:
@@ -77241,8 +77241,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1498640142
 MeshRenderer:
@@ -77336,8 +77336,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1503680482
 MeshRenderer:
@@ -77431,8 +77431,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1506149243
 MeshRenderer:
@@ -77526,8 +77526,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1507320028
 MeshRenderer:
@@ -77621,8 +77621,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1507932109
 MeshRenderer:
@@ -77832,8 +77832,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1509584799
 MeshRenderer:
@@ -77927,8 +77927,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1513353770
 MeshRenderer:
@@ -78022,8 +78022,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1514002149
 MeshRenderer:
@@ -78232,8 +78232,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1515301105
 MeshRenderer:
@@ -78558,8 +78558,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1522444300
 MeshRenderer:
@@ -78653,8 +78653,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1522632110
 MeshRenderer:
@@ -78863,8 +78863,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1527973158
 MeshRenderer:
@@ -78958,8 +78958,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1529288822
 MeshRenderer:
@@ -79166,8 +79166,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1534448259
 MeshRenderer:
@@ -79261,8 +79261,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1534841684
 MeshRenderer:
@@ -79356,8 +79356,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1537034501
 MeshRenderer:
@@ -79451,8 +79451,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1537108850
 MeshRenderer:
@@ -79546,8 +79546,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1537787339
 MeshRenderer:
@@ -79641,8 +79641,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1539139517
 MeshRenderer:
@@ -79736,8 +79736,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1539351178
 MeshRenderer:
@@ -79946,8 +79946,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1541620908
 MeshRenderer:
@@ -80041,8 +80041,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1542316867
 MeshRenderer:
@@ -80136,8 +80136,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1542565217
 MeshRenderer:
@@ -80231,8 +80231,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1543582874
 MeshRenderer:
@@ -80326,8 +80326,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1544225472
 MeshRenderer:
@@ -80535,8 +80535,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1548454531
 MeshRenderer:
@@ -80860,8 +80860,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1554072796
 MeshRenderer:
@@ -81068,8 +81068,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1560673627
 MeshRenderer:
@@ -81163,8 +81163,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1560972351
 MeshRenderer:
@@ -81488,8 +81488,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1567150834
 MeshRenderer:
@@ -82041,8 +82041,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1569777051
 MeshRenderer:
@@ -82136,8 +82136,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1570111440
 MeshRenderer:
@@ -82231,8 +82231,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1570820341
 MeshRenderer:
@@ -82439,8 +82439,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1571715780
 MeshRenderer:
@@ -82534,8 +82534,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1573599853
 MeshRenderer:
@@ -82858,8 +82858,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1577387249
 MeshRenderer:
@@ -82953,8 +82953,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1577815312
 MeshRenderer:
@@ -83048,8 +83048,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1579643451
 MeshRenderer:
@@ -83143,8 +83143,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1581779681
 MeshRenderer:
@@ -83238,8 +83238,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1586502455
 MeshRenderer:
@@ -83333,8 +83333,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1591465693
 MeshRenderer:
@@ -83872,8 +83872,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1593538998
 MeshRenderer:
@@ -84081,8 +84081,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1599859051
 MeshRenderer:
@@ -84289,8 +84289,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1605468412
 MeshRenderer:
@@ -84499,8 +84499,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1608308455
 MeshRenderer:
@@ -84594,8 +84594,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1609797714
 MeshRenderer:
@@ -84689,8 +84689,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1610242274
 MeshRenderer:
@@ -85014,8 +85014,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1613731817
 MeshRenderer:
@@ -85109,8 +85109,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1617233927
 MeshRenderer:
@@ -85204,8 +85204,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1619800959
 MeshRenderer:
@@ -85299,8 +85299,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1622878294
 MeshRenderer:
@@ -85394,8 +85394,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1626990422
 MeshRenderer:
@@ -85751,8 +85751,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1632693742
 MeshRenderer:
@@ -85846,8 +85846,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1634097709
 MeshRenderer:
@@ -86056,8 +86056,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1641231141
 MeshRenderer:
@@ -86151,8 +86151,8 @@ GameObject:
   m_Name: DoorWall (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1642064092
 Transform:
@@ -86246,8 +86246,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1646118246
 MeshRenderer:
@@ -86341,8 +86341,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1646674945
 MeshRenderer:
@@ -86666,8 +86666,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1650548988
 MeshRenderer:
@@ -86988,8 +86988,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1657830347
 MeshRenderer:
@@ -87083,8 +87083,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1658643587
 MeshRenderer:
@@ -87292,8 +87292,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1661700490
 MeshRenderer:
@@ -87387,8 +87387,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1663469562
 MeshRenderer:
@@ -87482,8 +87482,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1666257943
 MeshRenderer:
@@ -87691,8 +87691,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1667681174
 MeshRenderer:
@@ -87899,8 +87899,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1668901798
 MeshRenderer:
@@ -88224,8 +88224,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1686266480
 MeshRenderer:
@@ -88319,8 +88319,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1686438457
 MeshRenderer:
@@ -88414,8 +88414,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1690188008
 MeshRenderer:
@@ -88509,8 +88509,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1695760388
 MeshRenderer:
@@ -89241,8 +89241,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1702579110
 MeshRenderer:
@@ -89336,8 +89336,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1704596521
 MeshRenderer:
@@ -89431,8 +89431,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1707796335
 MeshRenderer:
@@ -89868,8 +89868,8 @@ GameObject:
   m_Name: DoorWall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1714285481
 Transform:
@@ -90194,8 +90194,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1716909239
 MeshRenderer:
@@ -90289,8 +90289,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1718158021
 MeshRenderer:
@@ -90384,8 +90384,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1719322416
 MeshRenderer:
@@ -90479,8 +90479,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1719779793
 MeshRenderer:
@@ -90689,8 +90689,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1724677732
 MeshRenderer:
@@ -90784,8 +90784,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1729173338
 MeshRenderer:
@@ -90879,8 +90879,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1733648397
 MeshRenderer:
@@ -90974,8 +90974,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1735065438
 MeshRenderer:
@@ -91069,8 +91069,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1738079009
 MeshRenderer:
@@ -91164,8 +91164,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1738639181
 MeshRenderer:
@@ -91259,8 +91259,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1740235322
 MeshRenderer:
@@ -91354,8 +91354,8 @@ GameObject:
   m_Name: DoorWall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1742695927
 Transform:
@@ -91449,8 +91449,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1742822865
 MeshRenderer:
@@ -91544,8 +91544,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1744350698
 MeshRenderer:
@@ -91754,8 +91754,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1745743077
 MeshRenderer:
@@ -91849,8 +91849,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1747227653
 MeshRenderer:
@@ -91944,8 +91944,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1748032707
 MeshRenderer:
@@ -92152,8 +92152,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1750694572
 MeshRenderer:
@@ -92362,8 +92362,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1753986974
 MeshRenderer:
@@ -92457,8 +92457,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1754021811
 MeshRenderer:
@@ -92779,8 +92779,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1755343582
 MeshRenderer:
@@ -93105,8 +93105,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1759713850
 MeshRenderer:
@@ -93200,8 +93200,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1759734962
 MeshRenderer:
@@ -93524,8 +93524,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1762266948
 MeshRenderer:
@@ -93619,8 +93619,8 @@ GameObject:
   m_Name: DoorWall (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1762422868
 Transform:
@@ -93714,8 +93714,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1763008349
 MeshRenderer:
@@ -93809,8 +93809,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1763440070
 MeshRenderer:
@@ -93904,8 +93904,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1764587918
 MeshRenderer:
@@ -93999,8 +93999,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1765300649
 MeshRenderer:
@@ -94322,8 +94322,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1782673861
 MeshRenderer:
@@ -94531,8 +94531,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1783220271
 MeshRenderer:
@@ -94626,8 +94626,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1785300884
 MeshRenderer:
@@ -94721,8 +94721,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1787315977
 MeshRenderer:
@@ -94816,8 +94816,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1788533295
 MeshRenderer:
@@ -95026,8 +95026,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1789322054
 MeshRenderer:
@@ -95121,8 +95121,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1800449697
 MeshRenderer:
@@ -95216,8 +95216,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1807510308
 MeshRenderer:
@@ -95426,8 +95426,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1818646025
 MeshRenderer:
@@ -95521,8 +95521,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1823388439
 MeshRenderer:
@@ -95616,8 +95616,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1823665353
 MeshRenderer:
@@ -95711,8 +95711,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1824104196
 MeshRenderer:
@@ -95921,8 +95921,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1825452678
 MeshRenderer:
@@ -96016,8 +96016,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1825758561
 MeshRenderer:
@@ -96684,8 +96684,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1835690832
 MeshRenderer:
@@ -96779,8 +96779,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1836586712
 MeshRenderer:
@@ -96874,8 +96874,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1837695246
 MeshRenderer:
@@ -96969,8 +96969,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1838309362
 MeshRenderer:
@@ -97294,8 +97294,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1842477713
 MeshRenderer:
@@ -97504,8 +97504,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1844718422
 MeshRenderer:
@@ -97599,8 +97599,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1847713389
 MeshRenderer:
@@ -97694,8 +97694,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1852319940
 MeshRenderer:
@@ -97789,8 +97789,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1855272313
 MeshRenderer:
@@ -97884,8 +97884,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1855938390
 MeshRenderer:
@@ -98208,8 +98208,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1856930635
 MeshRenderer:
@@ -98417,8 +98417,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1862991995
 MeshRenderer:
@@ -98512,8 +98512,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1863604383
 MeshRenderer:
@@ -98607,8 +98607,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1864399400
 MeshRenderer:
@@ -98702,8 +98702,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1865583352
 MeshRenderer:
@@ -98797,8 +98797,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1865609744
 MeshRenderer:
@@ -98892,8 +98892,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1870548545
 MeshRenderer:
@@ -98987,8 +98987,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1871253956
 MeshRenderer:
@@ -99082,8 +99082,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1872554377
 MeshRenderer:
@@ -99290,8 +99290,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1872976809
 MeshRenderer:
@@ -99385,8 +99385,8 @@ GameObject:
   m_Name: DoorWall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1873868435
 Transform:
@@ -99480,8 +99480,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1875075866
 MeshRenderer:
@@ -99575,8 +99575,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1876645360
 MeshRenderer:
@@ -99670,8 +99670,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1878018596
 MeshRenderer:
@@ -99765,8 +99765,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1879921596
 MeshRenderer:
@@ -99973,8 +99973,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1882608616
 MeshRenderer:
@@ -100298,8 +100298,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1884434342
 MeshRenderer:
@@ -100393,8 +100393,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1884566557
 MeshRenderer:
@@ -100716,8 +100716,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1890634926
 MeshRenderer:
@@ -100811,8 +100811,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1891577876
 MeshRenderer:
@@ -100906,8 +100906,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1895846716
 MeshRenderer:
@@ -101001,8 +101001,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1901022210
 MeshRenderer:
@@ -101096,8 +101096,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1902048604
 MeshRenderer:
@@ -101191,8 +101191,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1905826720
 MeshRenderer:
@@ -101286,8 +101286,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1917240749
 MeshRenderer:
@@ -101496,8 +101496,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1917748212
 MeshRenderer:
@@ -101852,8 +101852,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1921729876
 MeshRenderer:
@@ -101947,8 +101947,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1924887562
 MeshRenderer:
@@ -102042,8 +102042,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1925678925
 MeshRenderer:
@@ -102253,8 +102253,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1929390337
 MeshRenderer:
@@ -102348,8 +102348,8 @@ GameObject:
   m_Name: DoorWall (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1935385923
 Transform:
@@ -102443,8 +102443,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1940017130
 MeshRenderer:
@@ -102538,8 +102538,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1944900255
 MeshRenderer:
@@ -102633,8 +102633,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1946213731
 MeshRenderer:
@@ -102843,8 +102843,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1948782128
 MeshRenderer:
@@ -103397,8 +103397,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1962373170
 MeshRenderer:
@@ -103605,8 +103605,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1964666078
 MeshRenderer:
@@ -104043,8 +104043,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1970636383
 MeshRenderer:
@@ -104138,8 +104138,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1971960615
 MeshRenderer:
@@ -104233,8 +104233,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1977018752
 MeshRenderer:
@@ -104558,8 +104558,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1987825828
 MeshRenderer:
@@ -104653,8 +104653,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1988187332
 MeshRenderer:
@@ -104748,8 +104748,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1988743095
 MeshRenderer:
@@ -105300,8 +105300,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &1996411517
 MeshRenderer:
@@ -105508,8 +105508,8 @@ GameObject:
   m_Name: DoorWall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1999826926
 Transform:
@@ -105718,8 +105718,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2007140570
 MeshRenderer:
@@ -105813,8 +105813,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2008216006
 MeshRenderer:
@@ -105908,8 +105908,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2008666231
 MeshRenderer:
@@ -106233,8 +106233,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2011437684
 MeshRenderer:
@@ -106328,8 +106328,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2012908633
 MeshRenderer:
@@ -106423,8 +106423,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2014194306
 MeshRenderer:
@@ -106518,8 +106518,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2014829538
 MeshRenderer:
@@ -106613,8 +106613,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2015855206
 MeshRenderer:
@@ -106708,8 +106708,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2016896220
 MeshRenderer:
@@ -106919,8 +106919,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2018718903
 MeshRenderer:
@@ -107014,8 +107014,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2021971442
 MeshRenderer:
@@ -107223,8 +107223,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2035091510
 MeshRenderer:
@@ -107433,8 +107433,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2041734815
 MeshRenderer:
@@ -107528,8 +107528,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2043024381
 MeshRenderer:
@@ -107623,8 +107623,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2044209236
 MeshRenderer:
@@ -107718,8 +107718,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2049316094
 MeshRenderer:
@@ -107813,8 +107813,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2051701243
 MeshRenderer:
@@ -107908,8 +107908,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2054637676
 MeshRenderer:
@@ -108348,8 +108348,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2067726752
 MeshRenderer:
@@ -108558,8 +108558,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2071269086
 MeshRenderer:
@@ -108653,8 +108653,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2073862211
 MeshRenderer:
@@ -108748,8 +108748,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2073971647
 MeshRenderer:
@@ -108958,8 +108958,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2078065223
 MeshRenderer:
@@ -109153,8 +109153,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2081211290
 MeshRenderer:
@@ -109702,8 +109702,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2086363098
 MeshRenderer:
@@ -109911,8 +109911,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2094864058
 MeshRenderer:
@@ -110006,8 +110006,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2097295052
 MeshRenderer:
@@ -110101,8 +110101,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2101472839
 MeshRenderer:
@@ -110196,8 +110196,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2104562837
 MeshRenderer:
@@ -110405,8 +110405,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2106480381
 MeshRenderer:
@@ -110615,8 +110615,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2106902248
 MeshRenderer:
@@ -110710,8 +110710,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2107509608
 MeshRenderer:
@@ -110805,8 +110805,8 @@ GameObject:
   m_Name: Corner(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2107646915
 MeshRenderer:
@@ -110900,8 +110900,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2113374946
 MeshRenderer:
@@ -111110,8 +111110,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2117849906
 MeshRenderer:
@@ -111205,8 +111205,8 @@ GameObject:
   m_Name: DoorWall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2120030484
 Transform:
@@ -111300,8 +111300,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2130489308
 MeshRenderer:
@@ -111510,8 +111510,8 @@ GameObject:
   m_Name: Wall(Clone)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2134504015
 MeshRenderer:

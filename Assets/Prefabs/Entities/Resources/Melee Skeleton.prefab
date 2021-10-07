@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e994fd930eabb14cb5d6640f2fd660b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiModule: {fileID: 11400000, guid: c416f68e116c0284ab9fef0bf635b0ca, type: 2}
+  aiModule: {fileID: 11400000, guid: 4ebcd45dcd5a7fb41b628eeadb73248c, type: 2}
   targetType: Player
   currentState: {fileID: 0}
   releventTransitions: []
