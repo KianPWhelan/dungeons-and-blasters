@@ -71,5 +71,7 @@ public class WanderState : State
             Debug.Log("Enemy is seeking tile" + targetTile.GetInstanceID());
             agent.SetDestination(targetTile.transform.position);
         }
+
+        SetIsAgentMovingAnimation(self, agent);
     }
 }

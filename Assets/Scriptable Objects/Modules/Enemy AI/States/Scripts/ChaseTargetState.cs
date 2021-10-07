@@ -27,5 +27,6 @@ public class ChaseTargetState : State
     public override void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
         agent.SetDestination(target.transform.position);
+        SetIsAgentMovingAnimation(self, agent);
     }
 }

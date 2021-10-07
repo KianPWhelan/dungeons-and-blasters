@@ -17,4 +17,27 @@ public abstract class State : ScriptableObject
     public abstract void OnEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
 
     public abstract void OnExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
+
+    public void SetIsAgentMovingAnimation(GameObject self, NavMeshAgent agent)
+    {
+        if (agent.remainingDistance > 1)
+        {
+            var animator = self.GetComponentInChildren<Animator>();
+
+            if (animator != null)
+            {
+                animator.SetBool("isMoving", true);
+            }
+        }
+
+        else
+        {
+            var animator = self.GetComponentInChildren<Animator>();
+
+            if (animator != null)
+            {
+                animator.SetBool("isMoving", false);
+            }
+        }
+    }
 }
