@@ -13,6 +13,11 @@ public class Weapon : ScriptableObject
     [SerializeField]
     private List<float> cooldowns = new List<float>();
 
+    [Tooltip("Animation to play when weapon is used")]
+    [SerializeField]
+    private Animation animation;
+
+
     private Dictionary<Attack, Container> map;
 
     private class Container
@@ -34,6 +39,7 @@ public class Weapon : ScriptableObject
     public void Use(GameObject self, string targetTag = "none")
     {
         Debug.Log("Using weapon " + this.name);
+        animation.Play();
         foreach(Attack attack in attacks)
         {
             if(!map[attack].lastUseTime.ContainsKey(self))

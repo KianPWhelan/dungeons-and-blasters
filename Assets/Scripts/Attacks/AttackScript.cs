@@ -170,7 +170,10 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
     public void OnDestroy()
     {
-        var fx = Instantiate(visualEndEffect, transform.position, transform.rotation);
-        Destroy(fx, 5f);
+        if(visualEndEffect)
+        {
+            var fx = Instantiate(visualEndEffect, transform.position, transform.rotation);
+            Destroy(fx, 5f);
+        }
     }
 }
