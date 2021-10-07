@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7880976810065528573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -114,8 +114,8 @@ MonoBehaviour:
   subAttacks: []
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
-  attackDuration: 4
-  localStartingPosition: {x: 0, y: 0, z: 0}
+  attackDuration: 1
+  localStartingPosition: {x: 0, y: 1, z: 2}
   destroyOnHit: 0
   canHitSameTargetMoreThanOnce: 0
   validTag: 

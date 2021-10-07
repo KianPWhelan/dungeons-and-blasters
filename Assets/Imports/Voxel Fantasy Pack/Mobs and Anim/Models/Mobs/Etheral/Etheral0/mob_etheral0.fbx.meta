@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: 6992296a295e36148bdff1d44be00b89
+timeCreated: 1459587836
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: mtx_body1
+    100004: mtx_body2
+    100006: mtx_body3
+    100008: mtx_body4
+    100010: mtx_body5
+    100012: mtx_body6
+    100014: mtx_head
+    400000: //RootNode
+    400002: mtx_body1
+    400004: mtx_body2
+    400006: mtx_body3
+    400008: mtx_body4
+    400010: mtx_body5
+    400012: mtx_body6
+    400014: mtx_head
+    2300000: mtx_body1
+    2300002: mtx_body2
+    2300004: mtx_body3
+    2300006: mtx_body4
+    2300008: mtx_body5
+    2300010: mtx_body6
+    2300012: mtx_head
+    3300000: mtx_body1
+    3300002: mtx_body2
+    3300004: mtx_body3
+    3300006: mtx_body4
+    3300008: mtx_body5
+    3300010: mtx_body6
+    3300012: mtx_head
+    4300000: mtx_body4
+    4300002: mtx_body3
+    4300004: mtx_body5
+    4300006: mtx_body1
+    4300008: mtx_head
+    4300010: mtx_body2
+    4300012: mtx_body6
+    7400000: dying_etheral0
+    7400002: move_etheral0
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: dying_etheral0
+      takeName: Scene
+      firstFrame: 21
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body1
+        weight: 1
+      - path: mtx_body2
+        weight: 1
+      - path: mtx_body3
+        weight: 1
+      - path: mtx_body4
+        weight: 1
+      - path: mtx_body5
+        weight: 1
+      - path: mtx_body6
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: move_etheral0
+      takeName: Scene
+      firstFrame: 1
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body1
+        weight: 1
+      - path: mtx_body2
+        weight: 1
+      - path: mtx_body3
+        weight: 1
+      - path: mtx_body4
+        weight: 1
+      - path: mtx_body5
+        weight: 1
+      - path: mtx_body6
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 3
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

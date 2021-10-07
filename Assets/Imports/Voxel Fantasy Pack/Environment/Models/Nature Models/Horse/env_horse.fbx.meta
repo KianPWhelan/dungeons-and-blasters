@@ -1,0 +1,907 @@
+fileFormatVersion: 2
+guid: 4e55997225f020047950266ea2d5735e
+timeCreated: 1468064197
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: chest
+    100002: //RootNode
+    100004: foot_L
+    100006: foot_R
+    100008: forearm_L
+    100010: forearm_R
+    100012: hand_L
+    100014: hand_R
+    100016: head
+    100018: hips
+    100020: hips_001
+    100022: hips_002
+    100024: hips_003
+    100026: mtx_body
+    100028: mtx_cannonFrontL
+    100030: mtx_cannonFrontR
+    100032: mtx_cannonHindL
+    100034: mtx_cannonHindR
+    100036: mtx_forearmL
+    100038: mtx_forearmR
+    100040: mtx_gaskinL
+    100042: mtx_gaskinR
+    100044: mtx_head
+    100046: mtx_neck
+    100048: mtx_tail
+    100050: neck
+    100052: rigHorse
+    100054: shin_L
+    100056: shin_R
+    100058: shoulder_L
+    100060: shoulder_R
+    100062: spine
+    100064: thigh_L
+    100066: thigh_R
+    100068: toe_L
+    100070: toe_R
+    100072: upper_arm_L
+    100074: upper_arm_R
+    400000: chest
+    400002: //RootNode
+    400004: foot_L
+    400006: foot_R
+    400008: forearm_L
+    400010: forearm_R
+    400012: hand_L
+    400014: hand_R
+    400016: head
+    400018: hips
+    400020: hips_001
+    400022: hips_002
+    400024: hips_003
+    400026: mtx_body
+    400028: mtx_cannonFrontL
+    400030: mtx_cannonFrontR
+    400032: mtx_cannonHindL
+    400034: mtx_cannonHindR
+    400036: mtx_forearmL
+    400038: mtx_forearmR
+    400040: mtx_gaskinL
+    400042: mtx_gaskinR
+    400044: mtx_head
+    400046: mtx_neck
+    400048: mtx_tail
+    400050: neck
+    400052: rigHorse
+    400054: shin_L
+    400056: shin_R
+    400058: shoulder_L
+    400060: shoulder_R
+    400062: spine
+    400064: thigh_L
+    400066: thigh_R
+    400068: toe_L
+    400070: toe_R
+    400072: upper_arm_L
+    400074: upper_arm_R
+    4300000: mtx_cannonHindL
+    4300002: mtx_gaskinL
+    4300004: mtx_cannonHindR
+    4300006: mtx_gaskinR
+    4300008: mtx_cannonFrontR
+    4300010: mtx_forearmR
+    4300012: mtx_cannonFrontL
+    4300014: mtx_forearmL
+    4300016: mtx_tail
+    4300018: mtx_head
+    4300020: mtx_neck
+    4300022: mtx_body
+    7400000: idle1_horse
+    7400002: idle2_horse
+    7400004: idle3_horse
+    7400006: idle4_horse
+    7400008: idle5_horse
+    7400010: idle6_horse
+    7400012: idle7_horse
+    9500000: //RootNode
+    13700000: mtx_body
+    13700002: mtx_cannonFrontL
+    13700004: mtx_cannonFrontR
+    13700006: mtx_cannonHindL
+    13700008: mtx_cannonHindR
+    13700010: mtx_forearmL
+    13700012: mtx_forearmR
+    13700014: mtx_gaskinL
+    13700016: mtx_gaskinR
+    13700018: mtx_head
+    13700020: mtx_neck
+    13700022: mtx_tail
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle1_horse
+      takeName: rigModelAction_001
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body
+        weight: 1
+      - path: mtx_cannonFrontL
+        weight: 1
+      - path: mtx_cannonFrontR
+        weight: 1
+      - path: mtx_cannonHindL
+        weight: 1
+      - path: mtx_cannonHindR
+        weight: 1
+      - path: mtx_forearmL
+        weight: 1
+      - path: mtx_forearmR
+        weight: 1
+      - path: mtx_gaskinL
+        weight: 1
+      - path: mtx_gaskinR
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      - path: mtx_neck
+        weight: 1
+      - path: mtx_tail
+        weight: 1
+      - path: rigHorse
+        weight: 1
+      - path: rigHorse/hips
+        weight: 1
+      - path: rigHorse/hips/hips_001
+        weight: 1
+      - path: rigHorse/hips/hips_002
+        weight: 1
+      - path: rigHorse/hips/hips_002/hips_003
+        weight: 1
+      - path: rigHorse/hips/spine
+        weight: 1
+      - path: rigHorse/hips/spine/chest
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck/head
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: rigHorse/hips/thigh_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: rigHorse/hips/thigh_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle2_horse
+      takeName: rigModelAction_001
+      firstFrame: 40
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body
+        weight: 1
+      - path: mtx_cannonFrontL
+        weight: 1
+      - path: mtx_cannonFrontR
+        weight: 1
+      - path: mtx_cannonHindL
+        weight: 1
+      - path: mtx_cannonHindR
+        weight: 1
+      - path: mtx_forearmL
+        weight: 1
+      - path: mtx_forearmR
+        weight: 1
+      - path: mtx_gaskinL
+        weight: 1
+      - path: mtx_gaskinR
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      - path: mtx_neck
+        weight: 1
+      - path: mtx_tail
+        weight: 1
+      - path: rigHorse
+        weight: 1
+      - path: rigHorse/hips
+        weight: 1
+      - path: rigHorse/hips/hips_001
+        weight: 1
+      - path: rigHorse/hips/hips_002
+        weight: 1
+      - path: rigHorse/hips/hips_002/hips_003
+        weight: 1
+      - path: rigHorse/hips/spine
+        weight: 1
+      - path: rigHorse/hips/spine/chest
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck/head
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: rigHorse/hips/thigh_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: rigHorse/hips/thigh_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle3_horse
+      takeName: rigModelAction_001
+      firstFrame: 60
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body
+        weight: 1
+      - path: mtx_cannonFrontL
+        weight: 1
+      - path: mtx_cannonFrontR
+        weight: 1
+      - path: mtx_cannonHindL
+        weight: 1
+      - path: mtx_cannonHindR
+        weight: 1
+      - path: mtx_forearmL
+        weight: 1
+      - path: mtx_forearmR
+        weight: 1
+      - path: mtx_gaskinL
+        weight: 1
+      - path: mtx_gaskinR
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      - path: mtx_neck
+        weight: 1
+      - path: mtx_tail
+        weight: 1
+      - path: rigHorse
+        weight: 1
+      - path: rigHorse/hips
+        weight: 1
+      - path: rigHorse/hips/hips_001
+        weight: 1
+      - path: rigHorse/hips/hips_002
+        weight: 1
+      - path: rigHorse/hips/hips_002/hips_003
+        weight: 1
+      - path: rigHorse/hips/spine
+        weight: 1
+      - path: rigHorse/hips/spine/chest
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck/head
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: rigHorse/hips/thigh_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: rigHorse/hips/thigh_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle4_horse
+      takeName: rigModelAction_001
+      firstFrame: 120
+      lastFrame: 179
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body
+        weight: 1
+      - path: mtx_cannonFrontL
+        weight: 1
+      - path: mtx_cannonFrontR
+        weight: 1
+      - path: mtx_cannonHindL
+        weight: 1
+      - path: mtx_cannonHindR
+        weight: 1
+      - path: mtx_forearmL
+        weight: 1
+      - path: mtx_forearmR
+        weight: 1
+      - path: mtx_gaskinL
+        weight: 1
+      - path: mtx_gaskinR
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      - path: mtx_neck
+        weight: 1
+      - path: mtx_tail
+        weight: 1
+      - path: rigHorse
+        weight: 1
+      - path: rigHorse/hips
+        weight: 1
+      - path: rigHorse/hips/hips_001
+        weight: 1
+      - path: rigHorse/hips/hips_002
+        weight: 1
+      - path: rigHorse/hips/hips_002/hips_003
+        weight: 1
+      - path: rigHorse/hips/spine
+        weight: 1
+      - path: rigHorse/hips/spine/chest
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck/head
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: rigHorse/hips/thigh_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: rigHorse/hips/thigh_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle5_horse
+      takeName: rigModelAction_001
+      firstFrame: 60
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body
+        weight: 1
+      - path: mtx_cannonFrontL
+        weight: 1
+      - path: mtx_cannonFrontR
+        weight: 1
+      - path: mtx_cannonHindL
+        weight: 1
+      - path: mtx_cannonHindR
+        weight: 1
+      - path: mtx_forearmL
+        weight: 1
+      - path: mtx_forearmR
+        weight: 1
+      - path: mtx_gaskinL
+        weight: 1
+      - path: mtx_gaskinR
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      - path: mtx_neck
+        weight: 1
+      - path: mtx_tail
+        weight: 1
+      - path: rigHorse
+        weight: 1
+      - path: rigHorse/hips
+        weight: 1
+      - path: rigHorse/hips/hips_001
+        weight: 1
+      - path: rigHorse/hips/hips_002
+        weight: 1
+      - path: rigHorse/hips/hips_002/hips_003
+        weight: 1
+      - path: rigHorse/hips/spine
+        weight: 1
+      - path: rigHorse/hips/spine/chest
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck/head
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: rigHorse/hips/thigh_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: rigHorse/hips/thigh_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle6_horse
+      takeName: rigModelAction_001
+      firstFrame: 97
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body
+        weight: 1
+      - path: mtx_cannonFrontL
+        weight: 1
+      - path: mtx_cannonFrontR
+        weight: 1
+      - path: mtx_cannonHindL
+        weight: 1
+      - path: mtx_cannonHindR
+        weight: 1
+      - path: mtx_forearmL
+        weight: 1
+      - path: mtx_forearmR
+        weight: 1
+      - path: mtx_gaskinL
+        weight: 1
+      - path: mtx_gaskinR
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      - path: mtx_neck
+        weight: 1
+      - path: mtx_tail
+        weight: 1
+      - path: rigHorse
+        weight: 1
+      - path: rigHorse/hips
+        weight: 1
+      - path: rigHorse/hips/hips_001
+        weight: 1
+      - path: rigHorse/hips/hips_002
+        weight: 1
+      - path: rigHorse/hips/hips_002/hips_003
+        weight: 1
+      - path: rigHorse/hips/spine
+        weight: 1
+      - path: rigHorse/hips/spine/chest
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck/head
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: rigHorse/hips/thigh_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: rigHorse/hips/thigh_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle7_horse
+      takeName: rigModelAction_001
+      firstFrame: 74
+      lastFrame: 97
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body
+        weight: 1
+      - path: mtx_cannonFrontL
+        weight: 1
+      - path: mtx_cannonFrontR
+        weight: 1
+      - path: mtx_cannonHindL
+        weight: 1
+      - path: mtx_cannonHindR
+        weight: 1
+      - path: mtx_forearmL
+        weight: 1
+      - path: mtx_forearmR
+        weight: 1
+      - path: mtx_gaskinL
+        weight: 1
+      - path: mtx_gaskinR
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      - path: mtx_neck
+        weight: 1
+      - path: mtx_tail
+        weight: 1
+      - path: rigHorse
+        weight: 1
+      - path: rigHorse/hips
+        weight: 1
+      - path: rigHorse/hips/hips_001
+        weight: 1
+      - path: rigHorse/hips/hips_002
+        weight: 1
+      - path: rigHorse/hips/hips_002/hips_003
+        weight: 1
+      - path: rigHorse/hips/spine
+        weight: 1
+      - path: rigHorse/hips/spine/chest
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck
+        weight: 1
+      - path: rigHorse/hips/spine/chest/neck/head
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: rigHorse/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: rigHorse/hips/thigh_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: rigHorse/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: rigHorse/hips/thigh_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: rigHorse/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

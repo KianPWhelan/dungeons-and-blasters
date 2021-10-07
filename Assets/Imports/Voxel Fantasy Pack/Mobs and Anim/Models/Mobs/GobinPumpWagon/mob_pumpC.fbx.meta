@@ -1,0 +1,1894 @@
+fileFormatVersion: 2
+guid: 11e955503878fdf4da476710d15617a4
+timeCreated: 1458961066
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ankle_L
+    100002: ankle_L_0
+    100004: ankle_L_1
+    100006: ankle_L_2
+    100008: ankle_L_3
+    100010: ankle_L_4
+    100012: ankle_L_5
+    100014: ankle_R
+    100016: ankle_R_0
+    100018: ankle_R_1
+    100020: ankle_R_2
+    100022: ankle_R_3
+    100024: ankle_R_4
+    100026: ankle_R_5
+    100028: chest
+    100030: chest_0
+    100032: chest_1
+    100034: chest_2
+    100036: chest_3
+    100038: chest_4
+    100040: chest_5
+    100042: forearm_L
+    100044: forearm_L_0
+    100046: forearm_L_1
+    100048: forearm_L_2
+    100050: forearm_L_3
+    100052: forearm_L_4
+    100054: forearm_L_5
+    100056: forearm_R
+    100058: forearm_R_0
+    100060: forearm_R_1
+    100062: forearm_R_2
+    100064: forearm_R_3
+    100066: forearm_R_4
+    100068: forearm_R_5
+    100070: goblinRig
+    100072: goblinRig_0
+    100074: goblinRig_1
+    100076: goblinRig_2
+    100078: goblinRig_3
+    100080: goblinRig_4
+    100082: goblinRig_5
+    100084: hand_L
+    100086: hand_L_0
+    100088: hand_L_1
+    100090: hand_L_2
+    100092: hand_L_3
+    100094: hand_L_4
+    100096: hand_L_5
+    100098: hand_R
+    100100: hand_R_0
+    100102: hand_R_1
+    100104: hand_R_2
+    100106: hand_R_3
+    100108: hand_R_4
+    100110: hand_R_5
+    100112: head
+    100114: head_0
+    100116: head_1
+    100118: head_2
+    100120: head_3
+    100122: head_4
+    100124: head_5
+    100126: //RootNode
+    100128: mtx_body
+    100130: mtx_body_001
+    100132: mtx_body_002
+    100134: mtx_body_003
+    100136: mtx_body_004
+    100138: mtx_body_005
+    100140: mtx_body_006
+    100142: mtx_head
+    100144: mtx_head_001
+    100146: mtx_head_002
+    100148: mtx_head_003
+    100150: mtx_head_004
+    100152: mtx_head_005
+    100154: mtx_head_006
+    100156: mtx_leftFoot
+    100158: mtx_leftFoot_001
+    100160: mtx_leftFoot_002
+    100162: mtx_leftFoot_003
+    100164: mtx_leftFoot_004
+    100166: mtx_leftFoot_005
+    100168: mtx_leftFoot_006
+    100170: mtx_leftHand
+    100172: mtx_leftHand_001
+    100174: mtx_leftHand_002
+    100176: mtx_leftHand_003
+    100178: mtx_leftHand_004
+    100180: mtx_leftHand_005
+    100182: mtx_leftHand_006
+    100184: mtx_p1backWheel
+    100186: mtx_p1leftWheel
+    100188: mtx_p1rightWheel
+    100190: mtx_p2rudder
+    100192: mtx_pCcrew1Shield
+    100194: mtx_pCcrew1spear
+    100196: mtx_pCcrew2Shield
+    100198: mtx_pCcrew2spear
+    100200: mtx_pCcrew3Shield
+    100202: mtx_pCcrew3spear
+    100204: mtx_pCcrew4spear
+    100206: mtx_pCcrew5spear
+    100208: mtx_pCcrew6spear
+    100210: mtx_pCcrew6spear_1
+    100212: mtx_pCcrew7spear
+    100214: mtx_pCfrontWheel
+    100216: mtx_pumpC
+    100218: mtx_rightFoot
+    100220: mtx_rightFoot_001
+    100222: mtx_rightFoot_002
+    100224: mtx_rightFoot_003
+    100226: mtx_rightFoot_004
+    100228: mtx_rightFoot_005
+    100230: mtx_rightFoot_006
+    100232: mtx_rightHand_000
+    100234: mtx_rightHand_001
+    100236: mtx_rightHand_002
+    100238: mtx_rightHand_003
+    100240: mtx_rightHand_004
+    100242: mtx_rightHand_005
+    100244: mtx_rightHand_006
+    100246: neck
+    100248: neck_0
+    100250: neck_1
+    100252: neck_2
+    100254: neck_3
+    100256: neck_4
+    100258: neck_5
+    100260: Rig
+    100262: Rig_001
+    100264: Rig_002
+    100266: Rig_003
+    100268: Rig_004
+    100270: Rig_005
+    100272: Rig_006
+    100274: shin_L
+    100276: shin_L_0
+    100278: shin_L_1
+    100280: shin_L_2
+    100282: shin_L_3
+    100284: shin_L_4
+    100286: shin_L_5
+    100288: shin_R
+    100290: shin_R_0
+    100292: shin_R_1
+    100294: shin_R_2
+    100296: shin_R_3
+    100298: shin_R_4
+    100300: shin_R_5
+    100302: shoulder_L
+    100304: shoulder_L_0
+    100306: shoulder_L_1
+    100308: shoulder_L_2
+    100310: shoulder_L_3
+    100312: shoulder_L_4
+    100314: shoulder_L_5
+    100316: shoulder_R
+    100318: shoulder_R_0
+    100320: shoulder_R_1
+    100322: shoulder_R_2
+    100324: shoulder_R_3
+    100326: shoulder_R_4
+    100328: shoulder_R_5
+    100330: spine
+    100332: spine_0
+    100334: spine_1
+    100336: spine_2
+    100338: spine_3
+    100340: spine_4
+    100342: spine_5
+    100344: thigh_L
+    100346: thigh_L_0
+    100348: thigh_L_1
+    100350: thigh_L_2
+    100352: thigh_L_3
+    100354: thigh_L_4
+    100356: thigh_L_5
+    100358: thigh_R
+    100360: thigh_R_0
+    100362: thigh_R_1
+    100364: thigh_R_2
+    100366: thigh_R_3
+    100368: thigh_R_4
+    100370: thigh_R_5
+    100372: upper_arm_L
+    100374: upper_arm_L_0
+    100376: upper_arm_L_1
+    100378: upper_arm_L_2
+    100380: upper_arm_L_3
+    100382: upper_arm_L_4
+    100384: upper_arm_L_5
+    100386: upper_arm_R
+    100388: upper_arm_R_0
+    100390: upper_arm_R_1
+    100392: upper_arm_R_2
+    100394: upper_arm_R_3
+    100396: upper_arm_R_4
+    100398: upper_arm_R_5
+    400000: ankle_L
+    400002: ankle_L_0
+    400004: ankle_L_1
+    400006: ankle_L_2
+    400008: ankle_L_3
+    400010: ankle_L_4
+    400012: ankle_L_5
+    400014: ankle_R
+    400016: ankle_R_0
+    400018: ankle_R_1
+    400020: ankle_R_2
+    400022: ankle_R_3
+    400024: ankle_R_4
+    400026: ankle_R_5
+    400028: chest
+    400030: chest_0
+    400032: chest_1
+    400034: chest_2
+    400036: chest_3
+    400038: chest_4
+    400040: chest_5
+    400042: forearm_L
+    400044: forearm_L_0
+    400046: forearm_L_1
+    400048: forearm_L_2
+    400050: forearm_L_3
+    400052: forearm_L_4
+    400054: forearm_L_5
+    400056: forearm_R
+    400058: forearm_R_0
+    400060: forearm_R_1
+    400062: forearm_R_2
+    400064: forearm_R_3
+    400066: forearm_R_4
+    400068: forearm_R_5
+    400070: goblinRig
+    400072: goblinRig_0
+    400074: goblinRig_1
+    400076: goblinRig_2
+    400078: goblinRig_3
+    400080: goblinRig_4
+    400082: goblinRig_5
+    400084: hand_L
+    400086: hand_L_0
+    400088: hand_L_1
+    400090: hand_L_2
+    400092: hand_L_3
+    400094: hand_L_4
+    400096: hand_L_5
+    400098: hand_R
+    400100: hand_R_0
+    400102: hand_R_1
+    400104: hand_R_2
+    400106: hand_R_3
+    400108: hand_R_4
+    400110: hand_R_5
+    400112: head
+    400114: head_0
+    400116: head_1
+    400118: head_2
+    400120: head_3
+    400122: head_4
+    400124: head_5
+    400126: //RootNode
+    400128: mtx_body
+    400130: mtx_body_001
+    400132: mtx_body_002
+    400134: mtx_body_003
+    400136: mtx_body_004
+    400138: mtx_body_005
+    400140: mtx_body_006
+    400142: mtx_head
+    400144: mtx_head_001
+    400146: mtx_head_002
+    400148: mtx_head_003
+    400150: mtx_head_004
+    400152: mtx_head_005
+    400154: mtx_head_006
+    400156: mtx_leftFoot
+    400158: mtx_leftFoot_001
+    400160: mtx_leftFoot_002
+    400162: mtx_leftFoot_003
+    400164: mtx_leftFoot_004
+    400166: mtx_leftFoot_005
+    400168: mtx_leftFoot_006
+    400170: mtx_leftHand
+    400172: mtx_leftHand_001
+    400174: mtx_leftHand_002
+    400176: mtx_leftHand_003
+    400178: mtx_leftHand_004
+    400180: mtx_leftHand_005
+    400182: mtx_leftHand_006
+    400184: mtx_p1backWheel
+    400186: mtx_p1leftWheel
+    400188: mtx_p1rightWheel
+    400190: mtx_p2rudder
+    400192: mtx_pCcrew1Shield
+    400194: mtx_pCcrew1spear
+    400196: mtx_pCcrew2Shield
+    400198: mtx_pCcrew2spear
+    400200: mtx_pCcrew3Shield
+    400202: mtx_pCcrew3spear
+    400204: mtx_pCcrew4spear
+    400206: mtx_pCcrew5spear
+    400208: mtx_pCcrew6spear
+    400210: mtx_pCcrew6spear_1
+    400212: mtx_pCcrew7spear
+    400214: mtx_pCfrontWheel
+    400216: mtx_pumpC
+    400218: mtx_rightFoot
+    400220: mtx_rightFoot_001
+    400222: mtx_rightFoot_002
+    400224: mtx_rightFoot_003
+    400226: mtx_rightFoot_004
+    400228: mtx_rightFoot_005
+    400230: mtx_rightFoot_006
+    400232: mtx_rightHand_000
+    400234: mtx_rightHand_001
+    400236: mtx_rightHand_002
+    400238: mtx_rightHand_003
+    400240: mtx_rightHand_004
+    400242: mtx_rightHand_005
+    400244: mtx_rightHand_006
+    400246: neck
+    400248: neck_0
+    400250: neck_1
+    400252: neck_2
+    400254: neck_3
+    400256: neck_4
+    400258: neck_5
+    400260: Rig
+    400262: Rig_001
+    400264: Rig_002
+    400266: Rig_003
+    400268: Rig_004
+    400270: Rig_005
+    400272: Rig_006
+    400274: shin_L
+    400276: shin_L_0
+    400278: shin_L_1
+    400280: shin_L_2
+    400282: shin_L_3
+    400284: shin_L_4
+    400286: shin_L_5
+    400288: shin_R
+    400290: shin_R_0
+    400292: shin_R_1
+    400294: shin_R_2
+    400296: shin_R_3
+    400298: shin_R_4
+    400300: shin_R_5
+    400302: shoulder_L
+    400304: shoulder_L_0
+    400306: shoulder_L_1
+    400308: shoulder_L_2
+    400310: shoulder_L_3
+    400312: shoulder_L_4
+    400314: shoulder_L_5
+    400316: shoulder_R
+    400318: shoulder_R_0
+    400320: shoulder_R_1
+    400322: shoulder_R_2
+    400324: shoulder_R_3
+    400326: shoulder_R_4
+    400328: shoulder_R_5
+    400330: spine
+    400332: spine_0
+    400334: spine_1
+    400336: spine_2
+    400338: spine_3
+    400340: spine_4
+    400342: spine_5
+    400344: thigh_L
+    400346: thigh_L_0
+    400348: thigh_L_1
+    400350: thigh_L_2
+    400352: thigh_L_3
+    400354: thigh_L_4
+    400356: thigh_L_5
+    400358: thigh_R
+    400360: thigh_R_0
+    400362: thigh_R_1
+    400364: thigh_R_2
+    400366: thigh_R_3
+    400368: thigh_R_4
+    400370: thigh_R_5
+    400372: upper_arm_L
+    400374: upper_arm_L_0
+    400376: upper_arm_L_1
+    400378: upper_arm_L_2
+    400380: upper_arm_L_3
+    400382: upper_arm_L_4
+    400384: upper_arm_L_5
+    400386: upper_arm_R
+    400388: upper_arm_R_0
+    400390: upper_arm_R_1
+    400392: upper_arm_R_2
+    400394: upper_arm_R_3
+    400396: upper_arm_R_4
+    400398: upper_arm_R_5
+    2300000: mtx_p1backWheel
+    2300002: mtx_p1leftWheel
+    2300004: mtx_p1rightWheel
+    2300006: mtx_p2rudder
+    2300008: mtx_pCcrew1Shield
+    2300010: mtx_pCcrew1spear
+    2300012: mtx_pCcrew2Shield
+    2300014: mtx_pCcrew2spear
+    2300016: mtx_pCcrew3Shield
+    2300018: mtx_pCcrew3spear
+    2300020: mtx_pCcrew4spear
+    2300022: mtx_pCcrew5spear
+    2300024: mtx_pCcrew6spear
+    2300026: mtx_pCcrew6spear_1
+    2300028: mtx_pCcrew7spear
+    2300030: mtx_pCfrontWheel
+    2300032: mtx_pumpC
+    3300000: mtx_p1backWheel
+    3300002: mtx_p1leftWheel
+    3300004: mtx_p1rightWheel
+    3300006: mtx_p2rudder
+    3300008: mtx_pCcrew1Shield
+    3300010: mtx_pCcrew1spear
+    3300012: mtx_pCcrew2Shield
+    3300014: mtx_pCcrew2spear
+    3300016: mtx_pCcrew3Shield
+    3300018: mtx_pCcrew3spear
+    3300020: mtx_pCcrew4spear
+    3300022: mtx_pCcrew5spear
+    3300024: mtx_pCcrew6spear
+    3300026: mtx_pCcrew6spear_1
+    3300028: mtx_pCcrew7spear
+    3300030: mtx_pCfrontWheel
+    3300032: mtx_pumpC
+    4300000: mtx_pCcrew7spear
+    4300002: mtx_pCcrew6spear
+    4300004: mtx_pCfrontWheel
+    4300006: mtx_pCcrew2spear
+    4300008: mtx_pCcrew1spear
+    4300010: mtx_pCcrew6spear_1
+    4300012: mtx_pumpC
+    4300014: mtx_pCcrew3spear
+    4300016: mtx_pCcrew3Shield
+    4300018: mtx_pCcrew5spear
+    4300020: mtx_pCcrew4spear
+    4300022: mtx_pCcrew1Shield
+    4300024: mtx_pCcrew2Shield
+    4300026: mtx_p1backWheel
+    4300028: mtx_p1leftWheel
+    4300030: mtx_p1rightWheel
+    4300032: mtx_p2rudder
+    4300034: mtx_body
+    4300036: mtx_head
+    4300038: mtx_leftFoot
+    4300040: mtx_leftHand
+    4300042: mtx_rightFoot
+    4300044: mtx_rightHand_002
+    4300046: mtx_body_005
+    4300048: mtx_head_005
+    4300050: mtx_leftFoot_005
+    4300052: mtx_leftHand_005
+    4300054: mtx_rightFoot_005
+    4300056: mtx_rightHand_005
+    4300058: mtx_body_001
+    4300060: mtx_head_001
+    4300062: mtx_leftFoot_001
+    4300064: mtx_leftHand_001
+    4300066: mtx_rightFoot_001
+    4300068: mtx_rightHand_000
+    4300070: mtx_body_002
+    4300072: mtx_head_002
+    4300074: mtx_leftFoot_002
+    4300076: mtx_leftHand_002
+    4300078: mtx_rightFoot_002
+    4300080: mtx_rightHand_001
+    4300082: mtx_body_003
+    4300084: mtx_head_003
+    4300086: mtx_leftFoot_003
+    4300088: mtx_leftHand_003
+    4300090: mtx_rightFoot_003
+    4300092: mtx_rightHand_003
+    4300094: mtx_body_004
+    4300096: mtx_head_004
+    4300098: mtx_leftFoot_004
+    4300100: mtx_leftHand_004
+    4300102: mtx_rightFoot_004
+    4300104: mtx_rightHand_004
+    4300106: mtx_body_006
+    4300108: mtx_head_006
+    4300110: mtx_leftFoot_006
+    4300112: mtx_leftHand_006
+    4300114: mtx_rightFoot_006
+    4300116: mtx_rightHand_006
+    7400000: move_pumpC
+    7400002: dying_pumpC
+    7400004: idle_goblin_pumpC
+    9500000: //RootNode
+    13700000: mtx_body
+    13700002: mtx_body_001
+    13700004: mtx_body_002
+    13700006: mtx_body_003
+    13700008: mtx_body_004
+    13700010: mtx_body_005
+    13700012: mtx_body_006
+    13700014: mtx_head
+    13700016: mtx_head_001
+    13700018: mtx_head_002
+    13700020: mtx_head_003
+    13700022: mtx_head_004
+    13700024: mtx_head_005
+    13700026: mtx_head_006
+    13700028: mtx_leftFoot
+    13700030: mtx_leftFoot_001
+    13700032: mtx_leftFoot_002
+    13700034: mtx_leftFoot_003
+    13700036: mtx_leftFoot_004
+    13700038: mtx_leftFoot_005
+    13700040: mtx_leftFoot_006
+    13700042: mtx_leftHand
+    13700044: mtx_leftHand_001
+    13700046: mtx_leftHand_002
+    13700048: mtx_leftHand_003
+    13700050: mtx_leftHand_004
+    13700052: mtx_leftHand_005
+    13700054: mtx_leftHand_006
+    13700056: mtx_rightFoot
+    13700058: mtx_rightFoot_001
+    13700060: mtx_rightFoot_002
+    13700062: mtx_rightFoot_003
+    13700064: mtx_rightFoot_004
+    13700066: mtx_rightFoot_005
+    13700068: mtx_rightFoot_006
+    13700070: mtx_rightHand_000
+    13700072: mtx_rightHand_001
+    13700074: mtx_rightHand_002
+    13700076: mtx_rightHand_003
+    13700078: mtx_rightHand_004
+    13700080: mtx_rightHand_005
+    13700082: mtx_rightHand_006
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: move_pumpC
+      takeName: Default Take
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body
+        weight: 1
+      - path: mtx_body_001
+        weight: 1
+      - path: mtx_body_002
+        weight: 1
+      - path: mtx_body_003
+        weight: 1
+      - path: mtx_body_004
+        weight: 1
+      - path: mtx_body_005
+        weight: 1
+      - path: mtx_body_006
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      - path: mtx_head_001
+        weight: 1
+      - path: mtx_head_002
+        weight: 1
+      - path: mtx_head_003
+        weight: 1
+      - path: mtx_head_004
+        weight: 1
+      - path: mtx_head_005
+        weight: 1
+      - path: mtx_head_006
+        weight: 1
+      - path: mtx_leftFoot
+        weight: 1
+      - path: mtx_leftFoot_001
+        weight: 1
+      - path: mtx_leftFoot_002
+        weight: 1
+      - path: mtx_leftFoot_003
+        weight: 1
+      - path: mtx_leftFoot_004
+        weight: 1
+      - path: mtx_leftFoot_005
+        weight: 1
+      - path: mtx_leftFoot_006
+        weight: 1
+      - path: mtx_leftHand
+        weight: 1
+      - path: mtx_leftHand_001
+        weight: 1
+      - path: mtx_leftHand_002
+        weight: 1
+      - path: mtx_leftHand_003
+        weight: 1
+      - path: mtx_leftHand_004
+        weight: 1
+      - path: mtx_leftHand_005
+        weight: 1
+      - path: mtx_leftHand_006
+        weight: 1
+      - path: mtx_p1backWheel
+        weight: 1
+      - path: mtx_p1leftWheel
+        weight: 1
+      - path: mtx_p1rightWheel
+        weight: 1
+      - path: mtx_p2rudder
+        weight: 1
+      - path: mtx_pCcrew1Shield
+        weight: 1
+      - path: mtx_pCcrew1spear
+        weight: 1
+      - path: mtx_pCcrew2Shield
+        weight: 1
+      - path: mtx_pCcrew2spear
+        weight: 1
+      - path: mtx_pCcrew3Shield
+        weight: 1
+      - path: mtx_pCcrew3spear
+        weight: 1
+      - path: mtx_pCcrew4spear
+        weight: 1
+      - path: mtx_pCcrew5spear
+        weight: 1
+      - path: mtx_pCcrew6spear
+        weight: 1
+      - path: mtx_pCcrew6spear_1
+        weight: 1
+      - path: mtx_pCcrew7spear
+        weight: 1
+      - path: mtx_pCfrontWheel
+        weight: 1
+      - path: mtx_pumpC
+        weight: 1
+      - path: mtx_rightFoot
+        weight: 1
+      - path: mtx_rightFoot_001
+        weight: 1
+      - path: mtx_rightFoot_002
+        weight: 1
+      - path: mtx_rightFoot_003
+        weight: 1
+      - path: mtx_rightFoot_004
+        weight: 1
+      - path: mtx_rightFoot_005
+        weight: 1
+      - path: mtx_rightFoot_006
+        weight: 1
+      - path: mtx_rightHand_000
+        weight: 1
+      - path: mtx_rightHand_001
+        weight: 1
+      - path: mtx_rightHand_002
+        weight: 1
+      - path: mtx_rightHand_003
+        weight: 1
+      - path: mtx_rightHand_004
+        weight: 1
+      - path: mtx_rightHand_005
+        weight: 1
+      - path: mtx_rightHand_006
+        weight: 1
+      - path: Rig
+        weight: 1
+      - path: Rig/goblinRig
+        weight: 1
+      - path: Rig/goblinRig/spine
+        weight: 1
+      - path: Rig/goblinRig/spine/chest
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/neck
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/neck/head
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: Rig/goblinRig/thigh_L
+        weight: 1
+      - path: Rig/goblinRig/thigh_L/shin_L
+        weight: 1
+      - path: Rig/goblinRig/thigh_L/shin_L/ankle_L
+        weight: 1
+      - path: Rig/goblinRig/thigh_R
+        weight: 1
+      - path: Rig/goblinRig/thigh_R/shin_R
+        weight: 1
+      - path: Rig/goblinRig/thigh_R/shin_R/ankle_R
+        weight: 1
+      - path: Rig_001
+        weight: 1
+      - path: Rig_001/goblinRig_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/neck_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/neck_1/head_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1/upper_arm_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1/upper_arm_L_1/forearm_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1/upper_arm_L_1/forearm_L_1/hand_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1/upper_arm_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1/upper_arm_R_1/forearm_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1/upper_arm_R_1/forearm_R_1/hand_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_L_1/shin_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_L_1/shin_L_1/ankle_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_R_1/shin_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_R_1/shin_R_1/ankle_R_1
+        weight: 1
+      - path: Rig_002
+        weight: 1
+      - path: Rig_002/goblinRig_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/neck_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/neck_2/head_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2/upper_arm_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2/upper_arm_L_2/forearm_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2/upper_arm_L_2/forearm_L_2/hand_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2/upper_arm_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2/upper_arm_R_2/forearm_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2/upper_arm_R_2/forearm_R_2/hand_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_L_2/shin_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_L_2/shin_L_2/ankle_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_R_2/shin_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_R_2/shin_R_2/ankle_R_2
+        weight: 1
+      - path: Rig_003
+        weight: 1
+      - path: Rig_003/goblinRig_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/neck_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/neck_3/head_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3/upper_arm_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3/upper_arm_L_3/forearm_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3/upper_arm_L_3/forearm_L_3/hand_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3/upper_arm_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3/upper_arm_R_3/forearm_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3/upper_arm_R_3/forearm_R_3/hand_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_L_3/shin_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_L_3/shin_L_3/ankle_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_R_3/shin_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_R_3/shin_R_3/ankle_R_3
+        weight: 1
+      - path: Rig_004
+        weight: 1
+      - path: Rig_004/goblinRig_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/neck_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/neck_4/head_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4/upper_arm_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4/upper_arm_L_4/forearm_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4/upper_arm_L_4/forearm_L_4/hand_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4/upper_arm_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4/upper_arm_R_4/forearm_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4/upper_arm_R_4/forearm_R_4/hand_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_L_4/shin_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_L_4/shin_L_4/ankle_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_R_4/shin_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_R_4/shin_R_4/ankle_R_4
+        weight: 1
+      - path: Rig_005
+        weight: 1
+      - path: Rig_005/goblinRig_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/neck_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/neck_0/head_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0/upper_arm_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0/upper_arm_L_0/forearm_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0/upper_arm_L_0/forearm_L_0/hand_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0/upper_arm_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0/upper_arm_R_0/forearm_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0/upper_arm_R_0/forearm_R_0/hand_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_L_0/shin_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_L_0/shin_L_0/ankle_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_R_0/shin_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_R_0/shin_R_0/ankle_R_0
+        weight: 1
+      - path: Rig_006
+        weight: 1
+      - path: Rig_006/goblinRig_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/neck_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/neck_5/head_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5/upper_arm_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5/upper_arm_L_5/forearm_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5/upper_arm_L_5/forearm_L_5/hand_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5/upper_arm_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5/upper_arm_R_5/forearm_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5/upper_arm_R_5/forearm_R_5/hand_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_L_5/shin_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_L_5/shin_L_5/ankle_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_R_5/shin_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_R_5/shin_R_5/ankle_R_5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: dying_pumpC
+      takeName: Default Take
+      firstFrame: 108
+      lastFrame: 131
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body
+        weight: 1
+      - path: mtx_body_001
+        weight: 1
+      - path: mtx_body_002
+        weight: 1
+      - path: mtx_body_003
+        weight: 1
+      - path: mtx_body_004
+        weight: 1
+      - path: mtx_body_005
+        weight: 1
+      - path: mtx_body_006
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      - path: mtx_head_001
+        weight: 1
+      - path: mtx_head_002
+        weight: 1
+      - path: mtx_head_003
+        weight: 1
+      - path: mtx_head_004
+        weight: 1
+      - path: mtx_head_005
+        weight: 1
+      - path: mtx_head_006
+        weight: 1
+      - path: mtx_leftFoot
+        weight: 1
+      - path: mtx_leftFoot_001
+        weight: 1
+      - path: mtx_leftFoot_002
+        weight: 1
+      - path: mtx_leftFoot_003
+        weight: 1
+      - path: mtx_leftFoot_004
+        weight: 1
+      - path: mtx_leftFoot_005
+        weight: 1
+      - path: mtx_leftFoot_006
+        weight: 1
+      - path: mtx_leftHand
+        weight: 1
+      - path: mtx_leftHand_001
+        weight: 1
+      - path: mtx_leftHand_002
+        weight: 1
+      - path: mtx_leftHand_003
+        weight: 1
+      - path: mtx_leftHand_004
+        weight: 1
+      - path: mtx_leftHand_005
+        weight: 1
+      - path: mtx_leftHand_006
+        weight: 1
+      - path: mtx_p1backWheel
+        weight: 1
+      - path: mtx_p1leftWheel
+        weight: 1
+      - path: mtx_p1rightWheel
+        weight: 1
+      - path: mtx_p2rudder
+        weight: 1
+      - path: mtx_pCcrew1Shield
+        weight: 1
+      - path: mtx_pCcrew1spear
+        weight: 1
+      - path: mtx_pCcrew2Shield
+        weight: 1
+      - path: mtx_pCcrew2spear
+        weight: 1
+      - path: mtx_pCcrew3Shield
+        weight: 1
+      - path: mtx_pCcrew3spear
+        weight: 1
+      - path: mtx_pCcrew4spear
+        weight: 1
+      - path: mtx_pCcrew5spear
+        weight: 1
+      - path: mtx_pCcrew6spear
+        weight: 1
+      - path: mtx_pCcrew6spear_1
+        weight: 1
+      - path: mtx_pCcrew7spear
+        weight: 1
+      - path: mtx_pCfrontWheel
+        weight: 1
+      - path: mtx_pumpC
+        weight: 1
+      - path: mtx_rightFoot
+        weight: 1
+      - path: mtx_rightFoot_001
+        weight: 1
+      - path: mtx_rightFoot_002
+        weight: 1
+      - path: mtx_rightFoot_003
+        weight: 1
+      - path: mtx_rightFoot_004
+        weight: 1
+      - path: mtx_rightFoot_005
+        weight: 1
+      - path: mtx_rightFoot_006
+        weight: 1
+      - path: mtx_rightHand_000
+        weight: 1
+      - path: mtx_rightHand_001
+        weight: 1
+      - path: mtx_rightHand_002
+        weight: 1
+      - path: mtx_rightHand_003
+        weight: 1
+      - path: mtx_rightHand_004
+        weight: 1
+      - path: mtx_rightHand_005
+        weight: 1
+      - path: mtx_rightHand_006
+        weight: 1
+      - path: Rig
+        weight: 1
+      - path: Rig/goblinRig
+        weight: 1
+      - path: Rig/goblinRig/spine
+        weight: 1
+      - path: Rig/goblinRig/spine/chest
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/neck
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/neck/head
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: Rig/goblinRig/thigh_L
+        weight: 1
+      - path: Rig/goblinRig/thigh_L/shin_L
+        weight: 1
+      - path: Rig/goblinRig/thigh_L/shin_L/ankle_L
+        weight: 1
+      - path: Rig/goblinRig/thigh_R
+        weight: 1
+      - path: Rig/goblinRig/thigh_R/shin_R
+        weight: 1
+      - path: Rig/goblinRig/thigh_R/shin_R/ankle_R
+        weight: 1
+      - path: Rig_001
+        weight: 1
+      - path: Rig_001/goblinRig_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/neck_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/neck_1/head_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1/upper_arm_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1/upper_arm_L_1/forearm_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1/upper_arm_L_1/forearm_L_1/hand_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1/upper_arm_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1/upper_arm_R_1/forearm_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1/upper_arm_R_1/forearm_R_1/hand_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_L_1/shin_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_L_1/shin_L_1/ankle_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_R_1/shin_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_R_1/shin_R_1/ankle_R_1
+        weight: 1
+      - path: Rig_002
+        weight: 1
+      - path: Rig_002/goblinRig_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/neck_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/neck_2/head_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2/upper_arm_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2/upper_arm_L_2/forearm_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2/upper_arm_L_2/forearm_L_2/hand_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2/upper_arm_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2/upper_arm_R_2/forearm_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2/upper_arm_R_2/forearm_R_2/hand_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_L_2/shin_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_L_2/shin_L_2/ankle_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_R_2/shin_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_R_2/shin_R_2/ankle_R_2
+        weight: 1
+      - path: Rig_003
+        weight: 1
+      - path: Rig_003/goblinRig_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/neck_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/neck_3/head_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3/upper_arm_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3/upper_arm_L_3/forearm_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3/upper_arm_L_3/forearm_L_3/hand_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3/upper_arm_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3/upper_arm_R_3/forearm_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3/upper_arm_R_3/forearm_R_3/hand_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_L_3/shin_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_L_3/shin_L_3/ankle_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_R_3/shin_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_R_3/shin_R_3/ankle_R_3
+        weight: 1
+      - path: Rig_004
+        weight: 1
+      - path: Rig_004/goblinRig_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/neck_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/neck_4/head_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4/upper_arm_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4/upper_arm_L_4/forearm_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4/upper_arm_L_4/forearm_L_4/hand_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4/upper_arm_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4/upper_arm_R_4/forearm_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4/upper_arm_R_4/forearm_R_4/hand_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_L_4/shin_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_L_4/shin_L_4/ankle_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_R_4/shin_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_R_4/shin_R_4/ankle_R_4
+        weight: 1
+      - path: Rig_005
+        weight: 1
+      - path: Rig_005/goblinRig_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/neck_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/neck_0/head_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0/upper_arm_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0/upper_arm_L_0/forearm_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0/upper_arm_L_0/forearm_L_0/hand_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0/upper_arm_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0/upper_arm_R_0/forearm_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0/upper_arm_R_0/forearm_R_0/hand_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_L_0/shin_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_L_0/shin_L_0/ankle_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_R_0/shin_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_R_0/shin_R_0/ankle_R_0
+        weight: 1
+      - path: Rig_006
+        weight: 1
+      - path: Rig_006/goblinRig_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/neck_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/neck_5/head_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5/upper_arm_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5/upper_arm_L_5/forearm_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5/upper_arm_L_5/forearm_L_5/hand_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5/upper_arm_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5/upper_arm_R_5/forearm_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5/upper_arm_R_5/forearm_R_5/hand_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_L_5/shin_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_L_5/shin_L_5/ankle_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_R_5/shin_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_R_5/shin_R_5/ankle_R_5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle_goblin_pumpC
+      takeName: Default Take
+      firstFrame: 69
+      lastFrame: 107
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mtx_body
+        weight: 1
+      - path: mtx_body_001
+        weight: 1
+      - path: mtx_body_002
+        weight: 1
+      - path: mtx_body_003
+        weight: 1
+      - path: mtx_body_004
+        weight: 1
+      - path: mtx_body_005
+        weight: 1
+      - path: mtx_body_006
+        weight: 1
+      - path: mtx_head
+        weight: 1
+      - path: mtx_head_001
+        weight: 1
+      - path: mtx_head_002
+        weight: 1
+      - path: mtx_head_003
+        weight: 1
+      - path: mtx_head_004
+        weight: 1
+      - path: mtx_head_005
+        weight: 1
+      - path: mtx_head_006
+        weight: 1
+      - path: mtx_leftFoot
+        weight: 1
+      - path: mtx_leftFoot_001
+        weight: 1
+      - path: mtx_leftFoot_002
+        weight: 1
+      - path: mtx_leftFoot_003
+        weight: 1
+      - path: mtx_leftFoot_004
+        weight: 1
+      - path: mtx_leftFoot_005
+        weight: 1
+      - path: mtx_leftFoot_006
+        weight: 1
+      - path: mtx_leftHand
+        weight: 1
+      - path: mtx_leftHand_001
+        weight: 1
+      - path: mtx_leftHand_002
+        weight: 1
+      - path: mtx_leftHand_003
+        weight: 1
+      - path: mtx_leftHand_004
+        weight: 1
+      - path: mtx_leftHand_005
+        weight: 1
+      - path: mtx_leftHand_006
+        weight: 1
+      - path: mtx_p1backWheel
+        weight: 1
+      - path: mtx_p1leftWheel
+        weight: 1
+      - path: mtx_p1rightWheel
+        weight: 1
+      - path: mtx_p2rudder
+        weight: 1
+      - path: mtx_pCcrew1Shield
+        weight: 1
+      - path: mtx_pCcrew1spear
+        weight: 1
+      - path: mtx_pCcrew2Shield
+        weight: 1
+      - path: mtx_pCcrew2spear
+        weight: 1
+      - path: mtx_pCcrew3Shield
+        weight: 1
+      - path: mtx_pCcrew3spear
+        weight: 1
+      - path: mtx_pCcrew4spear
+        weight: 1
+      - path: mtx_pCcrew5spear
+        weight: 1
+      - path: mtx_pCcrew6spear
+        weight: 1
+      - path: mtx_pCcrew6spear_1
+        weight: 1
+      - path: mtx_pCcrew7spear
+        weight: 1
+      - path: mtx_pCfrontWheel
+        weight: 1
+      - path: mtx_pumpC
+        weight: 1
+      - path: mtx_rightFoot
+        weight: 1
+      - path: mtx_rightFoot_001
+        weight: 1
+      - path: mtx_rightFoot_002
+        weight: 1
+      - path: mtx_rightFoot_003
+        weight: 1
+      - path: mtx_rightFoot_004
+        weight: 1
+      - path: mtx_rightFoot_005
+        weight: 1
+      - path: mtx_rightFoot_006
+        weight: 1
+      - path: mtx_rightHand_000
+        weight: 1
+      - path: mtx_rightHand_001
+        weight: 1
+      - path: mtx_rightHand_002
+        weight: 1
+      - path: mtx_rightHand_003
+        weight: 1
+      - path: mtx_rightHand_004
+        weight: 1
+      - path: mtx_rightHand_005
+        weight: 1
+      - path: mtx_rightHand_006
+        weight: 1
+      - path: Rig
+        weight: 1
+      - path: Rig/goblinRig
+        weight: 1
+      - path: Rig/goblinRig/spine
+        weight: 1
+      - path: Rig/goblinRig/spine/chest
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/neck
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/neck/head
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: Rig/goblinRig/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: Rig/goblinRig/thigh_L
+        weight: 1
+      - path: Rig/goblinRig/thigh_L/shin_L
+        weight: 1
+      - path: Rig/goblinRig/thigh_L/shin_L/ankle_L
+        weight: 1
+      - path: Rig/goblinRig/thigh_R
+        weight: 1
+      - path: Rig/goblinRig/thigh_R/shin_R
+        weight: 1
+      - path: Rig/goblinRig/thigh_R/shin_R/ankle_R
+        weight: 1
+      - path: Rig_001
+        weight: 1
+      - path: Rig_001/goblinRig_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/neck_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/neck_1/head_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1/upper_arm_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1/upper_arm_L_1/forearm_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_L_1/upper_arm_L_1/forearm_L_1/hand_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1/upper_arm_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1/upper_arm_R_1/forearm_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/spine_1/chest_1/shoulder_R_1/upper_arm_R_1/forearm_R_1/hand_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_L_1/shin_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_L_1/shin_L_1/ankle_L_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_R_1/shin_R_1
+        weight: 1
+      - path: Rig_001/goblinRig_1/thigh_R_1/shin_R_1/ankle_R_1
+        weight: 1
+      - path: Rig_002
+        weight: 1
+      - path: Rig_002/goblinRig_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/neck_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/neck_2/head_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2/upper_arm_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2/upper_arm_L_2/forearm_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_L_2/upper_arm_L_2/forearm_L_2/hand_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2/upper_arm_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2/upper_arm_R_2/forearm_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/spine_2/chest_2/shoulder_R_2/upper_arm_R_2/forearm_R_2/hand_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_L_2/shin_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_L_2/shin_L_2/ankle_L_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_R_2/shin_R_2
+        weight: 1
+      - path: Rig_002/goblinRig_2/thigh_R_2/shin_R_2/ankle_R_2
+        weight: 1
+      - path: Rig_003
+        weight: 1
+      - path: Rig_003/goblinRig_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/neck_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/neck_3/head_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3/upper_arm_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3/upper_arm_L_3/forearm_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_L_3/upper_arm_L_3/forearm_L_3/hand_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3/upper_arm_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3/upper_arm_R_3/forearm_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/spine_3/chest_3/shoulder_R_3/upper_arm_R_3/forearm_R_3/hand_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_L_3/shin_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_L_3/shin_L_3/ankle_L_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_R_3/shin_R_3
+        weight: 1
+      - path: Rig_003/goblinRig_3/thigh_R_3/shin_R_3/ankle_R_3
+        weight: 1
+      - path: Rig_004
+        weight: 1
+      - path: Rig_004/goblinRig_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/neck_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/neck_4/head_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4/upper_arm_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4/upper_arm_L_4/forearm_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_L_4/upper_arm_L_4/forearm_L_4/hand_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4/upper_arm_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4/upper_arm_R_4/forearm_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/spine_4/chest_4/shoulder_R_4/upper_arm_R_4/forearm_R_4/hand_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_L_4/shin_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_L_4/shin_L_4/ankle_L_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_R_4/shin_R_4
+        weight: 1
+      - path: Rig_004/goblinRig_4/thigh_R_4/shin_R_4/ankle_R_4
+        weight: 1
+      - path: Rig_005
+        weight: 1
+      - path: Rig_005/goblinRig_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/neck_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/neck_0/head_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0/upper_arm_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0/upper_arm_L_0/forearm_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_L_0/upper_arm_L_0/forearm_L_0/hand_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0/upper_arm_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0/upper_arm_R_0/forearm_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/spine_0/chest_0/shoulder_R_0/upper_arm_R_0/forearm_R_0/hand_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_L_0/shin_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_L_0/shin_L_0/ankle_L_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_R_0/shin_R_0
+        weight: 1
+      - path: Rig_005/goblinRig_0/thigh_R_0/shin_R_0/ankle_R_0
+        weight: 1
+      - path: Rig_006
+        weight: 1
+      - path: Rig_006/goblinRig_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/neck_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/neck_5/head_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5/upper_arm_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5/upper_arm_L_5/forearm_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_L_5/upper_arm_L_5/forearm_L_5/hand_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5/upper_arm_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5/upper_arm_R_5/forearm_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/spine_5/chest_5/shoulder_R_5/upper_arm_R_5/forearm_R_5/hand_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_L_5/shin_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_L_5/shin_L_5/ankle_L_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_R_5/shin_R_5
+        weight: 1
+      - path: Rig_006/goblinRig_5/thigh_R_5/shin_R_5/ankle_R_5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 12
+    meshCompression: 3
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,508 @@
+fileFormatVersion: 2
+guid: ae20b6e68a7ad414792f10135c37800e
+timeCreated: 1458931303
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: chest
+    100002: chest 1
+    100004: foot.L
+    100006: foot.L 1
+    100008: foot.R
+    100010: foot.R 1
+    100012: forearm.L
+    100014: forearm.L 1
+    100016: forearm.R
+    100018: forearm.R 1
+    100020: //RootNode
+    100022: goblinRiderRig
+    100024: goblinRiderRig 1
+    100026: hand.L
+    100028: hand.L 1
+    100030: hand.R
+    100032: hand.R 1
+    100034: head
+    100036: head 1
+    100038: hips.001
+    100040: mtx_chest
+    100042: mtx_head
+    100044: mtx_hips
+    100046: mtx_leftFoot
+    100048: mtx_leftHand
+    100050: mtx_rightFoot
+    100052: mtx_rightHand
+    100054: mtx_wolfBody
+    100056: mtx_wolfHead
+    100058: mtx_wolfLeftBackLeg
+    100060: mtx_wolfLeftFrontLeg
+    100062: mtx_wolfRightBackLeg
+    100064: mtx_wolfRightFrontLeg
+    100066: mtx_wolfTail
+    100068: neck
+    100070: neck 1
+    100072: shin.L
+    100074: shin.L 1
+    100076: shin.R
+    100078: shin.R 1
+    100080: shoulder.L
+    100082: shoulder.R
+    100084: spine
+    100086: spine 1
+    100088: thigh.L
+    100090: thigh.L 1
+    100092: thigh.R
+    100094: thigh.R 1
+    100096: upper_arm.L
+    100098: upper_arm.L 1
+    100100: upper_arm.R
+    100102: upper_arm.R 1
+    100104: wolfRig
+    100106: wolfRig 1
+    400000: chest
+    400002: chest 1
+    400004: foot.L
+    400006: foot.L 1
+    400008: foot.R
+    400010: foot.R 1
+    400012: forearm.L
+    400014: forearm.L 1
+    400016: forearm.R
+    400018: forearm.R 1
+    400020: //RootNode
+    400022: goblinRiderRig
+    400024: goblinRiderRig 1
+    400026: hand.L
+    400028: hand.L 1
+    400030: hand.R
+    400032: hand.R 1
+    400034: head
+    400036: head 1
+    400038: hips.001
+    400040: mtx_chest
+    400042: mtx_head
+    400044: mtx_hips
+    400046: mtx_leftFoot
+    400048: mtx_leftHand
+    400050: mtx_rightFoot
+    400052: mtx_rightHand
+    400054: mtx_wolfBody
+    400056: mtx_wolfHead
+    400058: mtx_wolfLeftBackLeg
+    400060: mtx_wolfLeftFrontLeg
+    400062: mtx_wolfRightBackLeg
+    400064: mtx_wolfRightFrontLeg
+    400066: mtx_wolfTail
+    400068: neck
+    400070: neck 1
+    400072: shin.L
+    400074: shin.L 1
+    400076: shin.R
+    400078: shin.R 1
+    400080: shoulder.L
+    400082: shoulder.R
+    400084: spine
+    400086: spine 1
+    400088: thigh.L
+    400090: thigh.L 1
+    400092: thigh.R
+    400094: thigh.R 1
+    400096: upper_arm.L
+    400098: upper_arm.L 1
+    400100: upper_arm.R
+    400102: upper_arm.R 1
+    400104: wolfRig
+    400106: wolfRig 1
+    2300000: mtx_chest
+    2300002: mtx_head
+    2300004: mtx_hips
+    2300006: mtx_leftFoot
+    2300008: mtx_leftHand
+    2300010: mtx_rightFoot
+    2300012: mtx_rightHand
+    2300014: mtx_wolfBody
+    2300016: mtx_wolfHead
+    2300018: mtx_wolfLeftBackLeg
+    2300020: mtx_wolfLeftFrontLeg
+    2300022: mtx_wolfRightBackLeg
+    2300024: mtx_wolfRightFrontLeg
+    2300026: mtx_wolfTail
+    3300000: mtx_chest
+    3300002: mtx_head
+    3300004: mtx_hips
+    3300006: mtx_leftFoot
+    3300008: mtx_leftHand
+    3300010: mtx_rightFoot
+    3300012: mtx_rightHand
+    3300014: mtx_wolfBody
+    3300016: mtx_wolfHead
+    3300018: mtx_wolfLeftBackLeg
+    3300020: mtx_wolfLeftFrontLeg
+    3300022: mtx_wolfRightBackLeg
+    3300024: mtx_wolfRightFrontLeg
+    3300026: mtx_wolfTail
+    4300000: mtx_wolfBody
+    4300002: mtx_wolfHead
+    4300004: mtx_wolfLeftFrontLeg
+    4300006: mtx_wolfRightFrontLeg
+    4300008: mtx_wolfLeftBackLeg
+    4300010: mtx_wolfRightBackLeg
+    4300012: mtx_wolfTail
+    4300014: mtx_hips
+    4300016: mtx_head
+    4300018: mtx_chest
+    4300020: mtx_leftHand
+    4300022: mtx_rightHand
+    4300024: mtx_rightFoot
+    4300026: mtx_leftFoot
+    7400000: riding_goblinRider0
+    7400002: dying_goblinRider0
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: riding_goblinRider0
+      takeName: Scene
+      firstFrame: 1
+      lastFrame: 6
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: goblinRiderRig
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/neck
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/neck/head
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/neck/head/mtx_head
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L/mtx_chest
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L/upper_arm.L 1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L/upper_arm.L 1/forearm.L
+          1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L/upper_arm.L 1/forearm.L
+          1/hand.L 1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L/upper_arm.L 1/forearm.L
+          1/hand.L 1/mtx_leftHand
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.R
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.R/upper_arm.R 1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.R/upper_arm.R 1/forearm.R
+          1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.R/upper_arm.R 1/forearm.R
+          1/hand.R 1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.R/upper_arm.R 1/forearm.R
+          1/hand.R 1/mtx_rightHand
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/mtx_hips
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.L
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.L/shin.L
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.L/shin.L/foot.L
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.L/shin.L/foot.L/mtx_rightFoot
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.R
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.R/shin.R
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.R/shin.R/foot.R
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.R/shin.R/foot.R/mtx_leftFoot
+        weight: 1
+      - path: wolfRig
+        weight: 1
+      - path: wolfRig/wolfRig 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/hips.001
+        weight: 1
+      - path: wolfRig/wolfRig 1/hips.001/mtx_wolfTail
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/mtx_wolfBody
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/neck 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/neck 1/head 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/neck 1/head 1/mtx_wolfHead
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.L
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.L/forearm.L
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.L/forearm.L/hand.L/mtx_wolfLeftFrontLeg
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.R
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.R/forearm.R
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.R/forearm.R/hand.R/mtx_wolfRightFrontLeg
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.L 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.L 1/shin.L 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.L 1/shin.L 1/foot.L 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.L 1/shin.L 1/foot.L 1/mtx_wolfLeftBackLeg
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.R 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.R 1/shin.R 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.R 1/shin.R 1/foot.R 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.R 1/shin.R 1/foot.R 1/mtx_wolfRightBackLeg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.7352941
+    - serializedVersion: 16
+      name: dying_goblinRider0
+      takeName: Scene
+      firstFrame: 7
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: goblinRiderRig
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/neck
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/neck/head
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/neck/head/mtx_head
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L/mtx_chest
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L/upper_arm.L 1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L/upper_arm.L 1/forearm.L
+          1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L/upper_arm.L 1/forearm.L
+          1/hand.L 1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.L/upper_arm.L 1/forearm.L
+          1/hand.L 1/mtx_leftHand
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.R
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.R/upper_arm.R 1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.R/upper_arm.R 1/forearm.R
+          1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.R/upper_arm.R 1/forearm.R
+          1/hand.R 1
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/chest/shoulder.R/upper_arm.R 1/forearm.R
+          1/hand.R 1/mtx_rightHand
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/spine/mtx_hips
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.L
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.L/shin.L
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.L/shin.L/foot.L
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.L/shin.L/foot.L/mtx_rightFoot
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.R
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.R/shin.R
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.R/shin.R/foot.R
+        weight: 1
+      - path: goblinRiderRig/goblinRiderRig 1/thigh.R/shin.R/foot.R/mtx_leftFoot
+        weight: 1
+      - path: wolfRig
+        weight: 1
+      - path: wolfRig/wolfRig 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/hips.001
+        weight: 1
+      - path: wolfRig/wolfRig 1/hips.001/mtx_wolfTail
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/mtx_wolfBody
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/neck 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/neck 1/head 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/neck 1/head 1/mtx_wolfHead
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.L
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.L/forearm.L
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.L/forearm.L/hand.L/mtx_wolfLeftFrontLeg
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.R
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.R/forearm.R
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: wolfRig/wolfRig 1/spine 1/chest 1/upper_arm.R/forearm.R/hand.R/mtx_wolfRightFrontLeg
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.L 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.L 1/shin.L 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.L 1/shin.L 1/foot.L 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.L 1/shin.L 1/foot.L 1/mtx_wolfLeftBackLeg
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.R 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.R 1/shin.R 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.R 1/shin.R 1/foot.R 1
+        weight: 1
+      - path: wolfRig/wolfRig 1/thigh.R 1/shin.R 1/foot.R 1/mtx_wolfRightBackLeg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.7352941
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 3
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -39,6 +40,8 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     private GameObject localSelf;
     private NavMeshAgent localAgent;
     private Movement localMovement;
+    private Animator animator;
+    private bool hasAnimator;
 
     public void OnAfterDeserialize()
     { }
@@ -47,6 +50,11 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     {
         callable = new List<string>(vals);
         conditionals = new List<string>(cond);
+    }
+
+    public void OnEnable()
+    {
+        BuildStateMachine();
     }
 
     public override void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
@@ -58,6 +66,20 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         var enemyComponent = self.GetComponent<EnemyGeneric>();
         currentState = enemyComponent.currentState;
         releventTransitions = enemyComponent.releventTransitions;
+
+        animator = null;
+        animator = self.GetComponentInChildren<Animator>();
+
+        if(animator != null)
+        {
+            hasAnimator = true;
+            animator.logWarnings = false;
+        }
+
+        else
+        {
+            hasAnimator = false;
+        }
 
         if(!CheckStateChanges())
         {
@@ -291,17 +313,37 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     {
         if(variable == "targetDistance")
         {
-            return Vector3.Distance(localSelf.transform.position, localTarget.transform.position).ToString();
+            float returnValue;
+            returnValue = Vector3.Distance(localSelf.transform.position, localTarget.transform.position);
+
+            if(hasAnimator)
+            {
+                animator.SetFloat("targetDistance", returnValue);
+            }
+
+            return returnValue.ToString();
         }
 
         else if(variable == "targetIsVisible")
         {
+            bool returnValue;
+
             if(!localTarget)
             {
-                return "False";
+                returnValue = false;
             }
 
-            return Helpers.CheckLineOfSight(localSelf.transform, localTarget.transform).ToString();
+            else
+            {
+                returnValue = Helpers.CheckLineOfSight(localSelf.transform, localTarget.transform);
+            }
+
+            if(hasAnimator)
+            {
+                animator.SetBool("targetIsVisible", returnValue);
+            }
+
+            return returnValue.ToString();
         }
 
         return "None";
