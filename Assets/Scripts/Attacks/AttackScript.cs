@@ -22,6 +22,8 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
     public bool canHitSameTargetMoreThanOnce;
 
+    public GameObject visualEndEffect;
+
     [HideInInspector]
     public string validTag;
 
@@ -33,6 +35,12 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
     [HideInInspector]
     public int parentId;
+
+    [HideInInspector]
+    public Vector3 collisionNormal;
+
+    [HideInInspector]
+    public Vector3 collisionPoint;
 
     public virtual void Start()
     {
@@ -98,8 +106,9 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
             Debug.Log("Collision with valid tag");
             attack.ApplyEffects(other.gameObject, validTag);
             hitList.Add(other.gameObject);
+            // SetCollisionNormal(other);
 
-            if(subAttacksOnHit)
+            if (subAttacksOnHit)
             {
                 SpawnSubAttacks();
             }
@@ -137,5 +146,31 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
                 attack.PerformAttack(transform.position, transform.rotation, validTag);
             }
         }
+    }
+
+    // TODO: fix to make end effects spawn at normal to hit point
+    public void SetCollisionNormal(Collider other)
+    {
+        var point = other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+        var pos = transform.position - (transform.forward * 1f);
+        Debug.Log(pos);
+        Debug.Log(point);
+        var rayDirection = pos - point;
+        Debug.Log(rayDirection);
+        RaycastHit hit;
+
+        if (Physics.Raycast(pos, rayDirection, out hit))
+        {
+            Debug.Log(hit.transform.gameObject.name);
+            collisionNormal = hit.normal;
+        }
+
+        collisionPoint = point;
+    }
+
+    public void OnDestroy()
+    {
+        var fx = Instantiate(visualEndEffect, transform.position, transform.rotation);
+        Destroy(fx, 5f);
     }
 }

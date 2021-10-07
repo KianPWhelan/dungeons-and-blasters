@@ -39,12 +39,13 @@ public class ProjectileAttackScript : AttackScript
         Debug.Log("bruh");
         if(!canGoThroughObjects && other.tag == "Wall" || other.tag == "Ground")
         {
-            PhotonNetwork.Destroy(gameObject);
+            // SetCollisionNormal(other);
 
-            if(subAttacksOnEnd)
+            if (subAttacksOnEnd)
             {
                 SpawnSubAttacks();
             }
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 }
