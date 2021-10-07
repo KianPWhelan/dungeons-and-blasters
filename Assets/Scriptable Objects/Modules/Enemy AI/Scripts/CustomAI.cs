@@ -26,7 +26,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     public List<StateTransition> stateMachine = new List<StateTransition>();
 
     // Valid values that can be called from transitions
-    private static string[] vals = { "targetDistance", "targetIsVisible" };
+    private static string[] vals = { "targetDistance", "targetIsVisible", "targetHealth" };
     private List<string> callable = new List<string>(vals);
 
     // Valid conditions that can be called from transitions
@@ -341,6 +341,24 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
             if(hasAnimator)
             {
                 animator.SetBool("targetIsVisible", returnValue);
+            }
+
+            return returnValue.ToString();
+        }
+
+        else if(variable == "targetHealth")
+        {
+            Health health;
+            float returnValue = 999999999f;
+
+            if(localSelf.TryGetComponent(out health))
+            {
+                returnValue = health.GetHealth();
+
+                if(hasAnimator)
+                {
+                    animator.SetFloat("targetHealth", returnValue);
+                }
             }
 
             return returnValue.ToString();
