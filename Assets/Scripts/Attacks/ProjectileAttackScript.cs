@@ -20,11 +20,18 @@ public class ProjectileAttackScript : AttackScript
         if (startingTime + attackDuration <= Time.time)
         {
             Debug.Log("here");
-            PhotonNetwork.Destroy(gameObject);
+
             if (subAttacksOnEnd)
             {
                 SpawnSubAttacks();
             }
+
+            if(applyEffectsOnEnd)
+            {
+                attack.ApplyEffects(null, validTag, transform.position, transform.rotation);
+            }
+
+            PhotonNetwork.Destroy(gameObject);
         }
 
         else
@@ -45,6 +52,12 @@ public class ProjectileAttackScript : AttackScript
             {
                 SpawnSubAttacks();
             }
+
+            if(applyEffectsOnEnd)
+            {
+                attack.ApplyEffects(other.gameObject, validTag, transform.position, transform.rotation);
+            }
+
             PhotonNetwork.Destroy(gameObject);
         }
     }

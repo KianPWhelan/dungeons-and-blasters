@@ -90,7 +90,7 @@ public class StatusEffects : MonoBehaviour
             {
                 if(!immunities.Contains(effect))
                 {
-                    effect.ApplyEffect(gameObject, gameObject.GetComponent<Health>(), this, effectDetails[effect].targetTag);
+                    effect.ApplyEffect(gameObject, gameObject.GetComponent<Health>(), this, transform.position, transform.rotation, effectDetails[effect].targetTag);
                     effectDetails[effect].intervalTime = currentTime;
                 }
             }

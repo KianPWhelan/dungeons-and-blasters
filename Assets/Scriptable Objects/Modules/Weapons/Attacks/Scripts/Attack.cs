@@ -58,14 +58,14 @@ public class Attack : ScriptableObject
     /// Applies all effects to all targets
     /// </summary>
     /// <param name="targetTag"></param>
-    public void ApplyEffects(GameObject target, string targetTag)
+    public void ApplyEffects(GameObject target, string targetTag, Vector3? location = null, Quaternion? rotation = null)
     {
         Health health = target.GetComponent<Health>();
         StatusEffects statusEffects = target.GetComponent<StatusEffects>();
 
         foreach(Effect effect in effects)
         {
-            effect.ApplyEffect(target, health, statusEffects, targetTag);
+            effect.ApplyEffect(target, health, statusEffects, location, rotation, targetTag);
         }
     }
 }

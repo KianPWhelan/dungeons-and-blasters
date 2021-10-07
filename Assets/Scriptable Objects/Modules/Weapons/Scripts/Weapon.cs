@@ -39,7 +39,12 @@ public class Weapon : ScriptableObject
     public void Use(GameObject self, string targetTag = "none")
     {
         Debug.Log("Using weapon " + this.name);
-        animation.Play();
+
+        if(animation != null)
+        {
+            animation.Play();
+        }
+        
         foreach(Attack attack in attacks)
         {
             if(!map[attack].lastUseTime.ContainsKey(self))

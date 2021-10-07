@@ -15,6 +15,8 @@ public class Health : MonoBehaviour
     [SerializeField]
     private bool infiniteHealth = false;
 
+    public bool isDead = false;
+
     /// <summary>
     /// Adjusts health value by amount provided, can be negative
     /// </summary>
@@ -29,11 +31,19 @@ public class Health : MonoBehaviour
         if(health != null)
         {
             health.runtimeValue += amount;
+            if(health.runtimeValue <= 0)
+            {
+                isDead = true;
+            }
         }
 
         else
         {
             floatHealth += amount;
+            if(floatHealth <= 0)
+            {
+                isDead = true;
+            }
         }
     }
 

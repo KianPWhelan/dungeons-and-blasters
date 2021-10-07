@@ -7,23 +7,23 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
 {
     [Tooltip("Damage instances that this effect causes")]
     [SerializeField]
-    private List<Damage> damages = new List<Damage>();
+    public List<Damage> damages = new List<Damage>();
 
     [Tooltip("Status effects are applied to the target every defined iteration for the duration")]
     [SerializeField]
-    private bool isStatusEffect;
+    public bool isStatusEffect;
 
     [Tooltip("If this is a status effect, how often it is applied to the target in seconds (0 for every frame)")]
     [SerializeField]
-    private FloatVariable interval;
+    public FloatVariable interval;
 
     [Tooltip("If this is a status effect, how long it lasts in seconds")]
     [SerializeField]
-    private FloatVariable duration;
+    public FloatVariable duration;
 
     [Tooltip("Additional effects that this effect applies")]
     [SerializeField]
-    private List<Effect> recursiveEffects = new List<Effect>();
+    public List<Effect> recursiveEffects = new List<Effect>();
 
     private bool warningDisplayed;
 
@@ -34,7 +34,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     /// <param name="health"></param>
     /// <param name="statusEffects"></param>
     /// <param name="targetTag"></param>
-    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, string targetTag = "none")
+    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none")
     {
         if(statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this))
         {
@@ -67,7 +67,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
         // Apply recursive effects
         foreach(Effect effect in recursiveEffects)
         {
-            effect.ApplyEffect(target, health, statusEffects, targetTag);
+            effect.ApplyEffect(target, health, statusEffects, location, rotation, targetTag);
         }
     }
 

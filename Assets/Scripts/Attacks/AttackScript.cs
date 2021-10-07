@@ -22,7 +22,11 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
     public bool canHitSameTargetMoreThanOnce;
 
+    public bool applyEffectsOnEnd;
+
     public GameObject visualEndEffect;
+
+    public GameObject visualStartEffect;
 
     [HideInInspector]
     public string validTag;
@@ -54,6 +58,12 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         hitList = new List<GameObject>();
         startingTime = Time.time;
         transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
+
+        if(visualStartEffect != null)
+        {
+            var fx = Instantiate(visualStartEffect, transform.position, transform.rotation);
+            Destroy(fx, 5f);
+        }
     }
 
     public override void OnEnable()
@@ -79,12 +89,18 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         if (startingTime + attackDuration <= Time.time)
         {
             Debug.Log("here");
-            PhotonNetwork.Destroy(gameObject);
 
-            if(subAttacksOnEnd)
+            if (subAttacksOnEnd)
             {
                 SpawnSubAttacks();
             }
+
+            if (applyEffectsOnEnd)
+            {
+                attack.ApplyEffects(null, validTag, transform.position, transform.rotation);
+            }
+
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 
@@ -104,7 +120,7 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         if(attack != null && validTag != null && (other.tag == validTag || validTag == "none") && (!hitList.Contains(other.gameObject) || canHitSameTargetMoreThanOnce))
         {
             Debug.Log("Collision with valid tag");
-            attack.ApplyEffects(other.gameObject, validTag);
+            attack.ApplyEffects(other.gameObject, validTag, transform.position, transform.rotation);
             hitList.Add(other.gameObject);
             // SetCollisionNormal(other);
 

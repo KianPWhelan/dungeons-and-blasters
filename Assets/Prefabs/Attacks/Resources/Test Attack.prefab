@@ -118,7 +118,9 @@ MonoBehaviour:
   localStartingPosition: {x: 0, y: 1, z: 2}
   destroyOnHit: 0
   canHitSameTargetMoreThanOnce: 0
+  applyEffectsOnEnd: 0
   visualEndEffect: {fileID: 0}
+  visualStartEffect: {fileID: 0}
   validTag: 
   startingTime: 0
   hitList: []

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
+  m_Name: Spawn Effect Attack
+  m_EditorClassIdentifier: 
+  attack: {fileID: 3807866404001653414, guid: 5be4b7d4875ca93438d938b348821bcd, type: 3}
+  effects:
+  - {fileID: 11400000, guid: b9d0f70f8d7662a44a847da1a00d5ab8, type: 2}
+  - {fileID: 11400000, guid: a83a60d43f2b81a4cb9ee51a7f5a0c63, type: 2}
