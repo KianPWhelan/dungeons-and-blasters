@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-[RequireComponent(typeof(Collider))]
 public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback
 {
     public Attack attack;
