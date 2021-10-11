@@ -118,7 +118,7 @@ MonoBehaviour:
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
   attackDuration: 100
-  localStartingPosition: {x: 0, y: 1, z: 0}
+  localStartingPosition: {x: 0, y: 0, z: 0}
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
   applyEffectsOnEnd: 0
