@@ -23,7 +23,11 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public BoolVariable isDungeonMaster;
 
-        public float gameTime = 0;
+        public float gameTime;
+
+        public FloatVariable time;
+
+        private float masterTime;
 
         #region Photon Callbacks
 
@@ -44,6 +48,12 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public void Start()
         {
+            if(PhotonNetwork.IsMasterClient)
+            {
+                Debug.Log("We are the master client");
+                gameTime = 0;
+            }
+
             Debug.Log("Is Dungeon Master?: " + isDungeonMaster.runtimeValue);
             if (playerPrefab == null)
             {
@@ -65,9 +75,20 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public void Update()
         {
-            gameTime += Time.deltaTime;
+            if (PhotonNetwork.IsMasterClient)
+            {
+                masterTime += Time.deltaTime;
+                photonView.RPC("SetTimeAll", RpcTarget.All, masterTime);
+            }
+
+            time.runtimeValue = gameTime;
         }
 
+        [PunRPC]
+        public void SetTimeAll(float time)
+        {
+            gameTime = time;
+        }
 
         public void LeaveRoom()
         {
