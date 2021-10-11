@@ -64,9 +64,10 @@ public class Controller : MonoBehaviourPunCallbacks
     public void GameOver()
     {
         Debug.Log("Game has ended");
-        Application.Quit();
+        // TODO: Send to game over screen
+        PhotonNetwork.LeaveRoom();
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+        // UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
 
