@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 11400000, guid: 0074f44dbd585624aacb2dde8a61a485, type: 2}
+  - {fileID: 11400000, guid: e11d41b9ab3d9924583f3cca85290bb5, type: 2}
   targetTag: Enemy
 --- !u!114 &7168323857930604494
 MonoBehaviour:

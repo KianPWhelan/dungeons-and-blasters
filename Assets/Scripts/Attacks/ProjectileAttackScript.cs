@@ -28,7 +28,7 @@ public class ProjectileAttackScript : AttackScript
 
             if(applyEffectsOnEnd)
             {
-                attack.ApplyEffects(null, validTag, transform.position, transform.rotation);
+                attack.ApplyEffects(null, validTag, transform.position, transform.rotation, damageMod);
             }
 
             if (photonView.IsMine)
@@ -58,7 +58,7 @@ public class ProjectileAttackScript : AttackScript
 
             if(applyEffectsOnEnd)
             {
-                attack.ApplyEffects(other.gameObject, validTag, transform.position, transform.rotation);
+                attack.ApplyEffects(other.gameObject, validTag, transform.position, transform.rotation, damageMod);
             }
 
             if(photonView.IsMine)

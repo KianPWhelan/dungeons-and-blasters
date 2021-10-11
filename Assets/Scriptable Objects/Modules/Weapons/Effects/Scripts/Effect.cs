@@ -34,7 +34,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     /// <param name="health"></param>
     /// <param name="statusEffects"></param>
     /// <param name="targetTag"></param>
-    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none")
+    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1)
     {
         if(statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this))
         {
@@ -55,7 +55,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
             // Apply damage first
             foreach (Damage damage in damages)
             {
-                damage.DoDamage(health);
+                damage.DoDamage(health, damageMod);
             }
         }
 

@@ -45,6 +45,9 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
     [HideInInspector]
     public Vector3 collisionPoint;
 
+    [HideInInspector]
+    public float damageMod;
+
     public virtual void Start()
     {
         if(parentId != 0)
@@ -96,7 +99,7 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
             if (applyEffectsOnEnd)
             {
-                attack.ApplyEffects(null, validTag, transform.position, transform.rotation);
+                attack.ApplyEffects(null, validTag, transform.position, transform.rotation, damageMod);
             }
 
             if (photonView.IsMine)
@@ -122,7 +125,7 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         if(attack != null && validTag != null && (other.tag == validTag || validTag == "none") && (!hitList.Contains(other.gameObject) || canHitSameTargetMoreThanOnce))
         {
             Debug.Log("Collision with valid tag");
-            attack.ApplyEffects(other.gameObject, validTag, transform.position, transform.rotation);
+            attack.ApplyEffects(other.gameObject, validTag, transform.position, transform.rotation, damageMod);
             hitList.Add(other.gameObject);
             // SetCollisionNormal(other);
 
@@ -148,6 +151,7 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         }
         
         validTag = (string)instantiationData[1];
+        damageMod = (float)instantiationData[2];
     }
 
     public void SpawnSubAttacks()

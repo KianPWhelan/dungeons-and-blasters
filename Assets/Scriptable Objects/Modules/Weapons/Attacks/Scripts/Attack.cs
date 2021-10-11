@@ -22,14 +22,22 @@ public class Attack : ScriptableObject
         Debug.Log("Performing attack");
         Debug.Log(attack);
         object[] info;
+
+        float damageMod = 1;
+
+        if(self.TryGetComponent(out StatusEffects s))
+        {
+            damageMod = s.GetDamageMod();
+        }
+
         if(useSelfAsParent)
         {
-            info = new object[] { self.GetComponent<PhotonView>().ViewID, targetTag };
+            info = new object[] { self.GetComponent<PhotonView>().ViewID, targetTag, damageMod };
         }
 
         else
         {
-            info = new object[] { null, targetTag };
+            info = new object[] { null, targetTag, damageMod };
         }
         
         GameObject attackObject = PhotonNetwork.Instantiate(attack.name, self.transform.position, self.transform.rotation, 0, info);
@@ -58,14 +66,15 @@ public class Attack : ScriptableObject
     /// Applies all effects to all targets
     /// </summary>
     /// <param name="targetTag"></param>
-    public void ApplyEffects(GameObject target, string targetTag, Vector3? location = null, Quaternion? rotation = null)
+    public void ApplyEffects(GameObject target, string targetTag, Vector3? location = null, Quaternion? rotation = null, float damageMod = 1)
     {
         Health health = target.GetComponent<Health>();
         StatusEffects statusEffects = target.GetComponent<StatusEffects>();
+        Debug.Log("Damage Mod: " + damageMod);
 
         foreach(Effect effect in effects)
         {
-            effect.ApplyEffect(target, health, statusEffects, location, rotation, targetTag);
+            effect.ApplyEffect(target, health, statusEffects, location, rotation, targetTag, damageMod);
         }
     }
 }

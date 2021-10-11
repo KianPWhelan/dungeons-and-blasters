@@ -130,6 +130,7 @@ MonoBehaviour:
   parentId: 0
   collisionNormal: {x: 0, y: 0, z: 0}
   collisionPoint: {x: 0, y: 0, z: 0}
+  damageMod: 0
   speed: 50
   canGoThroughObjects: 0
 --- !u!114 &3807866404001653407

@@ -14,7 +14,7 @@ public class SpawnEffect : Effect
     [SerializeField]
     private bool spawnOnTargetDeath;
 
-    public override void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none")
+    public override void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1)
     {
         Debug.Log("In spawn effect");
 
