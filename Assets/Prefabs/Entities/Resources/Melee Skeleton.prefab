@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatHealth: 30
   infiniteHealth: 0
+  isPlayer: 0
   isDead: 0
 --- !u!114 &9070468601821801597
 MonoBehaviour:

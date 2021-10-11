@@ -48489,6 +48489,7 @@ MonoBehaviour:
   aiModule: {fileID: 11400000, guid: b33bbd670537b85428725e5b3a1817f7, type: 2}
   targetType: Player
   currentState: {fileID: 0}
+  cooldown: 0
   releventTransitions: []
 --- !u!195 &941753375
 NavMeshAgent:
@@ -112253,7 +112254,7 @@ PrefabInstance:
     - target: {fileID: 4999855669528970186, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: weapons.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: e11d41b9ab3d9924583f3cca85290bb5, type: 2}
+      objectReference: {fileID: 11400000, guid: 574d423e909678a4d875b5692d6be8fd, type: 2}
     - target: {fileID: 9070468601821801538, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: m_Name
       value: Melee Skeleton

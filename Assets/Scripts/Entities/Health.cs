@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviourPunCallbacks
 {
     [Tooltip("FloatVariable reference for health point (Leave blank to use normal float)")]
     private FloatVariable health;
@@ -14,6 +15,10 @@ public class Health : MonoBehaviour
     [Tooltip("Entity has infinite health")]
     [SerializeField]
     private bool infiniteHealth = false;
+
+    [Tooltip("Is this component attached to a player?")]
+    [SerializeField]
+    private bool isPlayer = false;
 
     public bool isDead = false;
 
@@ -43,6 +48,19 @@ public class Health : MonoBehaviour
             if(floatHealth <= 0)
             {
                 isDead = true;
+
+                if(photonView.IsMine)
+                {
+                    if(isPlayer)
+                    {
+                        PhotonNetwork.LeaveRoom();
+                    }
+
+                    else
+                    {
+                        PhotonNetwork.Destroy(gameObject);
+                    }            
+                }
             }
         }
     }
