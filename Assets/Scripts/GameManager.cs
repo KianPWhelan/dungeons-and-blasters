@@ -23,6 +23,8 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public BoolVariable isDungeonMaster;
 
+        public float gameTime = 0;
+
         #region Photon Callbacks
 
 
@@ -59,6 +61,11 @@ namespace Com.OfTomorrowInc.DMShooter
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
                 PhotonNetwork.Instantiate(this.dungeonMasterPrefab.name, new Vector3(0f, 50f, 0f), Quaternion.identity, 0);
             }
+        }
+
+        public void Update()
+        {
+            gameTime += Time.deltaTime;
         }
 
 

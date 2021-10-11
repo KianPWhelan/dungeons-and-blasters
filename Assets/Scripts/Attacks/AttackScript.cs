@@ -152,6 +152,11 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
     public void SpawnSubAttacks()
     {
+        if(!photonView.IsMine)
+        {
+            return;
+        }
+
         foreach(Attack attack in subAttacks)
         {
             if(transform.parent != null)
