@@ -31,7 +31,10 @@ public class ProjectileAttackScript : AttackScript
                 attack.ApplyEffects(null, validTag, transform.position, transform.rotation);
             }
 
-            PhotonNetwork.Destroy(gameObject);
+            if (photonView.IsMine)
+            {
+                PhotonNetwork.Destroy(gameObject);
+            }
         }
 
         else
@@ -58,7 +61,10 @@ public class ProjectileAttackScript : AttackScript
                 attack.ApplyEffects(other.gameObject, validTag, transform.position, transform.rotation);
             }
 
-            PhotonNetwork.Destroy(gameObject);
+            if(photonView.IsMine)
+            {
+                PhotonNetwork.Destroy(gameObject);
+            }   
         }
     }
 }

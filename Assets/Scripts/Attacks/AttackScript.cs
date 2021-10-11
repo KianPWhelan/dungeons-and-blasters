@@ -99,7 +99,10 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
                 attack.ApplyEffects(null, validTag, transform.position, transform.rotation);
             }
 
-            PhotonNetwork.Destroy(gameObject);
+            if (photonView.IsMine)
+            {
+                PhotonNetwork.Destroy(gameObject);
+            }
         }
     }
 
@@ -128,7 +131,7 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
                 SpawnSubAttacks();
             }
 
-            if(destroyOnHit)
+            if(destroyOnHit && photonView.IsMine)
             {
                 PhotonNetwork.Destroy(gameObject);
             }
