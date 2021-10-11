@@ -30,6 +30,8 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     private GameObject canvas;
 
+    private Dictionary<GameObject, float> cooldowns = new Dictionary<GameObject, float>();
+
     public void Awake()
     {
         // #Important
@@ -67,6 +69,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
             if(p.TryGetComponent(out EnemyGeneric c))
             {
                 enemyPrefabs.Add(p);
+                cooldowns.Add(p, -100000);
             }
         }
 
@@ -171,8 +174,22 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
     private void SpawnEnemy()
     {
         GameObject enemyToSpawn = enemyPrefabs[currentSelection];
+        float cooldown = enemyToSpawn.GetComponent<EnemyGeneric>().cooldown;
+
+        if (cooldowns[enemyToSpawn] + cooldown > Time.time)
+        {
+            Debug.Log(enemyToSpawn.name + " is on cooldown for " + (Time.time - (cooldowns[enemyToSpawn] + cooldown)));
+            return;
+        }
+
+        else
+        {
+            cooldowns[enemyToSpawn] = Time.time;
+        }
+
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+
         if (Physics.Raycast(ray, out hit, 1000))
         {
             Debug.Log(hit.transform.name);

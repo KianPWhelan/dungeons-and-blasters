@@ -20,6 +20,8 @@ public class EnemyGeneric : MonoBehaviour
 
     public State currentState;
 
+    public float cooldown;
+
     // Current valid state transitions
     // [HideInInspector]
     public List<StateTransition> releventTransitions;
