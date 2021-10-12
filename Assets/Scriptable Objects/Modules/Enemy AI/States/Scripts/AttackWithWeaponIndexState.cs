@@ -6,14 +6,6 @@ using UnityEngine.AI;
 [CreateAssetMenu(menuName = "States/AttackWithWeaponIndexState")]
 public class AttackWithWeaponIndexState : State
 {
-    public override string name
-    {
-        get
-        {
-            return "AttackWithWeaponIndexState";
-        }
-    }
-
     [Tooltip("The index in the enemys WeaponHolder that we want to use")]
     public int weaponIndex;
 

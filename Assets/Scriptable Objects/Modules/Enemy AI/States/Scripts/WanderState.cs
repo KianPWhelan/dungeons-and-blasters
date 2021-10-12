@@ -6,14 +6,6 @@ using UnityEngine.AI;
 [CreateAssetMenu(menuName = "States/WanderState")]
 public class WanderState : State
 {
-    public override string name
-    {
-        get
-        {
-            return "WanderState";
-        }
-    }
-
     [Tooltip("Frequency with which enemy chooses a wander location")]
     [SerializeField]
     private float wanderFrequency;

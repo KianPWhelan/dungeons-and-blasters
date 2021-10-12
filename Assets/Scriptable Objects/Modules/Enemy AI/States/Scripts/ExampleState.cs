@@ -5,14 +5,6 @@ using UnityEngine.AI;
 
 public class ExampleState : State
 {
-    public override string name
-    {
-        get
-        {
-            return "ExampleState";
-        }
-    }
-
     public override void OnEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
     }

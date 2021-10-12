@@ -6,14 +6,6 @@ using UnityEngine.AI;
 [CreateAssetMenu(menuName = "States/AttackState")]
 public class AttackState : State
 {
-    public override string name
-    {
-        get
-        {
-            return "AttackState";
-        }
-    }
-
     public override void OnEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
         Debug.Log("Enemy " + self.GetInstanceID() + " has entered " + name);
