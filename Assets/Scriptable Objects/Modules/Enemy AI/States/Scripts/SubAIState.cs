@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[CreateAssetMenu(menuName = "States/ChaseTargetState")]
-public class ChaseTargetState : State
+[CreateAssetMenu(menuName = "States/SubAIState")]
+public class SubAIState : State
 {
+    [Tooltip("The EnemyAI that this Sub AI holds")]
+    [SerializeField]
+    private EnemyAI enemyAi;
+
     public override void OnEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
-        Debug.Log("Enemy " + self.GetInstanceID() + " has entered " + name);
     }
 
     public override void OnExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
-        agent.ResetPath();
-        SetIsAgentMovingAnimation(self, agent);
     }
 
     public override void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
-        agent.SetDestination(target.transform.position);
-        SetIsAgentMovingAnimation(self, agent);
+        enemyAi.Tick(self, target, agent, movement);
     }
 }

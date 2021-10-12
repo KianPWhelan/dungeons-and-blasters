@@ -42,18 +42,28 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     private Animator animator;
     private bool hasAnimator;
 
+    private Dictionary<GameObject, State> stateStorage = new Dictionary<GameObject, State>();
+    private Dictionary<State, List<StateTransition>> transitionStorage = new Dictionary<State, List<StateTransition>>();
+
     public void OnAfterDeserialize()
-    { }
+    {
+        Debug.Log("Deserializing");
+        stateStorage = new Dictionary<GameObject, State>();
+        transitionStorage = new Dictionary<State, List<StateTransition>>();
+    }
 
     public void OnBeforeSerialize() 
     {
-        callable = new List<string>(vals);
-        conditionals = new List<string>(cond);
+        // callable = new List<string>(vals);
+        // conditionals = new List<string>(cond);
         // BuildStateMachine();
     }
 
     public void OnEnable()
     {
+        callable = new List<string>(vals);
+        conditionals = new List<string>(cond);
+        // stateStorage = new Dictionary<GameObject, State>();
         BuildStateMachine();
     }
 
@@ -64,8 +74,22 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         localAgent = agent;
         localMovement = movement;
         var enemyComponent = self.GetComponent<EnemyGeneric>();
-        currentState = enemyComponent.currentState;
-        releventTransitions = enemyComponent.releventTransitions;
+
+        if(stateStorage.ContainsKey(self))
+        {
+            currentState = stateStorage[self];
+        }
+
+        else
+        {
+            stateStorage.Add(self, null);
+            currentState = null;
+        }
+        
+        if(currentState != null && transitionStorage.ContainsKey(currentState))
+        {
+            releventTransitions = transitionStorage[currentState];
+        }
 
         animator = null;
         animator = self.GetComponentInChildren<Animator>();
@@ -223,7 +247,14 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
             currentState = defaultState;
             currentState.OnEnter(localSelf, localTarget, localAgent, localMovement);
             localSelf.GetComponent<EnemyGeneric>().currentState = currentState;
-            localSelf.GetComponent<EnemyGeneric>().releventTransitions = GetReleventTransitions(currentState);
+
+            if(!transitionStorage.ContainsKey(currentState))
+            {
+                transitionStorage.Add(currentState, null);
+            }
+
+            transitionStorage[currentState] = GetReleventTransitions(currentState);
+            stateStorage[localSelf] = currentState;
             return true;
         }
 
@@ -231,11 +262,18 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         {
             if(ProcessConditionals(transition.transitionComponents))
             {
-                currentState.OnExit(localSelf, localTarget, localAgent, localMovement);
+                localSelf.GetComponent<EnemyGeneric>().currentState.OnExit(localSelf, localTarget, localAgent, localMovement);
                 currentState = transition.toState;
                 currentState.OnEnter(localSelf, localTarget, localAgent, localMovement);
                 localSelf.GetComponent<EnemyGeneric>().currentState = currentState;
-                localSelf.GetComponent<EnemyGeneric>().releventTransitions = GetReleventTransitions(currentState);
+
+                if (!transitionStorage.ContainsKey(currentState))
+                {
+                    transitionStorage.Add(currentState, null);
+                }
+
+                transitionStorage[currentState] = GetReleventTransitions(currentState);
+                stateStorage[localSelf] = currentState;
                 return true;
             }
         }
