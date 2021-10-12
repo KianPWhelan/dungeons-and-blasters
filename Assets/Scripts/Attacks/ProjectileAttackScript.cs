@@ -13,6 +13,11 @@ public class ProjectileAttackScript : AttackScript
     {
         base.Start();
         transform.SetParent(null, true);
+        if(destination.x != Vector3.negativeInfinity.x)
+        {
+            Debug.Log("In Re rotate");
+            transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
+        }
     }
 
     public override void Tick()

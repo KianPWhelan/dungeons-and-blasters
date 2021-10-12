@@ -17,7 +17,7 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(GameObject self, string targetTag = "none", bool useSelfAsParent = true)
+    public void PerformAttack(GameObject self, string targetTag = "none", bool useSelfAsParent = true, Vector3? destination = null)
     {
         Debug.Log("Performing attack");
         Debug.Log(attack);
@@ -32,12 +32,12 @@ public class Attack : ScriptableObject
 
         if(useSelfAsParent)
         {
-            info = new object[] { self.GetComponent<PhotonView>().ViewID, targetTag, damageMod };
+            info = new object[] { self.GetComponent<PhotonView>().ViewID, targetTag, damageMod, destination };
         }
 
         else
         {
-            info = new object[] { null, targetTag, damageMod };
+            info = new object[] { null, targetTag, damageMod, destination };
         }
         
         GameObject attackObject = PhotonNetwork.Instantiate(attack.name, self.transform.position, self.transform.rotation, 0, info);
@@ -50,7 +50,7 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, string targetTag = "none")
+    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, string targetTag = "none")
     {
         Debug.Log("Performing attack");
         Debug.Log(attack);

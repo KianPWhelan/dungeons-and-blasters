@@ -48,6 +48,9 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
     [HideInInspector]
     public float damageMod;
 
+    [HideInInspector]
+    public Vector3 destination;
+
     public virtual void Start()
     {
         if(parentId != 0)
@@ -152,6 +155,16 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         
         validTag = (string)instantiationData[1];
         damageMod = (float)instantiationData[2];
+
+        if(instantiationData[3] != null)
+        {
+            destination = (Vector3)instantiationData[3];
+        }
+        
+        else
+        {
+            destination = Vector3.negativeInfinity;
+        }
     }
 
     public void SpawnSubAttacks()
@@ -170,7 +183,7 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
             else
             {
-                attack.PerformAttack(transform.position, transform.rotation, validTag);
+                attack.PerformAttack(transform.position, transform.rotation, damageMod, validTag);
             }
         }
     }

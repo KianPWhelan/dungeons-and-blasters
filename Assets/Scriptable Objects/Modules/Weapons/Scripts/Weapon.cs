@@ -36,7 +36,7 @@ public class Weapon : ScriptableObject
     /// </summary>
     /// <param name="self"></param>
     /// <param name="targetTag"></param>
-    public bool Use(GameObject self, string targetTag = "none")
+    public bool Use(GameObject self, string targetTag = "none", Vector3? destination = null)
     {
         Debug.Log("Using weapon " + this.name);
         bool didUseAttack = false;
