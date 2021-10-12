@@ -9,15 +9,24 @@ public class ProjectileAttackScript : AttackScript
 
     public bool canGoThroughObjects;
 
+    private Rigidbody rigidbody;
+
+    private Vector3 networkPosition;
+    private Quaternion networkRotation;
+
     public override void Start()
     {
         base.Start();
         transform.SetParent(null, true);
+
         if(destination.x != Vector3.negativeInfinity.x)
         {
             Debug.Log("In Re rotate");
             transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
         }
+
+        rigidbody = GetComponent<Rigidbody>();
+        rigidbody.velocity = transform.forward * speed;
     }
 
     public override void Tick()
@@ -44,7 +53,7 @@ public class ProjectileAttackScript : AttackScript
 
         else
         {
-            transform.position += transform.forward * speed * Time.deltaTime;
+            // transform.position += transform.forward * speed * Time.deltaTime;
         }
     }
 
@@ -70,6 +79,34 @@ public class ProjectileAttackScript : AttackScript
             {
                 PhotonNetwork.Destroy(gameObject);
             }   
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(rigidbody.position);
+            stream.SendNext(rigidbody.rotation);
+            stream.SendNext(rigidbody.velocity);
+        }
+        else
+        {
+            networkPosition = (Vector3)stream.ReceiveNext();
+            networkRotation = (Quaternion)stream.ReceiveNext();
+            rigidbody.velocity = (Vector3)stream.ReceiveNext();
+
+            float lag = Mathf.Abs((float)(PhotonNetwork.Time - info.timestamp));
+            networkPosition += rigidbody.velocity * lag;
+        }
+    }
+
+    public void FixedUpdate()
+    {
+        if (!photonView.IsMine)
+        {
+            rigidbody.position = Vector3.MoveTowards(rigidbody.position, networkPosition, Time.fixedDeltaTime);
+            rigidbody.rotation = Quaternion.RotateTowards(rigidbody.rotation, networkRotation, Time.fixedDeltaTime * 100.0f);
         }
     }
 }
