@@ -47,7 +47,6 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
 
     public void OnAfterDeserialize()
     {
-        Debug.Log("Deserializing");
         stateStorage = new Dictionary<GameObject, State>();
         transitionStorage = new Dictionary<State, List<StateTransition>>();
     }
