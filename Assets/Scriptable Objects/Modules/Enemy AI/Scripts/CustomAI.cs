@@ -49,6 +49,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     {
         callable = new List<string>(vals);
         conditionals = new List<string>(cond);
+        // BuildStateMachine();
     }
 
     public void OnEnable()

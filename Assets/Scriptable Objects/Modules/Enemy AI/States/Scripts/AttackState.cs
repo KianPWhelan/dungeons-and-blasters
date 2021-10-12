@@ -18,10 +18,22 @@ public class AttackState : State
     {
         Debug.Log("Enemy " + self.GetInstanceID() + " has entered " + name);
         var weapons = self.GetComponent<WeaponHolder>();
+        bool didAttack = false;
+
         for(int i = 0; i < weapons.GetWeapons().Count; i++)
         {
-            weapons.UseWeapon(i);
+            bool success = weapons.UseWeapon(i);
+
+            if(success)
+            {
+                didAttack = true;
+            }
         }
+
+        if(didAttack)
+        {
+            SetAttackAnimationTrigger(self);
+        }      
     }
 
     public override void OnExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3047516110385557490}
   - component: {fileID: 6743354643277664469}
   - component: {fileID: 894719987435949354}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Test Sub Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,10 +121,16 @@ MonoBehaviour:
   localStartingPosition: {x: 0, y: 0, z: 0}
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
+  applyEffectsOnEnd: 0
+  visualEndEffect: {fileID: 0}
+  visualStartEffect: {fileID: 0}
   validTag: 
   startingTime: 0
   hitList: []
   parentId: 0
+  collisionNormal: {x: 0, y: 0, z: 0}
+  collisionPoint: {x: 0, y: 0, z: 0}
+  damageMod: 0
   speed: 10
   canGoThroughObjects: 0
 --- !u!114 &3047516110385557489

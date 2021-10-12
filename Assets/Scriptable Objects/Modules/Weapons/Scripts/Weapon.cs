@@ -36,9 +36,10 @@ public class Weapon : ScriptableObject
     /// </summary>
     /// <param name="self"></param>
     /// <param name="targetTag"></param>
-    public void Use(GameObject self, string targetTag = "none")
+    public bool Use(GameObject self, string targetTag = "none")
     {
         Debug.Log("Using weapon " + this.name);
+        bool didUseAttack = false;
 
         if(animation != null)
         {
@@ -56,6 +57,7 @@ public class Weapon : ScriptableObject
 
             if(map[attack].lastUseTime[self] + map[attack].cooldown <= currentTime)
             {
+                didUseAttack = true;
                 attack.PerformAttack(self, targetTag);
                 map[attack].lastUseTime[self] = currentTime;
             }
@@ -65,6 +67,8 @@ public class Weapon : ScriptableObject
                 Debug.Log("On cooldown");
             }
         }
+
+        return didUseAttack;
     }
 
     // Map attacks to cooldowns on serialization

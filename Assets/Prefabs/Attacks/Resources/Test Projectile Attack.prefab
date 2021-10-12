@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3807866404001653404}
   - component: {fileID: 4829975092919131579}
   - component: {fileID: 1366876051487703108}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Test Projectile Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,9 +216,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletMissileBlue
       objectReference: {fileID: 0}
+    - target: {fileID: 1385161154759072, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1508206583932192, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1508206583932192, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1847236913332368, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945585621776466, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995635244691048, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4347466963179874, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
       propertyPath: m_RootOrder
