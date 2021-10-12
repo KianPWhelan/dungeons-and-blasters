@@ -107,6 +107,7 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
 
             if (photonView.IsMine)
             {
+                Debug.Log("I own this");
                 PhotonNetwork.Destroy(gameObject);
             }
         }

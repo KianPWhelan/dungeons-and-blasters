@@ -117,7 +117,7 @@ MonoBehaviour:
   subAttacks: []
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
-  attackDuration: 100
+  attackDuration: 15
   localStartingPosition: {x: 0, y: 0, z: 0}
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   collisionNormal: {x: 0, y: 0, z: 0}
   collisionPoint: {x: 0, y: 0, z: 0}
   damageMod: 0
+  destination: {x: 0, y: 0, z: 0}
   speed: 50
   canGoThroughObjects: 0
 --- !u!114 &3807866404001653407
@@ -203,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
   m_SynchronizeAngularVelocity: 1
-  m_TeleportEnabled: 1
+  m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!1001 &5978468739541805442
 PrefabInstance:

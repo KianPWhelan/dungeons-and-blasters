@@ -68,8 +68,14 @@ public class Attack : ScriptableObject
     /// <param name="targetTag"></param>
     public void ApplyEffects(GameObject target, string targetTag, Vector3? location = null, Quaternion? rotation = null, float damageMod = 1)
     {
-        Health health = target.GetComponent<Health>();
-        StatusEffects statusEffects = target.GetComponent<StatusEffects>();
+        Health health = null;
+        StatusEffects statusEffects = null;
+        if(target != null)
+        {
+            health = target.GetComponent<Health>();
+            statusEffects = target.GetComponent<StatusEffects>();
+        }
+        
         Debug.Log("Damage Mod: " + damageMod);
 
         foreach(Effect effect in effects)

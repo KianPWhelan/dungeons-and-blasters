@@ -194,7 +194,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         {
             Debug.Log(hit.transform.name);
             Debug.Log("hit");
-            PhotonNetwork.InstantiateRoomObject(enemyToSpawn.name, hit.transform.position, hit.transform.rotation, 0);
+            PhotonNetwork.Instantiate(enemyToSpawn.name, hit.transform.position, hit.transform.rotation, 0);
         }
     }
 

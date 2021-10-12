@@ -128,6 +128,7 @@ MonoBehaviour:
   collisionNormal: {x: 0, y: 0, z: 0}
   collisionPoint: {x: 0, y: 0, z: 0}
   damageMod: 0
+  destination: {x: 0, y: 0, z: 0}
 --- !u!114 &-74817800037332982
 MonoBehaviour:
   m_ObjectHideFlags: 0
