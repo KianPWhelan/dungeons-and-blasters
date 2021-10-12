@@ -50,4 +50,14 @@ public abstract class State : ScriptableObject
             animator.SetTrigger("attack");
         }
     }
+
+    public void SetAttackAnimationTrigger(GameObject self, int index)
+    {
+        var animator = self.GetComponentInChildren<Animator>();
+
+        if (animator != null)
+        {
+            animator.SetTrigger("attack" + index);
+        }
+    }
 }
