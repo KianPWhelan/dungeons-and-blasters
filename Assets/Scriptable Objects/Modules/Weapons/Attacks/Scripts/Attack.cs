@@ -14,11 +14,19 @@ public class Attack : ScriptableObject
     [SerializeField]
     private List<Effect> effects = new List<Effect>();
 
+    private Spawner spawner;
+
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
     public void PerformAttack(GameObject self, string targetTag = "none", bool useSelfAsParent = true, Vector3? destination = null)
     {
+        if(spawner == null)
+        {
+            var spawnerObj = GameObject.FindGameObjectWithTag("Spawner");
+            spawner = spawnerObj.GetComponent<Spawner>();
+        }
+
         Debug.Log("Performing attack");
         Debug.Log(attack);
         object[] info;
@@ -40,11 +48,7 @@ public class Attack : ScriptableObject
             info = new object[] { null, targetTag, damageMod, destination };
         }
         
-        GameObject attackObject = PhotonNetwork.Instantiate(attack.name, self.transform.position, self.transform.rotation, 0, info);
-        attackObject.transform.SetParent(self.transform);
-        var attackScript = attackObject.GetComponent<AttackScript>();
-        attackScript.SetAttack(this);
-        attackScript.SetValidTag(targetTag);
+        spawner.Spawn(attack.name, self.transform.position, self.transform.rotation, info);
     }
 
     /// <summary>
@@ -56,10 +60,7 @@ public class Attack : ScriptableObject
         Debug.Log(attack);
         object[] info;
         info = new object[] { null, targetTag };
-        GameObject attackObject = PhotonNetwork.Instantiate(attack.name, selfPosition, selfRotation, 0, info);
-        var attackScript = attackObject.GetComponent<AttackScript>();
-        attackScript.SetAttack(this);
-        attackScript.SetValidTag(targetTag);
+        spawner.Spawn(attack.name, selfPosition, selfRotation, info);
     }
 
     /// <summary>
