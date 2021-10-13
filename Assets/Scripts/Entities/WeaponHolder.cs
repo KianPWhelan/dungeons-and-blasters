@@ -12,9 +12,9 @@ public class WeaponHolder : MonoBehaviour
     [SerializeField]
     private string targetTag;
 
-    public bool UseWeapon(int index)
+    public bool UseWeapon(int index, Vector3? destination = null)
     {
-        return weapons[index].Use(gameObject, targetTag);
+        return weapons[index].Use(gameObject, targetTag, destination);
     }
 
     public void UseWeapon(string weaponName)

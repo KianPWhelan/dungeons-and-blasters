@@ -58,7 +58,7 @@ public class Weapon : ScriptableObject
             if(map[attack].lastUseTime[self] + map[attack].cooldown <= currentTime)
             {
                 didUseAttack = true;
-                attack.PerformAttack(self, targetTag);
+                attack.PerformAttack(self, targetTag, true, destination);
                 map[attack].lastUseTime[self] = currentTime;
             }
             

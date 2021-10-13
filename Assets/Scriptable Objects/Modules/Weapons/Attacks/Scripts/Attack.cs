@@ -40,12 +40,12 @@ public class Attack : ScriptableObject
 
         if(useSelfAsParent)
         {
-            info = new object[] { self.GetComponent<PhotonView>().ViewID, targetTag, damageMod, destination };
+            info = new object[] { self.GetComponent<PhotonView>().ViewID, targetTag, damageMod, destination.GetValueOrDefault() };
         }
 
         else
         {
-            info = new object[] { null, targetTag, damageMod, destination };
+            info = new object[] { null, targetTag, damageMod, destination.GetValueOrDefault() };
         }
         
         spawner.Spawn(attack.name, self.transform.position, self.transform.rotation, info);
