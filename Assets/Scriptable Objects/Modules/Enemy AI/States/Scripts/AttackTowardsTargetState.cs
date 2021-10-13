@@ -6,15 +6,24 @@ using UnityEngine.AI;
 [CreateAssetMenu(menuName = "States/AttackTowardsTargetState")]
 public class AttackTowardsTargetState : State
 {
+    public Vector3 offset;
+
+    public bool rotateTowards;
+
     public override void OnEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
     {
         Debug.Log("Enemy " + self.GetInstanceID() + " has entered " + name);
         var weapons = self.GetComponent<WeaponHolder>();
         bool didAttack = false;
 
+        if(rotateTowards)
+        {
+            self.transform.rotation = Quaternion.LookRotation((target.transform.position - self.transform.position).normalized);
+        }
+
         for (int i = 0; i < weapons.GetWeapons().Count; i++)
         {
-            bool success = weapons.UseWeapon(i, target.transform.position);
+            bool success = weapons.UseWeapon(i, target.transform.position + offset, true);
 
             if (success)
             {

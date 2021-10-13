@@ -12,8 +12,13 @@ public class WeaponHolder : MonoBehaviour
     [SerializeField]
     private string targetTag;
 
-    public bool UseWeapon(int index, Vector3? destination = null)
+    public bool UseWeapon(int index, Vector3? destination = null, bool useDestination = false)
     {
+        if(!useDestination)
+        {
+            destination = Vector3.negativeInfinity;
+        }
+
         return weapons[index].Use(gameObject, targetTag, destination);
     }
 

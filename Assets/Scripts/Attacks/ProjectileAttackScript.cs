@@ -33,7 +33,7 @@ public class ProjectileAttackScript : AttackScript
     {
         if (startingTime + attackDuration <= Time.time)
         {
-            Debug.Log("here");
+            // Debug.Log("here");
 
             if (subAttacksOnEnd)
             {

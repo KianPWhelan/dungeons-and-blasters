@@ -21,6 +21,8 @@ public class Attack : ScriptableObject
     /// </summary>
     public void PerformAttack(GameObject self, string targetTag = "none", bool useSelfAsParent = true, Vector3? destination = null)
     {
+        Debug.Log("Destination: " + destination.GetValueOrDefault());
+
         if(spawner == null)
         {
             var spawnerObj = GameObject.FindGameObjectWithTag("Spawner");
@@ -46,6 +48,11 @@ public class Attack : ScriptableObject
         else
         {
             info = new object[] { null, targetTag, damageMod, destination.GetValueOrDefault() };
+        }
+
+        if(destination.GetValueOrDefault().x == Vector3.negativeInfinity.x)
+        {
+            info[3] = null;
         }
         
         spawner.Spawn(attack.name, self.transform.position, self.transform.rotation, info);
