@@ -27,6 +27,10 @@ public class AttackScript : MonoBehaviour
 
     public GameObject visualStartEffect;
 
+    public Vector3 visualStartEffectPositionOffset;
+
+    public Vector3 visualStartEffectRotationOffset;
+
     [HideInInspector]
     public string validTag;
 
@@ -53,6 +57,8 @@ public class AttackScript : MonoBehaviour
 
     public virtual void Start()
     {
+        Debug.Log("Starting " + name);
+
         if(parentId != 0)
         {
             transform.SetParent(PhotonView.Find(parentId).transform);
@@ -67,7 +73,7 @@ public class AttackScript : MonoBehaviour
 
         if(visualStartEffect != null)
         {
-            var fx = Instantiate(visualStartEffect, transform.position, transform.rotation);
+            var fx = Instantiate(visualStartEffect, transform.position + visualStartEffectPositionOffset, Quaternion.Euler(transform.rotation.eulerAngles + visualStartEffectRotationOffset));
             Destroy(fx, 5f);
         }
     }
@@ -203,6 +209,8 @@ public class AttackScript : MonoBehaviour
 
     public void OnDestroy()
     {
+        Debug.Log("Destroying " + name);
+
         if(visualEndEffect)
         {
             var fx = Instantiate(visualEndEffect, transform.position, transform.rotation);

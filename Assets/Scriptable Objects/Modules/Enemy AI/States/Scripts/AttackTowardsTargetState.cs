@@ -28,7 +28,6 @@ public class AttackTowardsTargetState : State
             if (success)
             {
                 didAttack = true;
-                Debug.Log("");
             }
         }
 

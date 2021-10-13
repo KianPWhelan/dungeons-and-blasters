@@ -21,7 +21,7 @@ public class Attack : ScriptableObject
     /// </summary>
     public void PerformAttack(GameObject self, string targetTag = "none", bool useSelfAsParent = true, Vector3? destination = null)
     {
-        Debug.Log("Destination: " + destination.GetValueOrDefault());
+        Debug.Log("Using Attack " + name);
 
         if(spawner == null)
         {

@@ -173,7 +173,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   cooldown: 10
   ranges:
-  - 25
+  - 4
   releventTransitions: []
 --- !u!114 &5002929920589353483
 MonoBehaviour:
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9991c3553723674380690d791df1343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatHealth: 30
+  floatHealth: 100
   infiniteHealth: 0
   isPlayer: 0
   isDead: 0
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 11400000, guid: bd2ccf97b7d15244fb7dabe41d41c647, type: 2}
+  - {fileID: 11400000, guid: d6bfcac10512f45459ee43d837851d37, type: 2}
   targetTag: Player
 --- !u!65 &5018152486246340113
 BoxCollider:
@@ -369,6 +369,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: d4a6a53c04b9ee84aaccfc64d81270bf, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6a789fe5ea2625b4da9a1644cc1518ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a6a53c04b9ee84aaccfc64d81270bf, type: 3}
 --- !u!4 &9176105649639011164 stripped

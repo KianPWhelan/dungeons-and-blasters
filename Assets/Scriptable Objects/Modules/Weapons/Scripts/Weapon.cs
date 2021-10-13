@@ -38,7 +38,7 @@ public class Weapon : ScriptableObject
     /// <param name="targetTag"></param>
     public bool Use(GameObject self, string targetTag = "none", Vector3? destination = null)
     {
-        Debug.Log("Using weapon " + this.name);
+        // Debug.Log("Using weapon " + this.name);
         bool didUseAttack = false;
 
         if(animation != null)
@@ -64,7 +64,7 @@ public class Weapon : ScriptableObject
             
             else
             {
-                Debug.Log("On cooldown");
+                // Debug.Log("On cooldown");
             }
         }
 
