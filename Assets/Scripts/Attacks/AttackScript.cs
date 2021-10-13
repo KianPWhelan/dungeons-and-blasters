@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallback
+public class AttackScript : MonoBehaviour
 {
     public Attack attack;
 
@@ -58,6 +58,7 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
             transform.SetParent(PhotonView.Find(parentId).transform);
             transform.position = transform.parent.position;
             transform.rotation = transform.parent.GetComponentInChildren<Rotater>().transform.rotation;
+            Debug.Log("Parent set to " + transform.parent.name);
         }
         
         hitList = new List<GameObject>();
@@ -71,14 +72,14 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
         }
     }
 
-    public override void OnEnable()
+    public void OnEnable()
     {
         hitList = new List<GameObject>();
         startingTime = Time.time;
         transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
     }
 
-    public override void OnDisable()
+    public void OnDisable()
     {
         attack = null;
         validTag = null;
@@ -105,11 +106,7 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
                 attack.ApplyEffects(null, validTag, transform.position, transform.rotation, damageMod);
             }
 
-            if (photonView.IsMine)
-            {
-                Debug.Log("I own this");
-                PhotonNetwork.Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 
@@ -138,43 +135,38 @@ public class AttackScript : MonoBehaviourPunCallbacks, IPunInstantiateMagicCallb
                 SpawnSubAttacks();
             }
 
-            if(destroyOnHit && photonView.IsMine)
+            if(destroyOnHit)
             {
-                PhotonNetwork.Destroy(gameObject);
+                Destroy(gameObject);
             }
         }
     }
 
-    public void OnPhotonInstantiate(PhotonMessageInfo info)
-    {
-        object[] instantiationData = info.photonView.InstantiationData;
+    //public void OnPhotonInstantiate(PhotonMessageInfo info)
+    //{
+    //    object[] instantiationData = info.photonView.InstantiationData;
 
-        if(instantiationData[0] != null)
-        {
-            parentId = (int)instantiationData[0];
-        }
+    //    if(instantiationData[0] != null)
+    //    {
+    //        parentId = (int)instantiationData[0];
+    //    }
         
-        validTag = (string)instantiationData[1];
-        damageMod = (float)instantiationData[2];
+    //    validTag = (string)instantiationData[1];
+    //    damageMod = (float)instantiationData[2];
 
-        if(instantiationData[3] != null)
-        {
-            destination = (Vector3)instantiationData[3];
-        }
+    //    if(instantiationData[3] != null)
+    //    {
+    //        destination = (Vector3)instantiationData[3];
+    //    }
         
-        else
-        {
-            destination = Vector3.negativeInfinity;
-        }
-    }
+    //    else
+    //    {
+    //        destination = Vector3.negativeInfinity;
+    //    }
+    //}
 
     public void SpawnSubAttacks()
     {
-        if(!photonView.IsMine)
-        {
-            return;
-        }
-
         foreach(Attack attack in subAttacks)
         {
             if(transform.parent != null)
