@@ -22,6 +22,8 @@ public class EnemyGeneric : MonoBehaviour
 
     public float cooldown;
 
+    public List<float> ranges;
+
     // Current valid state transitions
     // [HideInInspector]
     public List<StateTransition> releventTransitions;

@@ -30,7 +30,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     private GameObject canvas;
 
-    private Dictionary<GameObject, float> cooldowns = new Dictionary<GameObject, float>();
+    public Dictionary<GameObject, float> cooldowns = new Dictionary<GameObject, float>();
 
     public void Awake()
     {

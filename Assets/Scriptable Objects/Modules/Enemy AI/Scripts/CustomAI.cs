@@ -25,7 +25,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     public List<StateTransition> stateMachine = new List<StateTransition>();
 
     // Valid values that can be called from transitions
-    private static string[] vals = { "targetDistance", "targetIsVisible", "targetHealth", "selfHealth" };
+    private static string[] vals = { "targetDistance", "targetIsVisible", "targetHealth", "selfHealth", "selfRange" };
     private List<string> callable = new List<string>(vals);
 
     // Valid conditions that can be called from transitions
@@ -157,6 +157,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         List<string> conditions = new List<string>(transitionComponents);
         int i = 0;
         int infiniteLoopDetector = 0;
+
         while(conditions.Count > 1)
         {
             if(infiniteLoopDetector > 10000)
@@ -177,16 +178,16 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
             // Debug.Log("Current condition: " + conditions[i]);
 
             // If current index is a callable value, process that value
-            if (callable.Contains(conditions[i]))
+            if (IsCallableValue(conditions[i]))
             {
                 // Debug.Log("Setting value");
-                //Debug.Log(conditions[i]);
+                // Debug.Log(conditions[i]);
                 conditions[i] = GetValue(conditions[i]);
                 //Debug.Log(conditions[i]);
             }
             
             // If current index is a conditional and the previous and next values are processed, perform comparison
-            else if(conditionals.Contains(conditions[i]) && !callable.Contains(conditions[i - 1]) && !callable.Contains(conditions[i + 1]) && conditionals[i] != "(" && conditionals[i] != ")")
+            else if(conditionals.Contains(conditions[i]) && !IsCallableValue(conditions[i - 1]) && !IsCallableValue(conditions[i + 1]) && conditionals[i] != "(" && conditionals[i] != ")")
             {
                 // Debug.Log("Processing " + conditions[i]);
                 var result = Compare(conditions[i - 1], conditions[i + 1], conditions[i]);
@@ -237,6 +238,21 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         // Debug.Log(conditions.Count);
         // Debug.Log(conditions[0]);
         return bool.Parse(conditions[0]);
+    }
+
+    private bool IsCallableValue(string value)
+    {
+        // Debug.Log(value);
+
+        foreach(string c in callable)
+        {
+            if(value.Contains(c))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private bool CheckStateChanges()
@@ -414,6 +430,24 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
                 {
                     animator.SetFloat("selfHealth", returnValue);
                 }
+            }
+
+            return returnValue.ToString();
+        }
+
+        else if(variable.Contains("selfRange"))
+        {
+            // Debug.Log("selfRange");
+            var data = localSelf.GetComponent<EnemyGeneric>();
+            int index = int.Parse(variable[variable.Length - 1].ToString());
+
+            float returnValue = data.ranges[index];
+
+            // Debug.Log(returnValue);
+
+            if(hasAnimator)
+            {
+                animator.SetFloat(variable, returnValue);
             }
 
             return returnValue.ToString();

@@ -170,6 +170,8 @@ MonoBehaviour:
   targetType: Player
   currentState: {fileID: 0}
   cooldown: 10
+  ranges:
+  - 2.5
   releventTransitions: []
 --- !u!114 &9070468601821801596
 MonoBehaviour:
