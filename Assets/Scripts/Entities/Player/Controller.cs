@@ -61,7 +61,7 @@ public class Controller : MonoBehaviourPunCallbacks
         if(photonView.IsMine)
         {
             ProcessMovement();
-        } 
+        }
     }
 
     public void GameOver()
@@ -92,16 +92,16 @@ public class Controller : MonoBehaviourPunCallbacks
 
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            // Cursor.lockState = CursorLockMode.None;
+            // Cursor.visible = true;
         }
 
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.M))
         {
             sensitivity += 0.1f;
         }
 
-        if(Input.GetKeyDown(KeyCode.DownArrow) && sensitivity > 0)
+        if(Input.GetKeyDown(KeyCode.N) && sensitivity > 0)
         {
             sensitivity -= -0.1f;
         }

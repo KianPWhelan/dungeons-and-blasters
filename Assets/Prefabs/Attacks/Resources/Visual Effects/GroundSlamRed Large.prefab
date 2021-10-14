@@ -9843,6 +9843,7 @@ GameObject:
   - component: {fileID: 87690036780461712}
   - component: {fileID: 286336907005475520}
   - component: {fileID: 287420866799074220}
+  - component: {fileID: 4936454349495948438}
   m_Layer: 0
   m_Name: GroundSlamRed Large
   m_TagString: Untagged
@@ -14709,6 +14710,22 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &4936454349495948438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89173582841401710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8753c8177bc00bb4f8433dc249fa1cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabSound: {fileID: 1300756963499128, guid: 81260419c511bcc4698f103e2ca005c3, type: 3}
+  destroyWhenDone: 1
+  soundPrefabIsChild: 0
+  pitchRandomMultiplier: 1
 --- !u!1 &89204772856768236
 GameObject:
   m_ObjectHideFlags: 0

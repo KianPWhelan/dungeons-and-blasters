@@ -27,6 +27,10 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public FloatVariable time;
 
+        //public int numPlayers;
+
+        //public int numFinished;
+
         private float masterTime;
 
         #region Photon Callbacks
