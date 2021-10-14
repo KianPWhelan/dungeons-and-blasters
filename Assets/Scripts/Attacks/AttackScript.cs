@@ -85,11 +85,11 @@ public class AttackScript : MonoBehaviour
         transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
     }
 
-    public void OnDisable()
-    {
-        attack = null;
-        validTag = null;
-    }
+    //public void OnDisable()
+    //{
+    //    attack = null;
+    //    validTag = null;
+    //}
 
     public void Update()
     {
@@ -129,6 +129,7 @@ public class AttackScript : MonoBehaviour
     public virtual void OnTriggerEnter(Collider other)
     {
         Debug.Log("Valid tag: " + validTag+ "  Other tag: " + other.tag + "  Other name: " + other.name);
+        Debug.Log(attack);
         if(attack != null && validTag != null && (other.tag == validTag || validTag == "none") && (!hitList.Contains(other.gameObject) || canHitSameTargetMoreThanOnce))
         {
             Debug.Log("Collision with valid tag");
