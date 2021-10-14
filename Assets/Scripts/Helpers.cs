@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Helpers
 {
@@ -97,5 +98,17 @@ public class Helpers
         interpolatedNormal.Normalize();
         interpolatedNormal = hit.transform.TransformDirection(interpolatedNormal);
         return interpolatedNormal;
+    }
+
+    /// <summary>
+    /// Executes the provided method after the provided time has passed, non blocking
+    /// </summary>
+    /// <param name="action"></param>
+    /// <param name="time"></param>
+    /// <returns></returns>
+    public static IEnumerator Timeout(Action action, float time)
+    {
+        yield return new WaitForSecondsRealtime(time);
+        action();
     }
 }
