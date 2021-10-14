@@ -10,6 +10,7 @@ public class Controller : MonoBehaviourPunCallbacks
     private PlayerCamera playerCam;
     private Rotater rotater;
     private WeaponHolder weaponHolder;
+    public GameObject canvas;
 
     [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
     public static GameObject LocalPlayerInstance;
@@ -37,6 +38,7 @@ public class Controller : MonoBehaviourPunCallbacks
         if(!photonView.IsMine)
         {
             playerCam.gameObject.SetActive(false);
+            canvas.SetActive(false);
         }
 
 #if UNITY_5_4_OR_NEWER
@@ -81,7 +83,7 @@ public class Controller : MonoBehaviourPunCallbacks
             movement.Jump();   
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Debug.Log("Weapon button pressed");
             weaponHolder.UseWeapon(0);
