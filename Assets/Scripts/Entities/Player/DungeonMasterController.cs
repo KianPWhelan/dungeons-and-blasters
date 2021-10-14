@@ -19,6 +19,14 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     public List<GameObject> enemyPrefabs;
 
+    public GameObject abilityContent;
+
+    public GameObject activeAbilitiesSlot;
+
+    private GameObject abilityButton;
+
+    private GameObject useAbilityButton;
+
     [SerializeField]
     private int currentSelection = 0;
 
@@ -28,7 +36,11 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     private Camera camera;
 
-    private GameObject canvas;
+    public GameObject canvas;
+
+    public GameObject topPanel;
+
+    private bool placeMode = false;
 
     public Dictionary<GameObject, float> cooldowns = new Dictionary<GameObject, float>();
 
@@ -47,34 +59,25 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     public void Start()
     {
-        canvas = gameObject.GetComponentInChildren<Canvas>().gameObject;
 
         if (!photonView.IsMine)
         {
             gameObject.SetActive(false);
             canvas.SetActive(false);
+            topPanel.SetActive(false);
         }
 
         body = GetComponent<Rigidbody>();
         startHeight = transform.position.y;
         camera = gameObject.GetComponentInChildren<Camera>();
 
-        var prefabs = Resources.LoadAll("", typeof(GameObject));
-        // Debug.Log(prefabs.Length);
-
-        for (int i = 0; i < prefabs.Length; i++)
-        {
-            GameObject p = (GameObject)prefabs[i];
-            // Debug.Log(p.name);
-            if(p.TryGetComponent(out EnemyGeneric c))
-            {
-                enemyPrefabs.Add(p);
-                cooldowns.Add(p, -100000);
-            }
-        }
+        LoadEnemyPrefabs();
+        abilityButton = (GameObject)Resources.Load("DM Ability Button");
+        useAbilityButton = (GameObject)Resources.Load("DM Use Ability Button");
+        GenerateAbilityButtons();
 
         var selectionText = canvas.transform.Find("Current Selection Text");
-        selectionText.GetComponent<Text>().text = "Current Selection: " + enemyPrefabs[currentSelection].name;
+        selectionText.GetComponent<Text>().text = "Current Selection: " ;
 
 #if UNITY_5_4_OR_NEWER
         // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
@@ -107,6 +110,44 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 #endif
     }
 
+    public void SetCurrentSelection(GameObject selection)
+    {
+        currentSelection = enemyPrefabs.FindIndex(x => x == selection);
+        var selectionText = canvas.transform.Find("Current Selection Text");
+        selectionText.GetComponent<Text>().text = "Current Selection: " + enemyPrefabs[currentSelection].name;
+        placeMode = true;
+    }
+
+    private void LoadEnemyPrefabs()
+    {
+        var prefabs = Resources.LoadAll("", typeof(GameObject));
+        // Debug.Log(prefabs.Length);
+
+        for (int i = 0; i < prefabs.Length; i++)
+        {
+            GameObject p = (GameObject)prefabs[i];
+            // Debug.Log(p.name);
+            if (p.TryGetComponent(out EnemyGeneric c))
+            {
+                enemyPrefabs.Add(p);
+                cooldowns.Add(p, -100000);
+            }
+        }
+    }
+
+    private void GenerateAbilityButtons()
+    {
+        foreach(GameObject enemy in enemyPrefabs)
+        {
+            var data = enemy.GetComponent<EnemyGeneric>();
+            var button = Instantiate(abilityButton, abilityContent.transform);
+            button.GetComponentInChildren<Text>().text = enemy.name + "\nSlots: " + data.slotSize + " Cooldown: " + data.cooldown.ToString("0.00"); ;
+            button.GetComponent<SlotAbility>().controller = this;
+            button.GetComponent<SlotAbility>().ability = enemy;
+            button.GetComponent<SlotAbility>().slotPanel = activeAbilitiesSlot;
+        }
+    }
+
     /// <summary>
     /// Check for key presses from 
     /// </summary>
@@ -133,9 +174,12 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
             Cursor.visible = !Cursor.visible;
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKeyDown(KeyCode.Mouse0) && placeMode)
         {
             SpawnEnemy();
+            placeMode = false;
+            var selectionText = canvas.transform.Find("Current Selection Text");
+            selectionText.GetComponent<Text>().text = "Current Selection: ";
         }
 
         if(Input.GetKeyDown(KeyCode.Mouse1))
@@ -176,16 +220,16 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         GameObject enemyToSpawn = enemyPrefabs[currentSelection];
         float cooldown = enemyToSpawn.GetComponent<EnemyGeneric>().cooldown;
 
-        if (cooldowns[enemyToSpawn] + cooldown > Time.time)
-        {
-            Debug.Log(enemyToSpawn.name + " is on cooldown for " + (Time.time - (cooldowns[enemyToSpawn] + cooldown)));
-            return;
-        }
+        //if (cooldowns[enemyToSpawn] + cooldown > Time.time)
+        //{
+        //    Debug.Log(enemyToSpawn.name + " is on cooldown for " + (Time.time - (cooldowns[enemyToSpawn] + cooldown)));
+        //    return;
+        //}
 
-        else
-        {
-            cooldowns[enemyToSpawn] = Time.time;
-        }
+        //else
+        //{
+        //    cooldowns[enemyToSpawn] = Time.time;
+        //}
 
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;

@@ -171,7 +171,8 @@ MonoBehaviour:
   aiModule: {fileID: 11400000, guid: 4ebcd45dcd5a7fb41b628eeadb73248c, type: 2}
   targetType: Player
   currentState: {fileID: 0}
-  cooldown: 10
+  cooldown: 30
+  slotSize: 3
   ranges:
   - 4
   releventTransitions: []
