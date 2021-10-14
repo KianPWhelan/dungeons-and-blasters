@@ -11,10 +11,10 @@ public class Damage : ScriptableObject
 
     [Tooltip("Amount of damage deals")]
     [SerializeField]
-    private FloatVariable damage;
+    private float damage;
 
     public void DoDamage(Health hp, float damageMod)
     {
-        hp.AdjustHealth(-damage.runtimeValue * damageMod);
+        hp.AdjustHealth(-damage * damageMod);
     }
 }
