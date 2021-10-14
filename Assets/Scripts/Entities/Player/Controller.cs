@@ -7,7 +7,7 @@ using Photon.Pun;
 public class Controller : MonoBehaviourPunCallbacks
 {
     private Movement movement;
-    private PlayerCamera playerCam;
+    public PlayerCamera playerCam;
     private Rotater rotater;
     private WeaponHolder weaponHolder;
     public GameObject canvas;
@@ -66,12 +66,16 @@ public class Controller : MonoBehaviourPunCallbacks
 
     public void GameOver()
     {
-        Debug.Log("Game has ended");
-        // TODO: Send to game over screen
-        PhotonNetwork.LeaveRoom();
+        if (photonView.IsMine)
+        {
+            Debug.Log("Game has ended");
+            // TODO: Send to game over screen
+            // PhotonNetwork.LeaveRoom();
+            PhotonNetwork.Destroy(gameObject);
 #if UNITY_EDITOR
-        // UnityEditor.EditorApplication.isPlaying = false;
+            // UnityEditor.EditorApplication.isPlaying = false;
 #endif
+        }
     }
 
     /// <summary>

@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8379535459e0de643b2ae6819dd577f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCam: {fileID: 0}
   canvas: {fileID: 9136021562623379900}
   sensitivity: 1
 --- !u!114 &-3016581500895162571

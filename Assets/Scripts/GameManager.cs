@@ -35,6 +35,10 @@ namespace Com.OfTomorrowInc.DMShooter
 
         #region Photon Callbacks
 
+        private PlayerCamera currentActiveCamera;
+
+        private bool isDM;
+
 
         /// <summary>
         /// Called when the local player left the room. We need to load the launcher scene.
@@ -68,12 +72,14 @@ namespace Com.OfTomorrowInc.DMShooter
                 Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
                 PhotonNetwork.Instantiate(this.playerPrefab.name, playerSpawnLocation, Quaternion.identity, 0);
+                isDM = false;
             }
             else if (Controller.LocalPlayerInstance == null && DungeonMasterController.LocalPlayerInstance == null && isDungeonMaster.runtimeValue)
             {
                 Debug.LogFormat("We are Instantiating DungeonMaster from {0}", Application.loadedLevelName);
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
                 PhotonNetwork.Instantiate(this.dungeonMasterPrefab.name, new Vector3(0f, 50f, 0f), Quaternion.identity, 0);
+                isDM = true;
             }
         }
 
@@ -86,12 +92,43 @@ namespace Com.OfTomorrowInc.DMShooter
             }
 
             time.runtimeValue = gameTime;
+
+            if(((Controller.LocalPlayerInstance == null && !isDM) || (Controller.LocalPlayerInstance != null && !Controller.LocalPlayerInstance.activeSelf)) && (currentActiveCamera == null || !currentActiveCamera.gameObject.activeSelf))
+            {
+                Debug.Log("Finding player to observe");
+                var players = GameObject.FindGameObjectsWithTag("Player");
+                bool playerIsPlaying = false;
+
+                foreach(GameObject player in players)
+                {
+                    if(player.activeSelf)
+                    {
+                        Debug.Log("Player found, setting active camera");
+                        var cam = player.GetComponent<Controller>().playerCam;
+                        cam.gameObject.SetActive(true);
+                        currentActiveCamera = cam;
+                        playerIsPlaying = true;
+                    }
+                }
+
+                if(!playerIsPlaying)
+                {
+                    Debug.Log("No players playing");
+                    //photonView.RPC("GlobalCloseRoom", RpcTarget.All);
+                }
+            }
         }
 
         [PunRPC]
         public void SetTimeAll(float time)
         {
             gameTime = time;
+        }
+
+        [PunRPC]
+        public void GlobalCloseRoom()
+        {
+            PhotonNetwork.LeaveRoom();
         }
 
         public void LeaveRoom()

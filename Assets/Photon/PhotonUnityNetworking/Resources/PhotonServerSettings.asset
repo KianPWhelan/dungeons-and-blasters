@@ -41,6 +41,7 @@ MonoBehaviour:
   - RespawnSpaceship
   - SetTimeAll
   - LocalInstantiate
+  - GlobalCloseRoom
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
