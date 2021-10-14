@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 [CreateAssetMenu(menuName = "Modules/Weapons/Weapon")]
 public class Weapon : ScriptableObject
@@ -64,7 +65,12 @@ public class Weapon : ScriptableObject
             if(map[attack].lastUseTime[self] + map[attack].cooldown <= currentTime)
             {
                 didUseAttack = true;
-                attack.PerformAttack(self, map[attack].delay, targetTag, true, destination);
+
+                if(self.GetPhotonView().IsMine)
+                {
+                    attack.PerformAttack(self, map[attack].delay, targetTag, true, destination);
+                }
+                
                 map[attack].lastUseTime[self] = currentTime;
             }
             
