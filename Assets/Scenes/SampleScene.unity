@@ -48409,6 +48409,7 @@ MonoBehaviour:
   targetType: Player
   currentState: {fileID: 0}
   cooldown: 0
+  slotSize: 0
   ranges: []
   releventTransitions: []
 --- !u!195 &941753375
@@ -75857,6 +75858,10 @@ PrefabInstance:
     - target: {fileID: 5002929920589353525, guid: bde9c07b022f0314289c7c6a26b22679, type: 3}
       propertyPath: m_Name
       value: Big Monster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5002929920589353525, guid: bde9c07b022f0314289c7c6a26b22679, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bde9c07b022f0314289c7c6a26b22679, type: 3}

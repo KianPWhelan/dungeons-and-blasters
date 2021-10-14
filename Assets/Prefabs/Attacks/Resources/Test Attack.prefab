@@ -112,13 +112,15 @@ MonoBehaviour:
   subAttacks: []
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
-  attackDuration: 1
+  attackDuration: 0.2
   localStartingPosition: {x: 0, y: 1, z: 2}
   destroyOnHit: 0
   canHitSameTargetMoreThanOnce: 0
   applyEffectsOnEnd: 0
   visualEndEffect: {fileID: 0}
   visualStartEffect: {fileID: 0}
+  visualStartEffectPositionOffset: {x: 0, y: 0, z: 0}
+  visualStartEffectRotationOffset: {x: 0, y: 0, z: 0}
   validTag: 
   startingTime: 0
   hitList: []

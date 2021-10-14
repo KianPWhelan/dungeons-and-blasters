@@ -17,5 +17,5 @@ MonoBehaviour:
   cooldowns:
   - 4
   delays:
-  - 0
+  - 0.5
   animation: {fileID: 0}
