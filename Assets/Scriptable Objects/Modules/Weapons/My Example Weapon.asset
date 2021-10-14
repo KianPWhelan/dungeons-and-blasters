@@ -15,4 +15,6 @@ MonoBehaviour:
   attacks:
   - {fileID: 0}
   cooldowns: []
+  delays:
+  - 0
   animation: {fileID: 0}

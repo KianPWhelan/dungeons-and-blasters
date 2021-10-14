@@ -177,7 +177,7 @@ public class AttackScript : MonoBehaviour
         {
             if(transform.parent != null)
             {
-                attack.PerformAttack(transform.parent.gameObject, validTag);
+                attack.PerformAttack(transform.parent.gameObject, 0f, validTag);
             }
 
             else

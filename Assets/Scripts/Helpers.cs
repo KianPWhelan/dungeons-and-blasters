@@ -101,7 +101,7 @@ public class Helpers
     }
 
     /// <summary>
-    /// Executes the provided method after the provided time has passed, non blocking
+    /// Executes the provided method after the provided time has passed. Use inside of a coroutine
     /// </summary>
     /// <param name="action"></param>
     /// <param name="time"></param>

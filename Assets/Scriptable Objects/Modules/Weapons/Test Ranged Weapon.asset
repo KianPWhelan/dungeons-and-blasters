@@ -16,3 +16,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: af35d790b347e6c4db8d2134ba328e93, type: 2}
   cooldowns:
   - 1
+  delays:
+  - 0
+  animation: {fileID: 0}

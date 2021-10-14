@@ -19,7 +19,7 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(GameObject self, string targetTag = "none", bool useSelfAsParent = true, Vector3? destination = null)
+    public void PerformAttack(GameObject self, float delay, string targetTag = "none", bool useSelfAsParent = true, Vector3? destination = null)
     {
         Debug.Log("Using Attack " + name);
 
@@ -55,19 +55,19 @@ public class Attack : ScriptableObject
             info[3] = null;
         }
         
-        spawner.Spawn(attack.name, self.transform.position, self.transform.rotation, info);
+        spawner.Spawn(attack.name, self.transform.position, self.transform.rotation, info, delay);
     }
 
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, string targetTag = "none")
+    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, string targetTag = "none", float delay = 0)
     {
         Debug.Log("Performing attack");
         Debug.Log(attack);
         object[] info;
         info = new object[] { null, targetTag };
-        spawner.Spawn(attack.name, selfPosition, selfRotation, info);
+        spawner.Spawn(attack.name, selfPosition, selfRotation, info, delay);
     }
 
     /// <summary>

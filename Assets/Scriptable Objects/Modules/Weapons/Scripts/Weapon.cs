@@ -13,6 +13,10 @@ public class Weapon : ScriptableObject
     [SerializeField]
     private List<float> cooldowns = new List<float>();
 
+    [Tooltip("Delays for attacks (must be in same order as above)")]
+    [SerializeField]
+    private List<float> delays = new List<float>();
+
     [Tooltip("Animation to play when weapon is used")]
     [SerializeField]
     private Animation animation;
@@ -23,11 +27,13 @@ public class Weapon : ScriptableObject
     private class Container
     {
         public float cooldown;
+        public float delay;
         public Dictionary<GameObject, float> lastUseTime = new Dictionary<GameObject, float>();
 
-        public Container(float cooldown)
+        public Container(float cooldown, float delay)
         {
             this.cooldown = cooldown;
+            this.delay = delay;
         }
     }
 
@@ -58,7 +64,7 @@ public class Weapon : ScriptableObject
             if(map[attack].lastUseTime[self] + map[attack].cooldown <= currentTime)
             {
                 didUseAttack = true;
-                attack.PerformAttack(self, targetTag, true, destination);
+                attack.PerformAttack(self, map[attack].delay, targetTag, true, destination);
                 map[attack].lastUseTime[self] = currentTime;
             }
             
@@ -79,7 +85,7 @@ public class Weapon : ScriptableObject
             map = new Dictionary<Attack, Container>();
             for (int i = 0; i < attacks.Count; i++)
             {
-                map.Add(attacks[i], new Container(cooldowns[i]));
+                map.Add(attacks[i], new Container(cooldowns[i], delays[i]));
             }
         }
     }
