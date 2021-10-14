@@ -1,0 +1,20 @@
+Press "Play" to play as a dungeon crawler. Press "Play as Dungeon Master" to play as the DM.
+
+IMPORTANT: There is currently a bug where if the DM spawns monsters before all players are connected everything breaks. Don't do it.
+
+DUNGEON CRAWLER INSTRUCTIONS:
+The goal is to reach the "!" somewhere in the dungeon, once you touch it you win.
+Controls are WASD to move, left click to shoot, space to jump.
+You have 100 hit points.
+
+DUNGEON MASTER INSTRUCTIONS:
+Your goal is to spawn enemies to defeat all players before they can reach the "!".
+Controls are WASD to pan camera, mousewheel to zoom.
+Click an ability in the box on the right hand side to slot it into active abilities. You only have 5 slots, and abilities have different slot costs.
+To use and ability, click its button in the active ability slots in the top right once it display "Ready"
+Abilities have charging times displayed as "Cooldown".
+Abilities must recharge after each use use.
+The same ability can be slotted multiple times, assuming you have enough slots available.
+To remove an actively slotted ability, right click its button. You will be refunded for the slots it costs.
+
+NOTE: This is extremely pre-alpha. Nothing is finished and everything will change in some way.
