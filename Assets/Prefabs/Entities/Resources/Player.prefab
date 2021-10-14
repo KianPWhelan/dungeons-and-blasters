@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 9136021562623379900}
+  sensitivity: 1
 --- !u!114 &-3016581500895162571
 MonoBehaviour:
   m_ObjectHideFlags: 0

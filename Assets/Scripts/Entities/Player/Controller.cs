@@ -11,6 +11,7 @@ public class Controller : MonoBehaviourPunCallbacks
     private Rotater rotater;
     private WeaponHolder weaponHolder;
     public GameObject canvas;
+    public float sensitivity;
 
     [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
     public static GameObject LocalPlayerInstance;
@@ -94,12 +95,22 @@ public class Controller : MonoBehaviourPunCallbacks
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+
+        if(Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            sensitivity += 0.1f;
+        }
+
+        if(Input.GetKeyDown(KeyCode.DownArrow) && sensitivity > 0)
+        {
+            sensitivity -= -0.1f;
+        }
     }
 
     private void ProcessMovement()
     {
-        var mouseX = Input.GetAxis("Mouse X");
-        var mouseY = Input.GetAxis("Mouse Y");
+        var mouseX = Input.GetAxis("Mouse X") * sensitivity;
+        var mouseY = Input.GetAxis("Mouse Y") * sensitivity;
         movement.Rotate(mouseX, 0.0f);
         rotater.Rotate(mouseX, mouseY);
         var moveX = Input.GetAxis("Horizontal");
