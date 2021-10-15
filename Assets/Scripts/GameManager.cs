@@ -106,6 +106,7 @@ namespace Com.OfTomorrowInc.DMShooter
                         Debug.Log("Player found, setting active camera");
                         var cam = player.GetComponent<Controller>().playerCam;
                         cam.gameObject.SetActive(true);
+                        player.GetComponent<Controller>().canvas.SetActive(true);
                         currentActiveCamera = cam;
                         playerIsPlaying = true;
                     }
@@ -113,8 +114,10 @@ namespace Com.OfTomorrowInc.DMShooter
 
                 if(!playerIsPlaying)
                 {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
                     Debug.Log("No players playing");
-                    //photonView.RPC("GlobalCloseRoom", RpcTarget.All);
+                    photonView.RPC("GlobalCloseRoom", RpcTarget.All);
                 }
             }
         }
