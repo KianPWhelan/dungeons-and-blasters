@@ -30,12 +30,18 @@ public class EnemyGeneric : MonoBehaviour
     // [HideInInspector]
     public List<StateTransition> releventTransitions;
 
+    private float startingSpeed;
+
+    private StatusEffects statusEffects;
+
     // Start is called before the first frame update
     void Start()
     {
         agent = gameObject.GetComponent<NavMeshAgent>();
         movement = gameObject.GetComponent<Movement>();
         Debug.Log(agent.ToString());
+        startingSpeed = agent.speed;
+        TryGetComponent(out statusEffects);
     }
 
     // Update is called once per frame
@@ -43,5 +49,10 @@ public class EnemyGeneric : MonoBehaviour
     {
         target = Helpers.FindClosest(gameObject.transform, targetType);
         aiModule.Tick(gameObject, target, agent, movement);
+    }
+
+    private void Update()
+    {
+        agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
     }
 }

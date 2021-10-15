@@ -8,4 +8,6 @@ public class BuffEffect : Effect
     public float damageDealtMod = 1;
 
     public float damageRecievedMod = 1;
+
+    public float moveSpeedMod = 1;
 }

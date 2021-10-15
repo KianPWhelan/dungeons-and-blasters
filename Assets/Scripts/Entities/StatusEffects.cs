@@ -68,7 +68,7 @@ public class StatusEffects : MonoBehaviour
 
     public float GetDamageMod()
     {
-        float mod = 1;
+        float mod = 1f;
 
         foreach(Effect effect in statusEffects)
         {
@@ -84,7 +84,7 @@ public class StatusEffects : MonoBehaviour
 
     public float GetDamageRecievedMod()
     {
-        float mod = 1;
+        float mod = 1f;
 
         foreach (Effect effect in statusEffects)
         {
@@ -92,6 +92,22 @@ public class StatusEffects : MonoBehaviour
             {
                 var temp = (BuffEffect)effect;
                 mod += temp.damageRecievedMod;
+            }
+        }
+
+        return mod;
+    }
+
+    public float GetMoveSpeedMod()
+    {
+        float mod = 1f;
+
+        foreach (Effect effect in statusEffects)
+        {
+            if (effect is BuffEffect)
+            {
+                var temp = (BuffEffect)effect;
+                mod += temp.moveSpeedMod;
             }
         }
 

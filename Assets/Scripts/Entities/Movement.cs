@@ -33,9 +33,12 @@ public class Movement : MonoBehaviour
     // Previous position
     private Vector3 previousPosition;
 
+    private StatusEffects statusEffects;
+
     public void Start()
     {
         body = gameObject.GetComponent<Rigidbody>();
+        TryGetComponent(out statusEffects);
     }
 
     /// <summary>
@@ -55,8 +58,15 @@ public class Movement : MonoBehaviour
     /// </summary>
     public void Move(float x, float y)
     {
+        float speed = 1f;
+
+        if (statusEffects != null)
+        {
+            speed = moveSpeed.runtimeValue * statusEffects.GetMoveSpeedMod();
+        }
+
         var transform = body.transform;
-        var desiredPosition = transform.position + (transform.forward * y * moveSpeed.runtimeValue) + (transform.right * x * moveSpeed.runtimeValue);
+        var desiredPosition = transform.position + (transform.forward * y * speed) + (transform.right * x * speed);
         var direction = desiredPosition - transform.position;
         Ray ray = new Ray(transform.position, direction);
         RaycastHit hit;
