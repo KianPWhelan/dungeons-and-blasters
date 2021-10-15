@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Com.OfTomorrowInc.DMShooter;
 
 [RequireComponent(typeof(Movement))]
 public class Controller : MonoBehaviourPunCallbacks
@@ -12,9 +13,13 @@ public class Controller : MonoBehaviourPunCallbacks
     private WeaponHolder weaponHolder;
     public GameObject canvas;
     public float sensitivity;
+    public BoolVariable isDungeonMaster;
 
     [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
     public static GameObject LocalPlayerInstance;
+    public TextMesh nametag;
+
+    // private GameManager gameManager;
 
     public void Awake()
     {
@@ -35,11 +40,23 @@ public class Controller : MonoBehaviourPunCallbacks
         playerCam = gameObject.transform.GetComponentInChildren<PlayerCamera>();
         rotater = gameObject.transform.GetComponentInChildren<Rotater>();
         weaponHolder = gameObject.GetComponent<WeaponHolder>();
+        // gameManager = FindObjectOfType<GameManager>();
+        nametag.text = photonView.Owner.NickName;
 
         if(!photonView.IsMine)
         {
             playerCam.gameObject.SetActive(false);
             canvas.SetActive(false);
+        }
+
+        else
+        {
+            nametag.gameObject.SetActive(false);
+        }
+
+        if(isDungeonMaster.runtimeValue)
+        {
+            nametag.transform.localScale *= 2;
         }
 
 #if UNITY_5_4_OR_NEWER
@@ -54,6 +71,8 @@ public class Controller : MonoBehaviourPunCallbacks
         {
             ProcessInputs();
         }
+
+        RotateNametag();
     }
 
     public void FixedUpdate()
@@ -75,6 +94,22 @@ public class Controller : MonoBehaviourPunCallbacks
 #if UNITY_EDITOR
             // UnityEditor.EditorApplication.isPlaying = false;
 #endif
+        }
+    }
+
+    private void RotateNametag()
+    {
+        // If this is not the local player, rotate its nametag towards the local player
+        if (LocalPlayerInstance != null && !photonView.IsMine && !isDungeonMaster.runtimeValue)
+        {
+            nametag.transform.LookAt(LocalPlayerInstance.transform.position);
+            nametag.transform.Rotate(new Vector3(0, 180, 0));
+        }
+
+        else if(isDungeonMaster.runtimeValue)
+        {
+            nametag.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+            nametag.transform.position = transform.position + Vector3.forward * 1.5f;
         }
     }
 
