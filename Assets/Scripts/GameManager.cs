@@ -112,7 +112,7 @@ namespace Com.OfTomorrowInc.DMShooter
                     }
                 }
 
-                if(!playerIsPlaying)
+                if(!playerIsPlaying && !PhotonNetwork.CurrentRoom.IsOpen)
                 {
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
