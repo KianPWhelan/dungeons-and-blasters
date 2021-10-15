@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a76ab20eb20a0f4192d632aeedbceb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 11400000, guid: 03a14644fcb98714c97a70138d105cb4, type: 2}
+  attack: {fileID: 11400000, guid: f668fd8a5a30529459d913cf6f637442, type: 2}
   subAttacks: []
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
@@ -127,5 +127,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.5
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
