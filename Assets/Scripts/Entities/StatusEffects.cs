@@ -75,7 +75,7 @@ public class StatusEffects : MonoBehaviour
             if(effect is BuffEffect)
             {
                 var temp = (BuffEffect)effect;
-                mod += temp.damageDealtMod - 1f;
+                mod *= temp.damageDealtMod;
             }
         }
 
@@ -91,7 +91,7 @@ public class StatusEffects : MonoBehaviour
             if(effect is BuffEffect)
             {
                 var temp = (BuffEffect)effect;
-                mod += temp.damageRecievedMod - 1f;
+                mod *= temp.damageRecievedMod;
             }
         }
 
@@ -107,7 +107,7 @@ public class StatusEffects : MonoBehaviour
             if (effect is BuffEffect)
             {
                 var temp = (BuffEffect)effect;
-                mod += temp.moveSpeedMod - 1f;
+                mod *= temp.moveSpeedMod;
             }
         }
 

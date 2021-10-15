@@ -20,7 +20,7 @@ public class Helpers
         {
             Vector3 diff = go.transform.position - position;
             float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
+            if (curDistance < distance && go.transform != myPosition)
             {
                 closest = go;
                 distance = curDistance;
