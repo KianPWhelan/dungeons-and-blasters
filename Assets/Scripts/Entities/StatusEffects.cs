@@ -82,6 +82,22 @@ public class StatusEffects : MonoBehaviour
         return mod;
     }
 
+    public float GetDamageRecievedMod()
+    {
+        float mod = 1;
+
+        foreach (Effect effect in statusEffects)
+        {
+            if(effect is BuffEffect)
+            {
+                var temp = (BuffEffect)effect;
+                mod += temp.damageRecievedMod;
+            }
+        }
+
+        return mod;
+    }
+
     private void ProcessStatusEffects()
     {
         List<Effect> remove = null;

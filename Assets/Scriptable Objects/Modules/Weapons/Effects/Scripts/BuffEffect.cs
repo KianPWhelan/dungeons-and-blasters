@@ -6,4 +6,6 @@ using UnityEngine;
 public class BuffEffect : Effect
 {
     public float damageDealtMod = 1;
+
+    public float damageRecievedMod = 1;
 }

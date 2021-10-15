@@ -28,14 +28,26 @@ public class Health : MonoBehaviourPunCallbacks
     /// <param name="amount"></param>
     public void AdjustHealth(float amount)
     {
+        float mod = 1;
+
         if(infiniteHealth)
         {
             return;
         }
 
+        if(amount > 0)
+        {
+            var statusEffects = GetComponent<StatusEffects>();
+
+            if(statusEffects != null)
+            {
+                mod = statusEffects.GetDamageRecievedMod();
+            }
+        }
+
         if(health != null)
         {
-            health.runtimeValue += amount;
+            health.runtimeValue += amount * mod;
             if(health.runtimeValue <= 0)
             {
                 isDead = true;
@@ -44,7 +56,7 @@ public class Health : MonoBehaviourPunCallbacks
 
         else
         {
-            floatHealth += amount;
+            floatHealth += amount * mod;
             if(floatHealth <= 0)
             {
                 isDead = true;
