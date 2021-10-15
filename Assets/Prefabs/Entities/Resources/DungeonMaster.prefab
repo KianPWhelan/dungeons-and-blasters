@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 3852075012189865504}
   - component: {fileID: 5382923093871571089}
   m_Layer: 5
-  m_Name: Close Room Button
+  m_Name: Start Game Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -812,6 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccde0a35313c2f84bb274069b293853b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slots: {fileID: 3430480685264271924}
 --- !u!1 &6658839532974717108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,7 +1404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Close Room
+  m_Text: Start Game
 --- !u!1 &7676322522710924450
 GameObject:
   m_ObjectHideFlags: 0

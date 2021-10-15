@@ -11,4 +11,11 @@ public class Slots : MonoBehaviour
     {
         available = numSlots;
     }
+
+    public void SetSlots()
+    {
+        var playerCount = GameObject.FindGameObjectsWithTag("Player").Length;
+        numSlots += playerCount - 1;
+        available += playerCount - 1;
+    }
 }
