@@ -61,3 +61,4 @@ crashlytics-build.properties
 UserSettings/EditorUserSettings.asset
 .vsconfig
 TestBuilds/DMShooter_Pre-Alpha Build_1.zip
+*.zip

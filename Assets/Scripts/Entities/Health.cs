@@ -53,7 +53,7 @@ public class Health : MonoBehaviourPunCallbacks
                 {
                     if(isPlayer)
                     {
-                        PhotonNetwork.LeaveRoom();
+                        GetComponent<Controller>().GameOver();
                     }
 
                     else
