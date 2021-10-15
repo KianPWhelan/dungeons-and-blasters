@@ -172,7 +172,7 @@ MonoBehaviour:
   cooldown: 6
   slotSize: 1
   ranges:
-  - 2.5
+  - 4
   releventTransitions: []
 --- !u!114 &9070468601821801596
 MonoBehaviour:

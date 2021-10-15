@@ -47,12 +47,14 @@ public class EnemyGeneric : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        target = Helpers.FindClosest(gameObject.transform, targetType);
-        aiModule.Tick(gameObject, target, agent, movement);
+        //target = Helpers.FindClosest(gameObject.transform, targetType);
+        //aiModule.Tick(gameObject, target, agent, movement);
     }
 
     private void Update()
     {
         agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
+        target = Helpers.FindClosest(gameObject.transform, targetType);
+        aiModule.Tick(gameObject, target, agent, movement);
     }
 }
