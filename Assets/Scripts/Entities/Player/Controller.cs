@@ -107,7 +107,7 @@ public class Controller : MonoBehaviourPunCallbacks
 
         if(Input.GetKeyDown(KeyCode.N) && sensitivity > 0)
         {
-            sensitivity -= -0.1f;
+            sensitivity -= 0.1f;
         }
     }
 
