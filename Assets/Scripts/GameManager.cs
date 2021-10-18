@@ -119,6 +119,7 @@ namespace Com.OfTomorrowInc.DMShooter
                 {
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
+                    isDungeonMaster.runtimeValue = false;
                     Debug.Log("No players playing");
                     photonView.RPC("GlobalCloseRoom", RpcTarget.All);
                 }
