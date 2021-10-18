@@ -344,7 +344,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   movement: {fileID: 0}
   currentState: {fileID: 0}
-  cooldown: 1
+  cooldown: 40
   slotSize: 1
   ranges: []
   releventTransitions: []
