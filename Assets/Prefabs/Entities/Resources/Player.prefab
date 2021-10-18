@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: -4891399780990316586}
   - component: {fileID: -7539197072369980240}
   - component: {fileID: -9066426888992374240}
+  - component: {fileID: 3993731394946226002}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -455,6 +456,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusEffects: []
   immunities: []
+--- !u!114 &3993731394946226002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705640985885996171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afa8ce47bfd4ff4ebb1240e37859d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 0}
+  _barColor: {r: 1, g: 0, b: 0, a: 1}
+  _bgColor: {r: 0, g: 0, b: 0, a: 0.196}
+  _height: 25
+  _width: 150
+  _maxValue: 100
+  _value: 100
+  _showValue: 0
+  _showName: 0
+  _showLevel: 0
+  _valueColor: {r: 1, g: 1, b: 1, a: 1}
+  _valueFontSize: 14
+  _nameColor: {r: 1, g: 1, b: 1, a: 1}
+  _nameFontSize: 14
+  _levelBgColor: {r: 0, g: 0, b: 0, a: 1}
+  _levelColor: {r: 1, g: 1, b: 1, a: 1}
+  _levelBackgroundSize: 25
+  _levelFontSize: 14
+  _yPosition: 1.5
+  _faceCamera: {fileID: 0}
+  OnlyShowIfDamaged: 0
 --- !u!1 &2705640986178534465
 GameObject:
   m_ObjectHideFlags: 0

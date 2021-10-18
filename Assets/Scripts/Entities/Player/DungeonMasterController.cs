@@ -34,7 +34,8 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     private float startHeight;
 
-    private Camera camera;
+    [HideInInspector]
+    public Camera camera;
 
     public GameObject canvas;
 
@@ -52,6 +53,9 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         {
             LocalPlayerInstance = this.gameObject;
         }
+
+        camera = gameObject.GetComponentInChildren<Camera>();
+
         // #Critical
         // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
         DontDestroyOnLoad(this.gameObject);
@@ -69,7 +73,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
         body = GetComponent<Rigidbody>();
         startHeight = transform.position.y;
-        camera = gameObject.GetComponentInChildren<Camera>();
+        
 
         LoadEnemyPrefabs();
         abilityButton = (GameObject)Resources.Load("DM Ability Button");

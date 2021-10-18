@@ -29,6 +29,9 @@ public class Controller : MonoBehaviourPunCallbacks
         {
             LocalPlayerInstance = this.gameObject;
         }
+
+        playerCam = gameObject.transform.GetComponentInChildren<PlayerCamera>();
+
         // #Critical
         // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
         DontDestroyOnLoad(this.gameObject);
@@ -37,7 +40,7 @@ public class Controller : MonoBehaviourPunCallbacks
     public void Start()
     {
         movement = gameObject.GetComponent<Movement>();
-        playerCam = gameObject.transform.GetComponentInChildren<PlayerCamera>();
+        
         rotater = gameObject.transform.GetComponentInChildren<Rotater>();
         weaponHolder = gameObject.GetComponent<WeaponHolder>();
         // gameManager = FindObjectOfType<GameManager>();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using SnazzlebotTools.ENPCHealthBars;
 
 public class Health : MonoBehaviourPunCallbacks
 {
@@ -21,6 +22,46 @@ public class Health : MonoBehaviourPunCallbacks
     private bool isPlayer = false;
 
     public bool isDead = false;
+
+    private ENPCHealthBar healthBar;
+    private float startingHealth;
+
+    public void Start()
+    {
+        TryGetComponent(out healthBar);
+
+        if(isPlayer && transform == Controller.LocalPlayerInstance.transform)
+        {
+            Destroy(healthBar);
+            healthBar = null;
+        }
+        
+        if(health != null)
+        {
+            startingHealth = health.initialValue;
+        }
+
+        else
+        {
+            startingHealth = floatHealth;
+        }
+
+
+        if(healthBar != null)
+        {
+            healthBar.MaxValue = (int)startingHealth;
+        }
+
+        if(healthBar != null && Controller.LocalPlayerInstance != null)
+        {
+            healthBar.FaceCamera = Controller.LocalPlayerInstance.GetComponent<Controller>().playerCam.GetComponent<Camera>();
+        }
+
+        else if(healthBar != null && DungeonMasterController.LocalPlayerInstance != null)
+        {
+            healthBar.FaceCamera = DungeonMasterController.LocalPlayerInstance.GetComponent<DungeonMasterController>().camera;
+        }
+    }
 
     /// <summary>
     /// Adjusts health value by amount provided, can be negative
@@ -52,6 +93,11 @@ public class Health : MonoBehaviourPunCallbacks
             {
                 isDead = true;
             }
+
+            if (healthBar != null)
+            {
+                healthBar.Value = (int)health.runtimeValue;
+            }
         }
 
         else
@@ -73,6 +119,11 @@ public class Health : MonoBehaviourPunCallbacks
                         PhotonNetwork.Destroy(gameObject);
                     }            
                 }
+            }
+
+            if (healthBar != null)
+            {
+                healthBar.Value = (int)floatHealth;
             }
         }
     }

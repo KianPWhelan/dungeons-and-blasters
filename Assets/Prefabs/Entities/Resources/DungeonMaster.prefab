@@ -450,6 +450,7 @@ MonoBehaviour:
   abilityContent: {fileID: 7676322522710924450}
   activeAbilitiesSlot: {fileID: 6658839532974717108}
   currentSelection: 0
+  camera: {fileID: 0}
   canvas: {fileID: 1950090815177632252}
   topPanel: {fileID: 3595329743028998484}
 --- !u!114 &4082791460092488234
