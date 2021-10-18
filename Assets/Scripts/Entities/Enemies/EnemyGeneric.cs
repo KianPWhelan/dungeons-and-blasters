@@ -8,15 +8,18 @@ public class EnemyGeneric : MonoBehaviour
 {
     [Tooltip("The module this enemy will use")]
     [SerializeField]
-    private EnemyAI aiModule;
+    public EnemyAI aiModule;
 
     [Tooltip("Type of target this enemy will seek")]
     [SerializeField]
-    private string targetType;
+    public string targetType;
 
-    private GameObject target;
-    private NavMeshAgent agent;
-    private Movement movement;
+    [HideInInspector]
+    public GameObject target;
+    [HideInInspector]
+    public NavMeshAgent agent;
+    [HideInInspector]
+    public Movement movement;
 
     public State currentState;
 
@@ -30,9 +33,11 @@ public class EnemyGeneric : MonoBehaviour
     // [HideInInspector]
     public List<StateTransition> releventTransitions;
 
-    private float startingSpeed;
+    [HideInInspector]
+    public float startingSpeed;
 
-    private StatusEffects statusEffects;
+    [HideInInspector]
+    public StatusEffects statusEffects;
 
     // Start is called before the first frame update
     void Start()
