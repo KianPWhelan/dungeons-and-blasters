@@ -8,7 +8,6 @@ public class EnemyGenericNoNavmesh : EnemyGeneric
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(agent.ToString());
         TryGetComponent(out statusEffects);
     }
 

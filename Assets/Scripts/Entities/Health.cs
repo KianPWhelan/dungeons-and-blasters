@@ -30,7 +30,7 @@ public class Health : MonoBehaviourPunCallbacks
     {
         TryGetComponent(out healthBar);
 
-        if(isPlayer && transform == Controller.LocalPlayerInstance.transform)
+        if(isPlayer && Controller.LocalPlayerInstance != null && transform == Controller.LocalPlayerInstance.transform)
         {
             Destroy(healthBar);
             healthBar = null;
@@ -50,6 +50,7 @@ public class Health : MonoBehaviourPunCallbacks
         if(healthBar != null)
         {
             healthBar.MaxValue = (int)startingHealth;
+            healthBar.Value = (int)startingHealth;
         }
 
         if(healthBar != null && Controller.LocalPlayerInstance != null)
