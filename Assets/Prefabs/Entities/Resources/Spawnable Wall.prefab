@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: -7772611283486443371}
   - component: {fileID: 6812777160495696074}
   - component: {fileID: 749460715069432518}
+  - component: {fileID: 1921022804072744805}
   m_Layer: 0
   m_Name: Spawnable Wall
   m_TagString: Enemy
@@ -434,6 +435,22 @@ MonoBehaviour:
   _yPosition: 1
   _faceCamera: {fileID: 0}
   OnlyShowIfDamaged: 0
+--- !u!208 &1921022804072744805
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841739129963440086}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &3111824295417454705
 GameObject:
   m_ObjectHideFlags: 0
