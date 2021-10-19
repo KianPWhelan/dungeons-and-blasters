@@ -45,6 +45,10 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     public Dictionary<GameObject, float> cooldowns = new Dictionary<GameObject, float>();
 
+    private UseAbility currentAbility;
+
+    private Color originalButtonColor;
+
     public void Awake()
     {
         // #Important
@@ -114,12 +118,26 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 #endif
     }
 
-    public void SetCurrentSelection(GameObject selection)
+    public void SetCurrentSelection(GameObject selection, UseAbility ability)
     {
+        Button button;
+
+        if(currentAbility != null)
+        {
+            button = currentAbility.GetComponent<Button>();
+            button.image.color = originalButtonColor;
+        }
+
         currentSelection = enemyPrefabs.FindIndex(x => x == selection);
         var selectionText = canvas.transform.Find("Current Selection Text");
         selectionText.GetComponent<Text>().text = "Current Selection: " + enemyPrefabs[currentSelection].name;
         placeMode = true;
+        currentAbility = ability;
+
+        //colors = currentAbility.GetComponent<Button>().colors;
+        button = currentAbility.GetComponent<Button>();
+        originalButtonColor = button.image.color;
+        button.image.color = Color.green;
     }
 
     private void LoadEnemyPrefabs()
@@ -181,7 +199,6 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         if(Input.GetKeyDown(KeyCode.Mouse0) && placeMode)
         {
             SpawnEnemy();
-            placeMode = false;
             var selectionText = canvas.transform.Find("Current Selection Text");
             selectionText.GetComponent<Text>().text = "Current Selection: ";
         }
@@ -189,6 +206,13 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
             DespawnEnemy();
+            placeMode = false;
+
+            if(currentAbility != null)
+            {
+                var button = currentAbility.GetComponent<Button>();
+                button.image.color = originalButtonColor;
+            }
         }
 
         if(Input.GetKey(KeyCode.E))
@@ -222,18 +246,19 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
     private void SpawnEnemy()
     {
         GameObject enemyToSpawn = enemyPrefabs[currentSelection];
-        float cooldown = enemyToSpawn.GetComponent<EnemyGeneric>().cooldown;
+        //float cooldown = enemyToSpawn.GetComponent<EnemyGeneric>().cooldown;
 
-        //if (cooldowns[enemyToSpawn] + cooldown > Time.time)
-        //{
-        //    Debug.Log(enemyToSpawn.name + " is on cooldown for " + (Time.time - (cooldowns[enemyToSpawn] + cooldown)));
-        //    return;
-        //}
+        if (currentAbility.cooldown > 0)
+        {
+            Debug.Log(enemyToSpawn.name + " is on cooldown for " + currentAbility.cooldown);
+            return;
+        }
 
-        //else
-        //{
-        //    cooldowns[enemyToSpawn] = Time.time;
-        //}
+        else
+        {
+            cooldowns[enemyToSpawn] = Time.time;
+            currentAbility.cooldown = currentAbility.cooldownTime;
+        }
 
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;

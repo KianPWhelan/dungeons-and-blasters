@@ -14,11 +14,11 @@ public class UseAbility : MonoBehaviour, IPointerClickHandler
 
     public int size;
 
-    private Text text;
+    public Text text;
 
-    private float cooldownTime;
+    public float cooldownTime;
 
-    private float cooldown;
+    public float cooldown;
 
     // Start is called before the first frame update
     public void Start()
@@ -43,11 +43,8 @@ public class UseAbility : MonoBehaviour, IPointerClickHandler
 
     public void SetCurrentAbility()
     {
-        if(cooldown <= 0)
-        {
-            controller.SetCurrentSelection(ability);
-            cooldown = cooldownTime;
-        }      
+        controller.SetCurrentSelection(ability, this);
+        // cooldown = cooldownTime;     
     }
 
     public void OnPointerClick(PointerEventData eventData)
