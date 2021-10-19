@@ -55,7 +55,7 @@ public class Wall : MonoBehaviour
 
     private Vector3 FireRay(Vector3 start, Vector3 direction)
     {
-        RaycastHit[] hits = Physics.RaycastAll(start, direction);
+        RaycastHit[] hits = Physics.RaycastAll(start + new Vector3(0f, -4f, 0f), direction);
         
         foreach(RaycastHit hit in hits)
         {
