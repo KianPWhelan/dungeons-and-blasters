@@ -64,8 +64,8 @@ public class EnemyGeneric : MonoBehaviour
     private void Update()
     {
         agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
-        target = Helpers.FindClosest(gameObject.transform, targetType);
-        allyTarget = Helpers.FindClosest(gameObject.transform, allyTargetType);
+        target = Helpers.FindClosestVisible(gameObject.transform, targetType);
+        allyTarget = Helpers.FindClosestVisible(gameObject.transform, allyTargetType);
         aiModule.Tick(gameObject, target, allyTarget, agent, movement);
     }
 }
