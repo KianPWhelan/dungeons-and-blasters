@@ -55,6 +55,9 @@ public class AttackScript : MonoBehaviour
     [HideInInspector]
     public Vector3 destination;
 
+    [HideInInspector]
+    public bool isMine = false;
+
     public virtual void Start()
     {
         Debug.Log("Starting " + name);
@@ -65,6 +68,11 @@ public class AttackScript : MonoBehaviour
             transform.position = transform.parent.position;
             transform.rotation = transform.parent.GetComponentInChildren<Rotater>().transform.rotation;
             Debug.Log("Parent set to " + transform.parent.name);
+        }
+
+        if(transform.parent.gameObject.GetPhotonView().IsMine)
+        {
+            isMine = true;
         }
         
         hitList = new List<GameObject>();

@@ -25,6 +25,14 @@ namespace VoxelArsenal
             if (soundPrefabIsChild)
                 m_Sound.transform.SetParent(transform);
 
+            if(transform.parent != null && transform.parent.TryGetComponent(out AttackScript attack))
+            {
+                if(attack.isMine)
+                {
+                    m_Source.spatialBlend = 0;
+                }
+            }
+
             //Multiply pitch
             if (pitchRandomMultiplier != 1)
             {
