@@ -369,7 +369,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 11400000, guid: e11d41b9ab3d9924583f3cca85290bb5, type: 2}
-  targetTag: Enemy
+  targetTags:
+  - Enemy
 --- !u!114 &7168323857930604494
 MonoBehaviour:
   m_ObjectHideFlags: 0

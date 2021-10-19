@@ -10,7 +10,7 @@ public class WeaponHolder : MonoBehaviour
 
     [Tooltip("Type of object the weapons will hit")]
     [SerializeField]
-    private string targetTag;
+    private List<string> targetTags = new List<string>();
 
     public bool UseWeapon(int index, Vector3? destination = null, bool useDestination = false)
     {
@@ -19,7 +19,7 @@ public class WeaponHolder : MonoBehaviour
             destination = Vector3.negativeInfinity;
         }
 
-        return weapons[index].Use(gameObject, targetTag, destination);
+        return weapons[index].Use(gameObject, targetTags[index], destination);
     }
 
     public void UseWeapon(string weaponName)
