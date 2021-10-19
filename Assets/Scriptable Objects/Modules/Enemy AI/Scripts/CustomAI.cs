@@ -36,6 +36,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     private List<StateTransition> releventTransitions;
 
     private GameObject localTarget;
+    private GameObject localAllyTarget;
     private GameObject localSelf;
     private NavMeshAgent localAgent;
     private Movement localMovement;
@@ -66,10 +67,11 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         BuildStateMachine();
     }
 
-    public override void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
+    public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
     {
         localSelf = self;
         localTarget = target;
+        localAllyTarget = allyTarget;
         localAgent = agent;
         localMovement = movement;
         var enemyComponent = self.GetComponent<EnemyGeneric>();
@@ -106,7 +108,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
 
         if(!CheckStateChanges())
         {
-            currentState.Tick(self, target, agent, movement);
+            currentState.Tick(self, target, allyTarget, agent, movement);
         }
     }
 
@@ -260,7 +262,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         if(currentState == null)
         {
             currentState = defaultState;
-            currentState.OnEnter(localSelf, localTarget, localAgent, localMovement);
+            currentState.OnEnter(localSelf, localTarget, localAllyTarget, localAgent, localMovement);
             localSelf.GetComponent<EnemyGeneric>().currentState = currentState;
 
             if(!transitionStorage.ContainsKey(currentState))
@@ -277,9 +279,9 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         {
             if(ProcessConditionals(transition.transitionComponents))
             {
-                localSelf.GetComponent<EnemyGeneric>().currentState.OnExit(localSelf, localTarget, localAgent, localMovement);
+                localSelf.GetComponent<EnemyGeneric>().currentState.OnExit(localSelf, localTarget, localAllyTarget, localAgent, localMovement);
                 currentState = transition.toState;
-                currentState.OnEnter(localSelf, localTarget, localAgent, localMovement);
+                currentState.OnEnter(localSelf, localTarget, localAllyTarget, localAgent, localMovement);
                 localSelf.GetComponent<EnemyGeneric>().currentState = currentState;
 
                 if (!transitionStorage.ContainsKey(currentState))

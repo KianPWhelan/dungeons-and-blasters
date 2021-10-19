@@ -10,16 +10,16 @@ public class SubAIState : State
     [SerializeField]
     private EnemyAI enemyAi;
 
-    public override void OnEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
+    public override void OnEnter(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
     {
     }
 
-    public override void OnExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
+    public override void OnExit(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
     {
     }
 
-    public override void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
+    public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
     {
-        enemyAi.Tick(self, target, agent, movement);
+        enemyAi.Tick(self, target, allyTarget, agent, movement);
     }
 }

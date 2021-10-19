@@ -29,7 +29,7 @@ public class WanderState : State
         }
     }
 
-    public override void OnEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
+    public override void OnEnter(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
     {
         Debug.Log("Enemy " + self.GetInstanceID() + " has entered " + name);
 
@@ -47,12 +47,12 @@ public class WanderState : State
         Debug.Log("There are " + info[self].validTiles.Count + " valid tiles");
     }
 
-    public override void OnExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
+    public override void OnExit(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
     {
         agent.ResetPath();
     }
 
-    public override void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
+    public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
     {
         var currentTime = Time.time;
 

@@ -807,7 +807,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiModule: {fileID: 11400000, guid: 4ebcd45dcd5a7fb41b628eeadb73248c, type: 2}
   targetType: Player
+  allyTargetType: Enemy
   target: {fileID: 0}
+  allyTarget: {fileID: 0}
   agent: {fileID: 0}
   movement: {fileID: 0}
   currentState: {fileID: 0}

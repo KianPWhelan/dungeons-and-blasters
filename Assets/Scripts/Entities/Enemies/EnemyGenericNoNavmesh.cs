@@ -20,7 +20,7 @@ public class EnemyGenericNoNavmesh : EnemyGeneric
 
     private void Update()
     {
-        target = Helpers.FindClosest(gameObject.transform, targetType);
-        aiModule.Tick(gameObject, target, null, null);
+        // target = Helpers.FindClosest(gameObject.transform, targetType);
+        aiModule.Tick(gameObject, null, null, null, null);
     }
 }

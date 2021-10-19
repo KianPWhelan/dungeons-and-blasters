@@ -9,7 +9,7 @@ using UnityEngine.AI;
 [CreateAssetMenu(menuName = "Modules/AI/Follow And Attack If In Sight")]
 public class FollowAndAttackIfInSight : EnemyAI
 {
-    public override void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement)
+    public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
     {
         bool canSeeTarget = Helpers.CheckLineOfSight(self.transform, target.transform);
 

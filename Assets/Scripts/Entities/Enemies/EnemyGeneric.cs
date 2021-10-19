@@ -14,8 +14,13 @@ public class EnemyGeneric : MonoBehaviour
     [SerializeField]
     public string targetType;
 
+    [Tooltip("Type of target to be considered an ally")]
+    public string allyTargetType;
+
     [HideInInspector]
     public GameObject target;
+    [HideInInspector]
+    public GameObject allyTarget;
     [HideInInspector]
     public NavMeshAgent agent;
     [HideInInspector]
@@ -60,6 +65,7 @@ public class EnemyGeneric : MonoBehaviour
     {
         agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
         target = Helpers.FindClosest(gameObject.transform, targetType);
-        aiModule.Tick(gameObject, target, agent, movement);
+        allyTarget = Helpers.FindClosest(gameObject.transform, allyTargetType);
+        aiModule.Tick(gameObject, target, allyTarget, agent, movement);
     }
 }

@@ -7,11 +7,11 @@ using UnityEngine.Events;
 [System.Serializable]
 public abstract class State : ScriptableObject
 {
-    public abstract void Tick(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
+    public abstract void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement);
 
-    public abstract void OnEnter(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
+    public abstract void OnEnter(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement);
 
-    public abstract void OnExit(GameObject self, GameObject target, NavMeshAgent agent, Movement movement);
+    public abstract void OnExit(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement);
 
     public void SetIsAgentMovingAnimation(GameObject self, NavMeshAgent agent)
     {
