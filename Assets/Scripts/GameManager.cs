@@ -54,6 +54,11 @@ namespace Com.OfTomorrowInc.DMShooter
 
         #region Public Methods
 
+        public void Awake()
+        {
+            LoadPrefabData();
+        }
+
         public void Start()
         {
             if(PhotonNetwork.IsMasterClient)
@@ -195,6 +200,10 @@ namespace Com.OfTomorrowInc.DMShooter
             PhotonNetwork.LoadLevel("SampleScene");
         }
 
+        private void LoadPrefabData()
+        {
+            PrefabLoader.LoadEnemyPrefabBalanceData("enemy_data.txt");
+        }
 
         #endregion
     }

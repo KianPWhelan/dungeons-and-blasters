@@ -143,4 +143,18 @@ public class Health : MonoBehaviourPunCallbacks
 
         return floatHealth;
     }
+
+    public void SetHealth(float value)
+    {
+        if (health != null)
+        {
+            health.initialValue = value;
+            health.runtimeValue = value;
+        }
+
+        else
+        {
+            floatHealth = value;
+        }
+    }
 }
