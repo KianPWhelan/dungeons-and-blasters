@@ -14,7 +14,11 @@ public class UseAbility : MonoBehaviour, IPointerClickHandler
 
     public int size;
 
+    public int amount;
+
     public Text text;
+
+    public float startingCooldownTime;
 
     public float cooldownTime;
 
@@ -24,20 +28,21 @@ public class UseAbility : MonoBehaviour, IPointerClickHandler
     public void Start()
     {
         var data = ability.GetComponent<EnemyGeneric>();
+        startingCooldownTime = data.cooldown;
         cooldownTime = data.cooldown;
         cooldown = cooldownTime;
         size = data.slotSize;
         text = GetComponentInChildren<Text>();
-        text.text = ability.name + "\nCooldown: " + cooldown.ToString("0.00"); ;
+        text.text = ability.name + " X" + amount + "\nCooldown: " + cooldown.ToString("0.00"); ;
     }
     public void Update()
     {
         cooldown -= Time.deltaTime;
-        text.text = ability.name + "\nCooldown: " + cooldown.ToString("0.00"); ;
+        text.text = ability.name + " X" + amount + "\nCooldown: " + cooldown.ToString("0.00"); ;
 
         if(cooldown <= 0)
         {
-            text.text = ability.name + "\nReady";
+            text.text = ability.name + " X" + amount + "\nReady";
         }
     }
 
@@ -51,8 +56,24 @@ public class UseAbility : MonoBehaviour, IPointerClickHandler
     {
         if(eventData.button == PointerEventData.InputButton.Right)
         {
-            slots.available += size;
-            Destroy(gameObject);
+            if(amount == 1)
+            {
+                slots.available += size;
+                Destroy(gameObject);
+            }
+            
+            else
+            {
+                slots.available += size;
+                amount -= 1;
+                var prevCooldown = cooldownTime;
+                cooldownTime = startingCooldownTime / amount;
+
+                if(cooldown < cooldownTime)
+                {
+                    cooldown = cooldownTime - prevCooldown + cooldown;
+                }
+            }
         }
     }
 }

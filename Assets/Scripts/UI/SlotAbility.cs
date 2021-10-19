@@ -14,6 +14,8 @@ public class SlotAbility : MonoBehaviour
 
     public float size;
 
+    private UseAbility buttonInstance;
+
     private Slots slots;
 
     private int slotCost;
@@ -32,10 +34,27 @@ public class SlotAbility : MonoBehaviour
             return;
         }
 
-        var button = Instantiate(slotButton, slotPanel.transform);
-        button.GetComponent<UseAbility>().controller = controller;
-        button.GetComponent<UseAbility>().ability = ability;
-        button.GetComponent<UseAbility>().slots = slots;
+        if(buttonInstance == null)
+        {
+            var button = Instantiate(slotButton, slotPanel.transform);
+            buttonInstance = button.GetComponent<UseAbility>();
+            buttonInstance.controller = controller;
+            buttonInstance.ability = ability;
+            buttonInstance.slots = slots;
+            buttonInstance.amount = 1;
+        }
+
+        else
+        {
+            buttonInstance.amount += 1;
+            buttonInstance.cooldownTime = buttonInstance.startingCooldownTime / buttonInstance.amount;
+
+            if(buttonInstance.cooldown > buttonInstance.cooldownTime)
+            {
+                buttonInstance.cooldown = buttonInstance.cooldownTime;
+            }
+        }
+        
         slots.available -= slotCost;
     }
 }
