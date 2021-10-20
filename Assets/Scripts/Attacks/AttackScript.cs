@@ -70,7 +70,7 @@ public class AttackScript : MonoBehaviour
             Debug.Log("Parent set to " + transform.parent.name);
         }
 
-        if(transform.parent.gameObject.GetPhotonView().IsMine)
+        if(transform.parent != null && transform.parent.gameObject.GetPhotonView().IsMine)
         {
             isMine = true;
         }

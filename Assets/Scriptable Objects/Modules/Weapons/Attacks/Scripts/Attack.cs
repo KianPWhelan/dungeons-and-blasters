@@ -61,12 +61,18 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, string targetTag = "none", float delay = 0)
+    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, string targetTag = "none", float delay = 0, Vector3? destination = null)
     {
+        if (spawner == null)
+        {
+            var spawnerObj = GameObject.FindGameObjectWithTag("Spawner");
+            spawner = spawnerObj.GetComponent<Spawner>();
+        }
+
         Debug.Log("Performing attack");
         Debug.Log(attack);
         object[] info;
-        info = new object[] { null, targetTag };
+        info = new object[] { null, targetTag, damageMod, destination.GetValueOrDefault() };
         spawner.Spawn(attack.name, selfPosition, selfRotation, info, delay);
     }
 
