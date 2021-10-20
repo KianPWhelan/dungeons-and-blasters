@@ -135,4 +135,25 @@ public class Helpers
         yield return new WaitForSecondsRealtime(time);
         action();
     }
+
+    /// <summary>
+    /// Returns the number of occurrences of the specific object in the specific list
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="obj"></param>
+    /// <returns></returns>
+    public static int NumOccurences(List<object> list, object obj)
+    {
+        int count = 0;
+
+        foreach(object o in list)
+        {
+            if(o == obj)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
 }

@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatHealth: 100
-  infiniteHealth: 0
+  infiniteHealth: 1
   isPlayer: 1
   isDead: 0
 --- !u!114 &-9066426888992374240

@@ -16,6 +16,7 @@ MonoBehaviour:
   isStatusEffect: 1
   interval: {fileID: 11400000, guid: 58f9c3d8207c6e64aaf3d0a5e31229ed, type: 2}
   duration: {fileID: 11400000, guid: b4dfb7de97a992842b5446718f46573b, type: 2}
+  stacks: 1
   recursiveEffects: []
   damageDealtMod: 1
   damageRecievedMod: 1

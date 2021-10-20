@@ -14,14 +14,15 @@ public class SpawnEffect : Effect
     [SerializeField]
     private bool spawnOnTargetDeath;
 
-    public override void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1)
+    public override void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false)
     {
         Debug.Log("In spawn effect");
+        Debug.Log("Is Proc: " + isProc);
 
-        if (statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this))
+        if (statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this) && !isProc)
         {
             // Apply status effect if not already applied
-            statusEffects.ApplyStatusEffect(this, targetTag);
+            statusEffects.ApplyStatusEffect(this, damageMod, targetTag);
 
             // We can now leave it to the status effect behavior to apply the rest of the effects
             return;

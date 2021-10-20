@@ -20,12 +20,14 @@ public class StatusEffects : MonoBehaviour
         public float durationTime;
         public float intervalTime;
         public string targetTag;
+        public float damageMod;
 
-        public Container(float durationTime, float intervalTime, string targetTag = "none")
+        public Container(float durationTime, float intervalTime, string targetTag, float damageMod)
         {
             this.durationTime = durationTime;
             this.intervalTime = intervalTime;
             this.targetTag = targetTag;
+            this.damageMod = damageMod;
         }
     }
 
@@ -39,20 +41,19 @@ public class StatusEffects : MonoBehaviour
     /// Applies the provided effect as a status effect to the entity
     /// </summary>
     /// <param name="effect"></param>
-    public void ApplyStatusEffect(Effect effect, string targetTag = "none")
+    public void ApplyStatusEffect(Effect effect, float damageMod, string targetTag = "none")
     {
-        if(!statusEffects.Contains(effect))
+        Debug.Log("Applying Status Effect");
+        statusEffects.Add(effect);
+        if(effectDetails.ContainsKey(effect))
         {
-            statusEffects.Add(effect);
-            if(effectDetails.ContainsKey(effect))
-            {
-                effectDetails[effect].durationTime = Time.time;
-            }
+            effectDetails[effect].durationTime = Time.time;
+            effectDetails[effect].damageMod = damageMod;
+        }
 
-            else
-            {
-                effectDetails.Add(effect, new Container(Time.time, 0, targetTag));
-            }
+        else
+        {
+            effectDetails.Add(effect, new Container(Time.time, 0, targetTag, damageMod));
         }
     }
 
@@ -63,7 +64,27 @@ public class StatusEffects : MonoBehaviour
     /// <returns></returns>
     public bool IsAffectedBy(Effect effect)
     {
-        return statusEffects.Contains(effect);
+        int count = 0;
+
+        foreach (Effect e in statusEffects)
+        {
+            if (e == effect)
+            {
+                count++;
+            }
+        }
+
+        Debug.Log(count + " " + effect.stacks);
+
+        if (count >= effect.stacks)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
     }
 
     public float GetDamageMod()
@@ -138,7 +159,7 @@ public class StatusEffects : MonoBehaviour
             {
                 if(!immunities.Contains(effect))
                 {
-                    effect.ApplyEffect(gameObject, gameObject.GetComponent<Health>(), this, transform.position, transform.rotation, effectDetails[effect].targetTag);
+                    effect.ApplyEffect(gameObject, gameObject.GetComponent<Health>(), this, transform.position, transform.rotation, effectDetails[effect].targetTag, effectDetails[effect].damageMod, true);
                     effectDetails[effect].intervalTime = currentTime;
                 }
             }

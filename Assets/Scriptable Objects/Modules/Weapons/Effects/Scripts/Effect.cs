@@ -21,6 +21,9 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     [SerializeField]
     public FloatVariable duration;
 
+    [Tooltip("If this is a status effect, how many times it stacks")]
+    public int stacks;
+
     [Tooltip("Additional effects that this effect applies")]
     [SerializeField]
     public List<Effect> recursiveEffects = new List<Effect>();
@@ -34,12 +37,12 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     /// <param name="health"></param>
     /// <param name="statusEffects"></param>
     /// <param name="targetTag"></param>
-    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1)
+    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false)
     {
-        if(statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this))
+        if (statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this) && !isProc)
         {
             // Apply status effect if not already applied
-            statusEffects.ApplyStatusEffect(this, targetTag);
+            statusEffects.ApplyStatusEffect(this, damageMod, targetTag);
 
             // We can now leave it to the status effect behavior to apply the rest of the effects
             return;
