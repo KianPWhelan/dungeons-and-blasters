@@ -42,6 +42,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     private Movement localMovement;
     private Animator animator;
     private bool hasAnimator;
+    private EnemyGeneric enemyComponent;
 
     private Dictionary<GameObject, State> stateStorage = new Dictionary<GameObject, State>();
     private Dictionary<State, List<StateTransition>> transitionStorage = new Dictionary<State, List<StateTransition>>();
@@ -74,7 +75,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         localAllyTarget = allyTarget;
         localAgent = agent;
         localMovement = movement;
-        var enemyComponent = self.GetComponent<EnemyGeneric>();
+        enemyComponent = self.GetComponent<EnemyGeneric>();
 
         if(stateStorage.ContainsKey(self))
         {
@@ -263,7 +264,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         {
             currentState = defaultState;
             currentState.OnEnter(localSelf, localTarget, localAllyTarget, localAgent, localMovement);
-            localSelf.GetComponent<EnemyGeneric>().currentState = currentState;
+            enemyComponent.currentState = currentState;
 
             if(!transitionStorage.ContainsKey(currentState))
             {
@@ -279,10 +280,10 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         {
             if(ProcessConditionals(transition.transitionComponents))
             {
-                localSelf.GetComponent<EnemyGeneric>().currentState.OnExit(localSelf, localTarget, localAllyTarget, localAgent, localMovement);
+                enemyComponent.currentState.OnExit(localSelf, localTarget, localAllyTarget, localAgent, localMovement);
                 currentState = transition.toState;
                 currentState.OnEnter(localSelf, localTarget, localAllyTarget, localAgent, localMovement);
-                localSelf.GetComponent<EnemyGeneric>().currentState = currentState;
+                enemyComponent.currentState = currentState;
 
                 if (!transitionStorage.ContainsKey(currentState))
                 {
@@ -390,7 +391,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
 
             else
             {
-                returnValue = Helpers.CheckLineOfSight(localSelf.transform, localTarget.transform);
+                returnValue = Helpers.CheckLineOfSight(localSelf.transform, localTarget.transform, enemyComponent.visionRange);
             }
 
             if(hasAnimator)
@@ -440,7 +441,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         else if(variable.Contains("selfRange"))
         {
             // Debug.Log("selfRange");
-            var data = localSelf.GetComponent<EnemyGeneric>();
+            var data = enemyComponent;
             int index = int.Parse(variable[variable.Length - 1].ToString());
 
             float returnValue = data.ranges[index];

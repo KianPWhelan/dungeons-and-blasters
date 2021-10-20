@@ -44,7 +44,7 @@ public class Helpers
         {
             Vector3 diff = go.transform.position - position;
             float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance && go.transform != myPosition && CheckLineOfSight(myPosition, go.transform))
+            if (curDistance < distance && go.transform != myPosition && CheckLineOfSight(myPosition, go.transform, 100000))
             {
                 closest = go;
                 distance = curDistance;
@@ -86,8 +86,13 @@ public class Helpers
     /// <param name="from"></param>
     /// <param name="to"></param>
     /// <returns></returns>
-    public static bool CheckLineOfSight(Transform from, Transform to)
+    public static bool CheckLineOfSight(Transform from, Transform to, float visionRange)
     {
+        if(Vector3.Distance(from.position, to.position) > visionRange)
+        {
+            return false;
+        }
+
         var rayDirection = to.position - from.position;
         RaycastHit hit;
         if (Physics.Raycast(from.position, rayDirection, out hit))

@@ -11,7 +11,7 @@ public class FollowAndAttackIfInSight : EnemyAI
 {
     public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
     {
-        bool canSeeTarget = Helpers.CheckLineOfSight(self.transform, target.transform);
+        bool canSeeTarget = Helpers.CheckLineOfSight(self.transform, target.transform, self.GetComponent<EnemyGeneric>().visionRange);
 
         if(canSeeTarget)
         {

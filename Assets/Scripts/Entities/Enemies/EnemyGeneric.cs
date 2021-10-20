@@ -32,6 +32,8 @@ public class EnemyGeneric : MonoBehaviour
 
     public int slotSize;
 
+    public float visionRange;
+
     public GameObject spawnSoundEffect;
 
     public List<float> ranges;
