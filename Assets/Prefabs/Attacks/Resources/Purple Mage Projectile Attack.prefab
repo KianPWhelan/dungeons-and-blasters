@@ -114,13 +114,18 @@ MonoBehaviour:
   subAttacks: []
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
+  subAttacksAtSurfaceNormal: 0
   attackDuration: 15
-  localStartingPosition: {x: 0, y: 2, z: 0}
+  localStartingPosition: {x: 0, y: 1, z: 0}
+  localRotationPosition: {x: 0, y: 0, z: 0}
+  spread: 0
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
   applyEffectsOnEnd: 0
   visualEndEffect: {fileID: 1763258955503344, guid: f508a93cd53c4a249885ccec27a7cee8, type: 3}
   visualStartEffect: {fileID: 1883975042563682, guid: 7b7c6b5ccff2e7d44a451e8fbcafdc7d, type: 3}
+  visualStartEffectPositionOffset: {x: 0, y: 0, z: 0}
+  visualStartEffectRotationOffset: {x: 0, y: 0, z: 0}
   validTag: 
   startingTime: 0
   hitList: []
@@ -129,8 +134,11 @@ MonoBehaviour:
   collisionPoint: {x: 0, y: 0, z: 0}
   damageMod: 0
   destination: {x: 0, y: 0, z: 0}
+  isMine: 0
+  accuracyOffset: {x: 0, y: 0, z: 0}
   speed: 50
   canGoThroughObjects: 0
+  reevluateRotationAfterLocalPositionOffset: 1
 --- !u!54 &8332649047536859580
 Rigidbody:
   m_ObjectHideFlags: 0

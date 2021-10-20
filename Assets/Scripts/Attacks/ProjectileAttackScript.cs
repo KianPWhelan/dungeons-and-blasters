@@ -9,6 +9,9 @@ public class ProjectileAttackScript : AttackScript
 
     public bool canGoThroughObjects;
 
+    [Tooltip("If projectile has a specific destination, whether the projectile should re evaluate it's rotation after adjusting its position offset")]
+    public bool reevluateRotationAfterLocalPositionOffset;
+
     private Rigidbody rigidbody;
 
     private Vector3 networkPosition;
@@ -21,9 +24,19 @@ public class ProjectileAttackScript : AttackScript
 
         if(destination.x != Vector3.negativeInfinity.x)
         {
-            Debug.Log("In Re rotate");
+            Debug.Log("DESTINATION");
+            Debug.Log(destination);
             transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + localRotationPosition + accuracyOffset);
+            transform.position += transform.forward * localStartingPosition.z;
+            transform.position += transform.right * localStartingPosition.x;
+            transform.position += transform.up * localStartingPosition.y;
+
+            if (reevluateRotationAfterLocalPositionOffset)
+            {
+                transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
+                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + localRotationPosition + accuracyOffset);
+            }
         }
 
         rigidbody = GetComponent<Rigidbody>();
@@ -59,9 +72,9 @@ public class ProjectileAttackScript : AttackScript
     {
         base.OnTriggerEnter(other);
         Debug.Log("bruh");
-        if(!canGoThroughObjects && other.tag == "Wall" || other.tag == "Ground")
+        if(!canGoThroughObjects && (other.tag == "Wall" || other.tag == "Ground"))
         {
-            // SetCollisionNormal(other);
+            SetCollisionNormal(other);
 
             if (subAttacksOnEnd)
             {

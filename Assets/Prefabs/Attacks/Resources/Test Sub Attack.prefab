@@ -111,16 +111,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: {fileID: 11400000, guid: af35d790b347e6c4db8d2134ba328e93, type: 2}
   subAttacks:
-  - {fileID: 11400000, guid: 8e6a3e33c476b8341af2877148192de9, type: 2}
+  - {fileID: 0}
   subAttacksOnHit: 1
   subAttacksOnEnd: 1
+  subAttacksAtSurfaceNormal: 0
   attackDuration: 100
   localStartingPosition: {x: 0, y: 0, z: 0}
+  localRotationPosition: {x: 0, y: 0, z: 0}
+  spread: 0
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
   applyEffectsOnEnd: 0
   visualEndEffect: {fileID: 0}
   visualStartEffect: {fileID: 0}
+  visualStartEffectPositionOffset: {x: 0, y: 0, z: 0}
+  visualStartEffectRotationOffset: {x: 0, y: 0, z: 0}
   validTag: 
   startingTime: 0
   hitList: []
@@ -129,6 +134,8 @@ MonoBehaviour:
   collisionPoint: {x: 0, y: 0, z: 0}
   damageMod: 0
   destination: {x: 0, y: 0, z: 0}
+  isMine: 0
+  accuracyOffset: {x: 0, y: 0, z: 0}
   speed: 10
   canGoThroughObjects: 0
 --- !u!54 &6743354643277664469

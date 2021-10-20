@@ -114,10 +114,11 @@ MonoBehaviour:
   subAttacks: []
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
+  subAttacksAtSurfaceNormal: 0
   attackDuration: 15
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
-  spread: 5
+  spread: 0
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
   applyEffectsOnEnd: 0

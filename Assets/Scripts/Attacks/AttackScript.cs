@@ -17,6 +17,9 @@ public class AttackScript : MonoBehaviour
     [Tooltip("Spawn sub attacks on end of attack (unless end of attack was a valid target hit)")]
     public bool subAttacksOnEnd;
 
+    [Tooltip("Set direction of sub attack to normal of collision surface")]
+    public bool subAttacksAtSurfaceNormal;
+
     [Tooltip("How long the attack can exist before despawning")]
     public float attackDuration;
 
@@ -102,7 +105,13 @@ public class AttackScript : MonoBehaviour
 
         accuracyOffset = Random.insideUnitCircle * spread;
 
-        transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;
+
+        if (destination.x == Vector3.negativeInfinity.x)
+        {
+            Debug.Log("whyhere");
+            transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;
+        }
+            
         transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles + localRotationPosition + accuracyOffset);
 
         if(visualStartEffect != null)
@@ -116,7 +125,7 @@ public class AttackScript : MonoBehaviour
     {
         hitList = new List<GameObject>();
         startingTime = Time.time;
-        transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
+        // transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
     }
 
     //public void OnDisable()
@@ -169,7 +178,7 @@ public class AttackScript : MonoBehaviour
             Debug.Log("Collision with valid tag");
             attack.ApplyEffects(other.gameObject, validTag, transform.position, transform.rotation, damageMod);
             hitList.Add(other.gameObject);
-            // SetCollisionNormal(other);
+            SetCollisionNormal(other);
 
             if (subAttacksOnHit)
             {
@@ -210,14 +219,31 @@ public class AttackScript : MonoBehaviour
     {
         foreach(Attack attack in subAttacks)
         {
-            if(transform.parent != null)
+            if(subAttacksAtSurfaceNormal)
             {
-                attack.PerformAttack(transform.parent.gameObject, 0f, validTag);
+                if(transform.parent != null)
+                {
+                    attack.PerformAttack(transform.parent.gameObject, 0f, validTag, true, collisionPoint + collisionNormal);
+                }
+
+                else
+                {
+                    Debug.Log("here");
+                    attack.PerformAttack(collisionPoint, transform.rotation, damageMod, validTag, 0f, collisionPoint + collisionNormal);
+                }
             }
 
             else
             {
-                attack.PerformAttack(transform.position, transform.rotation, damageMod, validTag);
+                if (transform.parent != null)
+                {
+                    attack.PerformAttack(transform.parent.gameObject, 0f, validTag);
+                }
+
+                else
+                {
+                    attack.PerformAttack(transform.position, transform.rotation, damageMod, validTag);
+                }
             }
         }
     }
@@ -225,21 +251,28 @@ public class AttackScript : MonoBehaviour
     // TODO: fix to make end effects spawn at normal to hit point
     public void SetCollisionNormal(Collider other)
     {
-        var point = other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
-        var pos = transform.position - (transform.forward * 1f);
+        var point = other.ClosestPointOnBounds(transform.position);
+        var pos = transform.position - (transform.forward * 10f);
         Debug.Log(pos);
         Debug.Log(point);
         var rayDirection = pos - point;
         Debug.Log(rayDirection);
         RaycastHit hit;
 
-        if (Physics.Raycast(pos, rayDirection, out hit))
+        if (other.Raycast(new Ray(pos, point - pos), out hit, 1000))
         {
             Debug.Log(hit.transform.gameObject.name);
             collisionNormal = hit.normal;
+            Debug.Log(collisionNormal);
         }
 
         collisionPoint = point;
+
+        //var collisionPoint = other.ClosestPointOnBounds(transform.position);
+        //var center = other.bounds.center;
+        //Vector3 direction = collisionPoint - center;
+        //collisionNormal = direction.normalized;
+        //Debug.Log(collisionNormal);
     }
 
     public void OnDestroy()
