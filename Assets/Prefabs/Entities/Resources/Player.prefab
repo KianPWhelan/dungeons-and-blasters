@@ -447,10 +447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330ecda54bd98f24bab14bf2b5bfda4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 11400000, guid: e11d41b9ab3d9924583f3cca85290bb5, type: 2}
-  targetTags:
-  - Enemy
+  weapons: []
+  targetTags: []
 --- !u!114 &7168323857930604494
 MonoBehaviour:
   m_ObjectHideFlags: 0

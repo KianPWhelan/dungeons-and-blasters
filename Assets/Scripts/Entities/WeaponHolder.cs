@@ -31,4 +31,10 @@ public class WeaponHolder : MonoBehaviour
     {
         return weapons;
     }
+
+    public void AddWeapon(Weapon weapon, string targetTag)
+    {
+        weapons.Add(weapon);
+        targetTags.Add(targetTag);
+    }
 }

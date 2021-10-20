@@ -19,6 +19,10 @@ public class Controller : MonoBehaviourPunCallbacks
     public static GameObject LocalPlayerInstance;
     public TextMesh nametag;
 
+    private List<Weapon> weapons;
+
+    private Weapon startingWeapon;
+
     // private GameManager gameManager;
 
     public void Awake()
@@ -35,6 +39,9 @@ public class Controller : MonoBehaviourPunCallbacks
         // #Critical
         // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
         DontDestroyOnLoad(this.gameObject);
+
+        weapons = new List<Weapon>(Resources.FindObjectsOfTypeAll<Weapon>());
+        startingWeapon = weapons.Find(x => x.name == (string)photonView.Owner.CustomProperties["weapon"]);
     }
 
     public void Start()
@@ -43,6 +50,7 @@ public class Controller : MonoBehaviourPunCallbacks
         
         rotater = gameObject.transform.GetComponentInChildren<Rotater>();
         weaponHolder = gameObject.GetComponent<WeaponHolder>();
+        weaponHolder.AddWeapon(startingWeapon, "Enemy");
         // gameManager = FindObjectOfType<GameManager>();
         nametag.text = photonView.Owner.NickName;
 
