@@ -117,6 +117,7 @@ MonoBehaviour:
   attackDuration: 15
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
+  spread: 5
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
   applyEffectsOnEnd: 0
@@ -133,6 +134,7 @@ MonoBehaviour:
   damageMod: 0
   destination: {x: 0, y: 0, z: 0}
   isMine: 0
+  accuracyOffset: {x: 0, y: 0, z: 0}
   speed: 50
   canGoThroughObjects: 0
 --- !u!54 &4829975092919131579

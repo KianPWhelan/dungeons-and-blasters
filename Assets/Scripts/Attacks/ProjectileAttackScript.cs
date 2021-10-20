@@ -23,6 +23,7 @@ public class ProjectileAttackScript : AttackScript
         {
             Debug.Log("In Re rotate");
             transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + localRotationPosition + accuracyOffset);
         }
 
         rigidbody = GetComponent<Rigidbody>();

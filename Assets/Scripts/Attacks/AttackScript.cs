@@ -5,32 +5,49 @@ using Photon.Pun;
 
 public class AttackScript : MonoBehaviour
 {
+    [Tooltip("The Attack ScriptableObject that this attack uses")]
     public Attack attack;
 
+    [Tooltip("Attacks that will be spawned depending on the values of the next 2 parameters")]
     public List<Attack> subAttacks = new List<Attack>();
 
+    [Tooltip("Spawn sub attacks on hitting a valid target")]
     public bool subAttacksOnHit;
 
+    [Tooltip("Spawn sub attacks on end of attack (unless end of attack was a valid target hit)")]
     public bool subAttacksOnEnd;
 
+    [Tooltip("How long the attack can exist before despawning")]
     public float attackDuration;
 
+    [Tooltip("The starting position of the attack relative to its parent")]
     public Vector3 localStartingPosition;
 
+    [Tooltip("The starting rotation of the attack relative to its parent")]
     public Vector3 localRotationPosition;
 
+    [Tooltip("Defines the angle of the cone that the attack can miss its intended target by")]
+    public float spread;
+
+    [Tooltip("Whether the attack should be destroyed on collision with valid target")]
     public bool destroyOnHit;
 
+    [Tooltip("Whether the attack can hit the same target multiple times in its lifespan")]
     public bool canHitSameTargetMoreThanOnce;
 
+    [Tooltip("Whether this attack should attempt to apply its effects when it ends even if it didnt hit a valid target")]
     public bool applyEffectsOnEnd;
 
+    [Tooltip("Visual effect to be instantiated when the attack is destroyed")]
     public GameObject visualEndEffect;
 
+    [Tooltip("Visual effect to be instantiated upon attack instantiation")]
     public GameObject visualStartEffect;
 
+    [Tooltip("Position offset of visual start effect")]
     public Vector3 visualStartEffectPositionOffset;
 
+    [Tooltip("Rotation offset of visual start effect")]
     public Vector3 visualStartEffectRotationOffset;
 
     [HideInInspector]
@@ -60,6 +77,9 @@ public class AttackScript : MonoBehaviour
     [HideInInspector]
     public bool isMine = false;
 
+    [HideInInspector]
+    public Vector3 accuracyOffset;
+
     public virtual void Start()
     {
         Debug.Log("Starting " + name);
@@ -79,8 +99,11 @@ public class AttackScript : MonoBehaviour
         
         hitList = new List<GameObject>();
         startingTime = Time.time;
+
+        accuracyOffset = Random.insideUnitCircle * spread;
+
         transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;
-        transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles + localRotationPosition);
+        transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles + localRotationPosition + accuracyOffset);
 
         if(visualStartEffect != null)
         {
