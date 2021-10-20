@@ -348,6 +348,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   cooldown: 40
   slotSize: 1
+  spawnSoundEffect: {fileID: 0}
   ranges: []
   releventTransitions: []
   startingSpeed: 0
