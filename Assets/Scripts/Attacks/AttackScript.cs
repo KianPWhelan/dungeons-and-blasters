@@ -17,6 +17,8 @@ public class AttackScript : MonoBehaviour
 
     public Vector3 localStartingPosition;
 
+    public Vector3 localRotationPosition;
+
     public bool destroyOnHit;
 
     public bool canHitSameTargetMoreThanOnce;
@@ -77,7 +79,8 @@ public class AttackScript : MonoBehaviour
         
         hitList = new List<GameObject>();
         startingTime = Time.time;
-        transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;\
+        transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;
+        transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles + localRotationPosition);
 
         if(visualStartEffect != null)
         {

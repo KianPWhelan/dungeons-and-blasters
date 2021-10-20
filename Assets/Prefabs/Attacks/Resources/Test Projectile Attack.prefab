@@ -111,12 +111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: {fileID: 11400000, guid: af35d790b347e6c4db8d2134ba328e93, type: 2}
-  subAttacks:
-  - {fileID: 11400000, guid: 03a14644fcb98714c97a70138d105cb4, type: 2}
+  subAttacks: []
   subAttacksOnHit: 0
-  subAttacksOnEnd: 1
+  subAttacksOnEnd: 0
   attackDuration: 15
   localStartingPosition: {x: 0, y: 0, z: 0}
+  localRotationPosition: {x: 0, y: 0, z: 0}
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
   applyEffectsOnEnd: 0
