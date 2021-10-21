@@ -1552,6 +1552,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6368863547330092067, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6368863547330092069, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
       propertyPath: m_Name
       value: Top Panel
@@ -1562,6 +1566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
+--- !u!224 &9136021561460345032 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6368863548559711569, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
+  m_PrefabInstance: {fileID: 2786343419506759065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &9136021562623379896 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6368863547330092065, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
@@ -1570,10 +1579,5 @@ RectTransform:
 --- !u!1 &9136021562623379900 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6368863547330092069, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
-  m_PrefabInstance: {fileID: 2786343419506759065}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &9136021561460345032 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6368863548559711569, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
   m_PrefabInstance: {fileID: 2786343419506759065}
   m_PrefabAsset: {fileID: 0}
