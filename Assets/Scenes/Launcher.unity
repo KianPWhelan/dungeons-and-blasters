@@ -2308,6 +2308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 11400000, guid: e11d41b9ab3d9924583f3cca85290bb5, type: 2}
+  - {fileID: 11400000, guid: bd2ccf97b7d15244fb7dabe41d41c647, type: 2}
   inventory: {fileID: 11400000, guid: 51cc2dbe205181f44813fca7ac6238fa, type: 2}
   selection: {fileID: 0}
 --- !u!114 &2006049032
