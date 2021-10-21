@@ -29,12 +29,15 @@ public class WeaponSelect : MonoBehaviour
 
         dropdown.AddOptions(options);
         selection = weapons[0];
+        ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
+        hash.Add("weapon", selection.name);
+        PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
     }
 
     public void ChangeSelection()
     {
         selection = weapons[dropdown.value];
-        Hashtable hash = new Hashtable();
+        ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
         hash.Add("weapon", selection.name);
         PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
     }
