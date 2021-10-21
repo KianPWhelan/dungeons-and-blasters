@@ -106,7 +106,7 @@ public class AttackScript : MonoBehaviour
         accuracyOffset = Random.insideUnitCircle * spread;
 
 
-        if (destination.x == Vector3.negativeInfinity.x)
+        if (!(this is ProjectileAttackScript))
         {
             Debug.Log("whyhere");
             transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;
