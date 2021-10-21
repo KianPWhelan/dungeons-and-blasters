@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "982429231465",
+    "project_id": "dmshooter-b881e",
+    "storage_bucket": "dmshooter-b881e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982429231465:android:e52182ff1816d24375f5f8",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.DMShooter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982429231465-61rlhh9g5sat50djqi3qaa6pgbsh94f4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4b7TRFBvomAxSb5LYjeKpZbzVDsfUe4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982429231465-61rlhh9g5sat50djqi3qaa6pgbsh94f4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
