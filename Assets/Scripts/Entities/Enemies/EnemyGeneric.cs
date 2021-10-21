@@ -6,6 +6,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Movement), typeof(NavMeshAgent))]
 public class EnemyGeneric : MonoBehaviour
 {
+    public Rarities rarity;
+
     [Tooltip("The module this enemy will use")]
     [SerializeField]
     public EnemyAI aiModule;

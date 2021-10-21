@@ -6,6 +6,10 @@ using Photon.Pun;
 [CreateAssetMenu(menuName = "Modules/Weapons/Weapon")]
 public class Weapon : ScriptableObject
 {
+    [Tooltip("The rarity enum of this item")]
+    [SerializeField]
+    private Rarities rarity;
+
     [Tooltip("Attacks are they key, and cooldown is the value")]
     [SerializeField]
     private List<Attack> attacks = new List<Attack>();
@@ -21,7 +25,6 @@ public class Weapon : ScriptableObject
     [Tooltip("Animation to play when weapon is used")]
     [SerializeField]
     private Animation animation;
-
 
     private Dictionary<Attack, Container> map;
 
@@ -100,5 +103,10 @@ public class Weapon : ScriptableObject
     {
         Debug.Log("Mapping " + name);
         Map();
+    }
+
+    private Rarities GetRarity()
+    {
+        return rarity;
     }
 }
