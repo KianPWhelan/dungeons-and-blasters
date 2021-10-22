@@ -12,10 +12,31 @@ public class ProjectileAttackScript : AttackScript
     [Tooltip("If projectile has a specific destination, whether the projectile should re evaluate it's rotation after adjusting its position offset")]
     public bool reevluateRotationAfterLocalPositionOffset;
 
+    public bool homing;
+
+    public float homingStrength;
+
+    public bool bouncing;
+
+    public float numBounces;
+
+    public float bouncingStrength = 1;
+
+    [Tooltip("When using fast bouncing projectiles, collisions can get weird. Setting a delay on collisions after a bounce helps this, but can cause other unintended problems. Use as needed")]
+    public float colliionDisableTime = 0.05f;
+
     private Rigidbody rigidbody;
 
     private Vector3 networkPosition;
     private Quaternion networkRotation;
+
+    private Transform target;
+
+    private Collider previousCollision;
+
+    private Collider selfCollider;
+
+    private bool collidedThisFrame;
 
     public override void Start()
     {
@@ -40,11 +61,29 @@ public class ProjectileAttackScript : AttackScript
         }
 
         rigidbody = GetComponent<Rigidbody>();
+        selfCollider = GetComponent<Collider>();
         rigidbody.velocity = transform.forward * speed;
+
+        if(homing)
+        {
+            var temp = Helpers.FindClosest(transform, validTag);
+
+            if(temp.TryGetComponent(out EnemyGeneric e) && e.homingPoint != null)
+            {
+                target = e.homingPoint.transform;
+            }
+
+            else
+            {
+                target = temp.transform;
+            }
+        }
     }
 
     public override void Tick()
     {
+        collidedThisFrame = false;
+
         if (startingTime + attackDuration <= Time.time)
         {
             // Debug.Log("here");
@@ -72,9 +111,30 @@ public class ProjectileAttackScript : AttackScript
     {
         base.OnTriggerEnter(other);
         Debug.Log("bruh");
+
+        //if(previousCollision != null && other == previousCollision)
+        //{
+        //    return;
+        //}
+
+        if(collidedThisFrame)
+        {
+            return;
+        }
+
         if(!canGoThroughObjects && (other.tag == "Wall" || other.tag == "Ground"))
         {
             SetCollisionNormal(other);
+
+            // TODO: Make bouncing not sucky
+            if (bouncing && numBounces > 0)
+            {
+                rigidbody.velocity = Vector3.Reflect(rigidbody.velocity, collisionNormal) * bouncingStrength;
+                numBounces--;
+                selfCollider.enabled = false;
+                StartCoroutine(EnableCollision(colliionDisableTime));
+                return;
+            }
 
             if (subAttacksOnEnd)
             {
@@ -109,12 +169,22 @@ public class ProjectileAttackScript : AttackScript
     //    }
     //}
 
-    //public void FixedUpdate()
-    //{
-    //    if (!photonView.IsMine)
-    //    {
-    //        rigidbody.position = Vector3.MoveTowards(rigidbody.position, networkPosition, Time.fixedDeltaTime);
-    //        rigidbody.rotation = Quaternion.RotateTowards(rigidbody.rotation, networkRotation, Time.fixedDeltaTime * 100.0f);
-    //    }
-    //}
+    public void FixedUpdate()
+    {
+        if(homing)
+        {
+            rigidbody.velocity = transform.forward * speed;
+
+            //Now Turn the Rocket towards the Target
+            var rocketTargetRot = Quaternion.LookRotation(target.position - transform.position);
+
+            rigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, rocketTargetRot, homingStrength));
+        }
+    }
+
+    private IEnumerator EnableCollision(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        selfCollider.enabled = true;
+    }
 }

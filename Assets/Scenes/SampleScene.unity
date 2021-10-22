@@ -48325,6 +48325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rarity: 0
+  uniqueId: 
   aiModule: {fileID: 11400000, guid: b33bbd670537b85428725e5b3a1817f7, type: 2}
   targetType: Player
   allyTargetType: 
@@ -48332,6 +48333,8 @@ MonoBehaviour:
   allyTarget: {fileID: 0}
   agent: {fileID: 0}
   movement: {fileID: 0}
+  timeSinceLastStateChange: 0
+  homingPoint: {fileID: 0}
   currentState: {fileID: 0}
   cooldown: 0
   slotSize: 0
