@@ -126,6 +126,7 @@ public class ProjectileAttackScript : AttackScript
         {
             SetCollisionNormal(other);
 
+            // TODO: Make bouncing not sucky
             if (bouncing && numBounces > 0)
             {
                 rigidbody.velocity = Vector3.Reflect(rigidbody.velocity, collisionNormal) * bouncingStrength;
