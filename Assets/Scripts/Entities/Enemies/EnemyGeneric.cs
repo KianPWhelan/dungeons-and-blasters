@@ -8,7 +8,7 @@ public class EnemyGeneric : MonoBehaviour
 {
     public Rarities rarity;
 
-    [Tooltip("Identifier used for linking to datavabe, DO NOT MODIFY")]
+    [Tooltip("Identifier used for linking to database, DO NOT MODIFY")]
     public string uniqueId;
 
     [Tooltip("The module this enemy will use")]

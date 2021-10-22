@@ -6,7 +6,7 @@ using Photon.Pun;
 [CreateAssetMenu(menuName = "Modules/Weapons/Weapon")]
 public class Weapon : ScriptableObject
 {
-    [Tooltip("Identifier used for linking to datavase, DO NOT MODIFY")]
+    [Tooltip("Identifier used for linking to database, DO NOT MODIFY")]
     public string uniqueId;
 
     [Tooltip("The rarity enum of this item")]
