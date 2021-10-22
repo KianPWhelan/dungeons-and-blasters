@@ -12,10 +12,16 @@ public class ProjectileAttackScript : AttackScript
     [Tooltip("If projectile has a specific destination, whether the projectile should re evaluate it's rotation after adjusting its position offset")]
     public bool reevluateRotationAfterLocalPositionOffset;
 
+    public bool homing;
+
+    public float homingStrength;
+
     private Rigidbody rigidbody;
 
     private Vector3 networkPosition;
     private Quaternion networkRotation;
+
+    private Transform target;
 
     public override void Start()
     {
@@ -41,6 +47,21 @@ public class ProjectileAttackScript : AttackScript
 
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.velocity = transform.forward * speed;
+
+        if(homing)
+        {
+            var temp = Helpers.FindClosest(transform, validTag);
+
+            if(temp.TryGetComponent(out EnemyGeneric e) && e.homingPoint != null)
+            {
+                target = e.homingPoint.transform;
+            }
+
+            else
+            {
+                target = temp.transform;
+            }
+        }
     }
 
     public override void Tick()
@@ -109,12 +130,16 @@ public class ProjectileAttackScript : AttackScript
     //    }
     //}
 
-    //public void FixedUpdate()
-    //{
-    //    if (!photonView.IsMine)
-    //    {
-    //        rigidbody.position = Vector3.MoveTowards(rigidbody.position, networkPosition, Time.fixedDeltaTime);
-    //        rigidbody.rotation = Quaternion.RotateTowards(rigidbody.rotation, networkRotation, Time.fixedDeltaTime * 100.0f);
-    //    }
-    //}
+    public void FixedUpdate()
+    {
+        if(homing)
+        {
+            rigidbody.velocity = transform.forward * speed;
+
+            //Now Turn the Rocket towards the Target
+            var rocketTargetRot = Quaternion.LookRotation(target.position - transform.position);
+
+            rigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, rocketTargetRot, homingStrength));
+        }
+    }
 }

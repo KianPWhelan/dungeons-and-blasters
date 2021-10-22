@@ -33,6 +33,9 @@ public class EnemyGeneric : MonoBehaviour
     [HideInInspector]
     public float timeSinceLastStateChange = 0;
 
+    [Tooltip("Where homing projectiles will attempt to aim at, should be an empty child object of enemy")]
+    public GameObject homingPoint;
+
     public State currentState;
 
     public float cooldown;
