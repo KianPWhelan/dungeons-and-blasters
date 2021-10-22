@@ -39,7 +39,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     /// <param name="targetTag"></param>
     public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false)
     {
-        if (statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this) && !isProc)
+        if (statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this) && !isProc && (target.tag == targetTag || targetTag == "none"))
         {
             // Apply status effect if not already applied
             statusEffects.ApplyStatusEffect(this, damageMod, targetTag);
@@ -53,7 +53,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
             Debug.LogWarning("Target of effect has no status effects behavior");
         }
 
-        if(health != null)
+        if(health != null && (target.tag == targetTag || targetTag == "none"))
         {
             // Apply damage first
             foreach (Damage damage in damages)
