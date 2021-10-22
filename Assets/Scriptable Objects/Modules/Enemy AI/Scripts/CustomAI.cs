@@ -25,7 +25,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
     public List<StateTransition> stateMachine = new List<StateTransition>();
 
     // Valid values that can be called from transitions
-    private static string[] vals = { "targetDistance", "targetIsVisible", "targetHealth", "selfHealth", "selfRange" };
+    private static string[] vals = { "targetDistance", "targetIsVisible", "targetHealth", "selfHealth", "selfRange", "timeSinceLastStateChange" };
     private List<string> callable = new List<string>(vals);
 
     // Valid conditions that can be called from transitions
@@ -110,6 +110,11 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         if(!CheckStateChanges())
         {
             currentState.Tick(self, target, allyTarget, agent, movement);
+        }
+
+        else
+        {
+            enemyComponent.timeSinceLastStateChange = Time.time;
         }
     }
 
@@ -367,12 +372,12 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
 
     private string GetValue(string variable)
     {
-        if(variable == "targetDistance")
+        if (variable == "targetDistance")
         {
             float returnValue;
             returnValue = Vector3.Distance(localSelf.transform.position, localTarget.transform.position);
 
-            if(hasAnimator)
+            if (hasAnimator)
             {
                 animator.SetFloat("targetDistance", returnValue);
             }
@@ -380,11 +385,11 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
             return returnValue.ToString();
         }
 
-        else if(variable == "targetIsVisible")
+        else if (variable == "targetIsVisible")
         {
             bool returnValue;
 
-            if(!localTarget)
+            if (!localTarget)
             {
                 returnValue = false;
             }
@@ -394,7 +399,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
                 returnValue = Helpers.CheckLineOfSight(localSelf.transform, localTarget.transform, enemyComponent.visionRange);
             }
 
-            if(hasAnimator)
+            if (hasAnimator)
             {
                 animator.SetBool("targetIsVisible", returnValue);
             }
@@ -402,16 +407,16 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
             return returnValue.ToString();
         }
 
-        else if(variable == "targetHealth")
+        else if (variable == "targetHealth")
         {
             Health health;
             float returnValue = 999999999f;
 
-            if(localTarget.TryGetComponent(out health))
+            if (localTarget.TryGetComponent(out health))
             {
                 returnValue = health.GetHealth();
 
-                if(hasAnimator)
+                if (hasAnimator)
                 {
                     animator.SetFloat("targetHealth", returnValue);
                 }
@@ -438,7 +443,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
             return returnValue.ToString();
         }
 
-        else if(variable.Contains("selfRange"))
+        else if (variable.Contains("selfRange"))
         {
             // Debug.Log("selfRange");
             var data = enemyComponent;
@@ -447,6 +452,19 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
             float returnValue = data.ranges[index];
 
             // Debug.Log(returnValue);
+
+            if (hasAnimator)
+            {
+                animator.SetFloat(variable, returnValue);
+            }
+
+            return returnValue.ToString();
+        }
+
+        else if(variable == "timeSinceLastStateChange")
+        {
+            var data = enemyComponent;
+            float returnValue = Time.time - data.timeSinceLastStateChange;
 
             if(hasAnimator)
             {

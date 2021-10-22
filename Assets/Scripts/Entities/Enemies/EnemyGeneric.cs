@@ -30,6 +30,8 @@ public class EnemyGeneric : MonoBehaviour
     public NavMeshAgent agent;
     [HideInInspector]
     public Movement movement;
+    [HideInInspector]
+    public float timeSinceLastStateChange = 0;
 
     public State currentState;
 
