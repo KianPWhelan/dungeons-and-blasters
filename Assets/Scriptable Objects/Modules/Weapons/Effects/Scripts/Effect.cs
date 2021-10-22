@@ -28,6 +28,14 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     [SerializeField]
     public List<Effect> recursiveEffects = new List<Effect>();
 
+    [Tooltip("Set as true to use the tag provided below instead of the tag provided by the weapon user")]
+    [SerializeField]
+    public bool useOverwriteTag;
+
+    [Tooltip("If Use Override Tag is set to true, the attack will apply use this as the valid tag instead of the tag provided by the weapon user")]
+    [SerializeField]
+    public string overwriteTag;
+
     private bool warningDisplayed;
 
     /// <summary>
@@ -39,10 +47,17 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     /// <param name="targetTag"></param>
     public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false)
     {
-        if (statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this) && !isProc && (target.tag == targetTag || targetTag == "none"))
+        var tag = targetTag;
+
+        if(useOverwriteTag)
+        {
+            tag = overwriteTag;
+        }
+
+        if (statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this) && !isProc && (target.tag == tag || tag == "none"))
         {
             // Apply status effect if not already applied
-            statusEffects.ApplyStatusEffect(this, damageMod, targetTag);
+            statusEffects.ApplyStatusEffect(this, damageMod, tag);
 
             // We can now leave it to the status effect behavior to apply the rest of the effects
             return;
@@ -53,7 +68,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
             Debug.LogWarning("Target of effect has no status effects behavior");
         }
 
-        if(health != null && (target.tag == targetTag || targetTag == "none"))
+        if(health != null && (target.tag == tag || tag == "none"))
         {
             // Apply damage first
             foreach (Damage damage in damages)
@@ -70,7 +85,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
         // Apply recursive effects
         foreach(Effect effect in recursiveEffects)
         {
-            effect.ApplyEffect(target, health, statusEffects, location, rotation, targetTag);
+            effect.ApplyEffect(target, health, statusEffects, location, rotation, tag);
         }
     }
 

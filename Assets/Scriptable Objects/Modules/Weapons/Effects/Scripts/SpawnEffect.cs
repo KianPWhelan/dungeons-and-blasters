@@ -19,10 +19,17 @@ public class SpawnEffect : Effect
         Debug.Log("In spawn effect");
         Debug.Log("Is Proc: " + isProc);
 
-        if (statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this) && !isProc && (target.tag == targetTag || targetTag == "none"))
+        var tag = targetTag;
+
+        if (useOverwriteTag)
+        {
+            tag = overwriteTag;
+        }
+
+        if (statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this) && !isProc && (target.tag == tag || tag == "none"))
         {
             // Apply status effect if not already applied
-            statusEffects.ApplyStatusEffect(this, damageMod, targetTag);
+            statusEffects.ApplyStatusEffect(this, damageMod, tag);
 
             // We can now leave it to the status effect behavior to apply the rest of the effects
             return;
