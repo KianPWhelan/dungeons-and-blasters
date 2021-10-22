@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241e4755d8a207146aa851ca6e3bc123, type: 3}
   m_Name: Test Ranged Weapon
   m_EditorClassIdentifier: 
+  uniqueId: 50c0a667-a990-4687-9f7d-e4d088bcdf81
+  rarity: 0
   attacks:
   - {fileID: 11400000, guid: af35d790b347e6c4db8d2134ba328e93, type: 2}
   cooldowns:

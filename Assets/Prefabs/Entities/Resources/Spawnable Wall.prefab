@@ -338,6 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2530c9a6ad09404cbcfe571f7babcbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rarity: 0
+  uniqueId: c85c95a3-cea3-4b4a-9811-f97e81579c1a
   aiModule: {fileID: 11400000, guid: 967d28e58f26d8c4d9182fcac65f62b7, type: 2}
   targetType: Player
   allyTargetType: Enemy
@@ -348,6 +350,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   cooldown: 40
   slotSize: 1
+  visionRange: 0
   spawnSoundEffect: {fileID: 0}
   ranges: []
   releventTransitions: []

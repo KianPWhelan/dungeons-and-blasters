@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241e4755d8a207146aa851ca6e3bc123, type: 3}
   m_Name: Test Poison Weapon
   m_EditorClassIdentifier: 
+  uniqueId: 8c5d7ac8-9cfa-4cc4-973e-8129548bdfc5
   rarity: 0
   attacks:
   - {fileID: 11400000, guid: 24a153e97b1919444bdc4ee486b2ae58, type: 2}

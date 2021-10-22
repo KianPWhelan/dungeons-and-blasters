@@ -805,6 +805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e994fd930eabb14cb5d6640f2fd660b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rarity: 0
+  uniqueId: ac3cd396-bb6c-4943-a01b-e19abce8be4a
   aiModule: {fileID: 11400000, guid: 4ebcd45dcd5a7fb41b628eeadb73248c, type: 2}
   targetType: Player
   allyTargetType: Enemy

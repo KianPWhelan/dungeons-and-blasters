@@ -8,6 +8,9 @@ public class EnemyGeneric : MonoBehaviour
 {
     public Rarities rarity;
 
+    [Tooltip("Identifier used for linking to datavabe, DO NOT MODIFY")]
+    public string uniqueId;
+
     [Tooltip("The module this enemy will use")]
     [SerializeField]
     public EnemyAI aiModule;
