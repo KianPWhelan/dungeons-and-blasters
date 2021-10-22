@@ -16,12 +16,27 @@ public class ProjectileAttackScript : AttackScript
 
     public float homingStrength;
 
+    public bool bouncing;
+
+    public float numBounces;
+
+    public float bouncingStrength = 1;
+
+    [Tooltip("When using fast bouncing projectiles, collisions can get weird. Setting a delay on collisions after a bounce helps this, but can cause other unintended problems. Use as needed")]
+    public float colliionDisableTime = 0.05f;
+
     private Rigidbody rigidbody;
 
     private Vector3 networkPosition;
     private Quaternion networkRotation;
 
     private Transform target;
+
+    private Collider previousCollision;
+
+    private Collider selfCollider;
+
+    private bool collidedThisFrame;
 
     public override void Start()
     {
@@ -46,6 +61,7 @@ public class ProjectileAttackScript : AttackScript
         }
 
         rigidbody = GetComponent<Rigidbody>();
+        selfCollider = GetComponent<Collider>();
         rigidbody.velocity = transform.forward * speed;
 
         if(homing)
@@ -66,6 +82,8 @@ public class ProjectileAttackScript : AttackScript
 
     public override void Tick()
     {
+        collidedThisFrame = false;
+
         if (startingTime + attackDuration <= Time.time)
         {
             // Debug.Log("here");
@@ -93,9 +111,29 @@ public class ProjectileAttackScript : AttackScript
     {
         base.OnTriggerEnter(other);
         Debug.Log("bruh");
+
+        //if(previousCollision != null && other == previousCollision)
+        //{
+        //    return;
+        //}
+
+        if(collidedThisFrame)
+        {
+            return;
+        }
+
         if(!canGoThroughObjects && (other.tag == "Wall" || other.tag == "Ground"))
         {
             SetCollisionNormal(other);
+
+            if (bouncing && numBounces > 0)
+            {
+                rigidbody.velocity = Vector3.Reflect(rigidbody.velocity, collisionNormal) * bouncingStrength;
+                numBounces--;
+                selfCollider.enabled = false;
+                StartCoroutine(EnableCollision(colliionDisableTime));
+                return;
+            }
 
             if (subAttacksOnEnd)
             {
@@ -141,5 +179,11 @@ public class ProjectileAttackScript : AttackScript
 
             rigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, rocketTargetRot, homingStrength));
         }
+    }
+
+    private IEnumerator EnableCollision(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        selfCollider.enabled = true;
     }
 }

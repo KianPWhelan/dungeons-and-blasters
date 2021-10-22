@@ -141,6 +141,10 @@ MonoBehaviour:
   reevluateRotationAfterLocalPositionOffset: 0
   homing: 0
   homingStrength: 0
+  bouncing: 0
+  numBounces: 0
+  bouncingStrength: 1
+  colliionDisableTime: 0.05
 --- !u!54 &4829975092919131579
 Rigidbody:
   m_ObjectHideFlags: 0
