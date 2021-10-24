@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
-  m_Name: Poison Attack
+  m_Name: Fire Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 3807866404001653414, guid: 61fa9332d5ae55245b3c960e1818026f, type: 3}
+  attack: {fileID: 1525233559925780, guid: 03c1b73cfaa86af4fb9da1588873ab4b, type: 3}
   effects:
-  - {fileID: 11400000, guid: 31a0fc82f201c4748badd3a268357813, type: 2}
-  - {fileID: 11400000, guid: 3818c83df26456340a5011cd38420b46, type: 2}
+  - {fileID: 11400000, guid: bec6ebff16eafbd468d199a83d72f242, type: 2}
+  - {fileID: 11400000, guid: cb83fc2ea5bb24d46a40aec9cf362a33, type: 2}

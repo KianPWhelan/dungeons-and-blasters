@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d697dfece3c4e3140ad84a97af774b38, type: 3}
-  m_Name: Poison Effect
+  m_Name: Poison Effect 1
   m_EditorClassIdentifier: 
   damages:
-  - {fileID: 11400000, guid: f0f0e3f3800606c458d9f6fb161bf10e, type: 2}
-  isStatusEffect: 1
-  interval: {fileID: 11400000, guid: 58f9c3d8207c6e64aaf3d0a5e31229ed, type: 2}
-  duration: {fileID: 11400000, guid: b4dfb7de97a992842b5446718f46573b, type: 2}
-  stacks: 10
+  - {fileID: 11400000, guid: 4a8d5def341712f40b902830ac616936, type: 2}
+  isStatusEffect: 0
+  interval: {fileID: 0}
+  duration: {fileID: 0}
+  stacks: 0
   recursiveEffects: []

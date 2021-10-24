@@ -9,14 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 241e4755d8a207146aa851ca6e3bc123, type: 3}
-  m_Name: Test Poison Weapon
+  m_Script: {fileID: 11500000, guid: 8f088ffb4a70f944d9b48f502281f171, type: 3}
+  m_Name: Poison Status Duration
   m_EditorClassIdentifier: 
-  rarity: 0
-  attacks:
-  - {fileID: 11400000, guid: ccc9c2b917418ac4dbdd5b160d0bbe2d, type: 2}
-  cooldowns:
-  - 0.05
-  delays:
-  - 0
-  animation: {fileID: 0}
+  initialValue: 10
+  runtimeValue: 10
