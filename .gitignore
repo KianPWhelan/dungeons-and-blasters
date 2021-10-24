@@ -10,6 +10,7 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /TestBuilds/**
+.DS_Store
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -63,3 +64,5 @@ UserSettings/EditorUserSettings.asset
 .vsconfig
 TestBuilds/DMShooter_Pre-Alpha Build_1.zip
 *.zip
+Assets/Firebase/Plugins/x86_64/FirebaseCppApp-8_4_0.so.meta
+Assets/Firebase/Plugins/x86_64/FirebaseCppApp-8_4_0.so

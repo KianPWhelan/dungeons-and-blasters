@@ -8,6 +8,9 @@ public class EnemyGeneric : MonoBehaviour
 {
     public Rarities rarity;
 
+    [Tooltip("Identifier used for linking to database, DO NOT MODIFY")]
+    public string uniqueId;
+
     [Tooltip("The module this enemy will use")]
     [SerializeField]
     public EnemyAI aiModule;
@@ -27,6 +30,11 @@ public class EnemyGeneric : MonoBehaviour
     public NavMeshAgent agent;
     [HideInInspector]
     public Movement movement;
+    [HideInInspector]
+    public float timeSinceLastStateChange = 0;
+
+    [Tooltip("Where homing projectiles will attempt to aim at, should be an empty child object of enemy")]
+    public GameObject homingPoint;
 
     public State currentState;
 

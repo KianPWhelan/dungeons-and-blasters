@@ -21,8 +21,8 @@ MonoBehaviour:
   - 'currentState: WanderState conditions: targetIsVisible == True => ChaseTargetState'
   - 'currentState: ChaseTargetState conditions: targetIsVisible == False => WanderState'
   - 'currentState: ChaseTargetState conditions: targetDistance <= selfRange0 => AttackTowardsTargetState'
-  - 'currentState: AttackTowardsTargetState conditions: targetIsVisible == True ||
-    targetIsVisible == False => ChaseTargetState'
+  - 'currentState: AttackTowardsTargetState conditions: timeSinceLastStateChange
+    > 0.1 => ChaseTargetState'
   stateMachine:
   - fromState: {fileID: 11400000, guid: ce41d7b36eb1ac044a599c7c1fd1c140, type: 2}
     toState: {fileID: 11400000, guid: 98ec32da2fdb41e4db4e12fd447e229e, type: 2}
@@ -37,18 +37,14 @@ MonoBehaviour:
     - ==
     - False
   - fromState: {fileID: 11400000, guid: 98ec32da2fdb41e4db4e12fd447e229e, type: 2}
-    toState: {fileID: 11400000, guid: 52bc5b5abc9e80543aeee18cce28cb4e, type: 2}
+    toState: {fileID: 11400000, guid: 343124316adfb8f4296863ccafda595c, type: 2}
     transitionComponents:
     - targetDistance
     - <=
     - selfRange0
-  - fromState: {fileID: 11400000, guid: 52bc5b5abc9e80543aeee18cce28cb4e, type: 2}
+  - fromState: {fileID: 11400000, guid: 343124316adfb8f4296863ccafda595c, type: 2}
     toState: {fileID: 11400000, guid: 98ec32da2fdb41e4db4e12fd447e229e, type: 2}
     transitionComponents:
-    - targetIsVisible
-    - ==
-    - True
-    - '||'
-    - targetIsVisible
-    - ==
-    - False
+    - timeSinceLastStateChange
+    - '>'
+    - 5

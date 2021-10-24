@@ -14,6 +14,14 @@ public class Attack : ScriptableObject
     [SerializeField]
     private List<Effect> effects = new List<Effect>();
 
+    [Tooltip("Set as true to use the tag provided below instead of the tag provided by the weapon user")]
+    [SerializeField]
+    private bool useOverwriteTag;
+
+    [Tooltip("If Use Override Tag is set to true, the attack will apply use this as the valid tag instead of the tag provided by the weapon user")]
+    [SerializeField]
+    private string overwriteTag;
+
     private Spawner spawner;
 
     /// <summary>
@@ -22,6 +30,12 @@ public class Attack : ScriptableObject
     public void PerformAttack(GameObject self, float delay, string targetTag = "none", bool useSelfAsParent = true, Vector3? destination = null)
     {
         Debug.Log("Using Attack " + name);
+        var tag = targetTag;
+
+        if(useOverwriteTag)
+        {
+            tag = overwriteTag;
+        }
 
         if(spawner == null)
         {
@@ -42,12 +56,12 @@ public class Attack : ScriptableObject
 
         if(useSelfAsParent)
         {
-            info = new object[] { self.GetComponent<PhotonView>().ViewID, targetTag, damageMod, destination.GetValueOrDefault() };
+            info = new object[] { self.GetComponent<PhotonView>().ViewID, tag, damageMod, destination.GetValueOrDefault() };
         }
 
         else
         {
-            info = new object[] { null, targetTag, damageMod, destination.GetValueOrDefault() };
+            info = new object[] { null, tag, damageMod, destination.GetValueOrDefault() };
         }
 
         if(destination.GetValueOrDefault().x == Vector3.negativeInfinity.x)
@@ -63,6 +77,13 @@ public class Attack : ScriptableObject
     /// </summary>
     public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, string targetTag = "none", float delay = 0, Vector3? destination = null)
     {
+        var tag = targetTag;
+
+        if (useOverwriteTag)
+        {
+            tag = overwriteTag;
+        }
+
         if (spawner == null)
         {
             var spawnerObj = GameObject.FindGameObjectWithTag("Spawner");
@@ -72,7 +93,7 @@ public class Attack : ScriptableObject
         Debug.Log("Performing attack");
         Debug.Log(attack);
         object[] info;
-        info = new object[] { null, targetTag, damageMod, destination.GetValueOrDefault() };
+        info = new object[] { null, tag, damageMod, destination.GetValueOrDefault() };
         spawner.Spawn(attack.name, selfPosition, selfRotation, info, delay);
     }
 

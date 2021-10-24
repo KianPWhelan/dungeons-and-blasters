@@ -1552,6 +1552,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6368863547330092067, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6368863547330092069, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
       propertyPath: m_Name
       value: Top Panel
