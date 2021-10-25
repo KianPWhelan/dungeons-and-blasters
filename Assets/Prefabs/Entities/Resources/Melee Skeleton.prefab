@@ -644,6 +644,7 @@ GameObject:
   - component: {fileID: 4999855669528970186}
   - component: {fileID: 9070468601821801596}
   - component: {fileID: 3727592679696396437}
+  - component: {fileID: 1820088735399678048}
   m_Layer: 0
   m_Name: Melee Skeleton
   m_TagString: Enemy
@@ -680,8 +681,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4425626, y: 3.8491876, z: 1.1567515}
-  m_Center: {x: -0.0137498425, y: 1.8927661, z: -0.078379445}
+  m_Size: {x: 2.4425626, y: 2.4061036, z: 1.1567515}
+  m_Center: {x: -0.013749838, y: 1.1712241, z: -0.07837945}
 --- !u!54 &9070468601821801541
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -759,6 +760,7 @@ MonoBehaviour:
   movement: {fileID: 0}
   timeSinceLastStateChange: 0
   homingPoint: {fileID: 846465751880415107}
+  critBox: {fileID: 1820088735399678048}
   currentState: {fileID: 0}
   cooldown: 5
   slotSize: 1
@@ -906,6 +908,19 @@ MonoBehaviour:
   _yPosition: 5
   _faceCamera: {fileID: 0}
   OnlyShowIfDamaged: 0
+--- !u!65 &1820088735399678048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070468601821801538}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.4373446, z: 1.404432}
+  m_Center: {x: 0, y: 3.2186723, z: -0.09219977}
 --- !u!114 &9070468602472634553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,11 +1181,6 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 77813def79556794cbe614861eb00bed, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15654a42333b0514dbddde329550bedf, type: 3}
---- !u!4 &9070468602472235528 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400012, guid: 15654a42333b0514dbddde329550bedf, type: 3}
-  m_PrefabInstance: {fileID: 9070468602472634500}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9070468602472235560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400044, guid: 15654a42333b0514dbddde329550bedf, type: 3}
@@ -1179,5 +1189,10 @@ Transform:
 --- !u!1 &9070468602472603208 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100044, guid: 15654a42333b0514dbddde329550bedf, type: 3}
+  m_PrefabInstance: {fileID: 9070468602472634500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9070468602472235528 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400012, guid: 15654a42333b0514dbddde329550bedf, type: 3}
   m_PrefabInstance: {fileID: 9070468602472634500}
   m_PrefabAsset: {fileID: 0}

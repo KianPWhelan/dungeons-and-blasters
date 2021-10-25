@@ -732,6 +732,7 @@ GameObject:
   - component: {fileID: 9006593377615435940}
   - component: {fileID: 4935401939550877457}
   - component: {fileID: 6492600137384954409}
+  - component: {fileID: 1612678386225002221}
   m_Layer: 0
   m_Name: Purple Mage
   m_TagString: Enemy
@@ -768,8 +769,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4425626, y: 3.8491876, z: 1.1567515}
-  m_Center: {x: -0.0137498425, y: 1.8927661, z: -0.078379445}
+  m_Size: {x: 2.4425626, y: 2.5881174, z: 1.1567515}
+  m_Center: {x: -0.013749838, y: 1.262231, z: -0.07837945}
 --- !u!54 &9006593377615435934
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -847,6 +848,7 @@ MonoBehaviour:
   movement: {fileID: 0}
   timeSinceLastStateChange: 0
   homingPoint: {fileID: 3009104327204814771}
+  critBox: {fileID: 1612678386225002221}
   currentState: {fileID: 0}
   cooldown: 10
   slotSize: 2
@@ -872,6 +874,7 @@ MonoBehaviour:
   floatHealth: 30
   infiniteHealth: 0
   isPlayer: 0
+  resistances: []
   isDead: 0
 --- !u!114 &9006593377615435942
 MonoBehaviour:
@@ -992,6 +995,19 @@ MonoBehaviour:
   _yPosition: 5
   _faceCamera: {fileID: 0}
   OnlyShowIfDamaged: 0
+--- !u!65 &1612678386225002221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006593377615435929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8, y: 1.7599058, z: 1.3471011}
+  m_Center: {x: 0, y: 3.379953, z: -0.11321825}
 --- !u!1001 &714927783400014455
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -176,7 +176,18 @@ public class AttackScript : MonoBehaviour
         if(attack != null && validTag != null && (other.tag == validTag || validTag == "none") && (!hitList.Contains(other.gameObject) || canHitSameTargetMoreThanOnce))
         {
             Debug.Log("Collision with valid tag");
-            attack.ApplyEffects(other.gameObject, validTag, transform.position, transform.rotation, damageMod);
+
+            float crit = 1f;
+
+            if (attack.canCrit && other.TryGetComponent(out EnemyGeneric e))
+            {
+                if(other == e.critBox)
+                {
+                    crit = attack.critMultiplier;
+                }
+            }
+
+            attack.ApplyEffects(other.gameObject, validTag, transform.position, transform.rotation, damageMod * crit);
             hitList.Add(other.gameObject);
             SetCollisionNormal(other);
 

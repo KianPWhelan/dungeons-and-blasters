@@ -36,6 +36,9 @@ public class EnemyGeneric : MonoBehaviour
     [Tooltip("Where homing projectiles will attempt to aim at, should be an empty child object of enemy")]
     public GameObject homingPoint;
 
+    [Tooltip("The collider which will be used for critical points")]
+    public Collider critBox;
+
     public State currentState;
 
     public float cooldown;

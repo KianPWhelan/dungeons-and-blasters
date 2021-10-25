@@ -435,6 +435,7 @@ MonoBehaviour:
   movement: {fileID: 0}
   timeSinceLastStateChange: 0
   homingPoint: {fileID: 7381263163238750821}
+  critBox: {fileID: 2331897263827622100}
   currentState: {fileID: 0}
   cooldown: 25
   slotSize: 3
@@ -460,6 +461,7 @@ MonoBehaviour:
   floatHealth: 180
   infiniteHealth: 0
   isPlayer: 0
+  resistances: []
   isDead: 0
 --- !u!114 &5002929920589353482
 MonoBehaviour:

@@ -22,6 +22,10 @@ public class Attack : ScriptableObject
     [SerializeField]
     private string overwriteTag;
 
+    public bool canCrit;
+
+    public float critMultiplier = 1.5f;
+
     private Spawner spawner;
 
     /// <summary>
