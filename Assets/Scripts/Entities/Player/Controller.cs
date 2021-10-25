@@ -23,6 +23,10 @@ public class Controller : MonoBehaviourPunCallbacks
 
     private Weapon startingWeapon;
 
+    private bool isStunned;
+
+    private StatusEffects statusEffects;
+
     // private GameManager gameManager;
 
     public void Awake()
@@ -53,6 +57,7 @@ public class Controller : MonoBehaviourPunCallbacks
         weaponHolder.AddWeapon(startingWeapon, "Enemy");
         // gameManager = FindObjectOfType<GameManager>();
         nametag.text = photonView.Owner.NickName;
+        statusEffects = GetComponent<StatusEffects>();
 
         if(!photonView.IsMine)
         {
@@ -78,6 +83,8 @@ public class Controller : MonoBehaviourPunCallbacks
 
     public void Update()
     {
+        isStunned = statusEffects.GetIsStunned();
+
         if(photonView.IsMine)
         {
             ProcessInputs();
@@ -129,12 +136,12 @@ public class Controller : MonoBehaviourPunCallbacks
     /// </summary>
     private void ProcessInputs()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isStunned)
         {
             movement.Jump();   
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isStunned)
         {
             Debug.Log("Weapon button pressed");
             weaponHolder.UseWeapon(0);
@@ -159,6 +166,11 @@ public class Controller : MonoBehaviourPunCallbacks
 
     private void ProcessMovement()
     {
+        if(isStunned)
+        {
+            return;
+        }
+
         var mouseX = Input.GetAxis("Mouse X") * sensitivity;
         var mouseY = Input.GetAxis("Mouse Y") * sensitivity;
         movement.Rotate(mouseX, 0.0f);

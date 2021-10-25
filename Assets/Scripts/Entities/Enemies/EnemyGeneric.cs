@@ -85,6 +85,12 @@ public class EnemyGeneric : MonoBehaviour
 
     private void Update()
     {
+        if(statusEffects.GetIsStunned())
+        {
+            agent.ResetPath();
+            return;
+        }
+
         agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
         target = Helpers.FindClosestVisible(gameObject.transform, targetType);
         allyTarget = Helpers.FindClosestVisible(gameObject.transform, allyTargetType);

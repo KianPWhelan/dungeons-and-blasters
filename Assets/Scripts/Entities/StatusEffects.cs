@@ -183,6 +183,24 @@ public class StatusEffects : MonoBehaviour
         return mod;
     }
 
+    public bool GetIsStunned()
+    {
+        foreach(Identifier effect in statusEffects)
+        {
+            if(effect.effect is BuffEffect)
+            {
+                var temp = (BuffEffect)effect.effect;
+
+                if(temp.isStun)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     private void ProcessStatusEffects()
     {
         List<Identifier> remove = null;

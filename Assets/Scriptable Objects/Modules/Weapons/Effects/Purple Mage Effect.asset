@@ -17,4 +17,7 @@ MonoBehaviour:
   isStatusEffect: 0
   interval: {fileID: 0}
   duration: {fileID: 0}
+  stacks: 0
   recursiveEffects: []
+  useOverwriteTag: 0
+  overwriteTag: 

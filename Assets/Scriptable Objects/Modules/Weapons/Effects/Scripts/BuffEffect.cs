@@ -11,5 +11,7 @@ public class BuffEffect : Effect
 
     public float moveSpeedMod = 1;
 
+    public bool isStun;
+
     public List<Health.ResistanceContainer> resistanceMods = new List<Health.ResistanceContainer>();
 }
