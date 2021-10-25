@@ -141,7 +141,7 @@ public class Controller : MonoBehaviourPunCallbacks
             movement.Jump();   
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isStunned)
+        if (Input.GetKey(KeyCode.Mouse0) && !isStunned)
         {
             Debug.Log("Weapon button pressed");
             weaponHolder.UseWeapon(0);
