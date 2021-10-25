@@ -29,7 +29,21 @@ public class Weapon : ScriptableObject
     [SerializeField]
     private Animation animation;
 
-    private Dictionary<Attack, Container> map;
+    private Dictionary<Identifier, Container> map;
+
+    private List<Identifier> ids = new List<Identifier>();
+
+    private class Identifier
+    {
+        public Attack attack;
+        public int id;
+
+        public Identifier(Attack attack, int id)
+        {
+            this.attack = attack;
+            this.id = id;
+        }
+    }
 
     private class Container
     {
@@ -58,32 +72,40 @@ public class Weapon : ScriptableObject
         {
             animation.Play();
         }
-        
+
+        var count = 0;
+
         foreach(Attack attack in attacks)
         {
-            if(!map[attack].lastUseTime.ContainsKey(self))
+            var id = ids[count];
+
+            // Debug.Log(id.attack + " " + id.id);
+
+            if(!map[id].lastUseTime.ContainsKey(self))
             {
-                map[attack].lastUseTime.Add(self, 0f);
+                map[id].lastUseTime.Add(self, 0f);
             }
 
             var currentTime = Time.time;
 
-            if(map[attack].lastUseTime[self] + map[attack].cooldown <= currentTime)
+            if(map[id].lastUseTime[self] + map[id].cooldown <= currentTime)
             {
                 didUseAttack = true;
 
                 if(self.GetPhotonView().IsMine)
                 {
-                    attack.PerformAttack(self, map[attack].delay, targetTag, true, destination);
+                    attack.PerformAttack(self, map[id].delay, targetTag, true, destination);
                 }
                 
-                map[attack].lastUseTime[self] = currentTime;
+                map[id].lastUseTime[self] = currentTime;
             }
             
             else
             {
                 // Debug.Log("On cooldown");
             }
+
+            count++;
         }
 
         return didUseAttack;
@@ -94,10 +116,12 @@ public class Weapon : ScriptableObject
     {
         if(attacks.Count == cooldowns.Count && !attacks.Contains(null))
         {
-            map = new Dictionary<Attack, Container>();
+            map = new Dictionary<Identifier, Container>();
             for (int i = 0; i < attacks.Count; i++)
             {
-                map.Add(attacks[i], new Container(cooldowns[i], delays[i]));
+                var id = new Identifier(attacks[i], i);
+                map.Add(id, new Container(cooldowns[i], delays[i]));
+                ids.Add(id);
             }
         }
     }
