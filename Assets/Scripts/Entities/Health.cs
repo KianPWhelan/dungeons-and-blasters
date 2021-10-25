@@ -21,6 +21,25 @@ public class Health : MonoBehaviourPunCallbacks
     [SerializeField]
     private bool isPlayer = false;
 
+    [Tooltip("Damage types that this entity will take less/more damage from (use a multiplier > 1 to make something weaker to a certain damage type)")]
+    [SerializeField]
+    private List<ResistanceContainer> resistances = new List<ResistanceContainer>();
+
+    private Dictionary<DamageType, float> resistanceStorage = new Dictionary<DamageType, float>();
+
+    [System.Serializable]
+    public class ResistanceContainer
+    {
+        public DamageType damageType;
+        public float resistanceMod;
+
+        public ResistanceContainer(DamageType damageType, float resistanceMod)
+        {
+            this.damageType = damageType;
+            this.resistanceMod = resistanceMod;
+        }
+    }
+
     public bool isDead = false;
 
     private ENPCHealthBar healthBar;
@@ -62,34 +81,42 @@ public class Health : MonoBehaviourPunCallbacks
         {
             healthBar.FaceCamera = DungeonMasterController.LocalPlayerInstance.GetComponent<DungeonMasterController>().camera;
         }
+
+        foreach(ResistanceContainer resistance in resistances)
+        {
+            resistanceStorage.Add(resistance.damageType, resistance.resistanceMod);
+        }
     }
 
     /// <summary>
     /// Adjusts health value by amount provided, can be negative
     /// </summary>
     /// <param name="amount"></param>
-    public void AdjustHealth(float amount)
+    public void AdjustHealth(float amount, DamageType damageType = null)
     {
-        float mod = 1;
+        float statusMod = 1;
+        float resistanceMod = 1;
 
         if(infiniteHealth)
         {
             return;
         }
 
-        if(amount > 0)
-        {
-            var statusEffects = GetComponent<StatusEffects>();
+        var statusEffects = GetComponent<StatusEffects>();
 
-            if(statusEffects != null)
-            {
-                mod = statusEffects.GetDamageRecievedMod();
-            }
+        if(statusEffects != null)
+        {
+            statusMod = statusEffects.GetDamageRecievedMod();
+        }
+
+        if(damageType != null)
+        {
+            resistanceMod = resistanceStorage[damageType];
         }
 
         if(health != null)
         {
-            health.runtimeValue += amount * mod;
+            health.runtimeValue += amount * statusMod * resistanceMod;
             if(health.runtimeValue <= 0)
             {
                 isDead = true;
@@ -103,7 +130,7 @@ public class Health : MonoBehaviourPunCallbacks
 
         else
         {
-            floatHealth += amount * mod;
+            floatHealth += amount * statusMod * resistanceMod;
             if(floatHealth <= 0)
             {
                 isDead = true;

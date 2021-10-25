@@ -15,6 +15,6 @@ public class Damage : ScriptableObject
 
     public void DoDamage(Health hp, float damageMod)
     {
-        hp.AdjustHealth(-damage * damageMod);
+        hp.AdjustHealth(-damage * damageMod, damageType);
     }
 }

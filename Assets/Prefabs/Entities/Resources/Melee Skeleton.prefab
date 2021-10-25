@@ -871,6 +871,7 @@ MonoBehaviour:
   floatHealth: 30
   infiniteHealth: 0
   isPlayer: 0
+  resistances: []
   isDead: 0
 --- !u!114 &3727592679696396437
 MonoBehaviour:
