@@ -18,4 +18,6 @@ MonoBehaviour:
   useOverwriteTag: 0
   overwriteTag: 
   canCrit: 1
+  critOnCritBoxesOnly: 1
+  critChance: 1000
   critMultiplier: 1.5

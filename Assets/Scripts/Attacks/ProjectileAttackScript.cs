@@ -171,7 +171,7 @@ public class ProjectileAttackScript : AttackScript
 
     public void FixedUpdate()
     {
-        if(homing)
+        if(homing && target != null)
         {
             rigidbody.velocity = transform.forward * speed;
 
