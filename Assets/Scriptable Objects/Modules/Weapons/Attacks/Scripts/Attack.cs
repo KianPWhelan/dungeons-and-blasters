@@ -22,7 +22,14 @@ public class Attack : ScriptableObject
     [SerializeField]
     private string overwriteTag;
 
+    [Tooltip("Whether this attack is capable of critical hitting")]
     public bool canCrit;
+
+    [Tooltip("Whether this attack can only crit when hitting an enemy's crit box")]
+    public bool critOnCritBoxesOnly = true;
+
+    [Tooltip("Between 0 and 1000")]
+    public float critChance = 1000f;
 
     public float critMultiplier = 1.5f;
 

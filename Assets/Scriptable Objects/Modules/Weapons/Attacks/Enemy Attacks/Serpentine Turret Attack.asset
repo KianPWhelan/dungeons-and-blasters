@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
-  m_Name: Sniper Attack
+  m_Name: Serpentine Turret Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 3807866404001653414, guid: f17c287563cef8847830ec8c324abe48, type: 3}
+  attack: {fileID: 3807866404001653414, guid: a87b437038d54f949be38cece7ba072d, type: 3}
   effects:
-  - {fileID: 11400000, guid: 005395514c8b7624db54a8a9fd7643cf, type: 2}
+  - {fileID: 11400000, guid: edf8f1f080549cb48a6d97518f66228b, type: 2}
+  - {fileID: 11400000, guid: e0d394ff679500b44a1dce6f33d61feb, type: 2}
   useOverwriteTag: 0
   overwriteTag: 
-  canCrit: 1
+  canCrit: 0
   critOnCritBoxesOnly: 1
   critChance: 1000
   critMultiplier: 1.5

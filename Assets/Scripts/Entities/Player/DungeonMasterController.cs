@@ -256,8 +256,8 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
         else
         {
-            cooldowns[enemyToSpawn] = Time.time;
-            currentAbility.cooldown = currentAbility.cooldownTime;
+            //cooldowns[enemyToSpawn] = Time.time;
+            //currentAbility.cooldown = currentAbility.cooldownTime;
         }
 
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
@@ -267,7 +267,20 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         {
             Debug.Log(hit.transform.name);
             Debug.Log("hit");
-            PhotonNetwork.Instantiate(enemyToSpawn.name, hit.transform.position, hit.transform.rotation, 0);
+
+            var closestPlayer = Helpers.FindClosestVisible(hit.transform, "Player");
+
+            if(closestPlayer == null || Vector3.Distance(hit.transform.position, closestPlayer.transform.position) > 12f)
+            {
+                PhotonNetwork.Instantiate(enemyToSpawn.name, hit.transform.position, hit.transform.rotation, 0);
+                cooldowns[enemyToSpawn] = Time.time;
+                currentAbility.cooldown = currentAbility.cooldownTime;
+            }
+
+            else
+            {
+                Debug.Log("Player too close");
+            }
         }
     }
 

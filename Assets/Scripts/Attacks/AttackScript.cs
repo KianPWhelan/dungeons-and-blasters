@@ -181,7 +181,10 @@ public class AttackScript : MonoBehaviour
 
             if (attack.canCrit && other.TryGetComponent(out EnemyGeneric e))
             {
-                if(other == e.critBox)
+                int roll = Random.Range(0, 1000);
+                Debug.Log("Roll: " + roll);
+
+                if ((other == e.critBox || !attack.critOnCritBoxesOnly) && roll <= attack.critChance)
                 {
                     crit = attack.critMultiplier;
                 }
