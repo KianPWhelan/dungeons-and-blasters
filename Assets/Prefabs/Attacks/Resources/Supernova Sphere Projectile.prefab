@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3807866404001653405}
   - component: {fileID: 4829975092919131579}
   m_Layer: 2
-  m_Name: Supernova Projectile
+  m_Name: Supernova Sphere Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
   subAttacksAtSurfaceNormal: 0
-  attackDuration: 0.5
+  attackDuration: 0.6
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
   spread: 360
