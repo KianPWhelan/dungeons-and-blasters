@@ -141,6 +141,7 @@ MonoBehaviour:
   reevluateRotationAfterLocalPositionOffset: 0
   homing: 1
   homingStrength: 10
+  reevaluateHomingTargetConstantly: 1
   bouncing: 0
   numBounces: 0
   bouncingStrength: 1
