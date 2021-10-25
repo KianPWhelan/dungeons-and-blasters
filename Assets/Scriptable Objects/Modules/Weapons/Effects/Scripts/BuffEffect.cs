@@ -10,4 +10,6 @@ public class BuffEffect : Effect
     public float damageRecievedMod = 1;
 
     public float moveSpeedMod = 1;
+
+    public List<Health.ResistanceContainer> resistanceMods = new List<Health.ResistanceContainer>();
 }

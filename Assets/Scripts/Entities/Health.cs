@@ -25,7 +25,7 @@ public class Health : MonoBehaviourPunCallbacks
     [SerializeField]
     private List<ResistanceContainer> resistances = new List<ResistanceContainer>();
 
-    private Dictionary<DamageType, float> resistanceStorage = new Dictionary<DamageType, float>();
+    public Dictionary<DamageType, float> resistanceStorage = new Dictionary<DamageType, float>();
 
     [System.Serializable]
     public class ResistanceContainer
@@ -109,9 +109,10 @@ public class Health : MonoBehaviourPunCallbacks
             statusMod = statusEffects.GetDamageRecievedMod();
         }
 
-        if(damageType != null)
+        if(damageType != null && resistanceStorage.ContainsKey(damageType))
         {
             resistanceMod = resistanceStorage[damageType];
+            resistanceMod *= statusEffects.GetResistanceMod(damageType);
         }
 
         if(health != null)

@@ -161,6 +161,28 @@ public class StatusEffects : MonoBehaviour
         return mod;
     }
 
+    public float GetResistanceMod(DamageType damageType)
+    {
+        float mod = 1f;
+
+        foreach(Identifier effect in statusEffects)
+        {
+            if(effect.effect is BuffEffect)
+            {
+                var temp = (BuffEffect)effect.effect;
+
+                var res = temp.resistanceMods.Find(x => x.damageType == damageType);
+
+                if(res != null)
+                {
+                    mod *= res.resistanceMod;
+                }
+            }
+        }
+
+        return mod;
+    }
+
     private void ProcessStatusEffects()
     {
         List<Identifier> remove = null;
