@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Supernova Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 0}
+  attack: {fileID: 1138883815503004, guid: aec88c5b9cb71764289ddd9432e9daac, type: 3}
   effects: []
   useOverwriteTag: 0
   overwriteTag: 

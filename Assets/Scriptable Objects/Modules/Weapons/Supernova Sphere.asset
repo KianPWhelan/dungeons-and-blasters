@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uniqueId: 
   rarity: 0
-  attacks: []
-  cooldowns: []
+  attacks:
+  - {fileID: 11400000, guid: cd06f161c35b36b40b0dffe902ad9fdc, type: 2}
+  cooldowns:
+  - 0
   delays: []
   animation: {fileID: 0}
