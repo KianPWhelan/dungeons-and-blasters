@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13539,17 +13539,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3727592679696396437, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
+      propertyPath: _showValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727592679696396437, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
+      propertyPath: _valueFontSize
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 6158585124440715376, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6158585124440715376, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869192461862288813, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8639724338631328462, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9070468601821801538, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_Name
@@ -13557,7 +13569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9070468601821801538, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9070468601821801585, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: sceneViewId
