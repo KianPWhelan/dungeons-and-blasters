@@ -16,6 +16,9 @@ public class ProjectileAttackScript : AttackScript
 
     public float homingStrength;
 
+    [Tooltip("If set to true, projectile will constantly re evalute its closest target, instead of only on instantiation")]
+    public bool reevaluateHomingTargetConstantly;
+
     public bool bouncing;
 
     public float numBounces;
@@ -171,6 +174,21 @@ public class ProjectileAttackScript : AttackScript
 
     public void FixedUpdate()
     {
+        if(reevaluateHomingTargetConstantly)
+        {
+            var temp = Helpers.FindClosest(transform, validTag);
+
+            if (temp.TryGetComponent(out EnemyGeneric e) && e.homingPoint != null)
+            {
+                target = e.homingPoint.transform;
+            }
+
+            else
+            {
+                target = temp.transform;
+            }
+        }
+
         if(homing && target != null)
         {
             rigidbody.velocity = transform.forward * speed;

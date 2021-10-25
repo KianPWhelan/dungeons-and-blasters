@@ -68,6 +68,11 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
             Debug.LogWarning("Target of effect has no status effects behavior");
         }
 
+        else if(isStatusEffect && !isProc)
+        {
+            return;
+        }
+
         if(health != null && (target.tag == tag || tag == "none"))
         {
             // Apply damage first
