@@ -115,10 +115,10 @@ MonoBehaviour:
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
   subAttacksAtSurfaceNormal: 0
-  attackDuration: 3
+  attackDuration: 2.5
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
-  spread: 10
+  spread: 7
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
   applyEffectsOnEnd: 0
@@ -141,6 +141,7 @@ MonoBehaviour:
   reevluateRotationAfterLocalPositionOffset: 0
   homing: 0
   homingStrength: 0
+  reevaluateHomingTargetConstantly: 0
   bouncing: 0
   numBounces: 0
   bouncingStrength: 1
