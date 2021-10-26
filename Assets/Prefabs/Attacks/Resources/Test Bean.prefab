@@ -50,7 +50,7 @@ MonoBehaviour:
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
   subAttacksAtSurfaceNormal: 0
-  attackDuration: 0.2
+  attackDuration: 10
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
   spread: 0
@@ -77,9 +77,9 @@ MonoBehaviour:
   radius: 0.1
   canGoThroughObjects: 0
   piercing: 0
-  endOnPlayerStopAttacking: 1
+  endOnPlayerStopAttacking: 0
   voxelStaticBean: {fileID: 1064941584371077296}
-  followCaster: 1
+  followCaster: 0
   reevluateRotationAfterLocalPositionOffset: 0
 --- !u!114 &-5507236118326661018
 MonoBehaviour:
