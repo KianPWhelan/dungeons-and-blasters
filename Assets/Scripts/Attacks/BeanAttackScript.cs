@@ -25,10 +25,13 @@ public class BeanAttackScript : AttackScript
 
     private VoxelBeamStatic beanController;
 
+    private string parentTag;
+
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+        parentTag = transform.parent.tag;
 
         if(!followCaster)
         {
@@ -56,6 +59,7 @@ public class BeanAttackScript : AttackScript
         {
             beanController = voxelStaticBean.GetComponent<VoxelBeamStatic>();
             beanController.beamLength = maxLength;
+            beanController.ignoreList.Add(parentTag, "");
 
             if(canGoThroughObjects)
             {
