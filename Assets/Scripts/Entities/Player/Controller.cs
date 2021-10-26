@@ -27,6 +27,8 @@ public class Controller : MonoBehaviourPunCallbacks
 
     private StatusEffects statusEffects;
 
+    public GameEvent stopAttackingEvent;
+
     // private GameManager gameManager;
 
     public void Awake()
@@ -145,6 +147,12 @@ public class Controller : MonoBehaviourPunCallbacks
         {
             // Debug.Log("Weapon button pressed");
             weaponHolder.UseWeapon(0);
+        }
+
+        if(Input.GetKeyUp(KeyCode.Mouse0) || isStunned)
+        {
+            Debug.Log("Firing mouse up event");
+            stopAttackingEvent.Raise();
         }
 
         if(Input.GetKeyDown(KeyCode.Q))

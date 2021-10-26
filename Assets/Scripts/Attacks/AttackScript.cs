@@ -38,6 +38,9 @@ public class AttackScript : MonoBehaviour
     [Tooltip("Whether the attack can hit the same target multiple times in its lifespan")]
     public bool canHitSameTargetMoreThanOnce;
 
+    [Tooltip("If target can be hit multiple times, how often between hits")]
+    public float multiHitCooldown;
+
     [Tooltip("Whether this attack should attempt to apply its effects when it ends even if it didnt hit a valid target")]
     public bool applyEffectsOnEnd;
 
@@ -83,6 +86,9 @@ public class AttackScript : MonoBehaviour
     [HideInInspector]
     public Vector3 accuracyOffset;
 
+    [HideInInspector]
+    public Rotater rotater;
+
     public virtual void Start()
     {
         Debug.Log("Starting " + name);
@@ -91,7 +97,8 @@ public class AttackScript : MonoBehaviour
         {
             transform.SetParent(PhotonView.Find(parentId).transform);
             transform.position = transform.parent.position;
-            transform.rotation = transform.parent.GetComponentInChildren<Rotater>().transform.rotation;
+            rotater = transform.parent.GetComponentInChildren<Rotater>();
+            transform.rotation = rotater.transform.rotation;
             Debug.Log("Parent set to " + transform.parent.name);
         }
 
@@ -173,7 +180,7 @@ public class AttackScript : MonoBehaviour
     {
         Debug.Log("Valid tag: " + validTag+ "  Other tag: " + other.tag + "  Other name: " + other.name);
         Debug.Log(attack);
-        if(attack != null && validTag != null && (other.tag == validTag || validTag == "none") && (!hitList.Contains(other.gameObject) || canHitSameTargetMoreThanOnce))
+        if(attack != null && validTag != null && (other.tag == validTag || validTag == "none") && (!hitList.Contains(other.gameObject)))
         {
             Debug.Log("Collision with valid tag");
 
@@ -207,6 +214,11 @@ public class AttackScript : MonoBehaviour
             if(destroyOnHit)
             {
                 Destroy(gameObject);
+            }
+
+            if(canHitSameTargetMoreThanOnce)
+            {
+                StartCoroutine(RemoveFromHitList(other.gameObject, multiHitCooldown));
             }
         }
     }
@@ -303,5 +315,11 @@ public class AttackScript : MonoBehaviour
             var fx = Instantiate(visualEndEffect, transform.position, transform.rotation);
             Destroy(fx, 5f);
         }
+    }
+
+    public IEnumerator RemoveFromHitList(GameObject hit, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        hitList.Remove(hit);
     }
 }

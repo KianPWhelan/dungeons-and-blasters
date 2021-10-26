@@ -23,6 +23,7 @@ public class VoxelBeamStatic : MonoBehaviour
     public float textureScrollSpeed = 0f; //How fast the texture scrolls along the beam, can be negative or positive.
     public float textureLengthScale = 1f;   //Set this to the horizontal length of your texture relative to the vertical. 
                                             //Example: if texture is 200 pixels in height and 600 in length, set this to 3
+    public Dictionary<string, string> ignoreList = new Dictionary<string, string>();
 
     void Start()
     {
@@ -48,8 +49,11 @@ public class VoxelBeamStatic : MonoBehaviour
 
             Vector3 end;
             RaycastHit hit;
-            if (beamCollides && Physics.Raycast(transform.position, transform.forward, out hit)) //Checks for collision
+            if (beamCollides && Physics.Raycast(transform.position, transform.forward, out hit) && !ignoreList.ContainsKey(hit.collider.gameObject.tag)) //Checks for collision
+            {
                 end = hit.point - (transform.forward * beamEndOffset);
+            }
+
             else
                 end = transform.position + (transform.forward * beamLength);
 
