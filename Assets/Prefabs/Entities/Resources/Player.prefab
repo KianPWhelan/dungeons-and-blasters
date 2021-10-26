@@ -451,6 +451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons: []
   targetTags: []
+  isPlayer: 1
 --- !u!114 &7168323857930604494
 MonoBehaviour:
   m_ObjectHideFlags: 0

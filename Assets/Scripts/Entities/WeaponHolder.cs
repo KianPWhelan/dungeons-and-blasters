@@ -12,11 +12,27 @@ public class WeaponHolder : MonoBehaviour
     [SerializeField]
     private List<string> targetTags = new List<string>();
 
+    private bool inSpinup;
+
+    public bool isPlayer;
+
     public bool UseWeapon(int index, Vector3? destination = null, bool useDestination = false)
     {
         if(!useDestination)
         {
             destination = Vector3.negativeInfinity;
+        }
+
+        if(isPlayer && weapons[index].hasSpinup && !inSpinup)
+        {
+            inSpinup = true;
+            StartCoroutine(Spinup(index, weapons[index].spinupTime, destination, useDestination));
+            return true;
+        }
+
+        else if(inSpinup)
+        {
+            return false;
         }
 
         return weapons[index].Use(gameObject, targetTags[index], destination);
@@ -36,5 +52,18 @@ public class WeaponHolder : MonoBehaviour
     {
         weapons.Add(weapon);
         targetTags.Add(targetTag);
+    }
+
+    private IEnumerator Spinup(int index, float delay, Vector3? destination = null, bool useDestination = false)
+    {
+        yield return new WaitForSeconds(delay);
+
+        while(Input.GetKey(KeyCode.Mouse0))
+        {
+            weapons[index].Use(gameObject, targetTags[index], destination);
+            yield return new WaitForEndOfFrame();
+        }
+
+        inSpinup = false;
     }
 }

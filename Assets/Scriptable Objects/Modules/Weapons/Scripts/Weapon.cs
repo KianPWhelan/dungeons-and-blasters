@@ -29,6 +29,10 @@ public class Weapon : ScriptableObject
     [SerializeField]
     private Animation animation;
 
+    public bool hasSpinup;
+
+    public float spinupTime;
+
     private Dictionary<Identifier, Container> map;
 
     private List<Identifier> ids = new List<Identifier>();

@@ -21,3 +21,5 @@ MonoBehaviour:
   delays:
   - 0
   animation: {fileID: 0}
+  hasSpinup: 0
+  spinupTime: 0
