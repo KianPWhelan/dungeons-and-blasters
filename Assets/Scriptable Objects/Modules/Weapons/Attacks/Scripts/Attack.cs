@@ -33,6 +33,8 @@ public class Attack : ScriptableObject
 
     public float critMultiplier = 1.5f;
 
+    public float knockbackStrength;
+
     private Spawner spawner;
 
     /// <summary>

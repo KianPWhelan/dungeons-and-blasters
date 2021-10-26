@@ -15,6 +15,11 @@ public abstract class State : ScriptableObject
 
     public void SetIsAgentMovingAnimation(GameObject self, NavMeshAgent agent)
     {
+        if(!agent.isActiveAndEnabled)
+        {
+            return;
+        }
+
         if (agent.remainingDistance > 1)
         {
             var animator = self.GetComponentInChildren<Animator>();

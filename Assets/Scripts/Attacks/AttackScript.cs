@@ -194,6 +194,11 @@ public class AttackScript : MonoBehaviour
             hitList.Add(other.gameObject);
             SetCollisionNormal(other);
 
+            if(other.TryGetComponent(out Knockback k))
+            {
+                k.ApplyKnockback(transform, attack.knockbackStrength);
+            }
+
             if (subAttacksOnHit)
             {
                 SpawnSubAttacks();

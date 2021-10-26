@@ -13,13 +13,19 @@ public class ChaseTargetState : State
 
     public override void OnExit(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
     {
-        agent.ResetPath();
-        SetIsAgentMovingAnimation(self, agent);
+        if(agent.isActiveAndEnabled)
+        {
+            agent.ResetPath();
+            SetIsAgentMovingAnimation(self, agent);
+        }
     }
 
     public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
     {
-        agent.SetDestination(target.transform.position);
-        SetIsAgentMovingAnimation(self, agent);
+        if(agent.isActiveAndEnabled)
+        {
+            agent.SetDestination(target.transform.position);
+            SetIsAgentMovingAnimation(self, agent);
+        }
     }
 }

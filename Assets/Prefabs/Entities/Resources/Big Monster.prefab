@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 5018152486246340113}
   - component: {fileID: 2331897263827622100}
   - component: {fileID: 6121908949935950882}
+  - component: {fileID: 1573303539905903332}
   m_Layer: 0
   m_Name: Big Monster
   m_TagString: Enemy
@@ -366,7 +367,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5002929920589353525}
   serializedVersion: 2
-  m_Mass: 0.2
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -608,6 +609,19 @@ MonoBehaviour:
   _yPosition: 12
   _faceCamera: {fileID: 0}
   OnlyShowIfDamaged: 0
+--- !u!114 &1573303539905903332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002929920589353525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5dc61447fe53444aba0f6f220e20b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackResistance: 0.2
 --- !u!1 &7084687497412238649
 GameObject:
   m_ObjectHideFlags: 0
