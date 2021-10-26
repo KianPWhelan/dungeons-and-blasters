@@ -23,6 +23,11 @@ public class Knockback : MonoBehaviour
 
     public void ApplyKnockback(Transform fromTransform, float strength)
     {
+        if(strength == 0)
+        {
+            return;
+        }
+
         if(rb == null)
         {
             return;
