@@ -23,9 +23,17 @@ public class BeanAttackScript : AttackScript
     [Tooltip("If projectile has a specific destination, whether the projectile should re evaluate it's rotation after adjusting its position offset")]
     public bool reevluateRotationAfterLocalPositionOffset;
 
+    public bool autoTarget;
+
+    public bool homing;
+
+    public bool reevaluateHomingTargetConstantly;
+
     private VoxelBeamStatic beanController;
 
     private string parentTag;
+
+    private Transform target;
 
     // Start is called before the first frame update
     public override void Start()
@@ -33,7 +41,7 @@ public class BeanAttackScript : AttackScript
         base.Start();
         parentTag = transform.parent.tag;
 
-        if(!followCaster)
+        if (!followCaster)
         {
             transform.SetParent(null);
         }
@@ -55,30 +63,55 @@ public class BeanAttackScript : AttackScript
             }
         }
 
-        if(voxelStaticBean != null)
+        if (voxelStaticBean != null)
         {
             beanController = voxelStaticBean.GetComponent<VoxelBeamStatic>();
             beanController.beamLength = maxLength;
             beanController.ignoreList.Add(parentTag, "");
 
-            if(canGoThroughObjects)
+            if (canGoThroughObjects)
             {
                 beanController.ignoreList.Add("Wall", "");
                 beanController.ignoreList.Add("Ground", "");
             }
 
-            if(piercing)
+            if (piercing)
             {
                 beanController.ignoreList.Add(validTag, "");
             }
+        }
+
+        if (homing || autoTarget)
+        {
+            var temp = Helpers.FindClosest(transform, validTag);
+
+            if (temp.TryGetComponent(out EnemyGeneric e) && e.homingPoint != null)
+            {
+                target = e.homingPoint.transform;
+            }
+
+            else
+            {
+                target = temp.transform;
+            }
+        }
+
+        if (autoTarget)
+        {
+            transform.LookAt(target);
         }
     }
 
     public override void Tick()
     {
-        if(transform.parent != null)
+        if (transform.parent != null && !homing)
         {
             transform.rotation = rotater.transform.rotation;
+        }
+
+        else if (homing)
+        {
+            transform.LookAt(target.transform);
         }
 
         if (startingTime + attackDuration <= Time.time)
@@ -107,7 +140,7 @@ public class BeanAttackScript : AttackScript
 
         System.Array.Sort(hits, delegate (RaycastHit hit1, RaycastHit hit2) { return hit1.distance.CompareTo(hit2.distance); });
 
-        foreach(RaycastHit hit in hits)
+        foreach (RaycastHit hit in hits)
         {
             ProcessHit(hit.collider);
 
@@ -204,7 +237,7 @@ public class BeanAttackScript : AttackScript
 
     public void EndBeam()
     {
-        if(!endOnPlayerStopAttacking)
+        if (!endOnPlayerStopAttacking)
         {
             return;
         }
@@ -220,5 +253,23 @@ public class BeanAttackScript : AttackScript
         }
 
         Destroy(gameObject, 0.01f);
+    }
+
+    public void FixedUpdate()
+    {
+        if (reevaluateHomingTargetConstantly)
+        {
+            var temp = Helpers.FindClosest(transform, validTag);
+
+            if (temp.TryGetComponent(out EnemyGeneric e) && e.homingPoint != null)
+            {
+                target = e.homingPoint.transform;
+            }
+
+            else
+            {
+                target = temp.transform;
+            }
+        }
     }
 }

@@ -859,6 +859,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 574d423e909678a4d875b5692d6be8fd, type: 2}
   targetTags:
   - Player
+  isPlayer: 0
 --- !u!114 &9070468601821801596
 MonoBehaviour:
   m_ObjectHideFlags: 0
