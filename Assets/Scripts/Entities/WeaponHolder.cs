@@ -56,7 +56,8 @@ public class WeaponHolder : MonoBehaviour
 
     private IEnumerator Spinup(int index, float delay, Vector3? destination = null, bool useDestination = false)
     {
-        yield return new WaitForSeconds(delay);
+        float startTime = Time.time;
+        yield return new WaitUntil(() => Time.time - startTime >= delay || Input.GetKeyUp(KeyCode.Mouse0));
 
         while(Input.GetKey(KeyCode.Mouse0))
         {
