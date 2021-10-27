@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Wall
   - Spawner
+  - Particle System
   layers:
   - Default
   - TransparentFX
