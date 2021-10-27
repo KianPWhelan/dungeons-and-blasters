@@ -88,7 +88,7 @@ public class EnemyGeneric : MonoBehaviour
 
     private void Update()
     {
-        if(statusEffects.GetIsStunned())
+        if(statusEffects.GetIsStunned() && agent.isActiveAndEnabled)
         {
             agent.ResetPath();
             return;

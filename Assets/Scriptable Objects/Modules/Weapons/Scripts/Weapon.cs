@@ -96,7 +96,7 @@ public class Weapon : ScriptableObject
 
             if(!map[id].lastUseTime.ContainsKey(self))
             {
-                map[id].lastUseTime.Add(self, 0f);
+                map[id].lastUseTime.Add(self, -100000f);
             }
 
             var currentTime = Time.time;

@@ -88,7 +88,7 @@ public class StatusEffects : MonoBehaviour
     /// </summary>
     /// <param name="effect"></param>
     /// <returns></returns>
-    public bool IsAffectedBy(Effect effect)
+    public bool CannotApplyMore(Effect effect)
     {
         int count = 0;
 
@@ -110,6 +110,30 @@ public class StatusEffects : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    public bool IsAffectedBy(Effect effect)
+    {
+        foreach(Identifier status in statusEffects)
+        {
+            if(status.effect == effect)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void RefreshDuration(Effect effect)
+    {
+        foreach(Identifier status in statusEffects)
+        {
+            if(status.effect == effect)
+            {
+                effectDetails[status].durationTime = Time.time;
+            }
         }
     }
 

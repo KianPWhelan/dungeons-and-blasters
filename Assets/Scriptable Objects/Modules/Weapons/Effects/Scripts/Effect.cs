@@ -24,6 +24,9 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     [Tooltip("If this is a status effect, how many times it stacks")]
     public int stacks;
 
+    [Tooltip("When status effect is applied, resets duration if already applied (will reset duration of stack)")]
+    public bool refreshDuration;
+
     [Tooltip("Additional effects that this effect applies")]
     [SerializeField]
     public List<Effect> recursiveEffects = new List<Effect>();
@@ -54,7 +57,13 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
             tag = overwriteTag;
         }
 
-        if (statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this) && !isProc && (target.tag == tag || tag == "none"))
+        if(statusEffects != null && isStatusEffect && refreshDuration && statusEffects.IsAffectedBy(this) && !isProc && (target.tag == tag || tag == "none"))
+        {
+            Debug.Log("Refreshing");
+            statusEffects.RefreshDuration(this);
+        }
+
+        if (statusEffects != null && isStatusEffect && !statusEffects.CannotApplyMore(this) && !isProc && (target.tag == tag || tag == "none"))
         {
             // Apply status effect if not already applied
             statusEffects.ApplyStatusEffect(this, damageMod, tag);

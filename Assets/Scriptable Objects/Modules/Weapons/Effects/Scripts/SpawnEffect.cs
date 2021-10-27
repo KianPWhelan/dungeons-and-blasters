@@ -26,7 +26,7 @@ public class SpawnEffect : Effect
             tag = overwriteTag;
         }
 
-        if (statusEffects != null && isStatusEffect && !statusEffects.IsAffectedBy(this) && !isProc && (target.tag == tag || tag == "none"))
+        if (statusEffects != null && isStatusEffect && !statusEffects.CannotApplyMore(this) && !isProc && (target.tag == tag || tag == "none"))
         {
             // Apply status effect if not already applied
             statusEffects.ApplyStatusEffect(this, damageMod, tag);

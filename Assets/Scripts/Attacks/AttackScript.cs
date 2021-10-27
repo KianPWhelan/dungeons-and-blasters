@@ -114,7 +114,7 @@ public class AttackScript : MonoBehaviour
             Debug.Log("Parent set to " + transform.parent.name);
         }
 
-        if(transform.parent != null && transform.parent.gameObject.GetPhotonView().IsMine)
+        if(transform.parent != null && transform.parent.gameObject.GetPhotonView().IsMine && transform.parent.tag == "Player")
         {
             isMine = true;
         }
@@ -235,6 +235,11 @@ public class AttackScript : MonoBehaviour
         }
     }
 
+    public void OnTriggerStay(Collider other)
+    {
+        OnTriggerEnter(other);
+    }
+
     //public void OnPhotonInstantiate(PhotonMessageInfo info)
     //{
     //    object[] instantiationData = info.photonView.InstantiationData;
@@ -243,7 +248,7 @@ public class AttackScript : MonoBehaviour
     //    {
     //        parentId = (int)instantiationData[0];
     //    }
-        
+
     //    validTag = (string)instantiationData[1];
     //    damageMod = (float)instantiationData[2];
 
@@ -251,7 +256,7 @@ public class AttackScript : MonoBehaviour
     //    {
     //        destination = (Vector3)instantiationData[3];
     //    }
-        
+
     //    else
     //    {
     //        destination = Vector3.negativeInfinity;

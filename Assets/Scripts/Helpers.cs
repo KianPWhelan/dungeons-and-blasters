@@ -30,6 +30,30 @@ public class Helpers
     }
 
     /// <summary>
+    /// Gets the closest game object with the desired tag
+    /// </summary>
+    /// <returns></returns>
+    public static GameObject FindClosest(Vector3 myPosition, string tag)
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag(tag);
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = myPosition;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
+    }
+
+    /// <summary>
     /// Gets the closest game object with the desired tag which is visible
     /// </summary>
     /// <returns></returns>
