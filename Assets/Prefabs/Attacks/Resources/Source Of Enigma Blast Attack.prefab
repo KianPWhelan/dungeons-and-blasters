@@ -94,8 +94,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4
-  m_Center: {x: 0, y: 0.6, z: 0}
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7880976810065528546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,8 +114,9 @@ MonoBehaviour:
   subAttacksOnEnd: 0
   subAttacksAtSurfaceNormal: 0
   attackDuration: 1
-  localStartingPosition: {x: 0, y: -2, z: 0}
+  localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
+  ignoreParentRotation: 1
   spread: 0
   destroyOnHit: 0
   canHitSameTargetMoreThanOnce: 0
@@ -123,7 +124,7 @@ MonoBehaviour:
   applyEffectsOnEnd: 0
   visualEndEffect: {fileID: 0}
   visualStartEffect: {fileID: 1592685575755722, guid: 89f971fc4dcf2fe4985d30b510b74e7d, type: 3}
-  visualStartEffectPositionOffset: {x: 0, y: 2, z: 0}
+  visualStartEffectPositionOffset: {x: 0, y: 0, z: 0}
   visualStartEffectRotationOffset: {x: 0, y: 0, z: 0}
   validTag: 
   startingTime: 0
