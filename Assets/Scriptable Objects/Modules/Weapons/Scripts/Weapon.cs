@@ -33,6 +33,15 @@ public class Weapon : ScriptableObject
 
     public float spinupTime;
 
+    public bool canOverheat;
+
+    public float overheatTime;
+
+    public float overheatRecoveryTime;
+
+    [HideInInspector]
+    public bool isOverheated;
+
     private Dictionary<Identifier, Container> map;
 
     private List<Identifier> ids = new List<Identifier>();

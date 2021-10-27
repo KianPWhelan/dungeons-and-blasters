@@ -29,6 +29,8 @@ public class AttackScript : MonoBehaviour
     [Tooltip("The starting rotation of the attack relative to its parent")]
     public Vector3 localRotationPosition;
 
+    public bool ignoreParentRotation;
+
     [Tooltip("Defines the angle of the cone that the attack can miss its intended target by")]
     public float spread;
 
@@ -98,7 +100,17 @@ public class AttackScript : MonoBehaviour
             transform.SetParent(PhotonView.Find(parentId).transform);
             transform.position = transform.parent.position;
             rotater = transform.parent.GetComponentInChildren<Rotater>();
-            transform.rotation = rotater.transform.rotation;
+
+            if(!ignoreParentRotation)
+            {
+                transform.rotation = rotater.transform.rotation;
+            }
+
+            else
+            {
+                transform.rotation = Quaternion.Euler(localRotationPosition);
+            }
+            
             Debug.Log("Parent set to " + transform.parent.name);
         }
 
