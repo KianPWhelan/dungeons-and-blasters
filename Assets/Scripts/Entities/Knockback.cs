@@ -43,7 +43,7 @@ public class Knockback : MonoBehaviour
 
         rb.velocity = Vector3.zero;
 
-        rb.AddForce((fromTransform.forward + new Vector3(0f, 0f, 0f)) * strength * knockbackResistance, ForceMode.Impulse);
+        rb.AddForce(((transform.position - fromTransform.position).normalized + new Vector3(0f, 0f, 0f)) * strength * knockbackResistance, ForceMode.Impulse);
 
         if(agent != null)
         {
