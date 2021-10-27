@@ -50,12 +50,12 @@ MonoBehaviour:
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
   subAttacksAtSurfaceNormal: 0
-  attackDuration: 10
+  attackDuration: 2
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
   spread: 0
   destroyOnHit: 0
-  canHitSameTargetMoreThanOnce: 0
+  canHitSameTargetMoreThanOnce: 1
   multiHitCooldown: 0.5
   applyEffectsOnEnd: 0
   visualEndEffect: {fileID: 0}
