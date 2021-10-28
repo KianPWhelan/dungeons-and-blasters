@@ -100,7 +100,7 @@ public class StatusEffects : MonoBehaviour
             }
         }
 
-        Debug.Log(count + " " + effect.stacks);
+        // Debug.Log(count + " " + effect.stacks);
 
         if (count >= effect.stacks)
         {

@@ -93,7 +93,7 @@ public class AttackScript : MonoBehaviour
 
     public virtual void Start()
     {
-        Debug.Log("Starting " + name);
+        // Debug.Log("Starting " + name);
 
         if(parentId != 0)
         {
@@ -111,7 +111,7 @@ public class AttackScript : MonoBehaviour
                 transform.rotation = Quaternion.Euler(localRotationPosition);
             }
             
-            Debug.Log("Parent set to " + transform.parent.name);
+            // Debug.Log("Parent set to " + transform.parent.name);
         }
 
         if(transform.parent != null && transform.parent.gameObject.GetPhotonView().IsMine && transform.parent.tag == "Player")
@@ -127,7 +127,7 @@ public class AttackScript : MonoBehaviour
 
         if (!(this is ProjectileAttackScript))
         {
-            Debug.Log("whyhere");
+            // Debug.Log("whyhere");
             transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;
         }
             
@@ -162,7 +162,7 @@ public class AttackScript : MonoBehaviour
     {
         if (startingTime + attackDuration <= Time.time)
         {
-            Debug.Log("here");
+            // Debug.Log("here");
 
             if (subAttacksOnEnd)
             {
@@ -190,11 +190,11 @@ public class AttackScript : MonoBehaviour
 
     public virtual void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Valid tag: " + validTag+ "  Other tag: " + other.tag + "  Other name: " + other.name);
-        Debug.Log(attack);
+        // Debug.Log("Valid tag: " + validTag+ "  Other tag: " + other.tag + "  Other name: " + other.name);
+        // Debug.Log(attack);
         if(attack != null && validTag != null && (other.tag == validTag || validTag == "none") && (!hitList.Contains(other.gameObject)))
         {
-            Debug.Log("Collision with valid tag");
+            // Debug.Log("Collision with valid tag");
 
             float crit = 1f;
 
@@ -301,17 +301,17 @@ public class AttackScript : MonoBehaviour
     {
         var point = other.ClosestPointOnBounds(transform.position);
         var pos = transform.position - (transform.forward * 10f);
-        Debug.Log(pos);
-        Debug.Log(point);
+        // Debug.Log(pos);
+        // Debug.Log(point);
         var rayDirection = pos - point;
-        Debug.Log(rayDirection);
+        // Debug.Log(rayDirection);
         RaycastHit hit;
 
         if (other.Raycast(new Ray(pos, point - pos), out hit, 1000))
         {
-            Debug.Log(hit.transform.gameObject.name);
+            // Debug.Log(hit.transform.gameObject.name);
             collisionNormal = hit.normal;
-            Debug.Log(collisionNormal);
+            // Debug.Log(collisionNormal);
         }
 
         collisionPoint = point;
@@ -325,7 +325,7 @@ public class AttackScript : MonoBehaviour
 
     public void OnDestroy()
     {
-        Debug.Log("Destroying " + name);
+        // Debug.Log("Destroying " + name);
 
         if(visualEndEffect)
         {

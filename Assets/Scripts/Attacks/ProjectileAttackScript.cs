@@ -48,8 +48,8 @@ public class ProjectileAttackScript : AttackScript
 
         if(destination.x != Vector3.negativeInfinity.x)
         {
-            Debug.Log("DESTINATION");
-            Debug.Log(destination);
+            // Debug.Log("DESTINATION");
+            // Debug.Log(destination);
             transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + localRotationPosition + accuracyOffset);
             transform.position += transform.forward * localStartingPosition.z;
@@ -113,7 +113,7 @@ public class ProjectileAttackScript : AttackScript
     public override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-        Debug.Log("bruh");
+        // Debug.Log("bruh");
 
         //if(previousCollision != null && other == previousCollision)
         //{

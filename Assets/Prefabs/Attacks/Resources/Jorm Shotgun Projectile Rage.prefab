@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3807866404001653405}
   - component: {fileID: 4829975092919131579}
   m_Layer: 2
-  m_Name: Jorm Shotgun Projectile
+  m_Name: Jorm Shotgun Projectile Rage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6220827a346c51341b08fcd61af5c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 11400000, guid: 0925f900768a2b4428e7f1ac02c5f6c4, type: 2}
+  attack: {fileID: 11400000, guid: 69067c10a63ccf148a17a0fc89e2ab8a, type: 2}
   subAttacks: []
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   isMine: 0
   accuracyOffset: {x: 0, y: 0, z: 0}
   rotater: {fileID: 0}
-  speed: 25
+  speed: 35
   canGoThroughObjects: 0
   reevluateRotationAfterLocalPositionOffset: 1
   homing: 0
@@ -264,6 +264,30 @@ PrefabInstance:
       propertyPath: prefabSound
       value: 
       objectReference: {fileID: 1090619242177204, guid: 972fcacd60065c942912134a78570733, type: 3}
+    - target: {fileID: 198606407312033516, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.009994984
+      objectReference: {fileID: 0}
+    - target: {fileID: 198606407312033516, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198606407312033516, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198725660908748556, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.041718483
+      objectReference: {fileID: 0}
+    - target: {fileID: 198725660908748556, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198725660908748556, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 199377853879366638, guid: 09760e891ae9d10428b9e4490d312e5e, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1

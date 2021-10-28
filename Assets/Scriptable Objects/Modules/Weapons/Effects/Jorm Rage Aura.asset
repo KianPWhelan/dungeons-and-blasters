@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0252b129c204c3842b67624c34c07acd, type: 3}
-  m_Name: Jorm Slow
+  m_Name: Jorm Rage Aura
   m_EditorClassIdentifier: 
   damages: []
   isStatusEffect: 1
@@ -22,7 +22,7 @@ MonoBehaviour:
   useOverwriteTag: 0
   overwriteTag: 
   damageDealtMod: 1
-  damageRecievedMod: 1.15
-  moveSpeedMod: 0.75
+  damageRecievedMod: 1.25
+  moveSpeedMod: 0.65
   isStun: 0
   resistanceMods: []

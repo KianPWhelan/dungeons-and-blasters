@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 241e4755d8a207146aa851ca6e3bc123, type: 3}
-  m_Name: Jorm Shotgun
+  m_Name: Jorm Shotgun Rage 2
   m_EditorClassIdentifier: 
   uniqueId: 
   rarity: 0
   attacks:
-  - {fileID: 11400000, guid: 0925f900768a2b4428e7f1ac02c5f6c4, type: 2}
-  - {fileID: 11400000, guid: 0925f900768a2b4428e7f1ac02c5f6c4, type: 2}
-  - {fileID: 11400000, guid: 0925f900768a2b4428e7f1ac02c5f6c4, type: 2}
-  - {fileID: 11400000, guid: 0925f900768a2b4428e7f1ac02c5f6c4, type: 2}
-  - {fileID: 11400000, guid: 0925f900768a2b4428e7f1ac02c5f6c4, type: 2}
+  - {fileID: 11400000, guid: 69067c10a63ccf148a17a0fc89e2ab8a, type: 2}
+  - {fileID: 11400000, guid: 69067c10a63ccf148a17a0fc89e2ab8a, type: 2}
+  - {fileID: 11400000, guid: 69067c10a63ccf148a17a0fc89e2ab8a, type: 2}
+  - {fileID: 11400000, guid: 69067c10a63ccf148a17a0fc89e2ab8a, type: 2}
+  - {fileID: 11400000, guid: 69067c10a63ccf148a17a0fc89e2ab8a, type: 2}
   cooldowns:
   - 0.7
   - 0.7

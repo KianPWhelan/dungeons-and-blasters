@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviourPunCallbacks
     [PunRPC]
     private void LocalInstantiate(string objectName, Vector3 position, Quaternion rotation, object[] info, float delay)
     {
-        Debug.Log("Spawning " + objectName);
+        // Debug.Log("Spawning " + objectName);
         GameObject newObject = (GameObject)Instantiate(Resources.Load(objectName), position, rotation);
         newObject.SetActive(false);
 

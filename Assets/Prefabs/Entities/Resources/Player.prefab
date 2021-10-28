@@ -526,6 +526,7 @@ MonoBehaviour:
   isPlayer: 1
   resistances: []
   isDead: 0
+  startingHealth: 0
 --- !u!114 &-9066426888992374240
 MonoBehaviour:
   m_ObjectHideFlags: 0

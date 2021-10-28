@@ -42,7 +42,7 @@ public class Attack : ScriptableObject
     /// </summary>
     public void PerformAttack(GameObject self, float delay, string targetTag = "none", bool useSelfAsParent = true, Vector3? destination = null)
     {
-        Debug.Log("Using Attack " + name);
+        // Debug.Log("Using Attack " + name);
         var tag = targetTag;
 
         if(useOverwriteTag)
@@ -56,8 +56,8 @@ public class Attack : ScriptableObject
             spawner = spawnerObj.GetComponent<Spawner>();
         }
 
-        Debug.Log("Performing attack");
-        Debug.Log(attack);
+        // Debug.Log("Performing attack");
+        // Debug.Log(attack);
         object[] info;
 
         float damageMod = 1;
@@ -103,8 +103,8 @@ public class Attack : ScriptableObject
             spawner = spawnerObj.GetComponent<Spawner>();
         }
 
-        Debug.Log("Performing attack");
-        Debug.Log(attack);
+        // Debug.Log("Performing attack");
+        // Debug.Log(attack);
         object[] info;
         info = new object[] { null, tag, damageMod, destination.GetValueOrDefault() };
         spawner.Spawn(attack.name, selfPosition, selfRotation, info, delay);

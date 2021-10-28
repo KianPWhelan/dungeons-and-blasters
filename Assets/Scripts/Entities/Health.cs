@@ -43,7 +43,9 @@ public class Health : MonoBehaviourPunCallbacks
     public bool isDead = false;
 
     private ENPCHealthBar healthBar;
-    private float startingHealth;
+
+    [HideInInspector]
+    public float startingHealth;
 
     public void Start()
     {

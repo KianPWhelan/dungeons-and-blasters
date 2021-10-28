@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581aab45565baea4c970fd0a4d4985ce, type: 3}
   m_Name: JormunganderAI
   m_EditorClassIdentifier: 
-  maxRangeBeforeTP: 200
+  maxRangeBeforeTP: 60
   teleportTimeout: 1
+  rageHealthThreshold: 0.3
+  teleportSound: {fileID: 6137451349687365925, guid: 76c7376733599bb4eb1d9ca9e5a852ff, type: 3}

@@ -751,7 +751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rarity: 4
   uniqueId: 68908c7c-2f73-4a09-87bc-21167879fb5a
-  aiModule: {fileID: 11400000, guid: 4ebcd45dcd5a7fb41b628eeadb73248c, type: 2}
+  aiModule: {fileID: 11400000, guid: 1b5fbc295f168504ab67626f81c92a9f, type: 2}
   targetType: Player
   allyTargetType: Enemy
   target: {fileID: 0}
@@ -854,8 +854,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 11400000, guid: 3a506c72bf4cf6d468628b3ef634fa1f, type: 2}
+  - {fileID: 11400000, guid: c4873b17ae8953246b34eeb2cde9854f, type: 2}
+  - {fileID: 11400000, guid: 20ed8c3981d4e81418c3de3fb28d5251, type: 2}
+  - {fileID: 11400000, guid: 8f6acfab44853bd429a1a8551af8a4d5, type: 2}
+  - {fileID: 11400000, guid: 5d42ab0b9bcd78841aec7ca634e158c1, type: 2}
+  - {fileID: 11400000, guid: 1bbe865da14fef244a1d39f2059481a3, type: 2}
+  - {fileID: 11400000, guid: 1ae0267c8ad06c74586e11aca52dfa76, type: 2}
   targetTags:
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
   - Player
   isPlayer: 0
 --- !u!114 &9070468601821801596
@@ -870,11 +880,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9991c3553723674380690d791df1343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatHealth: 70
+  floatHealth: 1500
   infiniteHealth: 0
   isPlayer: 0
   resistances: []
   isDead: 0
+  startingHealth: 0
 --- !u!114 &3727592679696396437
 MonoBehaviour:
   m_ObjectHideFlags: 0

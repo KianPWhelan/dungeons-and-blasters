@@ -60,6 +60,7 @@ namespace Com.OfTomorrowInc.DMShooter
             // #Critical
             // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
             PhotonNetwork.AutomaticallySyncScene = true;
+            Debug.unityLogger.logEnabled = true;
         }
 
 
