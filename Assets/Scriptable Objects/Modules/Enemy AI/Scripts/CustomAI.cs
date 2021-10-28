@@ -310,7 +310,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         
         if(list.Count == 0)
         {
-            Debug.LogError("Did not find relevent state transitions for state " + state.name);
+            Debug.LogWarning("Did not find relevent state transitions for state " + state.name);
         }
 
         return list;

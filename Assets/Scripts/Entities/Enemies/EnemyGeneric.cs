@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(Movement), typeof(NavMeshAgent))]
 public class EnemyGeneric : MonoBehaviour
 {
     public Rarities rarity;
