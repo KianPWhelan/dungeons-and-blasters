@@ -42,7 +42,7 @@ public class Attack : ScriptableObject
     /// </summary>
     public void PerformAttack(GameObject self, float delay, string targetTag = "none", bool useSelfAsParent = true, Vector3? destination = null)
     {
-        // Debug.Log("Using Attack " + name);
+        Debug.Log("Using Attack " + name);
         var tag = targetTag;
 
         if(useOverwriteTag)

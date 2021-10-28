@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyGenericNoNavmesh : EnemyGeneric
 {
+    public bool findTarget;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,16 @@ public class EnemyGenericNoNavmesh : EnemyGeneric
 
     private void Update()
     {
-        // target = Helpers.FindClosest(gameObject.transform, targetType);
-        aiModule.Tick(gameObject, null, null, null, null);
+        if(findTarget)
+        {
+            target = Helpers.FindClosest(gameObject.transform, targetType);
+        }    
+
+        else
+        {
+            target = null;
+        }
+        
+        aiModule.Tick(gameObject, target, null, null, null);
     }
 }

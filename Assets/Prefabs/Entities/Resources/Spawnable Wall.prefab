@@ -361,6 +361,7 @@ MonoBehaviour:
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
+  findTarget: 0
 --- !u!114 &3105659487201561830
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcba69ad7de6f72458d35edd642b5685, type: 3}
+  m_Name: Attack Then Delete Self
+  m_EditorClassIdentifier: 
+  states:
+  - {fileID: 11400000, guid: 343124316adfb8f4296863ccafda595c, type: 2}
+  - {fileID: 11400000, guid: d85361b4e25cfc04a88a2e2c6f1a8131, type: 2}
+  - {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
+  defaultState: {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
+  transitions:
+  - 'currentState: IdleState conditions: timeSinceLastStateChange > 1 => AttackTowardsTargetState'
+  - 'currentState: AttackTowardsTargetState conditions: timeSinceLastStateChange
+    > 1 => DeleteSelfState'
+  stateMachine:
+  - fromState: {fileID: 11400000, guid: 96fffc3bdb1374347939bccfb9469127, type: 2}
+    toState: {fileID: 11400000, guid: 343124316adfb8f4296863ccafda595c, type: 2}
+    transitionComponents:
+    - timeSinceLastStateChange
+    - '>'
+    - 1
+  - fromState: {fileID: 11400000, guid: 343124316adfb8f4296863ccafda595c, type: 2}
+    toState: {fileID: 11400000, guid: d85361b4e25cfc04a88a2e2c6f1a8131, type: 2}
+    transitionComponents:
+    - timeSinceLastStateChange
+    - '>'
+    - 1

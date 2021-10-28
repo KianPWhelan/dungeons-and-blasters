@@ -16,6 +16,11 @@ public class AttackTowardsTargetState : State
         var weapons = self.GetComponent<WeaponHolder>();
         bool didAttack = false;
 
+        if(target == null)
+        {
+            return;
+        }
+
         if(rotateTowards)
         {
             self.transform.rotation = Quaternion.LookRotation((target.transform.position - self.transform.position).normalized);

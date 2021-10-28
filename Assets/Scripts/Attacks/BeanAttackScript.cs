@@ -104,7 +104,7 @@ public class BeanAttackScript : AttackScript
 
     public override void Tick()
     {
-        if (transform.parent != null && !homing)
+        if (followCaster && transform.parent != null && !homing)
         {
             transform.rotation = rotater.transform.rotation;
         }

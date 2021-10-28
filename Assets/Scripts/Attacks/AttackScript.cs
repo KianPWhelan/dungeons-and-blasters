@@ -101,7 +101,7 @@ public class AttackScript : MonoBehaviour
             transform.position = transform.parent.position;
             rotater = transform.parent.GetComponentInChildren<Rotater>();
 
-            if(!ignoreParentRotation)
+            if(!ignoreParentRotation && rotater != null)
             {
                 transform.rotation = rotater.transform.rotation;
             }
