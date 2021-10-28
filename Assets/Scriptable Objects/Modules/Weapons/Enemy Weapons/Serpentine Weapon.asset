@@ -17,7 +17,13 @@ MonoBehaviour:
   attacks:
   - {fileID: 11400000, guid: 47796d743f66b2543bd6ad87dd0dcd2d, type: 2}
   cooldowns:
-  - 0.015
+  - 0.1
   delays:
-  - 0
+  - 0.5
   animation: {fileID: 0}
+  hasSpinup: 0
+  spinupTime: 0
+  canOverheat: 0
+  overheatTime: 0
+  overheatRecoveryTime: 0
+  isOverheated: 0

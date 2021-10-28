@@ -115,12 +115,14 @@ MonoBehaviour:
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
   subAttacksAtSurfaceNormal: 0
-  attackDuration: 2
+  attackDuration: 0.3
   localStartingPosition: {x: 0, y: 1.7, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
+  ignoreParentRotation: 0
   spread: 0
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
+  multiHitCooldown: 0
   applyEffectsOnEnd: 0
   visualEndEffect: {fileID: 1025355994130704, guid: 04c57287afcba3040b7402c3c7cce280, type: 3}
   visualStartEffect: {fileID: 0}
@@ -136,6 +138,7 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   isMine: 0
   accuracyOffset: {x: 0, y: 0, z: 0}
+  rotater: {fileID: 0}
   speed: 50
   canGoThroughObjects: 0
   reevluateRotationAfterLocalPositionOffset: 1
