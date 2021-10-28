@@ -24,6 +24,8 @@ public class UseAbility : MonoBehaviour, IPointerClickHandler
 
     public float cooldown;
 
+    public int charges;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -33,7 +35,12 @@ public class UseAbility : MonoBehaviour, IPointerClickHandler
         cooldown = cooldownTime;
         size = data.slotSize;
         text = GetComponentInChildren<Text>();
-        text.text = ability.name + " X" + amount + "\nCooldown: " + cooldown.ToString("0.00"); ;
+        text.text = ability.name + " X" + amount + "\nCooldown: " + cooldown.ToString("0.00");
+
+        if(controller.charges.ContainsKey(ability))
+        {
+            text.text = ability.name + " X" + amount + "\nCharges: " + charges + "\nCooldown: " + cooldown.ToString("0.00");
+        }
     }
     public void Update()
     {
@@ -43,6 +50,23 @@ public class UseAbility : MonoBehaviour, IPointerClickHandler
         if(cooldown <= 0)
         {
             text.text = ability.name + " X" + amount + "\nReady";
+        }
+
+        if(controller.charges.ContainsKey(ability))
+        {
+            charges = controller.charges[ability];
+
+            text.text = ability.name + " X" + amount + "\nCharges: " + charges + "\nCooldown: " + cooldown.ToString("0.00");
+
+            if (cooldown <= 0 && charges > 0)
+            {
+                text.text = ability.name + " X" + amount + "\nCharges: " + charges + "\nReady";
+            }
+
+            else if (charges == 0)
+            {
+                text.text = ability.name + " X" + "\nNo Charges";
+            }
         }
     }
 

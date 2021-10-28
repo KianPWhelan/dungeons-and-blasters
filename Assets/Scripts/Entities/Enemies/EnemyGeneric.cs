@@ -45,6 +45,9 @@ public class EnemyGeneric : MonoBehaviour
 
     public int slotSize;
 
+    [Tooltip("-1 is a representative value for no charge limit")]
+    public int charges = -1;
+
     public float visionRange;
 
     public GameObject spawnSoundEffect;

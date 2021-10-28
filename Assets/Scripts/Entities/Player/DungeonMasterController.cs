@@ -49,6 +49,8 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     private Color originalButtonColor;
 
+    public Dictionary<GameObject, int> charges = new Dictionary<GameObject, int>();
+
     public void Awake()
     {
         // #Important
@@ -153,6 +155,10 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
             {
                 enemyPrefabs.Add(p);
                 cooldowns.Add(p, -100000);
+                if(c.charges != -1)
+                {
+                    charges.Add(p, c.charges);
+                }
             }
         }
     }
@@ -272,9 +278,19 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
             if(closestPlayer == null || Vector3.Distance(hit.transform.position, closestPlayer.transform.position) > 12f)
             {
+                if(charges.ContainsKey(enemyToSpawn) && charges[enemyToSpawn] == 0)
+                {
+                    return;
+                }
+
                 PhotonNetwork.Instantiate(enemyToSpawn.name, hit.transform.position, hit.transform.rotation, 0);
                 cooldowns[enemyToSpawn] = Time.time;
                 currentAbility.cooldown = currentAbility.cooldownTime;
+
+                if(charges.ContainsKey(enemyToSpawn))
+                {
+                    charges[enemyToSpawn]--;
+                }
             }
 
             else

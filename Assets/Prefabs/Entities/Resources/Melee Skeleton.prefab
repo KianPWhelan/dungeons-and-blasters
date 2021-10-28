@@ -765,6 +765,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   cooldown: 5
   slotSize: 1
+  charges: -1
   visionRange: 75
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:

@@ -853,6 +853,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   cooldown: 10
   slotSize: 2
+  charges: -1
   visionRange: 75
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:
@@ -877,6 +878,7 @@ MonoBehaviour:
   isPlayer: 0
   resistances: []
   isDead: 0
+  startingHealth: 0
 --- !u!114 &9006593377615435942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,6 +965,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bd2ccf97b7d15244fb7dabe41d41c647, type: 2}
   targetTags:
   - Player
+  isPlayer: 0
 --- !u!114 &6492600137384954409
 MonoBehaviour:
   m_ObjectHideFlags: 0

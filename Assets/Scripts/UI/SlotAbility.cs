@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlotAbility : MonoBehaviour
 {
@@ -20,10 +21,18 @@ public class SlotAbility : MonoBehaviour
 
     private int slotCost;
 
+    private int charges;
+
+    private Text buttonText;
+
+    private EnemyGeneric data;
+
     public void Start()
     {
         slots = slotPanel.GetComponent<Slots>();
-        slotCost = ability.GetComponent<EnemyGeneric>().slotSize;
+        data = ability.GetComponent<EnemyGeneric>();
+        slotCost = data.slotSize;
+        buttonText = GetComponentInChildren<Text>();
     }
 
     public void AddToSlot()
