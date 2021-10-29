@@ -882,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9991c3553723674380690d791df1343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatHealth: 1500
+  floatHealth: 200
   infiniteHealth: 0
   isPlayer: 0
   hitSoundEffect: {fileID: 0}

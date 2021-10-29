@@ -16,6 +16,10 @@ public class JormungandrAI : EnemyAI
     private float rageHealthThreshold = 0.3f;
     [SerializeField]
     private GameObject teleportSound;
+    [SerializeField]
+    private float minTimeForRageTp = 2f;
+    [SerializeField]
+    private float maxTimeForRageTp = 20f;
 
     private GameObject targetPlayer;
     private GameObject localSelf;
@@ -28,6 +32,9 @@ public class JormungandrAI : EnemyAI
         public float startTimeoutTime = -1000f;
         public int arsenal = 0;
         public bool inRage = false;
+        public float tpDistance = 25;
+        public float timeOfLastNothingPersonalKid = -1000f;
+        public float nextTpTime = 0f;
     }
 
     public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
@@ -57,7 +64,9 @@ public class JormungandrAI : EnemyAI
 
         if (!thisData.onTimeout)
         {
-            if (Vector3.Distance(self.transform.position, target.transform.position) > maxRangeBeforeTP && self.GetPhotonView().IsMine)
+            var mine = self.GetPhotonView().IsMine;
+
+            if (Vector3.Distance(self.transform.position, target.transform.position) > maxRangeBeforeTP && mine)
             {
                 Debug.Log("Teleporting to player");
                 ChooseTargetPlayer();
@@ -66,6 +75,21 @@ public class JormungandrAI : EnemyAI
                 self.transform.rotation = Quaternion.Euler(0, self.transform.rotation.eulerAngles.y, self.transform.rotation.eulerAngles.z);
                 thisData.startTimeoutTime = Time.time;
                 thisData.onTimeout = true;
+                return;
+            }
+
+            else if(mine && thisData.inRage && Time.time - thisData.timeOfLastNothingPersonalKid >= thisData.nextTpTime)
+            {
+                Debug.Log("Teleporting to player");
+                ChooseTargetPlayer();
+                TeleportInFrontOfTargetPlayer();
+                self.transform.LookAt(target.transform);
+                self.transform.rotation = Quaternion.Euler(0, self.transform.rotation.eulerAngles.y, self.transform.rotation.eulerAngles.z);
+                thisData.nextTpTime = UnityEngine.Random.Range(minTimeForRageTp, maxTimeForRageTp);
+                Debug.Log("Next TP time: " + thisData.nextTpTime);
+                thisData.startTimeoutTime = Time.time;
+                thisData.onTimeout = true;
+                thisData.timeOfLastNothingPersonalKid = Time.time;
                 return;
             }
 
@@ -90,7 +114,7 @@ public class JormungandrAI : EnemyAI
 
     private void TeleportInFrontOfTargetPlayer()
     {
-        var tile = Helpers.FindClosest(targetPlayer.transform.position + (targetPlayer.transform.forward * 25), "Ground");
+        var tile = Helpers.FindClosest(targetPlayer.transform.position + (targetPlayer.transform.forward * thisData.tpDistance), "Ground");
         Debug.Log("Teleporting to " + tile.transform.position);
         localSelf.transform.position = tile.transform.position;
         
@@ -115,7 +139,7 @@ public class JormungandrAI : EnemyAI
         if(hp.GetHealth() / hp.startingHealth <= rageHealthThreshold)
         {
             thisData.arsenal = 4;
-            RemoveOldAura();
+            DoRageSetupStuff();
             var players = GameObject.FindGameObjectsWithTag("Player");
             Array.Sort(players, delegate (GameObject player1, GameObject player2) { return Vector3.Distance(localSelf.transform.position, player1.transform.position).CompareTo(Vector3.Distance(localSelf.transform.position, player2.transform.position)); });
             int lastIndexOfValidPlayer = 0;
@@ -137,7 +161,7 @@ public class JormungandrAI : EnemyAI
         }
     }
 
-    private void RemoveOldAura()
+    private void DoRageSetupStuff()
     {
         if (thisData.inRage)
         {
@@ -147,6 +171,7 @@ public class JormungandrAI : EnemyAI
         else
         {
             thisData.inRage = true;
+            thisData.tpDistance = -7;
         }
 
         var attacks = localSelf.GetComponentsInChildren<AttackScript>();

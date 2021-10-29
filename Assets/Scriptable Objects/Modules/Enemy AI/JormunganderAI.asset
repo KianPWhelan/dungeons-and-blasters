@@ -16,3 +16,5 @@ MonoBehaviour:
   teleportTimeout: 1
   rageHealthThreshold: 0.3
   teleportSound: {fileID: 6137451349687365925, guid: 76c7376733599bb4eb1d9ca9e5a852ff, type: 3}
+  minTimeForRageTp: 2
+  maxTimeForRageTp: 20
