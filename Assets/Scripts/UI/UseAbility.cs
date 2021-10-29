@@ -65,7 +65,7 @@ public class UseAbility : MonoBehaviour, IPointerClickHandler
 
             else if (charges == 0)
             {
-                text.text = ability.name + " X" + "\nNo Charges";
+                text.text = ability.name + " X" + amount + "\nNo Charges";
             }
         }
     }

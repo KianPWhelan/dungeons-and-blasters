@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 6121908949935950882}
   - component: {fileID: 1573303539905903332}
   m_Layer: 0
-  m_Name: Big Monster
+  m_Name: Ogre
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
