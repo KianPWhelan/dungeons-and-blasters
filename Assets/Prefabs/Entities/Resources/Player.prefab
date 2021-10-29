@@ -524,6 +524,7 @@ MonoBehaviour:
   floatHealth: 100
   infiniteHealth: 0
   isPlayer: 1
+  hitSoundEffect: {fileID: 6137451349687365925, guid: 320271e8712c0b844ad3a6667523939f, type: 3}
   resistances: []
   isDead: 0
   startingHealth: 0

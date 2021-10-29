@@ -204,6 +204,11 @@ public class Health : MonoBehaviourPunCallbacks
             return;
         }
 
+        if(isPlayer && photonView.IsMine)
+        {
+
+        }
+
         var m_Sound = Instantiate(hitSoundEffect, gameObject.transform.position, Quaternion.identity);
         var m_Source = m_Sound.GetComponent<AudioSource>();
         float life = m_Source.clip.length / m_Source.pitch;
