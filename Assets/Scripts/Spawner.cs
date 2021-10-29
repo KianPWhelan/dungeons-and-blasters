@@ -24,13 +24,19 @@ public class Spawner : MonoBehaviourPunCallbacks
     /// <param name="position"></param>
     /// <param name="rotation"></param>
     /// <param name="info"></param>
-    public void Spawn(string objectName, Vector3 position, Quaternion rotation, object[] info, float delay)
+    public void Spawn(string objectName, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
     {
-        photonView.RPC("LocalInstantiate", RpcTarget.All, objectName, position, rotation, info, delay);
+        if (!PhotonView.Find(ownerId).IsMine)
+        {
+            return;
+        }
+
+
+        photonView.RPC("LocalInstantiate", RpcTarget.All, objectName, position, rotation, info, delay, ownerId);
     }
 
     [PunRPC]
-    private void LocalInstantiate(string objectName, Vector3 position, Quaternion rotation, object[] info, float delay)
+    private void LocalInstantiate(string objectName, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
     {
         // Debug.Log("Spawning " + objectName);
         GameObject newObject = (GameObject)Instantiate(Resources.Load(objectName), position, rotation);
@@ -38,6 +44,8 @@ public class Spawner : MonoBehaviourPunCallbacks
 
         if(newObject.TryGetComponent(out AttackScript a))
         {
+            a.ownerId = ownerId;
+
             if (info[0] != null)
             {
                 a.parentId = (int)info[0];

@@ -93,6 +93,9 @@ public class AttackScript : MonoBehaviour
     [HideInInspector]
     public Rotater rotater;
 
+    [HideInInspector]
+    public int ownerId;
+
     public virtual void Start()
     {
         // Debug.Log("Starting " + name);
@@ -284,7 +287,7 @@ public class AttackScript : MonoBehaviour
                 else
                 {
                     Debug.Log("here");
-                    attack.PerformAttack(collisionPoint, transform.rotation, damageMod, validTag, 0f, collisionPoint + collisionNormal);
+                    attack.PerformAttack(collisionPoint, transform.rotation, damageMod, ownerId, validTag, 0f, collisionPoint + collisionNormal);
                 }
             }
 
@@ -297,7 +300,7 @@ public class AttackScript : MonoBehaviour
 
                 else
                 {
-                    attack.PerformAttack(transform.position, transform.rotation, damageMod, validTag);
+                    attack.PerformAttack(transform.position, transform.rotation, damageMod, ownerId, validTag);
                 }
             }
         }

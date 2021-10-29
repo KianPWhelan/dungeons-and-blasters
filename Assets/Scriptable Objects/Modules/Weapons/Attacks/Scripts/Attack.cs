@@ -81,14 +81,14 @@ public class Attack : ScriptableObject
         {
             info[3] = null;
         }
-        
-        spawner.Spawn(attack.name, self.transform.position, self.transform.rotation, info, delay);
+
+        spawner.Spawn(attack.name, self.transform.position, self.transform.rotation, info, delay, self.GetPhotonView().ViewID);
     }
 
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, string targetTag = "none", float delay = 0, Vector3? destination = null)
+    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, int ownerId, string targetTag = "none", float delay = 0, Vector3? destination = null)
     {
         var tag = targetTag;
 
@@ -107,7 +107,7 @@ public class Attack : ScriptableObject
         // Debug.Log(attack);
         object[] info;
         info = new object[] { null, tag, damageMod, destination.GetValueOrDefault() };
-        spawner.Spawn(attack.name, selfPosition, selfRotation, info, delay);
+        spawner.Spawn(attack.name, selfPosition, selfRotation, info, delay, ownerId);
     }
 
     /// <summary>

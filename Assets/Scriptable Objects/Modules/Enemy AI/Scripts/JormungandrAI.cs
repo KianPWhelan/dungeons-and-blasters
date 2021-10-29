@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 [CreateAssetMenu(menuName = "Modules/AI/JormungandrAI")]
 public class JormungandrAI : EnemyAI
@@ -56,7 +57,7 @@ public class JormungandrAI : EnemyAI
 
         if (!thisData.onTimeout)
         {
-            if (Vector3.Distance(self.transform.position, target.transform.position) > maxRangeBeforeTP)
+            if (Vector3.Distance(self.transform.position, target.transform.position) > maxRangeBeforeTP && self.GetPhotonView().IsMine)
             {
                 Debug.Log("Teleporting to player");
                 ChooseTargetPlayer();
