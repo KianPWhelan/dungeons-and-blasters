@@ -25,6 +25,10 @@ public class Health : MonoBehaviourPunCallbacks
     [SerializeField]
     private GameObject hitSoundEffect;
 
+    [Tooltip("Hit screen effect for player object")]
+    [SerializeField]
+    private GameObject hitEffect;
+
     [Tooltip("Damage types that this entity will take less/more damage from (use a multiplier > 1 to make something weaker to a certain damage type)")]
     [SerializeField]
     private List<ResistanceContainer> resistances = new List<ResistanceContainer>();
@@ -105,7 +109,7 @@ public class Health : MonoBehaviourPunCallbacks
 
         if(amount < 0)
         {
-            PlayHitSound();
+            PlayHitEffects();
         }
 
         if(infiniteHealth)
@@ -197,7 +201,7 @@ public class Health : MonoBehaviourPunCallbacks
         }
     }
 
-    private void PlayHitSound()
+    private void PlayHitEffects()
     {
         if(hitSoundEffect == null)
         {
@@ -206,7 +210,8 @@ public class Health : MonoBehaviourPunCallbacks
 
         if(isPlayer && photonView.IsMine)
         {
-
+            hitEffect.SetActive(true);
+            hitEffect.GetComponent<HitFade>().StartFade();
         }
 
         var m_Sound = Instantiate(hitSoundEffect, gameObject.transform.position, Quaternion.identity);
