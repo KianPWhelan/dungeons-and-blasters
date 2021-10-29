@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2530c9a6ad09404cbcfe571f7babcbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rarity: 0
+  rarity: 1
   uniqueId: c85c95a3-cea3-4b4a-9811-f97e81579c1a
   aiModule: {fileID: 11400000, guid: 421631e078d1a2c4f90bbb3f043a3029, type: 2}
   targetType: Player
@@ -67,6 +67,7 @@ MonoBehaviour:
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
+  findTarget: 0
 --- !u!114 &6812777160495696074
 MonoBehaviour:
   m_ObjectHideFlags: 0

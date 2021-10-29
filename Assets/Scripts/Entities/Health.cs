@@ -21,6 +21,10 @@ public class Health : MonoBehaviourPunCallbacks
     [SerializeField]
     private bool isPlayer = false;
 
+    [Tooltip("The sound effect to be played when damage is taken")]
+    [SerializeField]
+    private GameObject hitSoundEffect;
+
     [Tooltip("Damage types that this entity will take less/more damage from (use a multiplier > 1 to make something weaker to a certain damage type)")]
     [SerializeField]
     private List<ResistanceContainer> resistances = new List<ResistanceContainer>();
@@ -98,6 +102,11 @@ public class Health : MonoBehaviourPunCallbacks
     {
         float statusMod = 1;
         float resistanceMod = 1;
+
+        if(amount < 0)
+        {
+            PlayHitSound();
+        }
 
         if(infiniteHealth)
         {
@@ -186,5 +195,18 @@ public class Health : MonoBehaviourPunCallbacks
         {
             floatHealth = value;
         }
+    }
+
+    private void PlayHitSound()
+    {
+        if(hitSoundEffect == null)
+        {
+            return;
+        }
+
+        var m_Sound = Instantiate(hitSoundEffect, gameObject.transform.position, Quaternion.identity);
+        var m_Source = m_Sound.GetComponent<AudioSource>();
+        float life = m_Source.clip.length / m_Source.pitch;
+        Destroy(m_Sound, life);
     }
 }

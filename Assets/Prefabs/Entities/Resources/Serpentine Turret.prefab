@@ -749,7 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e994fd930eabb14cb5d6640f2fd660b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rarity: 0
+  rarity: 1
   uniqueId: 69608c7c-2f73-4a09-84bc-2119879fb5a
   aiModule: {fileID: 11400000, guid: 4ebcd45dcd5a7fb41b628eeadb73248c, type: 2}
   targetType: Player
@@ -764,6 +764,7 @@ MonoBehaviour:
   currentState: {fileID: 0}
   cooldown: 12
   slotSize: 2
+  charges: -1
   visionRange: 75
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:
@@ -857,6 +858,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a506c72bf4cf6d468628b3ef634fa1f, type: 2}
   targetTags:
   - Player
+  isPlayer: 0
 --- !u!114 &9070468601821801596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,6 +876,7 @@ MonoBehaviour:
   isPlayer: 0
   resistances: []
   isDead: 0
+  startingHealth: 0
 --- !u!114 &3727592679696396437
 MonoBehaviour:
   m_ObjectHideFlags: 0
