@@ -352,15 +352,16 @@ MonoBehaviour:
   homingPoint: {fileID: 5893359627736191471}
   critBox: {fileID: 0}
   currentState: {fileID: 0}
-  cooldown: 20
+  cooldown: 10
   slotSize: 1
-  charges: 7
+  charges: 5
   visionRange: 0
   spawnSoundEffect: {fileID: 0}
   ranges: []
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
+  doNotUseAsAbility: 0
   findTarget: 0
 --- !u!114 &3105659487201561830
 MonoBehaviour:
