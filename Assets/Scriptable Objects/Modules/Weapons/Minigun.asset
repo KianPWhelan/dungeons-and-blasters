@@ -23,7 +23,7 @@ MonoBehaviour:
   animation: {fileID: 0}
   hasSpinup: 1
   spinupTime: 0.4
-  canOverheat: 0
-  overheatTime: 0
-  overheatRecoveryTime: 0
+  canOverheat: 1
+  overheatTime: 8
+  overheatRecoveryTime: 3
   isOverheated: 0
