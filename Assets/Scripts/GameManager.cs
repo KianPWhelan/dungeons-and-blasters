@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 using Photon.Pun;
 using Photon.Realtime;
-
+using System.Collections.Generic;
 
 namespace Com.OfTomorrowInc.DMShooter
 {
@@ -39,6 +39,8 @@ namespace Com.OfTomorrowInc.DMShooter
 
         private bool isDM;
 
+        public static List<GameObject> players;
+
 
         /// <summary>
         /// Called when the local player left the room. We need to load the launcher scene.
@@ -61,6 +63,8 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public void Start()
         {
+            players = new List<GameObject>();
+
             if(PhotonNetwork.IsMasterClient)
             {
                 Debug.Log("We are the master client");
@@ -82,7 +86,8 @@ namespace Com.OfTomorrowInc.DMShooter
             {
                 Debug.LogFormat("We are Instantiating DungeonMaster from {0}", Application.loadedLevelName);
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                PhotonNetwork.Instantiate(this.dungeonMasterPrefab.name, new Vector3(0f, 50f, 0f), Quaternion.identity, 0);
+                var newPlayer = PhotonNetwork.Instantiate(this.dungeonMasterPrefab.name, new Vector3(0f, 50f, 0f), Quaternion.identity, 0);
+                players.Add(newPlayer);
             }
         }
 

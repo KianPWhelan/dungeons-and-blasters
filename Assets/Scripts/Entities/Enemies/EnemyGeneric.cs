@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Com.OfTomorrowInc.DMShooter;
 
 public class EnemyGeneric : MonoBehaviour
 {
@@ -99,8 +100,38 @@ public class EnemyGeneric : MonoBehaviour
         }
 
         agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
-        target = Helpers.FindClosestVisible(gameObject.transform, targetType);
-        allyTarget = Helpers.FindClosestVisible(gameObject.transform, allyTargetType);
+
+        if(targetType == "Player")
+        {
+            target = FindClosestVisiblePlayer();
+        }
+
+        else
+        {
+            target = Helpers.FindClosestVisible(gameObject.transform, targetType);
+        }
+        
+        // allyTarget = Helpers.FindClosestVisible(gameObject.transform, allyTargetType);
         aiModule.Tick(gameObject, target, allyTarget, agent, movement);
+    }
+
+    private GameObject FindClosestVisiblePlayer()
+    {
+        List<GameObject> gos;
+        gos = GameManager.players;
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance && go.transform != transform && Helpers.CheckLineOfSight(transform, go.transform, 100000))
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
     }
 }
