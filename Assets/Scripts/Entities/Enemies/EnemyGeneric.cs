@@ -63,6 +63,8 @@ public class EnemyGeneric : MonoBehaviour
     [HideInInspector]
     public StatusEffects statusEffects;
 
+    public bool doNotUseAsAbility;
+
     // Start is called before the first frame update
     void Start()
     {

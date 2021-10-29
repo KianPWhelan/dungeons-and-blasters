@@ -151,7 +151,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         {
             GameObject p = (GameObject)prefabs[i];
             // Debug.Log(p.name);
-            if (p.TryGetComponent(out EnemyGeneric c))
+            if (p.TryGetComponent(out EnemyGeneric c) && !c.doNotUseAsAbility)
             {
                 enemyPrefabs.Add(p);
                 cooldowns.Add(p, -100000);
