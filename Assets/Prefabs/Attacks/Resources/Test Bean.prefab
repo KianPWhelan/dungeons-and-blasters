@@ -50,12 +50,14 @@ MonoBehaviour:
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
   subAttacksAtSurfaceNormal: 0
-  attackDuration: 2
+  attackDuration: 0.4
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
+  ignoreParentRotation: 0
+  forceDetachFromParent: 0
   spread: 0
   destroyOnHit: 0
-  canHitSameTargetMoreThanOnce: 1
+  canHitSameTargetMoreThanOnce: 0
   multiHitCooldown: 0.5
   applyEffectsOnEnd: 0
   visualEndEffect: {fileID: 0}
@@ -77,10 +79,13 @@ MonoBehaviour:
   radius: 0.1
   canGoThroughObjects: 0
   piercing: 0
-  endOnPlayerStopAttacking: 0
+  endOnPlayerStopAttacking: 1
   voxelStaticBean: {fileID: 1064941584371077296}
-  followCaster: 0
+  followCaster: 1
   reevluateRotationAfterLocalPositionOffset: 0
+  autoTarget: 0
+  homing: 0
+  reevaluateHomingTargetConstantly: 0
 --- !u!114 &-5507236118326661018
 MonoBehaviour:
   m_ObjectHideFlags: 0
