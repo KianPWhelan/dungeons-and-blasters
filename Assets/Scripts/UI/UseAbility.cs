@@ -35,6 +35,7 @@ public class UseAbility : MonoBehaviour, IPointerClickHandler
         cooldown = cooldownTime;
         size = data.slotSize;
         text = GetComponentInChildren<Text>();
+        text.resizeTextForBestFit = true;
         text.text = ability.name + " X" + amount + "\nCooldown: " + cooldown.ToString("0.00");
 
         if(controller.charges.ContainsKey(ability))

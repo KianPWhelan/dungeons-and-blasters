@@ -67,6 +67,7 @@ MonoBehaviour:
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
+  doNotUseAsAbility: 0
   findTarget: 0
 --- !u!114 &5335665039583133618
 MonoBehaviour:

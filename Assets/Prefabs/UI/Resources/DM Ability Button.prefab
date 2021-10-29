@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ability: {fileID: 0}
-  slotButton: {fileID: 8551063075266432332, guid: 95a289b43b9588342962117d4b408534, type: 3}
+  slotButton: {fileID: 8551063075266432332, guid: d30b0374893f308419e09057f306ee52, type: 3}
   slotPanel: {fileID: 0}
   controller: {fileID: 0}
   size: 0
