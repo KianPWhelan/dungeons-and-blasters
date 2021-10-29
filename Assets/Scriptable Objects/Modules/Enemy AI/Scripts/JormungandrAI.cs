@@ -64,6 +64,7 @@ public class JormungandrAI : EnemyAI
                 TeleportInFrontOfTargetPlayer();
                 self.transform.LookAt(target.transform);
                 self.transform.rotation = Quaternion.Euler(0, self.transform.rotation.eulerAngles.y, self.transform.rotation.eulerAngles.z);
+                thisData.startTimeoutTime = Time.time;
                 thisData.onTimeout = true;
                 return;
             }
