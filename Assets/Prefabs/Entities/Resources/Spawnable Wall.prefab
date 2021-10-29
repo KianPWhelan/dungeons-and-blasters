@@ -377,6 +377,8 @@ MonoBehaviour:
   floatHealth: 500
   infiniteHealth: 0
   isPlayer: 0
+  hitSoundEffect: {fileID: 0}
+  hitEffect: {fileID: 0}
   resistances: []
   isDead: 0
   startingHealth: 0

@@ -31,6 +31,8 @@ public class AttackScript : MonoBehaviour
 
     public bool ignoreParentRotation;
 
+    public bool forceDetachFromParent;
+
     [Tooltip("Defines the angle of the cone that the attack can miss its intended target by")]
     public float spread;
 
@@ -137,6 +139,11 @@ public class AttackScript : MonoBehaviour
         {
             var fx = Instantiate(visualStartEffect, transform.position + visualStartEffectPositionOffset, Quaternion.Euler(transform.rotation.eulerAngles + visualStartEffectRotationOffset));
             Destroy(fx, 5f);
+        }
+
+        if(forceDetachFromParent)
+        {
+            transform.SetParent(null);
         }
     }
 
