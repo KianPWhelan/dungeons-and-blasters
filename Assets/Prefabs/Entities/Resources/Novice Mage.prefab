@@ -851,9 +851,9 @@ MonoBehaviour:
   homingPoint: {fileID: 3009104327204814771}
   critBox: {fileID: 1612678386225002221}
   currentState: {fileID: 0}
-  cooldown: 10
+  cooldown: 5
   slotSize: 2
-  charges: -1
+  charges: 20
   visionRange: 75
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:

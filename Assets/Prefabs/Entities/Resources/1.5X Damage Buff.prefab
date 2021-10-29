@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5335665039583133618}
   - component: {fileID: 1268614438174481810}
   m_Layer: 0
-  m_Name: 1
+  m_Name: 1.5X Damage Buff
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -58,9 +58,9 @@ MonoBehaviour:
   homingPoint: {fileID: 0}
   critBox: {fileID: 0}
   currentState: {fileID: 0}
-  cooldown: 25
+  cooldown: 13
   slotSize: 1
-  charges: -1
+  charges: 8
   visionRange: 0
   spawnSoundEffect: {fileID: 6137451349687365925, guid: d0c5f84874b8ceb499378baa91d6f6cf, type: 3}
   ranges: []

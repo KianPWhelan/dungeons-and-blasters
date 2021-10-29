@@ -762,7 +762,7 @@ MonoBehaviour:
   homingPoint: {fileID: 846465751880415107}
   critBox: {fileID: 1820088735399678048}
   currentState: {fileID: 0}
-  cooldown: 60
+  cooldown: 30
   slotSize: 3
   charges: 1
   visionRange: 75

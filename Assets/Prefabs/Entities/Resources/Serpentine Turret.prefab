@@ -762,9 +762,9 @@ MonoBehaviour:
   homingPoint: {fileID: 846465751880415107}
   critBox: {fileID: 1820088735399678048}
   currentState: {fileID: 0}
-  cooldown: 12
+  cooldown: 6
   slotSize: 2
-  charges: -1
+  charges: 10
   visionRange: 75
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:
@@ -874,6 +874,8 @@ MonoBehaviour:
   floatHealth: 70
   infiniteHealth: 0
   isPlayer: 0
+  hitSoundEffect: {fileID: 0}
+  hitEffect: {fileID: 0}
   resistances: []
   isDead: 0
   startingHealth: 0
