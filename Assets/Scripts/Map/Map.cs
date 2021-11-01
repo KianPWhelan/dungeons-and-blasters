@@ -58,43 +58,44 @@ public class Map : MonoBehaviour
                 }
             }
         }
+
+        for (int i = 0; i < mapSize.x; i++)
+        {
+            for (int j = 0; j < mapSize.y; j++)
+            {
+                if (rooms[i, j] != null)
+                {
+                    ConnectNeighbors(i, j);
+                }
+            }
+        }
     }
 
     private void ConnectNeighbors(int x, int y)
     {
-        if(!filledRooms[x, y])
-        {
-            // Instantiate current room
-            GenerateRoom(rooms[x, y], x, y);
-            filledRooms[x, y] = true;
-        }
-
         // Try Connect North
-        if (y + 1 < mapSize.y && rooms[x, y].points.doorPoints[0] != null && !filledRooms[x, y + 1] && rooms[x, y + 1] != null && rooms[x, y + 1].points.doorPoints[1] != null)
+        if (y + 1 < mapSize.y && rooms[x, y].points.doorPoints[0] != null && rooms[x, y + 1] != null && rooms[x, y + 1].points.doorPoints[1] != null)
         {
-            GenerateRoom(rooms[x, y + 1], x, y + 1);
-            filledRooms[x, y + 1] = true;
+            Debug.Log("Connecting " + x + " " + y + " to " + x + " " + (y+1));
+            rooms[x, y].points.doorPoints[0].GetComponent<Teleporter>().target = rooms[x, y + 1].points.doorPoints[1];
         }
 
         // Try Connect South
-        if (y - 1 >= 0 && rooms[x, y].points.doorPoints[1] != null && !filledRooms[x, y - 1] && rooms[x, y - 1] != null && rooms[x, y - 1].points.doorPoints[0] != null)
+        if (y - 1 >= 0 && rooms[x, y].points.doorPoints[1] != null && rooms[x, y - 1] != null && rooms[x, y - 1].points.doorPoints[0] != null)
         {
-            GenerateRoom(rooms[x, y - 1], x, y - 1);
-            filledRooms[x, y - 1] = true;
+            rooms[x, y].points.doorPoints[1].GetComponent<Teleporter>().target = rooms[x, y - 1].points.doorPoints[0];
         }
 
         // Try Connect East
-        if(x + 1 < mapSize.x && rooms[x, y].points.doorPoints[2] != null && !filledRooms[x + 1, y] && rooms[x + 1, y] != null && rooms[x + 1, y].points.doorPoints[3] != null)
+        if (x + 1 < mapSize.x && rooms[x, y].points.doorPoints[2] != null && rooms[x + 1, y] != null && rooms[x + 1, y].points.doorPoints[3] != null)
         {
-            GenerateRoom(rooms[x + 1, y], x + 1, y);
-            filledRooms[x + 1, y] = true;
+            rooms[x, y].points.doorPoints[2].GetComponent<Teleporter>().target = rooms[x + 1, y].points.doorPoints[3];
         }
 
         // Try Connect West
-        if (x - 1 >= 0 && rooms[x, y].points.doorPoints[3] != null && !filledRooms[x - 1, y] && rooms[x - 1, y] != null && rooms[x - 1, y].points.doorPoints[2] != null)
+        if (x - 1 >= 0 && rooms[x, y].points.doorPoints[3] != null && rooms[x - 1, y] != null && rooms[x - 1, y].points.doorPoints[2] != null)
         {
-            GenerateRoom(rooms[x - 1, y], x - 1, y);
-            filledRooms[x - 1, y] = true;
+            rooms[x, y].points.doorPoints[3].GetComponent<Teleporter>().target = rooms[x - 1, y].points.doorPoints[2];
         }
     }
 
@@ -102,6 +103,8 @@ public class Map : MonoBehaviour
     {
         Vector3 gridSpot = new Vector3((maxRoomSize.x * x) + (maxRoomSize.x / 2), 0, (maxRoomSize.y * y) + (maxRoomSize.y / 2));
 
-        Instantiate(room.room, gridSpot, Quaternion.identity, transform);
+        var newRoom = Instantiate(room.room, gridSpot, Quaternion.identity, transform);
+        room.room = newRoom;
+        room.points = newRoom.GetComponent<ConnectionPoints>();
     }
 }

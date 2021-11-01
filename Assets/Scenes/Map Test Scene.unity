@@ -246,8 +246,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapSize: {x: 5, y: 5}
-  maxRoomSize: {x: 5, y: 5}
-  roomPrefab: {fileID: 5075218328244901849, guid: 04d2542c63d82b141bffc67e6e3f48aa, type: 3}
+  maxRoomSize: {x: 300, y: 300}
+  roomPrefab: {fileID: 8075770976646760146, guid: 03683643cde78d2428ceb31bb74de138, type: 3}
 --- !u!4 &1320002691
 Transform:
   m_ObjectHideFlags: 0
