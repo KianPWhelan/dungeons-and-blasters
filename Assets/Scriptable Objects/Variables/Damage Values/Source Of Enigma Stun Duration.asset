@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f088ffb4a70f944d9b48f502281f171, type: 3}
   m_Name: Source Of Enigma Stun Duration
   m_EditorClassIdentifier: 
-  initialValue: 1
-  runtimeValue: 1
+  initialValue: 1.5
+  runtimeValue: 1.5

@@ -17,3 +17,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b4e22c857ab3dc4794685a0b8112c7f, type: 2}
   useOverwriteTag: 0
   overwriteTag: 
+  canCrit: 0
+  critOnCritBoxesOnly: 1
+  critChance: 1000
+  critMultiplier: 1.5
+  knockbackStrength: 4

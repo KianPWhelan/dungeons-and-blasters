@@ -271,7 +271,9 @@ MonoBehaviour:
   attackDuration: 2.5
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
-  spread: 7
+  ignoreParentRotation: 0
+  forceDetachFromParent: 0
+  spread: 5.5
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
   multiHitCooldown: 0
@@ -291,6 +293,7 @@ MonoBehaviour:
   isMine: 0
   accuracyOffset: {x: 0, y: 0, z: 0}
   rotater: {fileID: 0}
+  ownerId: 0
   speed: 50
   canGoThroughObjects: 0
   reevluateRotationAfterLocalPositionOffset: 0
