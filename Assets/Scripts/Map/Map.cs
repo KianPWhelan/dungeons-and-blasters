@@ -33,6 +33,29 @@ public class Map : MonoBehaviour
         AddRoom(roomPrefab, new Vector2Int(0, 0));
         AddRoom(roomPrefab, new Vector2Int(1, 0));
         AddRoom(roomPrefab, new Vector2Int(0, 1));
+        string mapJSon = JSONTools.SaveMapData(rooms, mapSize);
+        LoadMapFromJson(mapJSon);
+        // BuildMap();
+    }
+
+    public void LoadMapFromJson(string mapJson)
+    {
+        MapData mapData = JSONTools.LoadMapData(mapJson);
+        mapSize = mapData.mapSize;
+        rooms = new RoomContainer[mapSize.x, mapSize.y];
+        filledRooms = new bool[mapSize.x, mapSize.y];
+
+        for (int i = 0; i < mapSize.x; i++)
+        {
+            for(int j = 0; j < mapSize.y; j++)
+            {
+                if(mapData.map[i, j].prefabName != "empty")
+                {
+                    AddRoom(Resources.Load<GameObject>(mapData.map[i, j].prefabName), new Vector2Int(i, j));
+                }
+            }
+        }
+
         BuildMap();
     }
 
@@ -76,7 +99,6 @@ public class Map : MonoBehaviour
         // Try Connect North
         if (y + 1 < mapSize.y && rooms[x, y].points.doorPoints[0] != null && rooms[x, y + 1] != null && rooms[x, y + 1].points.doorPoints[1] != null)
         {
-            Debug.Log("Connecting " + x + " " + y + " to " + x + " " + (y+1));
             rooms[x, y].points.doorPoints[0].GetComponent<Teleporter>().target = rooms[x, y + 1].points.doorPoints[1];
         }
 
