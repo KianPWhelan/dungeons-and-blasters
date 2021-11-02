@@ -34,13 +34,13 @@ public class Map : MonoBehaviour
     {
         rooms = new RoomContainer[mapSize.x, mapSize.y];
         filledRooms = new bool[mapSize.x, mapSize.y];
-        List<GameObject> e = new List<GameObject>();
-        e.Add(Resources.Load<GameObject>("Ogre"));
-        AddRoom(roomPrefab, new Vector2Int(0, 0), 0, e);
-        AddRoom(roomPrefab, new Vector2Int(1, 0), 0, new List<GameObject>());
-        AddRoom(roomPrefab, new Vector2Int(0, 1), 0, new List<GameObject>());
-        string mapJSon = JSONTools.SaveMapData(rooms, mapSize);
-        LoadMapFromJson(mapJSon);
+        //List<GameObject> e = new List<GameObject>();
+        //e.Add(Resources.Load<GameObject>("Ogre"));
+        //AddRoom(roomPrefab, new Vector2Int(0, 0), 0, e);
+        //AddRoom(roomPrefab, new Vector2Int(1, 0), 0, new List<GameObject>());
+        //AddRoom(roomPrefab, new Vector2Int(0, 1), 0, new List<GameObject>());
+        //string mapJSon = JSONTools.SaveMapData(rooms, mapSize);
+        //LoadMapFromJson(mapJSon);
         //BuildMap();
         //rooms[0, 0].info.ActivateRoom();
     }

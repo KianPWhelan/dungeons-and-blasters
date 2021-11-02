@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Spawner
   - Particle System
+  - Room
   layers:
   - Default
   - TransparentFX

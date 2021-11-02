@@ -28,6 +28,26 @@ public class Room : MonoBehaviour
     public class SlotOption
     {
         public List<EnemySlot> slots = new List<EnemySlot>();
+
+        public Dictionary<SizeClasses, int> GetNumberOfSlotsPerSize()
+        {
+            Dictionary<SizeClasses, int> res = new Dictionary<SizeClasses, int>();
+
+            foreach(EnemySlot e in slots)
+            {
+                if(!res.ContainsKey(e.size))
+                {
+                    res.Add(e.size, 1);
+                }
+
+                else
+                {
+                    res[e.size]++;
+                }
+            }
+
+            return res;
+        }
     }
 
     public void PlaceEnemyInSlot(GameObject enemy, int slotIndex)

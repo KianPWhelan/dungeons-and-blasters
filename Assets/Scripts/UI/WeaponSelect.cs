@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using Com.OfTomorrowInc.DMShooter;
 
 public class WeaponSelect : MonoBehaviour
 {
@@ -29,17 +30,17 @@ public class WeaponSelect : MonoBehaviour
 
         dropdown.AddOptions(options);
         selection = weapons[0];
-        ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
-        hash.Add("weapon", selection.name);
-        PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+        //ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
+        Launcher.clientHash.Add("weapon", selection.name);
+        PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
     }
 
     public void ChangeSelection()
     {
         selection = weapons[dropdown.value];
-        ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
-        hash.Add("weapon", selection.name);
-        PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+        //ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
+        Launcher.clientHash["weapon"] = selection.name;
+        PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
     }
 
     public void OnDisable()

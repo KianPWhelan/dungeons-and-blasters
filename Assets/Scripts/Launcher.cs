@@ -27,6 +27,8 @@ namespace Com.OfTomorrowInc.DMShooter
         [SerializeField]
         private BoolVariable isDungeonMaster;
 
+        public static ExitGames.Client.Photon.Hashtable clientHash = new ExitGames.Client.Photon.Hashtable();
+
         #endregion
 
 

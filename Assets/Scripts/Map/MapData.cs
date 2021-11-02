@@ -5,6 +5,7 @@ using static Room;
 
 public class MapData
 {
+    public string name;
     public RoomData[,] map;
     public Vector2Int mapSize;
 }

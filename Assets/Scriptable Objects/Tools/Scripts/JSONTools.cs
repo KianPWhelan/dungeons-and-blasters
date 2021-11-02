@@ -20,11 +20,12 @@ public class JSONTools : ScriptableObject
         PrefabLoader.LoadEnemyPrefabBalanceData(fileName);
     }
 
-    public static string SaveMapData(RoomContainer[,] rooms, Vector2Int mapSize)
+    public static string SaveMapData(RoomContainer[,] rooms, Vector2Int mapSize, string name)
     {
         MapData mapData = new MapData();
         mapData.map = new RoomData[mapSize.x, mapSize.y];
         mapData.mapSize = mapSize;
+        mapData.name = name;
 
         for(int i = 0; i < mapSize.x; i++)
         {
@@ -44,7 +45,7 @@ public class JSONTools : ScriptableObject
 
         string mapJson = JsonConvert.SerializeObject(mapData);
 
-        // Debug.Log(mapJson);
+        Debug.Log(mapJson);
 
         return mapJson;
     }
