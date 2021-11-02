@@ -8,6 +8,8 @@ public class EnemyGeneric : MonoBehaviour
 {
     public Rarities rarity;
 
+    public SizeClasses size;
+
     [Tooltip("Identifier used for linking to database, DO NOT MODIFY")]
     public string uniqueId;
 

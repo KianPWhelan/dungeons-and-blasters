@@ -17,12 +17,12 @@ public class Map : MonoBehaviour
     public class RoomContainer
     {
         public GameObject room;
-        public ConnectionPoints points;
+        public Room info;
 
         public RoomContainer(GameObject room)
         {
             this.room = room;
-            points = room.GetComponent<ConnectionPoints>();
+            info = room.GetComponent<Room>();
         }
     }
 
@@ -33,9 +33,12 @@ public class Map : MonoBehaviour
         AddRoom(roomPrefab, new Vector2Int(0, 0));
         AddRoom(roomPrefab, new Vector2Int(1, 0));
         AddRoom(roomPrefab, new Vector2Int(0, 1));
-        string mapJSon = JSONTools.SaveMapData(rooms, mapSize);
-        LoadMapFromJson(mapJSon);
-        // BuildMap();
+        //rooms[0, 0].info.selection = rooms[0, 0].info.slotOptions[1];
+        //rooms[0, 0].info.PlaceEnemyInSlot(Resources.Load<GameObject>("Ogre"), 1);
+        //string mapJSon = JSONTools.SaveMapData(rooms, mapSize);
+        //LoadMapFromJson(mapJSon);
+        BuildMap();
+        rooms[0, 0].info.ActivateRoom();
     }
 
     public void LoadMapFromJson(string mapJson)
@@ -97,27 +100,27 @@ public class Map : MonoBehaviour
     private void ConnectNeighbors(int x, int y)
     {
         // Try Connect North
-        if (y + 1 < mapSize.y && rooms[x, y].points.doorPoints[0] != null && rooms[x, y + 1] != null && rooms[x, y + 1].points.doorPoints[1] != null)
+        if (y + 1 < mapSize.y && rooms[x, y].info.doorPoints[0] != null && rooms[x, y + 1] != null && rooms[x, y + 1].info.doorPoints[1] != null)
         {
-            rooms[x, y].points.doorPoints[0].GetComponent<Teleporter>().target = rooms[x, y + 1].points.doorPoints[1];
+            rooms[x, y].info.doorPoints[0].GetComponent<Teleporter>().target = rooms[x, y + 1].info.doorPoints[1];
         }
 
         // Try Connect South
-        if (y - 1 >= 0 && rooms[x, y].points.doorPoints[1] != null && rooms[x, y - 1] != null && rooms[x, y - 1].points.doorPoints[0] != null)
+        if (y - 1 >= 0 && rooms[x, y].info.doorPoints[1] != null && rooms[x, y - 1] != null && rooms[x, y - 1].info.doorPoints[0] != null)
         {
-            rooms[x, y].points.doorPoints[1].GetComponent<Teleporter>().target = rooms[x, y - 1].points.doorPoints[0];
+            rooms[x, y].info.doorPoints[1].GetComponent<Teleporter>().target = rooms[x, y - 1].info.doorPoints[0];
         }
 
         // Try Connect East
-        if (x + 1 < mapSize.x && rooms[x, y].points.doorPoints[2] != null && rooms[x + 1, y] != null && rooms[x + 1, y].points.doorPoints[3] != null)
+        if (x + 1 < mapSize.x && rooms[x, y].info.doorPoints[2] != null && rooms[x + 1, y] != null && rooms[x + 1, y].info.doorPoints[3] != null)
         {
-            rooms[x, y].points.doorPoints[2].GetComponent<Teleporter>().target = rooms[x + 1, y].points.doorPoints[3];
+            rooms[x, y].info.doorPoints[2].GetComponent<Teleporter>().target = rooms[x + 1, y].info.doorPoints[3];
         }
 
         // Try Connect West
-        if (x - 1 >= 0 && rooms[x, y].points.doorPoints[3] != null && rooms[x - 1, y] != null && rooms[x - 1, y].points.doorPoints[2] != null)
+        if (x - 1 >= 0 && rooms[x, y].info.doorPoints[3] != null && rooms[x - 1, y] != null && rooms[x - 1, y].info.doorPoints[2] != null)
         {
-            rooms[x, y].points.doorPoints[3].GetComponent<Teleporter>().target = rooms[x - 1, y].points.doorPoints[2];
+            rooms[x, y].info.doorPoints[3].GetComponent<Teleporter>().target = rooms[x - 1, y].info.doorPoints[2];
         }
     }
 
@@ -127,6 +130,6 @@ public class Map : MonoBehaviour
 
         var newRoom = Instantiate(room.room, gridSpot, Quaternion.identity, transform);
         room.room = newRoom;
-        room.points = newRoom.GetComponent<ConnectionPoints>();
+        room.info = newRoom.GetComponent<Room>();
     }
 }

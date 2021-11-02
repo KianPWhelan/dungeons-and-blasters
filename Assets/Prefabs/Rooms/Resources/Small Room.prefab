@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f05a6377407b409f640b6e28a5dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &1403740614292629227
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f05a6377407b409f640b6e28a5dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &1403740614624776862
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f05a6377407b409f640b6e28a5dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &1403740614982943235
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f05a6377407b409f640b6e28a5dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &1403740615287383684
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +354,30 @@ MonoBehaviour:
   - {fileID: 1403740614509456903}
   - {fileID: 1403740614624776862}
   - {fileID: 1403740614104788246}
+  slotOptions:
+  - slots:
+    - size: 2
+      location: {x: 0, y: 0, z: 0}
+      enemy: {fileID: 0}
+  - slots:
+    - size: 1
+      location: {x: 10, y: 0, z: 0}
+      enemy: {fileID: 0}
+    - size: 0
+      location: {x: -10, y: 0, z: 0}
+      enemy: {fileID: 0}
+  - slots:
+    - size: 0
+      location: {x: 10, y: 0, z: -5}
+      enemy: {fileID: 0}
+    - size: 0
+      location: {x: -10, y: 0, z: -5}
+      enemy: {fileID: 0}
+    - size: 0
+      location: {x: 0, y: 0, z: 5}
+      enemy: {fileID: 0}
+  selection:
+    slots: []
 --- !u!1 &4244729134519108228
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f05a6377407b409f640b6e28a5dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &8075770975290268899
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f05a6377407b409f640b6e28a5dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &8075770975368881478
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f05a6377407b409f640b6e28a5dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &8075770975905389256
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04f05a6377407b409f640b6e28a5dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &8075770976646760146
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +493,7 @@ GameObject:
   - component: {fileID: 8075770976646760147}
   - component: {fileID: 8075770976646760144}
   m_Layer: 0
-  m_Name: Medium Room
+  m_Name: Large Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -528,6 +532,38 @@ MonoBehaviour:
   - {fileID: 8075770975290268899}
   - {fileID: 8075770976206202364}
   - {fileID: 8075770975121840225}
+  slotOptions:
+  - slots:
+    - size: 2
+      location: {x: 0, y: 0, z: 0}
+      enemy: {fileID: 0}
+    - size: 1
+      location: {x: -35, y: 0, z: 0}
+      enemy: {fileID: 0}
+    - size: 1
+      location: {x: 35, y: 0, z: 0}
+      enemy: {fileID: 0}
+    - size: 0
+      location: {x: 0, y: 0, z: 20}
+      enemy: {fileID: 0}
+  - slots:
+    - size: 1
+      location: {x: 35, y: 0, z: 0}
+      enemy: {fileID: 0}
+    - size: 1
+      location: {x: -35, y: 0, z: 0}
+      enemy: {fileID: 0}
+    - size: 0
+      location: {x: 0, y: 0, z: 20}
+      enemy: {fileID: 0}
+    - size: 0
+      location: {x: 0, y: 0, z: -20}
+      enemy: {fileID: 0}
+    - size: 0
+      location: {x: 10, y: 0, z: 10}
+      enemy: {fileID: 0}
+  selection:
+    slots: []
 --- !u!1001 &8075770974529084274
 PrefabInstance:
   m_ObjectHideFlags: 0

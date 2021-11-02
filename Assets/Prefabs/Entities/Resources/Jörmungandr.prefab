@@ -750,6 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rarity: 4
+  size: 3
   uniqueId: 68908c7c-2f73-4a09-87bc-21167879fb5a
   aiModule: {fileID: 11400000, guid: 1b5fbc295f168504ab67626f81c92a9f, type: 2}
   targetType: Player
