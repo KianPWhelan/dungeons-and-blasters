@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3807866404001653411}
   - component: {fileID: 3807866404001653408}
   - component: {fileID: 3807866404001653409}
-  - component: {fileID: 3807866404001653405}
   - component: {fileID: 4829975092919131579}
+  - component: {fileID: 1858813395395320586}
   m_Layer: 2
-  m_Name: Test Flamethrower Projectile
+  m_Name: Flamethrower Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,59 +98,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3807866404001653405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807866404001653414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6220827a346c51341b08fcd61af5c4a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 11400000, guid: ccc9c2b917418ac4dbdd5b160d0bbe2d, type: 2}
-  subAttacks: []
-  subAttacksOnHit: 0
-  subAttacksOnEnd: 0
-  subAttacksAtSurfaceNormal: 0
-  attackDuration: 0.27
-  localStartingPosition: {x: 0, y: 0, z: 0}
-  localRotationPosition: {x: 0, y: 0, z: 0}
-  ignoreParentRotation: 0
-  forceDetachFromParent: 0
-  spread: 4
-  destroyOnHit: 0
-  canHitSameTargetMoreThanOnce: 0
-  multiHitCooldown: 0
-  applyEffectsOnEnd: 0
-  visualEndEffect: {fileID: 1644829574213772, guid: 85c3ef7f46fa1b54d8f86355a84eef3d, type: 3}
-  visualStartEffect: {fileID: 0}
-  visualStartEffectPositionOffset: {x: 0, y: 0, z: 0}
-  visualStartEffectRotationOffset: {x: 0, y: 0, z: 0}
-  validTag: 
-  startingTime: 0
-  hitList: []
-  parentId: 0
-  collisionNormal: {x: 0, y: 0, z: 0}
-  collisionPoint: {x: 0, y: 0, z: 0}
-  damageMod: 0
-  destination: {x: 0, y: 0, z: 0}
-  isMine: 0
-  accuracyOffset: {x: 0, y: 0, z: 0}
-  rotater: {fileID: 0}
-  ownerId: 0
-  speed: 50
-  canGoThroughObjects: 0
-  reevluateRotationAfterLocalPositionOffset: 0
-  homing: 0
-  homingStrength: 0
-  reevaluateHomingTargetConstantly: 0
-  bouncing: 0
-  numBounces: 0
-  bouncingStrength: 1
-  colliionDisableTime: 0.05
 --- !u!54 &4829975092919131579
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -167,6 +114,60 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1858813395395320586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3807866404001653414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b142e8113ac8424abc76da717a5a6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 11400000, guid: ccc9c2b917418ac4dbdd5b160d0bbe2d, type: 2}
+  subAttacks: []
+  subAttacksOnHit: 0
+  subAttacksOnEnd: 0
+  subAttacksAtSurfaceNormal: 0
+  attackDuration: 0
+  localStartingPosition: {x: 0, y: 0, z: 0}
+  localRotationPosition: {x: 0, y: 0, z: 0}
+  ignoreParentRotation: 0
+  forceDetachFromParent: 0
+  spread: 3
+  destroyOnHit: 0
+  canHitSameTargetMoreThanOnce: 0
+  multiHitCooldown: 0
+  applyEffectsOnEnd: 0
+  visualEndEffect: {fileID: 0}
+  visualStartEffect: {fileID: 0}
+  visualStartEffectPositionOffset: {x: 0, y: 0, z: 0}
+  visualStartEffectRotationOffset: {x: 0, y: 0, z: 0}
+  validTag: 
+  startingTime: 0
+  hitList: []
+  parentId: 0
+  collisionNormal: {x: 0, y: 0, z: 0}
+  collisionPoint: {x: 0, y: 0, z: 0}
+  damageMod: 0
+  destination: {x: 0, y: 0, z: 0}
+  isMine: 0
+  accuracyOffset: {x: 0, y: 0, z: 0}
+  rotater: {fileID: 0}
+  ownerId: 0
+  maxLength: 25
+  radius: 0.1
+  canGoThroughObjects: 0
+  piercing: 0
+  endOnPlayerStopAttacking: 1
+  voxelStaticBean: {fileID: 1956262708281050, guid: 62bbc0bb0d407c9459594989ed9c8ebb, type: 3}
+  followCaster: 1
+  reevluateRotationAfterLocalPositionOffset: 0
+  autoTarget: 0
+  homing: 0
+  reevaluateHomingTargetConstantly: 0
 --- !u!1001 &4592771231995255129
 PrefabInstance:
   m_ObjectHideFlags: 0
