@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Map;
+using static Room;
 using Newtonsoft.Json;
 
 public class JSONTools : ScriptableObject
@@ -31,17 +32,19 @@ public class JSONTools : ScriptableObject
             {
                 if (rooms[i, j] != null)
                 {
-                    mapData.map[i, j] = new RoomData(rooms[i, j].room.name);
+                    mapData.map[i, j] = new RoomData(rooms[i, j].room.name, rooms[i, j].slotChoice, GetEnemyNames(rooms[i, j].enemies));
                 }
 
                 else
                 {
-                    mapData.map[i, j] = new RoomData("empty");
+                    mapData.map[i, j] = new RoomData("empty", 0, new string[0]);
                 }
             }
         }
 
         string mapJson = JsonConvert.SerializeObject(mapData);
+
+        // Debug.Log(mapJson);
 
         return mapJson;
     }
@@ -51,5 +54,19 @@ public class JSONTools : ScriptableObject
         MapData mapData = JsonConvert.DeserializeObject<MapData>(jsonMap);
 
         return mapData;
+    }
+
+    private static string[] GetEnemyNames(List<GameObject> enemies)
+    {
+        string[] names = new string[enemies.Count];
+        int i = 0;
+
+        foreach(GameObject enemy in enemies)
+        {
+            names[i] = enemy.name;
+            i++;
+        }
+
+        return names;
     }
 }

@@ -18,11 +18,15 @@ public class Map : MonoBehaviour
     {
         public GameObject room;
         public Room info;
+        public int slotChoice;
+        public List<GameObject> enemies;
 
-        public RoomContainer(GameObject room)
+        public RoomContainer(GameObject room, int slotChoice, List<GameObject> enemies)
         {
             this.room = room;
             info = room.GetComponent<Room>();
+            this.slotChoice = slotChoice;
+            this.enemies = enemies;
         }
     }
 
@@ -30,15 +34,15 @@ public class Map : MonoBehaviour
     {
         rooms = new RoomContainer[mapSize.x, mapSize.y];
         filledRooms = new bool[mapSize.x, mapSize.y];
-        AddRoom(roomPrefab, new Vector2Int(0, 0));
-        AddRoom(roomPrefab, new Vector2Int(1, 0));
-        AddRoom(roomPrefab, new Vector2Int(0, 1));
-        //rooms[0, 0].info.selection = rooms[0, 0].info.slotOptions[1];
-        //rooms[0, 0].info.PlaceEnemyInSlot(Resources.Load<GameObject>("Ogre"), 1);
-        //string mapJSon = JSONTools.SaveMapData(rooms, mapSize);
-        //LoadMapFromJson(mapJSon);
-        BuildMap();
-        rooms[0, 0].info.ActivateRoom();
+        List<GameObject> e = new List<GameObject>();
+        e.Add(Resources.Load<GameObject>("Ogre"));
+        AddRoom(roomPrefab, new Vector2Int(0, 0), 0, e);
+        AddRoom(roomPrefab, new Vector2Int(1, 0), 0, new List<GameObject>());
+        AddRoom(roomPrefab, new Vector2Int(0, 1), 0, new List<GameObject>());
+        string mapJSon = JSONTools.SaveMapData(rooms, mapSize);
+        LoadMapFromJson(mapJSon);
+        //BuildMap();
+        //rooms[0, 0].info.ActivateRoom();
     }
 
     public void LoadMapFromJson(string mapJson)
@@ -54,17 +58,19 @@ public class Map : MonoBehaviour
             {
                 if(mapData.map[i, j].prefabName != "empty")
                 {
-                    AddRoom(Resources.Load<GameObject>(mapData.map[i, j].prefabName), new Vector2Int(i, j));
+                    AddRoom(Resources.Load<GameObject>(mapData.map[i, j].prefabName), new Vector2Int(i, j), mapData.map[i, j].slotOption, LoadEnemyPrefabs(mapData.map[i, j].enemies));
+                    // LoadSlotsIntoRoom(rooms[i, j], mapData.map[i, j]);
                 }
             }
         }
 
         BuildMap();
+        rooms[0, 0].info.ActivateRoom();
     }
 
-    public void AddRoom(GameObject room, Vector2Int location)
+    public void AddRoom(GameObject room, Vector2Int location, int slotChoice, List<GameObject> enemies)
     {
-        rooms[location.x, location.y] = new RoomContainer(room);
+        rooms[location.x, location.y] = new RoomContainer(room, slotChoice, enemies);
     }
 
     public void RemoveRoom(Vector2Int location)
@@ -131,5 +137,25 @@ public class Map : MonoBehaviour
         var newRoom = Instantiate(room.room, gridSpot, Quaternion.identity, transform);
         room.room = newRoom;
         room.info = newRoom.GetComponent<Room>();
+        room.info.selection = room.info.slotOptions[room.slotChoice];
+        int i = 0;
+
+        foreach(GameObject enemy in room.enemies)
+        {
+            room.info.PlaceEnemyInSlot(enemy, i);
+            i++;
+        }
+    }
+
+    private List<GameObject> LoadEnemyPrefabs(string[] enemies)
+    {
+        List<GameObject> prefabs = new List<GameObject>();
+
+        foreach(string enemy in enemies)
+        {
+            prefabs.Add(Resources.Load<GameObject>(enemy));
+        }
+
+        return prefabs;
     }
 }

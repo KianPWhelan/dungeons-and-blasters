@@ -2,15 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GlobalConstants : ScriptableObject
+public class GlobalConstants
 {
-    [SerializeField]
-    private float roomSpawnEnemiesDelayField;
-
-    public static float roomSpawnEnemiesDelay;
-
-    public void OnEnable()
-    {
-        roomSpawnEnemiesDelay = roomSpawnEnemiesDelayField;
-    }
+    public static float roomSpawnEnemiesDelay = 5;
 }
