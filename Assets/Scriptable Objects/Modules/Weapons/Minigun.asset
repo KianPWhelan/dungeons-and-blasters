@@ -24,6 +24,6 @@ MonoBehaviour:
   hasSpinup: 1
   spinupTime: 0.4
   canOverheat: 1
-  overheatTime: 8
+  overheatTime: 6
   overheatRecoveryTime: 3
   isOverheated: 0

@@ -21,6 +21,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
   - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
   - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
+  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
+  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
+  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
+  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
   cooldowns:
   - 1.1
   - 1.1
@@ -28,7 +32,15 @@ MonoBehaviour:
   - 1.1
   - 1.1
   - 1.1
+  - 1.1
+  - 1.1
+  - 1.1
+  - 1.1
   delays:
+  - 0
+  - 0
+  - 0
+  - 0
   - 0
   - 0
   - 0
