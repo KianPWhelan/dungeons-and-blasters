@@ -29,6 +29,9 @@ public class Controller : MonoBehaviourPunCallbacks
 
     public GameEvent stopAttackingEvent;
 
+    [HideInInspector]
+    public float timeOfLastTp;
+
     // private GameManager gameManager;
 
     public void Awake()
