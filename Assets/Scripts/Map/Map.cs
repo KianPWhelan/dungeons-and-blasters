@@ -106,7 +106,7 @@ public class Map : MonoBehaviour
     {
         foreach(RoomContainer room in rooms)
         {
-            if(room.info.isStartingRoom)
+            if(room != null && room.info.isStartingRoom)
             {
                 return room.info.spawnPoint.transform;
             }
