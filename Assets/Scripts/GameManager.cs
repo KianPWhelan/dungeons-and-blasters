@@ -23,6 +23,8 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public BoolVariable isDungeonMaster;
 
+        public Map mapGen;
+
         public float gameTime;
 
         public FloatVariable time;
@@ -80,14 +82,20 @@ namespace Com.OfTomorrowInc.DMShooter
             {
                 Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                PhotonNetwork.Instantiate(this.playerPrefab.name, playerSpawnLocation, Quaternion.identity, 0);
+                var newPlayer = PhotonNetwork.Instantiate(this.playerPrefab.name, playerSpawnLocation, Quaternion.identity, 0);
+                players.Add(newPlayer);
             }
             else if (Controller.LocalPlayerInstance == null && DungeonMasterController.LocalPlayerInstance == null && isDungeonMaster.runtimeValue)
             {
                 Debug.LogFormat("We are Instantiating DungeonMaster from {0}", Application.loadedLevelName);
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                var newPlayer = PhotonNetwork.Instantiate(this.dungeonMasterPrefab.name, new Vector3(0f, 50f, 0f), Quaternion.identity, 0);
-                players.Add(newPlayer);
+                PhotonNetwork.Instantiate(this.dungeonMasterPrefab.name, new Vector3(0f, 50f, 0f), Quaternion.identity, 0);
+            }
+
+            if(DungeonMasterController.LocalPlayerInstance != null)
+            {
+                photonView.RPC("GenerateMap", RpcTarget.All, photonView.Owner.CustomProperties["map"]);
+                photonView.RPC("SendPlayersToStartPoint", RpcTarget.All);
             }
         }
 
@@ -146,6 +154,29 @@ namespace Com.OfTomorrowInc.DMShooter
         public void GlobalCloseRoom()
         {
             PhotonNetwork.LeaveRoom();
+        }
+
+        [PunRPC]
+        public void GenerateMap(string mapJson)
+        {
+            mapGen.LoadMapFromJson(mapJson);
+            mapGen.BuildMap();
+        }
+
+        [PunRPC]
+        public void SendPlayersToStartPoint()
+        {
+            if(Controller.LocalPlayerInstance == null)
+            {
+                return;
+            }
+
+            Transform spawnPoint = mapGen.GetSpawnPoint();
+
+            if(spawnPoint != null)
+            {
+                Controller.LocalPlayerInstance.transform.position = spawnPoint.transform.position;
+            }
         }
 
         public void LeaveRoom()

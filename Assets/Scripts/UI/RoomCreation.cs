@@ -111,6 +111,13 @@ public class RoomCreation : MonoBehaviour
 
     public void UpdateSlotOptionSelection()
     {
+        if(selectedRoom.GetComponent<Room>().slotOptions.Count <= 0)
+        {
+            slotSelector.ClearOptions();
+            enemySelector.ClearOptions();
+            return;
+        }
+
         selectedSlotOption = selectedRoom.GetComponent<Room>().slotOptions[slotOptionsSelector.value];
         SetDefaultEnemies();
 

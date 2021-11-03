@@ -8,6 +8,10 @@ public class Room : MonoBehaviour
     [Tooltip("Order is North South East West")]
     public GameObject[] doorPoints = new GameObject[4];
 
+    public bool isStartingRoom;
+
+    public GameObject spawnPoint;
+
     [Tooltip("Slot options for enemies. Do not preset the enemy game object")]
     public List<SlotOption> slotOptions = new List<SlotOption>();
 
@@ -52,6 +56,11 @@ public class Room : MonoBehaviour
 
     public void PlaceEnemyInSlot(GameObject enemy, int slotIndex)
     {
+        if(selection == null || selection.slots.Count <= 0)
+        {
+            return;
+        }
+
         var enemySize = enemy.GetComponent<EnemyGeneric>().size;
 
         if (enemySize != selection.slots[slotIndex].size)
