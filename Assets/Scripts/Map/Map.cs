@@ -63,9 +63,6 @@ public class Map : MonoBehaviour
                 }
             }
         }
-
-        BuildMap();
-        rooms[0, 0].info.ActivateRoom();
     }
 
     public void AddRoom(GameObject room, Vector2Int location, int slotChoice, List<GameObject> enemies)
@@ -103,6 +100,19 @@ public class Map : MonoBehaviour
         }
     }
 
+    public Transform GetSpawnPoint()
+    {
+        foreach(RoomContainer room in rooms)
+        {
+            if(room.info.isStartingRoom)
+            {
+                return room.info.spawnPoint.transform;
+            }
+        }
+
+        return null;
+    }
+
     private void ConnectNeighbors(int x, int y)
     {
         // Try Connect North
@@ -137,7 +147,12 @@ public class Map : MonoBehaviour
         var newRoom = Instantiate(room.room, gridSpot, Quaternion.identity, transform);
         room.room = newRoom;
         room.info = newRoom.GetComponent<Room>();
-        room.info.selection = room.info.slotOptions[room.slotChoice];
+
+        if(room.info.slotOptions.Count > 0)
+        {
+            room.info.selection = room.info.slotOptions[room.slotChoice];
+        }
+        
         int i = 0;
 
         foreach(GameObject enemy in room.enemies)
