@@ -152,6 +152,11 @@ namespace Com.OfTomorrowInc.DMShooter
             photonView.RPC("ActivateRoom", RpcTarget.All, gridLocation.x, gridLocation.y);
         }
 
+        public void SendRoomDeactivation(Vector2Int gridLocation)
+        {
+            photonView.RPC("DeactivateRoom", RpcTarget.All, gridLocation.x, gridLocation.y);
+        }
+
         [PunRPC]
         public void SetTimeAll(float time)
         {
@@ -179,6 +184,12 @@ namespace Com.OfTomorrowInc.DMShooter
             Debug.Log(mapGen.rooms);
             Debug.Log(mapGen.rooms[x, y].info);
             mapGen.rooms[x, y].info.ActivateRoom();
+        }
+
+        [PunRPC]
+        public void DeactivateRoom(int x, int y)
+        {
+            mapGen.rooms[x, y].info.DeactivateRoom();
         }
 
         [PunRPC]

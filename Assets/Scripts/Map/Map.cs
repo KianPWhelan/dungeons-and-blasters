@@ -167,8 +167,6 @@ public class Map : MonoBehaviour
         Vector3 gridSpot = new Vector3((maxRoomSize.x * x) + (maxRoomSize.x / 2), 0, (maxRoomSize.y * y) + (maxRoomSize.y / 2));
 
         var newRoom = Instantiate(room.room, gridSpot, Quaternion.identity, transform);
-        Debug.Log("x: " + x + "y: " + y);
-        Debug.Log(newRoom);
         room.room = newRoom;
         room.info = newRoom.GetComponent<Room>();
         room.info.gridSlot = new Vector2Int(x, y);

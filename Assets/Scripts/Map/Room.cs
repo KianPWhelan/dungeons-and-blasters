@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Com.OfTomorrowInc.DMShooter;
 
 public class Room : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class Room : MonoBehaviour
     public Vector2Int gridSlot;
 
     private bool hasActivated;
+
+    private List<GameObject> activeEnemies = new List<GameObject>();
 
     [System.Serializable]
     public class EnemySlot
@@ -98,6 +101,17 @@ public class Room : MonoBehaviour
         StartCoroutine(StartSpawnSequence());
     }
 
+    public void DeactivateRoom()
+    {
+        foreach (GameObject door in doorPoints)
+        {
+            if (door != null && door.GetComponent<Teleporter>().target != null)
+            {
+                door.SetActive(true);
+            }
+        }
+    }
+
     //public void SendActivationCommand()
     //{
     //    photonView.RPC("ActivationCommand", RpcTarget.All);
@@ -124,14 +138,42 @@ public class Room : MonoBehaviour
             if(slot.enemy != null)
             {
                 Debug.Log("Spawning");
-                PhotonNetwork.Instantiate(slot.enemy.name, transform.position + slot.location, Quaternion.identity);
+                var newEnemy = PhotonNetwork.Instantiate(slot.enemy.name, transform.position + slot.location, Quaternion.identity);
+                activeEnemies.Add(newEnemy);
             }
         }
+
+        StartCoroutine(ReactivatePortalsWhenEnemiesDefeated());
     }
 
     private IEnumerator StartSpawnSequence()
     {
         yield return new WaitForSeconds(GlobalConstants.roomSpawnEnemiesDelay);
         SpawnAll();
+    }
+
+    private IEnumerator ReactivatePortalsWhenEnemiesDefeated()
+    {
+        Debug.Log("Starting coroutine");
+        while(!AllEnemiesDead())
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        Debug.Log("All enemies are dead");
+        GameManager.single.SendRoomDeactivation(gridSlot);
+    }
+
+    private bool AllEnemiesDead()
+    {
+        foreach(GameObject enemy in activeEnemies)
+        {
+            if(enemy != null)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
