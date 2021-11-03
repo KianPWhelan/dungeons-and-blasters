@@ -409,6 +409,7 @@ MonoBehaviour:
   isDungeonMaster: {fileID: 11400000, guid: c05388661befd1c43bede5bf6ab5253c, type: 2}
   nametag: {fileID: 324889787488541542}
   stopAttackingEvent: {fileID: 11400000, guid: bf42ad198389bb9418356b89a901b4ab, type: 2}
+  timeOfLastTp: 0
 --- !u!114 &-3016581500895162571
 MonoBehaviour:
   m_ObjectHideFlags: 0
