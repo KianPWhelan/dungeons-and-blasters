@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rarity: 1
+  size: 0
   uniqueId: c85c95a3-cea3-4b4a-9811-f97e81579c1a
   aiModule: {fileID: 11400000, guid: 421631e078d1a2c4f90bbb3f043a3029, type: 2}
   targetType: Player

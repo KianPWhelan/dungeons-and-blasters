@@ -30,10 +30,11 @@ public class Map : MonoBehaviour
         }
     }
 
-    public void Start()
+    public void Awake()
     {
         rooms = new RoomContainer[mapSize.x, mapSize.y];
         filledRooms = new bool[mapSize.x, mapSize.y];
+        Debug.Log("Starting map");
         //List<GameObject> e = new List<GameObject>();
         //e.Add(Resources.Load<GameObject>("Ogre"));
         //AddRoom(roomPrefab, new Vector2Int(0, 0), 0, e);
@@ -67,6 +68,7 @@ public class Map : MonoBehaviour
 
     public void AddRoom(GameObject room, Vector2Int location, int slotChoice, List<GameObject> enemies)
     {
+        Debug.Log("Adding room " + room.name + " at " + location);
         rooms[location.x, location.y] = new RoomContainer(room, slotChoice, enemies);
     }
 
@@ -121,10 +123,20 @@ public class Map : MonoBehaviour
             rooms[x, y].info.doorPoints[0].GetComponent<Teleporter>().target = rooms[x, y + 1].info.doorPoints[1];
         }
 
+        else
+        {
+            rooms[x, y].info.doorPoints[0].SetActive(false);
+        }
+
         // Try Connect South
         if (y - 1 >= 0 && rooms[x, y].info.doorPoints[1] != null && rooms[x, y - 1] != null && rooms[x, y - 1].info.doorPoints[0] != null)
         {
             rooms[x, y].info.doorPoints[1].GetComponent<Teleporter>().target = rooms[x, y - 1].info.doorPoints[0];
+        }
+
+        else
+        {
+            rooms[x, y].info.doorPoints[1].SetActive(false);
         }
 
         // Try Connect East
@@ -133,10 +145,20 @@ public class Map : MonoBehaviour
             rooms[x, y].info.doorPoints[2].GetComponent<Teleporter>().target = rooms[x + 1, y].info.doorPoints[3];
         }
 
+        else
+        {
+            rooms[x, y].info.doorPoints[2].SetActive(false);
+        }
+
         // Try Connect West
         if (x - 1 >= 0 && rooms[x, y].info.doorPoints[3] != null && rooms[x - 1, y] != null && rooms[x - 1, y].info.doorPoints[2] != null)
         {
             rooms[x, y].info.doorPoints[3].GetComponent<Teleporter>().target = rooms[x - 1, y].info.doorPoints[2];
+        }
+
+        else
+        {
+            rooms[x, y].info.doorPoints[3].SetActive(false);
         }
     }
 
@@ -145,8 +167,11 @@ public class Map : MonoBehaviour
         Vector3 gridSpot = new Vector3((maxRoomSize.x * x) + (maxRoomSize.x / 2), 0, (maxRoomSize.y * y) + (maxRoomSize.y / 2));
 
         var newRoom = Instantiate(room.room, gridSpot, Quaternion.identity, transform);
+        Debug.Log("x: " + x + "y: " + y);
+        Debug.Log(newRoom);
         room.room = newRoom;
         room.info = newRoom.GetComponent<Room>();
+        room.info.gridSlot = new Vector2Int(x, y);
 
         if(room.info.slotOptions.Count > 0)
         {

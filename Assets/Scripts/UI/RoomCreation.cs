@@ -214,7 +214,7 @@ public class RoomCreation : MonoBehaviour
     {
         foreach(GameObject obj in allAssets)
         {
-            if(obj.TryGetComponent(out EnemyGeneric e) && !e.doNotUseAsAbility)
+            if (obj.TryGetComponent(out EnemyGeneric e) && e.slottable)
             {
                 enemyPrefabs.Add(obj);
             }

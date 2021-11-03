@@ -839,6 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rarity: 0
+  size: 0
   uniqueId: ac3cd396-bb6c-4943-a01b-e19abce8be4a
   aiModule: {fileID: 11400000, guid: 4ebcd45dcd5a7fb41b628eeadb73248c, type: 2}
   targetType: Player
@@ -861,7 +862,8 @@ MonoBehaviour:
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
-  doNotUseAsAbility: 0
+  doNotUseAsAbility: 1
+  slottable: 1
 --- !u!114 &9006593377615435943
 MonoBehaviour:
   m_ObjectHideFlags: 0

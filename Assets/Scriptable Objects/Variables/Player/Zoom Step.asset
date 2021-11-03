@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f088ffb4a70f944d9b48f502281f171, type: 3}
   m_Name: Zoom Step
   m_EditorClassIdentifier: 
-  initialValue: 7
-  runtimeValue: 7
+  initialValue: 10
+  runtimeValue: 10

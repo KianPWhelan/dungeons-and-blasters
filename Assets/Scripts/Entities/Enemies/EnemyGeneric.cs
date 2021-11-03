@@ -68,6 +68,8 @@ public class EnemyGeneric : MonoBehaviour
 
     public bool doNotUseAsAbility;
 
+    public bool slottable;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -103,15 +105,7 @@ public class EnemyGeneric : MonoBehaviour
 
         agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
 
-        if(targetType == "Player")
-        {
-            target = FindClosestVisiblePlayer();
-        }
-
-        else
-        {
-            target = Helpers.FindClosestVisible(gameObject.transform, targetType);
-        }
+        target = Helpers.FindClosestVisible(gameObject.transform, targetType);
         
         // allyTarget = Helpers.FindClosestVisible(gameObject.transform, allyTargetType);
         aiModule.Tick(gameObject, target, allyTarget, agent, movement);

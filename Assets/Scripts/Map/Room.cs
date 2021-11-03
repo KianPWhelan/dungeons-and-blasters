@@ -18,6 +18,11 @@ public class Room : MonoBehaviour
     [HideInInspector]
     public SlotOption selection;
 
+    [HideInInspector]
+    public Vector2Int gridSlot;
+
+    private bool hasActivated;
+
     [System.Serializable]
     public class EnemySlot
     {
@@ -74,21 +79,52 @@ public class Room : MonoBehaviour
 
     public void ActivateRoom()
     {
+        if(hasActivated)
+        {
+            return;
+        }
+
+        Debug.Log("Activating " + name);
+        hasActivated = true;
+
+        foreach(GameObject door in doorPoints)
+        {
+            if(door != null)
+            {
+                door.SetActive(false);
+            }
+        }
+
         StartCoroutine(StartSpawnSequence());
     }
 
+    //public void SendActivationCommand()
+    //{
+    //    photonView.RPC("ActivationCommand", RpcTarget.All);
+    //}
+
+    //[PunRPC]
+    //public void ActivationCommand()
+    //{
+    //    ActivateRoom();
+    //}
+
     private void SpawnAll()
     {
-        //if(!DungeonMasterController.LocalPlayerInstance.GetPhotonView().IsMine)
-        //{
-        //    return;
-        //}
+        if (DungeonMasterController.LocalPlayerInstance == null)
+        {
+            Debug.Log("Not DM");
+            return;
+        }
 
-        foreach(EnemySlot slot in selection.slots)
+        Debug.Log("DM");
+
+        foreach (EnemySlot slot in selection.slots)
         {
             if(slot.enemy != null)
             {
-                Instantiate(slot.enemy, transform.position + slot.location, Quaternion.identity);
+                Debug.Log("Spawning");
+                PhotonNetwork.Instantiate(slot.enemy.name, transform.position + slot.location, Quaternion.identity);
             }
         }
     }

@@ -449,7 +449,8 @@ MonoBehaviour:
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
-  doNotUseAsAbility: 0
+  doNotUseAsAbility: 1
+  slottable: 1
 --- !u!114 &5002929920589353483
 MonoBehaviour:
   m_ObjectHideFlags: 0

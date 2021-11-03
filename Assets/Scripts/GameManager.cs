@@ -43,6 +43,8 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public static List<GameObject> players;
 
+        public static GameManager single;
+
 
         /// <summary>
         /// Called when the local player left the room. We need to load the launcher scene.
@@ -60,6 +62,7 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public void Awake()
         {
+            single = this;
             LoadPrefabData();
         }
 
@@ -144,6 +147,11 @@ namespace Com.OfTomorrowInc.DMShooter
             }
         }
 
+        public void SendRoomActivation(Vector2Int gridLocation)
+        {
+            photonView.RPC("ActivateRoom", RpcTarget.All, gridLocation.x, gridLocation.y);
+        }
+
         [PunRPC]
         public void SetTimeAll(float time)
         {
@@ -159,21 +167,37 @@ namespace Com.OfTomorrowInc.DMShooter
         [PunRPC]
         public void GenerateMap(string mapJson)
         {
+            Debug.Log("Loading Map");
             mapGen.LoadMapFromJson(mapJson);
             mapGen.BuildMap();
         }
 
         [PunRPC]
+        public void ActivateRoom(int x, int y)
+        {
+            Debug.Log(mapGen);
+            Debug.Log(mapGen.rooms);
+            Debug.Log(mapGen.rooms[x, y].info);
+            mapGen.rooms[x, y].info.ActivateRoom();
+        }
+
+        [PunRPC]
         public void SendPlayersToStartPoint()
         {
-            if(Controller.LocalPlayerInstance == null)
+            Transform spawnPoint = mapGen.GetSpawnPoint();
+
+            if (Controller.LocalPlayerInstance == null)
             {
+                if(spawnPoint != null)
+                {
+                    DungeonMasterController.LocalPlayerInstance.transform.position = spawnPoint.transform.position + new Vector3(0f, 50f, 0f);
+                }
+
                 return;
             }
 
-            Transform spawnPoint = mapGen.GetSpawnPoint();
 
-            if(spawnPoint != null)
+            if (spawnPoint != null)
             {
                 Controller.LocalPlayerInstance.transform.position = spawnPoint.transform.position;
             }
