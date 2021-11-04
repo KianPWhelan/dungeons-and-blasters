@@ -39,6 +39,7 @@ public class GridGenerator : MonoBehaviour
                 Node node = new Node();
                 // Add data to node
                 node.tile = newTile;
+                node.gridLocation = new Vector2Int(i, j);
                 nodes[i, j] = node;
             }
         }
@@ -58,6 +59,21 @@ public class GridGenerator : MonoBehaviour
         {
             var newWallLeft = Instantiate(wallPrefab, new Vector3(-offset / 2, 0, i * offset), Quaternion.FromToRotation(Vector3.forward, Vector3.left), transform);
             var newWallRight = Instantiate(wallPrefab, new Vector3((gridSize.x * offset) - (offset / 2), 0, i * offset), Quaternion.FromToRotation(Vector3.forward, Vector3.left), transform);
+        }
+    }
+
+    public void AddObjectToNode(GameObject tile, GameObject obj)
+    {
+        for(int i = 0; i < gridSize.x; i++)
+        {
+            for(int j = 0; j < gridSize.y; j++)
+            {
+                if(nodes[i, j].tile == tile && nodes[i, j].obj == null)
+                {
+                    Debug.Log("Found tile at node " + i + " " + j);
+                    nodes[i, j].obj = obj;
+                }
+            }
         }
     }
 }
