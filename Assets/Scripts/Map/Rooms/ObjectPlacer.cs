@@ -10,10 +10,18 @@ public class ObjectPlacer : MonoBehaviour
 
     public GridGenerator grid;
 
+    private Vector3[] rotations = new Vector3[4];
+
+    [SerializeField]
+    private int currentRotation = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rotations[0] = Vector3.forward;
+        rotations[1] = Vector3.right;
+        rotations[2] = -Vector3.forward;
+        rotations[3] = Vector3.left;
     }
 
     // Update is called once per frame
@@ -22,6 +30,26 @@ public class ObjectPlacer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             PlaceObjectAtNode();
+        }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            currentRotation++;
+
+            if(currentRotation > 3)
+            {
+                currentRotation = 0;
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            currentRotation--;
+
+            if(currentRotation < 0)
+            {
+                currentRotation = 3;
+            }
         }
     }
 
@@ -34,7 +62,7 @@ public class ObjectPlacer : MonoBehaviour
         {
             if(hit.collider.tag == "Ground")
             {
-                grid.AddObjectToNode(hit.collider.gameObject, objectToPlace, hit.transform.position);
+                grid.AddObjectToNode(hit.collider.gameObject, objectToPlace, hit.transform.position, rotations[currentRotation]);
             }
         }
     }

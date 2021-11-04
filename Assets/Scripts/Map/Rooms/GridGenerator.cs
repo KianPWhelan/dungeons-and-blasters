@@ -62,7 +62,7 @@ public class GridGenerator : MonoBehaviour
         }
     }
 
-    public void AddObjectToNode(GameObject tile, GameObject obj, Vector3 position)
+    public void AddObjectToNode(GameObject tile, GameObject obj, Vector3 position, Vector3 rotation)
     {
         for(int i = 0; i < gridSize.x; i++)
         {
@@ -71,13 +71,13 @@ public class GridGenerator : MonoBehaviour
                 if(nodes[i, j].tile == tile)
                 {
                     Debug.Log("Found tile at node " + i + " " + j);
-                    SetObjectOrientationAndOccuption(new Vector2Int(i, j), obj, position);
+                    SetObjectOrientationAndOccuption(new Vector2Int(i, j), obj, position, rotation);
                 }
             }
         }
     }
 
-    private void SetObjectOrientationAndOccuption(Vector2Int startSpot, GameObject obj, Vector3 position)
+    private void SetObjectOrientationAndOccuption(Vector2Int startSpot, GameObject obj, Vector3 position, Vector3 rotation)
     {
         int x = startSpot.x;
         int y = startSpot.y;
@@ -86,13 +86,27 @@ public class GridGenerator : MonoBehaviour
 
         List<Vector2Int> nodesToFill = new List<Vector2Int>();
 
-        for(int i = 0; i < objInfo.tilesOccupied.x; i++)
+        Vector2Int occupation = Orientator(objInfo.tilesOccupied, rotation);
+
+        if(occupation.x < 0)
         {
-            for(int j = 0; j < objInfo.tilesOccupied.y; j++)
+            x += occupation.x + 1;
+        }
+
+        if(occupation.y < 0)
+        {
+            y += occupation.y + 1;
+        }
+
+        for(int i = x; i < x + Mathf.Abs(occupation.x); i++)
+        {
+            for(int j = y; j < y + Mathf.Abs(occupation.y); j++)
             {
-                if(nodes[x + i, y + j].obj == null)
+                Debug.Log(i + " " + j);
+                if(nodes[i, j].obj == null)
                 {
-                    nodesToFill.Add(new Vector2Int(x + i, y + j));
+                    Debug.Log("Occupying tile at " + i + " " + j);
+                    nodesToFill.Add(new Vector2Int(i, j));
                 }
 
                 else
@@ -107,6 +121,26 @@ public class GridGenerator : MonoBehaviour
             nodes[loc.x, loc.y].obj = obj;
         }
 
-        var newObj = Instantiate(obj, position, Quaternion.identity, transform);
+        var newObj = Instantiate(obj, position, Quaternion.LookRotation(rotation, Vector3.up), transform);
+    }
+
+    private Vector2Int Orientator(Vector2Int tilesOccupied, Vector3 rotation)
+    {
+        if(rotation == Vector3.right)
+        {
+            return new Vector2Int(tilesOccupied.y, -tilesOccupied.x);
+        }
+
+        if(rotation == -Vector3.forward)
+        {
+            return new Vector2Int(-tilesOccupied.x, -tilesOccupied.y);
+        }
+
+        if(rotation == Vector3.left)
+        {
+            return new Vector2Int(-tilesOccupied.y, tilesOccupied.x);
+        }
+
+        return tilesOccupied;
     }
 }
