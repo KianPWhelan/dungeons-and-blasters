@@ -34,8 +34,7 @@ public class ObjectPlacer : MonoBehaviour
         {
             if(hit.collider.tag == "Ground")
             {
-                var newObj = Instantiate(objectToPlace, hit.transform.position, Quaternion.identity, transform);
-                grid.AddObjectToNode(hit.collider.gameObject, newObj);
+                grid.AddObjectToNode(hit.collider.gameObject, objectToPlace, hit.transform.position);
             }
         }
     }
