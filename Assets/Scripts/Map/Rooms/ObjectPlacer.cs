@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ObjectPlacer : MonoBehaviour
 {
@@ -12,10 +13,18 @@ public class ObjectPlacer : MonoBehaviour
 
     public bool enemyPlaceMode;
 
+    public GameObject objectButtonPrefab;
+
+    public GameObject objectButtonContentSection;
+
     private Vector3[] rotations = new Vector3[4];
 
     [SerializeField]
     private int currentRotation = 0;
+
+    private List<GameObject> enemyPrefabs = new List<GameObject>();
+
+    private List<GameObject> objectPrefabs = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +33,7 @@ public class ObjectPlacer : MonoBehaviour
         rotations[1] = Vector3.right;
         rotations[2] = -Vector3.forward;
         rotations[3] = Vector3.left;
+        LoadObjectSelectors();
     }
 
     // Update is called once per frame
@@ -62,6 +72,12 @@ public class ObjectPlacer : MonoBehaviour
 
     public void PlaceObjectAtNode()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            // we're over a UI element... peace out
+            return;
+        }
+
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit h;
 
@@ -102,6 +118,12 @@ public class ObjectPlacer : MonoBehaviour
 
     public void RemoveObjectAtNode()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            // we're over a UI element... peace out
+            return;
+        }
+
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit h;
 
@@ -123,6 +145,51 @@ public class ObjectPlacer : MonoBehaviour
                     Debug.Log(h.collider.gameObject);
                     grid.RemoveEnemy(h.collider.gameObject);
                 }
+            }
+        }
+    }
+
+    private void LoadObjectSelectors()
+    {
+        LoadObjectPrefabs();
+
+        foreach(GameObject obj in objectPrefabs)
+        {
+            var button = Instantiate(objectButtonPrefab, objectButtonContentSection.transform);
+            var os = button.GetComponent<ObjectSelector>();
+            os.objectPlacer = this;
+            os.obj = obj;
+        }
+    }
+
+    private void LoadEnemyPrefabs()
+    {
+        var prefabs = Resources.LoadAll("", typeof(GameObject));
+        // Debug.Log(prefabs.Length);
+
+        for (int i = 0; i < prefabs.Length; i++)
+        {
+            GameObject p = (GameObject)prefabs[i];
+            // Debug.Log(p.name);
+            if (p.TryGetComponent(out RoomPlaceholder c))
+            {
+                enemyPrefabs.Add(p);
+            }
+        }
+    }
+
+    private void LoadObjectPrefabs()
+    {
+        var prefabs = Resources.LoadAll("", typeof(GameObject));
+        // Debug.Log(prefabs.Length);
+
+        for (int i = 0; i < prefabs.Length; i++)
+        {
+            GameObject p = (GameObject)prefabs[i];
+            // Debug.Log(p.name);
+            if (p.TryGetComponent(out RoomObject c))
+            {
+                objectPrefabs.Add(p);
             }
         }
     }
