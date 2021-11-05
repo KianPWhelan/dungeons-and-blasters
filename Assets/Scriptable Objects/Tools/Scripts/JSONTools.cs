@@ -97,6 +97,10 @@ public class JSONTools : ScriptableObject
                 if(node.obj != null && node.isObjOrigin)
                 {
                     objName = node.obj.name;
+                    int index = objName.IndexOf("(Clone)");
+                    objName = (index < 0)
+                        ? objName
+                        : objName.Remove(index, "(Clone)".Length);
                     isObjOrigin = true;
                     objOrientation = node.objOrientation;
                 }

@@ -24,9 +24,9 @@ public class RoomGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //GenerateGrid();
-        //GenerateWalls();
-        LoadRoomFromJson(File.ReadAllText("room.txt"));
+        GenerateGrid();
+        GenerateWalls();
+        //LoadRoomFromJson(File.ReadAllText("room.txt"));
     }
 
     // Update is called once per frame
@@ -130,7 +130,7 @@ public class RoomGenerator : MonoBehaviour
 
                     if(nodes[i, j].obj != null)
                     {
-                        PlaceEnemyOnTopOfObject(nodes[i, j], newEnemy);
+                        RelocateEnemyToCorrectHeight(nodes[i, j], newEnemy);
                     }
 
                     nodes[i, j].enemy = newEnemy;
@@ -145,7 +145,7 @@ public class RoomGenerator : MonoBehaviour
 
         if (nodes[gridLocation.x, gridLocation.y].obj != null)
         {
-            PlaceEnemyOnTopOfObject(nodes[gridLocation.x, gridLocation.y], newEnemy);
+            RelocateEnemyToCorrectHeight(nodes[gridLocation.x, gridLocation.y], newEnemy);
         }
 
         nodes[gridLocation.x, gridLocation.y].enemy = newEnemy;
@@ -171,7 +171,33 @@ public class RoomGenerator : MonoBehaviour
         SetObjectOrientationAndOccuption(gridLocation, obj, nodes[gridLocation.x, gridLocation.y].tile.transform.position, rotation);
     }
 
-    private void PlaceEnemyOnTopOfObject(Node node, GameObject enemy)
+    public void RemoveObject(GameObject obj)
+    {
+        List<Node> foundNodes = new List<Node>();
+
+        for(int i = 0; i < gridSize.x; i++)
+        {
+            for(int j = 0; j < gridSize.y; j++)
+            {
+                if(nodes[i, j].obj == obj)
+                {
+                    Debug.Log("Found node with obj at " + i + " " + j);
+                    foundNodes.Add(nodes[i, j]);
+                }
+            }
+        }
+
+        foreach(Node node in foundNodes)
+        {
+            node.obj = null;
+            node.isObjOrigin = false;
+            node.objOrientation = Vector3.zero;
+        }
+
+        Destroy(obj);
+    }
+
+    private void RelocateEnemyToCorrectHeight(Node node, GameObject enemy)
     {
         RaycastHit hit;
 
@@ -223,14 +249,15 @@ public class RoomGenerator : MonoBehaviour
         nodes[startSpot.x, startSpot.y].isObjOrigin = true;
         nodes[startSpot.x, startSpot.y].objOrientation = rotation;
 
-        foreach(Vector2Int loc in nodesToFill)
-        {
-            nodes[loc.x, loc.y].obj = obj;
-        }
-
         var newObj = Instantiate(obj, position, Quaternion.LookRotation(rotation, Vector3.up), transform);
         newObj.isStatic = true;
         newObj.transform.GetChild(0).gameObject.isStatic = true;
+
+        foreach (Vector2Int loc in nodesToFill)
+        {
+            nodes[loc.x, loc.y].obj = newObj;
+        }
+
         // Batch(obj, newObj);
         StaticBatchingUtility.Combine(gameObject);
     }

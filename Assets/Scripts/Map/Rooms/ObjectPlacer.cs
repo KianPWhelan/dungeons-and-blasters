@@ -34,6 +34,11 @@ public class ObjectPlacer : MonoBehaviour
             PlaceObjectAtNode();
         }
 
+        if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            RemoveObjectAtNode();
+        }
+
         if(Input.GetKeyDown(KeyCode.E))
         {
             currentRotation++;
@@ -91,6 +96,21 @@ public class ObjectPlacer : MonoBehaviour
             if(hit.collider.tag == "Ground" && !hit.collider.transform.parent.TryGetComponent(out RoomObject r))
             {
                 grid.AddEnemyToNode(hit.collider.gameObject, objectToPlace, hit.transform.position);
+            }
+        }
+    }
+
+    public void RemoveObjectAtNode()
+    {
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit h;
+
+        if (!enemyPlaceMode && Physics.Raycast(ray, out h, 1000))
+        {
+            if (!enemyPlaceMode && h.collider.tag == "Ground" && h.collider.transform.parent.gameObject.TryGetComponent(out RoomObject r))
+            {
+                Debug.Log(h.collider.transform.parent.gameObject);
+                grid.RemoveObject(h.collider.transform.parent.gameObject);
             }
         }
     }
