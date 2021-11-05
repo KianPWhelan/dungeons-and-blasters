@@ -8,7 +8,9 @@ public class ObjectPlacer : MonoBehaviour
 
     public GameObject objectToPlace;
 
-    public GridGenerator grid;
+    public RoomGenerator grid;
+
+    public bool enemyPlaceMode;
 
     private Vector3[] rotations = new Vector3[4];
 
@@ -56,13 +58,39 @@ public class ObjectPlacer : MonoBehaviour
     public void PlaceObjectAtNode()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        RaycastHit h;
 
-        if (Physics.Raycast(ray, out hit, 1000))
+        if (!enemyPlaceMode && Physics.Raycast(ray, out h, 1000))
         {
-            if(hit.collider.tag == "Ground")
+            if(!enemyPlaceMode && h.collider.tag == "Ground")
             {
-                grid.AddObjectToNode(hit.collider.gameObject, objectToPlace, hit.transform.position, rotations[currentRotation]);
+                grid.AddObjectToNode(h.collider.gameObject, objectToPlace, h.transform.position, rotations[currentRotation]);
+            }
+
+            //else if(enemyPlaceMode && hit.collider.tag == "Ground")
+            //{
+            //    bool isObject = false;
+
+            //    if(hit.transform.parent.TryGetComponent(out RoomObject r))
+            //    {
+            //        Debug.Log("Is object");
+            //        isObject = true;
+            //        Debug.Log(hit.collider.transform.parent.gameObject);
+            //        grid.AddEnemyToNode(hit.collider.transform.parent.gameObject, objectToPlace, hit.transform.position, isObject);
+            //    }
+
+            //    grid.AddEnemyToNode(hit.collider.gameObject, objectToPlace, hit.transform.position, isObject);
+            //}
+            return;
+        }
+
+        RaycastHit[] hits = Physics.RaycastAll(ray, 1000);
+
+        foreach(RaycastHit hit in hits)
+        {
+            if(hit.collider.tag == "Ground" && !hit.collider.transform.parent.TryGetComponent(out RoomObject r))
+            {
+                grid.AddEnemyToNode(hit.collider.gameObject, objectToPlace, hit.transform.position);
             }
         }
     }

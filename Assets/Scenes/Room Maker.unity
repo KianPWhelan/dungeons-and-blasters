@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 1757356093}
   - component: {fileID: 1757356094}
   m_Layer: 0
-  m_Name: Grid Generator
+  m_Name: Room Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

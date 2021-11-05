@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridGenerator : MonoBehaviour
+public class RoomGenerator : MonoBehaviour
 {
     public Vector2Int gridSize;
 
@@ -73,6 +73,28 @@ public class GridGenerator : MonoBehaviour
         }
     }
 
+    public void AddEnemyToNode(GameObject tile, GameObject enemy, Vector3 position)
+    {
+        for (int i = 0; i < gridSize.x; i++)
+        {
+            for (int j = 0; j < gridSize.y; j++)
+            {
+                if (nodes[i, j].tile == tile && nodes[i, j].enemy == null)
+                {
+                    Debug.Log("Found tile at node " + i + " " + j);
+                    var newEnemy = Instantiate(enemy, position, Quaternion.identity, transform);
+
+                    if(nodes[i, j].obj != null)
+                    {
+                        PlaceEnemyOnTopOfObject(nodes[i, j], newEnemy);
+                    }
+
+                    nodes[i, j].enemy = newEnemy;
+                }
+            }
+        }
+    }
+
     public void AddObjectToNode(GameObject tile, GameObject obj, Vector3 position, Vector3 rotation)
     {
         for(int i = 0; i < gridSize.x; i++)
@@ -85,6 +107,16 @@ public class GridGenerator : MonoBehaviour
                     SetObjectOrientationAndOccuption(new Vector2Int(i, j), obj, position, rotation);
                 }
             }
+        }
+    }
+
+    private void PlaceEnemyOnTopOfObject(Node node, GameObject enemy)
+    {
+        RaycastHit hit;
+
+        if(Physics.Raycast(node.tile.transform.position + (Vector3.up * 50), Vector3.down, out hit, 1000))
+        {
+            enemy.transform.position = hit.point;
         }
     }
 
@@ -163,13 +195,13 @@ public class GridGenerator : MonoBehaviour
     {
         if(batches.ContainsKey(prefab))
         {
-            batches[prefab].Add(newObj);
+            batches[prefab].Add(newObj.transform.GetChild(0).gameObject);
         }
 
         else
         {
             List<GameObject> newList = new List<GameObject>();
-            newList.Add(newObj);
+            newList.Add(newObj.transform.GetChild(0).gameObject);
             batches.Add(prefab, newList);
         }
 
