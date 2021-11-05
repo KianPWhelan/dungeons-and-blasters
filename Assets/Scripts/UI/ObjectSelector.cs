@@ -9,6 +9,8 @@ public class ObjectSelector : MonoBehaviour
 
     public ObjectPlacer objectPlacer;
 
+    public bool isEnemy;
+
     public void Start()
     {
         transform.GetComponentInChildren<Text>().text = obj.name;
@@ -17,5 +19,15 @@ public class ObjectSelector : MonoBehaviour
     public void SetCurrentObject()
     {
         objectPlacer.objectToPlace = obj;
+
+        if(isEnemy)
+        {
+            objectPlacer.enemyPlaceMode = true;
+        }
+
+        else
+        {
+            objectPlacer.enemyPlaceMode = false;
+        }
     }
 }

@@ -34,6 +34,7 @@ public class ObjectPlacer : MonoBehaviour
         rotations[2] = -Vector3.forward;
         rotations[3] = Vector3.left;
         LoadObjectSelectors();
+        LoadEnemySelectors();
     }
 
     // Update is called once per frame
@@ -159,6 +160,20 @@ public class ObjectPlacer : MonoBehaviour
             var os = button.GetComponent<ObjectSelector>();
             os.objectPlacer = this;
             os.obj = obj;
+        }
+    }
+
+    private void LoadEnemySelectors()
+    {
+        LoadEnemyPrefabs();
+
+        foreach(GameObject enemy in enemyPrefabs)
+        {
+            var button = Instantiate(objectButtonPrefab, objectButtonContentSection.transform);
+            var os = button.GetComponent<ObjectSelector>();
+            os.objectPlacer = this;
+            os.obj = enemy;
+            os.isEnemy = true;
         }
     }
 
