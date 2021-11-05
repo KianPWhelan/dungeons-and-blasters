@@ -23,7 +23,7 @@ public class JSONTools : ScriptableObject
     public static string SaveMapData(RoomContainer[,] rooms, Vector2Int mapSize, string name)
     {
         MapData mapData = new MapData();
-        mapData.map = new RoomData[mapSize.x, mapSize.y];
+        mapData.map = new RoomDataDeprecated[mapSize.x, mapSize.y];
         mapData.mapSize = mapSize;
         mapData.name = name;
 
@@ -33,12 +33,12 @@ public class JSONTools : ScriptableObject
             {
                 if (rooms[i, j] != null)
                 {
-                    mapData.map[i, j] = new RoomData(rooms[i, j].room.name, rooms[i, j].slotChoice, GetEnemyNames(rooms[i, j].enemies));
+                    mapData.map[i, j] = new RoomDataDeprecated(rooms[i, j].room.name, rooms[i, j].slotChoice, GetEnemyNames(rooms[i, j].enemies));
                 }
 
                 else
                 {
-                    mapData.map[i, j] = new RoomData("empty", 0, new string[0]);
+                    mapData.map[i, j] = new RoomDataDeprecated("empty", 0, new string[0]);
                 }
             }
         }
@@ -69,5 +69,51 @@ public class JSONTools : ScriptableObject
         }
 
         return names;
+    }
+
+    public static string SaveRoomData(RoomGenerator room)
+    {
+        RoomData roomData = new RoomData();
+
+        roomData.name = room.name;
+        roomData.gridSize = room.gridSize;
+        roomData.offset = room.offset;
+
+        roomData.nodes = new NodeData[room.gridSize.x * room.gridSize.y];
+
+        int count = 0;
+
+        for(int i = 0; i < room.gridSize.x; i++)
+        {
+            for(int j = 0; j < room.gridSize.y; j++)
+            {
+                Node node = room.nodes[i, j];
+
+                string objName = "empty";
+                string enemyName = "empty";
+
+                if(node.obj != null)
+                {
+                    objName = node.obj.name;
+                }
+
+                if(node.enemy != null)
+                {
+                    enemyName = (string)node.enemy.name.Clone();
+                    int index = enemyName.IndexOf("(Clone)");
+                    enemyName = (index < 0)
+                        ? enemyName
+                        : enemyName.Remove(index, "(Clone)".Length);
+                }
+
+                roomData.nodes[count] = new NodeData(node.gridLocation, objName, enemyName);
+                count++;
+            }
+        }
+
+        string roomJson = JsonConvert.SerializeObject(roomData);
+
+        Debug.Log(roomJson);
+        return roomJson;
     }
 }

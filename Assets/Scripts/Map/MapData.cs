@@ -6,17 +6,17 @@ using static Room;
 public class MapData
 {
     public string name;
-    public RoomData[,] map;
+    public RoomDataDeprecated[,] map;
     public Vector2Int mapSize;
 }
 
-public class RoomData
+public class RoomDataDeprecated
 {
     public string prefabName;
     public int slotOption;
     public string[] enemies;
 
-    public RoomData(string prefabName, int slotOption, string[] enemies)
+    public RoomDataDeprecated(string prefabName, int slotOption, string[] enemies)
     {
         this.prefabName = prefabName;
         this.slotOption = slotOption;

@@ -14,7 +14,11 @@ public class RoomGenerator : MonoBehaviour
 
     public GameObject wallPrefab;
 
+    public string name;
+
     private Dictionary<GameObject, List<GameObject>> batches = new Dictionary<GameObject, List<GameObject>>();
+
+    public bool save;
 
     // Start is called before the first frame update
     void Awake()
@@ -26,7 +30,16 @@ public class RoomGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(save)
+        {
+            SaveRoom();
+            save = false;
+        }
+    }
+
+    public void SaveRoom()
+    {
+        JSONTools.SaveRoomData(this);
     }
 
     public void GenerateGrid()
