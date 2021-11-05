@@ -203,6 +203,21 @@ public class RoomGenerator : MonoBehaviour
         Destroy(obj);
     }
 
+    public void RemoveEnemy(GameObject enemy)
+    {
+        for(int i = 0; i < gridSize.x; i++)
+        {
+            for(int j = 0; j < gridSize.y; j++)
+            {
+                if(nodes[i, j].enemy == enemy)
+                {
+                    nodes[i, j].enemy = null;
+                    Destroy(enemy);
+                }
+            }
+        }
+    }
+
     private void RelocateEnemyToCorrectHeight(Node node, GameObject enemy)
     {
         RaycastHit hit;

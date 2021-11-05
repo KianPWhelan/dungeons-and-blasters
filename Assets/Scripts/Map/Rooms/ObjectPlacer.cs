@@ -113,5 +113,17 @@ public class ObjectPlacer : MonoBehaviour
                 grid.RemoveObject(h.collider.transform.parent.gameObject);
             }
         }
+
+        else
+        {
+            if(Physics.Raycast(ray, out h, 1000))
+            {
+                if(h.collider.gameObject.TryGetComponent(out RoomPlaceholder r))
+                {
+                    Debug.Log(h.collider.gameObject);
+                    grid.RemoveEnemy(h.collider.gameObject);
+                }
+            }
+        }
     }
 }
