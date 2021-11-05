@@ -14,6 +14,8 @@ public class GridGenerator : MonoBehaviour
 
     public GameObject wallPrefab;
 
+    private Dictionary<GameObject, List<GameObject>> batches = new Dictionary<GameObject, List<GameObject>>();
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,6 +38,7 @@ public class GridGenerator : MonoBehaviour
             for(int j = 0; j < gridSize.y; j++)
             {
                 var newTile = Instantiate(tilePrefab, new Vector3(i * offset, 0, j * offset), tilePrefab.transform.rotation, transform);
+                newTile.isStatic = true;
                 Node node = new Node();
                 // Add data to node
                 node.tile = newTile;
@@ -52,6 +55,10 @@ public class GridGenerator : MonoBehaviour
         {
             var newWallTop = Instantiate(wallPrefab, new Vector3(i * offset, 0, (gridSize.y * offset) - (offset / 2)), Quaternion.identity, transform);
             var newWallBot = Instantiate(wallPrefab, new Vector3(i * offset, 0, -offset / 2), Quaternion.identity, transform);
+            newWallTop.isStatic = true;
+            newWallTop.transform.GetChild(0).gameObject.isStatic = true;
+            newWallBot.isStatic = true;
+            newWallBot.transform.GetChild(0).gameObject.isStatic = true;
         }
 
         // Generate along sides
@@ -59,6 +66,10 @@ public class GridGenerator : MonoBehaviour
         {
             var newWallLeft = Instantiate(wallPrefab, new Vector3(-offset / 2, 0, i * offset), Quaternion.FromToRotation(Vector3.forward, Vector3.left), transform);
             var newWallRight = Instantiate(wallPrefab, new Vector3((gridSize.x * offset) - (offset / 2), 0, i * offset), Quaternion.FromToRotation(Vector3.forward, Vector3.left), transform);
+            newWallLeft.isStatic = true;
+            newWallLeft.transform.GetChild(0).gameObject.isStatic = true;
+            newWallRight.isStatic = true;
+            newWallRight.transform.GetChild(0).gameObject.isStatic = true;
         }
     }
 
@@ -122,6 +133,10 @@ public class GridGenerator : MonoBehaviour
         }
 
         var newObj = Instantiate(obj, position, Quaternion.LookRotation(rotation, Vector3.up), transform);
+        newObj.isStatic = true;
+        newObj.transform.GetChild(0).gameObject.isStatic = true;
+        // Batch(obj, newObj);
+        StaticBatchingUtility.Combine(gameObject);
     }
 
     private Vector2Int Orientator(Vector2Int tilesOccupied, Vector3 rotation)
@@ -142,5 +157,22 @@ public class GridGenerator : MonoBehaviour
         }
 
         return tilesOccupied;
+    }
+
+    private void Batch(GameObject prefab, GameObject newObj)
+    {
+        if(batches.ContainsKey(prefab))
+        {
+            batches[prefab].Add(newObj);
+        }
+
+        else
+        {
+            List<GameObject> newList = new List<GameObject>();
+            newList.Add(newObj);
+            batches.Add(prefab, newList);
+        }
+
+        StaticBatchingUtility.Combine(batches[prefab].ToArray(), gameObject);
     }
 }
