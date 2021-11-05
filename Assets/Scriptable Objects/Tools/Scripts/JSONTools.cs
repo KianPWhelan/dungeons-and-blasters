@@ -91,10 +91,14 @@ public class JSONTools : ScriptableObject
 
                 string objName = "empty";
                 string enemyName = "empty";
+                bool isObjOrigin = false;
+                Vector3 objOrientation = Vector3.zero;
 
-                if(node.obj != null)
+                if(node.obj != null && node.isObjOrigin)
                 {
                     objName = node.obj.name;
+                    isObjOrigin = true;
+                    objOrientation = node.objOrientation;
                 }
 
                 if(node.enemy != null)
@@ -106,7 +110,7 @@ public class JSONTools : ScriptableObject
                         : enemyName.Remove(index, "(Clone)".Length);
                 }
 
-                roomData.nodes[count] = new NodeData(node.gridLocation, objName, enemyName);
+                roomData.nodes[count] = new NodeData(node.gridLocation, objName, isObjOrigin, objOrientation, enemyName);
                 count++;
             }
         }
@@ -115,5 +119,10 @@ public class JSONTools : ScriptableObject
 
         Debug.Log(roomJson);
         return roomJson;
+    }
+
+    public static RoomData LoadRoomDataFromJson(string roomJson)
+    {
+        return JsonConvert.DeserializeObject<RoomData>(roomJson);
     }
 }

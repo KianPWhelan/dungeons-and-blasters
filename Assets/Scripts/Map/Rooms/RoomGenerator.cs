@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class RoomGenerator : MonoBehaviour
@@ -23,8 +24,9 @@ public class RoomGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        GenerateGrid();
-        GenerateWalls();
+        //GenerateGrid();
+        //GenerateWalls();
+        LoadRoomFromJson(File.ReadAllText("room.txt"));
     }
 
     // Update is called once per frame
@@ -39,7 +41,36 @@ public class RoomGenerator : MonoBehaviour
 
     public void SaveRoom()
     {
-        JSONTools.SaveRoomData(this);
+        string res = JSONTools.SaveRoomData(this);
+        File.WriteAllText("room.txt", res);
+    }
+
+    public void LoadRoomFromJson(string roomJson)
+    {
+        Debug.Log(roomJson);
+        var roomData = JSONTools.LoadRoomDataFromJson(roomJson);
+
+        gridSize = roomData.gridSize;
+        name = roomData.name;
+
+        GenerateGrid();
+        GenerateWalls();
+
+        foreach(NodeData node in roomData.nodes)
+        {
+            if(node.isObjOrigin)
+            {
+                AddObjectToNode(node.gridLocation, Resources.Load<GameObject>("Objects/" + node.obj), node.objOrientation);
+            }
+        }
+
+        foreach(NodeData node in roomData.nodes)
+        {
+            if(node.enemy != "empty")
+            {
+                AddEnemyToNode(node.gridLocation, Resources.Load<GameObject>("RoomPlaceholders/" + node.enemy));
+            }
+        }
     }
 
     public void GenerateGrid()
@@ -108,6 +139,18 @@ public class RoomGenerator : MonoBehaviour
         }
     }
 
+    public void AddEnemyToNode(Vector2Int gridLocation, GameObject enemy)
+    {
+        var newEnemy = Instantiate(enemy, nodes[gridLocation.x, gridLocation.y].tile.transform.position, Quaternion.identity, transform);
+
+        if (nodes[gridLocation.x, gridLocation.y].obj != null)
+        {
+            PlaceEnemyOnTopOfObject(nodes[gridLocation.x, gridLocation.y], newEnemy);
+        }
+
+        nodes[gridLocation.x, gridLocation.y].enemy = newEnemy;
+    }
+
     public void AddObjectToNode(GameObject tile, GameObject obj, Vector3 position, Vector3 rotation)
     {
         for(int i = 0; i < gridSize.x; i++)
@@ -121,6 +164,11 @@ public class RoomGenerator : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void AddObjectToNode(Vector2Int gridLocation, GameObject obj, Vector3 rotation)
+    {
+        SetObjectOrientationAndOccuption(gridLocation, obj, nodes[gridLocation.x, gridLocation.y].tile.transform.position, rotation);
     }
 
     private void PlaceEnemyOnTopOfObject(Node node, GameObject enemy)
@@ -171,6 +219,9 @@ public class RoomGenerator : MonoBehaviour
                 }
             }
         }
+
+        nodes[startSpot.x, startSpot.y].isObjOrigin = true;
+        nodes[startSpot.x, startSpot.y].objOrientation = rotation;
 
         foreach(Vector2Int loc in nodesToFill)
         {
