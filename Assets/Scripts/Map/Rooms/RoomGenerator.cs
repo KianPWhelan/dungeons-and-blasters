@@ -174,6 +174,7 @@ public class RoomGenerator : MonoBehaviour
     public void RemoveObject(GameObject obj)
     {
         List<Node> foundNodes = new List<Node>();
+        obj.SetActive(false);
 
         for(int i = 0; i < gridSize.x; i++)
         {
@@ -192,6 +193,11 @@ public class RoomGenerator : MonoBehaviour
             node.obj = null;
             node.isObjOrigin = false;
             node.objOrientation = Vector3.zero;
+
+            if(node.enemy != null)
+            {
+                RelocateEnemyToCorrectHeight(node, node.enemy);
+            }
         }
 
         Destroy(obj);
