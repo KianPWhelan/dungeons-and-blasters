@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3807866404001653405}
   - component: {fileID: 4829975092919131579}
   m_Layer: 2
-  m_Name: Minigun Bullet
+  m_Name: Sniper Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.5}
   m_Children:
-  - {fileID: 7151623357279615462}
+  - {fileID: 5373288278965830936}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -110,17 +110,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6220827a346c51341b08fcd61af5c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 11400000, guid: f79463cf7a3852b48b3a13d3e850f35e, type: 2}
+  attack: {fileID: 11400000, guid: b61d840bdd8b6de4e9988e372360c6c0, type: 2}
   subAttacks: []
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
   subAttacksAtSurfaceNormal: 0
-  attackDuration: 2.5
+  attackDuration: 15
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
   ignoreParentRotation: 0
   forceDetachFromParent: 0
-  spread: 4
+  spread: 0
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
   multiHitCooldown: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   accuracyOffset: {x: 0, y: 0, z: 0}
   rotater: {fileID: 0}
   ownerId: 0
-  speed: 50
+  speed: 100
   canGoThroughObjects: 0
   reevluateRotationAfterLocalPositionOffset: 0
   homing: 0
@@ -167,7 +167,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1001 &7147315830441721036
+--- !u!1001 &5376795842375041074
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -184,15 +184,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4493069458638122, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4493069458638122, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4493069458638122, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4493069458638122, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -237,7 +237,7 @@ PrefabInstance:
     - target: {fileID: 114047230355301454, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
       propertyPath: prefabSound
       value: 
-      objectReference: {fileID: 6137451349687365925, guid: 0ed3a8363243a034daf171d3b24eda23, type: 3}
+      objectReference: {fileID: 6137451349687365925, guid: 3e4c832b071b3d841a5d23242d942b52, type: 3}
     - target: {fileID: 199088780372426232, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -256,8 +256,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
---- !u!4 &7151623357279615462 stripped
+--- !u!4 &5373288278965830936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4493069458638122, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
-  m_PrefabInstance: {fileID: 7147315830441721036}
+  m_PrefabInstance: {fileID: 5376795842375041074}
   m_PrefabAsset: {fileID: 0}

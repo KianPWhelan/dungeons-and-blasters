@@ -16,16 +16,18 @@ MonoBehaviour:
   rarity: 0
   attacks:
   - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
-  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
-  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
-  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
-  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
-  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
-  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
-  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
-  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
-  - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
+  - {fileID: 11400000, guid: 766fcbde40e2a93429f754de6b9e7471, type: 2}
+  - {fileID: 11400000, guid: 766fcbde40e2a93429f754de6b9e7471, type: 2}
+  - {fileID: 11400000, guid: 766fcbde40e2a93429f754de6b9e7471, type: 2}
+  - {fileID: 11400000, guid: 766fcbde40e2a93429f754de6b9e7471, type: 2}
+  - {fileID: 11400000, guid: 766fcbde40e2a93429f754de6b9e7471, type: 2}
+  - {fileID: 11400000, guid: 766fcbde40e2a93429f754de6b9e7471, type: 2}
+  - {fileID: 11400000, guid: 766fcbde40e2a93429f754de6b9e7471, type: 2}
+  - {fileID: 11400000, guid: 766fcbde40e2a93429f754de6b9e7471, type: 2}
+  - {fileID: 11400000, guid: 766fcbde40e2a93429f754de6b9e7471, type: 2}
+  - {fileID: 11400000, guid: f7a76ac262dbbb34d9e3db0f18b64432, type: 2}
   cooldowns:
+  - 1.1
   - 1.1
   - 1.1
   - 1.1
@@ -47,6 +49,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0.6
   animation: {fileID: 0}
   hasSpinup: 0
   spinupTime: 0

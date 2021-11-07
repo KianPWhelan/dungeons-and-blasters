@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -174,7 +174,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &331413
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -384,7 +384,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &8023017
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -594,7 +594,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &10012524
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -995,7 +995,7 @@ MonoBehaviour:
   isDoor: 1
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &12753909
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1109,7 +1109,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &13081787
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &18200667
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1908,7 +1908,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &28379271
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2402,7 +2402,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &36034621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2800,7 +2800,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &46277337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3389,7 +3389,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &51491152
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3504,7 +3504,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &51652018
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3713,7 +3713,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &52563424
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3829,7 +3829,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &53207892
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4229,7 +4229,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &59097313
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4534,7 +4534,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &65298461
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4744,7 +4744,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &68933567
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5429,7 +5429,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &90774276
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5829,7 +5829,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &101529718
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5944,7 +5944,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &107283078
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6153,7 +6153,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &114951570
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6553,7 +6553,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &123012968
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6668,7 +6668,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &123020095
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6878,7 +6878,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &128402619
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7278,7 +7278,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &134630707
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7487,7 +7487,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &138108705
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8362,7 +8362,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &156140546
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8477,7 +8477,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &156313569
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8592,7 +8592,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &158302057
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8897,7 +8897,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &163182516
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9201,7 +9201,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &166475809
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9411,7 +9411,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &170496062
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9525,7 +9525,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &172380119
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9830,7 +9830,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &181814988
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9945,7 +9945,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &183204809
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10060,7 +10060,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &183667115
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10270,7 +10270,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &184448630
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10765,7 +10765,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &193307874
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10879,7 +10879,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &195140882
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10994,7 +10994,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &196705545
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11583,7 +11583,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &208845062
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11888,7 +11888,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &216010152
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12193,7 +12193,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &221689759
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12307,7 +12307,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &222002437
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12517,7 +12517,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &223966889
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12821,7 +12821,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &229215638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12936,7 +12936,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &230121075
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13146,7 +13146,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &235330002
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13259,7 +13259,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &236000115
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13374,7 +13374,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &238686752
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13549,11 +13549,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6158585124440715376, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6158585124440715376, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7869192461862288813, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_IsActive
@@ -13561,7 +13561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8639724338631328462, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9070468601821801538, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_Name
@@ -13569,7 +13569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9070468601821801538, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9070468601821801585, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: sceneViewId
@@ -13577,7 +13577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9070468601821801593, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9070468601821801593, guid: 21f436b9b54fc8a4780de814da3c63b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14051,7 +14051,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &242556838
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14355,7 +14355,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &246076757
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14754,7 +14754,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &254198372
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14962,7 +14962,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &257630523
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15077,7 +15077,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &257886122
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15666,7 +15666,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &264988954
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15781,7 +15781,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &265041907
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15895,7 +15895,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &268096808
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16010,7 +16010,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &269943708
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21127,7 +21127,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &280784571
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21241,7 +21241,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &281838685
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21356,7 +21356,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &282557375
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21566,7 +21566,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &283489840
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21871,7 +21871,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &299780657
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21986,7 +21986,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &300303793
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22385,7 +22385,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &316718980
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22975,7 +22975,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &328628365
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23090,7 +23090,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &329105028
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23300,7 +23300,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &330711915
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23795,7 +23795,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &339468184
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24100,7 +24100,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &342053335
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24405,7 +24405,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &343766365
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24614,7 +24614,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &345430146
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24824,7 +24824,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &352774391
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25127,7 +25127,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &356745907
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25337,7 +25337,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &358788799
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25736,7 +25736,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &364979089
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25946,7 +25946,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &368435949
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26250,7 +26250,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &375782511
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26651,7 +26651,7 @@ MonoBehaviour:
   isDoor: 1
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &381818119
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26765,7 +26765,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &382654824
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26880,7 +26880,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &384405594
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26994,7 +26994,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &384677485
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27109,7 +27109,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &387322324
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27224,7 +27224,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &387337424
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27529,7 +27529,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &403220661
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27929,7 +27929,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &414233892
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28045,7 +28045,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 1
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &415729074
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28635,7 +28635,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &424518757
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28750,7 +28750,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &425417668
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28864,7 +28864,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &427046774
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28978,7 +28978,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &428840795
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29093,7 +29093,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &433739083
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29305,7 +29305,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &441640665
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29514,7 +29514,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &446517139
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29628,7 +29628,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &449770768
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30028,7 +30028,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &455271614
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30524,7 +30524,7 @@ MonoBehaviour:
   isDoor: 1
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &463260764
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30733,7 +30733,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &465958311
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31228,7 +31228,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &472470483
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31436,7 +31436,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &474269228
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31646,7 +31646,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &479069134
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31761,7 +31761,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &481687384
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31876,7 +31876,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &485561026
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31990,7 +31990,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &486109286
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32580,7 +32580,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &493717402
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32884,7 +32884,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &509832963
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32999,7 +32999,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &512743846
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33399,7 +33399,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &519589183
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34274,7 +34274,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &527729064
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34672,7 +34672,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &532255290
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34976,7 +34976,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &536086621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35851,7 +35851,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &551042902
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36156,7 +36156,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &556581433
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36271,7 +36271,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &559173837
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36385,7 +36385,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &561547901
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36594,7 +36594,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &572821571
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36805,7 +36805,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 1
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &585101971
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36920,7 +36920,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &586544493
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37035,7 +37035,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &589475870
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37338,7 +37338,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &599509468
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37452,7 +37452,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &600578427
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37567,7 +37567,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &601192309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37682,7 +37682,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &602768832
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37798,7 +37798,7 @@ MonoBehaviour:
   isDoor: 1
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &604301292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37912,7 +37912,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &608010600
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38882,7 +38882,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &630048561
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39186,7 +39186,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &636285020
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39489,7 +39489,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &647472055
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39603,7 +39603,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &651253306
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39907,7 +39907,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &660168203
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40117,7 +40117,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &671442804
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40422,7 +40422,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &676400286
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40537,7 +40537,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &677699866
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40937,7 +40937,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &683095239
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41084,7 +41084,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &687808984
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41293,7 +41293,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &689743872
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41407,7 +41407,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &695074716
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41522,7 +41522,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &696548761
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41730,7 +41730,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &698264311
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41846,7 +41846,7 @@ MonoBehaviour:
   isDoor: 1
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &702851609
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42055,7 +42055,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &706303364
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42169,7 +42169,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &707897463
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42379,7 +42379,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &711571392
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42493,7 +42493,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &712185326
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42703,7 +42703,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &714292692
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42913,7 +42913,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &716572770
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43123,7 +43123,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &718086977
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43332,7 +43332,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &722403321
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43542,7 +43542,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &724450103
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43943,7 +43943,7 @@ MonoBehaviour:
   isDoor: 1
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &733612789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44152,7 +44152,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &737867077
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44267,7 +44267,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &739301835
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44572,7 +44572,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &742530437
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50249,7 +50249,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &763362992
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50553,7 +50553,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &773165011
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50761,7 +50761,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &775597578
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51160,7 +51160,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &790353492
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51653,7 +51653,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &810642437
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52337,7 +52337,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &824098758
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52451,7 +52451,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &828463714
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52566,7 +52566,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &828631494
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52775,7 +52775,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &828985126
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53365,7 +53365,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &837889508
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53479,7 +53479,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &839986831
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53817,7 +53817,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &850325620
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54027,7 +54027,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &852218944
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54236,7 +54236,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &853529291
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54541,7 +54541,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &855902692
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54657,7 +54657,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &862036468
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54962,7 +54962,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &865010677
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55647,7 +55647,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &891516156
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55762,7 +55762,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &897228302
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55877,7 +55877,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &902438133
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57036,7 +57036,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &912118940
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57434,7 +57434,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &921503721
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57929,7 +57929,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &937507422
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58241,6 +58241,7 @@ MonoBehaviour:
   startingSpeed: 0
   statusEffects: {fileID: 0}
   doNotUseAsAbility: 0
+  slottable: 0
 --- !u!195 &941753375
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -58421,7 +58422,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &945205351
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58536,7 +58537,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &948086343
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58649,7 +58650,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &951488065
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58764,7 +58765,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &953223689
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59069,7 +59070,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &959674199
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59278,7 +59279,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &960632544
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59393,7 +59394,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &961702820
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59568,7 +59569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &963194226
 AudioListener:
   m_ObjectHideFlags: 0
@@ -60064,7 +60065,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &977693724
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60179,7 +60180,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &979304784
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60389,7 +60390,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &982102511
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60599,7 +60600,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &992107825
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60714,7 +60715,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &992638172
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60829,7 +60830,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &995017451
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60944,7 +60945,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &995648878
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61058,7 +61059,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &996836049
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61363,7 +61364,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1009014924
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61478,7 +61479,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1011789117
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61878,7 +61879,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1020160664
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62088,7 +62089,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1027312411
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62486,7 +62487,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1030004284
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62599,7 +62600,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1031490534
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63284,7 +63285,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1041590794
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63399,7 +63400,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1042870770
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63797,7 +63798,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1049526041
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63912,7 +63913,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1054289216
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64122,7 +64123,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1063157128
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64237,7 +64238,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1063167887
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64350,7 +64351,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1064107749
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64655,7 +64656,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1070087307
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65245,7 +65246,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1082467959
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65549,7 +65550,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1083156060
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65664,7 +65665,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1084331310
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65873,7 +65874,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1089813368
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66178,7 +66179,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1094487293
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66388,7 +66389,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1099605065
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66503,7 +66504,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1101579482
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66618,7 +66619,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1101732686
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66829,7 +66830,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 1
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1102510920
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67228,7 +67229,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1111010256
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67816,7 +67817,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1120047694
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68310,7 +68311,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1125329867
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68425,7 +68426,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1126367688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68827,7 +68828,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1138051719
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68942,7 +68943,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1138655098
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69056,7 +69057,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1141336763
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69171,7 +69172,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1141546624
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69286,7 +69287,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1142516244
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69401,7 +69402,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1145283245
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69515,7 +69516,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1146403691
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70390,7 +70391,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1166333081
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70599,7 +70600,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1170387539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70809,7 +70810,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1173093743
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70923,7 +70924,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1175890322
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71607,7 +71608,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1199776826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71818,7 +71819,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1205352241
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71933,7 +71934,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1211160888
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72143,7 +72144,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1214092076
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72258,7 +72259,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1214115822
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72371,7 +72372,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1216088483
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72675,7 +72676,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1223408830
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72884,7 +72885,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1224126276
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72999,7 +73000,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1225135883
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73208,7 +73209,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1226498702
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73513,7 +73514,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1229158282
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73627,7 +73628,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1231217787
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74122,7 +74123,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1238884126
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74426,7 +74427,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1242338360
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74539,7 +74540,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1244232335
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74654,7 +74655,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1245835167
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -74959,7 +74960,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1254196850
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75262,7 +75263,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1273672288
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75378,7 +75379,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 1
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1274040928
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75525,7 +75526,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1274742190
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75639,7 +75640,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1276465170
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75849,7 +75850,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1279494144
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -75965,7 +75966,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1279685839
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -76080,7 +76081,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1281701806
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -76481,7 +76482,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1288117085
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -76595,7 +76596,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1290613156
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -76933,7 +76934,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1297216437
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77142,7 +77143,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1301196966
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77351,7 +77352,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1306923750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77465,7 +77466,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1309663298
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77579,7 +77580,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1310562586
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78168,7 +78169,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1321685300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78378,7 +78379,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1325157812
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78588,7 +78589,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1333211028
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -78702,7 +78703,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1334390736
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79007,7 +79008,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1348295723
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79120,7 +79121,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1348540356
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79330,7 +79331,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1352081112
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79730,7 +79731,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1359064392
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80128,7 +80129,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1368301931
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80527,7 +80528,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1373452090
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81023,7 +81024,7 @@ MonoBehaviour:
   isDoor: 1
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1379460797
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81233,7 +81234,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1386499936
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82108,7 +82109,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1405713343
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82363,7 +82364,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1409725643
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82761,7 +82762,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1412863709
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82874,7 +82875,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1415635238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83178,7 +83179,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1421128340
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83578,7 +83579,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1426753709
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83978,7 +83979,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1434875424
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -84091,7 +84092,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1441970405
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -84395,7 +84396,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1445178517
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -84698,7 +84699,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1450982741
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -85098,7 +85099,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1457018908
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -85308,7 +85309,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1460523100
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -85612,7 +85613,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1470012792
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -85820,7 +85821,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1474206018
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -86125,7 +86126,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1478706398
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -86557,7 +86558,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1483214020
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -86672,7 +86673,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1494140935
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -86787,7 +86788,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1496081587
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -86901,7 +86902,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1498087244
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -87587,7 +87588,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 1
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1508312658
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -87987,7 +87988,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1514786998
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -88198,7 +88199,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1520742666
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -88313,7 +88314,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1520779479
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -88618,7 +88619,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1524889447
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -88921,7 +88922,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1534340813
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -89701,7 +89702,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1540812112
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90290,7 +90291,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1544256583
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90500,7 +90501,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1552034408
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90615,7 +90616,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1552310782
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90823,7 +90824,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1555267626
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -91205,7 +91206,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1563982017
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -91320,7 +91321,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1564310836
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -91529,7 +91530,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1567978445
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -91644,7 +91645,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1568337542
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -91758,7 +91759,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1568572765
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -91873,7 +91874,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1569712190
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -92271,7 +92272,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1571193615
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -92576,7 +92577,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1574287060
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -92690,7 +92691,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1577289479
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -93338,7 +93339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1593322367
 Transform:
   m_ObjectHideFlags: 0
@@ -93913,7 +93914,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1599223953
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -94121,7 +94122,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1601317696
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -94331,7 +94332,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1608301826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -94731,7 +94732,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1611066934
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -94846,7 +94847,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1613550253
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -95468,7 +95469,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1628846978
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -95583,7 +95584,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1628855726
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -95888,7 +95889,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1635610118
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101290,7 +101291,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1646829931
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101405,7 +101406,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1647498855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101613,7 +101614,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1650873855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101727,7 +101728,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1656412306
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -102031,7 +102032,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1659643180
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -102430,7 +102431,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1666858984
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -102638,7 +102639,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1668021971
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -102848,7 +102849,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1673526099
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -102963,7 +102964,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1678686728
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -103458,7 +103459,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1696004977
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -103572,7 +103573,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1696224879
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -103685,7 +103686,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1699377532
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -103800,7 +103801,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1700907972
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -103980,7 +103981,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1702521173
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -104341,7 +104342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476718826181599880, guid: db58cb77525bde8428dd3bf4c00fb5ef, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6476718826181599880, guid: db58cb77525bde8428dd3bf4c00fb5ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -104439,7 +104440,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1711904197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -104554,7 +104555,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1712307060
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -104668,7 +104669,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1713564027
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -104879,7 +104880,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 1
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1714686626
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -104994,7 +104995,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1714952410
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -105489,7 +105490,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1720012928
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -106554,7 +106555,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1745451772
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -106952,7 +106953,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1749746115
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -107162,7 +107163,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1753304810
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -107466,7 +107467,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1755083658
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -107579,7 +107580,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1755263733
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -107789,7 +107790,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1756272992
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -107905,7 +107906,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 1
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1757431852
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -108210,7 +108211,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1760352991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -108324,7 +108325,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1761841998
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -109007,7 +109008,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1769908590
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -109122,7 +109123,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1773869425
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -109331,7 +109332,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1783135448
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -109826,7 +109827,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1788647647
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -110226,7 +110227,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1818133065
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -110721,7 +110722,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1824800908
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -111025,7 +111026,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1825862573
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -111139,7 +111140,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1827543470
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -111254,7 +111255,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1831368369
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -111369,7 +111370,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1833670338
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -111484,7 +111485,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1834944528
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -111979,7 +111980,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1839695499
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -112094,7 +112095,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1840500661
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -112304,7 +112305,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1843503615
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -112893,7 +112894,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1855965578
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -113008,7 +113009,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1856928274
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -113217,7 +113218,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1860064555
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -114090,7 +114091,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1872848547
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -114773,7 +114774,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1882391004
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -114983,7 +114984,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1883836898
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -115098,7 +115099,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1884156579
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -115401,7 +115402,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1888734070
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -115516,7 +115517,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1889523026
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -116296,7 +116297,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1917720114
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -116539,7 +116540,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1918382388
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -116652,7 +116653,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1920978175
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -117053,7 +117054,7 @@ MonoBehaviour:
   isDoor: 1
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1926425316
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -117643,7 +117644,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1948532429
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -117852,7 +117853,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1949998315
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -117969,7 +117970,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1951699969
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -118084,7 +118085,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1959815629
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -118197,7 +118198,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1961006456
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -118405,7 +118406,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1964195710
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -118615,7 +118616,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1965691602
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -118729,7 +118730,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1966912327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -118843,7 +118844,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1970024243
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -119243,7 +119244,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1978499985
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -119358,7 +119359,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1979259624
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -119756,7 +119757,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1989015728
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -119870,7 +119871,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1991732650
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -119985,7 +119986,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1994531722
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -120100,7 +120101,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1995960637
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -120308,7 +120309,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &1997916145
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -120518,7 +120519,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2000247498
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -120918,7 +120919,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2009979292
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -121033,7 +121034,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2010354280
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -121719,7 +121720,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 1
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2017413128
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -122023,7 +122024,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2025227971
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -122233,7 +122234,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2036189427
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -122918,7 +122919,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2059182099
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -123093,7 +123094,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2063732701
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -123208,7 +123209,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2064272108
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -123418,7 +123419,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2068842086
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -123818,7 +123819,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2075001736
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -124121,7 +124122,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2081934263
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -124234,7 +124235,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2083118587
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -124349,7 +124350,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2083690680
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -124462,7 +124463,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 4
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2084294245
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -124671,7 +124672,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2088717158
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -125165,7 +125166,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 3
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2106425914
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -125375,7 +125376,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2106708799
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -125870,7 +125871,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2117344929
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -126270,7 +126271,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2134165425
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -126481,7 +126482,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 1
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2144071439
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -126629,7 +126630,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 1
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2145528796
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -126744,7 +126745,7 @@ MonoBehaviour:
   isDoor: 0
   neighboursTotal: 2
   horizontalDoor: 0
-  dungeonGeneratorInstance: {fileID: 908001212}
+  dungeonGeneratorInstance: {fileID: 0}
 --- !u!23 &2146352113
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -126933,7 +126934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 590045336127454087, guid: 207d19eb406d656478bfd3156a5682b7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 207d19eb406d656478bfd3156a5682b7, type: 3}
