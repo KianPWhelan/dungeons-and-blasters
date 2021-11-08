@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0252b129c204c3842b67624c34c07acd, type: 3}
-  m_Name: Source Of Enigma Stun Effect
+  m_Name: Glacial Shard Slow Effect
   m_EditorClassIdentifier: 
   damages: []
   isStatusEffect: 1
-  interval: {fileID: 11400000, guid: 2eb01c7e9cf6df44284af47d19c4ee43, type: 2}
-  duration: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
+  interval: {fileID: 11400000, guid: 744367d2a2087c341b4cd6d453c5295f, type: 2}
+  duration: {fileID: 11400000, guid: a95de1c195049f8489f163bc01b3cfb2, type: 2}
   stacks: 1
   refreshDuration: 1
   recursiveEffects: []
@@ -23,6 +23,6 @@ MonoBehaviour:
   overwriteTag: 
   damageDealtMod: 1
   damageRecievedMod: 1
-  moveSpeedMod: 1
-  isStun: 1
+  moveSpeedMod: 0.7
+  isStun: 0
   resistanceMods: []

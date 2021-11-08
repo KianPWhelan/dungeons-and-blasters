@@ -117,13 +117,14 @@ MonoBehaviour:
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
   ignoreParentRotation: 1
+  forceDetachFromParent: 0
   spread: 0
   destroyOnHit: 0
   canHitSameTargetMoreThanOnce: 0
   multiHitCooldown: 0
   applyEffectsOnEnd: 0
   visualEndEffect: {fileID: 0}
-  visualStartEffect: {fileID: 1592685575755722, guid: 89f971fc4dcf2fe4985d30b510b74e7d, type: 3}
+  visualStartEffect: {fileID: 1799343305766756, guid: 739b2ef5999a45043b04c7dec56398e5, type: 3}
   visualStartEffectPositionOffset: {x: 0, y: 0, z: 0}
   visualStartEffectRotationOffset: {x: 0, y: 0, z: 0}
   validTag: 
@@ -137,3 +138,4 @@ MonoBehaviour:
   isMine: 0
   accuracyOffset: {x: 0, y: 0, z: 0}
   rotater: {fileID: 0}
+  ownerId: 0
