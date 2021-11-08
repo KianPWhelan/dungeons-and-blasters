@@ -53,6 +53,29 @@ public class Database : MonoBehaviour
 
         Debug.Log(json.value);
     }
+
+    public async Task LoadAllRoomsForCurrentUser(List<string> datas)
+    {
+        DataSnapshot snapshot = null;
+
+        await reference.Child("Users").Child("testgmailcom").Child("Rooms").GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsFaulted)
+            {
+
+            }
+
+            else if (task.IsCompleted)
+            {
+                snapshot = task.Result;
+            }
+        });
+
+        foreach(DataSnapshot snap in snapshot.Children)
+        {
+            datas.Add(snap.GetRawJsonValue());
+        }
+    }
 }
 
 public class StringHolder
