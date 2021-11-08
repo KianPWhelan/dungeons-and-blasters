@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoomGenerator : MonoBehaviour
 {
@@ -15,39 +16,55 @@ public class RoomGenerator : MonoBehaviour
 
     public GameObject wallPrefab;
 
-    public string name;
+    public string name = "testmap";
+
+    public Database database;
 
     private Dictionary<GameObject, List<GameObject>> batches = new Dictionary<GameObject, List<GameObject>>();
 
     public bool save;
 
+    public InputField nameText;
+
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         GenerateGrid();
         GenerateWalls();
-        //LoadRoomFromJson(File.ReadAllText("room.txt"));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(save)
-        {
-            SaveRoom();
-            save = false;
-        }
+        name = nameText.text;
     }
 
     public void SaveRoom()
     {
         string res = JSONTools.SaveRoomData(this);
         File.WriteAllText("room.txt", res);
+        database.SaveRoomUnderCurrentUser(res, name);
+    }
+
+    public async void LoadRoom()
+    {
+        StringHolder json = new StringHolder();
+        await database.LoadRoomFromCurrentUserByName(name, json);
+        Debug.Log("Finished load db data");
+        LoadRoomFromJson(json.value);
     }
 
     public void LoadRoomFromJson(string roomJson)
     {
         Debug.Log(roomJson);
+
+        int childs = transform.childCount;
+
+        for(int i = 0; i < childs; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
+
         var roomData = JSONTools.LoadRoomDataFromJson(roomJson);
 
         gridSize = roomData.gridSize;

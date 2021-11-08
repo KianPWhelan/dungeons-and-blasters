@@ -24,9 +24,9 @@ public class Authentication : MonoBehaviour
     public Button loginButton;
     public Button logoutButton;
 
-    public string displayName;
+    public static string displayName;
 
-    public string emailAddress;
+    public static string emailAddress;
 
     public void Awake()
     {
