@@ -306,8 +306,8 @@ namespace Com.OfTomorrowInc.DMShooter
         private async void LoadRoom()
         {
             StringHolder str = new StringHolder();
-            Debug.Log("Load Room " + (string)photonView.Owner.CustomProperties["room"]);
-            await database.LoadRoomFromCurrentUserByName((string)photonView.Owner.CustomProperties["room"], str);
+            Debug.Log("Load Room " + (string)DungeonMasterController.LocalPlayerInstance.GetPhotonView().Owner.CustomProperties["room"]);
+            await database.LoadRoomFromCurrentUserByName((string)DungeonMasterController.LocalPlayerInstance.GetPhotonView().Owner.CustomProperties["room"], str);
             photonView.RPC("GenerateRoom", RpcTarget.All, System.Text.Encoding.UTF8.GetBytes(str.value));
         }
 

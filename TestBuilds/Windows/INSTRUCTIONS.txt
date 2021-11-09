@@ -1,3 +1,5 @@
+These instructions are extremely outdated
+
 Press "Play" to play as a dungeon crawler. Press "Play as Dungeon Master" to play as the DM.
 
 IMPORTANT: There is currently a bug where if the DM spawns monsters before all players are connected everything breaks. Don't do it.
