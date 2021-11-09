@@ -202,7 +202,7 @@ public class ObjectPlacer : MonoBehaviour
         {
             GameObject p = (GameObject)prefabs[i];
             // Debug.Log(p.name);
-            if (p.TryGetComponent(out RoomObject c))
+            if (p.TryGetComponent(out RoomObject c) && !c.doNotUse)
             {
                 objectPrefabs.Add(p);
             }

@@ -47,6 +47,7 @@ MonoBehaviour:
   tilesOccupied: {x: 1, y: 1}
   isStartingPoint: 0
   isExitPoint: 1
+  doNotUse: 1
 --- !u!1 &3258546702821687056
 GameObject:
   m_ObjectHideFlags: 0
