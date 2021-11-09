@@ -188,6 +188,12 @@ namespace Com.OfTomorrowInc.DMShooter
             var roomJson = System.Text.Encoding.UTF8.GetString(roomData);
             roomGen.LoadRoomFromJson(roomJson);
             roomGen.SpawnAllEnemies();
+            var startPoint = roomGen.GetStartPoint();
+
+            if(Controller.LocalPlayerInstance != null)
+            {
+                Controller.LocalPlayerInstance.transform.position = startPoint + Vector3.up * 2;
+            }
         }
 
         [PunRPC]

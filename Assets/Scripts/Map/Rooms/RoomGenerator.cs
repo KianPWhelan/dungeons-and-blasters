@@ -162,6 +162,22 @@ public class RoomGenerator : MonoBehaviour
         }
     }
 
+    public Vector3 GetStartPoint()
+    {
+        for(int i = 0; i < gridSize.x; i++)
+        {
+            for(int j = 0; j < gridSize.y; j++)
+            {
+                if(nodes[i, j].isObjOrigin && nodes[i, j].obj.GetComponent<RoomObject>().isStartingPoint)
+                {
+                    return nodes[i, j].tile.transform.position;
+                }
+            }
+        }
+
+        return Vector3.zero;
+    }
+
     public void AddEnemyToNode(GameObject tile, GameObject enemy, Vector3 position)
     {
         for (int i = 0; i < gridSize.x; i++)
