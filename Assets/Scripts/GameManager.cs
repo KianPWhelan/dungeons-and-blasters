@@ -47,6 +47,8 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public static List<GameObject> players;
 
+        public static List<GameObject> enemies;
+
         public static GameManager single;
 
 
@@ -73,6 +75,7 @@ namespace Com.OfTomorrowInc.DMShooter
         public void Start()
         {
             players = new List<GameObject>();
+            enemies = new List<GameObject>();
 
             if(PhotonNetwork.IsMasterClient)
             {
@@ -194,6 +197,11 @@ namespace Com.OfTomorrowInc.DMShooter
             {
                 Controller.LocalPlayerInstance.transform.position = startPoint + Vector3.up * 2;
             }
+
+            else if(DungeonMasterController.LocalPlayerInstance != null)
+            {
+                StartCoroutine(CheckForNoEnemies());
+            }
         }
 
         [PunRPC]
@@ -301,6 +309,30 @@ namespace Com.OfTomorrowInc.DMShooter
             Debug.Log("Load Room " + (string)photonView.Owner.CustomProperties["room"]);
             await database.LoadRoomFromCurrentUserByName((string)photonView.Owner.CustomProperties["room"], str);
             photonView.RPC("GenerateRoom", RpcTarget.All, System.Text.Encoding.UTF8.GetBytes(str.value));
+        }
+
+        private IEnumerator CheckForNoEnemies()
+        {
+            while(EnemiesAlive())
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
+
+            Debug.Log("No more enemies");
+            photonView.RPC("GlobalCloseRoom", RpcTarget.All);
+        }
+
+        private bool EnemiesAlive()
+        {
+            foreach(GameObject enemy in enemies)
+            {
+                if(enemy != null)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         #endregion
