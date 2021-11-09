@@ -104,7 +104,7 @@ namespace Com.OfTomorrowInc.DMShooter
 
             if(DungeonMasterController.LocalPlayerInstance != null)
             {
-                LoadRoom();
+                // LoadRoom();
                 // photonView.RPC("SendPlayersToStartPoint", RpcTarget.All);
             }
         }
@@ -201,6 +201,7 @@ namespace Com.OfTomorrowInc.DMShooter
             else if(DungeonMasterController.LocalPlayerInstance != null)
             {
                 StartCoroutine(CheckForNoEnemies());
+                DungeonMasterController.LocalPlayerInstance.transform.position = startPoint + Vector3.up * 50;
             }
         }
 
@@ -303,7 +304,7 @@ namespace Com.OfTomorrowInc.DMShooter
             PrefabLoader.LoadEnemyPrefabBalanceData("enemy_data.txt");
         }
 
-        private async void LoadRoom()
+        public async void LoadRoom()
         {
             StringHolder str = new StringHolder();
             Debug.Log("Load Room " + (string)DungeonMasterController.LocalPlayerInstance.GetPhotonView().Owner.CustomProperties["room"]);
