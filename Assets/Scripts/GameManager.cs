@@ -47,7 +47,12 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public static List<GameObject> players;
 
+        public static List<GameObject> enemies;
+
         public static GameManager single;
+
+        [HideInInspector]
+        public bool enemiesHaveSpawned = false;
 
 
         /// <summary>
@@ -73,6 +78,7 @@ namespace Com.OfTomorrowInc.DMShooter
         public void Start()
         {
             players = new List<GameObject>();
+            enemies = new List<GameObject>();
 
             if(PhotonNetwork.IsMasterClient)
             {
@@ -101,7 +107,7 @@ namespace Com.OfTomorrowInc.DMShooter
 
             if(DungeonMasterController.LocalPlayerInstance != null)
             {
-                LoadRoom();
+                // LoadRoom();
                 // photonView.RPC("SendPlayersToStartPoint", RpcTarget.All);
             }
         }
@@ -188,6 +194,18 @@ namespace Com.OfTomorrowInc.DMShooter
             var roomJson = System.Text.Encoding.UTF8.GetString(roomData);
             roomGen.LoadRoomFromJson(roomJson);
             roomGen.SpawnAllEnemies();
+            var startPoint = roomGen.GetStartPoint();
+
+            if(Controller.LocalPlayerInstance != null)
+            {
+                Controller.LocalPlayerInstance.transform.position = startPoint + Vector3.up * 2;
+            }
+
+            else if(DungeonMasterController.LocalPlayerInstance != null)
+            {
+                StartCoroutine(CheckForNoEnemies());
+                DungeonMasterController.LocalPlayerInstance.transform.position = startPoint + Vector3.up * 50;
+            }
         }
 
         [PunRPC]
@@ -289,12 +307,36 @@ namespace Com.OfTomorrowInc.DMShooter
             PrefabLoader.LoadEnemyPrefabBalanceData("enemy_data.txt");
         }
 
-        private async void LoadRoom()
+        public async void LoadRoom()
         {
             StringHolder str = new StringHolder();
-            Debug.Log("Load Room " + (string)photonView.Owner.CustomProperties["room"]);
-            await database.LoadRoomFromCurrentUserByName((string)photonView.Owner.CustomProperties["room"], str);
+            Debug.Log("Load Room " + (string)DungeonMasterController.LocalPlayerInstance.GetPhotonView().Owner.CustomProperties["room"]);
+            await database.LoadRoomFromCurrentUserByName((string)DungeonMasterController.LocalPlayerInstance.GetPhotonView().Owner.CustomProperties["room"], str);
             photonView.RPC("GenerateRoom", RpcTarget.All, System.Text.Encoding.UTF8.GetBytes(str.value));
+        }
+
+        private IEnumerator CheckForNoEnemies()
+        {
+            while(EnemiesAlive() || !enemiesHaveSpawned)
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
+
+            Debug.Log("No more enemies");
+            photonView.RPC("GlobalCloseRoom", RpcTarget.All);
+        }
+
+        private bool EnemiesAlive()
+        {
+            foreach(GameObject enemy in enemies)
+            {
+                if(enemy != null)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         #endregion

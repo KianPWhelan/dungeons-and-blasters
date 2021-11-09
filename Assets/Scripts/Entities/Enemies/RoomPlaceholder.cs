@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Com.OfTomorrowInc.DMShooter;
 
 public class RoomPlaceholder : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class RoomPlaceholder : MonoBehaviour
         {
             for(int i = 0; i < numToSpawn; i++)
             {
-                PhotonNetwork.Instantiate(enemy.name, transform.position, Quaternion.identity);
+                GameManager.enemies.Add(PhotonNetwork.Instantiate(enemy.name, transform.position, Quaternion.identity));
             }
         }
 

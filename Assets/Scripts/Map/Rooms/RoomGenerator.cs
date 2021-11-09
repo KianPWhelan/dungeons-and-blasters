@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using Com.OfTomorrowInc.DMShooter;
 
 public class RoomGenerator : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class RoomGenerator : MonoBehaviour
     public AutoBake baker;
 
     public bool genOnStart = true;
+
+    private List<GameObject> walls = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +75,8 @@ public class RoomGenerator : MonoBehaviour
 
         int childs = transform.childCount;
 
+        walls = new List<GameObject>();
+
         for(int i = 0; i < childs; i++)
         {
             Destroy(transform.GetChild(i).gameObject);
@@ -102,20 +107,29 @@ public class RoomGenerator : MonoBehaviour
         }
 
         baker.BakeAll();
+        Batch();
     }
 
     public void SpawnAllEnemies()
     {
-        for(int i = 0; i < gridSize.x; i++)
+        StartCoroutine(SpawnDelayed());
+    }
+
+    private IEnumerator SpawnDelayed()
+    {
+        yield return new WaitForSeconds(5f);
+        for (int i = 0; i < gridSize.x; i++)
         {
-            for(int j = 0; j < gridSize.y; j++)
+            for (int j = 0; j < gridSize.y; j++)
             {
-                if(nodes[i, j].enemy != null)
+                if (nodes[i, j].enemy != null)
                 {
                     nodes[i, j].enemy.GetComponent<RoomPlaceholder>().SpawnEnemies();
                 }
             }
         }
+
+        GameManager.single.enemiesHaveSpawned = true;
     }
 
     public void GenerateGrid()
@@ -148,6 +162,8 @@ public class RoomGenerator : MonoBehaviour
             //newWallTop.transform.GetChild(0).gameObject.isStatic = true;
             //newWallBot.isStatic = true;
             //newWallBot.transform.GetChild(0).gameObject.isStatic = true;
+            walls.Add(newWallTop);
+            walls.Add(newWallBot);
         }
 
         // Generate along sides
@@ -159,7 +175,25 @@ public class RoomGenerator : MonoBehaviour
             //newWallLeft.transform.GetChild(0).gameObject.isStatic = true;
             //newWallRight.isStatic = true;
             //newWallRight.transform.GetChild(0).gameObject.isStatic = true;
+            walls.Add(newWallLeft);
+            walls.Add(newWallRight);
         }
+    }
+
+    public Vector3 GetStartPoint()
+    {
+        for(int i = 0; i < gridSize.x; i++)
+        {
+            for(int j = 0; j < gridSize.y; j++)
+            {
+                if(nodes[i, j].isObjOrigin && nodes[i, j].obj.GetComponent<RoomObject>().isStartingPoint)
+                {
+                    return nodes[i, j].tile.transform.position;
+                }
+            }
+        }
+
+        return Vector3.zero;
     }
 
     public void AddEnemyToNode(GameObject tile, GameObject enemy, Vector3 position)
@@ -348,20 +382,26 @@ public class RoomGenerator : MonoBehaviour
         return tilesOccupied;
     }
 
-    private void Batch(GameObject prefab, GameObject newObj)
+    private void Batch()
     {
-        if(batches.ContainsKey(prefab))
+        foreach(GameObject wall in walls)
         {
-            batches[prefab].Add(newObj.transform.GetChild(0).gameObject);
+            wall.isStatic = true;
+            wall.transform.GetChild(0).gameObject.isStatic = true;
         }
 
-        else
+        for(int i = 0; i < gridSize.x; i++)
         {
-            List<GameObject> newList = new List<GameObject>();
-            newList.Add(newObj.transform.GetChild(0).gameObject);
-            batches.Add(prefab, newList);
+            for(int j = 0; j < gridSize.y; j++)
+            {
+                if(nodes[i, j].isObjOrigin)
+                {
+                    nodes[i, j].obj.isStatic = true;
+                    nodes[i, j].obj.transform.GetChild(0).gameObject.isStatic = true;
+                }
+            }
         }
 
-        StaticBatchingUtility.Combine(batches[prefab].ToArray(), gameObject);
+        StaticBatchingUtility.Combine(gameObject);
     }
 }

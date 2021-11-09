@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Com.OfTomorrowInc.DMShooter;
 
 public class CloseRoom : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CloseRoom : MonoBehaviour
     {
         PhotonNetwork.CurrentRoom.IsOpen = false;
         PhotonNetwork.CurrentRoom.IsVisible = false;
-        slots.SetSlots();
+        GameManager.single.LoadRoom();
+        // slots.SetSlots();
     }
 }
