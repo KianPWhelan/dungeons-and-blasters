@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241e4755d8a207146aa851ca6e3bc123, type: 3}
+  m_Name: Split Stick
+  m_EditorClassIdentifier: 
+  uniqueId: 
+  rarity: 0
+  attacks:
+  - {fileID: 11400000, guid: 856506d765aa2b744b930ed2ea3af1e7, type: 2}
+  cooldowns:
+  - 0.7
+  delays:
+  - 0
+  animation: {fileID: 0}
+  hasSpinup: 0
+  spinupTime: 0
+  canOverheat: 0
+  overheatTime: 0
+  overheatRecoveryTime: 0
+  isOverheated: 0
