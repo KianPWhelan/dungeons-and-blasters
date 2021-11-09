@@ -51,6 +51,9 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public static GameManager single;
 
+        [HideInInspector]
+        public bool enemiesHaveSpawned = false;
+
 
         /// <summary>
         /// Called when the local player left the room. We need to load the launcher scene.
@@ -314,7 +317,7 @@ namespace Com.OfTomorrowInc.DMShooter
 
         private IEnumerator CheckForNoEnemies()
         {
-            while(EnemiesAlive())
+            while(EnemiesAlive() || !enemiesHaveSpawned)
             {
                 yield return new WaitForSeconds(0.5f);
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using Com.OfTomorrowInc.DMShooter;
 
 public class RoomGenerator : MonoBehaviour
 {
@@ -106,16 +107,24 @@ public class RoomGenerator : MonoBehaviour
 
     public void SpawnAllEnemies()
     {
-        for(int i = 0; i < gridSize.x; i++)
+        StartCoroutine(SpawnDelayed());
+    }
+
+    private IEnumerator SpawnDelayed()
+    {
+        yield return new WaitForSeconds(5f);
+        for (int i = 0; i < gridSize.x; i++)
         {
-            for(int j = 0; j < gridSize.y; j++)
+            for (int j = 0; j < gridSize.y; j++)
             {
-                if(nodes[i, j].enemy != null)
+                if (nodes[i, j].enemy != null)
                 {
                     nodes[i, j].enemy.GetComponent<RoomPlaceholder>().SpawnEnemies();
                 }
             }
         }
+
+        GameManager.single.enemiesHaveSpawned = true;
     }
 
     public void GenerateGrid()
