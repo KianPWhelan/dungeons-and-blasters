@@ -104,6 +104,20 @@ public class RoomGenerator : MonoBehaviour
         baker.BakeAll();
     }
 
+    public void SpawnAllEnemies()
+    {
+        for(int i = 0; i < gridSize.x; i++)
+        {
+            for(int j = 0; j < gridSize.y; j++)
+            {
+                if(nodes[i, j].enemy != null)
+                {
+                    nodes[i, j].enemy.GetComponent<RoomPlaceholder>().SpawnEnemies();
+                }
+            }
+        }
+    }
+
     public void GenerateGrid()
     {
         nodes = new Node[gridSize.x, gridSize.y];

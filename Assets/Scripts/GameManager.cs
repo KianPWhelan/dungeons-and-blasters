@@ -187,6 +187,7 @@ namespace Com.OfTomorrowInc.DMShooter
             Debug.Log("Loading Room");
             var roomJson = System.Text.Encoding.UTF8.GetString(roomData);
             roomGen.LoadRoomFromJson(roomJson);
+            roomGen.SpawnAllEnemies();
         }
 
         [PunRPC]
@@ -291,6 +292,7 @@ namespace Com.OfTomorrowInc.DMShooter
         private async void LoadRoom()
         {
             StringHolder str = new StringHolder();
+            Debug.Log("Load Room " + (string)photonView.Owner.CustomProperties["room"]);
             await database.LoadRoomFromCurrentUserByName((string)photonView.Owner.CustomProperties["room"], str);
             photonView.RPC("GenerateRoom", RpcTarget.All, System.Text.Encoding.UTF8.GetBytes(str.value));
         }

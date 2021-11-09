@@ -3122,8 +3122,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MapSelect, Assembly-CSharp
+      - m_Target: {fileID: 356845408}
+        m_TargetAssemblyTypeName: RoomSelect, Assembly-CSharp
         m_MethodName: ChangeSelection
         m_Mode: 1
         m_Arguments:
