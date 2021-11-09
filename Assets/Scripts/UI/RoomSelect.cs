@@ -36,7 +36,7 @@ public class RoomSelect : MonoBehaviour
     {
         selection = rooms[dropdown.value];
         //ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
-        Launcher.clientHash["room"] = selection;
+        Launcher.clientHash["room"] = JsonConvert.DeserializeObject<RoomData>(selection).name;
         PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
     }
 
@@ -81,7 +81,7 @@ public class RoomSelect : MonoBehaviour
         dropdown.AddOptions(options);
         selection = rooms[0];
         //ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
-        Launcher.clientHash["room"] = selection;
+        Launcher.clientHash["room"] = JsonConvert.DeserializeObject<RoomData>(selection).name;
         PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
     }
 }

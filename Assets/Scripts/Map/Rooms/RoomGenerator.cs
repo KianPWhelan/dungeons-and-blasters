@@ -26,9 +26,18 @@ public class RoomGenerator : MonoBehaviour
 
     public InputField nameText;
 
+    public AutoBake baker;
+
+    public bool genOnStart = true;
+
     // Start is called before the first frame update
     void Start()
     {
+        if(!genOnStart)
+        {
+            return;
+        }
+
         GenerateGrid();
         GenerateWalls();
     }
@@ -36,7 +45,10 @@ public class RoomGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        name = nameText.text;
+        if(nameText != null)
+        {
+            name = nameText.text;
+        }
     }
 
     public void SaveRoom()
@@ -88,6 +100,8 @@ public class RoomGenerator : MonoBehaviour
                 AddEnemyToNode(node.gridLocation, Resources.Load<GameObject>("RoomPlaceholders/" + node.enemy));
             }
         }
+
+        baker.BakeAll();
     }
 
     public void GenerateGrid()
@@ -116,10 +130,10 @@ public class RoomGenerator : MonoBehaviour
         {
             var newWallTop = Instantiate(wallPrefab, new Vector3(i * offset, 0, (gridSize.y * offset) - (offset / 2)), Quaternion.identity, transform);
             var newWallBot = Instantiate(wallPrefab, new Vector3(i * offset, 0, -offset / 2), Quaternion.identity, transform);
-            newWallTop.isStatic = true;
-            newWallTop.transform.GetChild(0).gameObject.isStatic = true;
-            newWallBot.isStatic = true;
-            newWallBot.transform.GetChild(0).gameObject.isStatic = true;
+            //newWallTop.isStatic = true;
+            //newWallTop.transform.GetChild(0).gameObject.isStatic = true;
+            //newWallBot.isStatic = true;
+            //newWallBot.transform.GetChild(0).gameObject.isStatic = true;
         }
 
         // Generate along sides
@@ -127,10 +141,10 @@ public class RoomGenerator : MonoBehaviour
         {
             var newWallLeft = Instantiate(wallPrefab, new Vector3(-offset / 2, 0, i * offset), Quaternion.FromToRotation(Vector3.forward, Vector3.left), transform);
             var newWallRight = Instantiate(wallPrefab, new Vector3((gridSize.x * offset) - (offset / 2), 0, i * offset), Quaternion.FromToRotation(Vector3.forward, Vector3.left), transform);
-            newWallLeft.isStatic = true;
-            newWallLeft.transform.GetChild(0).gameObject.isStatic = true;
-            newWallRight.isStatic = true;
-            newWallRight.transform.GetChild(0).gameObject.isStatic = true;
+            //newWallLeft.isStatic = true;
+            //newWallLeft.transform.GetChild(0).gameObject.isStatic = true;
+            //newWallRight.isStatic = true;
+            //newWallRight.transform.GetChild(0).gameObject.isStatic = true;
         }
     }
 
@@ -288,8 +302,8 @@ public class RoomGenerator : MonoBehaviour
         nodes[startSpot.x, startSpot.y].objOrientation = rotation;
 
         var newObj = Instantiate(obj, position, Quaternion.LookRotation(rotation, Vector3.up), transform);
-        newObj.isStatic = true;
-        newObj.transform.GetChild(0).gameObject.isStatic = true;
+        //newObj.isStatic = true;
+        //newObj.transform.GetChild(0).gameObject.isStatic = true;
 
         foreach (Vector2Int loc in nodesToFill)
         {
@@ -297,7 +311,7 @@ public class RoomGenerator : MonoBehaviour
         }
 
         // Batch(obj, newObj);
-        StaticBatchingUtility.Combine(gameObject);
+        //StaticBatchingUtility.Combine(gameObject);
     }
 
     private Vector2Int Orientator(Vector2Int tilesOccupied, Vector3 rotation)

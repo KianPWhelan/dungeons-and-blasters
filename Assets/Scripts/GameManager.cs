@@ -25,6 +25,10 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public Map mapGen;
 
+        public RoomGenerator roomGen;
+
+        public Database database;
+
         public float gameTime;
 
         public FloatVariable time;
@@ -97,8 +101,8 @@ namespace Com.OfTomorrowInc.DMShooter
 
             if(DungeonMasterController.LocalPlayerInstance != null)
             {
-                photonView.RPC("GenerateMap", RpcTarget.All, photonView.Owner.CustomProperties["map"]);
-                photonView.RPC("SendPlayersToStartPoint", RpcTarget.All);
+                LoadRoom();
+                // photonView.RPC("SendPlayersToStartPoint", RpcTarget.All);
             }
         }
 
@@ -175,6 +179,14 @@ namespace Com.OfTomorrowInc.DMShooter
             Debug.Log("Loading Map");
             mapGen.LoadMapFromJson(mapJson);
             mapGen.BuildMap();
+        }
+
+        [PunRPC]
+        public void GenerateRoom(byte[] roomData)
+        {
+            Debug.Log("Loading Room");
+            var roomJson = System.Text.Encoding.UTF8.GetString(roomData);
+            roomGen.LoadRoomFromJson(roomJson);
         }
 
         [PunRPC]
@@ -274,6 +286,13 @@ namespace Com.OfTomorrowInc.DMShooter
         private void LoadPrefabData()
         {
             PrefabLoader.LoadEnemyPrefabBalanceData("enemy_data.txt");
+        }
+
+        private async void LoadRoom()
+        {
+            StringHolder str = new StringHolder();
+            await database.LoadRoomFromCurrentUserByName((string)photonView.Owner.CustomProperties["room"], str);
+            photonView.RPC("GenerateRoom", RpcTarget.All, System.Text.Encoding.UTF8.GetBytes(str.value));
         }
 
         #endregion
