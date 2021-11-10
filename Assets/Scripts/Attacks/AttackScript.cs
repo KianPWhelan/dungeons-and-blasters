@@ -281,13 +281,13 @@ public class AttackScript : MonoBehaviour
             {
                 if(transform.parent != null)
                 {
-                    attack.PerformAttack(transform.parent.gameObject, 0f, validTag, true, collisionPoint + collisionNormal);
+                    attack.PerformAttack(transform.parent.gameObject, 0f, collisionPoint + collisionNormal, validTag, true);
                 }
 
                 else
                 {
                     Debug.Log("here");
-                    attack.PerformAttack(collisionPoint, transform.rotation, damageMod, ownerId, validTag, 0f, collisionPoint + collisionNormal);
+                    attack.PerformAttack(collisionPoint, transform.rotation, damageMod, ownerId, collisionPoint + collisionNormal, validTag, 0f);
                 }
             }
 
@@ -295,12 +295,12 @@ public class AttackScript : MonoBehaviour
             {
                 if (transform.parent != null)
                 {
-                    attack.PerformAttack(transform.parent.gameObject, 0f, validTag);
+                    attack.PerformAttack(transform.parent.gameObject, 0f, Vector3.negativeInfinity, targetTag: validTag);
                 }
 
                 else
                 {
-                    attack.PerformAttack(transform.position, transform.rotation, damageMod, ownerId, validTag);
+                    attack.PerformAttack(transform.position, transform.rotation, damageMod, ownerId, Vector3.negativeInfinity, targetTag: validTag);
                 }
             }
         }

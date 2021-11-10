@@ -107,7 +107,7 @@ public class Weapon : ScriptableObject
 
                 if(self.GetPhotonView().IsMine)
                 {
-                    attack.PerformAttack(self, map[id].delay, targetTag, true, destination);
+                    attack.PerformAttack(self, map[id].delay, destination, targetTag, true);
                 }
                 
                 map[id].lastUseTime[self] = currentTime;

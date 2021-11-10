@@ -40,7 +40,7 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(GameObject self, float delay, string targetTag = "none", bool useSelfAsParent = true, Vector3? destination = null)
+    public void PerformAttack(GameObject self, float delay, Vector3? destination = null, string targetTag = "none", bool useSelfAsParent = true)
     {
         // Debug.Log("Using Attack " + name);
         var tag = targetTag;
@@ -88,7 +88,7 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, int ownerId, string targetTag = "none", float delay = 0, Vector3? destination = null)
+    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, int ownerId, Vector3? destination = null, string targetTag = "none", float delay = 0)
     {
         var tag = targetTag;
 
@@ -107,6 +107,12 @@ public class Attack : ScriptableObject
         // Debug.Log(attack);
         object[] info;
         info = new object[] { null, tag, damageMod, destination.GetValueOrDefault() };
+
+        if (destination.GetValueOrDefault().x == Vector3.negativeInfinity.x)
+        {
+            info[3] = null;
+        }
+
         spawner.Spawn(attack.name, selfPosition, selfRotation, info, delay, ownerId);
     }
 
