@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3807866404001653405}
   - component: {fileID: 4829975092919131579}
   m_Layer: 2
-  m_Name: Burst Rifle Bullet
+  m_Name: Pistol Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,12 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6220827a346c51341b08fcd61af5c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 11400000, guid: 00afb46e08115fb45bc87ae24f411c86, type: 2}
+  attack: {fileID: 11400000, guid: ba8418369b15e5b428863be6cb999f84, type: 2}
   subAttacks: []
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
   subAttacksAtSurfaceNormal: 0
-  attackDuration: 5
+  attackDuration: 4
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
   ignoreParentRotation: 0

@@ -10,12 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 241e4755d8a207146aa851ca6e3bc123, type: 3}
-  m_Name: New Weapon
+  m_Name: Help
   m_EditorClassIdentifier: 
-  attacks:
-  - {fileID: 11400000, guid: d6eed15d97be0304d808a1a27bbbf9e0, type: 2}
-  cooldowns:
-  - 1
-  delays:
-  - 0
+  uniqueId: 
+  rarity: 0
+  attacks: []
+  cooldowns: []
+  delays: []
   animation: {fileID: 0}
+  hasSpinup: 0
+  spinupTime: 0
+  canOverheat: 0
+  overheatTime: 0
+  overheatRecoveryTime: 0
+  isOverheated: 0

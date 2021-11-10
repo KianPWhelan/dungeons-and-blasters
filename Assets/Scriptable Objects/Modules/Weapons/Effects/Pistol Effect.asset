@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d697dfece3c4e3140ad84a97af774b38, type: 3}
-  m_Name: Poison Status Effect
+  m_Name: Pistol Effect
   m_EditorClassIdentifier: 
   damages:
-  - {fileID: 11400000, guid: f0f0e3f3800606c458d9f6fb161bf10e, type: 2}
-  isStatusEffect: 1
-  interval: {fileID: 11400000, guid: b929ce081c6adc047be357a0949993f1, type: 2}
-  duration: {fileID: 11400000, guid: cd6f4a88261db1f47b61aee025895b4f, type: 2}
-  stacks: 10
+  - {fileID: 11400000, guid: f7d679f9c46903148a03b82d25b5dc86, type: 2}
+  isStatusEffect: 0
+  interval: {fileID: 0}
+  duration: {fileID: 0}
+  stacks: 0
   refreshDuration: 0
   recursiveEffects: []
   useOverwriteTag: 0

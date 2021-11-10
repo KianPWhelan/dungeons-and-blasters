@@ -21,4 +21,4 @@ MonoBehaviour:
   critOnCritBoxesOnly: 1
   critChance: 1000
   critMultiplier: 1.5
-  knockbackStrength: 4
+  knockbackStrength: 0

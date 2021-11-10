@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3807866404001653405}
   - component: {fileID: 4829975092919131579}
   m_Layer: 2
-  m_Name: Burst Rifle Bullet
+  m_Name: Bruh bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,12 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6220827a346c51341b08fcd61af5c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 11400000, guid: 00afb46e08115fb45bc87ae24f411c86, type: 2}
+  attack: {fileID: 11400000, guid: e0678ebeb3ebdcf4399d716c12cb854b, type: 2}
   subAttacks: []
   subAttacksOnHit: 0
   subAttacksOnEnd: 0
   subAttacksAtSurfaceNormal: 0
-  attackDuration: 5
+  attackDuration: 10
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
   ignoreParentRotation: 0
@@ -141,14 +141,14 @@ MonoBehaviour:
   accuracyOffset: {x: 0, y: 0, z: 0}
   rotater: {fileID: 0}
   ownerId: 0
-  speed: 50
+  speed: 10
   canGoThroughObjects: 0
   reevluateRotationAfterLocalPositionOffset: 0
   homing: 0
-  homingStrength: 0
+  homingStrength: 20
   reevaluateHomingTargetConstantly: 0
-  bouncing: 0
-  numBounces: 0
+  bouncing: 1
+  numBounces: 5
   bouncingStrength: 1
   colliionDisableTime: 0.05
 --- !u!54 &4829975092919131579

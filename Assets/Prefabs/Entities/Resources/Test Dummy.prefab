@@ -643,6 +643,7 @@ GameObject:
   - component: {fileID: 4999855669528970186}
   - component: {fileID: 9070468601821801596}
   - component: {fileID: 3727592679696396437}
+  - component: {fileID: 6700190461449404782}
   m_Layer: 0
   m_Name: Test Dummy
   m_TagString: Enemy
@@ -822,6 +823,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 574d423e909678a4d875b5692d6be8fd, type: 2}
   targetTags:
   - Player
+  isPlayer: 0
 --- !u!114 &9070468601821801596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -837,7 +839,11 @@ MonoBehaviour:
   floatHealth: 1000000
   infiniteHealth: 0
   isPlayer: 0
+  hitSoundEffect: {fileID: 0}
+  hitEffect: {fileID: 0}
+  resistances: []
   isDead: 0
+  startingHealth: 0
 --- !u!114 &3727592679696396437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,6 +877,43 @@ MonoBehaviour:
   _yPosition: 5
   _faceCamera: {fileID: 0}
   OnlyShowIfDamaged: 0
+--- !u!114 &6700190461449404782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070468601821801538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e994fd930eabb14cb5d6640f2fd660b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rarity: 0
+  size: 0
+  uniqueId: 
+  aiModule: {fileID: 11400000, guid: 967d28e58f26d8c4d9182fcac65f62b7, type: 2}
+  targetType: 
+  allyTargetType: 
+  target: {fileID: 0}
+  allyTarget: {fileID: 0}
+  agent: {fileID: 0}
+  movement: {fileID: 0}
+  timeSinceLastStateChange: 0
+  homingPoint: {fileID: 846465751880415107}
+  critBox: {fileID: 0}
+  currentState: {fileID: 0}
+  cooldown: 0
+  slotSize: 0
+  charges: -1
+  visionRange: 0
+  spawnSoundEffect: {fileID: 0}
+  ranges: []
+  releventTransitions: []
+  startingSpeed: 0
+  statusEffects: {fileID: 0}
+  doNotUseAsAbility: 1
+  slottable: 0
 --- !u!114 &9070468602472634553
 MonoBehaviour:
   m_ObjectHideFlags: 0

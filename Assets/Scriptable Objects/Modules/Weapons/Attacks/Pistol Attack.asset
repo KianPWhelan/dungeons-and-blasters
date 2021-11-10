@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
-  m_Name: Glacial Shard Attack
+  m_Name: Pistol Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 3807866404001653414, guid: 7ce0f2e606e05d94a982b1a1c03165f0, type: 3}
+  attack: {fileID: 3807866404001653414, guid: 3518be7378e59494e82a3bb11da9f0cf, type: 3}
   effects:
-  - {fileID: 11400000, guid: d22a4812b2437c247a9450f59334add6, type: 2}
-  - {fileID: 11400000, guid: fb4f95c5235b1334aa745a352635e067, type: 2}
+  - {fileID: 11400000, guid: 32ccf0e03900c9d4494dbef0bdc535b9, type: 2}
   useOverwriteTag: 0
   overwriteTag: 
-  canCrit: 0
+  canCrit: 1
   critOnCritBoxesOnly: 1
-  critChance: 1000
-  critMultiplier: 1.5
+  critChance: 100
+  critMultiplier: 2
   knockbackStrength: 0
