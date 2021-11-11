@@ -893,8 +893,8 @@ MonoBehaviour:
   size: 0
   uniqueId: 
   aiModule: {fileID: 11400000, guid: 967d28e58f26d8c4d9182fcac65f62b7, type: 2}
-  targetType: 
-  allyTargetType: 
+  targetType: Player
+  allyTargetType: Enemy
   target: {fileID: 0}
   allyTarget: {fileID: 0}
   agent: {fileID: 0}

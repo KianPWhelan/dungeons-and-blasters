@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room Maker.unity
     guid: 2b273d439ec98334e8c111cf05e5c27a
+  - enabled: 1
+    path: Assets/Scenes/Testing Scene.unity
+    guid: 2b3ab342138bcd34198588852f93442d
   m_configObjects: {}

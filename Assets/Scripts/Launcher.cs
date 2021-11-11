@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 
@@ -28,6 +29,8 @@ namespace Com.OfTomorrowInc.DMShooter
         private BoolVariable isDungeonMaster;
 
         public static ExitGames.Client.Photon.Hashtable clientHash = new ExitGames.Client.Photon.Hashtable();
+
+        public bool testLevel;
 
         #endregion
 
@@ -156,8 +159,19 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public override void OnJoinedRoom()
         {
+            if(testLevel)
+            {
+                PhotonNetwork.LoadLevel("Testing Scene");
+                return;
+            }
+
             Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
             PhotonNetwork.LoadLevel("SampleScene");
+        }
+
+        public void SetTestLevel(Toggle t)
+        {
+            testLevel = t.isOn;
         }
 
         #endregion
