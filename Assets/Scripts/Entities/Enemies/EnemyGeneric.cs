@@ -38,6 +38,9 @@ public class EnemyGeneric : MonoBehaviour
     [Tooltip("Where homing projectiles will attempt to aim at, should be an empty child object of enemy")]
     public GameObject homingPoint;
 
+    [SerializeField]
+    public GameObject selectionHighlight;
+
     [Tooltip("The collider which will be used for critical points")]
     public Collider critBox;
 

@@ -56,6 +56,7 @@ MonoBehaviour:
   movement: {fileID: 0}
   timeSinceLastStateChange: 0
   homingPoint: {fileID: 0}
+  selectionHighlight: {fileID: 0}
   critBox: {fileID: 0}
   currentState: {fileID: 0}
   cooldown: 25
