@@ -211,7 +211,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            DespawnEnemy();
+            // DespawnEnemy();
             placeMode = false;
 
             if (currentAbility != null)

@@ -59,6 +59,8 @@ public class EnemyGeneric : MonoBehaviour
 
     public List<float> ranges;
 
+    public float aggroRange = 15;
+
     // Current valid state transitions
     // [HideInInspector]
     public List<StateTransition> releventTransitions;
@@ -72,6 +74,12 @@ public class EnemyGeneric : MonoBehaviour
     public bool doNotUseAsAbility;
 
     public bool slottable;
+
+    [HideInInspector]
+    public bool moving;
+
+    [HideInInspector]
+    public Queue<Vector3> destinationQueue = new Queue<Vector3>();
 
     // Start is called before the first frame update
     void Start()
@@ -103,34 +111,84 @@ public class EnemyGeneric : MonoBehaviour
         if(statusEffects.GetIsStunned() && agent.isActiveAndEnabled)
         {
             agent.ResetPath();
+            moving = false;
             return;
+        }
+
+        if(agent.isActiveAndEnabled && agent.pathStatus == NavMeshPathStatus.PathComplete)
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                //if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                //{
+                    ProcessQueue();
+                //}
+            }
         }
 
         agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
 
-        target = Helpers.FindClosestVisible(gameObject.transform, targetType);
+        // target = GetClosestVisible();
         
         // allyTarget = Helpers.FindClosestVisible(gameObject.transform, allyTargetType);
-        aiModule.Tick(gameObject, target, allyTarget, agent, movement);
+        // aiModule.Tick(gameObject, target, allyTarget, agent, movement);
     }
 
-    private GameObject FindClosestVisiblePlayer()
+    public void MoveTo(Vector3 position)
     {
-        List<GameObject> gos;
-        gos = GameManager.players;
-        GameObject closest = null;
-        float distance = Mathf.Infinity;
-        Vector3 position = transform.position;
-        foreach (GameObject go in gos)
+        if (agent != null && agent.isActiveAndEnabled)
         {
-            Vector3 diff = go.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance && go.transform != transform && Helpers.CheckLineOfSight(transform, go.transform, 100000))
+            //Debug.Log("Moving");
+            agent.SetDestination(position);
+            moving = true;
+        }
+    }
+
+    public void AddToQueue(Vector3 position)
+    {
+        destinationQueue.Enqueue(position);
+    }
+
+    public void ClearQueue()
+    {
+        destinationQueue.Clear();
+    }
+
+    private void ProcessQueue()
+    {
+        if(destinationQueue.Count > 0)
+        {
+            //Debug.Log("Processing Queue");
+            MoveTo(destinationQueue.Dequeue());
+        } 
+
+        else if(moving)
+        {
+            moving = false;
+        }
+    }
+
+    private GameObject GetClosestVisible()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, aggroRange, LayerMask.GetMask(targetType));
+
+        GameObject closest = null;
+        float dist = Mathf.Infinity;
+
+        foreach(Collider hit in hits)
+        {
+            if(Helpers.CheckLineOfSight(transform, hit.transform, Mathf.Infinity) && hit.gameObject != closest)
             {
-                closest = go;
-                distance = curDistance;
+                float thisDist = Vector3.Distance(transform.position, hit.transform.position);
+
+                if(thisDist < dist)
+                {
+                    dist = thisDist;
+                    closest = hit.gameObject;
+                }
             }
         }
+
         return closest;
     }
 }

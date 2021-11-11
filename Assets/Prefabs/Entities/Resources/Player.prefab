@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3023167433132995624}
   - component: {fileID: 5463467180632802306}
   - component: {fileID: 3852701219511788394}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 8674614850818703753}
   - component: {fileID: 6552692457681727467}
   - component: {fileID: 9072688988341014637}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 3976695573445206542}
   - component: {fileID: 447733624393261423}
   - component: {fileID: 3399245049419158497}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: -9066426888992374240}
   - component: {fileID: 3993731394946226002}
   - component: {fileID: 3629225645229162944}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 2705640986178534493}
   - component: {fileID: 2705640986178534492}
   - component: {fileID: 2705640986178534495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 4644246980797459936}
   - component: {fileID: 2985840472478111870}
   - component: {fileID: 8052898777645139404}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rotater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   - component: {fileID: 3923797326983695027}
   - component: {fileID: 196783896660577260}
   - component: {fileID: 5088181486900602984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 8863148174606821761}
   - component: {fileID: 1901889484425151653}
   - component: {fileID: 3107139079741241604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,7 +916,7 @@ GameObject:
   - component: {fileID: 3055890197726695793}
   - component: {fileID: 4487387574352996537}
   - component: {fileID: 3267128614816129640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 8123898376596191839}
   - component: {fileID: 6488554944154827445}
   - component: {fileID: 1749069429283471796}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1070,7 @@ GameObject:
   - component: {fileID: 5216184613053741473}
   - component: {fileID: 8066241867791474552}
   - component: {fileID: 2759928957294553498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1156,7 @@ GameObject:
   - component: {fileID: 9150555084794334946}
   - component: {fileID: 6058545318285350249}
   - component: {fileID: 324889787488541542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1251,7 +1251,7 @@ GameObject:
   - component: {fileID: 3383859874668603815}
   - component: {fileID: 3336901106863674296}
   - component: {fileID: 348608256205282480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Level Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1325,7 +1325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 727887979456464226}
   - component: {fileID: 6198154636453439146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1414,7 +1414,7 @@ GameObject:
   - component: {fileID: 8316784180190179876}
   - component: {fileID: 1457395186879590670}
   - component: {fileID: 4695602180834703517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1494,7 +1494,7 @@ GameObject:
   - component: {fileID: 85085225683475987}
   - component: {fileID: 993910567122031576}
   - component: {fileID: 1871308833468071273}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Hit Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1671,8 +1671,28 @@ PrefabInstance:
       value: Top Panel
       objectReference: {fileID: 0}
     - target: {fileID: 6368863547330092069, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368863547330092069, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368863547921193252, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368863548113923274, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368863548327768362, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368863548559711568, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c76320fd7fd92794c8c65749fea3b390, type: 3}

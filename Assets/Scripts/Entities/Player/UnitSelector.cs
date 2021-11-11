@@ -99,7 +99,52 @@ public class UnitSelector : MonoBehaviour
         {
             holdingShift.SetActive(false);
         }
+
+        if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            Vector3 dest = GetMousePoint();
+            bool queue = false;
+
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                queue = true;
+            }
+
+            if (dest.x != Mathf.NegativeInfinity)
+            {
+                foreach (EnemyGeneric e in selectedUnits)
+                {
+                    if(queue)
+                    {
+                        e.AddToQueue(dest);
+                    }
+
+                    else
+                    {
+                        e.ClearQueue();
+                        e.MoveTo(dest);
+                    }
+                }
+            }
+        }
     }    
+
+    private Vector3 GetMousePoint()
+    {
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray.origin, ray.direction, Mathf.Infinity);
+        System.Array.Sort(hits, delegate (RaycastHit hit1, RaycastHit hit2) { return hit1.distance.CompareTo(hit2.distance); });
+
+        foreach (RaycastHit hit in hits)
+        {
+            if(hit.transform.tag == "Ground")
+            {
+                return hit.transform.position;
+            }
+        }
+
+        return Vector3.negativeInfinity;
+    }
 
     private void TrySelect()
     {
