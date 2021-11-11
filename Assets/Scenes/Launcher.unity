@@ -12403,6 +12403,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4438f678e5913b44a96e04d0a5a25c78, type: 2}
   - {fileID: 11400000, guid: 6618b1fa77776bb40b8092f0b5b7acaa, type: 2}
   - {fileID: 11400000, guid: 6335dfb3e2077ca47a7525ed72446c64, type: 2}
+  - {fileID: 11400000, guid: 9a37c825880c69f4fa58100c89110a26, type: 2}
   inventory: {fileID: 11400000, guid: 51cc2dbe205181f44813fca7ac6238fa, type: 2}
   selection: {fileID: 0}
 --- !u!114 &2006049032
