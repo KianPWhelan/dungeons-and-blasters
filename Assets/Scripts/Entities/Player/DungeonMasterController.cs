@@ -79,7 +79,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
         body = GetComponent<Rigidbody>();
         startHeight = transform.position.y;
-        
+
 
         LoadEnemyPrefabs();
         abilityButton = (GameObject)Resources.Load("DM Ability Button");
@@ -87,7 +87,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         GenerateAbilityButtons();
 
         var selectionText = canvas.transform.Find("Current Selection Text");
-        selectionText.GetComponent<Text>().text = "Current Selection: " ;
+        selectionText.GetComponent<Text>().text = "Current Selection: ";
 
 #if UNITY_5_4_OR_NEWER
         // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
@@ -124,7 +124,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
     {
         Button button;
 
-        if(currentAbility != null)
+        if (currentAbility != null)
         {
             button = currentAbility.GetComponent<Button>();
             button.image.color = originalButtonColor;
@@ -155,7 +155,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
             {
                 enemyPrefabs.Add(p);
                 cooldowns.Add(p, -100000);
-                if(c.charges != -1)
+                if (c.charges != -1)
                 {
                     charges.Add(p, c.charges);
                 }
@@ -165,7 +165,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
     private void GenerateAbilityButtons()
     {
-        foreach(GameObject enemy in enemyPrefabs)
+        foreach (GameObject enemy in enemyPrefabs)
         {
             var data = enemy.GetComponent<EnemyGeneric>();
             var button = Instantiate(abilityButton, abilityContent.transform);
@@ -183,12 +183,12 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
     {
         var scroll = Input.mouseScrollDelta.y;
 
-        if(scroll < 0)
+        if (scroll < 0)
         {
             body.transform.position = body.transform.position + new Vector3(0f, zoomStep.runtimeValue, 0f);
         }
 
-        else if(scroll > 0)
+        else if (scroll > 0)
         {
             body.transform.position = body.transform.position + new Vector3(0f, -zoomStep.runtimeValue, 0f);
         }
@@ -202,28 +202,28 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
             Cursor.visible = !Cursor.visible;
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0) && placeMode)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && placeMode)
         {
             SpawnEnemy();
             var selectionText = canvas.transform.Find("Current Selection Text");
             selectionText.GetComponent<Text>().text = "Current Selection: ";
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             DespawnEnemy();
             placeMode = false;
 
-            if(currentAbility != null)
+            if (currentAbility != null)
             {
                 var button = currentAbility.GetComponent<Button>();
                 button.image.color = originalButtonColor;
             }
         }
 
-        if(Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
-            if(currentSelection < enemyPrefabs.Count - 1)
+            if (currentSelection < enemyPrefabs.Count - 1)
             {
                 currentSelection++;
                 var selectionText = canvas.transform.Find("Current Selection Text");
@@ -231,9 +231,9 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            if(currentSelection > 0)
+            if (currentSelection > 0)
             {
                 currentSelection--;
                 var selectionText = canvas.transform.Find("Current Selection Text");
@@ -276,9 +276,9 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
 
             var closestPlayer = Helpers.FindClosestVisible(hit.transform, "Player");
 
-            if(closestPlayer == null || Vector3.Distance(hit.transform.position, closestPlayer.transform.position) > 12f)
+            if (closestPlayer == null || Vector3.Distance(hit.transform.position, closestPlayer.transform.position) > 12f)
             {
-                if(charges.ContainsKey(enemyToSpawn) && charges[enemyToSpawn] == 0)
+                if (charges.ContainsKey(enemyToSpawn) && charges[enemyToSpawn] == 0)
                 {
                     return;
                 }
@@ -287,7 +287,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
                 cooldowns[enemyToSpawn] = Time.time;
                 currentAbility.cooldown = currentAbility.cooldownTime;
 
-                if(charges.ContainsKey(enemyToSpawn))
+                if (charges.ContainsKey(enemyToSpawn))
                 {
                     charges[enemyToSpawn]--;
                 }
@@ -308,7 +308,7 @@ public class DungeonMasterController : MonoBehaviourPunCallbacks
         {
             Debug.Log(hit.transform.name);
             Debug.Log("hit");
-            if(hit.collider.gameObject.TryGetComponent(out EnemyGeneric c))
+            if (hit.collider.gameObject.TryGetComponent(out EnemyGeneric c))
             {
                 PhotonNetwork.Destroy(hit.collider.gameObject);
             }

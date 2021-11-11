@@ -94,7 +94,7 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Ground")
+        if (collision.transform.tag == "Ground")
         {
             jumpsUsed = 0;
         }

@@ -52,12 +52,12 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     {
         var tag = targetTag;
 
-        if(useOverwriteTag)
+        if (useOverwriteTag)
         {
             tag = overwriteTag;
         }
 
-        if(statusEffects != null && isStatusEffect && refreshDuration && statusEffects.IsAffectedBy(this) && !isProc && (target.tag == tag || tag == "none"))
+        if (statusEffects != null && isStatusEffect && refreshDuration && statusEffects.IsAffectedBy(this) && !isProc && (target.tag == tag || tag == "none"))
         {
             Debug.Log("Refreshing");
             statusEffects.RefreshDuration(this);
@@ -72,17 +72,17 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
             return;
         }
 
-        else if(statusEffects == null)
+        else if (statusEffects == null)
         {
             Debug.LogWarning("Target of effect has no status effects behavior");
         }
 
-        else if(isStatusEffect && !isProc)
+        else if (isStatusEffect && !isProc)
         {
             return;
         }
 
-        if(health != null && (target.tag == tag || tag == "none"))
+        if (health != null && (target.tag == tag || tag == "none"))
         {
             // Apply damage first
             foreach (Damage damage in damages)
@@ -97,7 +97,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
         }
 
         // Apply recursive effects
-        foreach(Effect effect in recursiveEffects)
+        foreach (Effect effect in recursiveEffects)
         {
             effect.ApplyEffect(target, health, statusEffects, location, rotation, tag);
         }
