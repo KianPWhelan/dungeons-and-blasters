@@ -81,38 +81,38 @@ public class Weapon : ScriptableObject
         // Debug.Log("Using weapon " + this.name);
         bool didUseAttack = false;
 
-        if(animation != null)
+        if (animation != null)
         {
             animation.Play();
         }
 
         var count = 0;
 
-        foreach(Attack attack in attacks)
+        foreach (Attack attack in attacks)
         {
             var id = ids[count];
 
             // Debug.Log(id.attack + " " + id.id);
 
-            if(!map[id].lastUseTime.ContainsKey(self))
+            if (!map[id].lastUseTime.ContainsKey(self))
             {
                 map[id].lastUseTime.Add(self, -100000f);
             }
 
             var currentTime = Time.time;
 
-            if(map[id].lastUseTime[self] + map[id].cooldown <= currentTime)
+            if (map[id].lastUseTime[self] + map[id].cooldown <= currentTime)
             {
                 didUseAttack = true;
 
-                if(self.GetPhotonView().IsMine)
+                if (self.GetPhotonView().IsMine)
                 {
                     attack.PerformAttack(self, map[id].delay, destination, targetTag, true);
                 }
-                
+
                 map[id].lastUseTime[self] = currentTime;
             }
-            
+
             else
             {
                 // Debug.Log("On cooldown");
@@ -127,7 +127,7 @@ public class Weapon : ScriptableObject
     // Map attacks to cooldowns on serialization
     public void Map()
     {
-        if(attacks.Count == cooldowns.Count && !attacks.Contains(null))
+        if (attacks.Count == cooldowns.Count && !attacks.Contains(null))
         {
             map = new Dictionary<Identifier, Container>();
             for (int i = 0; i < attacks.Count; i++)
