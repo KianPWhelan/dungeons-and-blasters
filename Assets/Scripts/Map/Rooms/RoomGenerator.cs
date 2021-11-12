@@ -43,6 +43,7 @@ public class RoomGenerator : MonoBehaviour
 
         GenerateGrid();
         GenerateWalls();
+        Batch();
     }
 
     // Update is called once per frame
