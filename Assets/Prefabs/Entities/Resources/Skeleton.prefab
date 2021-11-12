@@ -856,7 +856,8 @@ MonoBehaviour:
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:
   - 4
-  aggroRange: 15
+  aggroRange: 10
+  desiredRange: 0
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
@@ -867,6 +868,7 @@ MonoBehaviour:
   weaponHolder: {fileID: 0}
   isFollowing: 0
   followTarget: {fileID: 0}
+  canAggro: 1
 --- !u!114 &9070468601821801597
 MonoBehaviour:
   m_ObjectHideFlags: 0

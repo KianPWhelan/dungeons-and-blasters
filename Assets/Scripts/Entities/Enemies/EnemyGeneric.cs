@@ -64,6 +64,8 @@ public class EnemyGeneric : MonoBehaviour
 
     public float aggroRange = 15;
 
+    public float desiredRange = 0;
+
     // Current valid state transitions
     // [HideInInspector]
     public List<StateTransition> releventTransitions;
@@ -95,6 +97,10 @@ public class EnemyGeneric : MonoBehaviour
 
     [HideInInspector]
     public GameObject followTarget;
+
+    public bool canAggro = true;
+
+    public bool isAggro = false;
 
     private void Awake()
     {
@@ -146,15 +152,25 @@ public class EnemyGeneric : MonoBehaviour
             if(followTarget == null)
             {
                 CancelFollow();
+                canAggro = true;
             }
 
             else
             {
+                canAggro = false;
                 MoveTo(followTarget.transform.position);
+            }
+
+            if (agent.isActiveAndEnabled && agent.pathStatus == NavMeshPathStatus.PathComplete)
+            {
+                if (agent.remainingDistance <= agent.stoppingDistance && moving)
+                {
+                    photonView.RPC("SetIsMoving", RpcTarget.All, false);
+                }
             }
         }
 
-        if(agent.isActiveAndEnabled && agent.pathStatus == NavMeshPathStatus.PathComplete)
+        if(agent.isActiveAndEnabled && agent.pathStatus == NavMeshPathStatus.PathComplete && !isFollowing)
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
@@ -167,6 +183,7 @@ public class EnemyGeneric : MonoBehaviour
 
         agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
 
+        target = null;
         target = GetClosestVisible();
         
         // allyTarget = Helpers.FindClosestVisible(gameObject.transform, allyTargetType);
@@ -233,6 +250,7 @@ public class EnemyGeneric : MonoBehaviour
         {
             //Debug.Log("Here");
             photonView.RPC("SetIsMoving", RpcTarget.All, false);
+            canAggro = true;
         }
     }
 

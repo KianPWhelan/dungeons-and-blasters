@@ -119,6 +119,7 @@ public class UnitSelector : MonoBehaviour
                     e.ClearPath();
                     e.CancelFollow();
                     e.FollowEntity(follow);
+                    e.canAggro = false;
                 }
             }
 
@@ -129,6 +130,7 @@ public class UnitSelector : MonoBehaviour
                     if(queue)
                     {
                         e.AddToQueue(dest);
+                        e.canAggro = false;
                     }
 
                     else
@@ -137,6 +139,7 @@ public class UnitSelector : MonoBehaviour
                         e.ClearPath();
                         e.CancelFollow();
                         e.AddToQueue(dest);
+                        e.canAggro = false;
                     }
                 }
             }
