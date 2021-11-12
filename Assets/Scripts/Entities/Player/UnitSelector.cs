@@ -122,7 +122,7 @@ public class UnitSelector : MonoBehaviour
                     else
                     {
                         e.ClearQueue();
-                        e.MoveTo(dest);
+                        e.AddToQueue(dest);
                     }
                 }
             }

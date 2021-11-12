@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Com.OfTomorrowInc.DMShooter;
+using Photon.Pun;
 
 public class EnemyGeneric : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class EnemyGeneric : MonoBehaviour
 
     [SerializeField]
     public GameObject selectionHighlight;
+
+    public Animator animator;
 
     [Tooltip("The collider which will be used for critical points")]
     public Collider critBox;
@@ -81,6 +84,14 @@ public class EnemyGeneric : MonoBehaviour
     [HideInInspector]
     public Queue<Vector3> destinationQueue = new Queue<Vector3>();
 
+    [HideInInspector]
+    public PhotonView photonView;
+
+    private void Awake()
+    {
+        photonView = gameObject.GetPhotonView();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -108,10 +119,15 @@ public class EnemyGeneric : MonoBehaviour
 
     private void Update()
     {
+        if(!photonView.IsMine)
+        {
+            return;
+        }
+
         if(statusEffects.GetIsStunned() && agent.isActiveAndEnabled)
         {
             agent.ResetPath();
-            moving = false;
+            photonView.RPC("SetIsMoving", RpcTarget.All, false);
             return;
         }
 
@@ -119,7 +135,7 @@ public class EnemyGeneric : MonoBehaviour
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
-                //if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                //if (!agent.hasPath)
                 //{
                     ProcessQueue();
                 //}
@@ -136,22 +152,32 @@ public class EnemyGeneric : MonoBehaviour
 
     public void MoveTo(Vector3 position)
     {
-        if (agent != null && agent.isActiveAndEnabled)
+        if (agent != null && agent.isActiveAndEnabled && photonView.IsMine)
         {
             //Debug.Log("Moving");
             agent.SetDestination(position);
-            moving = true;
+            
+            if(!moving)
+            {
+                photonView.RPC("SetIsMoving", RpcTarget.All, true);
+            }
         }
     }
 
     public void AddToQueue(Vector3 position)
     {
-        destinationQueue.Enqueue(position);
+        if(photonView.IsMine)
+        {
+            destinationQueue.Enqueue(position);
+        }
     }
 
     public void ClearQueue()
     {
-        destinationQueue.Clear();
+        if(photonView.IsMine)
+        {
+            destinationQueue.Clear();
+        }
     }
 
     private void ProcessQueue()
@@ -164,7 +190,8 @@ public class EnemyGeneric : MonoBehaviour
 
         else if(moving)
         {
-            moving = false;
+            Debug.Log("Here");
+            photonView.RPC("SetIsMoving", RpcTarget.All, false);
         }
     }
 
@@ -190,5 +217,19 @@ public class EnemyGeneric : MonoBehaviour
         }
 
         return closest;
+    }
+
+    [PunRPC]
+    private void SetIsMoving(bool val)
+    {
+        moving = val;
+        SetAnimationBool("isMoving", val);
+    }
+
+    [PunRPC]
+    private void SetAnimationBool(string parameter, bool val)
+    {
+        Debug.Log("Setting " + parameter + " to " + val);
+        animator.SetBool(parameter, val);
     }
 }

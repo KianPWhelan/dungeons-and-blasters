@@ -846,6 +846,7 @@ MonoBehaviour:
   timeSinceLastStateChange: 0
   homingPoint: {fileID: 846465751880415107}
   selectionHighlight: {fileID: 5395521320500251675}
+  animator: {fileID: 9070468602463251940}
   critBox: {fileID: 1820088735399678048}
   currentState: {fileID: 0}
   cooldown: 2.5
@@ -862,6 +863,7 @@ MonoBehaviour:
   doNotUseAsAbility: 1
   slottable: 0
   moving: 0
+  photonView: {fileID: 0}
 --- !u!114 &9070468601821801597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1292,6 +1294,11 @@ PrefabInstance:
 --- !u!4 &9070468602472235528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400012, guid: 15654a42333b0514dbddde329550bedf, type: 3}
+  m_PrefabInstance: {fileID: 9070468602472634500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &9070468602463251940 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 15654a42333b0514dbddde329550bedf, type: 3}
   m_PrefabInstance: {fileID: 9070468602472634500}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &9070468602472235560 stripped
