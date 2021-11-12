@@ -9,6 +9,6 @@ using UnityEngine.AI;
 [CreateAssetMenu(menuName = "Modules/AI/Empty AI")]
 public class EmptyAI : EnemyAI
 {
-    public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
-    {}
+    public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement, EnemyGeneric enemyGeneric = null)
+    { }
 }

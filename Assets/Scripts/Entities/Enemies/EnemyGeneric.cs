@@ -87,9 +87,13 @@ public class EnemyGeneric : MonoBehaviour
     [HideInInspector]
     public PhotonView photonView;
 
+    [HideInInspector]
+    public WeaponHolder weaponHolder;
+
     private void Awake()
     {
         photonView = gameObject.GetPhotonView();
+        TryGetComponent(out weaponHolder);
     }
 
     // Start is called before the first frame update
@@ -144,10 +148,10 @@ public class EnemyGeneric : MonoBehaviour
 
         agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
 
-        // target = GetClosestVisible();
+        target = GetClosestVisible();
         
         // allyTarget = Helpers.FindClosestVisible(gameObject.transform, allyTargetType);
-        // aiModule.Tick(gameObject, target, allyTarget, agent, movement);
+        aiModule.Tick(gameObject, target, allyTarget, agent, movement, this);
     }
 
     public void MoveTo(Vector3 position)
@@ -190,7 +194,7 @@ public class EnemyGeneric : MonoBehaviour
 
         else if(moving)
         {
-            Debug.Log("Here");
+            //Debug.Log("Here");
             photonView.RPC("SetIsMoving", RpcTarget.All, false);
         }
     }
@@ -229,7 +233,13 @@ public class EnemyGeneric : MonoBehaviour
     [PunRPC]
     private void SetAnimationBool(string parameter, bool val)
     {
-        Debug.Log("Setting " + parameter + " to " + val);
+        //Debug.Log("Setting " + parameter + " to " + val);
         animator.SetBool(parameter, val);
+    }
+
+    [PunRPC]
+    private void SetAnimationTrigger(string parameter)
+    {
+        animator.SetTrigger(parameter);
     }
 }

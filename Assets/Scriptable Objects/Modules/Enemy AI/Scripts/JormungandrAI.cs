@@ -37,7 +37,7 @@ public class JormungandrAI : EnemyAI
         public float nextTpTime = 0f;
     }
 
-    public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
+    public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement, EnemyGeneric enemyGeneric = null)
     {
         if(!data.ContainsKey(self))
         {

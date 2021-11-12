@@ -836,7 +836,7 @@ MonoBehaviour:
   rarity: 0
   size: 0
   uniqueId: 69608c7c-2f73-4a09-84bc-2119879fb5a
-  aiModule: {fileID: 11400000, guid: 4ebcd45dcd5a7fb41b628eeadb73248c, type: 2}
+  aiModule: {fileID: 11400000, guid: a847dcfa4927ee84dabe21e6d954a71e, type: 2}
   targetType: Player
   allyTargetType: Enemy
   target: {fileID: 0}
@@ -864,6 +864,7 @@ MonoBehaviour:
   slottable: 0
   moving: 0
   photonView: {fileID: 0}
+  weaponHolder: {fileID: 0}
 --- !u!114 &9070468601821801597
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -68,7 +68,7 @@ public class CustomAI : EnemyAI, ISerializationCallbackReceiver
         BuildStateMachine();
     }
 
-    public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement)
+    public override void Tick(GameObject self, GameObject target, GameObject allyTarget, NavMeshAgent agent, Movement movement, EnemyGeneric enemyGeneric = null)
     {
         localSelf = self;
         localTarget = target;
