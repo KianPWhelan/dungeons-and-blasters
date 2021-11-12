@@ -156,7 +156,7 @@ public class UnitSelector : MonoBehaviour
         {
             if(hit.transform.tag == "Ground")
             {
-                return hit.transform.position;
+                return hit.point;
             }
         }
 

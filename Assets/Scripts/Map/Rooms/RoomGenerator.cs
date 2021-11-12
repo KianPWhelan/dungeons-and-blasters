@@ -156,8 +156,8 @@ public class RoomGenerator : MonoBehaviour
         // Generate along top and bottom
         for (int i = 0; i < gridSize.x; i++)
         {
-            var newWallTop = Instantiate(wallPrefab, new Vector3(i * offset, 0, (gridSize.y * offset) - (offset / 2)), Quaternion.identity, transform);
-            var newWallBot = Instantiate(wallPrefab, new Vector3(i * offset, 0, -offset / 2), Quaternion.identity, transform);
+            var newWallTop = Instantiate(wallPrefab, new Vector3(i * offset, -0.5f, (gridSize.y * offset) - (offset / 2) + 0.75f), Quaternion.identity, transform);
+            var newWallBot = Instantiate(wallPrefab, new Vector3(i * offset, -0.5f, -offset / 2 + 0.75f), Quaternion.identity, transform);
             //newWallTop.isStatic = true;
             //newWallTop.transform.GetChild(0).gameObject.isStatic = true;
             //newWallBot.isStatic = true;
@@ -169,8 +169,8 @@ public class RoomGenerator : MonoBehaviour
         // Generate along sides
         for(int i = 0; i < gridSize.y; i++)
         {
-            var newWallLeft = Instantiate(wallPrefab, new Vector3(-offset / 2, 0, i * offset), Quaternion.FromToRotation(Vector3.forward, Vector3.left), transform);
-            var newWallRight = Instantiate(wallPrefab, new Vector3((gridSize.x * offset) - (offset / 2), 0, i * offset), Quaternion.FromToRotation(Vector3.forward, Vector3.left), transform);
+            var newWallLeft = Instantiate(wallPrefab, new Vector3(-offset / 2 - 0.75f, -0.5f, i * offset), Quaternion.FromToRotation(Vector3.forward, Vector3.left), transform);
+            var newWallRight = Instantiate(wallPrefab, new Vector3((gridSize.x * offset) - (offset / 2) - 0.75f, -0.5f, i * offset), Quaternion.FromToRotation(Vector3.forward, Vector3.left), transform);
             //newWallLeft.isStatic = true;
             //newWallLeft.transform.GetChild(0).gameObject.isStatic = true;
             //newWallRight.isStatic = true;
