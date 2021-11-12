@@ -103,6 +103,7 @@ public class UnitSelector : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
             Vector3 dest = GetMousePoint();
+            GameObject follow = TryFollow();
             bool queue = false;
 
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
@@ -110,7 +111,18 @@ public class UnitSelector : MonoBehaviour
                 queue = true;
             }
 
-            if (dest.x != Mathf.NegativeInfinity)
+            if(follow != null)
+            {
+                foreach(EnemyGeneric e in selectedUnits)
+                {
+                    e.ClearQueue();
+                    e.ClearPath();
+                    e.CancelFollow();
+                    e.FollowEntity(follow);
+                }
+            }
+
+            else if (dest.x != Mathf.NegativeInfinity)
             {
                 foreach (EnemyGeneric e in selectedUnits)
                 {
@@ -122,6 +134,8 @@ public class UnitSelector : MonoBehaviour
                     else
                     {
                         e.ClearQueue();
+                        e.ClearPath();
+                        e.CancelFollow();
                         e.AddToQueue(dest);
                     }
                 }
@@ -144,6 +158,22 @@ public class UnitSelector : MonoBehaviour
         }
 
         return Vector3.negativeInfinity;
+    }
+
+    private GameObject TryFollow()
+    {
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if(hit.transform.gameObject.tag == "Enemy" || hit.transform.gameObject.tag == "Player")
+            {
+                return hit.transform.gameObject;
+            }
+        }
+
+        return null;
     }
 
     private void TrySelect()

@@ -90,6 +90,12 @@ public class EnemyGeneric : MonoBehaviour
     [HideInInspector]
     public WeaponHolder weaponHolder;
 
+    [HideInInspector]
+    public bool isFollowing;
+
+    [HideInInspector]
+    public GameObject followTarget;
+
     private void Awake()
     {
         photonView = gameObject.GetPhotonView();
@@ -133,6 +139,19 @@ public class EnemyGeneric : MonoBehaviour
             agent.ResetPath();
             photonView.RPC("SetIsMoving", RpcTarget.All, false);
             return;
+        }
+
+        if(isFollowing)
+        { 
+            if(followTarget == null)
+            {
+                CancelFollow();
+            }
+
+            else
+            {
+                MoveTo(followTarget.transform.position);
+            }
         }
 
         if(agent.isActiveAndEnabled && agent.pathStatus == NavMeshPathStatus.PathComplete)
@@ -184,9 +203,27 @@ public class EnemyGeneric : MonoBehaviour
         }
     }
 
+    public void ClearPath()
+    {
+        agent.ResetPath();
+        photonView.RPC("SetIsMoving", RpcTarget.All, false);
+    }
+
+    public void FollowEntity(GameObject target)
+    {
+        followTarget = target;
+        photonView.RPC("SetIsFollowing", RpcTarget.All, true);
+    }
+
+    public void CancelFollow()
+    {
+        photonView.RPC("SetIsFollowing", RpcTarget.All, false);
+        photonView.RPC("SetIsMoving", RpcTarget.All, false);
+    }
+
     private void ProcessQueue()
     {
-        if(destinationQueue.Count > 0)
+        if(destinationQueue.Count > 0 && !isFollowing)
         {
             //Debug.Log("Processing Queue");
             MoveTo(destinationQueue.Dequeue());
@@ -228,6 +265,12 @@ public class EnemyGeneric : MonoBehaviour
     {
         moving = val;
         SetAnimationBool("isMoving", val);
+    }
+
+    [PunRPC]
+    private void SetIsFollowing(bool val)
+    {
+        isFollowing = val;
     }
 
     [PunRPC]
