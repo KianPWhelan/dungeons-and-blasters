@@ -924,7 +924,7 @@ MonoBehaviour:
   rarity: 0
   size: 0
   uniqueId: ac3cd396-bb6c-4943-a01b-e19abce8be4a
-  aiModule: {fileID: 11400000, guid: 4ebcd45dcd5a7fb41b628eeadb73248c, type: 2}
+  aiModule: {fileID: 11400000, guid: a847dcfa4927ee84dabe21e6d954a71e, type: 2}
   targetType: Player
   allyTargetType: Enemy
   target: {fileID: 0}
@@ -934,6 +934,7 @@ MonoBehaviour:
   timeSinceLastStateChange: 0
   homingPoint: {fileID: 3009104327204814771}
   selectionHighlight: {fileID: 2145134958285484072}
+  animator: {fileID: 8939281338094584564}
   critBox: {fileID: 1612678386225002221}
   currentState: {fileID: 0}
   cooldown: 5
@@ -943,11 +944,20 @@ MonoBehaviour:
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:
   - 35
+  aggroRange: 35
+  desiredRange: 34
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
   doNotUseAsAbility: 1
   slottable: 1
+  moving: 0
+  photonView: {fileID: 0}
+  weaponHolder: {fileID: 0}
+  isFollowing: 0
+  followTarget: {fileID: 0}
+  canAggro: 1
+  isAggro: 0
 --- !u!114 &9006593377615435943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,12 +1263,17 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 4456f1cf16c7940b29c8d25d4570bd9d, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b3c7c89c201561a4f940850ca8f93824, type: 2}
+      objectReference: {fileID: 9100000, guid: 77813def79556794cbe614861eb00bed, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4456f1cf16c7940b29c8d25d4570bd9d, type: 3}
 --- !u!4 &8939281338104474904 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400012, guid: 4456f1cf16c7940b29c8d25d4570bd9d, type: 3}
+  m_PrefabInstance: {fileID: 8939281338104084372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8939281338094584564 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 4456f1cf16c7940b29c8d25d4570bd9d, type: 3}
   m_PrefabInstance: {fileID: 8939281338104084372}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8939281338104474886 stripped

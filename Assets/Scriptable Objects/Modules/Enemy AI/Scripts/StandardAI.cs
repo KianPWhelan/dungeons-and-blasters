@@ -24,6 +24,7 @@ public class StandardAI : EnemyAI
             Debug.Log("Canceling follow");
             enemyGeneric.isAggro = false;
             enemyGeneric.canAggro = true;
+            enemyGeneric.ClearPath();
             enemyGeneric.CancelFollow();
         }
     }

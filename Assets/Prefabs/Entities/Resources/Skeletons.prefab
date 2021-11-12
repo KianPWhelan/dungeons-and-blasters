@@ -79,6 +79,7 @@ MonoBehaviour:
   isFollowing: 0
   followTarget: {fileID: 0}
   canAggro: 1
+  isAggro: 0
   enemyToSpawn: {fileID: 9070468601821801538, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
   numToSpawn: 5
 --- !u!114 &7411641805199110821

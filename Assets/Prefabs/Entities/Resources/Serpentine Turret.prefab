@@ -835,7 +835,7 @@ MonoBehaviour:
   rarity: 1
   size: 1
   uniqueId: 69608c7c-2f73-4a09-84bc-2119879fb5a
-  aiModule: {fileID: 11400000, guid: 4ebcd45dcd5a7fb41b628eeadb73248c, type: 2}
+  aiModule: {fileID: 11400000, guid: a847dcfa4927ee84dabe21e6d954a71e, type: 2}
   targetType: Player
   allyTargetType: Enemy
   target: {fileID: 0}
@@ -845,6 +845,7 @@ MonoBehaviour:
   timeSinceLastStateChange: 0
   homingPoint: {fileID: 846465751880415107}
   selectionHighlight: {fileID: 5272299066742366565}
+  animator: {fileID: 0}
   critBox: {fileID: 1820088735399678048}
   currentState: {fileID: 0}
   cooldown: 6
@@ -854,11 +855,20 @@ MonoBehaviour:
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:
   - 10
+  aggroRange: 0
+  desiredRange: 0
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
   doNotUseAsAbility: 1
   slottable: 1
+  moving: 0
+  photonView: {fileID: 0}
+  weaponHolder: {fileID: 0}
+  isFollowing: 0
+  followTarget: {fileID: 0}
+  canAggro: 1
+  isAggro: 0
 --- !u!114 &9070468601821801597
 MonoBehaviour:
   m_ObjectHideFlags: 0
