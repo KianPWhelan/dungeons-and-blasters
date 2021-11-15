@@ -19,6 +19,6 @@ MonoBehaviour:
   overwriteTag: 
   canCrit: 1
   critOnCritBoxesOnly: 0
-  critChance: 100
+  critChance: 140
   critMultiplier: 4
   knockbackStrength: 0

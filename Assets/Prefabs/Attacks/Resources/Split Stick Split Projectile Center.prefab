@@ -118,8 +118,8 @@ MonoBehaviour:
   attackDuration: 2
   localStartingPosition: {x: 0, y: 0, z: 0}
   localRotationPosition: {x: 0, y: 0, z: 0}
-  ignoreParentRotation: 0
-  forceDetachFromParent: 0
+  ignoreParentRotation: 1
+  forceDetachFromParent: 1
   spread: 0
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0

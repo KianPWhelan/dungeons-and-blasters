@@ -17,7 +17,7 @@ MonoBehaviour:
   attacks:
   - {fileID: 11400000, guid: ba8418369b15e5b428863be6cb999f84, type: 2}
   cooldowns:
-  - 0.3
+  - 0.45
   delays:
   - 0
   animation: {fileID: 0}
