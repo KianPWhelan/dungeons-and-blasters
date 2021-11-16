@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0252b129c204c3842b67624c34c07acd, type: 3}
-  m_Name: Glacial Shard Slow Effect
+  m_Name: Staff of Regrowth Buff Effect
   m_EditorClassIdentifier: 
   damages: []
   isStatusEffect: 1
   interval: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
-  duration: {fileID: 11400000, guid: f1cd2b7b018260145aa4f8b7769ae797, type: 2}
+  duration: {fileID: 11400000, guid: a9b85aaa9935d57448a0762fe97d75c7, type: 2}
   stacks: 1
-  refreshDuration: 1
+  refreshDuration: 0
   recursiveEffects: []
   useOverwriteTag: 0
   overwriteTag: 
-  damageDealtMod: 1
+  damageDealtMod: -5
   damageRecievedMod: 1
-  moveSpeedMod: 0.7
+  moveSpeedMod: 1
   isStun: 0
   resistanceMods: []

@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d697dfece3c4e3140ad84a97af774b38, type: 3}
-  m_Name: Fire Status Effect
+  m_Name: Blank Effect
   m_EditorClassIdentifier: 
-  damages:
-  - {fileID: 11400000, guid: da237d1696ebc0847bd81789fdfeda20, type: 2}
-  isStatusEffect: 1
-  interval: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
-  duration: {fileID: 11400000, guid: 2ed1610e402e92446b3b69cbc005b1da, type: 2}
-  stacks: 1
+  damages: []
+  isStatusEffect: 0
+  interval: {fileID: 0}
+  duration: {fileID: 0}
+  stacks: 0
   refreshDuration: 0
   recursiveEffects: []
   useOverwriteTag: 0

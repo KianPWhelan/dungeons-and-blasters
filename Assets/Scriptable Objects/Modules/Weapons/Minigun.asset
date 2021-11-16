@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Minigun
   m_EditorClassIdentifier: 
   uniqueId: 
-  rarity: 0
+  rarity: 3
   attacks:
   - {fileID: 11400000, guid: f79463cf7a3852b48b3a13d3e850f35e, type: 2}
   cooldowns:

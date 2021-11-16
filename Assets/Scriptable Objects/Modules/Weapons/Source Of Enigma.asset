@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Source Of Enigma
   m_EditorClassIdentifier: 
   uniqueId: 
-  rarity: 0
+  rarity: 4
   attacks:
   - {fileID: 11400000, guid: 3c79b4bc071e53f45abe1a67b14cf891, type: 2}
   cooldowns:
@@ -23,3 +23,7 @@ MonoBehaviour:
   animation: {fileID: 0}
   hasSpinup: 0
   spinupTime: 0
+  canOverheat: 0
+  overheatTime: 0
+  overheatRecoveryTime: 0
+  isOverheated: 0

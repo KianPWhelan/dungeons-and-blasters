@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damages: []
   isStatusEffect: 1
-  interval: {fileID: 11400000, guid: 96f8db1e5495b29409c50ee889dfa7b6, type: 2}
+  interval: {fileID: 11400000, guid: 2ed1610e402e92446b3b69cbc005b1da, type: 2}
   duration: {fileID: 11400000, guid: f48dbadb85c79af418f92f7e704282c0, type: 2}
   stacks: 5
   refreshDuration: 1
