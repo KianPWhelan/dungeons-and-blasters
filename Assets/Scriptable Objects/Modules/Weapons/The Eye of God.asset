@@ -16,20 +16,11 @@ MonoBehaviour:
   rarity: 4
   attacks:
   - {fileID: 11400000, guid: 6af39e9f290c17f4e9ea9175b35a7797, type: 2}
-  - {fileID: 11400000, guid: 90afc4fbdd6e66641bc1cd3188f5010f, type: 2}
-  - {fileID: 11400000, guid: ca7c6ef6cf9b9734c9ef39e20a5ad719, type: 2}
-  - {fileID: 11400000, guid: d3269650712cc5948b56e7cd7c0c981f, type: 2}
   - {fileID: 11400000, guid: ce800a1c0ae200c439d007d1d5b49f15, type: 2}
   cooldowns:
   - 1.9
   - 1.9
-  - 1.9
-  - 1.9
-  - 1.9
   delays:
-  - 0.5
-  - 0.5
-  - 0.5
   - 0.5
   - 0
   animation: {fileID: 0}

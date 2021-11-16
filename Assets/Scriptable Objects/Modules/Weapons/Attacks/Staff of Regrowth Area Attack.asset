@@ -15,8 +15,8 @@ MonoBehaviour:
   attack: {fileID: 9116579094274039520, guid: 3622d6ffb42573241b28846e5e67811a, type: 3}
   effects:
   - {fileID: 11400000, guid: 09bc6b75f1399b545a8fb544c30a226b, type: 2}
-  useOverwriteTag: 1
-  overwriteTag: Player
+  useOverwriteTag: 0
+  overwriteTag: 
   canCrit: 0
   critOnCritBoxesOnly: 1
   critChance: 1000
