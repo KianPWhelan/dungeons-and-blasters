@@ -249,7 +249,7 @@ PrefabInstance:
     - target: {fileID: 114047230355301454, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
       propertyPath: prefabSound
       value: 
-      objectReference: {fileID: 6137451349687365925, guid: f928dd677fc7e784f9594c680f39ca68, type: 3}
+      objectReference: {fileID: 6137451349687365925, guid: 097dd0fa8e1674244a9855c7738ca088, type: 3}
     - target: {fileID: 199088780372426232, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1

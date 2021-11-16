@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Glacial Shard
   m_EditorClassIdentifier: 
   uniqueId: 
-  rarity: 0
+  rarity: 2
   attacks:
   - {fileID: 11400000, guid: 2883b2b7fc3c4ad4b93ab55b50a92c83, type: 2}
   - {fileID: 11400000, guid: ce06add3f00406041a9a3dc10df5f906, type: 2}

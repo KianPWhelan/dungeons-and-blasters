@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damages: []
   isStatusEffect: 1
-  interval: {fileID: 11400000, guid: 744367d2a2087c341b4cd6d453c5295f, type: 2}
-  duration: {fileID: 11400000, guid: a95de1c195049f8489f163bc01b3cfb2, type: 2}
+  interval: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
+  duration: {fileID: 11400000, guid: f1cd2b7b018260145aa4f8b7769ae797, type: 2}
   stacks: 1
   refreshDuration: 1
   recursiveEffects: []

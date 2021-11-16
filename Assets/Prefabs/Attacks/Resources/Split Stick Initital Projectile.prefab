@@ -144,7 +144,7 @@ MonoBehaviour:
   accuracyOffset: {x: 0, y: 0, z: 0}
   rotater: {fileID: 0}
   ownerId: 0
-  speed: 30
+  speed: 15
   canGoThroughObjects: 0
   reevluateRotationAfterLocalPositionOffset: 0
   homing: 0
@@ -241,6 +241,14 @@ PrefabInstance:
       propertyPath: prefabSound
       value: 
       objectReference: {fileID: 6137451349687365925, guid: ecc3798334278ba49b94f72992251649, type: 3}
+    - target: {fileID: 114977652023293756, guid: bca4ed7e7cfeff046a52134bbc4f2a05, type: 3}
+      propertyPath: destroyWhenDone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977652023293756, guid: bca4ed7e7cfeff046a52134bbc4f2a05, type: 3}
+      propertyPath: soundPrefabIsChild
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 199352969557598408, guid: bca4ed7e7cfeff046a52134bbc4f2a05, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1

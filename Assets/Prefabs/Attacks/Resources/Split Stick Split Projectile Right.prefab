@@ -117,9 +117,9 @@ MonoBehaviour:
   subAttacksAtSurfaceNormal: 0
   attackDuration: 2
   localStartingPosition: {x: 0, y: 0, z: 0}
-  localRotationPosition: {x: 0, y: 0, z: 45}
-  ignoreParentRotation: 0
-  forceDetachFromParent: 0
+  localRotationPosition: {x: 0, y: 15, z: 15}
+  ignoreParentRotation: 1
+  forceDetachFromParent: 1
   spread: 0
   destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   visualEndEffect: {fileID: 1248725148069024, guid: 25464a23a439eef4b84cdfac9b1e33e2, type: 3}
   visualStartEffect: {fileID: 0}
   visualStartEffectPositionOffset: {x: 0, y: 0, z: 0}
-  visualStartEffectRotationOffset: {x: 0, y: 0, z: 45}
+  visualStartEffectRotationOffset: {x: 0, y: 15, z: 15}
   validTag: 
   startingTime: 0
   hitList: []
@@ -237,7 +237,7 @@ PrefabInstance:
     - target: {fileID: 114787531321564738, guid: a4abe2b16a0882947a66c8380444e94b, type: 3}
       propertyPath: prefabSound
       value: 
-      objectReference: {fileID: 6137451349687365925, guid: c50b379c267c55e48a2c5ed8f61e46bf, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 199113248790281326, guid: a4abe2b16a0882947a66c8380444e94b, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1

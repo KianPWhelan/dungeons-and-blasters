@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Burst Rifle
   m_EditorClassIdentifier: 
   uniqueId: 
-  rarity: 0
+  rarity: 1
   attacks:
   - {fileID: 11400000, guid: 00afb46e08115fb45bc87ae24f411c86, type: 2}
   - {fileID: 11400000, guid: 00afb46e08115fb45bc87ae24f411c86, type: 2}

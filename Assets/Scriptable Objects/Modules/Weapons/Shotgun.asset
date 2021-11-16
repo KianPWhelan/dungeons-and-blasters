@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   uniqueId: 
-  rarity: 0
+  rarity: 1
   attacks:
   - {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
   - {fileID: 11400000, guid: 766fcbde40e2a93429f754de6b9e7471, type: 2}

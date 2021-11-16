@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Split Stick
   m_EditorClassIdentifier: 
   uniqueId: 
-  rarity: 0
+  rarity: 1
   attacks:
   - {fileID: 11400000, guid: 856506d765aa2b744b930ed2ea3af1e7, type: 2}
   cooldowns:
