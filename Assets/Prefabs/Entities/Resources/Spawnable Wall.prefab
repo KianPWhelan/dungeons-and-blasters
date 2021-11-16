@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rarity: 0
+  size: 0
   uniqueId: c85c95a3-cea3-4b4a-9811-f97e81579c1a
   aiModule: {fileID: 11400000, guid: 967d28e58f26d8c4d9182fcac65f62b7, type: 2}
   targetType: Player
@@ -350,6 +351,8 @@ MonoBehaviour:
   movement: {fileID: 0}
   timeSinceLastStateChange: 0
   homingPoint: {fileID: 5893359627736191471}
+  selectionHighlight: {fileID: 0}
+  animator: {fileID: 0}
   critBox: {fileID: 0}
   currentState: {fileID: 0}
   cooldown: 10
@@ -358,10 +361,20 @@ MonoBehaviour:
   visionRange: 0
   spawnSoundEffect: {fileID: 0}
   ranges: []
+  aggroRange: 15
+  desiredRange: 0
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
-  doNotUseAsAbility: 0
+  doNotUseAsAbility: 1
+  slottable: 0
+  moving: 0
+  photonView: {fileID: 0}
+  weaponHolder: {fileID: 0}
+  isFollowing: 0
+  followTarget: {fileID: 0}
+  canAggro: 1
+  isAggro: 0
   findTarget: 0
 --- !u!114 &3105659487201561830
 MonoBehaviour:

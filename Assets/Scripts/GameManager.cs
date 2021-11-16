@@ -73,6 +73,7 @@ namespace Com.OfTomorrowInc.DMShooter
         {
             single = this;
             LoadPrefabData();
+            PhotonNetwork.UseRpcMonoBehaviourCache = true;
         }
 
         public void Start()

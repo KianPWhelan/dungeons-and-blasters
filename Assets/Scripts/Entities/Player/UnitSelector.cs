@@ -127,6 +127,11 @@ public class UnitSelector : MonoBehaviour
             {
                 foreach (EnemyGeneric e in selectedUnits)
                 {
+                    if(e == null)
+                    {
+                        return;
+                    }
+
                     if(queue)
                     {
                         e.AddToQueue(dest);
@@ -198,7 +203,10 @@ public class UnitSelector : MonoBehaviour
     {
         foreach(EnemyGeneric e in selectedUnits)
         {
-            e.selectionHighlight.SetActive(false);
+            if(e != null)
+            {
+                e.selectionHighlight.SetActive(false);
+            }
         }
 
         selectedUnits.Clear();
