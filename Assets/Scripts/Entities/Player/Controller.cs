@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
+using Fusion;
 using Com.OfTomorrowInc.DMShooter;
 
 [RequireComponent(typeof(Movement))]
-public class Controller : MonoBehaviourPunCallbacks
+public class Controller : NetworkBehaviour
 {
     private Movement movement;
     public PlayerCamera playerCam;
@@ -38,7 +38,7 @@ public class Controller : MonoBehaviourPunCallbacks
     {
         // #Important
         // used in GameManager.cs: we keep track of the localPlayer instance to prevent instantiation when levels are synchronized
-        if (photonView.IsMine)
+        if (Object.HasInputAuthority)
         {
             LocalPlayerInstance = this.gameObject;
         }
@@ -50,7 +50,8 @@ public class Controller : MonoBehaviourPunCallbacks
         DontDestroyOnLoad(this.gameObject);
 
         weapons = new List<Weapon>(Resources.FindObjectsOfTypeAll<Weapon>());
-        startingWeapon = weapons.Find(x => x.name == (string)photonView.Owner.CustomProperties["weapon"]);
+        // TODO: weapon getting
+        // startingWeapon = weapons.Find(x => x.name == (string)Object.Owner.CustomProperties["weapon"]);
     }
 
     public void Start()
@@ -61,10 +62,11 @@ public class Controller : MonoBehaviourPunCallbacks
         weaponHolder = gameObject.GetComponent<WeaponHolder>();
         weaponHolder.AddWeapon(startingWeapon, "Enemy");
         // gameManager = FindObjectOfType<GameManager>();
-        nametag.text = photonView.Owner.NickName;
+        // TODO: name
+        // nametag.text = photonView.Owner.NickName;
         statusEffects = GetComponent<StatusEffects>();
 
-        if(!photonView.IsMine)
+        if(!Object.HasInputAuthority)
         {
             playerCam.gameObject.SetActive(false);
             canvas.SetActive(false);
@@ -90,7 +92,7 @@ public class Controller : MonoBehaviourPunCallbacks
     {
         isStunned = statusEffects.GetIsStunned();
 
-        if(photonView.IsMine)
+        if(Object.HasInputAuthority)
         {
             ProcessInputs();
         }
@@ -100,7 +102,7 @@ public class Controller : MonoBehaviourPunCallbacks
 
     public void FixedUpdate()
     {
-        if(photonView.IsMine)
+        if(Object.HasInputAuthority)
         {
             ProcessMovement();
         }
@@ -108,12 +110,12 @@ public class Controller : MonoBehaviourPunCallbacks
 
     public void GameOver()
     {
-        if (photonView.IsMine)
+        if (Object.HasInputAuthority)
         {
             Debug.Log("Game has ended");
             // TODO: Send to game over screen
             // PhotonNetwork.LeaveRoom();
-            PhotonNetwork.Destroy(gameObject);
+            Runner.Despawn(Object);
 #if UNITY_EDITOR
             // UnityEditor.EditorApplication.isPlaying = false;
 #endif
@@ -123,7 +125,7 @@ public class Controller : MonoBehaviourPunCallbacks
     private void RotateNametag()
     {
         // If this is not the local player, rotate its nametag towards the local player
-        if (LocalPlayerInstance != null && !photonView.IsMine && !isDungeonMaster.runtimeValue)
+        if (LocalPlayerInstance != null && !Object.HasInputAuthority && !isDungeonMaster.runtimeValue)
         {
             nametag.transform.LookAt(LocalPlayerInstance.transform.position);
             nametag.transform.Rotate(new Vector3(0, 180, 0));
@@ -203,10 +205,9 @@ public class Controller : MonoBehaviourPunCallbacks
         this.CalledOnLevelWasLoaded(level);
     }
 
-    public override void OnDisable()
+    public void OnDisable()
     {
         // Always call the base to remove callbacks
-        base.OnDisable();
         UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 #endif
