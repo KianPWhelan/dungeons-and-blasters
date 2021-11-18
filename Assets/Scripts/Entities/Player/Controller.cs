@@ -38,10 +38,10 @@ public class Controller : NetworkBehaviour
     {
         // #Important
         // used in GameManager.cs: we keep track of the localPlayer instance to prevent instantiation when levels are synchronized
-        if (Object.HasInputAuthority)
-        {
-            LocalPlayerInstance = this.gameObject;
-        }
+        //if (Object.HasInputAuthority)
+        //{
+        //    LocalPlayerInstance = this.gameObject;
+        //}
 
         playerCam = gameObject.transform.GetComponentInChildren<PlayerCamera>();
 
@@ -66,7 +66,7 @@ public class Controller : NetworkBehaviour
         // nametag.text = photonView.Owner.NickName;
         statusEffects = GetComponent<StatusEffects>();
 
-        if(!Object.HasInputAuthority)
+        if (!Object.HasInputAuthority)
         {
             playerCam.gameObject.SetActive(false);
             canvas.SetActive(false);
@@ -77,7 +77,7 @@ public class Controller : NetworkBehaviour
             nametag.gameObject.SetActive(false);
         }
 
-        if(isDungeonMaster.runtimeValue)
+        if (isDungeonMaster.runtimeValue)
         {
             nametag.transform.localScale *= 2;
         }
@@ -100,12 +100,12 @@ public class Controller : NetworkBehaviour
         RotateNametag();
     }
 
-    public void FixedUpdate()
+    public override void FixedUpdateNetwork()
     {
-        if(Object.HasInputAuthority)
-        {
+        //if(Object.HasInputAuthority)
+        //{
             ProcessMovement();
-        }
+        //}
     }
 
     public void GameOver()
@@ -184,13 +184,22 @@ public class Controller : NetworkBehaviour
             return;
         }
 
-        var mouseX = Input.GetAxis("Mouse X") * sensitivity;
-        var mouseY = Input.GetAxis("Mouse Y") * sensitivity;
-        movement.Rotate(mouseX, 0.0f);
-        rotater.Rotate(mouseX, mouseY);
-        var moveX = Input.GetAxis("Horizontal");
-        var moveY = Input.GetAxis("Vertical");
-        movement.Move(moveX, moveY);
+        //var mouseX = Input.GetAxis("Mouse X") * sensitivity;
+        //var mouseY = Input.GetAxis("Mouse Y") * sensitivity;
+        //movement.Rotate(mouseX, 0.0f);
+        //rotater.Rotate(mouseX, mouseY);
+        //var moveX = Input.GetAxis("Horizontal");
+        //var moveY = Input.GetAxis("Vertical");
+
+        if(GetInput(out NetworkInputData data))
+        {
+            //data.direction.Normalize();
+            movement.Rotate(data.mouseX * sensitivity, 0.0f);
+            rotater.Rotate(data.mouseX * sensitivity, data.mouseY * sensitivity);
+            movement.Move(data.moveX, data.moveY);
+        }
+
+        //movement.Move(moveX, moveY);
     }
 
 #if UNITY_5_4_OR_NEWER

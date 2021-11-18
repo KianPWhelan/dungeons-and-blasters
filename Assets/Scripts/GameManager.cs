@@ -79,30 +79,30 @@ namespace Com.OfTomorrowInc.DMShooter
             //    gameTime = 0;
             //}
 
-            Debug.Log("Is Dungeon Master?: " + isDungeonMaster.runtimeValue);
-            if (playerPrefab == null)
-            {
-                Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
-            }
-            else if(Controller.LocalPlayerInstance == null && DungeonMasterController.LocalPlayerInstance == null && !isDungeonMaster.runtimeValue)
-            {
-                Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
-                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                var newPlayer = Runner.Spawn(playerPrefab, playerSpawnLocation, Quaternion.identity);
-                players.Add(newPlayer);
-            }
-            else if (Controller.LocalPlayerInstance == null && DungeonMasterController.LocalPlayerInstance == null && isDungeonMaster.runtimeValue)
-            {
-                Debug.LogFormat("We are Instantiating DungeonMaster from {0}", Application.loadedLevelName);
-                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Spawn
-                Runner.Spawn(dungeonMasterPrefab, new Vector3(0f, 50f, 0f), Quaternion.identity);
-            }
+            //Debug.Log("Is Dungeon Master?: " + isDungeonMaster.runtimeValue);
+            //if (playerPrefab == null)
+            //{
+            //    Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
+            //}
+            //else if(Controller.LocalPlayerInstance == null && DungeonMasterController.LocalPlayerInstance == null && !isDungeonMaster.runtimeValue)
+            //{
+            //    Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
+            //    // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+            //    var newPlayer = Runner.Spawn(playerPrefab, playerSpawnLocation, Quaternion.identity);
+            //    players.Add(newPlayer);
+            //}
+            //else if (Controller.LocalPlayerInstance == null && DungeonMasterController.LocalPlayerInstance == null && isDungeonMaster.runtimeValue)
+            //{
+            //    Debug.LogFormat("We are Instantiating DungeonMaster from {0}", Application.loadedLevelName);
+            //    // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Spawn
+            //    Runner.Spawn(dungeonMasterPrefab, new Vector3(0f, 50f, 0f), Quaternion.identity);
+            //}
 
-            if(DungeonMasterController.LocalPlayerInstance != null)
-            {
-                // LoadRoom();
-                // photonView.RPC("SendPlayersToStartPoint", RpcTarget.All);
-            }
+            //if(DungeonMasterController.LocalPlayerInstance != null)
+            //{
+            //    // LoadRoom();
+            //    // photonView.RPC("SendPlayersToStartPoint", RpcTarget.All);
+            //}
         }
 
         public void Update()
@@ -295,7 +295,7 @@ namespace Com.OfTomorrowInc.DMShooter
                 Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
             }
             Debug.LogFormat("PhotonNetwork : Loading Level : SampleScene");
-            PhotonNetwork.LoadLevel("SampleScene");
+            //PhotonNetwork.LoadLevel("SampleScene");
         }
 
         private void LoadPrefabData()
@@ -306,9 +306,9 @@ namespace Com.OfTomorrowInc.DMShooter
         public async void LoadRoom()
         {
             StringHolder str = new StringHolder();
-            Debug.Log("Load Room " + (string)DungeonMasterController.LocalPlayerInstance.GetPhotonView().Owner.CustomProperties["room"]);
-            await database.LoadRoomFromCurrentUserByName((string)DungeonMasterController.LocalPlayerInstance.GetPhotonView().Owner.CustomProperties["room"], str);
-            photonView.RPC("GenerateRoom", RpcTarget.All, System.Text.Encoding.UTF8.GetBytes(str.value));
+            //Debug.Log("Load Room " + (string)DungeonMasterController.LocalPlayerInstance.GetPhotonView().Owner.CustomProperties["room"]);
+            //await database.LoadRoomFromCurrentUserByName((string)DungeonMasterController.LocalPlayerInstance.GetPhotonView().Owner.CustomProperties["room"], str);
+            //photonView.RPC("GenerateRoom", RpcTarget.All, System.Text.Encoding.UTF8.GetBytes(str.value));
         }
 
         private IEnumerator CheckForNoEnemies()
@@ -319,7 +319,7 @@ namespace Com.OfTomorrowInc.DMShooter
             }
 
             Debug.Log("No more enemies");
-            photonView.RPC("GlobalCloseRoom", RpcTarget.All);
+            //photonView.RPC("GlobalCloseRoom", RpcTarget.All);
         }
 
         private bool EnemiesAlive()

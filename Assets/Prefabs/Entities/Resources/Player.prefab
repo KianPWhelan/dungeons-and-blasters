@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 3993731394946226002}
   - component: {fileID: 3629225645229162944}
   - component: {fileID: 187265885732087392}
-  - component: {fileID: 1243472824367955162}
+  - component: {fileID: 4454787805862115938}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -402,6 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8379535459e0de643b2ae6819dd577f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
   playerCam: {fileID: 0}
   canvas: {fileID: 9136021562623379900}
   sensitivity: 1
@@ -554,7 +555,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours: []
   SimulationBehaviours: []
---- !u!114 &1243472824367955162
+--- !u!114 &4454787805862115938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -563,11 +564,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2705640985885996171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Script: {fileID: 1710889294, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interpolationDataSource: 0
-  _interpolationTarget: {fileID: 0}
+  _interpolationDataSource: 2
+  _interpolationTarget: {fileID: 8863148174606821761}
   DetachInterpTarget: 0
   SyncParent: 1
   InterpolateErrorCorrection: 1
@@ -583,6 +584,7 @@ MonoBehaviour:
     RotTeleportRadians: 1.5
   SyncScale: 0
   Space: 0
+  SyncDragAndMass: 0
 --- !u!1 &2705640986178534465
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +734,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4271898177350001658}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 

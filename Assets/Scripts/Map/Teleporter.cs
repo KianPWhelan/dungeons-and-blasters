@@ -25,7 +25,7 @@ public class Teleporter : MonoBehaviour
             }
 
             //target.transform.parent.parent.GetComponent<Room>().SendActivationCommand();
-            GameManager.single.SendRoomActivation(target.transform.parent.parent.GetComponent<Room>().gridSlot);
+            //GameManager.single.SendRoomActivation(target.transform.parent.parent.GetComponent<Room>().gridSlot);
             other.transform.position = target.transform.position;
         }
     }

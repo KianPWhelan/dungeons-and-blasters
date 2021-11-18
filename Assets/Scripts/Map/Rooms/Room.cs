@@ -161,7 +161,7 @@ public class Room : MonoBehaviour
         }
 
         Debug.Log("All enemies are dead");
-        GameManager.single.SendRoomDeactivation(gridSlot);
+        //GameManager.single.SendRoomDeactivation(gridSlot);
     }
 
     private bool AllEnemiesDead()
