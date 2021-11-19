@@ -15,7 +15,7 @@ MonoBehaviour:
   uniqueId: 
   rarity: 0
   attacks:
-  - {fileID: 11400000, guid: 4b8776a8e82f3d34c901e7d1a3bfdacb, type: 2}
+  - {fileID: 11400000, guid: 0cf4d8b6eaa511042bdbdf51ae51a8c4, type: 2}
   cooldowns:
   - 2
   delays:

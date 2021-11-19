@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Throwable Box Effect
   m_EditorClassIdentifier: 
   damages:
-  - {fileID: 11400000, guid: ae23751f5a7e072488b1946487642251, type: 2}
+  - {fileID: 11400000, guid: 74d2721d6d32afb44b12c3245720dcc2, type: 2}
   isStatusEffect: 0
   interval: {fileID: 0}
   duration: {fileID: 0}
