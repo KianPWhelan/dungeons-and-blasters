@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
-  m_Name: I believe i can fly
+  m_Name: Gravity test gun attack
   m_EditorClassIdentifier: 
   attack: {fileID: 3807866404001653414, guid: f1d673cae36ef4548b27c6ae7d6e524c, type: 3}
   effects:
@@ -21,4 +21,4 @@ MonoBehaviour:
   critOnCritBoxesOnly: 0
   critChance: 100
   critMultiplier: 4
-  knockbackStrength: 1000
+  knockbackStrength: 100

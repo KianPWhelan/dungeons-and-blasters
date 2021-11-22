@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 241e4755d8a207146aa851ca6e3bc123, type: 3}
-  m_Name: I believe i can fly
+  m_Name: Gravity test gun
   m_EditorClassIdentifier: 
   uniqueId: 
   rarity: 0

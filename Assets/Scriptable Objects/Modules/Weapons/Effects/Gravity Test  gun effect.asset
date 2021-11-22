@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d697dfece3c4e3140ad84a97af774b38, type: 3}
-  m_Name: I believe i can fly
+  m_Name: Gravity Test  gun effect
   m_EditorClassIdentifier: 
   damages:
   - {fileID: 11400000, guid: d3abcfc65d3445b4ca2e4bd62a70ce0f, type: 2}

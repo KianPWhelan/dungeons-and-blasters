@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 3807866404001653409}
   - component: {fileID: 3807866404001653405}
   - component: {fileID: 4829975092919131579}
-  - component: {fileID: 815825120638102445}
   m_Layer: 2
-  m_Name: I believe i can fly
+  m_Name: Gravity test Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,11 +121,11 @@ MonoBehaviour:
   ignoreParentRotation: 0
   forceDetachFromParent: 0
   spread: 0
-  destroyOnHit: 0
+  destroyOnHit: 1
   canHitSameTargetMoreThanOnce: 0
   multiHitCooldown: 0
   applyEffectsOnEnd: 0
-  visualEndEffect: {fileID: 1746064387307796, guid: a4abe2b16a0882947a66c8380444e94b, type: 3}
+  visualEndEffect: {fileID: 0}
   visualStartEffect: {fileID: 0}
   visualStartEffectPositionOffset: {x: 0, y: 0, z: 0}
   visualStartEffectRotationOffset: {x: 0, y: 0, z: 0}
@@ -168,19 +167,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &815825120638102445
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807866404001653414}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 5
-  m_Center: {x: 0, y: 0, z: -0.21389228}
 --- !u!1001 &7944595792552798323
 PrefabInstance:
   m_ObjectHideFlags: 0
