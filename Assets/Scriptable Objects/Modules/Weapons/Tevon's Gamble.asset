@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tevon's Gamble
   m_EditorClassIdentifier: 
   uniqueId: 
-  rarity: 2
+  rarity: 1
   attacks:
   - {fileID: 11400000, guid: 12fb7e7e765aff44ba078c974ae353e1, type: 2}
   cooldowns:
