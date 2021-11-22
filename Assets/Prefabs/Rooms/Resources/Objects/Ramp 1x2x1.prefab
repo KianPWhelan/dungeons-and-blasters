@@ -156,6 +156,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stair01
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010953139060, guid: d3591fd369ccacc4ba20b2cc0aad6c1c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4000012150092822, guid: d3591fd369ccacc4ba20b2cc0aad6c1c, type: 3}
       propertyPath: m_RootOrder
       value: 1

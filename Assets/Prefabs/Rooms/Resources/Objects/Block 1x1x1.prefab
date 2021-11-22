@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block01
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010346076698, guid: 0cbe8647350d2f547a59d7563b2965a2, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013146674270, guid: 0cbe8647350d2f547a59d7563b2965a2, type: 3}
       propertyPath: m_RootOrder
       value: 0
