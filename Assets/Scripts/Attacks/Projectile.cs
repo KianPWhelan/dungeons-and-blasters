@@ -5,7 +5,7 @@ using Fusion;
 
 
 [OrderAfter(typeof(HitboxManager))]
-public class Projectile : NetworkBehaviour
+public class Projectile : AttackComponent
 {
 	[Header("Settings")]
 	[SerializeField]
@@ -55,7 +55,7 @@ public class Projectile : NetworkBehaviour
 		public float speed;
 	}
 
-	public void InitNetworkState(string validTag)
+	public override void InitNetworkState(string validTag)
 	{
 		lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
 		velocity = settings.speed * transform.forward;
