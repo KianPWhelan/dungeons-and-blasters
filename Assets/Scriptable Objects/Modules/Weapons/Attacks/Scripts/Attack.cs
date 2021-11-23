@@ -82,7 +82,7 @@ public class Attack : ScriptableObject
             info[3] = null;
         }
 
-        spawner.Spawn(attack.name, self.transform.position, self.transform.rotation, info, delay, self.GetPhotonView().ViewID);
+        spawner.Spawn(attack, self.transform.position, self.transform.rotation, info, delay, self.GetPhotonView().ViewID);
     }
 
     /// <summary>
@@ -113,7 +113,7 @@ public class Attack : ScriptableObject
             info[3] = null;
         }
 
-        spawner.Spawn(attack.name, selfPosition, selfRotation, info, delay, ownerId);
+        spawner.Spawn(attack, selfPosition, selfRotation, info, delay, ownerId);
     }
 
     /// <summary>
