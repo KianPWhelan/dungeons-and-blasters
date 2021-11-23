@@ -5,8 +5,7 @@ using Fusion;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField]
-    private Rarities rarity;
+    public Rarities rarity;
 
     [SerializeField]
     private List<AttackSettings> attacks = new List<AttackSettings>();

@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
+using Fusion;
 
-public class Spawner : MonoBehaviourPunCallbacks
+public class Spawner : NetworkBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -24,53 +24,71 @@ public class Spawner : MonoBehaviourPunCallbacks
     /// <param name="position"></param>
     /// <param name="rotation"></param>
     /// <param name="info"></param>
-    public void Spawn(string objectName, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
+    public void Spawn(GameObject obj, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
     {
-        if (!PhotonView.Find(ownerId).IsMine)
-        {
-            return;
-        }
+        //if (!PhotonView.Find(ownerId).IsMine)
+        //{
+        //    return;
+        //}
 
+        NetworkInstantiate(obj, position, rotation, info, delay, ownerId);
 
-        photonView.RPC("LocalInstantiate", RpcTarget.All, objectName, position, rotation, info, delay, ownerId);
+        // photonView.RPC("LocalInstantiate", RpcTarget.All, objectName, position, rotation, info, delay, ownerId);
     }
 
-    [PunRPC]
-    private void LocalInstantiate(string objectName, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
+    [Rpc(sources: RpcSources.InputAuthority, targets: RpcTargets.StateAuthority)]
+    private void NetworkInstantiate(GameObject prefab, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
     {
-        // Debug.Log("Spawning " + objectName);
-        GameObject newObject = (GameObject)Instantiate(Resources.Load(objectName), position, rotation);
-        newObject.SetActive(false);
-
-        if(newObject.TryGetComponent(out AttackScriptDeprecated a))
+        GameObject newObj = Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, Object.InputAuthority, (Runner, obj) =>
         {
-            a.ownerId = ownerId;
-
-            if (info[0] != null)
-            {
-                a.parentId = (int)info[0];
-            }
-
-            a.validTag = (string)info[1];
-            a.damageMod = (float)info[2];
-
-            if (info[3] != null)
-            {
-                a.destination = (Vector3)info[3];
-            }
-
-            else
-            {
-                a.destination = Vector3.negativeInfinity;
-            }
-        }
+            prefab.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2]);
+        }).gameObject;
 
         StartCoroutine(Helpers.Timeout(
             () =>
             {
-                newObject.SetActive(true);
+                newObj.SetActive(true);
             },
             delay
         ));
     }
+
+    //[PunRPC]
+    //private void LocalInstantiate(string objectName, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
+    //{
+    //    // Debug.Log("Spawning " + objectName);
+    //    GameObject newObject = (GameObject)Instantiate(Resources.Load(objectName), position, rotation);
+    //    newObject.SetActive(false);
+
+    //    if(newObject.TryGetComponent(out AttackScriptDeprecated a))
+    //    {
+    //        a.ownerId = ownerId;
+
+    //        if (info[0] != null)
+    //        {
+    //            a.parentId = (int)info[0];
+    //        }
+
+    //        a.validTag = (string)info[1];
+    //        a.damageMod = (float)info[2];
+
+    //        if (info[3] != null)
+    //        {
+    //            a.destination = (Vector3)info[3];
+    //        }
+
+    //        else
+    //        {
+    //            a.destination = Vector3.negativeInfinity;
+    //        }
+    //    }
+
+    //    StartCoroutine(Helpers.Timeout(
+    //        () =>
+    //        {
+    //            newObject.SetActive(true);
+    //        },
+    //        delay
+    //    ));
+    //}
 }
