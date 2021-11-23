@@ -93,7 +93,7 @@ namespace Com.OfTomorrowInc.DMShooter
         /// </summary>
         public void Connect()
         {
-            SceneManager.LoadScene("Testing Scene");
+            SceneManager.LoadScene("Main Scene");
             //progressLabel.SetActive(true);
             //controlPanel.SetActive(false);
 
@@ -163,12 +163,12 @@ namespace Com.OfTomorrowInc.DMShooter
         {
             if(testLevel)
             {
-                PhotonNetwork.LoadLevel("Testing Scene");
+                PhotonNetwork.LoadLevel("Main Scene");
                 return;
             }
 
             Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
-            PhotonNetwork.LoadLevel("SampleScene");
+            PhotonNetwork.LoadLevel("Main Scene");
         }
 
         public void SetTestLevel(Toggle t)
