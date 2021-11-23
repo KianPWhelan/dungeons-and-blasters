@@ -174,10 +174,10 @@ public class JormungandrAI : EnemyAI
             thisData.tpDistance = -7;
         }
 
-        var attacks = localSelf.GetComponentsInChildren<AttackScript>();
+        var attacks = localSelf.GetComponentsInChildren<AttackScriptDeprecated>();
         GameObject aura = null;
 
-        foreach(AttackScript attack in attacks)
+        foreach(AttackScriptDeprecated attack in attacks)
         {
             if(attack.gameObject.name.Contains("Jorm Aura"))
             {

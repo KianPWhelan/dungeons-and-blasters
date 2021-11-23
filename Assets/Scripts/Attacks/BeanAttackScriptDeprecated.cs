@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeanAttackScript : AttackScript
+public class BeanAttackScriptDeprecated : AttackScriptDeprecated
 {
     public float maxLength = 100f;
 

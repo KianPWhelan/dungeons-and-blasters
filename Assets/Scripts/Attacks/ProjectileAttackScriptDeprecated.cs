@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class ProjectileAttackScript : AttackScript
+public class ProjectileAttackScriptDeprecated : AttackScriptDeprecated
 {
     public float speed;
 

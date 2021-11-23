@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviourPunCallbacks
         GameObject newObject = (GameObject)Instantiate(Resources.Load(objectName), position, rotation);
         newObject.SetActive(false);
 
-        if(newObject.TryGetComponent(out AttackScript a))
+        if(newObject.TryGetComponent(out AttackScriptDeprecated a))
         {
             a.ownerId = ownerId;
 

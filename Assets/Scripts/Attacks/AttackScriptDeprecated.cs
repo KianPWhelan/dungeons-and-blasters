@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class AttackScript : MonoBehaviour
+public class AttackScriptDeprecated : MonoBehaviour
 {
     [Tooltip("The Attack ScriptableObject that this attack uses")]
     public Attack attack;
@@ -130,7 +130,7 @@ public class AttackScript : MonoBehaviour
         accuracyOffset = Random.insideUnitCircle * spread;
 
 
-        if (!(this is ProjectileAttackScript))
+        if (!(this is ProjectileAttackScriptDeprecated))
         {
             // Debug.Log("whyhere");
             transform.localPosition += localStartingPosition; //= gameObject.transform.localPosition + localStartingPosition;

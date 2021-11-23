@@ -25,7 +25,7 @@ namespace VoxelArsenal
             if (soundPrefabIsChild)
                 m_Sound.transform.SetParent(transform);
 
-            if(transform.parent != null && transform.parent.TryGetComponent(out AttackScript attack))
+            if(transform.parent != null && transform.parent.TryGetComponent(out AttackScriptDeprecated attack))
             {
                 if(attack.isMine)
                 {
