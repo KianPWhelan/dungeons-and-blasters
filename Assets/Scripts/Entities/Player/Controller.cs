@@ -60,7 +60,7 @@ public class Controller : NetworkBehaviour
         
         rotater = gameObject.transform.GetComponentInChildren<Rotater>();
         weaponHolder = gameObject.GetComponent<WeaponHolder>();
-        weaponHolder.AddWeapon(startingWeapon, "Enemy");
+       // weaponHolder.AddWeapon(startingWeapon, "Enemy");
         // gameManager = FindObjectOfType<GameManager>();
         // TODO: name
         // nametag.text = photonView.Owner.NickName;

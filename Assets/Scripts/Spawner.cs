@@ -5,18 +5,6 @@ using Fusion;
 
 public class Spawner : NetworkBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     /// <summary>
     /// Spawns the object locally across all clients
     /// </summary>
@@ -47,20 +35,20 @@ public class Spawner : NetworkBehaviour
         ));
     }
 
-    [Rpc(sources: RpcSources.InputAuthority, targets: RpcTargets.StateAuthority)]
-    private void NetworkInstantiate(GameObject prefab, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
-    {
-        StartCoroutine(Helpers.Timeout(
-            () =>
-            {
-                Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, Object.InputAuthority, (Runner, obj) =>
-                {
-                    prefab.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2]);
-                });
-            },
-            delay
-        ));
-    }
+    //[Rpc(sources: RpcSources.InputAuthority, targets: RpcTargets.StateAuthority)]
+    //private void NetworkInstantiate(GameObject prefab, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
+    //{
+    //    StartCoroutine(Helpers.Timeout(
+    //        () =>
+    //        {
+    //            Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, Object.InputAuthority, (Runner, obj) =>
+    //            {
+    //                prefab.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2]);
+    //            });
+    //        },
+    //        delay
+    //    ));
+    //}
 
     //[PunRPC]
     //private void LocalInstantiate(string objectName, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)

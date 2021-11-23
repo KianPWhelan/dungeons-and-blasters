@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 6568136409441646225}
   - component: {fileID: 6568136409441646239}
   - component: {fileID: 6568136409441646232}
+  - component: {fileID: 2514107562812016953}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -282,3 +283,18 @@ MonoBehaviour:
   Offset: {x: 0, y: 0, z: 0}
   Hitboxes:
   - {fileID: 6568136409121493661}
+--- !u!114 &2514107562812016953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568136409441646224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330ecda54bd98f24bab14bf2b5bfda4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: []
+  targetTags: []
+  isPlayer: 0
