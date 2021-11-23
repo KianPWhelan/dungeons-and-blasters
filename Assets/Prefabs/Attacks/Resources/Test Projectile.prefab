@@ -81,11 +81,13 @@ MonoBehaviour:
   DefaultPropertyGroups: []
   DestroyWhenStateAuthorityLeaves: 0
   AoiPosition: {fileID: 0}
-  Flags: 0
+  Flags: 2305
   NetworkGuid:
-    RawGuidValue: 00000000000000000000000000000000
+    RawGuidValue: b8fd07461fcf8484cb79fd49825105e1
   NestedObjects: []
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 4171533552757744107}
+  - {fileID: 3228527924000341273}
   SimulationBehaviours: []
 --- !u!114 &4171533552757744107
 MonoBehaviour:
@@ -129,14 +131,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
+  validTag: 
   settings:
-    length: 0
+    length: 5
     hitMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 1
     numPierces: 0
     ignoreObstacles: 0
-    lifetime: 0
+    lifetime: 10
     speed: 0
   _networkedVelocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &669991262790441418

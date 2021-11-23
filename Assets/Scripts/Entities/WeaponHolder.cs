@@ -6,7 +6,7 @@ public class WeaponHolder : MonoBehaviour
 {
     [Tooltip("List of weapons in this holder")]
     [SerializeField]
-    private List<Weapon> weapons = new List<Weapon>();
+    private List<WeaponDeprecated> weapons = new List<WeaponDeprecated>();
 
     [Tooltip("Type of object the weapons will hit")]
     [SerializeField]
@@ -56,12 +56,12 @@ public class WeaponHolder : MonoBehaviour
         weapons.Find(x => x.name == name);
     }
 
-    public List<Weapon> GetWeapons()
+    public List<WeaponDeprecated> GetWeapons()
     {
         return weapons;
     }
 
-    public void AddWeapon(Weapon weapon, string targetTag)
+    public void AddWeapon(WeaponDeprecated weapon, string targetTag)
     {
         weapons.Add(weapon);
         targetTags.Add(targetTag);
@@ -89,7 +89,7 @@ public class WeaponHolder : MonoBehaviour
         inSpinup = false;
     }
 
-    private IEnumerator RunOverheatCooldown(Weapon weapon)
+    private IEnumerator RunOverheatCooldown(WeaponDeprecated weapon)
     {
         yield return new WaitForSeconds(weapon.overheatRecoveryTime);
         weapon.isOverheated = false;

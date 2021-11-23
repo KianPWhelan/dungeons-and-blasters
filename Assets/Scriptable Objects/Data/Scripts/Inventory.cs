@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Inventory")]
 public class Inventory : ScriptableObject
 {
-    public List<Weapon> weapons = new List<Weapon>();
+    public List<WeaponDeprecated> weapons = new List<WeaponDeprecated>();
 }

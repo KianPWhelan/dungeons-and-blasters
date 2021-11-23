@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Weapon))]
+[CustomEditor(typeof(WeaponDeprecated))]
 public class WeaponEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
 
-        Weapon weapon = (Weapon)target;
+        WeaponDeprecated weapon = (WeaponDeprecated)target;
 
         if (GUILayout.Button("Map()"))
         {

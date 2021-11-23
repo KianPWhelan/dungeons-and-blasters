@@ -41,12 +41,12 @@ public class Projectile : AttackComponent
 
 	private List<GameObject> hitList = new List<GameObject>();
 
-	private string validTag;
 	private int numHits;
 
 	[System.Serializable]
 	public class ProjectileSettings
 	{
+		public Attack attack;
 		public float length;
 		public LayerMask hitMask;
 		public int numPierces;
@@ -55,11 +55,12 @@ public class Projectile : AttackComponent
 		public float speed;
 	}
 
-	public override void InitNetworkState(string validTag)
+	public override void InitNetworkState(string validTag, float damageMod)
 	{
 		lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
 		velocity = settings.speed * transform.forward;
 		this.validTag = validTag;
+		this.damageMod = damageMod;
 	}
 
 	public override void Spawned()
@@ -77,7 +78,7 @@ public class Projectile : AttackComponent
 		else
 		{
 			// TODO: Ending effects/subattacks
-			Runner.Despawn(Object);
+			DestroyProjectile();
 		}
 	}
 
@@ -101,25 +102,30 @@ public class Projectile : AttackComponent
 		{
 			if (hit.Hitbox != null && hit.GameObject.tag == validTag && hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority && !hitList.Contains(hit.GameObject))
 			{
-				// TODO: Apply effects
 				Debug.LogError("Hit valid target");
+				settings.attack.ApplyEffects(hit.GameObject, validTag, damageMod: damageMod);
 				numHits++;
 				hitList.Add(hit.GameObject);
 
 				if (numHits > settings.numPierces)
 				{
-					// TODO: Destroy projectile
 					// TODO: Ending effects/subattacks
+					DestroyProjectile();
 				}
 			}
 
 			else if (hit.Collider != null && !settings.ignoreObstacles)
 			{
-				// TODO: Destory projectile
 				// TODO: Ending effects/subattacks
+				DestroyProjectile();
 			}
 		}
 
 		transform.position += velocity * Runner.DeltaTime;
 	}
+
+	private void DestroyProjectile()
+    {
+		Runner.Despawn(Object);
+    }
 }

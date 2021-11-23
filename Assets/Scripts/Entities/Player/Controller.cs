@@ -19,9 +19,9 @@ public class Controller : NetworkBehaviour
     public static GameObject LocalPlayerInstance;
     public TextMesh nametag;
 
-    private List<Weapon> weapons;
+    private List<WeaponDeprecated> weapons;
 
-    private Weapon startingWeapon;
+    private WeaponDeprecated startingWeapon;
 
     private bool isStunned;
 
@@ -49,7 +49,7 @@ public class Controller : NetworkBehaviour
         // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
         DontDestroyOnLoad(this.gameObject);
 
-        weapons = new List<Weapon>(Resources.FindObjectsOfTypeAll<Weapon>());
+        weapons = new List<WeaponDeprecated>(Resources.FindObjectsOfTypeAll<WeaponDeprecated>());
         // TODO: weapon getting
         // startingWeapon = weapons.Find(x => x.name == (string)Object.Owner.CustomProperties["weapon"]);
     }

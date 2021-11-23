@@ -8,12 +8,12 @@ using Com.OfTomorrowInc.DMShooter;
 public class WeaponSelect : MonoBehaviour
 {
     [SerializeField]
-    private List<Weapon> weapons = new List<Weapon>();
+    private List<WeaponDeprecated> weapons = new List<WeaponDeprecated>();
 
     [SerializeField]
     private Inventory inventory;
 
-    public Weapon selection;
+    public WeaponDeprecated selection;
 
     private Dropdown dropdown;
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class WeaponSelect : MonoBehaviour
         dropdown.ClearOptions();
         List<Dropdown.OptionData> options = new List<Dropdown.OptionData>();
 
-        foreach(Weapon weapon in weapons)
+        foreach(WeaponDeprecated weapon in weapons)
         {
             options.Add(new Dropdown.OptionData(weapon.name));
         }

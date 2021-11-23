@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 
 [CreateAssetMenu(menuName = "Modules/Weapons/Weapon")]
-public class Weapon : ScriptableObject
+public class WeaponDeprecated : ScriptableObject
 {
     [Tooltip("Identifier used for linking to database, DO NOT MODIFY")]
     public string uniqueId;
