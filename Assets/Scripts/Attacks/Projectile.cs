@@ -57,14 +57,19 @@ public class Projectile : AttackComponent
 
 	public override void InitNetworkState(string validTag, float damageMod)
 	{
-		lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
-		velocity = settings.speed * transform.forward;
+		//Object = GetComponent<NetworkObject>();
+		//Debug.LogWarning("Object:");
+		//Debug.LogWarning(Object);
+		//lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
+		//velocity = settings.speed * transform.forward;
 		this.validTag = validTag;
 		this.damageMod = damageMod;
 	}
 
 	public override void Spawned()
 	{
+		lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
+		velocity = settings.speed * transform.forward;
 		GetComponent<NetworkTransform>().InterpolationDataSource = InterpolationDataSources.Predicted;
 	}
 

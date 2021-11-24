@@ -12,11 +12,24 @@ public class WeaponHolder : MonoBehaviour
     [SerializeField]
     private List<string> targetTags = new List<string>();
 
+    private List<GameObject> weaponPrefabs = new List<GameObject>();
+
     private bool inSpinup;
 
     private float spinupIndex;
 
     public bool isPlayer;
+
+    public void Start()
+    {
+        for(int i = 0; i < weapons.Count; i++)
+        {
+            var weapon = weapons[i];
+            var newWeapon = Instantiate(weapon.gameObject, transform);
+            weaponPrefabs.Add(newWeapon);
+            weapons[i] = newWeapon.GetComponent<Weapon>();
+        }
+    }
 
     public bool UseWeapon(int index, Vector3? destination = null, bool useDestination = false)
     {

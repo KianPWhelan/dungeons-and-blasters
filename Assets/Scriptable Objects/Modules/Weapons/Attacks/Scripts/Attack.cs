@@ -69,7 +69,7 @@ public class Attack : ScriptableObject
 
         if(useSelfAsParent)
         {
-            info = new object[] { self.GetComponent<PhotonView>().ViewID, tag, damageMod, destination.GetValueOrDefault() };
+            info = new object[] { 0, tag, damageMod, destination.GetValueOrDefault() };
         }
 
         else
@@ -82,7 +82,7 @@ public class Attack : ScriptableObject
             info[3] = null;
         }
 
-        spawner.Spawn(attack, self.transform.position, self.transform.rotation, info, delay, self.GetPhotonView().ViewID);
+        spawner.Spawn(attack, self.transform.position, self.transform.rotation, info, delay, 0);
     }
 
     /// <summary>

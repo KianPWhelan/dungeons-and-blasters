@@ -78,7 +78,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AoiMode: 0
-  DefaultPropertyGroups: []
+  DefaultPropertyGroups:
+  - 
   DestroyWhenStateAuthorityLeaves: 0
   AoiPosition: {fileID: 0}
   Flags: 2305
@@ -132,7 +133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   validTag: 
+  damageMod: 0
   settings:
+    attack: {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
     length: 5
     hitMask:
       serializedVersion: 2
@@ -140,7 +143,7 @@ MonoBehaviour:
     numPierces: 0
     ignoreObstacles: 0
     lifetime: 10
-    speed: 0
+    speed: 10
   _networkedVelocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &669991262790441418
 PrefabInstance:

@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 6568136409441646239}
   - component: {fileID: 6568136409441646232}
   - component: {fileID: 2514107562812016953}
+  - component: {fileID: -7351547951631365699}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -197,14 +198,15 @@ MonoBehaviour:
   DefaultPropertyGroups: []
   DestroyWhenStateAuthorityLeaves: 0
   AoiPosition: {fileID: 0}
-  Flags: 2561
+  Flags: 2305
   NetworkGuid:
-    RawGuidValue: 13ab908069d645e3a3cb87839b1e69c0
+    RawGuidValue: 90c797d72a9f93841a647b4eca63f13b
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 6568136409441646225}
   - {fileID: 6568136409441646239}
   - {fileID: 6568136409441646232}
+  - {fileID: -7351547951631365699}
   SimulationBehaviours: []
 --- !u!114 &6568136409441646225
 MonoBehaviour:
@@ -295,6 +297,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330ecda54bd98f24bab14bf2b5bfda4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons: []
-  targetTags: []
-  isPlayer: 0
+  weapons:
+  - {fileID: -8413034521662373569, guid: 250634314e48a83408c7e9e587c8e9d8, type: 3}
+  targetTags:
+  - Enemy
+  isPlayer: 1
+--- !u!114 &-7351547951631365699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568136409441646224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 861be655fab596a45ab09ad4ed7d91b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0

@@ -35,6 +35,7 @@ public class Weapon : MonoBehaviour
             if(Time.time - attackSetting.time >= attackSetting.cooldown)
             {
                 didUseAttack = true;
+                attackSetting.time = Time.time;
                 attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag);
             }
         }

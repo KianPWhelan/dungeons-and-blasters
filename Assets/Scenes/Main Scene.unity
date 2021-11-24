@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 176049595}
   m_Layer: 0
   m_Name: Projectile Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
-  lockCursor: 0
+  lockCursor: 1
 --- !u!20 &385774559
 Camera:
   m_ObjectHideFlags: 0
