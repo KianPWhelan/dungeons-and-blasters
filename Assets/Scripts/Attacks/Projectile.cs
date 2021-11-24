@@ -105,12 +105,14 @@ public class Projectile : AttackComponent
 
 		foreach (LagCompensatedHit hit in hits)
 		{
-			if (hit.Hitbox != null && hit.GameObject.tag == validTag && hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority && !hitList.Contains(hit.GameObject))
+			//Debug.Log((hit.Hitbox != null) + " " + (hit.GameObject.tag == validTag) + " " + (hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority) + " " + (!hitList.Contains(hit.GameObject)));
+			// TODO: Stop projectile from hitting caster if caster has same target tag
+			if (hit.Hitbox != null && hit.Hitbox.Root.tag == validTag/* && hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority */&& !hitList.Contains(hit.Hitbox.Root.gameObject))
 			{
-				Debug.LogError("Hit valid target");
-				settings.attack.ApplyEffects(hit.GameObject, validTag, damageMod: damageMod);
+				Debug.Log("Hit valid target");
+				settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod);
 				numHits++;
-				hitList.Add(hit.GameObject);
+				hitList.Add(hit.Hitbox.Root.gameObject);
 
 				if (numHits > settings.numPierces)
 				{
@@ -126,7 +128,13 @@ public class Projectile : AttackComponent
 			}
 		}
 
-		transform.position += velocity * Runner.DeltaTime;
+		try
+        {
+			transform.position += velocity * Runner.DeltaTime;
+		}
+		
+		catch
+		{ }
 	}
 
 	private void DestroyProjectile()

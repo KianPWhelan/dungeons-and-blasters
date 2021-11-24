@@ -49,7 +49,7 @@ public class StandardAI : EnemyAI
 
         if(success)
         {
-            enemyGeneric.photonView.RPC("SetAnimationTrigger", RpcTarget.All, "attack");
+            //enemyGeneric.photonView.RPC("SetAnimationTrigger", RpcTarget.All, "attack");
         }
     }
 

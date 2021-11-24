@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Com.OfTomorrowInc.DMShooter;
-using Photon.Pun;
+using Fusion;
 
-public class EnemyGeneric : MonoBehaviour
+public class EnemyGeneric : NetworkBehaviour
 {
     public Rarities rarity;
 
@@ -81,19 +81,20 @@ public class EnemyGeneric : MonoBehaviour
     public bool slottable;
 
     [HideInInspector]
-    public bool moving;
-
-    [HideInInspector]
     public Queue<Vector3> destinationQueue = new Queue<Vector3>();
-
-    [HideInInspector]
-    public PhotonView photonView;
 
     [HideInInspector]
     public WeaponHolder weaponHolder;
 
     [HideInInspector]
-    public bool isFollowing;
+    [Networked]
+    public NetworkBool networkedIsFollowing { get; set; }
+    private bool predictedIsFollowing;
+    public bool isFollowing
+    {
+        get => Object.IsPredictedSpawn ? predictedIsFollowing : (bool)networkedIsFollowing;
+        set { if (Object.IsPredictedSpawn) predictedIsFollowing = value; else networkedIsFollowing = value; }
+    }
 
     [HideInInspector]
     public GameObject followTarget;
@@ -102,15 +103,19 @@ public class EnemyGeneric : MonoBehaviour
 
     public bool isAggro = false;
 
-    private void Awake()
+    [Networked]
+    public NetworkBool networkedMoving { get; set; }
+    private bool predictedMoving;
+    private bool moving
     {
-        photonView = gameObject.GetPhotonView();
-        TryGetComponent(out weaponHolder);
+        get => Object.IsPredictedSpawn ? predictedMoving : (bool)networkedMoving;
+        set { if (Object.IsPredictedSpawn) predictedMoving = value; else networkedMoving = value; }
     }
 
     // Start is called before the first frame update
-    void Start()
+    public override void Spawned()
     {
+        TryGetComponent(out weaponHolder);
         agent = gameObject.GetComponent<NavMeshAgent>();
         movement = gameObject.GetComponent<Movement>();
         Debug.Log(agent.ToString());
@@ -133,9 +138,9 @@ public class EnemyGeneric : MonoBehaviour
         //aiModule.Tick(gameObject, target, agent, movement);
     }
 
-    private void Update()
+    public override void FixedUpdateNetwork()
     {
-        if(!photonView.IsMine)
+        if(!Object.HasStateAuthority)
         {
             return;
         }
@@ -143,7 +148,8 @@ public class EnemyGeneric : MonoBehaviour
         if(statusEffects.GetIsStunned() && agent.isActiveAndEnabled)
         {
             agent.ResetPath();
-            photonView.RPC("SetIsMoving", RpcTarget.All, false);
+            //photonView.RPC("SetIsMoving", RpcTarget.All, false);
+            moving = false;
             return;
         }
 
@@ -165,7 +171,8 @@ public class EnemyGeneric : MonoBehaviour
             {
                 if (agent.remainingDistance <= agent.stoppingDistance && moving)
                 {
-                    photonView.RPC("SetIsMoving", RpcTarget.All, false);
+                    //photonView.RPC("SetIsMoving", RpcTarget.All, false);
+                    moving = false;
                 }
             }
         }
@@ -192,50 +199,56 @@ public class EnemyGeneric : MonoBehaviour
 
     public void MoveTo(Vector3 position)
     {
-        if (agent != null && agent.isActiveAndEnabled && photonView.IsMine)
+        if (agent != null && agent.isActiveAndEnabled)
         {
             //Debug.Log("Moving");
             agent.SetDestination(position);
             
             if(!moving)
             {
-                photonView.RPC("SetIsMoving", RpcTarget.All, true);
+                //photonView.RPC("SetIsMoving", RpcTarget.All, true);
+                moving = true;
             }
         }
     }
 
     public void AddToQueue(Vector3 position)
     {
-        if(photonView.IsMine)
-        {
+        //if()
+        //{
             destinationQueue.Enqueue(position);
-        }
+        //}
     }
 
     public void ClearQueue()
     {
-        if(photonView.IsMine)
-        {
+        //if(photonView.IsMine)
+        //{
             destinationQueue.Clear();
-        }
+        //}
     }
 
     public void ClearPath()
     {
         agent.ResetPath();
-        photonView.RPC("SetIsMoving", RpcTarget.All, false);
+        //photonView.RPC("SetIsMoving", RpcTarget.All, false);
+        moving = false;
     }
 
     public void FollowEntity(GameObject target)
     {
         followTarget = target;
-        photonView.RPC("SetIsFollowing", RpcTarget.All, true);
+        //photonView.RPC("SetIsFollowing", RpcTarget.All, true);
+        isFollowing = true;
+        moving = true;
     }
 
     public void CancelFollow()
     {
-        photonView.RPC("SetIsFollowing", RpcTarget.All, false);
-        photonView.RPC("SetIsMoving", RpcTarget.All, false);
+        //photonView.RPC("SetIsFollowing", RpcTarget.All, false);
+        //photonView.RPC("SetIsMoving", RpcTarget.All, false);
+        isFollowing = false;
+        moving = false;
     }
 
     private void ProcessQueue()
@@ -249,7 +262,8 @@ public class EnemyGeneric : MonoBehaviour
         else if(moving)
         {
             //Debug.Log("Here");
-            photonView.RPC("SetIsMoving", RpcTarget.All, false);
+            //photonView.RPC("SetIsMoving", RpcTarget.All, false);
+            moving = false;
             canAggro = true;
         }
     }
@@ -276,31 +290,5 @@ public class EnemyGeneric : MonoBehaviour
         }
 
         return closest;
-    }
-
-    [PunRPC]
-    private void SetIsMoving(bool val)
-    {
-        moving = val;
-        SetAnimationBool("isMoving", val);
-    }
-
-    [PunRPC]
-    private void SetIsFollowing(bool val)
-    {
-        isFollowing = val;
-    }
-
-    [PunRPC]
-    private void SetAnimationBool(string parameter, bool val)
-    {
-        //Debug.Log("Setting " + parameter + " to " + val);
-        animator.SetBool(parameter, val);
-    }
-
-    [PunRPC]
-    private void SetAnimationTrigger(string parameter)
-    {
-        animator.SetTrigger(parameter);
     }
 }

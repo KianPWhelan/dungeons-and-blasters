@@ -6,13 +6,13 @@ public class WeaponHolder : MonoBehaviour
 {
     [Tooltip("List of weapons in this holder")]
     [SerializeField]
-    private List<Weapon> weapons = new List<Weapon>();
+    private List<GameObject> weaponPrefabs = new List<GameObject>();
 
     [Tooltip("Type of object the weapons will hit")]
     [SerializeField]
     private List<string> targetTags = new List<string>();
 
-    private List<GameObject> weaponPrefabs = new List<GameObject>();
+    private List<Weapon> weaponScripts = new List<Weapon>();
 
     private bool inSpinup;
 
@@ -24,12 +24,11 @@ public class WeaponHolder : MonoBehaviour
 
     public void Start()
     {
-        for(int i = 0; i < weapons.Count; i++)
+        for(int i = 0; i < weaponPrefabs.Count; i++)
         {
-            var weapon = weapons[i];
-            var newWeapon = Instantiate(weapon.gameObject, transform);
-            weaponPrefabs.Add(newWeapon);
-            weapons[i] = newWeapon.GetComponent<Weapon>();
+            var weapon = weaponPrefabs[i];
+            var newWeapon = Instantiate(weapon, transform);
+            weaponScripts.Add(newWeapon.GetComponent<Weapon>());
         }
 
         if(isPlayer)
@@ -68,22 +67,22 @@ public class WeaponHolder : MonoBehaviour
         //    return false;
         //}
 
-        return weapons[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation);
+        return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation);
     }
 
     public void UseWeapon(string weaponName)
     {
-        weapons.Find(x => x.name == name);
+        weaponScripts.Find(x => x.name == name);
     }
 
     public List<Weapon> GetWeapons()
     {
-        return weapons;
+        return weaponScripts;
     }
 
     public void AddWeapon(Weapon weapon, string targetTag)
     {
-        weapons.Add(weapon);
+        weaponScripts.Add(weapon);
         targetTags.Add(targetTag);
     }
 
