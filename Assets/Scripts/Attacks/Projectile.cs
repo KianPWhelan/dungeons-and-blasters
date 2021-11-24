@@ -101,7 +101,7 @@ public class Projectile : AttackComponent
 		Vector3 dir = vel.normalized;
 
 		List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
-		Runner.LagCompensation.RaycastAll(transform.position - 0.5f * dir, dir, settings.length, Object.InputAuthority, hits, settings.hitMask.value);
+		Runner.LagCompensation.RaycastAll(transform.position - 0.5f * dir, dir, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
 
 		foreach (LagCompensatedHit hit in hits)
 		{

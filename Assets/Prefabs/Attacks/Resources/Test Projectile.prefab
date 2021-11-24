@@ -132,11 +132,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  validTag: 
-  damageMod: 0
+  validTag: Enemy
+  damageMod: 1
   settings:
     attack: {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
-    length: 5
+    length: 3
     hitMask:
       serializedVersion: 2
       m_Bits: 1
