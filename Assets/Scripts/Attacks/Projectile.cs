@@ -43,10 +43,22 @@ public class Projectile : AttackComponent
 
 	private int numHits;
 
+	private Vector3 hitNormal;
+
+	private Vector3 hitPoint;
+
 	[System.Serializable]
 	public class ProjectileSettings
 	{
 		public Attack attack;
+
+		public List<Attack> subAttacks = new List<Attack>();
+		public bool subAttacksOnEnd;
+		public bool subAttacksOnHit;
+		public bool subAttacksAtSurfaceNormal;
+
+		public Vector3 offset;
+
 		public float length;
 		public LayerMask hitMask;
 		public int numPierces;
@@ -70,6 +82,7 @@ public class Projectile : AttackComponent
 	public override void Spawned()
 	{
 		lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
+		transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
 		velocity = settings.speed * transform.forward;
 		GetComponent<NetworkTransform>().InterpolationDataSource = InterpolationDataSources.Predicted;
 	}
@@ -84,6 +97,9 @@ public class Projectile : AttackComponent
 		else
 		{
 			// TODO: Ending effects/subattacks
+			hitPoint = transform.position;
+			ApplyEffectsOnEnd();
+			SubAttacksOnEnd();
 			DestroyProjectile();
 		}
 	}
@@ -114,6 +130,9 @@ public class Projectile : AttackComponent
 				settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod);
 				numHits++;
 				hitList.Add(hit.Hitbox.Root.gameObject);
+				hitNormal = hit.Normal;
+				hitPoint = hit.Point;
+				SubAttacksOnHit();
 
 				if (numHits > settings.numPierces)
 				{
@@ -125,6 +144,10 @@ public class Projectile : AttackComponent
 			else if (hit.Collider != null && !settings.ignoreObstacles)
 			{
 				// TODO: Ending effects/subattacks
+				hitNormal = hit.Normal;
+				hitPoint = hit.Point;
+				SubAttacksOnEnd();
+				ApplyEffectsOnEnd();
 				DestroyProjectile();
 			}
 		}
@@ -140,11 +163,41 @@ public class Projectile : AttackComponent
 
 	private void DestroyProjectile()
     {
-		if(settings.applyEffectsOnEnd)
-        {
-			settings.attack.ApplyEffects(null, validTag, transform.position, transform.rotation, damageMod);
-        }
-
 		Runner.Despawn(Object);
+    }
+
+	private void ApplyEffectsOnEnd()
+    {
+		if (settings.applyEffectsOnEnd)
+		{
+			settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod);
+		}
+	}
+
+	private void SubAttacksOnHit()
+    {
+		if(settings.subAttacksOnHit)
+        {
+			SpawnSubAttacks();
+        }
+    }
+
+	private void SubAttacksOnEnd()
+    {
+		if(settings.subAttacksOnEnd)
+        {
+			SpawnSubAttacks();
+        }
+    }
+
+	private void SpawnSubAttacks()
+    {
+		foreach(Attack attack in settings.subAttacks)
+        {
+			if(settings.subAttacksAtSurfaceNormal)
+            {
+				settings.attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f);
+			}
+        }
     }
 }
