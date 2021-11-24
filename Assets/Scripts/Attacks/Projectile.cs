@@ -51,6 +51,7 @@ public class Projectile : AttackComponent
 		public LayerMask hitMask;
 		public int numPierces;
 		public bool ignoreObstacles;
+		public bool applyEffectsOnEnd;
 		public float lifetime;
 		public float speed;
 	}
@@ -139,6 +140,11 @@ public class Projectile : AttackComponent
 
 	private void DestroyProjectile()
     {
+		if(settings.applyEffectsOnEnd)
+        {
+			settings.attack.ApplyEffects(null, validTag, transform.position, transform.rotation, damageMod);
+        }
+
 		Runner.Despawn(Object);
     }
 }
