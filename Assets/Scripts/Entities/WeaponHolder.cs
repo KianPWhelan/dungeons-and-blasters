@@ -20,6 +20,8 @@ public class WeaponHolder : MonoBehaviour
 
     public bool isPlayer;
 
+    private FPSCamera cam;
+
     public void Start()
     {
         for(int i = 0; i < weapons.Count; i++)
@@ -28,6 +30,11 @@ public class WeaponHolder : MonoBehaviour
             var newWeapon = Instantiate(weapon.gameObject, transform);
             weaponPrefabs.Add(newWeapon);
             weapons[i] = newWeapon.GetComponent<Weapon>();
+        }
+
+        if(isPlayer)
+        {
+            cam = FindObjectOfType<FPSCamera>();
         }
     }
 
@@ -61,7 +68,7 @@ public class WeaponHolder : MonoBehaviour
         //    return false;
         //}
 
-        return weapons[index].Use(gameObject, targetTags[index], useDestination, destination);
+        return weapons[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation);
     }
 
     public void UseWeapon(string weaponName)

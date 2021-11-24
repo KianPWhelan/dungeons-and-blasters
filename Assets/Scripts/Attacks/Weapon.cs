@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
         public float time = -10000;
     }
 
-    public bool Use(GameObject self, string targetTag, bool useDestination, Vector3? destination = null)
+    public bool Use(GameObject self, string targetTag, bool useDestination, Vector3? destination = null, bool useRotation = false, Quaternion? rotation = null)
     {
         if(!useDestination)
         {
@@ -36,7 +36,16 @@ public class Weapon : MonoBehaviour
             {
                 didUseAttack = true;
                 attackSetting.time = Time.time;
-                attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag);
+
+                if(useRotation)
+                {
+                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, useOverrideRotation: true, overrideRotation: rotation);
+                }
+
+                else
+                {
+                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag);
+                }
             }
         }
 
