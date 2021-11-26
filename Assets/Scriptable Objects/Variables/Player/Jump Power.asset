@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f088ffb4a70f944d9b48f502281f171, type: 3}
   m_Name: Jump Power
   m_EditorClassIdentifier: 
-  initialValue: 65
-  runtimeValue: 65
+  initialValue: 2700
+  runtimeValue: 2700
