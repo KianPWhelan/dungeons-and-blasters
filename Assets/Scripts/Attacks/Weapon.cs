@@ -21,10 +21,24 @@ public class Weapon : MonoBehaviour
         public float time = -10000;
     }
 
-    public int ammoClipSize;
+    public bool useAmmo;
 
-    [Tooltip("In seconds")]
-    public float reloadSpeed;
+    public AmmoSettings ammo;
+
+    [System.Serializable]
+    public class AmmoSettings
+    {
+        public int clipSize;
+
+        [Tooltip("In seconds")]
+        public float reloadSpeed;
+
+        [HideInInspector]
+        public int value;
+
+        [HideInInspector]
+        public bool reloading;
+    }
 
     public bool useOverheat;
     public OverheatSettings overheat;
@@ -60,9 +74,17 @@ public class Weapon : MonoBehaviour
         public bool isRecharging;
     }
 
+    public void Start()
+    {
+        if(useAmmo)
+        {
+            ammo.value = ammo.clipSize;
+        }
+    }
+
     public bool Use(GameObject self, string targetTag, bool useDestination, Vector3? destination = null, bool useRotation = false, Quaternion? rotation = null)
     {
-        if(overheat.onCooldown)
+        if(overheat.onCooldown || ammo.reloading)
         {
             return false;
         }
@@ -78,22 +100,16 @@ public class Weapon : MonoBehaviour
         {
             if(Time.time - attackSetting.time >= attackSetting.cooldown)
             {
-                if(didUseAttack == false && useOverheat)
+                if(didUseAttack == false)
                 {
-                    overheat.value += overheat.rate;
-                    StopAllCoroutines();
-                    overheat.isRecharging = false;
-
-                    if (overheat.value >= overheat.limit)
+                    if(useOverheat)
                     {
-                        overheat.onCooldown = true;
-                        overheat.value = overheat.limit;
-                        StartCoroutine(Cooldown());
+                        RunOverheat();
                     }
 
-                    else
+                    if(useAmmo)
                     {
-                        StartCoroutine(Recharge());
+                        RunAmmo();
                     }
                 }
 
@@ -113,6 +129,37 @@ public class Weapon : MonoBehaviour
         }
 
         return didUseAttack;
+    }
+
+    private void RunOverheat()
+    {
+        overheat.value += overheat.rate;
+        StopAllCoroutines();
+        overheat.isRecharging = false;
+
+        if (overheat.value >= overheat.limit)
+        {
+            overheat.onCooldown = true;
+            overheat.value = overheat.limit;
+            StartCoroutine(Cooldown());
+        }
+
+        else
+        {
+            StartCoroutine(Recharge());
+        }
+    }
+
+    private void RunAmmo()
+    {
+        ammo.value -= 1;
+
+        if(ammo.value <= 0)
+        {
+            ammo.value = 0;
+            ammo.reloading = true;
+            StartCoroutine(Reload());
+        }
     }
 
     private IEnumerator Recharge()
@@ -143,20 +190,42 @@ public class Weapon : MonoBehaviour
         overheat.onCooldown = false;
     }
 
+    private IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(ammo.reloadSpeed);
+        ammo.reloading = false;
+        ammo.value = ammo.clipSize;
+    }
+
     private void OnGUI()
     {
-        string text = overheat.value.ToString("0.00");
+        string text = "";
 
-        if(overheat.onCooldown)
+        if(useAmmo)
         {
-            text += "\nOn Cooldown";
+            text += "Ammo: " + ammo.value + "\n";
+
+            if(ammo.reloading)
+            {
+                text += "Reloading\n";
+            }
         }
 
-        if(overheat.isRecharging)
+        if(useOverheat)
         {
-            text += "\nRecharging";
+            text += "Overheat: " + overheat.value.ToString("0.00");
+
+            if (overheat.onCooldown)
+            {
+                text += "\nOn Cooldown";
+            }
+
+            if (overheat.isRecharging)
+            {
+                text += "\nRecharging";
+            }
         }
 
-        GUI.TextField(new Rect(30, 300, 100, 100), text);
+        GUI.TextField(new Rect(30, 300, 130, 100), text);
     }
 }

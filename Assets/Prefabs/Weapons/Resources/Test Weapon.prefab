@@ -49,8 +49,12 @@ MonoBehaviour:
     cooldown: 0.5
     delay: 0
     time: 0
-  ammoClipSize: 0
-  reloadSpeed: 0
+  useAmmo: 1
+  ammo:
+    clipSize: 10
+    reloadSpeed: 2
+    value: 0
+    reloading: 0
   useOverheat: 1
   overheat:
     limit: 100
@@ -62,3 +66,5 @@ MonoBehaviour:
     value: 0
     onCooldown: 0
     isRecharging: 0
+    gayness: 0
+    howManyNiggersAreInMyStore: 4
