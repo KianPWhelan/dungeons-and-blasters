@@ -142,7 +142,7 @@ MonoBehaviour:
   spread: 0
   destroyOnHit: 0
   canHitSameTargetMoreThanOnce: 1
-  multiHitCooldown: 1
+  multiHitCooldown: 0.03
   applyEffectsOnEnd: 0
   visualEndEffect: {fileID: 0}
   visualStartEffect: {fileID: 0}
