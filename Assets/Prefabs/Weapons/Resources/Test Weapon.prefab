@@ -49,3 +49,16 @@ MonoBehaviour:
     cooldown: 0.5
     delay: 0
     time: 0
+  ammoClipSize: 0
+  reloadSpeed: 0
+  useOverheat: 1
+  overheat:
+    limit: 100
+    rate: 10
+    cooldown: 4
+    rechargeRate: 0.5
+    rechargeTickRate: 0.1
+    rechargeDelay: 1
+    value: 0
+    onCooldown: 0
+    isRecharging: 0

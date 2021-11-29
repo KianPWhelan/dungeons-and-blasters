@@ -136,11 +136,10 @@ MonoBehaviour:
   damageMod: 1
   settings:
     attack: {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
-    subAttacks:
-    - {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
-    subAttacksOnEnd: 1
+    subAttacks: []
+    subAttacksOnEnd: 0
     subAttacksOnHit: 0
-    subAttacksAtSurfaceNormal: 1
+    subAttacksAtSurfaceNormal: 0
     offset: {x: 0, y: 0, z: 3}
     length: 3
     hitMask:
