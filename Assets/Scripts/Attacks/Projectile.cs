@@ -58,14 +58,29 @@ public class Projectile : AttackComponent
 		public bool subAttacksAtSurfaceNormal;
 
 		public Vector3 offset;
+		//TODO
+		public Vector3 rotationOffset;
+		//TODO
+		public bool reevaluateDestinationAfterOffset;
 
 		public float length;
 		public LayerMask hitMask;
 		public int numPierces;
+		//TODO
+		public bool canMultiHitTarget;
+		//TODO
+		public float multiHitCooldown;
 		public bool ignoreObstacles;
 		public bool applyEffectsOnEnd;
 		public float lifetime;
 		public float speed;
+
+		//TODO
+		public bool homing;
+		//TODO
+		public float homingStrength;
+		//TODO
+		public bool reevaluateHomingTargetConstantly;
 	}
 
 	public override void InitNetworkState(string validTag, float damageMod, object destination)
