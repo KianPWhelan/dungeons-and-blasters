@@ -58,10 +58,10 @@ public class Projectile : AttackComponent
 		public bool subAttacksAtSurfaceNormal;
 
 		public Vector3 offset;
-		//TODO
 		public Vector3 rotationOffset;
-		//TODO
 		public bool reevaluateDestinationAfterOffset;
+		//TODO
+		public float spread;
 
 		public float length;
 		public LayerMask hitMask;
@@ -74,9 +74,6 @@ public class Projectile : AttackComponent
 		public bool applyEffectsOnEnd;
 		public float lifetime;
 		public float speed;
-
-		//TODO
-		public float spread;
 
 		//TODO
 		public bool homing;
@@ -119,11 +116,14 @@ public class Projectile : AttackComponent
 			transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
 		}
 
+		// Calculate spread
+		Vector3 accuracyOffset = Random.insideUnitCircle * settings.spread;
+
 		// Adjust position to offset
 		transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
 
 		// Adjust rotation offset
-		transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + settings.rotationOffset);
+		transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + settings.rotationOffset + accuracyOffset);
 
 		// Reevaluate rotation towards directions
 		if(settings.reevaluateDestinationAfterOffset)
