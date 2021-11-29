@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4171533552757744107}
   - component: {fileID: 3228527924000341273}
   m_Layer: 0
-  m_Name: Test Projectile
+  m_Name: Test Projectile 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
   AoiPosition: {fileID: 0}
   Flags: 2305
   NetworkGuid:
-    RawGuidValue: b8fd07461fcf8484cb79fd49825105e1
+    RawGuidValue: e4450bcb47318214185a7919e389b26e
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 4171533552757744107}
@@ -138,11 +138,10 @@ MonoBehaviour:
   useDestination: 0
   settings:
     attack: {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
-    subAttacks:
-    - {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
-    subAttacksOnEnd: 1
+    subAttacks: []
+    subAttacksOnEnd: 0
     subAttacksOnHit: 0
-    subAttacksAtSurfaceNormal: 1
+    subAttacksAtSurfaceNormal: 0
     offset: {x: 0, y: 0, z: 3}
     length: 3
     hitMask:

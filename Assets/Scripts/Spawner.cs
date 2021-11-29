@@ -23,12 +23,15 @@ public class Spawner : NetworkBehaviour
 
         // photonView.RPC("LocalInstantiate", RpcTarget.All, objectName, position, rotation, info, delay, ownerId);
 
+        Debug.Log("Destination");
+        Debug.Log(info[3]);
+
         StartCoroutine(Helpers.Timeout(
             () =>
             {
                 Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, Object.InputAuthority, (Runner, obj) =>
                 {
-                    prefab.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2]);
+                    obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3]);
                 });
             },
             delay

@@ -68,8 +68,9 @@ public class Projectile : AttackComponent
 		public float speed;
 	}
 
-	public override void InitNetworkState(string validTag, float damageMod)
+	public override void InitNetworkState(string validTag, float damageMod, object destination)
 	{
+		base.InitNetworkState(validTag, damageMod, destination);
 		//Object = GetComponent<NetworkObject>();
 		//Debug.LogWarning("Object:");
 		//Debug.LogWarning(Object);
@@ -77,12 +78,33 @@ public class Projectile : AttackComponent
 		//velocity = settings.speed * transform.forward;
 		this.validTag = validTag;
 		this.damageMod = damageMod;
-	}
+
+        if (destination != null)
+        {
+            Debug.Log("Destination recieved: " + destination);
+            this.destination = (Vector3)destination;
+            useDestination = true;
+            Debug.Log(useDestination);
+        }
+    }
 
 	public override void Spawned()
 	{
+		Debug.Log("Spawned " + useDestination);
+		// Create lifetimer
 		lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
+
+		// Perform initial direction rotation
+		if(useDestination)
+        {
+			Debug.Log("Using destination");
+			transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
+        }
+
+		// Adjust position to offset
 		transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
+
+		// Set velocity
 		velocity = settings.speed * transform.forward;
 		GetComponent<NetworkTransform>().InterpolationDataSource = InterpolationDataSources.Predicted;
 	}
@@ -196,6 +218,7 @@ public class Projectile : AttackComponent
         {
 			if(settings.subAttacksAtSurfaceNormal)
             {
+				Debug.Log("Spawning sub attacks");
 				settings.attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f);
 			}
         }
