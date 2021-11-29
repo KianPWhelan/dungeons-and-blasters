@@ -76,6 +76,9 @@ public class Projectile : AttackComponent
 		public float speed;
 
 		//TODO
+		public float spread;
+
+		//TODO
 		public bool homing;
 		//TODO
 		public float homingStrength;
@@ -114,10 +117,20 @@ public class Projectile : AttackComponent
         {
 			Debug.Log("Using destination");
 			transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
-        }
+		}
 
 		// Adjust position to offset
 		transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
+
+		// Adjust rotation offset
+		transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + settings.rotationOffset);
+
+		// Reevaluate rotation towards directions
+		if(settings.reevaluateDestinationAfterOffset)
+        {
+			Debug.Log("reevaluating direction");
+			transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
+		}
 
 		// Set velocity
 		velocity = settings.speed * transform.forward;
