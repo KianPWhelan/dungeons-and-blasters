@@ -60,15 +60,13 @@ public class Projectile : AttackComponent
 		public Vector3 offset;
 		public Vector3 rotationOffset;
 		public bool reevaluateDestinationAfterOffset;
-		//TODO
 		public float spread;
 
 		public float length;
 		public LayerMask hitMask;
+		public bool infinitePierce;
 		public int numPierces;
-		//TODO
 		public bool canMultiHitTarget;
-		//TODO
 		public float multiHitCooldown;
 		public bool ignoreObstacles;
 		public bool applyEffectsOnEnd;
@@ -184,7 +182,12 @@ public class Projectile : AttackComponent
 				hitPoint = hit.Point;
 				SubAttacksOnHit();
 
-				if (numHits > settings.numPierces)
+				if(settings.canMultiHitTarget)
+                {
+					StartCoroutine(RemoveFromHitListDelay(hit.Hitbox.Root.gameObject));
+                }
+
+				if (numHits > settings.numPierces && !settings.infinitePierce)
 				{
 					// TODO: Ending effects/subattacks
 					DestroyProjectile();
@@ -250,5 +253,11 @@ public class Projectile : AttackComponent
 				settings.attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f);
 			}
         }
+    }
+
+	private IEnumerator RemoveFromHitListDelay(GameObject hitObj)
+    {
+		yield return new WaitForSeconds(settings.multiHitCooldown);
+		hitList.Remove(hitObj);
     }
 }
