@@ -172,6 +172,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1668218538431988242}
     m_Modifications:
+    - target: {fileID: 2331531968425130144, guid: 242afe1ff02944c41935ca98c22538de, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2433908545251002444, guid: 242afe1ff02944c41935ca98c22538de, type: 3}
       propertyPath: m_Name
       value: AntimatterMissileBlue Variant

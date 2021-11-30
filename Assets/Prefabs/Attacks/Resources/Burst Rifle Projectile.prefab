@@ -157,7 +157,7 @@ MonoBehaviour:
     ignoreObstacles: 0
     applyEffectsOnEnd: 0
     lifetime: 4
-    speed: 200
+    speed: 10
     homing: 0
     homingStrength: 0
     reevaluateHomingTargetConstantly: 0
@@ -169,6 +169,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1668218538431988242}
     m_Modifications:
+    - target: {fileID: 7521615960007753932, guid: e97b981255406904dbdfc8482546ad37, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7634435954695572090, guid: e97b981255406904dbdfc8482546ad37, type: 3}
       propertyPath: m_Name
       value: BulletMissileYellow Variant
