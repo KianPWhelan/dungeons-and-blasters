@@ -37,6 +37,8 @@ public class Projectile : AttackComponent
 		set { if (Object.IsPredictedSpawn) predictedDestroyed = value; else networkedDestroyed = value; }
 	}
 
+	private Vector3 lastPosition;
+
 	private List<LagCompensatedHit> areaHits = new List<LagCompensatedHit>();
 
 	private List<GameObject> hitList = new List<GameObject>();
@@ -76,6 +78,9 @@ public class Projectile : AttackComponent
 		public bool homing;
 		public float homingStrength;
 		public bool reevaluateHomingTargetConstantly;
+
+		[Tooltip("Performs another raycast from the previous position to the current one, used to garuntee that extremely high speed projectiles register hits consistently, at the cost of nearly doubling the performance cost of the script")]
+		public bool performSafetyHitRegistration;
 	}
 
 	private Transform target;
@@ -138,6 +143,8 @@ public class Projectile : AttackComponent
         {
 			GetHomingTarget();
         }
+
+		lastPosition = transform.position;
 	}
 
 	public override void FixedUpdateNetwork()
@@ -184,7 +191,27 @@ public class Projectile : AttackComponent
 
 		List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
 		Runner.LagCompensation.RaycastAll(transform.position - 0.5f * dir, dir, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+		ProcessHits(hits);
 
+		if(settings.performSafetyHitRegistration && lastPosition != null && transform != null)
+        {
+			Runner.LagCompensation.RaycastAll(lastPosition, (transform.position - lastPosition).normalized, Vector3.Distance(lastPosition, transform.position), Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+			ProcessHits(hits);
+		}
+
+		lastPosition = transform.position;
+
+		try
+        {
+			transform.position += velocity * Runner.DeltaTime;
+		}
+		
+		catch
+		{ }
+	}
+
+	private void ProcessHits(List<LagCompensatedHit> hits)
+    {
 		foreach (LagCompensatedHit hit in hits)
 		{
 			//Debug.Log((hit.Hitbox != null) + " " + (hit.GameObject.tag == validTag) + " " + (hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority) + " " + (!hitList.Contains(hit.GameObject)));
@@ -199,10 +226,10 @@ public class Projectile : AttackComponent
 				hitPoint = hit.Point;
 				SubAttacksOnHit();
 
-				if(settings.canMultiHitTarget)
-                {
+				if (settings.canMultiHitTarget)
+				{
 					StartCoroutine(RemoveFromHitListDelay(hit.Hitbox.Root.gameObject));
-                }
+				}
 
 				if (numHits > settings.numPierces && !settings.infinitePierce)
 				{
@@ -221,14 +248,6 @@ public class Projectile : AttackComponent
 				DestroyProjectile();
 			}
 		}
-
-		try
-        {
-			transform.position += velocity * Runner.DeltaTime;
-		}
-		
-		catch
-		{ }
 	}
 
 	private void DestroyProjectile()
