@@ -81,6 +81,8 @@ public class Projectile : AttackComponent
 		public bool reevaluateHomingTargetConstantly;
 	}
 
+	private Transform target;
+
 	public override void InitNetworkState(string validTag, float damageMod, object destination)
 	{
 		base.InitNetworkState(validTag, damageMod, destination);
@@ -133,6 +135,12 @@ public class Projectile : AttackComponent
 		// Set velocity
 		velocity = settings.speed * transform.forward;
 		GetComponent<NetworkTransform>().InterpolationDataSource = InterpolationDataSources.Predicted;
+
+		// Set homing target
+		if(settings.homing)
+        {
+			GetHomingTarget();
+        }
 	}
 
 	public override void FixedUpdateNetwork()
@@ -162,6 +170,18 @@ public class Projectile : AttackComponent
 		// Move projectile
 		// Check for walls
 		// Homing
+		if(settings.reevaluateHomingTargetConstantly)
+        {
+			GetHomingTarget();
+        }
+
+		if(settings.homing)
+        {
+			Quaternion newDir = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation((target.position - transform.position).normalized), settings.homingStrength * Runner.DeltaTime);
+			transform.rotation = newDir;
+			velocity = transform.forward * settings.speed;
+        }
+
 		Vector3 vel = velocity;
 		Vector3 dir = vel.normalized;
 
@@ -254,6 +274,21 @@ public class Projectile : AttackComponent
 			}
         }
     }
+
+	private void GetHomingTarget()
+    {
+		var temp = Helpers.FindClosest(transform, validTag);
+
+		if (temp.TryGetComponent(out EnemyGeneric e) && e.homingPoint != null)
+		{
+			target = e.homingPoint.transform;
+		}
+
+		else
+		{
+			target = temp.transform;
+		}
+	}
 
 	private IEnumerator RemoveFromHitListDelay(GameObject hitObj)
     {
