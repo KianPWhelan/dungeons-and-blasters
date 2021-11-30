@@ -132,14 +132,14 @@ public class Weapon : MonoBehaviour
                     attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag);
                 }
 
-                if(playAudioForEachAttack)
+                if(playAudioForEachAttack && audio != null)
                 {
                     audio.PlayDelayed(attackSetting.delay);
                 }
             }
         }
 
-        if (didUseAttack && !playAudioForEachAttack)
+        if (didUseAttack && !playAudioForEachAttack && audio != null)
         {
             audio.Play();
         }
