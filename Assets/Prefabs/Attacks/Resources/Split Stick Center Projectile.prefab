@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3807866404001653414
+--- !u!1 &8200359420792331487
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,171 +8,166 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3807866404001653410}
-  - component: {fileID: 3807866404001653411}
-  - component: {fileID: 3807866404001653408}
-  - component: {fileID: 3807866404001653409}
-  - component: {fileID: 3807866404001653405}
-  - component: {fileID: 4829975092919131579}
-  m_Layer: 2
-  m_Name: Split Stick Split Projectile Center
+  - component: {fileID: 1668218538431988242}
+  m_Layer: 0
+  m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3807866404001653410
+--- !u!4 &1668218538431988242
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807866404001653414}
+  m_GameObject: {fileID: 8200359420792331487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8932622635473085265}
+  - {fileID: 8913588872089319769}
+  m_Father: {fileID: 4789399767165305975}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8523135143678805610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4789399767165305975}
+  - component: {fileID: 862568848026918501}
+  - component: {fileID: 4171533552757744107}
+  - component: {fileID: 3228527924000341273}
+  m_Layer: 0
+  m_Name: Split Stick Center Projectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4789399767165305975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523135143678805610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 5}
+  m_Children:
+  - {fileID: 1668218538431988242}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3807866404001653411
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807866404001653414}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3807866404001653408
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807866404001653414}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3807866404001653409
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807866404001653414}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3807866404001653405
+--- !u!114 &862568848026918501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807866404001653414}
+  m_GameObject: {fileID: 8523135143678805610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6220827a346c51341b08fcd61af5c4a5, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 11400000, guid: 856506d765aa2b744b930ed2ea3af1e7, type: 2}
-  subAttacks: []
-  subAttacksOnHit: 0
-  subAttacksOnEnd: 0
-  subAttacksAtSurfaceNormal: 0
-  attackDuration: 2
-  localStartingPosition: {x: 0, y: 0, z: 0}
-  localRotationPosition: {x: 0, y: 0, z: 0}
-  ignoreParentRotation: 1
-  forceDetachFromParent: 1
-  spread: 0
-  destroyOnHit: 1
-  canHitSameTargetMoreThanOnce: 0
-  multiHitCooldown: 0
-  applyEffectsOnEnd: 0
-  visualEndEffect: {fileID: 1248725148069024, guid: 25464a23a439eef4b84cdfac9b1e33e2, type: 3}
-  visualStartEffect: {fileID: 0}
-  visualStartEffectPositionOffset: {x: 0, y: 0, z: 0}
-  visualStartEffectRotationOffset: {x: 0, y: 0, z: 0}
-  validTag: 
-  startingTime: 0
-  hitList: []
-  parentId: 0
-  collisionNormal: {x: 0, y: 0, z: 0}
-  collisionPoint: {x: 0, y: 0, z: 0}
-  damageMod: 0
-  destination: {x: 0, y: 0, z: 0}
-  isMine: 0
-  accuracyOffset: {x: 0, y: 0, z: 0}
-  rotater: {fileID: 0}
-  ownerId: 0
-  speed: 50
-  canGoThroughObjects: 0
-  reevluateRotationAfterLocalPositionOffset: 0
-  homing: 0
-  homingStrength: 0
-  reevaluateHomingTargetConstantly: 0
-  bouncing: 0
-  numBounces: 0
-  bouncingStrength: 1
-  colliionDisableTime: 0.05
---- !u!54 &4829975092919131579
-Rigidbody:
+  AoiMode: 0
+  DefaultPropertyGroups:
+  - 
+  DestroyWhenStateAuthorityLeaves: 0
+  AoiPosition: {fileID: 0}
+  Flags: 2305
+  NetworkGuid:
+    RawGuidValue: 499468a4549986746bb15f50026ed6be
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 4171533552757744107}
+  - {fileID: 3228527924000341273}
+  SimulationBehaviours: []
+--- !u!114 &4171533552757744107
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807866404001653414}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!1001 &7518610973412073468
+  m_GameObject: {fileID: 8523135143678805610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  _interpolationTarget: {fileID: 1668218538431988242}
+  DetachInterpTarget: 0
+  SyncParent: 1
+  InterpolateErrorCorrection: 1
+  InterpolatedErrorCorrectionSettings:
+    MinRate: 3.3
+    MaxRate: 10
+    PosBlendStart: 0.25
+    PosBlendEnd: 1
+    PosMinCorrection: 0.025
+    PosTeleportDistance: 2
+    RotBlendStart: 0.1
+    RotBlendEnd: 0.5
+    RotTeleportRadians: 1.5
+  SyncScale: 0
+  Space: 0
+--- !u!114 &3228527924000341273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523135143678805610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8ad420039576d49855323cfdfa18a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  validTag: 
+  damageMod: 0
+  destination: {x: 0, y: 0, z: 0}
+  useDestination: 0
+  settings:
+    attack: {fileID: 11400000, guid: d20d4d3d9bf0e3c4eb043a0fb4dcd13f, type: 2}
+    subAttacks: []
+    subAttacksOnEnd: 0
+    subAttacksOnHit: 0
+    subAttacksAtSurfaceNormal: 0
+    offset: {x: 0, y: 0, z: 3}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    reevaluateDestinationAfterOffset: 0
+    spread: 0
+    length: 3
+    hitMask:
+      serializedVersion: 2
+      m_Bits: 1
+    infinitePierce: 1
+    numPierces: 0
+    canMultiHitTarget: 1
+    multiHitCooldown: 0
+    ignoreObstacles: 0
+    applyEffectsOnEnd: 0
+    lifetime: 10
+    speed: 10
+    homing: 0
+    homingStrength: 0
+    reevaluateHomingTargetConstantly: 0
+  _networkedVelocity: {x: 0, y: 0, z: 0}
+--- !u!1001 &7499366356163888628
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3807866404001653410}
+    m_TransformParent: {fileID: 1668218538431988242}
     m_Modifications:
     - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
       propertyPath: m_RootOrder
@@ -220,12 +215,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1420552831269546583, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
       propertyPath: m_Name
-      value: SparkleMissileBlue
+      value: SparkleMissileBlue Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
---- !u!4 &8932622635473085265 stripped
+--- !u!4 &8913588872089319769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-  m_PrefabInstance: {fileID: 7518610973412073468}
+  m_PrefabInstance: {fileID: 7499366356163888628}
   m_PrefabAsset: {fileID: 0}
