@@ -73,11 +73,8 @@ public class Projectile : AttackComponent
 		public float lifetime;
 		public float speed;
 
-		//TODO
 		public bool homing;
-		//TODO
 		public float homingStrength;
-		//TODO
 		public bool reevaluateHomingTargetConstantly;
 	}
 
