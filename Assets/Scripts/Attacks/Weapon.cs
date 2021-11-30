@@ -16,6 +16,7 @@ public class Weapon : MonoBehaviour
         public Attack attack;
         public float cooldown;
         public float delay;
+        public AudioSource audio;
 
         [HideInInspector]
         public float time = -10000;
@@ -73,6 +74,18 @@ public class Weapon : MonoBehaviour
         [HideInInspector]
         public bool isRecharging;
     }
+
+    //public bool useSpinup;
+
+    //public class SpinupSettings
+    //{
+    //    [Tooltip("How many points of spinup is needed before firing can occur")]
+    //    public float limit;
+
+    //    public float rate;
+
+    //    public float dissipationRate;
+    //}
 
     public bool playAudioForEachAttack;
 
@@ -132,9 +145,9 @@ public class Weapon : MonoBehaviour
                     attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag);
                 }
 
-                if(playAudioForEachAttack && audio != null)
+                if(playAudioForEachAttack && attackSetting.audio != null)
                 {
-                    audio.PlayDelayed(attackSetting.delay);
+                    attackSetting.audio.PlayDelayed(attackSetting.delay);
                 }
             }
         }
