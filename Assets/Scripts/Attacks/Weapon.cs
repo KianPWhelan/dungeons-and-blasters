@@ -78,6 +78,7 @@ public class Weapon : MonoBehaviour
     public bool useSpinup;
     public SpinupSettings spinup;
 
+    [System.Serializable]
     public class SpinupSettings
     {
         [Tooltip("How many points of spinup is needed before firing can occur")]
@@ -92,6 +93,10 @@ public class Weapon : MonoBehaviour
         [Tooltip("Rate at which spinup decays when not firing")]
         public float decayRate;
 
+        public float decayDelay;
+
+        public float decayTickRate;
+
         [HideInInspector]
         public float value;
     }
@@ -99,6 +104,9 @@ public class Weapon : MonoBehaviour
     public bool playAudioForEachAttack;
 
     private AudioSource audio;
+
+    private Coroutine spinCoroutine;
+    public bool spinDecaying;
 
     public void Start()
     {
@@ -112,7 +120,26 @@ public class Weapon : MonoBehaviour
 
     public bool Use(GameObject self, string targetTag, bool useDestination, Vector3? destination = null, bool useRotation = false, Quaternion? rotation = null)
     {
-        if(overheat.onCooldown || ammo.reloading)
+        if(useSpinup)
+        {
+            if(!overheat.onCooldown && ! ammo.reloading)
+            {
+                RunSpinup();
+            }
+
+            else if(!spinDecaying)
+            {
+                spinDecaying = true;
+                spinCoroutine = StartCoroutine(SpinupDecay());
+            }
+
+            if(spinup.value < spinup.limit)
+            {
+                return false;
+            }
+        }
+
+        if (overheat.onCooldown || ammo.reloading)
         {
             return false;
         }
@@ -205,12 +232,20 @@ public class Weapon : MonoBehaviour
 
     private void RunSpinup()
     {
+        if(spinCoroutine != null)
+        {
+            StopCoroutine(spinCoroutine);
+            spinDecaying = false;
+        }
+
         spinup.value += spinup.rate;
 
-        if(spinup.value > spinup.overspinLimit)
+        if(spinup.value > spinup.limit + spinup.overspinLimit)
         {
-            spinup.value = spinup.overspinLimit;
+            spinup.value = spinup.limit + spinup.overspinLimit;
         }
+
+        spinCoroutine = StartCoroutine(SpinupDecay());
     }
 
     private IEnumerator Recharge()
@@ -248,6 +283,24 @@ public class Weapon : MonoBehaviour
         ammo.value = ammo.clipSize;
     }
 
+    private IEnumerator SpinupDecay()
+    {
+        yield return new WaitForSeconds(spinup.decayDelay);
+
+        while (spinup.value > 0)
+        {
+            spinup.value -= spinup.decayRate;
+            yield return new WaitForSeconds(spinup.decayTickRate);
+        }
+
+        if(spinup.value < 0)
+        {
+            spinup.value = 0;
+        }
+
+        spinDecaying = false;
+    }
+
     private void OnGUI()
     {
         string text = "";
@@ -264,17 +317,23 @@ public class Weapon : MonoBehaviour
 
         if(useOverheat)
         {
-            text += "Overheat: " + overheat.value.ToString("0.00");
+            text += "Overheat: " + overheat.value.ToString("0.00") + "\n";
 
             if (overheat.onCooldown)
             {
-                text += "\nOn Cooldown";
+                text += "On Cooldown\n";
             }
 
             if (overheat.isRecharging)
             {
-                text += "\nRecharging";
+                text += "Recharging\n";
             }
+        }
+
+        if(useSpinup)
+        {
+            text += "Spinup: " + spinup.value.ToString("0.00") + "\n";
+            text += "Spinup required: " + spinup.limit.ToString("0.00");
         }
 
         GUI.TextField(new Rect(30, 300, 130, 100), text);

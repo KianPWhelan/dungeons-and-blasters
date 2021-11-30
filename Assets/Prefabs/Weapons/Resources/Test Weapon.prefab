@@ -49,6 +49,7 @@ MonoBehaviour:
   - attack: {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
     cooldown: 0.5
     delay: 0
+    audio: []
     time: 0
   useAmmo: 1
   ammo:
@@ -67,6 +68,17 @@ MonoBehaviour:
     value: 0
     onCooldown: 0
     isRecharging: 0
+  useSpinup: 1
+  spinup:
+    limit: 100
+    overspinLimit: 40
+    rate: 1
+    decayRate: 3
+    decayDelay: 0.2
+    decayTickRate: 0.1
+    value: 0
+  playAudioForEachAttack: 0
+  spinDecaying: 0
 --- !u!82 &7022136035370337551
 AudioSource:
   m_ObjectHideFlags: 0
