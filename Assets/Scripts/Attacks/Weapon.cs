@@ -16,7 +16,7 @@ public class Weapon : MonoBehaviour
         public Attack attack;
         public float cooldown;
         public float delay;
-        public AudioSource audio;
+        public List<AudioSource> audio = new List<AudioSource>();
 
         [HideInInspector]
         public float time = -10000;
@@ -75,17 +75,26 @@ public class Weapon : MonoBehaviour
         public bool isRecharging;
     }
 
-    //public bool useSpinup;
+    public bool useSpinup;
+    public SpinupSettings spinup;
 
-    //public class SpinupSettings
-    //{
-    //    [Tooltip("How many points of spinup is needed before firing can occur")]
-    //    public float limit;
+    public class SpinupSettings
+    {
+        [Tooltip("How many points of spinup is needed before firing can occur")]
+        public float limit;
 
-    //    public float rate;
+        [Tooltip("How many points past the spinup limit can this weapon be spun")]
+        public float overspinLimit;
 
-    //    public float dissipationRate;
-    //}
+        [Tooltip("Rate at which spinup increases for each tick")]
+        public float rate;
+
+        [Tooltip("Rate at which spinup decays when not firing")]
+        public float decayRate;
+
+        [HideInInspector]
+        public float value;
+    }
 
     public bool playAudioForEachAttack;
 
@@ -145,9 +154,12 @@ public class Weapon : MonoBehaviour
                     attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag);
                 }
 
-                if(playAudioForEachAttack && attackSetting.audio != null)
+                if(playAudioForEachAttack)
                 {
-                    attackSetting.audio.PlayDelayed(attackSetting.delay);
+                    foreach(AudioSource a in attackSetting.audio)
+                    {
+                        a.PlayDelayed(attackSetting.delay);
+                    }
                 }
             }
         }
@@ -188,6 +200,16 @@ public class Weapon : MonoBehaviour
             ammo.value = 0;
             ammo.reloading = true;
             StartCoroutine(Reload());
+        }
+    }
+
+    private void RunSpinup()
+    {
+        spinup.value += spinup.rate;
+
+        if(spinup.value > spinup.overspinLimit)
+        {
+            spinup.value = spinup.overspinLimit;
         }
     }
 
