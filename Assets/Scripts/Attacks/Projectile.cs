@@ -195,6 +195,7 @@ public class Projectile : AttackComponent
 
 		if(settings.performSafetyHitRegistration && lastPosition != null && transform != null)
         {
+			hits = new List<LagCompensatedHit>();
 			Runner.LagCompensation.RaycastAll(lastPosition, (transform.position - lastPosition).normalized, Vector3.Distance(lastPosition, transform.position), Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
 			ProcessHits(hits);
 		}
@@ -212,7 +213,10 @@ public class Projectile : AttackComponent
 
 	private void ProcessHits(List<LagCompensatedHit> hits)
     {
-		foreach (LagCompensatedHit hit in hits)
+		var hitArray = hits.ToArray();
+		System.Array.Sort(hitArray, delegate (LagCompensatedHit hit1, LagCompensatedHit hit2) { return hit1.Distance.CompareTo(hit2.Distance); });
+
+		foreach (LagCompensatedHit hit in hitArray)
 		{
 			//Debug.Log((hit.Hitbox != null) + " " + (hit.GameObject.tag == validTag) + " " + (hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority) + " " + (!hitList.Contains(hit.GameObject)));
 			// TODO: Stop projectile from hitting caster if caster has same target tag
