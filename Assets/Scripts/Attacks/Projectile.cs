@@ -292,6 +292,11 @@ public class Projectile : AttackComponent
 				Debug.Log("Spawning sub attacks");
 				settings.attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f);
 			}
+
+			else
+            {
+				settings.attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f);
+			}
         }
     }
 
