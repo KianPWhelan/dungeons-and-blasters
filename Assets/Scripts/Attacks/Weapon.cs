@@ -74,12 +74,18 @@ public class Weapon : MonoBehaviour
         public bool isRecharging;
     }
 
+    public bool playAudioForEachAttack;
+
+    private AudioSource audio;
+
     public void Start()
     {
         if(useAmmo)
         {
             ammo.value = ammo.clipSize;
         }
+
+        TryGetComponent(out audio);
     }
 
     public bool Use(GameObject self, string targetTag, bool useDestination, Vector3? destination = null, bool useRotation = false, Quaternion? rotation = null)
@@ -125,7 +131,17 @@ public class Weapon : MonoBehaviour
                 {
                     attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag);
                 }
+
+                if(playAudioForEachAttack)
+                {
+                    audio.PlayDelayed(attackSetting.delay);
+                }
             }
+        }
+
+        if (didUseAttack && !playAudioForEachAttack)
+        {
+            audio.Play();
         }
 
         return didUseAttack;
