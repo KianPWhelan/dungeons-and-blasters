@@ -20,7 +20,8 @@ public class WeaponHolder : MonoBehaviour
 
     public bool isPlayer;
 
-    private FPSCamera cam;
+    [HideInInspector]
+    public FPSCamera cam;
 
     public void Start()
     {
@@ -67,7 +68,7 @@ public class WeaponHolder : MonoBehaviour
         //    return false;
         //}
 
-        return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation);
+        return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);
     }
 
     public void UseWeapon(string weaponName)

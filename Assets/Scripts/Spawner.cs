@@ -38,6 +38,48 @@ public class Spawner : NetworkBehaviour
         ));
     }
 
+    public void Spawn(GameObject prefab, GameObject self, object[] info, float delay, int ownerId)
+    {
+        //if (!PhotonView.Find(ownerId).IsMine)
+        //{
+        //    return;
+        //}
+
+        //NetworkInstantiate(obj, position, rotation, info, delay, ownerId);
+
+        // photonView.RPC("LocalInstantiate", RpcTarget.All, objectName, position, rotation, info, delay, ownerId);
+
+        Debug.Log("Bruh");
+
+        //if(useOverrideRotation)
+        //{
+        //    StartCoroutine(Helpers.Timeout(
+        //        () =>
+        //        {
+        //            Runner.Spawn(prefab.GetComponent<NetworkObject>(), self.transform.position, rotation, Object.InputAuthority, (Runner, obj) =>
+        //            {
+        //                obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3]);
+        //            });
+        //        },
+        //        delay
+        //    ));
+        //}
+
+        //else
+        //{
+            StartCoroutine(Helpers.Timeout(
+                () =>
+                {
+                    Runner.Spawn(prefab.GetComponent<NetworkObject>(), self.transform.position, self.transform.rotation, Object.InputAuthority, (Runner, obj) =>
+                    {
+                        obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3]);
+                    });
+                },
+                delay
+            ));
+        //}
+    }
+
     //[Rpc(sources: RpcSources.InputAuthority, targets: RpcTargets.StateAuthority)]
     //private void NetworkInstantiate(GameObject prefab, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
     //{

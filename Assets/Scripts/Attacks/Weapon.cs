@@ -118,7 +118,7 @@ public class Weapon : MonoBehaviour
         TryGetComponent(out audio);
     }
 
-    public bool Use(GameObject self, string targetTag, bool useDestination, Vector3? destination = null, bool useRotation = false, Quaternion? rotation = null)
+    public bool Use(GameObject self, string targetTag, bool useDestination, Vector3? destination = null, bool useRotation = false, Quaternion? rotation = null, WeaponHolder weaponHolder = null)
     {
         if(useSpinup)
         {
@@ -173,12 +173,12 @@ public class Weapon : MonoBehaviour
 
                 if(useRotation)
                 {
-                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, useOverrideRotation: true, overrideRotation: rotation);
+                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, useOverrideRotation: true, overrideRotation: rotation, weaponHolder: weaponHolder, useSelfForPositioning: true);
                 }
 
                 else
                 {
-                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag);
+                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, weaponHolder: weaponHolder, useSelfForPositioning: true);
                 }
 
                 if(playAudioForEachAttack)

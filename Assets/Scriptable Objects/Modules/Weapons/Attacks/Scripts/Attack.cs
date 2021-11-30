@@ -40,7 +40,7 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(GameObject self, float delay, Vector3? destination = null, string targetTag = "none", bool useSelfAsParent = true, bool useOverrideRotation = false, Quaternion? overrideRotation = null)
+    public void PerformAttack(GameObject self, float delay, Vector3? destination = null, string targetTag = "none", bool useSelfAsParent = true, bool useOverrideRotation = false, Quaternion? overrideRotation = null, bool useSelfForPositioning = false, WeaponHolder weaponHolder = null)
     {
         // Debug.Log("Using Attack " + name);
         var tag = targetTag;
@@ -89,7 +89,24 @@ public class Attack : ScriptableObject
             rotation = overrideRotation.GetValueOrDefault();
         }
 
-        spawner.Spawn(attack, self.transform.position, rotation, info, delay, 0);
+        if (useSelfForPositioning)
+        {
+            if (weaponHolder.isPlayer)
+            {
+                spawner.Spawn(attack, weaponHolder.cam.gameObject, info, delay, 0);
+            }
+
+            else
+            {
+                spawner.Spawn(attack, self, info, delay, 0);
+            }
+        }
+
+        else
+        {
+            spawner.Spawn(attack, self.transform.position, rotation, info, delay, 0);
+        }
+
     }
 
     /// <summary>
