@@ -29,7 +29,7 @@ public class Spawner : NetworkBehaviour
         StartCoroutine(Helpers.Timeout(
             () =>
             {
-                Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, Object.InputAuthority, (Runner, obj) =>
+                Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, owner.InputAuthority, (Runner, obj) =>
                 {
                     obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner);
                 });
@@ -70,7 +70,7 @@ public class Spawner : NetworkBehaviour
             StartCoroutine(Helpers.Timeout(
                 () =>
                 {
-                    Runner.Spawn(prefab.GetComponent<NetworkObject>(), self.transform.position, self.transform.rotation, Object.InputAuthority, (Runner, obj) =>
+                    Runner.Spawn(prefab.GetComponent<NetworkObject>(), self.transform.position, self.transform.rotation, owner.InputAuthority, (Runner, obj) =>
                     {
                         obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner);
                     });
