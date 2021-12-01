@@ -65,7 +65,7 @@ MonoBehaviour:
     cooldown: 5
     rechargeRate: 2
     rechargeTickRate: 0.1
-    rechargeDelay: 0.3
+    rechargeDelay: 0.6
     value: 0
     onCooldown: 0
     isRecharging: 0

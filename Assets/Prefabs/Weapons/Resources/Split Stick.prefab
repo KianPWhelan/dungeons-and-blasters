@@ -61,11 +61,11 @@ MonoBehaviour:
   useOverheat: 1
   overheat:
     limit: 100
-    rate: 18
+    rate: 14
     cooldown: 5
     rechargeRate: 2
     rechargeTickRate: 0.1
-    rechargeDelay: 0.3
+    rechargeDelay: 0.6
     value: 0
     onCooldown: 0
     isRecharging: 0
