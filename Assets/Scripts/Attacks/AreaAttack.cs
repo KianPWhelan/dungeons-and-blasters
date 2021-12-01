@@ -15,6 +15,15 @@ public class AreaAttack : AttackComponent
         set { if (Object.IsPredictedSpawn) predictedLifeTimer = value; else networkedLifeTimer = value; }
     }
 
+    [Networked]
+    public Vector3 networkedVelocity { get; set; }
+    private Vector3 predictedVelocity;
+    public Vector3 velocity
+    {
+        get => Object.IsPredictedSpawn ? predictedVelocity : networkedVelocity;
+        set { if (Object.IsPredictedSpawn) predictedVelocity = value; else networkedVelocity = value; }
+    }
+
     private List<GameObject> hitList = new List<GameObject>();
 
     private int numHits;
@@ -43,6 +52,7 @@ public class AreaAttack : AttackComponent
         public bool ignoreObstacles;
         public bool applyEffectsOnEnd;
         public float lifetime;
+        public float gravityStrength;
     }
 
     private Vector3 hitPoint;
@@ -111,7 +121,21 @@ public class AreaAttack : AttackComponent
         Runner.LagCompensation.OverlapSphere(transform.position, settings.radius, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
         ProcessHits(hits);
 
-        if(settings.followOwner)
+        if (settings.gravityStrength > 0)
+        {
+            velocity = new Vector3(velocity.x, velocity.y - (9.8f * settings.gravityStrength * Runner.DeltaTime), velocity.z);
+            transform.LookAt(transform.position + velocity * Runner.DeltaTime);
+
+            try
+            {
+                transform.position += velocity * Runner.DeltaTime;
+            }
+
+            catch
+            { }
+        }
+
+        if (settings.followOwner)
         {
             transform.position = owner.transform.position;
             transform.rotation = owner.transform.rotation;

@@ -74,6 +74,7 @@ public class Projectile : AttackComponent
 		public bool applyEffectsOnEnd;
 		public float lifetime;
 		public float speed;
+		public float gravityStrength;
 
 		public bool homing;
 		public float homingStrength;
@@ -184,6 +185,12 @@ public class Projectile : AttackComponent
 			Quaternion newDir = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation((target.position - transform.position).normalized), settings.homingStrength * Runner.DeltaTime);
 			transform.rotation = newDir;
 			velocity = transform.forward * settings.speed;
+        }
+
+		if(settings.gravityStrength > 0)
+        {
+			velocity = new Vector3(velocity.x, velocity.y - (9.8f * settings.gravityStrength * Runner.DeltaTime), velocity.z);
+			transform.LookAt(transform.position + velocity * Runner.DeltaTime);
         }
 
 		Vector3 vel = velocity;

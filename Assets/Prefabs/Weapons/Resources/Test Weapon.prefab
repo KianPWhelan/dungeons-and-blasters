@@ -51,13 +51,13 @@ MonoBehaviour:
     delay: 0
     audio: []
     time: 0
-  useAmmo: 1
+  useAmmo: 0
   ammo:
     clipSize: 10
     reloadSpeed: 2
     value: 0
     reloading: 0
-  useOverheat: 1
+  useOverheat: 0
   overheat:
     limit: 100
     rate: 10
@@ -68,7 +68,7 @@ MonoBehaviour:
     value: 0
     onCooldown: 0
     isRecharging: 0
-  useSpinup: 1
+  useSpinup: 0
   spinup:
     limit: 100
     overspinLimit: 40

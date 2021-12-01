@@ -158,9 +158,11 @@ MonoBehaviour:
     applyEffectsOnEnd: 0
     lifetime: 10
     speed: 10
+    gravityStrength: 0.5
     homing: 1
-    homingStrength: 90
+    homingStrength: 45
     reevaluateHomingTargetConstantly: 0
+    performSafetyHitRegistration: 0
   _networkedVelocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &669991262790441418
 PrefabInstance:

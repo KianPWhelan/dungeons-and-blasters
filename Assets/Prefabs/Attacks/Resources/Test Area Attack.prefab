@@ -223,7 +223,7 @@ MonoBehaviour:
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 0
     offset: {x: 0, y: 0, z: 2}
-    followOwner: 1
+    followOwner: 0
     radius: 2
     hitMask:
       serializedVersion: 2
@@ -235,3 +235,5 @@ MonoBehaviour:
     ignoreObstacles: 1
     applyEffectsOnEnd: 0
     lifetime: 3
+    gravityStrength: 1
+  _networkedVelocity: {x: 0, y: 0, z: 0}
