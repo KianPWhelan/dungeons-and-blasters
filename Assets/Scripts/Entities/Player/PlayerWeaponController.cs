@@ -20,11 +20,6 @@ public class PlayerWeaponController : NetworkBehaviour
             {
                 weaponHolder.UseWeapon(0);
             }
-
-            if(input.IsDown(PlayerInput.BUTTON_FIRE_ALT))
-            {
-                weaponHolder.UseWeapon(0, altAttack: true);
-            }
         }
     }
 }

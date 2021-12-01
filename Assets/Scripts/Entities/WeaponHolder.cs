@@ -70,7 +70,7 @@ public class WeaponHolder : MonoBehaviour
 
         if(altAttack)
         {
-            return weaponScripts[index].UseAlternate(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);
+            
         }
 
         return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);

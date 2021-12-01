@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 [CreateAssetMenu(menuName = "Modules/Weapons/Attacks/Attack")]
 public class Attack : ScriptableObject
