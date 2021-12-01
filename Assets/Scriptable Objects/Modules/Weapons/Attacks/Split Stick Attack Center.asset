@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Split Stick Attack Center
   m_EditorClassIdentifier: 
-  attack: {fileID: 3807866404001653414, guid: ec173687ed6064f418be1da7239e0530, type: 3}
+  attack: {fileID: 8523135143678805610, guid: 499468a4549986746bb15f50026ed6be, type: 3}
   effects:
   - {fileID: 11400000, guid: 6352bb9cc9f116f4dbe4ef65dd6c9ab4, type: 2}
   useOverwriteTag: 0

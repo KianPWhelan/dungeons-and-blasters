@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Shotgun Cock Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 7880976810065528573, guid: 4ae6d341e56bce74086a71eac87fed81, type: 3}
+  attack: {fileID: 8523135143678805610, guid: 1a9c1bd0dbb9f744fb4968f86bced2b0, type: 3}
   effects:
   - {fileID: 11400000, guid: acc10939c9975bc4d8d77595ef889736, type: 2}
   useOverwriteTag: 0
