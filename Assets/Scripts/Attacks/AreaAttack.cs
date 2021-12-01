@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 
-public class AreaAttacks : AttackComponent
+public class AreaAttack : AttackComponent
 {
     [Networked]
     [HideInInspector]
@@ -186,12 +186,12 @@ public class AreaAttacks : AttackComponent
             if (settings.subAttacksAtSurfaceNormal)
             {
                 Debug.Log("Spawning sub attacks");
-                settings.attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f);
+                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f);
             }
 
             else
             {
-                settings.attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f);
+                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f);
             }
         }
     }

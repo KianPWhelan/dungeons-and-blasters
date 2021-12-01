@@ -38,7 +38,7 @@ public class WeaponHolder : MonoBehaviour
         }
     }
 
-    public bool UseWeapon(int index, Vector3? destination = null, bool useDestination = false)
+    public bool UseWeapon(int index, Vector3? destination = null, bool useDestination = false, bool altAttack = false)
     {
         //if(!useDestination)
         //{
@@ -68,13 +68,18 @@ public class WeaponHolder : MonoBehaviour
         //    return false;
         //}
 
+        if(altAttack)
+        {
+            
+        }
+
         return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);
     }
 
-    public void UseWeapon(string weaponName)
-    {
-        weaponScripts.Find(x => x.name == name);
-    }
+    //public void UseWeapon(string weaponName)
+    //{
+    //    weaponScripts.Find(x => x.name == name);
+    //}
 
     public List<Weapon> GetWeapons()
     {
