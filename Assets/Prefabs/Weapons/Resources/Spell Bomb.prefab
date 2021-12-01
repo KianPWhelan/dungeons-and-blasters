@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7840905850007402086}
   - component: {fileID: -8413034521662373569}
-  - component: {fileID: -3936064435867689845}
+  - component: {fileID: 7022136035370337551}
   m_Layer: 0
-  m_Name: Minigun
+  m_Name: Spell Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527d39da56593224aa283bf3fc4155bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rarity: 2
+  rarity: 0
   attacks:
-  - attack: {fileID: 11400000, guid: f79463cf7a3852b48b3a13d3e850f35e, type: 2}
-    cooldown: 0.06
+  - attack: {fileID: 11400000, guid: 8d6a9e8ed0e6ae84c837df6238221e59, type: 2}
+    cooldown: 2.1
     delay: 0
     audio: []
     time: 0
@@ -60,26 +60,26 @@ MonoBehaviour:
   useOverheat: 1
   overheat:
     limit: 100
-    rate: 0.9
-    cooldown: 4
-    rechargeRate: 1.5
+    rate: 51
+    cooldown: 5
+    rechargeRate: 2
     rechargeTickRate: 0.1
     rechargeDelay: 0.3
     value: 0
     onCooldown: 0
     isRecharging: 0
-  useSpinup: 1
+  useSpinup: 0
   spinup:
     limit: 100
-    overspinLimit: 20
-    rate: 2
+    overspinLimit: 40
+    rate: 1
     decayRate: 3
     decayDelay: 0.2
     decayTickRate: 0.1
     value: 0
   playAudioForEachAttack: 0
   spinDecaying: 0
---- !u!82 &-3936064435867689845
+--- !u!82 &7022136035370337551
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,10 +89,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 46aea64598142284c9944e75f17418f9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8ae4634208c85d9439d5a4afa6a2416f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
-  m_Pitch: 1.7
+  m_Volume: 1
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0

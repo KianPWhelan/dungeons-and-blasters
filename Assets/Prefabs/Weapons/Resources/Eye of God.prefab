@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527d39da56593224aa283bf3fc4155bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rarity: 0
+  rarity: 4
   attacks:
   - attack: {fileID: 11400000, guid: ce800a1c0ae200c439d007d1d5b49f15, type: 2}
     cooldown: 2.1
@@ -81,7 +81,16 @@ MonoBehaviour:
     onCooldown: 0
     isRecharging: 0
   useSpinup: 0
+  spinup:
+    limit: 0
+    overspinLimit: 0
+    rate: 0
+    decayRate: 0
+    decayDelay: 0
+    decayTickRate: 0
+    value: 0
   playAudioForEachAttack: 1
+  spinDecaying: 0
 --- !u!82 &5692059013115608607
 AudioSource:
   m_ObjectHideFlags: 0

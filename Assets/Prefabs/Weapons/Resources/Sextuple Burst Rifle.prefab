@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527d39da56593224aa283bf3fc4155bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rarity: 0
+  rarity: 2
   attacks:
   - attack: {fileID: 11400000, guid: 00afb46e08115fb45bc87ae24f411c86, type: 2}
     cooldown: 1.1

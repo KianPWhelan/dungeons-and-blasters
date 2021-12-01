@@ -43,15 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527d39da56593224aa283bf3fc4155bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rarity: 0
+  rarity: 1
   attacks:
   - attack: {fileID: 11400000, guid: 2883b2b7fc3c4ad4b93ab55b50a92c83, type: 2}
     cooldown: 0.9
     delay: 0
+    audio: []
     time: 0
   - attack: {fileID: 11400000, guid: ce06add3f00406041a9a3dc10df5f906, type: 2}
     cooldown: 0.9
     delay: 0.475
+    audio: []
     time: 0
   useAmmo: 0
   ammo:
@@ -70,3 +72,14 @@ MonoBehaviour:
     value: 0
     onCooldown: 0
     isRecharging: 0
+  useSpinup: 0
+  spinup:
+    limit: 0
+    overspinLimit: 0
+    rate: 0
+    decayRate: 0
+    decayDelay: 0
+    decayTickRate: 0
+    value: 0
+  playAudioForEachAttack: 0
+  spinDecaying: 0
