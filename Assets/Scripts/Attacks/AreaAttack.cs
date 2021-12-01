@@ -33,6 +33,7 @@ public class AreaAttack : AttackComponent
 
         public Vector3 offset;
 
+        public bool followOwner;
         public float radius;
         public LayerMask hitMask;
         public bool infinitePierce;
@@ -46,8 +47,9 @@ public class AreaAttack : AttackComponent
 
     private Vector3 hitPoint;
     private Vector3 hitNormal;
+    private NetworkObject owner;
 
-    public override void InitNetworkState(string validTag, float damageMod, object destination)
+    public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null)
     {
         base.InitNetworkState(validTag, damageMod, destination);
         //Object = GetComponent<NetworkObject>();
@@ -65,6 +67,8 @@ public class AreaAttack : AttackComponent
             useDestination = true;
             Debug.Log(useDestination);
         }
+
+        this.owner = owner;
     }
 
     public override void Spawned()
@@ -106,6 +110,15 @@ public class AreaAttack : AttackComponent
         List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
         Runner.LagCompensation.OverlapSphere(transform.position, settings.radius, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
         ProcessHits(hits);
+
+        if(settings.followOwner)
+        {
+            transform.position = owner.transform.position;
+            transform.rotation = owner.transform.rotation;
+
+            // Adjust position to offset
+            transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
+        }
     }
 
     private void ProcessHits(List<LagCompensatedHit> hits)

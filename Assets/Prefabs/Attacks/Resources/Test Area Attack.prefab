@@ -56,7 +56,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359586224317021904}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
@@ -223,6 +223,7 @@ MonoBehaviour:
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 0
     offset: {x: 0, y: 0, z: 2}
+    followOwner: 1
     radius: 2
     hitMask:
       serializedVersion: 2

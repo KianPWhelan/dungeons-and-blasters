@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
+using Fusion;
 
 [CreateAssetMenu(menuName = "Modules/Weapons/Attacks/Attack")]
 public class Attack : ScriptableObject
@@ -93,18 +93,18 @@ public class Attack : ScriptableObject
         {
             if (weaponHolder.isPlayer)
             {
-                spawner.Spawn(attack, weaponHolder.cam.gameObject, info, delay, 0);
+                spawner.Spawn(attack, weaponHolder.cam.gameObject, info, delay, 0, self.GetComponent<NetworkObject>());
             }
 
             else
             {
-                spawner.Spawn(attack, self, info, delay, 0);
+                spawner.Spawn(attack, self, info, delay, 0, self.GetComponent<NetworkObject>());
             }
         }
 
         else
         {
-            spawner.Spawn(attack, self.transform.position, rotation, info, delay, 0);
+            spawner.Spawn(attack, self.transform.position, rotation, info, delay, 0, self.GetComponent<NetworkObject>());
         }
 
     }
@@ -137,7 +137,7 @@ public class Attack : ScriptableObject
             info[3] = null;
         }
 
-        spawner.Spawn(attack, selfPosition, selfRotation, info, delay, ownerId);
+        spawner.Spawn(attack, selfPosition, selfRotation, info, delay, ownerId, null);
     }
 
     /// <summary>

@@ -12,7 +12,7 @@ public class Spawner : NetworkBehaviour
     /// <param name="position"></param>
     /// <param name="rotation"></param>
     /// <param name="info"></param>
-    public void Spawn(GameObject prefab, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
+    public void Spawn(GameObject prefab, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId, NetworkObject owner)
     {
         //if (!PhotonView.Find(ownerId).IsMine)
         //{
@@ -31,14 +31,14 @@ public class Spawner : NetworkBehaviour
             {
                 Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, Object.InputAuthority, (Runner, obj) =>
                 {
-                    obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3]);
+                    obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner);
                 });
             },
             delay
         ));
     }
 
-    public void Spawn(GameObject prefab, GameObject self, object[] info, float delay, int ownerId)
+    public void Spawn(GameObject prefab, GameObject self, object[] info, float delay, int ownerId, NetworkObject owner)
     {
         //if (!PhotonView.Find(ownerId).IsMine)
         //{
@@ -72,7 +72,7 @@ public class Spawner : NetworkBehaviour
                 {
                     Runner.Spawn(prefab.GetComponent<NetworkObject>(), self.transform.position, self.transform.rotation, Object.InputAuthority, (Runner, obj) =>
                     {
-                        obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3]);
+                        obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner);
                     });
                 },
                 delay

@@ -85,8 +85,8 @@ public class Projectile : AttackComponent
 
 	private Transform target;
 
-	public override void InitNetworkState(string validTag, float damageMod, object destination)
-	{
+	public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null)
+    {
 		base.InitNetworkState(validTag, damageMod, destination);
 		//Object = GetComponent<NetworkObject>();
 		//Debug.LogWarning("Object:");
