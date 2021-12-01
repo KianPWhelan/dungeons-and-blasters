@@ -10,6 +10,9 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private List<AttackSettings> attacks = new List<AttackSettings>();
 
+    [SerializeField]
+    private Weapon alternateAttackWeapon;
+
     [System.Serializable]
     public class AttackSettings
     {
@@ -197,6 +200,16 @@ public class Weapon : MonoBehaviour
         }
 
         return didUseAttack;
+    }
+
+    public bool UseAlternate(GameObject self, string targetTag, bool useDestination, Vector3? destination = null, bool useRotation = false, Quaternion? rotation = null, WeaponHolder weaponHolder = null)
+    {
+        if(alternateAttackWeapon == null)
+        {
+            return false;
+        }
+
+        return alternateAttackWeapon.Use(self, targetTag, useDestination, destination, useRotation, rotation, weaponHolder);
     }
 
     private void RunOverheat()
