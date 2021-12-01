@@ -21,6 +21,7 @@ public class AreaAttack : AttackComponent
 
     public AreaAttackSettings settings;
 
+    [System.Serializable]
     public class AreaAttackSettings
     {
         public Attack attack;
@@ -96,7 +97,7 @@ public class AreaAttack : AttackComponent
             hitPoint = transform.position;
             ApplyEffectsOnEnd();
             SubAttacksOnEnd();
-            DestroyProjectile();
+            DestroyAttack();
         }
     }
 
@@ -134,7 +135,7 @@ public class AreaAttack : AttackComponent
                 if (numHits > settings.numPierces && !settings.infinitePierce)
                 {
                     // TODO: Ending effects/subattacks
-                    DestroyProjectile();
+                    DestroyAttack();
                 }
             }
 
@@ -145,12 +146,12 @@ public class AreaAttack : AttackComponent
                 hitPoint = hit.Point;
                 SubAttacksOnEnd();
                 ApplyEffectsOnEnd();
-                DestroyProjectile();
+                DestroyAttack();
             }
         }
     }
 
-    private void DestroyProjectile()
+    private void DestroyAttack()
     {
         Runner.Despawn(Object);
     }

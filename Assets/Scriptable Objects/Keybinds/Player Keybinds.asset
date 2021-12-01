@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: Player Keybinds
   m_EditorClassIdentifier: 
   bindingSettings:
-  - action: 2
-    key: 119
   - action: 3
-    key: 115
+    key: 119
   - action: 4
-    key: 97
+    key: 115
   - action: 5
+    key: 97
+  - action: 6
     key: 100
   - action: 1
     key: 323
-  - action: 6
+  - action: 2
+    key: 324
+  - action: 7
     key: 32

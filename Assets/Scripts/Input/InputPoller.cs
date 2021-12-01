@@ -49,6 +49,11 @@ public class InputPoller : MonoBehaviour
             inputData.Buttons |= PlayerInput.BUTTON_FIRE;
         }
 
+        if(keybinds.bindings.TryGetValue(Actions.AltFire, out key) && Input.GetKey(key))
+        {
+            inputData.Buttons |= PlayerInput.BUTTON_FIRE_ALT;
+        }
+
         if (fpsCamera == null)
         {
             fpsCamera = runner.SimulationUnityScene.FindObjectsOfTypeInOrder<FPSCamera>()[0];

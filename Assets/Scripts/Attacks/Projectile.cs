@@ -295,7 +295,7 @@ public class Projectile : AttackComponent
 
 			else
             {
-				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f);
+				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f, destination: Vector3.negativeInfinity);
 			}
         }
     }
