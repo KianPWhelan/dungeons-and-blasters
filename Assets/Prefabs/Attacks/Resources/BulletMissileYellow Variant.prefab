@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1688343083724536, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
       propertyPath: m_Name
-      value: BulletMissileYellow
+      value: BulletMissileYellow Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4493069458638122, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
       propertyPath: m_RootOrder
@@ -77,6 +77,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4493069458638122, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047230355301454, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114047230355301454, guid: e9caea2b0e584d74fbcd0a04ac3575bf, type: 3}
