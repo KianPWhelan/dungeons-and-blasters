@@ -26,8 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1319312026435798300}
+  m_Children: []
   m_Father: {fileID: 4789399767165305975}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44,7 +43,7 @@ GameObject:
   - component: {fileID: 4171533552757744107}
   - component: {fileID: 3228527924000341273}
   m_Layer: 0
-  m_Name: Split Stick Left Projectile
+  m_Name: Shotgun Cock Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +83,7 @@ MonoBehaviour:
   AoiPosition: {fileID: 0}
   Flags: 2305
   NetworkGuid:
-    RawGuidValue: 117af7f3ac4b9094fb299b89a4eb220c
+    RawGuidValue: 1a9c1bd0dbb9f744fb4968f86bced2b0
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 4171533552757744107}
@@ -137,95 +136,29 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   useDestination: 0
   settings:
-    attack: {fileID: 11400000, guid: 00532eb163d14a14a8382ee3d4a0457f, type: 2}
+    attack: {fileID: 11400000, guid: f7a76ac262dbbb34d9e3db0f18b64432, type: 2}
     subAttacks: []
     subAttacksOnEnd: 0
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 0
     offset: {x: 0, y: 0, z: 3}
-    rotationOffset: {x: 0, y: -15, z: -15}
+    rotationOffset: {x: 0, y: 0, z: 0}
     reevaluateDestinationAfterOffset: 0
     spread: 0
-    length: 3
+    length: 0
     hitMask:
       serializedVersion: 2
       m_Bits: 1
-    infinitePierce: 1
+    infinitePierce: 0
     numPierces: 0
-    canMultiHitTarget: 1
+    canMultiHitTarget: 0
     multiHitCooldown: 0
     ignoreObstacles: 0
     applyEffectsOnEnd: 0
-    lifetime: 4
-    speed: 100
+    lifetime: 0.001
+    speed: 0
     homing: 0
     homingStrength: 0
     reevaluateHomingTargetConstantly: 0
     performSafetyHitRegistration: 0
   _networkedVelocity: {x: 0, y: 0, z: 0}
---- !u!1001 &139426190329084337
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1668218538431988242}
-    m_Modifications:
-    - target: {fileID: 1308062498831764737, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1420552831269546583, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-      propertyPath: m_Name
-      value: SparkleMissileBlue Variant
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
---- !u!4 &1319312026435798300 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1414258023532608685, guid: 0c2968037966f6d46942d66d727a86ac, type: 3}
-  m_PrefabInstance: {fileID: 139426190329084337}
-  m_PrefabAsset: {fileID: 0}

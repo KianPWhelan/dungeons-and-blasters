@@ -137,7 +137,7 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   useDestination: 0
   settings:
-    attack: {fileID: 11400000, guid: 856506d765aa2b744b930ed2ea3af1e7, type: 2}
+    attack: {fileID: 11400000, guid: 945b31c7f8c0f8140837d3cbb786cf1f, type: 2}
     subAttacks: []
     subAttacksOnEnd: 0
     subAttacksOnHit: 0
@@ -156,11 +156,12 @@ MonoBehaviour:
     multiHitCooldown: 0
     ignoreObstacles: 0
     applyEffectsOnEnd: 0
-    lifetime: 10
-    speed: 10
+    lifetime: 4
+    speed: 100
     homing: 0
     homingStrength: 0
     reevaluateHomingTargetConstantly: 0
+    performSafetyHitRegistration: 0
   _networkedVelocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &1469036563316786796
 PrefabInstance:
