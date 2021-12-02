@@ -84,7 +84,7 @@ MonoBehaviour:
   AoiPosition: {fileID: 0}
   Flags: 2305
   NetworkGuid:
-    RawGuidValue: 27c84c257e94e974892f9394a01afb66
+    RawGuidValue: c818b1ec953c9624fb662968252476e7
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 4171533552757744107}
@@ -146,6 +146,13 @@ MonoBehaviour:
     applyEffectsOnEnd: 0
     applyEffectsOnTip: 0
     offset: {x: 0, y: -0.2, z: 1}
+    canReflect: 0
+    numReflections: 0
+    canReflectOffValidTarget: 0
+    reflectOffValidTargetOnly: 0
+    applyEffectsOnReflect: 0
+    subAttacksOnReflect: 0
+    autoTargetOnReflect: 0
     followOwner: 0
     length: 30
     hitMask:
@@ -157,7 +164,7 @@ MonoBehaviour:
     multiHitCooldown: 0
     ignoreObstacles: 0
     directControlByOwner: 0
-    lifetime: 0.6
+    lifetime: 0.2
 --- !u!120 &-1692724994254798167
 LineRenderer:
   m_ObjectHideFlags: 0

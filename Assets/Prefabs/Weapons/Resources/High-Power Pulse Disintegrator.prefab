@@ -48,7 +48,7 @@ MonoBehaviour:
   rarity: 0
   attacks:
   - attack: {fileID: 11400000, guid: 188d008ebb9724d49ad8fb5bf32db8ae, type: 2}
-    cooldown: 0.2
+    cooldown: 0.15
     delay: 0
     attackIsDirectlyControlled: 0
     audio:
@@ -98,7 +98,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: df0e60887b63f45c7801a38fccae1f8f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 0.55
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -191,7 +191,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8413034521662373569, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
       propertyPath: overheat.rate
-      value: 4
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8413034521662373569, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
       propertyPath: isAlternateAttack
@@ -209,9 +209,21 @@ PrefabInstance:
       propertyPath: attacks.Array.data[0].cooldown
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8413034521662373569, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+      propertyPath: attacks.Array.data[0].audio.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2131840301544516960, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
       propertyPath: m_Name
       value: High-Power Pulse Disintegrator Secondary
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022136035370337551, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022136035370337551, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
       propertyPath: m_RootOrder

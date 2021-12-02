@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4171533552757744107}
   - component: {fileID: 4768121883774698770}
   - component: {fileID: -1692724994254798167}
+  - component: {fileID: -2469760956569156745}
   m_Layer: 0
   m_Name: HPD Secondary Bean
   m_TagString: Untagged
@@ -146,8 +147,15 @@ MonoBehaviour:
     applyEffectsOnEnd: 0
     applyEffectsOnTip: 0
     offset: {x: 0, y: -0.2, z: 1}
+    canReflect: 0
+    numReflections: 0
+    canReflectOffValidTarget: 0
+    reflectOffValidTargetOnly: 0
+    applyEffectsOnReflect: 0
+    subAttacksOnReflect: 0
+    autoTargetOnReflect: 0
     followOwner: 1
-    length: 30
+    length: 17
     hitMask:
       serializedVersion: 2
       m_Bits: 1
@@ -256,3 +264,19 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &-2469760956569156745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523135143678805610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8753c8177bc00bb4f8433dc249fa1cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabSound: {fileID: 6137451349687365925, guid: 7127f2e2e6c50f04fabf99c2c9f3f7cd, type: 3}
+  destroyWhenDone: 1
+  soundPrefabIsChild: 1
+  pitchRandomMultiplier: 1.2
