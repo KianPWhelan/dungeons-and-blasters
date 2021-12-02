@@ -146,7 +146,14 @@ MonoBehaviour:
     applyEffectsOnEnd: 0
     applyEffectsOnTip: 0
     offset: {x: 0, y: -0.2, z: 1}
-    followOwner: 1
+    canReflect: 1
+    numReflections: 3
+    canReflectOffValidTarget: 1
+    reflectOffValidTargetOnly: 0
+    applyEffectsOnReflect: 0
+    subAttacksOnReflect: 0
+    autoTargetOnReflect: 0
+    followOwner: 0
     length: 30
     hitMask:
       serializedVersion: 2
@@ -156,8 +163,8 @@ MonoBehaviour:
     canMultiHitTarget: 0
     multiHitCooldown: 0
     ignoreObstacles: 0
-    directControlByOwner: 1
-    lifetime: 30
+    directControlByOwner: 0
+    lifetime: 10
 --- !u!120 &-1692724994254798167
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -177,7 +184,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d2a3d8c55cf59d14f802db9880d38095, type: 2}
+  - {fileID: 2100000, guid: 648b6ef50a963e04484faab775909827, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

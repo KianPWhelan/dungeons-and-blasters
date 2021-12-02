@@ -33,6 +33,14 @@ public class Bean : AttackComponent
 
         public Vector3 offset;
 
+        public bool canReflect;
+        public int numReflections;
+        public bool canReflectOffValidTarget;
+        public bool reflectOffValidTargetOnly;
+        public bool applyEffectsOnReflect;
+        public bool subAttacksOnReflect;
+        public bool autoTargetOnReflect;
+
         public bool followOwner;
         public float length;
         public LayerMask hitMask;
@@ -55,8 +63,15 @@ public class Bean : AttackComponent
     private int attackIndex;
 
     private int numHits;
+    private int numReflects;
+
+    private Vector3 lastForward;
+
+    private Vector3 lastReflection = Vector3.negativeInfinity;
 
     private LineRenderer lineRenderer;
+
+    private List<Vector3> linePoints;
 
     public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0)
     {
@@ -147,20 +162,29 @@ public class Bean : AttackComponent
 
     private void UpdateBean()
     {
-        List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
-        //Debug.Log("Position" + transform.position + " Rotation" + transform.rotation.eulerAngles);
-        Runner.LagCompensation.RaycastAll(transform.position, transform.forward, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
-        var point = ProcessHits(hits);
+        linePoints = new List<Vector3>();
+        numHits = 0;
+        numReflects = 0;
 
-        if(owner != null && settings.followOwner)
+        if (owner != null && settings.followOwner)
         {
             transform.position = owner.transform.position;
             transform.rotation = owner.transform.rotation;
         }
 
+        lastForward = transform.position + transform.forward * settings.length;
+        lastReflection = transform.forward;
+
+        linePoints.Add(transform.position);
+
+        List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
+        //Debug.Log("Position" + transform.position + " Rotation" + transform.rotation.eulerAngles);
+        Runner.LagCompensation.RaycastAll(transform.position, transform.forward, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+        var point = ProcessHits(hits);
+
         if (point.x == Mathf.NegativeInfinity)
         {
-            hitPoint = transform.position + transform.forward * settings.length;
+            hitPoint = lastForward;
         }
 
         else
@@ -168,11 +192,17 @@ public class Bean : AttackComponent
             hitPoint = point;
         }
 
-        //Debug.Log(hitPoint);
+        linePoints.Add(hitPoint);
+
+        //foreach(Vector3 v in linePoints)
+        //{
+        //    Debug.Log(v);
+        //}
 
         if (lineRenderer != null)
         {
-            lineRenderer.SetPositions(new Vector3[2] { transform.position, hitPoint });
+            lineRenderer.positionCount = linePoints.Count;
+            lineRenderer.SetPositions(linePoints.ToArray());
         }
     }
 
@@ -204,6 +234,11 @@ public class Bean : AttackComponent
                 {
                     // TODO: Ending effects/subattacks
                     //DestroyBean();
+                    if(settings.canReflect && settings.canReflectOffValidTarget && numReflects < settings.numReflections)
+                    {
+                        return PerformReflection(hit);
+                    }
+
                     return hit.Point;
                 }
             }
@@ -216,11 +251,17 @@ public class Bean : AttackComponent
                 {
                     // TODO: Ending effects/subattacks
                     //DestroyBean();
+
+                    if (settings.canReflect && settings.canReflectOffValidTarget && numReflects < settings.numReflections)
+                    {
+                        return PerformReflection(hit);
+                    }
+
                     return hit.Point;
                 }
             }
 
-            else if (hit.Collider != null && !settings.ignoreObstacles)
+            else if (hit.Collider != null && !settings.ignoreObstacles && hit.Collider.tag != "Player")
             {
                 // TODO: Ending effects/subattacks
                 //Debug.Log("Hit Collider");
@@ -229,11 +270,48 @@ public class Bean : AttackComponent
                 SubAttacksOnTip();
                 ApplyEffectsOnTip();
                 //DestroyBean();
+
+                if(settings.canReflect && !settings.reflectOffValidTargetOnly && numReflects < settings.numReflections)
+                {
+                    return PerformReflection(hit);
+                }
+
                 return hit.Point;
             }
         }
 
         return Vector3.negativeInfinity;
+    }
+
+    private Vector3 PerformReflection(LagCompensatedHit hit)
+    {
+        //Debug.Log("Reflecting " + numReflects);
+        ApplyEffectsOnReflect();
+        SubAttacksOnReflect();
+        numReflects++;
+        linePoints.Add(hit.Point);
+        Vector3 reflection;
+
+        if(lastReflection.x == Mathf.NegativeInfinity)
+        {
+            reflection = Vector3.Reflect(transform.forward, hit.Normal).normalized;
+            lastReflection = reflection;
+            //Debug.Log(lastReflection);
+        }
+
+        else
+        {
+            reflection = Vector3.Reflect(lastReflection, hit.Normal).normalized;
+            lastReflection = reflection;
+            //Debug.Log(lastReflection);
+        }
+        
+        lastForward = hit.Point + reflection * settings.length;
+        List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
+        //Debug.Log("Position" + transform.position + " Rotation" + transform.rotation.eulerAngles);
+        Runner.LagCompensation.RaycastAll(hit.Point + 0.2f * reflection, reflection, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+        var point = ProcessHits(hits);
+        return point;
     }
 
     private void DestroyBean()
@@ -252,6 +330,14 @@ public class Bean : AttackComponent
     private void ApplyEffectsOnTip()
     {
         if (settings.applyEffectsOnTip)
+        {
+            settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod);
+        }
+    }
+
+    private void ApplyEffectsOnReflect()
+    {
+        if (settings.applyEffectsOnReflect)
         {
             settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod);
         }
@@ -276,6 +362,14 @@ public class Bean : AttackComponent
     private void SubAttacksOnTip()
     {
         if (settings.subAttacksOnTip)
+        {
+            SpawnSubAttacks();
+        }
+    }
+
+    private void SubAttacksOnReflect()
+    {
+        if (settings.subAttacksOnReflect)
         {
             SpawnSubAttacks();
         }
