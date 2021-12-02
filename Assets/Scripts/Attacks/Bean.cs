@@ -73,7 +73,9 @@ public class Bean : AttackComponent
 
     private List<Vector3> linePoints;
 
-    public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0)
+    private bool isAlt;
+
+    public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0, bool isAlt = false)
     {
         base.InitNetworkState(validTag, damageMod, destination, owner);
 
@@ -91,6 +93,7 @@ public class Bean : AttackComponent
         this.owner = owner;
         this.weaponIndex = weaponIndex;
         this.attackIndex = attackIndex;
+        this.isAlt = isAlt;
 
         if(settings.directControlByOwner)
         {
@@ -124,7 +127,7 @@ public class Bean : AttackComponent
         {
             if(GetInput(out PlayerInput input))
             {
-                if (!ownerWeapon.isAlternateAttack && !input.IsDown(PlayerInput.BUTTON_FIRE))
+                if (!isAlt && !input.IsDown(PlayerInput.BUTTON_FIRE))
                 {
                     Debug.Log("Fire button up");
                     ownerWeapon.attacks[attackIndex].isInUse = false;
@@ -134,9 +137,9 @@ public class Bean : AttackComponent
                     return;
                 }
 
-                if (ownerWeapon.isAlternateAttack && !input.IsDown(PlayerInput.BUTTON_FIRE_ALT))
+                if (isAlt && !input.IsDown(PlayerInput.BUTTON_FIRE_ALT))
                 {
-                    ownerWeapon.attacks[attackIndex].isInUse = false;
+                    ownerWeapon.alternateAttackWeapon.attacks[attackIndex].isInUse = false;
                     ApplyEffectsOnEnd();
                     SubAttacksOnEnd();
                     DestroyBean();

@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     public List<AttackSettings> attacks = new List<AttackSettings>();
 
     [SerializeField]
-    private Weapon alternateAttackWeapon;
+    public Weapon alternateAttackWeapon;
 
     public bool isAlternateAttack;
 
@@ -139,6 +139,7 @@ public class Weapon : MonoBehaviour
             if(w != null)
             {
                 owner = w.owner;
+                index = w.index;
             }
         }
     }
@@ -204,12 +205,12 @@ public class Weapon : MonoBehaviour
 
                 if(useRotation)
                 {
-                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, useOverrideRotation: true, overrideRotation: rotation, weaponHolder: weaponHolder, useSelfForPositioning: true, directControl: attackSetting.attackIsDirectlyControlled, weaponIndex: index, attackIndex: counter);
+                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, useOverrideRotation: true, overrideRotation: rotation, weaponHolder: weaponHolder, useSelfForPositioning: true, directControl: attackSetting.attackIsDirectlyControlled, weaponIndex: index, attackIndex: counter, isAlt: isAlternateAttack);
                 }
 
                 else
                 {
-                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, weaponHolder: weaponHolder, useSelfForPositioning: true, directControl: attackSetting.attackIsDirectlyControlled, weaponIndex: index, attackIndex: counter);
+                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, weaponHolder: weaponHolder, useSelfForPositioning: true, directControl: attackSetting.attackIsDirectlyControlled, weaponIndex: index, attackIndex: counter, isAlt: isAlternateAttack);
                 }
 
                 if(playAudioForEachAttack)

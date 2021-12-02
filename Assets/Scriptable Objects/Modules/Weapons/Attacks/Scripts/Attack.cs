@@ -40,7 +40,7 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(GameObject self, float delay, Vector3? destination = null, string targetTag = "none", bool useSelfAsParent = true, bool useOverrideRotation = false, Quaternion? overrideRotation = null, bool useSelfForPositioning = false, WeaponHolder weaponHolder = null, bool directControl = false, int weaponIndex = 0, int attackIndex = 0)
+    public void PerformAttack(GameObject self, float delay, Vector3? destination = null, string targetTag = "none", bool useSelfAsParent = true, bool useOverrideRotation = false, Quaternion? overrideRotation = null, bool useSelfForPositioning = false, WeaponHolder weaponHolder = null, bool directControl = false, int weaponIndex = 0, int attackIndex = 0, bool isAlt = false)
     {
         // Debug.Log("Using Attack " + name);
         var tag = targetTag;
@@ -69,12 +69,12 @@ public class Attack : ScriptableObject
 
         if(useSelfAsParent)
         {
-            info = new object[] { 0, tag, damageMod, destination.GetValueOrDefault(), weaponIndex, attackIndex };
+            info = new object[] { 0, tag, damageMod, destination.GetValueOrDefault(), weaponIndex, attackIndex, isAlt };
         }
 
         else
         {
-            info = new object[] { null, tag, damageMod, destination.GetValueOrDefault(), weaponIndex, attackIndex };
+            info = new object[] { null, tag, damageMod, destination.GetValueOrDefault(), weaponIndex, attackIndex, isAlt };
         }
 
         if(destination.GetValueOrDefault().x == Vector3.negativeInfinity.x)
@@ -133,7 +133,7 @@ public class Attack : ScriptableObject
         // Debug.Log("Performing attack");
         // Debug.Log(attack);
         object[] info;
-        info = new object[] { null, tag, damageMod, destination.GetValueOrDefault(), 0, 0 };
+        info = new object[] { null, tag, damageMod, destination.GetValueOrDefault(), 0, 0, false };
 
         if (destination.GetValueOrDefault().x == Vector3.negativeInfinity.x)
         {
