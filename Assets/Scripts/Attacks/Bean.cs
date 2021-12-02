@@ -41,6 +41,7 @@ public class Bean : AttackComponent
         public bool canMultiHitTarget;
         public float multiHitCooldown;
         public bool ignoreObstacles;
+        public bool directControlByOwner;
         
         public float lifetime;
     }

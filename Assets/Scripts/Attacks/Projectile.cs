@@ -49,6 +49,8 @@ public class Projectile : AttackComponent
 
 	private Vector3 hitPoint;
 
+	private NetworkObject owner;
+
 	[System.Serializable]
 	public class ProjectileSettings
 	{
@@ -104,7 +106,9 @@ public class Projectile : AttackComponent
             useDestination = true;
             Debug.Log(useDestination);
         }
-    }
+
+		this.owner = owner;
+	}
 
 	public override void Spawned()
 	{
@@ -297,12 +301,12 @@ public class Projectile : AttackComponent
 			if(settings.subAttacksAtSurfaceNormal)
             {
 				Debug.Log("Spawning sub attacks");
-				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f);
+				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f, owner: owner);
 			}
 
 			else
             {
-				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f, destination: Vector3.negativeInfinity);
+				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f, destination: Vector3.negativeInfinity, owner: owner);
 			}
         }
     }

@@ -26,10 +26,17 @@ public class Spawner : NetworkBehaviour
         Debug.Log("Destination");
         Debug.Log(info[3]);
 
+        PlayerRef inputAuth = Object.InputAuthority;
+
+        if(owner != null)
+        {
+            inputAuth = owner.InputAuthority;
+        }
+
         StartCoroutine(Helpers.Timeout(
             () =>
             {
-                Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, owner.InputAuthority, (Runner, obj) =>
+                Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, inputAuth, (Runner, obj) =>
                 {
                     obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner);
                 });
@@ -70,10 +77,17 @@ public class Spawner : NetworkBehaviour
 
         //else
         //{
-            StartCoroutine(Helpers.Timeout(
+        PlayerRef inputAuth = Object.InputAuthority;
+
+        if (owner != null)
+        {
+            inputAuth = owner.InputAuthority;
+        }
+
+        StartCoroutine(Helpers.Timeout(
                 () =>
                 {
-                    Runner.Spawn(prefab.GetComponent<NetworkObject>(), self.transform.position, self.transform.rotation, owner.InputAuthority, (Runner, obj) =>
+                    Runner.Spawn(prefab.GetComponent<NetworkObject>(), self.transform.position, self.transform.rotation, inputAuth, (Runner, obj) =>
                     {
                         obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner);
                     });

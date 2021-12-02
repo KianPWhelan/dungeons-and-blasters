@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
 public class WeaponHolder : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class WeaponHolder : MonoBehaviour
         {
             var weapon = weaponPrefabs[i];
             var newWeapon = Instantiate(weapon, transform);
+            newWeapon.GetComponent<Weapon>().owner = GetComponent<NetworkObject>();
             weaponScripts.Add(newWeapon.GetComponent<Weapon>());
         }
 
@@ -70,7 +72,7 @@ public class WeaponHolder : MonoBehaviour
 
         if(altAttack)
         {
-            
+            return weaponScripts[index].UseAlternate(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);
         }
 
         return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);

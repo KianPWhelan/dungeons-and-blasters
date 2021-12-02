@@ -8,7 +8,7 @@ public class Attack : ScriptableObject
 {
     [Tooltip("Object pool for attack game objects which are used to gather targets")]
     [SerializeField]
-    private GameObject attack;
+    public GameObject attack;
 
     [Tooltip("Effects that the attack inflicts")]
     [SerializeField]
@@ -115,7 +115,7 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, int ownerId, Vector3? destination = null, string targetTag = "none", float delay = 0)
+    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, int ownerId, Vector3? destination = null, string targetTag = "none", float delay = 0, NetworkObject owner = null)
     {
         var tag = targetTag;
 
@@ -140,7 +140,7 @@ public class Attack : ScriptableObject
             info[3] = null;
         }
 
-        spawner.Spawn(attack, selfPosition, selfRotation, info, delay, ownerId, null);
+        spawner.Spawn(attack, selfPosition, selfRotation, info, delay, ownerId, owner);
     }
 
     /// <summary>
