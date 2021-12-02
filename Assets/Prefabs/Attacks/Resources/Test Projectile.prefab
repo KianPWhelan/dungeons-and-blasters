@@ -159,7 +159,7 @@ MonoBehaviour:
     lifetime: 10
     speed: 10
     gravityStrength: 0.5
-    homing: 1
+    homing: 0
     homingStrength: 45
     reevaluateHomingTargetConstantly: 0
     performSafetyHitRegistration: 0

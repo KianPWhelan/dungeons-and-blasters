@@ -58,6 +58,9 @@ public class Bean : AttackComponent
     {
         base.InitNetworkState(validTag, damageMod, destination, owner);
 
+        this.validTag = validTag;
+        this.damageMod = damageMod;
+
         if (destination != null)
         {
             Debug.Log("Destination recieved: " + destination);
@@ -98,7 +101,7 @@ public class Bean : AttackComponent
         else
         {
             // TODO: Ending effects/subattacks
-            hitPoint = transform.position;
+            hitPoint = transform.position + transform.forward * settings.length;
             ApplyEffectsOnEnd();
             SubAttacksOnEnd();
             DestroyBean();
@@ -108,12 +111,19 @@ public class Bean : AttackComponent
     private void UpdateBean()
     {
         List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
-        Runner.LagCompensation.RaycastAll(transform.position - 0.5f * transform.rotation.eulerAngles, transform.rotation.eulerAngles, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+        //Debug.Log("Position" + transform.position + " Rotation" + transform.rotation.eulerAngles);
+        Runner.LagCompensation.RaycastAll(transform.position, transform.forward, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
         var point = ProcessHits(hits);
 
-        if(point.x == Mathf.NegativeInfinity)
+        if(owner != null && settings.followOwner)
         {
-            hitPoint = transform.forward * settings.length;
+            transform.position = owner.transform.position;
+            transform.rotation = owner.transform.rotation;
+        }
+
+        if (point.x == Mathf.NegativeInfinity)
+        {
+            hitPoint = transform.position + transform.forward * settings.length;
         }
 
         else
@@ -121,15 +131,11 @@ public class Bean : AttackComponent
             hitPoint = point;
         }
 
-        if(owner != null)
-        {
-            transform.position = owner.transform.position;
-            transform.rotation = owner.transform.rotation;
-        }
+        //Debug.Log(hitPoint);
 
-        if(lineRenderer != null)
+        if (lineRenderer != null)
         {
-
+            lineRenderer.SetPositions(new Vector3[2] { transform.position, hitPoint });
         }
     }
 
@@ -144,7 +150,7 @@ public class Bean : AttackComponent
             // TODO: Stop projectile from hitting caster if caster has same target tag
             if (hit.Hitbox != null && hit.Hitbox.Root.tag == validTag/* && hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority */&& !hitList.Contains(hit.Hitbox.Root.gameObject))
             {
-                Debug.Log("Hit valid target");
+                //Debug.Log("Hit valid target");
                 settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod);
                 numHits++;
                 hitList.Add(hit.Hitbox.Root.gameObject);
@@ -165,9 +171,22 @@ public class Bean : AttackComponent
                 }
             }
 
+            else if(hit.Hitbox != null && hit.Hitbox.Root.tag == validTag)
+            {
+                numHits++;
+
+                if (numHits > settings.numPierces && !settings.infinitePierce)
+                {
+                    // TODO: Ending effects/subattacks
+                    //DestroyBean();
+                    return hit.Point;
+                }
+            }
+
             else if (hit.Collider != null && !settings.ignoreObstacles)
             {
                 // TODO: Ending effects/subattacks
+                //Debug.Log("Hit Collider");
                 hitNormal = hit.Normal;
                 hitPoint = hit.Point;
                 SubAttacksOnTip();

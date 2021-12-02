@@ -49,7 +49,10 @@ public class Spawner : NetworkBehaviour
 
         // photonView.RPC("LocalInstantiate", RpcTarget.All, objectName, position, rotation, info, delay, ownerId);
 
-        Debug.Log("Bruh");
+        //Debug.Log("Bruh");
+        //Debug.Log(self.transform.position);
+        //Debug.Log(self.transform.rotation);
+        //Debug.Log(self.name);
 
         //if(useOverrideRotation)
         //{
