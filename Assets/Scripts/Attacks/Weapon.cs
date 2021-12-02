@@ -8,10 +8,12 @@ public class Weapon : MonoBehaviour
     public Rarities rarity;
 
     [SerializeField]
-    private List<AttackSettings> attacks = new List<AttackSettings>();
+    public List<AttackSettings> attacks = new List<AttackSettings>();
 
     [SerializeField]
     private Weapon alternateAttackWeapon;
+
+    public bool isAlternateAttack;
 
     [System.Serializable]
     public class AttackSettings
@@ -19,10 +21,14 @@ public class Weapon : MonoBehaviour
         public Attack attack;
         public float cooldown;
         public float delay;
+        public bool attackIsDirectlyControlled;
         public List<AudioSource> audio = new List<AudioSource>();
 
         [HideInInspector]
         public float time = -10000;
+
+        [HideInInspector]
+        public bool isInUse;
     }
 
     public bool useAmmo;
@@ -106,14 +112,16 @@ public class Weapon : MonoBehaviour
 
     public bool playAudioForEachAttack;
 
-    public bool attackIsDirectlyControlled;
-
     private AudioSource audio;
 
     private Coroutine spinCoroutine;
     private bool spinDecaying;
 
+    [HideInInspector]
     public NetworkObject owner;
+
+    [HideInInspector]
+    public int index;
 
     public void Start()
     {
@@ -167,10 +175,11 @@ public class Weapon : MonoBehaviour
         }
 
         bool didUseAttack = false;
+        int counter = 0;
 
         foreach(AttackSettings attackSetting in attacks)
         {
-            if(Time.time - attackSetting.time >= attackSetting.cooldown)
+            if(Time.time - attackSetting.time >= attackSetting.cooldown && !attackSetting.isInUse)
             {
                 if(didUseAttack == false)
                 {
@@ -188,14 +197,19 @@ public class Weapon : MonoBehaviour
                 didUseAttack = true;
                 attackSetting.time = Time.time;
 
+                if(attackSetting.attackIsDirectlyControlled)
+                {
+                    attackSetting.isInUse = true;
+                }
+
                 if(useRotation)
                 {
-                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, useOverrideRotation: true, overrideRotation: rotation, weaponHolder: weaponHolder, useSelfForPositioning: true);
+                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, useOverrideRotation: true, overrideRotation: rotation, weaponHolder: weaponHolder, useSelfForPositioning: true, directControl: attackSetting.attackIsDirectlyControlled, weaponIndex: index, attackIndex: counter);
                 }
 
                 else
                 {
-                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, weaponHolder: weaponHolder, useSelfForPositioning: true);
+                    attackSetting.attack.PerformAttack(self, attackSetting.delay, destination, targetTag, weaponHolder: weaponHolder, useSelfForPositioning: true, directControl: attackSetting.attackIsDirectlyControlled, weaponIndex: index, attackIndex: counter);
                 }
 
                 if(playAudioForEachAttack)
@@ -206,6 +220,8 @@ public class Weapon : MonoBehaviour
                     }
                 }
             }
+
+            counter++;
         }
 
         if (didUseAttack && !playAudioForEachAttack && audio != null)

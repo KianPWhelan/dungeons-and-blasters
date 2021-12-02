@@ -59,7 +59,7 @@ public class AreaAttack : AttackComponent
     private Vector3 hitNormal;
     private NetworkObject owner;
 
-    public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null)
+    public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0)
     {
         base.InitNetworkState(validTag, damageMod, destination);
         //Object = GetComponent<NetworkObject>();

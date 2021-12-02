@@ -50,9 +50,12 @@ MonoBehaviour:
   - attack: {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
     cooldown: 0.5
     delay: 0
+    attackIsDirectlyControlled: 1
     audio: []
     time: 0
+    isInUse: 0
   alternateAttackWeapon: {fileID: 4050402945694212973}
+  isAlternateAttack: 0
   useAmmo: 0
   ammo:
     clipSize: 10
@@ -80,8 +83,8 @@ MonoBehaviour:
     decayTickRate: 0.1
     value: 0
   playAudioForEachAttack: 0
-  attackIsDirectlyControlled: 0
   owner: {fileID: 0}
+  index: 0
 --- !u!82 &7022136035370337551
 AudioSource:
   m_ObjectHideFlags: 0
@@ -185,6 +188,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7840905850007402086}
     m_Modifications:
+    - target: {fileID: -8413034521662373569, guid: 698ba70e05d9cdc499be675abefbddb7, type: 3}
+      propertyPath: isAlternateAttack
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2131840301544516960, guid: 698ba70e05d9cdc499be675abefbddb7, type: 3}
       propertyPath: m_Name
       value: Split Stick

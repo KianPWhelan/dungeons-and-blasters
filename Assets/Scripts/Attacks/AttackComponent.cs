@@ -14,7 +14,7 @@ public class AttackComponent : NetworkBehaviour
     [HideInInspector]
     public bool useDestination;
 
-    public virtual void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null)
+    public virtual void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0)
     {
     }
 }

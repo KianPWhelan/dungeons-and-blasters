@@ -47,15 +47,18 @@ public class Bean : AttackComponent
     }
 
     private NetworkObject owner;
+    private Weapon ownerWeapon;
     private Vector3 hitPoint;
     private Vector3 hitNormal;
     private List<GameObject> hitList = new List<GameObject>();
+    private int weaponIndex;
+    private int attackIndex;
 
     private int numHits;
 
     private LineRenderer lineRenderer;
 
-    public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null)
+    public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0)
     {
         base.InitNetworkState(validTag, damageMod, destination, owner);
 
@@ -71,6 +74,14 @@ public class Bean : AttackComponent
         }
 
         this.owner = owner;
+        this.weaponIndex = weaponIndex;
+        this.attackIndex = attackIndex;
+
+        if(settings.directControlByOwner)
+        {
+            Object.AssignInputAuthority(owner.InputAuthority);
+            ownerWeapon = owner.GetComponent<WeaponHolder>().GetWeapons()[weaponIndex];
+        }
     }
 
     public override void Spawned()
@@ -94,6 +105,31 @@ public class Bean : AttackComponent
 
     public override void FixedUpdateNetwork()
     {
+        if(settings.directControlByOwner)
+        {
+            if(GetInput(out PlayerInput input))
+            {
+                if (!ownerWeapon.isAlternateAttack && !input.IsDown(PlayerInput.BUTTON_FIRE))
+                {
+                    Debug.Log("Fire button up");
+                    ownerWeapon.attacks[attackIndex].isInUse = false;
+                    ApplyEffectsOnEnd();
+                    SubAttacksOnEnd();
+                    DestroyBean();
+                    return;
+                }
+
+                if (ownerWeapon.isAlternateAttack && !input.IsDown(PlayerInput.BUTTON_FIRE_ALT))
+                {
+                    ownerWeapon.attacks[attackIndex].isInUse = false;
+                    ApplyEffectsOnEnd();
+                    SubAttacksOnEnd();
+                    DestroyBean();
+                    return;
+                }
+            }
+        }
+
         if (!lifeTimer.Expired(Runner))
         {
             UpdateBean();

@@ -156,7 +156,8 @@ MonoBehaviour:
     canMultiHitTarget: 0
     multiHitCooldown: 0
     ignoreObstacles: 0
-    lifetime: 10
+    directControlByOwner: 1
+    lifetime: 30
 --- !u!120 &-1692724994254798167
 LineRenderer:
   m_ObjectHideFlags: 0

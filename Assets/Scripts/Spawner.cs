@@ -38,7 +38,7 @@ public class Spawner : NetworkBehaviour
             {
                 Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, inputAuth, (Runner, obj) =>
                 {
-                    obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner);
+                    obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner, (int)info[4], (int)info[5]);
                 });
             },
             delay
@@ -89,7 +89,7 @@ public class Spawner : NetworkBehaviour
                 {
                     Runner.Spawn(prefab.GetComponent<NetworkObject>(), self.transform.position, self.transform.rotation, inputAuth, (Runner, obj) =>
                     {
-                        obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner);
+                        obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner, (int)info[4], (int)info[5]);
                     });
                 },
                 delay
