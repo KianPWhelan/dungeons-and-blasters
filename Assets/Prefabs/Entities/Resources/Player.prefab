@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponPrefabs:
-  - {fileID: 2131840301544516960, guid: 9b1a512e16165164b9395882db477f6b, type: 3}
+  - {fileID: 2131840301544516960, guid: a35fc5aad62bd8a488d434d1d430a62b, type: 3}
   targetTags:
   - Enemy
   isPlayer: 1
