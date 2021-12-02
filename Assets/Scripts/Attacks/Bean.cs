@@ -46,6 +46,9 @@ public class Bean : AttackComponent
 
         public bool followOwner;
         public float length;
+        public float spread;
+        public bool spreadAffectsReflection;
+        public bool spreadOnlyAffectsReflection;
         public LayerMask hitMask;
         public bool infinitePierce;
         public int numPierces;
@@ -75,6 +78,8 @@ public class Bean : AttackComponent
     private LineRenderer lineRenderer;
 
     private List<Vector3> linePoints;
+
+    private Dictionary<int, Vector3> reflectionAccuracyOffsets = new Dictionary<int, Vector3>();
 
     private bool isAlt;
 
@@ -118,18 +123,26 @@ public class Bean : AttackComponent
             transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
         }
 
+        // Calculate spread
+        Vector3 accuracyOffset = Random.insideUnitCircle * settings.spread;
+
+        if(settings.spreadOnlyAffectsReflection)
+        {
+            accuracyOffset = Vector3.zero;
+        }
+
         // Adjust position to offset
         transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
 
         // Adjust rotation to offset
         if (settings.worldSpaceRotation)
         {
-            transform.rotation = Quaternion.Euler(settings.rotationOffset /*+ accuracyOffset*/);
+            transform.rotation = Quaternion.Euler(settings.rotationOffset + accuracyOffset);
         }
 
         else
         {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + settings.rotationOffset /*+ accuracyOffset*/);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + settings.rotationOffset + accuracyOffset);
         }
 
         // Reevaluate rotation towards directions
@@ -137,6 +150,7 @@ public class Bean : AttackComponent
         {
             Debug.Log("reevaluating direction");
             transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + accuracyOffset);
         }
 
         TryGetComponent(out lineRenderer);
@@ -333,10 +347,28 @@ public class Bean : AttackComponent
         numReflects++;
         linePoints.Add(hit.Point);
         Vector3 reflection;
+        Vector3 accuracyOffset;
 
-        if(lastReflection.x == Mathf.NegativeInfinity)
+        if (!reflectionAccuracyOffsets.ContainsKey(numReflects))
+        {
+            accuracyOffset = Random.insideUnitCircle * settings.spread;
+            reflectionAccuracyOffsets.Add(numReflects, accuracyOffset);
+        }
+        
+        else
+        {
+            accuracyOffset = reflectionAccuracyOffsets[numReflects];
+        }
+
+        if(!settings.spreadAffectsReflection)
+        {
+            accuracyOffset = Vector3.zero;
+        }
+
+        if (lastReflection.x == Mathf.NegativeInfinity)
         {
             reflection = Vector3.Reflect(transform.forward, hit.Normal).normalized;
+            reflection += accuracyOffset;
             lastReflection = reflection;
             //Debug.Log(lastReflection);
         }
@@ -344,6 +376,7 @@ public class Bean : AttackComponent
         else
         {
             reflection = Vector3.Reflect(lastReflection, hit.Normal).normalized;
+            reflection += accuracyOffset;
             lastReflection = reflection;
             //Debug.Log(lastReflection);
         }

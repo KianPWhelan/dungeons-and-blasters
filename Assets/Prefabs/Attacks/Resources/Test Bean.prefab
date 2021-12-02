@@ -145,16 +145,22 @@ MonoBehaviour:
     subAttacksAtSurfaceNormal: 0
     applyEffectsOnEnd: 0
     applyEffectsOnTip: 0
-    offset: {x: 0, y: -0.2, z: 1}
+    offset: {x: 0, y: 0, z: 1}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    worldSpaceRotation: 0
+    reevaluateDestinationAfterOffset: 0
     canReflect: 1
-    numReflections: 3
-    canReflectOffValidTarget: 1
+    numReflections: 1
+    canReflectOffValidTarget: 0
     reflectOffValidTargetOnly: 0
     applyEffectsOnReflect: 0
     subAttacksOnReflect: 0
     autoTargetOnReflect: 0
     followOwner: 0
     length: 30
+    spread: 10
+    spreadAffectsReflection: 1
+    spreadOnlyAffectsReflection: 1
     hitMask:
       serializedVersion: 2
       m_Bits: 1
