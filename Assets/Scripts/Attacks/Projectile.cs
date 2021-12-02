@@ -146,6 +146,7 @@ public class Projectile : AttackComponent
         {
 			Debug.Log("reevaluating direction");
 			transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
+			transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + accuracyOffset);
 		}
 
 		// Set velocity
