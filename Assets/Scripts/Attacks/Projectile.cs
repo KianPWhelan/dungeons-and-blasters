@@ -63,6 +63,7 @@ public class Projectile : AttackComponent
 
 		public Vector3 offset;
 		public Vector3 rotationOffset;
+		public bool worldSpaceRotation;
 		public bool reevaluateDestinationAfterOffset;
 		public float spread;
 
@@ -130,7 +131,15 @@ public class Projectile : AttackComponent
 		transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
 
 		// Adjust rotation offset
-		transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + settings.rotationOffset + accuracyOffset);
+		if(settings.worldSpaceRotation)
+        {
+			transform.rotation = Quaternion.Euler(settings.rotationOffset + accuracyOffset);
+        }
+
+		else
+        {
+			transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + settings.rotationOffset + accuracyOffset);
+		}
 
 		// Reevaluate rotation towards directions
 		if(settings.reevaluateDestinationAfterOffset)

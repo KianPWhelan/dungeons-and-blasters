@@ -32,6 +32,9 @@ public class Bean : AttackComponent
         public bool applyEffectsOnTip;
 
         public Vector3 offset;
+        public Vector3 rotationOffset;
+        public bool worldSpaceRotation;
+        public bool reevaluateDestinationAfterOffset;
 
         public bool canReflect;
         public int numReflections;
@@ -117,6 +120,24 @@ public class Bean : AttackComponent
 
         // Adjust position to offset
         transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
+
+        // Adjust rotation to offset
+        if (settings.worldSpaceRotation)
+        {
+            transform.rotation = Quaternion.Euler(settings.rotationOffset /*+ accuracyOffset*/);
+        }
+
+        else
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + settings.rotationOffset /*+ accuracyOffset*/);
+        }
+
+        // Reevaluate rotation towards directions
+        if (settings.reevaluateDestinationAfterOffset)
+        {
+            Debug.Log("reevaluating direction");
+            transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
+        }
 
         TryGetComponent(out lineRenderer);
     }
