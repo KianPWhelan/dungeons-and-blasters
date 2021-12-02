@@ -50,7 +50,7 @@ MonoBehaviour:
   - attack: {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
     cooldown: 0.5
     delay: 0
-    attackIsDirectlyControlled: 1
+    attackIsDirectlyControlled: 0
     audio: []
     time: 0
     isInUse: 0
