@@ -146,6 +146,24 @@ public class Bean : AttackComponent
                     return;
                 }
             }
+
+            if(!isAlt && ownerWeapon.overheat.onCooldown)
+            {
+                ownerWeapon.attacks[attackIndex].isInUse = false;
+                ApplyEffectsOnEnd();
+                SubAttacksOnEnd();
+                DestroyBean();
+                return;
+            }
+
+            else if (isAlt && ownerWeapon.alternateAttackWeapon.overheat.onCooldown)
+            {
+                ownerWeapon.alternateAttackWeapon.attacks[attackIndex].isInUse = false;
+                ApplyEffectsOnEnd();
+                SubAttacksOnEnd();
+                DestroyBean();
+                return;
+            }
         }
 
         if (!lifeTimer.Expired(Runner))

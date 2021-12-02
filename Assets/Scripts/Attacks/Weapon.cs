@@ -180,7 +180,7 @@ public class Weapon : MonoBehaviour
 
         foreach(AttackSettings attackSetting in attacks)
         {
-            if(Time.time - attackSetting.time >= attackSetting.cooldown && !attackSetting.isInUse)
+            if(Time.time - attackSetting.time >= attackSetting.cooldown)
             {
                 if(didUseAttack == false)
                 {
@@ -189,10 +189,15 @@ public class Weapon : MonoBehaviour
                         RunOverheat();
                     }
 
-                    if(useAmmo)
+                    if(useAmmo && !attackSetting.isInUse)
                     {
                         RunAmmo();
                     }
+                }
+
+                if(attackSetting.isInUse)
+                {
+                    continue;
                 }
 
                 didUseAttack = true;
