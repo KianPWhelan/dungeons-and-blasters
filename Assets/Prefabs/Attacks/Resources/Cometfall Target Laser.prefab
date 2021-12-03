@@ -132,21 +132,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  validTag: 
-  damageMod: 0
-  destination: {x: 0, y: 0, z: 0}
-  useDestination: 0
+  _validTag: 
+  _damageMod: 0
+  _destination: {x: 0, y: 0, z: 0}
+  _useDestination: 0
   settings:
     attack: {fileID: 11400000, guid: b703dac64e766514bb8babb61c4dec55, type: 2}
     subAttacks:
     - {fileID: 11400000, guid: 7056074493124e24f8f21717709f2533, type: 2}
-    subAttacksOnEnd: 1
-    subAttacksOnHit: 0
+    subAttacksOnEnd: 0
+    subAttacksOnHit: 1
     subAttacksOnTip: 1
     subAttacksAtSurfaceNormal: 0
     applyEffectsOnEnd: 0
     applyEffectsOnTip: 0
     offset: {x: 0, y: -0.2, z: 1}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    worldSpaceRotation: 0
+    reevaluateDestinationAfterOffset: 0
+    autoTarget: 0
+    spreadAffectsAutoTarget: 0
     canReflect: 0
     numReflections: 0
     canReflectOffValidTarget: 0
@@ -156,6 +161,9 @@ MonoBehaviour:
     autoTargetOnReflect: 0
     followOwner: 0
     length: 60
+    spread: 0
+    spreadAffectsReflection: 0
+    spreadOnlyAffectsReflection: 0
     hitMask:
       serializedVersion: 2
       m_Bits: 1
@@ -165,7 +173,7 @@ MonoBehaviour:
     multiHitCooldown: 0
     ignoreObstacles: 0
     directControlByOwner: 0
-    lifetime: 0.1
+    lifetime: 0.09
 --- !u!120 &-1692724994254798167
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -174,7 +182,7 @@ LineRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8523135143678805610}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 0
