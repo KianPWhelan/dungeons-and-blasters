@@ -125,6 +125,12 @@ public class Bean : AttackComponent
 
     public override void Spawned()
     {
+        if(!Object.HasStateAuthority)
+        {
+            TryGetComponent(out lineRenderer);
+            return;
+        }
+
         Debug.Log("Spawned " + useDestination);
         // Create lifetimer
         lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
@@ -192,6 +198,11 @@ public class Bean : AttackComponent
 
     public override void FixedUpdateNetwork()
     {
+        if(!Object.HasStateAuthority)
+        {
+            return;
+        }
+
         if(settings.directControlByOwner)
         {
             if(GetInput(out PlayerInput input))
@@ -292,8 +303,7 @@ public class Bean : AttackComponent
 
         if (lineRenderer != null)
         {
-            lineRenderer.positionCount = linePoints.Count;
-            lineRenderer.SetPositions(linePoints.ToArray());
+            RPC_Draw(linePoints.ToArray());
         }
     }
 
@@ -557,8 +567,6 @@ public class Bean : AttackComponent
         bruh.AddRange(targets.Values.ToList());
         var temp = Helpers.FindClosest(transform, validTag, bruh);
 
-        Debug.Log(temp);
-
         if(temp == null)
         {
             return;
@@ -573,6 +581,13 @@ public class Bean : AttackComponent
         {
             targets.Add(i, temp.transform);
         }
+    }
+
+    [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.All)]
+    private void RPC_Draw(Vector3[] points)
+    {
+        lineRenderer.positionCount = points.Length;
+        lineRenderer.SetPositions(points);
     }
 
     private IEnumerator RemoveFromHitListDelay(GameObject hitObj)

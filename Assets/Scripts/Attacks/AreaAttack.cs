@@ -83,6 +83,11 @@ public class AreaAttack : AttackComponent
 
     public override void Spawned()
     {
+        if (!Object.HasStateAuthority)
+        {
+            return;
+        }
+
         Debug.Log("Spawned " + useDestination);
         // Create lifetimer
         lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
@@ -100,6 +105,11 @@ public class AreaAttack : AttackComponent
 
     public override void FixedUpdateNetwork()
     {
+        if (!Object.HasStateAuthority)
+        {
+            return;
+        }
+
         if (!lifeTimer.Expired(Runner))
         {
             UpdateAttack();

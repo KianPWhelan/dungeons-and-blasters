@@ -78,16 +78,25 @@ public class Spawner : NetworkBehaviour
         //else
         //{
         PlayerRef inputAuth = Object.InputAuthority;
+        Quaternion rotation = self.transform.rotation;
+        Vector3 position = self.transform.position;
 
         if (owner != null)
         {
             inputAuth = owner.InputAuthority;
+
+            if(owner.TryGetBehaviour(out PlayerMovement p))
+            {
+                Debug.Log("Owner is a player, get its local position/rotation");
+                rotation = Quaternion.Euler((float)p.pitch, (float)p.yaw, 0);
+                position = owner.transform.position;
+            }
         }
 
         StartCoroutine(Helpers.Timeout(
                 () =>
                 {
-                    Runner.Spawn(prefab.GetComponent<NetworkObject>(), self.transform.position, self.transform.rotation, inputAuth, (Runner, obj) =>
+                    Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, inputAuth, (Runner, obj) =>
                     {
                         obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner, (int)info[4], (int)info[5], (bool)info[6]);
                     });
