@@ -67,7 +67,7 @@ MonoBehaviour:
   overheat:
     limit: 100
     rate: 17
-    cooldown: 5
+    cooldown: 4
     rechargeRate: 2
     rechargeTickRate: 0.1
     rechargeDelay: 0.6
