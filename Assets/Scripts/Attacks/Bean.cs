@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
+using System.Linq;
 
 public class Bean : AttackComponent
 {
@@ -36,6 +37,10 @@ public class Bean : AttackComponent
         public bool worldSpaceRotation;
         public bool reevaluateDestinationAfterOffset;
 
+        public bool autoTarget;
+        [Tooltip("Does not include auto target on reflect")]
+        public bool spreadAffectsAutoTarget;
+
         public bool canReflect;
         public int numReflections;
         public bool canReflectOffValidTarget;
@@ -46,7 +51,9 @@ public class Bean : AttackComponent
 
         public bool followOwner;
         public float length;
+        [Tooltip("NOTE: Spread does not directly correspond to a degree value for reflection based spread")]
         public float spread;
+        [Tooltip("Includes auto target on reflect")]
         public bool spreadAffectsReflection;
         public bool spreadOnlyAffectsReflection;
         public LayerMask hitMask;
@@ -81,7 +88,13 @@ public class Bean : AttackComponent
 
     private Dictionary<int, Vector3> reflectionAccuracyOffsets = new Dictionary<int, Vector3>();
 
+    private Dictionary<int, Transform> targets = new Dictionary<int, Transform>();
+
     private bool isAlt;
+
+    //private Transform target;
+
+    private List<Transform> exclude;
 
     public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0, bool isAlt = false)
     {
@@ -153,6 +166,27 @@ public class Bean : AttackComponent
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + accuracyOffset);
         }
 
+        if(settings.autoTarget)
+        {
+            if(!settings.spreadAffectsAutoTarget)
+            {
+                accuracyOffset = Vector3.zero;
+            }
+
+            else
+            {
+                accuracyOffset = Random.insideUnitCircle * settings.spread;
+            }
+
+            GetAutoTarget(0);
+
+            if(targets.ContainsKey(0))
+            {
+                transform.rotation = Quaternion.LookRotation((targets[0].position - transform.position).normalized);
+                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + accuracyOffset);
+            } 
+        }
+
         TryGetComponent(out lineRenderer);
     }
 
@@ -219,6 +253,7 @@ public class Bean : AttackComponent
     private void UpdateBean()
     {
         linePoints = new List<Vector3>();
+        exclude = new List<Transform>();
         numHits = 0;
         numReflects = 0;
 
@@ -292,6 +327,7 @@ public class Bean : AttackComponent
                     //DestroyBean();
                     if(settings.canReflect && settings.canReflectOffValidTarget && numReflects < settings.numReflections)
                     {
+                        exclude.Add(hit.Hitbox.Root.gameObject.transform);
                         return PerformReflection(hit);
                     }
 
@@ -310,6 +346,7 @@ public class Bean : AttackComponent
 
                     if (settings.canReflect && settings.canReflectOffValidTarget && numReflects < settings.numReflections)
                     {
+                        exclude.Add(hit.Hitbox.Root.gameObject.transform);
                         return PerformReflection(hit);
                     }
 
@@ -347,39 +384,86 @@ public class Bean : AttackComponent
         numReflects++;
         linePoints.Add(hit.Point);
         Vector3 reflection;
-        Vector3 accuracyOffset;
+        Vector3 accuracyOffset = Vector3.zero;
+        Transform target = null;
 
-        if (!reflectionAccuracyOffsets.ContainsKey(numReflects))
+        if(settings.autoTargetOnReflect)
         {
-            accuracyOffset = Random.insideUnitCircle * settings.spread;
-            reflectionAccuracyOffsets.Add(numReflects, accuracyOffset);
+            if (targets.ContainsKey(numReflects))
+            {
+                target = targets[numReflects];
+            }
+
+            else
+            {
+                GetAutoTarget(numReflects);
+
+                if(targets.ContainsKey(numReflects))
+                {
+                    target = targets[numReflects];
+                }
+            }
+        }
+
+        if(settings.autoTargetOnReflect && target != null)
+        {
+            if(settings.spreadAffectsReflection)
+            {
+                if (!reflectionAccuracyOffsets.ContainsKey(numReflects))
+                {
+                    accuracyOffset = Random.insideUnitCircle * settings.spread;
+                    Debug.Log(accuracyOffset);
+                    reflectionAccuracyOffsets.Add(numReflects, accuracyOffset);
+                }
+
+                else
+                {
+                    accuracyOffset = reflectionAccuracyOffsets[numReflects];
+                }
+            }
+
+            reflection = ((target.position - hit.Point) + accuracyOffset).normalized;//Quaternion.LookRotation((target.position - hit.Point).normalized).eulerAngles;
+            //reflection += accuracyOffset;
+            lastReflection = reflection;
+        }
+
+        else
+        {
+            if (!reflectionAccuracyOffsets.ContainsKey(numReflects))
+            {
+                accuracyOffset = Random.insideUnitCircle * settings.spread;
+                reflectionAccuracyOffsets.Add(numReflects, accuracyOffset);
+            }
+
+            else
+            {
+                accuracyOffset = reflectionAccuracyOffsets[numReflects];
+            }
+
+            if (!settings.spreadAffectsReflection)
+            {
+                accuracyOffset = Vector3.zero;
+            }
+
+            if (lastReflection.x == Mathf.NegativeInfinity)
+            {
+                reflection = Vector3.Reflect(transform.forward, hit.Normal);
+                //Debug.Log(reflection);
+                reflection += accuracyOffset / 10;
+                lastReflection = reflection;
+                //Debug.Log(lastReflection);
+            }
+
+            else
+            {
+                reflection = Vector3.Reflect(lastReflection, hit.Normal);
+                //Debug.Log(reflection);
+                reflection += accuracyOffset / 10;
+                lastReflection = reflection;
+                //Debug.Log(lastReflection);
+            }
         }
         
-        else
-        {
-            accuracyOffset = reflectionAccuracyOffsets[numReflects];
-        }
-
-        if(!settings.spreadAffectsReflection)
-        {
-            accuracyOffset = Vector3.zero;
-        }
-
-        if (lastReflection.x == Mathf.NegativeInfinity)
-        {
-            reflection = Vector3.Reflect(transform.forward, hit.Normal).normalized;
-            reflection += accuracyOffset;
-            lastReflection = reflection;
-            //Debug.Log(lastReflection);
-        }
-
-        else
-        {
-            reflection = Vector3.Reflect(lastReflection, hit.Normal).normalized;
-            reflection += accuracyOffset;
-            lastReflection = reflection;
-            //Debug.Log(lastReflection);
-        }
         
         lastForward = hit.Point + reflection * settings.length;
         List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
@@ -464,6 +548,30 @@ public class Bean : AttackComponent
             {
                 attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f);
             }
+        }
+    }
+
+    private void GetAutoTarget(int i)
+    {
+        var bruh = new List<Transform>(exclude);
+        bruh.AddRange(targets.Values.ToList());
+        var temp = Helpers.FindClosest(transform, validTag, bruh);
+
+        Debug.Log(temp);
+
+        if(temp == null)
+        {
+            return;
+        }
+
+        if (temp.TryGetComponent(out EnemyGeneric e) && e.homingPoint != null)
+        {
+            targets.Add(i, e.homingPoint.transform);
+        }
+
+        else
+        {
+            targets.Add(i, temp.transform);
         }
     }
 

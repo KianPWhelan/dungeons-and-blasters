@@ -9,7 +9,7 @@ public class Helpers
     /// Gets the closest game object with the desired tag
     /// </summary>
     /// <returns></returns>
-    public static GameObject FindClosest(Transform myPosition, string tag)
+    public static GameObject FindClosest(Transform myPosition, string tag, List<Transform> exclude = null)
     {
         GameObject[] gos;
         gos = GameObject.FindGameObjectsWithTag(tag);
@@ -20,7 +20,7 @@ public class Helpers
         {
             Vector3 diff = go.transform.position - position;
             float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance && go.transform != myPosition)
+            if (curDistance < distance && go.transform != myPosition && (exclude == null || !exclude.Contains(go.transform)))
             {
                 closest = go;
                 distance = curDistance;

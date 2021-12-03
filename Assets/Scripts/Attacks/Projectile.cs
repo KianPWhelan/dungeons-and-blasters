@@ -325,6 +325,11 @@ public class Projectile : AttackComponent
     {
 		var temp = Helpers.FindClosest(transform, validTag);
 
+		if (temp == null)
+		{
+			return;
+		}
+
 		if (temp.TryGetComponent(out EnemyGeneric e) && e.homingPoint != null)
 		{
 			target = e.homingPoint.transform;
