@@ -50,6 +50,7 @@ public class Bean : AttackComponent
         public bool applyEffectsOnReflect;
         public bool subAttacksOnReflect;
         public bool autoTargetOnReflect;
+        public bool reflectRegardlessOfPierce;
 
         public bool followOwner;
         public float length;
@@ -352,7 +353,7 @@ public class Bean : AttackComponent
                     StartCoroutine(RemoveFromHitListDelay(hit.Hitbox.Root.gameObject));
                 }
 
-                if (numHits > settings.numPierces && !settings.infinitePierce)
+                if (numHits > settings.numPierces && (!settings.infinitePierce || settings.reflectRegardlessOfPierce))
                 {
                     // TODO: Ending effects/subattacks
                     //DestroyBean();
@@ -370,7 +371,7 @@ public class Bean : AttackComponent
             {
                 numHits++;
 
-                if (numHits > settings.numPierces && !settings.infinitePierce)
+                if (numHits > settings.numPierces && (!settings.infinitePierce || settings.reflectRegardlessOfPierce))
                 {
                     // TODO: Ending effects/subattacks
                     //DestroyBean();
