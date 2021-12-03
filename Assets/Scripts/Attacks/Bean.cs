@@ -92,6 +92,9 @@ public class Bean : AttackComponent
 
     private bool isAlt;
 
+    private bool subAttacksOnTipFired;
+    private bool doSubAttacksOnTip;
+
     //private Transform target;
 
     private List<Transform> exclude;
@@ -267,6 +270,7 @@ public class Bean : AttackComponent
         exclude = new List<Transform>();
         numHits = 0;
         numReflects = 0;
+        doSubAttacksOnTip = false;
 
         if (owner != null && settings.followOwner)
         {
@@ -283,6 +287,11 @@ public class Bean : AttackComponent
         //Debug.Log("Position" + transform.position + " Rotation" + transform.rotation.eulerAngles);
         Runner.LagCompensation.RaycastAll(transform.position, transform.forward, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
         var point = ProcessHits(hits);
+
+        if(doSubAttacksOnTip)
+        {
+            SubAttacksOnTip();
+        }
 
         if (point.x == Mathf.NegativeInfinity)
         {
@@ -324,6 +333,7 @@ public class Bean : AttackComponent
                 hitList.Add(hit.Hitbox.Root.gameObject);
                 hitNormal = hit.Normal;
                 hitPoint = hit.Point;
+                doSubAttacksOnTip = false;
                 SubAttacksOnHit();
 
                 if (settings.canMultiHitTarget)
@@ -353,6 +363,7 @@ public class Bean : AttackComponent
                 {
                     // TODO: Ending effects/subattacks
                     //DestroyBean();
+                    doSubAttacksOnTip = false;
 
                     if (settings.canReflect && settings.canReflectOffValidTarget && numReflects < settings.numReflections)
                     {
@@ -370,8 +381,9 @@ public class Bean : AttackComponent
                 //Debug.Log("Hit Collider");
                 hitNormal = hit.Normal;
                 hitPoint = hit.Point;
-                SubAttacksOnTip();
-                ApplyEffectsOnTip();
+                //SubAttacksOnTip();
+                //ApplyEffectsOnTip();
+                doSubAttacksOnTip = true;
                 //DestroyBean();
 
                 if(settings.canReflect && !settings.reflectOffValidTargetOnly && numReflects < settings.numReflections)
@@ -530,8 +542,9 @@ public class Bean : AttackComponent
 
     private void SubAttacksOnTip()
     {
-        if (settings.subAttacksOnTip)
+        if (settings.subAttacksOnTip && !subAttacksOnTipFired)
         {
+            subAttacksOnTipFired = true;
             SpawnSubAttacks();
         }
     }
