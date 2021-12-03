@@ -143,7 +143,9 @@ MonoBehaviour:
     subAttacksOnEnd: 1
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 1
+    subAttacksCanOnlyProcOnce: 0
     offset: {x: 0, y: 90, z: 0}
+    ignoreRotationForOffset: 1
     rotationOffset: {x: 90, y: 0, z: 0}
     worldSpaceRotation: 1
     reevaluateDestinationAfterOffset: 0

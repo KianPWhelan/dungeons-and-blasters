@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6137451349687365925
+--- !u!1 &2131840301544516960
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6137451349687365927}
-  - component: {fileID: 6137451349687365924}
+  - component: {fileID: 7840905850007402086}
+  - component: {fileID: -8413034521662373569}
+  - component: {fileID: 7022136035370337551}
   m_Layer: 0
-  m_Name: Shotgun Pellet Sound
+  m_Name: Submachine Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6137451349687365927
+--- !u!4 &7840905850007402086
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6137451349687365925}
+  m_GameObject: {fileID: 2131840301544516960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,19 +32,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &6137451349687365924
+--- !u!114 &-8413034521662373569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131840301544516960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 527d39da56593224aa283bf3fc4155bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rarity: 0
+  attacks:
+  - attack: {fileID: 11400000, guid: c78cb276665cf2842b4c4f11596ffb48, type: 2}
+    cooldown: 0.07
+    delay: 0
+    attackIsDirectlyControlled: 0
+    audio:
+    - {fileID: 7022136035370337551}
+    time: 0
+    isInUse: 0
+  alternateAttackWeapon: {fileID: 0}
+  isAlternateAttack: 0
+  useAmmo: 1
+  ammo:
+    clipSize: 28
+    reloadSpeed: 1.2
+    value: 0
+    reloading: 0
+  useOverheat: 0
+  overheat:
+    limit: 100
+    rate: 10
+    cooldown: 4
+    rechargeRate: 0.5
+    rechargeTickRate: 0.1
+    rechargeDelay: 1
+    value: 0
+    onCooldown: 0
+    isRecharging: 0
+  useSpinup: 0
+  spinup:
+    limit: 100
+    overspinLimit: 40
+    rate: 1
+    decayRate: 3
+    decayDelay: 0.2
+    decayTickRate: 0.1
+    value: 0
+  playAudioForEachAttack: 0
+  owner: {fileID: 0}
+  index: 0
+--- !u!82 &7022136035370337551
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6137451349687365925}
+  m_GameObject: {fileID: 2131840301544516960}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: abf830f8b74397b409adda8bcc796889, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_audioClip: {fileID: 8300000, guid: 16df531e981a634499e2139f8fa98d7c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -51,7 +105,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
+  MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -87,7 +141,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.75
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
