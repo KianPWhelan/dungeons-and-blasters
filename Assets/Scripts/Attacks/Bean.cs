@@ -28,6 +28,7 @@ public class Bean : AttackComponent
         public bool subAttacksOnHit;
         public bool subAttacksOnTip;
         public bool subAttacksAtSurfaceNormal;
+        public bool subAttacksCanOnlyProcOnce;
 
         public bool applyEffectsOnEnd;
         public bool applyEffectsOnTip;
@@ -93,6 +94,7 @@ public class Bean : AttackComponent
     private bool isAlt;
 
     private bool subAttacksOnTipFired;
+    private bool subAttacksHaveProced;
     private bool doSubAttacksOnTip;
 
     //private Transform target;
@@ -559,6 +561,12 @@ public class Bean : AttackComponent
 
     private void SpawnSubAttacks()
     {
+        if (subAttacksHaveProced)
+        {
+            return;
+        }
+
+        subAttacksHaveProced = true;
         foreach (Attack attack in settings.subAttacks)
         {
             if (settings.subAttacksAtSurfaceNormal)

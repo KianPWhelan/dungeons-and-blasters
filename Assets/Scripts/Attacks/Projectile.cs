@@ -60,6 +60,7 @@ public class Projectile : AttackComponent
 		public bool subAttacksOnEnd;
 		public bool subAttacksOnHit;
 		public bool subAttacksAtSurfaceNormal;
+		public bool subAttacksCanOnlyProcOnce;
 
 		public Vector3 offset;
 		public Vector3 rotationOffset;
@@ -88,6 +89,7 @@ public class Projectile : AttackComponent
 	}
 
 	private Transform target;
+	private bool subAttacksHaveProced;
 
 	public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0, bool isAlt = false)
     {
@@ -316,6 +318,12 @@ public class Projectile : AttackComponent
 
 	private void SpawnSubAttacks()
     {
+		if (subAttacksHaveProced)
+        {
+			return;
+        }
+
+		subAttacksHaveProced = true;
 		foreach(Attack attack in settings.subAttacks)
         {
 			if(settings.subAttacksAtSurfaceNormal)
