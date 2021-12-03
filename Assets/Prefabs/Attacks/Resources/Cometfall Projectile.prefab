@@ -57,14 +57,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8523135143678805610}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 90, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1668218538431988242}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &862568848026918501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,10 +132,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  validTag: 
-  damageMod: 0
-  destination: {x: 0, y: 0, z: 0}
-  useDestination: 0
+  _validTag: 
+  _damageMod: 0
+  _destination: {x: 0, y: 0, z: 0}
+  _useDestination: 0
   settings:
     attack: {fileID: 11400000, guid: 7056074493124e24f8f21717709f2533, type: 2}
     subAttacks:
@@ -143,8 +143,9 @@ MonoBehaviour:
     subAttacksOnEnd: 1
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 1
-    offset: {x: 0, y: 0, z: 3}
-    rotationOffset: {x: 0, y: 0, z: 0}
+    offset: {x: 0, y: 90, z: 0}
+    rotationOffset: {x: 90, y: 0, z: 0}
+    worldSpaceRotation: 1
     reevaluateDestinationAfterOffset: 0
     spread: 0
     length: 1
