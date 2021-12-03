@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2131840301544516960
+--- !u!1 &6137451349687365925
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7840905850007402086}
-  - component: {fileID: -8413034521662373569}
-  - component: {fileID: -306696347247249082}
+  - component: {fileID: 6137451349687365927}
+  - component: {fileID: 6137451349687365924}
   m_Layer: 0
-  m_Name: Split Stick
+  m_Name: Cometfall Explosion Sound 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7840905850007402086
+--- !u!4 &6137451349687365927
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131840301544516960}
+  m_GameObject: {fileID: 6137451349687365925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,71 +31,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8413034521662373569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131840301544516960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 527d39da56593224aa283bf3fc4155bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rarity: 1
-  attacks:
-  - attack: {fileID: 11400000, guid: 856506d765aa2b744b930ed2ea3af1e7, type: 2}
-    cooldown: 0.7
-    delay: 0
-    attackIsDirectlyControlled: 0
-    audio:
-    - {fileID: -306696347247249082}
-    time: 0
-    isInUse: 0
-  alternateAttackWeapon: {fileID: 0}
-  isAlternateAttack: 0
-  useAmmo: 0
-  ammo:
-    clipSize: 10
-    reloadSpeed: 2
-    value: 0
-    reloading: 0
-  useOverheat: 1
-  overheat:
-    limit: 100
-    rate: 14
-    cooldown: 4
-    rechargeRate: 2
-    rechargeTickRate: 0.1
-    rechargeDelay: 0.6
-    value: 0
-    onCooldown: 0
-    isRecharging: 0
-  useSpinup: 0
-  spinup:
-    limit: 0
-    overspinLimit: 0
-    rate: 0
-    decayRate: 0
-    decayDelay: 0
-    decayTickRate: 0
-    value: 0
-  playAudioForEachAttack: 0
-  owner: {fileID: 0}
-  index: 0
---- !u!82 &-306696347247249082
+--- !u!82 &6137451349687365924
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131840301544516960}
+  m_GameObject: {fileID: 6137451349687365925}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6cc1dfb0ad0df0e42b6cd15e28a57aa2, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: c2c54edb091908740b5633fcc8d5d50b, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -105,7 +51,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 20
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -141,7 +87,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

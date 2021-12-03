@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7840905850007402086}
   - component: {fileID: -8413034521662373569}
-  - component: {fileID: -306696347247249082}
+  - component: {fileID: 7022136035370337551}
   m_Layer: 0
-  m_Name: Split Stick
+  m_Name: Cometfall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,14 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527d39da56593224aa283bf3fc4155bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rarity: 1
+  rarity: 0
   attacks:
-  - attack: {fileID: 11400000, guid: 856506d765aa2b744b930ed2ea3af1e7, type: 2}
-    cooldown: 0.7
+  - attack: {fileID: 11400000, guid: b703dac64e766514bb8babb61c4dec55, type: 2}
+    cooldown: 3.1
     delay: 0
     attackIsDirectlyControlled: 0
-    audio:
-    - {fileID: -306696347247249082}
+    audio: []
     time: 0
     isInUse: 0
   alternateAttackWeapon: {fileID: 0}
@@ -65,7 +64,7 @@ MonoBehaviour:
   useOverheat: 1
   overheat:
     limit: 100
-    rate: 14
+    rate: 70
     cooldown: 4
     rechargeRate: 2
     rechargeTickRate: 0.1
@@ -75,27 +74,27 @@ MonoBehaviour:
     isRecharging: 0
   useSpinup: 0
   spinup:
-    limit: 0
-    overspinLimit: 0
-    rate: 0
-    decayRate: 0
-    decayDelay: 0
-    decayTickRate: 0
+    limit: 100
+    overspinLimit: 40
+    rate: 1
+    decayRate: 3
+    decayDelay: 0.2
+    decayTickRate: 0.1
     value: 0
   playAudioForEachAttack: 0
   owner: {fileID: 0}
   index: 0
---- !u!82 &-306696347247249082
+--- !u!82 &7022136035370337551
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131840301544516960}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6cc1dfb0ad0df0e42b6cd15e28a57aa2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 16c25250151e04a37b489a3f056c8314, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
