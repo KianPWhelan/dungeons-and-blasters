@@ -34,6 +34,7 @@ public class Bean : AttackComponent
         public bool applyEffectsOnTip;
 
         public Vector3 offset;
+        public bool ignoreRotationForOffset;
         public Vector3 rotationOffset;
         public bool worldSpaceRotation;
         public bool reevaluateDestinationAfterOffset;
@@ -156,7 +157,15 @@ public class Bean : AttackComponent
         }
 
         // Adjust position to offset
-        transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
+        if (settings.ignoreRotationForOffset)
+        {
+            transform.position += settings.offset;
+        }
+
+        else
+        {
+            transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
+        }
 
         // Adjust rotation to offset
         if (settings.worldSpaceRotation)
