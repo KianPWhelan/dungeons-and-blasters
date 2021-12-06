@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Com.OfTomorrowInc.DMShooter;
+using Fusion;
 
 public class UnitSelector : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class UnitSelector : MonoBehaviour
     private bool isDragging;
 
     private Vector3 mousePos;
+
+    [HideInInspector]
+    public bool render;
 
     public Texture2D WhiteTexture
     {
@@ -43,12 +47,12 @@ public class UnitSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleInputs();
+        //HandleInputs();
     }
 
     private void OnGUI()
     {
-        if(isDragging)
+        if(isDragging && render)
         {
             Rect rect = GetScreenRect(mousePos, Input.mousePosition);
             DrawScreenRect(rect, new Color(0f, 0f, 0f, 0.25f));
@@ -56,7 +60,7 @@ public class UnitSelector : MonoBehaviour
         }
     }
 
-    private void HandleInputs()
+    public void HandleInputs(PlayerInput input)
     {
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {

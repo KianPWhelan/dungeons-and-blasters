@@ -75,9 +75,9 @@ public class Health : NetworkBehaviour
             healthBar.FaceCamera = Controller.LocalPlayerInstance.GetComponent<Controller>().playerCam.GetComponent<Camera>();
         }
 
-        else if(healthBar != null && DungeonMasterController.LocalPlayerInstance != null)
+        else if(healthBar != null && DungeonMasterControllerDepricated.LocalPlayerInstance != null)
         {
-            healthBar.FaceCamera = DungeonMasterController.LocalPlayerInstance.GetComponent<DungeonMasterController>().camera;
+            healthBar.FaceCamera = DungeonMasterControllerDepricated.LocalPlayerInstance.GetComponent<DungeonMasterControllerDepricated>().camera;
         }
 
         foreach(ResistanceContainer resistance in resistances)

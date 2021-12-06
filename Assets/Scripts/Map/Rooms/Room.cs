@@ -125,7 +125,7 @@ public class Room : MonoBehaviour
 
     private void SpawnAll()
     {
-        if (DungeonMasterController.LocalPlayerInstance == null)
+        if (DungeonMasterControllerDepricated.LocalPlayerInstance == null)
         {
             Debug.Log("Not DM");
             return;

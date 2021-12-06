@@ -8,7 +8,7 @@ public class UseAbility : MonoBehaviour, IPointerClickHandler
 {
     public GameObject ability;
 
-    public DungeonMasterController controller;
+    public DungeonMasterControllerDepricated controller;
 
     public Slots slots;
 

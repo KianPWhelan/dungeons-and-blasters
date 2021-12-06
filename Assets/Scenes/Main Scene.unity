@@ -507,6 +507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 6568136409441646226, guid: 90c797d72a9f93841a647b4eca63f13b, type: 3}
+  dmPrefab: {fileID: 5506979797427814925, guid: 2c567280da0bab7489478b5ac5d95deb, type: 3}
+  isDungeonMaster: {fileID: 11400000, guid: c05388661befd1c43bede5bf6ab5253c, type: 2}
 --- !u!114 &1220868928
 MonoBehaviour:
   m_ObjectHideFlags: 0

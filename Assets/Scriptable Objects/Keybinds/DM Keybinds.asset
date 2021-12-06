@@ -9,8 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cc8c080d52f397458a5355be85e9616, type: 3}
-  m_Name: Is Dungeon Master
+  m_Script: {fileID: 11500000, guid: 031dd05de8bf7a14d82242c1cd1c1ea7, type: 3}
+  m_Name: DM Keybinds
   m_EditorClassIdentifier: 
-  initialValue: 0
-  runtimeValue: 0
+  bindingSettings:
+  - action: 3
+    key: 119
+  - action: 4
+    key: 115
+  - action: 5
+    key: 97
+  - action: 6
+    key: 100
+  - action: 8
+    key: 323
+  - action: 9
+    key: 304

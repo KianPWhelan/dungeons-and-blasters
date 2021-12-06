@@ -14,7 +14,7 @@ public class RoomPlaceholder : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        if(DungeonMasterController.LocalPlayerInstance != null)
+        if(DungeonMasterControllerDepricated.LocalPlayerInstance != null)
         {
             for(int i = 0; i < numToSpawn; i++)
             {
