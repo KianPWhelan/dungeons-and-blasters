@@ -97,6 +97,11 @@ public class InputPoller : MonoBehaviour
             inputData.Buttons |= PlayerInput.BUTTON_MULTI;
         }
 
+        if (keybinds.bindings.TryGetValue(Actions.SetDestination, out key) && Input.GetKey(key))
+        {
+            inputData.Buttons |= PlayerInput.BUTTON_SET_DESTINATION;
+        }
+
         if (!isDungeonMaster.runtimeValue)
         {
             if (fpsCamera == null)
@@ -115,6 +120,7 @@ public class InputPoller : MonoBehaviour
         else
         {
             inputData.mousePoint = GetMousePoint();
+            inputData.mousePosition = Input.mousePosition;
         }
 
         inputData.deltaScroll = deltaScroll;

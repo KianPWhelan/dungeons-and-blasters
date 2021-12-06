@@ -25,3 +25,5 @@ MonoBehaviour:
     key: 323
   - action: 9
     key: 304
+  - action: 10
+    key: 324
