@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
+using Fusion;
 using SnazzlebotTools.ENPCHealthBars;
 
-public class Health : MonoBehaviourPunCallbacks
+public class Health : NetworkBehaviour
 {
-    [Tooltip("FloatVariable reference for health point (Leave blank to use normal float)")]
-    private FloatVariable health;
-
-    [Tooltip("Normal float, does not exist outside of behavior")]
     [SerializeField]
-    private float floatHealth;
+    [Networked]
+    private float health { get; set; }
 
     [Tooltip("Entity has infinite health")]
     [SerializeField]
@@ -55,7 +52,7 @@ public class Health : MonoBehaviourPunCallbacks
     [HideInInspector]
     public float startingHealth;
 
-    public void Start()
+    public override void Spawned()
     {
         TryGetComponent(out healthBar);
 
@@ -65,16 +62,7 @@ public class Health : MonoBehaviourPunCallbacks
             healthBar = null;
         }
         
-        if(health != null)
-        {
-            startingHealth = health.initialValue;
-        }
-
-        else
-        {
-            startingHealth = floatHealth;
-        }
-
+        startingHealth = health;
 
         if(healthBar != null)
         {
@@ -104,6 +92,11 @@ public class Health : MonoBehaviourPunCallbacks
     /// <param name="amount"></param>
     public void AdjustHealth(float amount, DamageType damageType = null)
     {
+        if(!Object.HasStateAuthority)
+        {
+            return;
+        }
+
         float statusMod = 1;
         float resistanceMod = 1;
 
@@ -130,45 +123,26 @@ public class Health : MonoBehaviourPunCallbacks
             resistanceMod *= statusEffects.GetResistanceMod(damageType);
         }
 
-        if(health != null)
+        health += amount * statusMod * resistanceMod;
+        if(health <= 0)
         {
-            health.runtimeValue += amount * statusMod * resistanceMod;
-            if(health.runtimeValue <= 0)
+            isDead = true;
+
+            if(isPlayer)
             {
-                isDead = true;
+                //TODO: player death
+                //GetComponent<Controller>().GameOver();
             }
 
-            if (healthBar != null)
+            else
             {
-                healthBar.Value = (int)health.runtimeValue;
-            }
+                Runner.Despawn(Object);
+            }            
         }
 
-        else
+        if (healthBar != null && Object != null)
         {
-            floatHealth += amount * statusMod * resistanceMod;
-            if(floatHealth <= 0)
-            {
-                isDead = true;
-
-                if(photonView.IsMine)
-                {
-                    if(isPlayer)
-                    {
-                        GetComponent<Controller>().GameOver();
-                    }
-
-                    else
-                    {
-                        PhotonNetwork.Destroy(gameObject);
-                    }            
-                }
-            }
-
-            if (healthBar != null)
-            {
-                healthBar.Value = (int)floatHealth;
-            }
+            RPC_UpdateHealthBar(health);
         }
     }
 
@@ -179,26 +153,12 @@ public class Health : MonoBehaviourPunCallbacks
             return Mathf.Infinity;
         }
 
-        if(health != null)
-        {
-            return health.runtimeValue;
-        }
-
-        return floatHealth;
+        return health;
     }
 
     public void SetHealth(float value)
     {
-        if (health != null)
-        {
-            health.initialValue = value;
-            health.runtimeValue = value;
-        }
-
-        else
-        {
-            floatHealth = value;
-        }
+        health = value;
     }
 
     private void PlayHitEffects()
@@ -208,7 +168,7 @@ public class Health : MonoBehaviourPunCallbacks
             return;
         }
 
-        if(isPlayer && photonView.IsMine)
+        if(isPlayer)
         {
             hitEffect.SetActive(true);
             hitEffect.GetComponent<HitFade>().StartFade();
@@ -218,5 +178,11 @@ public class Health : MonoBehaviourPunCallbacks
         var m_Source = m_Sound.GetComponent<AudioSource>();
         float life = m_Source.clip.length / m_Source.pitch;
         Destroy(m_Sound, life);
+    }
+
+    [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.All)]
+    private void RPC_UpdateHealthBar(float health)
+    {
+        healthBar.Value = (int)health;
     }
 }

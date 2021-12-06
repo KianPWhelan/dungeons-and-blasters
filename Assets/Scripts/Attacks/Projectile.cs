@@ -215,7 +215,7 @@ public class Projectile : AttackComponent
 			GetHomingTarget();
         }
 
-		if(settings.homing)
+		if(settings.homing && target != null)
         {
 			Quaternion newDir = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation((target.position - transform.position).normalized), settings.homingStrength * Runner.DeltaTime);
 			transform.rotation = newDir;
