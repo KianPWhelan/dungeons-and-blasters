@@ -15,9 +15,10 @@ MonoBehaviour:
   damages:
   - {fileID: 11400000, guid: 6bee3c127eb1e344e8e25064ee72c9e7, type: 2}
   isStatusEffect: 1
-  interval: {fileID: 11400000, guid: b929ce081c6adc047be357a0949993f1, type: 2}
+  interval: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
   duration: {fileID: 11400000, guid: cd6f4a88261db1f47b61aee025895b4f, type: 2}
   stacks: 10
+  refreshDuration: 0
   recursiveEffects: []
   useOverwriteTag: 0
   overwriteTag: 
