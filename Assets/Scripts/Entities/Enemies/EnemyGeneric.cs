@@ -194,7 +194,7 @@ public class EnemyGeneric : NetworkBehaviour
         target = GetClosestVisible();
         
         // allyTarget = Helpers.FindClosestVisible(gameObject.transform, allyTargetType);
-        //aiModule.Tick(gameObject, target, allyTarget, agent, movement, this);
+        aiModule.Tick(gameObject, target, allyTarget, agent, movement, this);
     }
 
     public void MoveTo(Vector3 position)
@@ -335,21 +335,22 @@ public class EnemyGeneric : NetworkBehaviour
 
     private GameObject GetClosestVisible()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, aggroRange, LayerMask.GetMask(targetType));
+        Collider[] hits = Physics.OverlapSphere(transform.position, aggroRange, LayerMask.GetMask(targetType), QueryTriggerInteraction.Collide);
 
         GameObject closest = null;
         float dist = Mathf.Infinity;
 
         foreach(Collider hit in hits)
         {
+            Debug.Log("Hit " + hit.transform.name);
             if(Helpers.CheckLineOfSight(transform, hit.transform, Mathf.Infinity) && hit.gameObject != closest)
             {
-                float thisDist = Vector3.Distance(transform.position, hit.transform.position);
+                float thisDist = Vector3.Distance(transform.position, hit.transform.parent.position);
 
                 if(thisDist < dist)
                 {
                     dist = thisDist;
-                    closest = hit.gameObject;
+                    closest = hit.transform.parent.gameObject;
                 }
             }
         }

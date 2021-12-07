@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc8c080d52f397458a5355be85e9616, type: 3}
   m_Name: Is Dungeon Master
   m_EditorClassIdentifier: 
-  initialValue: 1
-  runtimeValue: 1
+  initialValue: 0
+  runtimeValue: 0
