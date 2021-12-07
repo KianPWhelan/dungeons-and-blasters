@@ -102,7 +102,7 @@ public class Health : NetworkBehaviour
 
         if(amount < 0)
         {
-            PlayHitEffects();
+            RPC_PlayHitEffects();
         }
 
         if(infiniteHealth)
@@ -161,7 +161,8 @@ public class Health : NetworkBehaviour
         health = value;
     }
 
-    private void PlayHitEffects()
+    [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.InputAuthority)]
+    private void RPC_PlayHitEffects()
     {
         if(hitSoundEffect == null)
         {
