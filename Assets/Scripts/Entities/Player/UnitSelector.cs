@@ -21,7 +21,7 @@ public class UnitSelector : MonoBehaviour
     private Vector3 mousePos;
 
     [HideInInspector]
-    public bool render;
+    public bool active;
 
     public Texture2D WhiteTexture
     {
@@ -47,12 +47,15 @@ public class UnitSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //HandleInputs();
+        if(active)
+        {
+            HandleInputs();
+        }
     }
 
     private void OnGUI()
     {
-        if(isDragging && render)
+        if(isDragging)
         {
             Rect rect = GetScreenRect(mousePos, Input.mousePosition);
             DrawScreenRect(rect, new Color(0f, 0f, 0f, 0.25f));
@@ -60,7 +63,7 @@ public class UnitSelector : MonoBehaviour
         }
     }
 
-    public void HandleInputs(PlayerInput input)
+    public void HandleInputs()
     {
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -77,7 +80,7 @@ public class UnitSelector : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.Mouse0))
         {
-            foreach(GameObject enemy in GameManager.enemies)
+            foreach(GameObject enemy in EnemyManager.enemies)
             {
                 if(enemy != null && IsWithinSelectionBounds(enemy.transform))
                 {

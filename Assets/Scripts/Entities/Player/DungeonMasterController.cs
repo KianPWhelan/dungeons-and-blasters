@@ -36,7 +36,7 @@ public class DungeonMasterController : NetworkBehaviour
 
         if(Object.HasInputAuthority)
         {
-            unitSelector.render = true;
+            unitSelector.active = true;
             Runner.SimulationUnityScene.FindObjectsOfTypeInOrder<FPSCamera>()[0].gameObject.SetActive(false);
         }
 
