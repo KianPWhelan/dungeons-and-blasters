@@ -77,11 +77,11 @@ public class Helpers
         return closest;
     }
 
-        /// <summary>
-        /// Gets the closest game object with the desired tag
-        /// </summary>
-        /// <returns></returns>
-        public static List<GameObject> FindAllInRange(Transform myPosition, float range, string tag)
+    /// <summary>
+    /// Gets the closest game object with the desired tag
+    /// </summary>
+    /// <returns></returns>
+    public static List<GameObject> FindAllInRange(Transform myPosition, float range, string tag)
     {
         GameObject[] gos;
         gos = GameObject.FindGameObjectsWithTag(tag);

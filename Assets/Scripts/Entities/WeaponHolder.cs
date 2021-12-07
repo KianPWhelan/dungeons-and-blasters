@@ -71,12 +71,20 @@ public class WeaponHolder : MonoBehaviour
         //    return false;
         //}
 
-        if(altAttack)
+        if(isPlayer)
         {
-            return weaponScripts[index].UseAlternate(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);
+            if (altAttack)
+            {
+                return weaponScripts[index].UseAlternate(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);
+            }
+
+            return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);
         }
 
-        return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);
+        else
+        {
+            return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, weaponHolder: this);
+        }
     }
 
     //public void UseWeapon(string weaponName)

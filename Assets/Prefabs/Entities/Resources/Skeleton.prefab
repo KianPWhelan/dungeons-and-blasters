@@ -937,7 +937,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330ecda54bd98f24bab14bf2b5bfda4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefabs: []
+  weaponPrefabs:
+  - {fileID: 1904180190962700800, guid: 29475600779ee8940a475cd31a1b52b6, type: 3}
   targetTags:
   - Player
   isPlayer: 0
@@ -1025,11 +1026,15 @@ MonoBehaviour:
   DefaultPropertyGroups: []
   DestroyWhenStateAuthorityLeaves: 0
   AoiPosition: {fileID: 0}
-  Flags: 0
+  Flags: 2305
   NetworkGuid:
-    RawGuidValue: 00000000000000000000000000000000
+    RawGuidValue: 6d955e9e7484e0047ac21bc5bd83af81
   NestedObjects: []
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 9070468601821801595}
+  - {fileID: 9070468601821801596}
+  - {fileID: 807876735642632598}
+  - {fileID: 8302378377757365146}
   SimulationBehaviours: []
 --- !u!114 &807876735642632598
 MonoBehaviour:

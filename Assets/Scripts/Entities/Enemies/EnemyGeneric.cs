@@ -342,7 +342,6 @@ public class EnemyGeneric : NetworkBehaviour
 
         foreach(Collider hit in hits)
         {
-            Debug.Log("Hit " + hit.transform.name);
             if(Helpers.CheckLineOfSight(transform, hit.transform, Mathf.Infinity) && hit.gameObject != closest)
             {
                 float thisDist = Vector3.Distance(transform.position, hit.transform.parent.position);
