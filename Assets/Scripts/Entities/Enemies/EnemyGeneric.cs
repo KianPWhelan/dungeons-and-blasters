@@ -194,7 +194,7 @@ public class EnemyGeneric : NetworkBehaviour
         target = GetClosestVisible();
         
         // allyTarget = Helpers.FindClosestVisible(gameObject.transform, allyTargetType);
-        aiModule.Tick(gameObject, target, allyTarget, agent, movement, this);
+        //aiModule.Tick(gameObject, target, allyTarget, agent, movement, this);
     }
 
     public void MoveTo(Vector3 position)
@@ -214,6 +214,13 @@ public class EnemyGeneric : NetworkBehaviour
 
     public void AddToQueue(Vector3 position)
     {
+        if(!Object.HasStateAuthority)
+        {
+            RPC_AddToQueue(position);
+            return;
+        }
+
+        Debug.Log("Adding to queue");
         //if()
         //{
             destinationQueue.Enqueue(position);
@@ -222,6 +229,13 @@ public class EnemyGeneric : NetworkBehaviour
 
     public void ClearQueue()
     {
+        if(!Object.HasStateAuthority)
+        {
+            RPC_ClearQueue();
+            return;
+        }
+
+        Debug.Log("Clearing queue");
         //if(photonView.IsMine)
         //{
             destinationQueue.Clear();
@@ -230,14 +244,28 @@ public class EnemyGeneric : NetworkBehaviour
 
     public void ClearPath()
     {
+        if(!Object.HasStateAuthority)
+        {
+            RPC_ClearPath();
+            return;
+        }
+
+        Debug.Log("Resetting path");
         agent.ResetPath();
         //photonView.RPC("SetIsMoving", RpcTarget.All, false);
         moving = false;
     }
 
-    public void FollowEntity(GameObject target)
+    public void FollowEntity(NetworkObject target)
     {
-        followTarget = target;
+        if(!Object.HasStateAuthority)
+        {
+            RPC_FollowEntity(target);
+            return;
+        }
+
+        Debug.Log("Following " + target.gameObject.name);
+        followTarget = target.gameObject;
         //photonView.RPC("SetIsFollowing", RpcTarget.All, true);
         isFollowing = true;
         moving = true;
@@ -245,10 +273,47 @@ public class EnemyGeneric : NetworkBehaviour
 
     public void CancelFollow()
     {
+        if(!Object.HasStateAuthority)
+        {
+            RPC_CancelFollow();
+            return;
+        }
+
+        Debug.Log("Canceling follow");
         //photonView.RPC("SetIsFollowing", RpcTarget.All, false);
         //photonView.RPC("SetIsMoving", RpcTarget.All, false);
         isFollowing = false;
         moving = false;
+    }
+
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+    private void RPC_AddToQueue(Vector3 position)
+    {
+        AddToQueue(position);
+    }
+
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+    private void RPC_ClearQueue()
+    {
+        ClearQueue();
+    }
+
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+    private void RPC_ClearPath()
+    {
+        ClearPath();
+    }
+
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+    private void RPC_FollowEntity(NetworkObject target)
+    {
+        FollowEntity(target);
+    }
+
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+    private void RPC_CancelFollow()
+    {
+        CancelFollow();
     }
 
     private void ProcessQueue()

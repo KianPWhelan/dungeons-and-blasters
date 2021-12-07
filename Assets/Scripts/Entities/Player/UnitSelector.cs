@@ -109,8 +109,9 @@ public class UnitSelector : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
+            Debug.Log("bruh0");
             Vector3 dest = GetMousePoint();
-            GameObject follow = TryFollow();
+            NetworkObject follow = TryFollow();
             bool queue = false;
 
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
@@ -141,12 +142,14 @@ public class UnitSelector : MonoBehaviour
 
                     if(queue)
                     {
+                        Debug.Log("bruh1");
                         e.AddToQueue(dest);
                         e.canAggro = false;
                     }
 
                     else
                     {
+                        Debug.Log("bruh2");
                         e.ClearQueue();
                         e.ClearPath();
                         e.CancelFollow();
@@ -175,7 +178,7 @@ public class UnitSelector : MonoBehaviour
         return Vector3.negativeInfinity;
     }
 
-    private GameObject TryFollow()
+    private NetworkObject TryFollow()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -184,7 +187,7 @@ public class UnitSelector : MonoBehaviour
         {
             if(hit.transform.gameObject.tag == "Enemy" || hit.transform.gameObject.tag == "Player")
             {
-                return hit.transform.gameObject;
+                return hit.transform.gameObject.GetComponent<NetworkObject>();
             }
         }
 

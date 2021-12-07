@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Photon.Pun;
+using Fusion;
 
 [CreateAssetMenu(menuName = "Modules/AI/StandardAI")]
 public class StandardAI : EnemyAI
@@ -60,7 +61,7 @@ public class StandardAI : EnemyAI
 
         if (dist > enemyGeneric.desiredRange)
         {
-            enemyGeneric.FollowEntity(target);
+            enemyGeneric.FollowEntity(target.GetComponent<NetworkObject>());
         }
 
         else
