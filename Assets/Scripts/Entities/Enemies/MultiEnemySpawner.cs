@@ -1,30 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
+using Fusion;
 using Com.OfTomorrowInc.DMShooter;
 
 public class MultiEnemySpawner : EnemyGeneric
 {
-    public GameObject enemyToSpawn;
+    public NetworkObject enemyToSpawn;
     public int numToSpawn;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Spawned()
     {
-        if(!gameObject.GetPhotonView().IsMine)
+        if(!Object.HasStateAuthority)
         {
             return;
         }
 
-        string name = enemyToSpawn.name;
+        //string name = enemyToSpawn.name;
         List<EnemyGeneric> newEnemies = new List<EnemyGeneric>();
 
         for(int i = 0; i < numToSpawn; i++)
         {
-            var enemy = PhotonNetwork.Instantiate(name, transform.position, Quaternion.identity);
+            var enemy = Runner.Spawn(enemyToSpawn, transform.position, Quaternion.identity);
             newEnemies.Add(enemy.GetComponent<EnemyGeneric>());
-            GameManager.enemies.Add(enemy);
+            EnemyManager.enemies.Add(enemy);
         }
 
         StartCoroutine(DeclutterNextFrame(newEnemies));
@@ -57,6 +57,6 @@ public class MultiEnemySpawner : EnemyGeneric
             }
         }
 
-        PhotonNetwork.Destroy(gameObject);
+        Runner.Despawn(Object);
     }
 }

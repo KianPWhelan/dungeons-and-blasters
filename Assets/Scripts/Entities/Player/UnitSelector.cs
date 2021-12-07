@@ -80,7 +80,7 @@ public class UnitSelector : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.Mouse0))
         {
-            foreach(GameObject enemy in EnemyManager.enemies)
+            foreach(NetworkObject enemy in EnemyManager.enemies)
             {
                 if(enemy != null && IsWithinSelectionBounds(enemy.transform))
                 {

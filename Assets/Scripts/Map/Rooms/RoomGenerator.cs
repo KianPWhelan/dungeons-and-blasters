@@ -95,6 +95,7 @@ public class RoomGenerator : MonoBehaviour
         {
             if(node.isObjOrigin)
             {
+                Debug.Log("Loading " + node.obj);
                 AddObjectToNode(node.gridLocation, Resources.Load<GameObject>("Objects/" + node.obj), node.objOrientation);
             }
         }
@@ -130,7 +131,7 @@ public class RoomGenerator : MonoBehaviour
             }
         }
 
-        GameManager.single.enemiesHaveSpawned = true;
+        //GameManagerDeprecated.single.enemiesHaveSpawned = true;
     }
 
     public void GenerateGrid()

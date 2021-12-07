@@ -13,7 +13,7 @@ using Fusion.Sockets;
 
 namespace Com.OfTomorrowInc.DMShooter
 {
-    public class GameManager : NetworkBehaviour, INetworkRunnerCallbacks
+    public class GameManagerDeprecated : NetworkBehaviour, INetworkRunnerCallbacks
     {
         [Tooltip("The prefab to use for representing the player")]
         public NetworkObject playerPrefab;
@@ -50,7 +50,7 @@ namespace Com.OfTomorrowInc.DMShooter
 
         public static List<GameObject> enemies;
 
-        public static GameManager single;
+        public static GameManagerDeprecated single;
 
         [HideInInspector]
         public bool enemiesHaveSpawned = false;

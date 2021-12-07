@@ -1097,36 +1097,6 @@ CapsuleCollider:
   m_Height: 4.656032
   m_Direction: 1
   m_Center: {x: 0, y: 1.828016, z: 0}
---- !u!114 &9070468602472634553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9070468602472603208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters:
-  - Type: 4
-    SynchronizeType: 1
-    Name: targetIsVisible
-  - Type: 1
-    SynchronizeType: 1
-    Name: targetDistance
-  - Type: 4
-    SynchronizeType: 0
-    Name: isMoving
-  - Type: 9
-    SynchronizeType: 0
-    Name: attack
-  m_SynchronizeLayers:
-  - SynchronizeType: 0
-    LayerIndex: 0
 --- !u!1 &9074257469970443478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,18 +1332,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400012, guid: 15654a42333b0514dbddde329550bedf, type: 3}
   m_PrefabInstance: {fileID: 9070468602472634500}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9070468602472603208 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100044, guid: 15654a42333b0514dbddde329550bedf, type: 3}
+--- !u!95 &9070468602463251940 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 15654a42333b0514dbddde329550bedf, type: 3}
   m_PrefabInstance: {fileID: 9070468602472634500}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &9070468602472235560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400044, guid: 15654a42333b0514dbddde329550bedf, type: 3}
-  m_PrefabInstance: {fileID: 9070468602472634500}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &9070468602463251940 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: 15654a42333b0514dbddde329550bedf, type: 3}
   m_PrefabInstance: {fileID: 9070468602472634500}
   m_PrefabAsset: {fileID: 0}

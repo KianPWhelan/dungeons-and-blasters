@@ -1,25 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
+using Fusion;
 using Com.OfTomorrowInc.DMShooter;
 
 public class RoomPlaceholder : MonoBehaviour
 {
-    public GameObject enemy;
+    public NetworkObject enemy;
 
     public float cost;
 
     public int numToSpawn;
 
+    private NetworkRunner runner;
+
+    public void Start()
+    {
+        runner = FindObjectOfType<NetworkRunner>();
+    }
+
     public void SpawnEnemies()
     {
-        if(DungeonMasterControllerDepricated.LocalPlayerInstance != null)
+        if(!runner.IsServer)
         {
-            for(int i = 0; i < numToSpawn; i++)
-            {
-                GameManager.enemies.Add(PhotonNetwork.Instantiate(enemy.name, transform.position, Quaternion.identity));
-            }
+            return;
+        }
+
+        for(int i = 0; i < numToSpawn; i++)
+        {
+            var newEnemy = runner.Spawn(enemy, transform.position, Quaternion.identity);
+            EnemyManager.enemies.Add(newEnemy);
         }
 
         Destroy(gameObject);

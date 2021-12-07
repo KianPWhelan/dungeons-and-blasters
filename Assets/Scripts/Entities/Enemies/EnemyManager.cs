@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
 public class EnemyManager : MonoBehaviour
 {
-    public static List<GameObject> enemies = new List<GameObject>();
+    public static List<NetworkObject> enemies = new List<NetworkObject>();
 
     public void Start()
     {
@@ -12,7 +13,7 @@ public class EnemyManager : MonoBehaviour
 
         foreach(EnemyGeneric e in temp)
         {
-            enemies.Add(e.gameObject);
+            enemies.Add(e.GetComponent<NetworkObject>());
         }
     }
 }

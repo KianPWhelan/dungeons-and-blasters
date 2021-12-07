@@ -12,7 +12,7 @@ public class CloseRoom : MonoBehaviour
     {
         PhotonNetwork.CurrentRoom.IsOpen = false;
         PhotonNetwork.CurrentRoom.IsVisible = false;
-        GameManager.single.LoadRoom();
+        GameManagerDeprecated.single.LoadRoom();
         // slots.SetSlots();
     }
 }
