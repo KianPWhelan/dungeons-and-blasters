@@ -25,9 +25,6 @@ public struct PlayerInput : INetworkInput
     public const uint BUTTON_SELECT = 1 << 8;
     public const uint BUTTON_MULTI = 1 << 9;
 
-    // Enemy movement controls
-    public const uint BUTTON_SET_DESTINATION = 1 << 10;
-
     // All buttons
     public uint Buttons;
 
@@ -36,7 +33,6 @@ public struct PlayerInput : INetworkInput
     public Angle pitch;
     public float deltaScroll;
     public Vector3 mousePoint;
-    public Vector3 mousePosition;
 
     // Helper functions
     public bool IsUp(uint button)

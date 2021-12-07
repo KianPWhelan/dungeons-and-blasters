@@ -13,6 +13,5 @@ public enum Actions
     Right,
     Jump,
     Select,
-    Multi,
-    SetDestination
+    Multi
 }

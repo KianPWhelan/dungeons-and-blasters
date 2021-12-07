@@ -23,10 +23,6 @@ public class UnitSelector : MonoBehaviour
     [HideInInspector]
     public bool render;
 
-    private bool isUp;
-    private bool isDown;
-    private PlayerInput input;
-
     public Texture2D WhiteTexture
     {
         get
@@ -58,7 +54,7 @@ public class UnitSelector : MonoBehaviour
     {
         if(isDragging && render)
         {
-            Rect rect = GetScreenRect(mousePos, input.mousePosition);
+            Rect rect = GetScreenRect(mousePos, Input.mousePosition);
             DrawScreenRect(rect, new Color(0f, 0f, 0f, 0.25f));
             DrawScreenRectBorder(rect, 3, Color.blue);
         }
@@ -66,15 +62,12 @@ public class UnitSelector : MonoBehaviour
 
     public void HandleInputs(PlayerInput input)
     {
-        this.input = input;
-
-        if(input.IsDown(PlayerInput.BUTTON_SELECT))
+        if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            isUp = false;
-            mousePos = input.mousePosition;
+            mousePos = Input.mousePosition;
             isDragging = true;
 
-            if(!input.IsDown(PlayerInput.BUTTON_MULTI))
+            if(!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
             {
                 RemoveSelections();
             }
@@ -82,11 +75,9 @@ public class UnitSelector : MonoBehaviour
             TrySelect();
         }
 
-        if(!input.IsDown(PlayerInput.BUTTON_SELECT) && !isUp)
+        if(Input.GetKeyUp(KeyCode.Mouse0))
         {
-            isUp = true;
-
-            foreach(GameObject enemy in EnemyManager.enemies)
+            foreach(GameObject enemy in GameManager.enemies)
             {
                 if(enemy != null && IsWithinSelectionBounds(enemy.transform))
                 {
@@ -103,24 +94,23 @@ public class UnitSelector : MonoBehaviour
             isDragging = false;
         }
 
-        //if(demoMode && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
-        //{
-        //    holdingShift.SetActive(true);
-        //}
-
-        //else if(demoMode)
-        //{
-        //    holdingShift.SetActive(false);
-        //}
-
-        if(input.IsDown(PlayerInput.BUTTON_SET_DESTINATION) && !isDown)
+        if(demoMode && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
         {
-            isDown = true;
+            holdingShift.SetActive(true);
+        }
+
+        else if(demoMode)
+        {
+            holdingShift.SetActive(false);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
             Vector3 dest = GetMousePoint();
             GameObject follow = TryFollow();
             bool queue = false;
 
-            if (input.IsDown(PlayerInput.BUTTON_MULTI))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
                 queue = true;
             }
@@ -163,16 +153,11 @@ public class UnitSelector : MonoBehaviour
                 }
             }
         }
-
-        else if(input.IsUp(PlayerInput.BUTTON_SET_DESTINATION))
-        {
-            isDown = false;
-        }
     }    
 
     private Vector3 GetMousePoint()
     {
-        Ray ray = cam.ScreenPointToRay(input.mousePosition);
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit[] hits = Physics.RaycastAll(ray.origin, ray.direction, Mathf.Infinity);
         System.Array.Sort(hits, delegate (RaycastHit hit1, RaycastHit hit2) { return hit1.distance.CompareTo(hit2.distance); });
 
@@ -189,7 +174,7 @@ public class UnitSelector : MonoBehaviour
 
     private GameObject TryFollow()
     {
-        Ray ray = cam.ScreenPointToRay(input.mousePosition);
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
@@ -205,7 +190,7 @@ public class UnitSelector : MonoBehaviour
 
     private void TrySelect()
     {
-        Ray ray = cam.ScreenPointToRay(input.mousePosition);
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if(Physics.Raycast(ray, out hit))
@@ -244,7 +229,7 @@ public class UnitSelector : MonoBehaviour
             return false;
         }
 
-        Bounds vpBounds = GetVPBounds(cam, mousePos, input.mousePosition);
+        Bounds vpBounds = GetVPBounds(cam, mousePos, Input.mousePosition);
         return vpBounds.Contains(cam.WorldToViewportPoint(tf.position));
     }
 

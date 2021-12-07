@@ -84,7 +84,7 @@ public class DungeonMasterController : NetworkBehaviour
                 velocity += new Vector3(0f, -zoomStep, 0f);
             }
 
-            unitSelector.HandleInputs(input);
+            //unitSelector.HandleInputs(input);
 
             transform.position += velocity;
 
