@@ -91,11 +91,8 @@ public class Attack : ScriptableObject
 
         if (useSelfForPositioning)
         {
-            Debug.Log("Here");
-
             if (weaponHolder.isPlayer)
             {
-                Debug.Log("here");
                 spawner.Spawn(attack, weaponHolder.cam.gameObject, info, delay, 0, self.GetComponent<NetworkObject>());
             }
 

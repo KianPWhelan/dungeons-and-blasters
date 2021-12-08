@@ -23,9 +23,6 @@ public class Spawner : NetworkBehaviour
 
         // photonView.RPC("LocalInstantiate", RpcTarget.All, objectName, position, rotation, info, delay, ownerId);
 
-        Debug.Log("Destination");
-        Debug.Log(info[3]);
-
         PlayerRef inputAuth = Object.InputAuthority;
 
         if(owner != null)
@@ -87,7 +84,6 @@ public class Spawner : NetworkBehaviour
 
             if(owner.TryGetBehaviour(out PlayerMovement p))
             {
-                Debug.Log("Owner is a player, get its local position/rotation");
                 rotation = Quaternion.Euler((float)p.pitch, (float)p.yaw, 0);
                 position = owner.transform.position;
             }
