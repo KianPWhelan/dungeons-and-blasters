@@ -24,6 +24,8 @@ public class WeaponHolder : MonoBehaviour
     [HideInInspector]
     public FPSCamera cam;
 
+    private int index;
+
     public void Start()
     {
         for(int i = 0; i < weaponPrefabs.Count; i++)
@@ -33,6 +35,7 @@ public class WeaponHolder : MonoBehaviour
             newWeapon.GetComponent<Weapon>().owner = GetComponent<NetworkObject>();
             newWeapon.GetComponent<Weapon>().index = i;
             weaponScripts.Add(newWeapon.GetComponent<Weapon>());
+            index++;
         }
 
         if(isPlayer)
@@ -97,9 +100,13 @@ public class WeaponHolder : MonoBehaviour
         return weaponScripts;
     }
 
-    public void AddWeapon(Weapon weapon, string targetTag)
+    public void AddWeapon(GameObject weapon, string targetTag)
     {
-        weaponScripts.Add(weapon);
+        var newWeapon = Instantiate(weapon, transform);
+        newWeapon.GetComponent<Weapon>().owner = GetComponent<NetworkObject>();
+        newWeapon.GetComponent<Weapon>().index = index;
+        weaponScripts.Add(newWeapon.GetComponent<Weapon>());
+        index++;
         targetTags.Add(targetTag);
     }
 

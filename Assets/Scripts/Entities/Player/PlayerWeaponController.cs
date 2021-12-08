@@ -12,6 +12,11 @@ public class PlayerWeaponController : NetworkBehaviour
     {
         statusEffects = GetComponent<StatusEffects>();
         weaponHolder = GetComponent<WeaponHolder>();
+
+        if(WeaponSelect.selection != null)
+        {
+            weaponHolder.AddWeapon(WeaponSelect.selection, "Enemy");
+        }
     }
 
     public override void FixedUpdateNetwork()

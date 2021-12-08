@@ -75,6 +75,7 @@ namespace Com.OfTomorrowInc.DMShooter
         /// </summary>
         void Start()
         {
+            isDungeonMaster.runtimeValue = false;
             progressLabel.SetActive(false);
             controlPanel.SetActive(true);
         }
