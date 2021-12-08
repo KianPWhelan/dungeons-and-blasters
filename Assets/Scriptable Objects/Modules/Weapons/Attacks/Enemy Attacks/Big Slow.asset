@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Big Slow
   m_EditorClassIdentifier: 
-  attack: {fileID: 7880976810065528573, guid: d2a6697f4d93c10459c3e394059682b1, type: 3}
+  attack: {fileID: 6410624834205609692, guid: f79d1d385787e234994b99e2cd405062, type: 3}
   effects:
   - {fileID: 11400000, guid: 031e8d84b4b478149888da0a852198a8, type: 2}
+  useOverwriteTag: 0
+  overwriteTag: 
+  canCrit: 0
+  critOnCritBoxesOnly: 1
+  critChance: 1000
+  critMultiplier: 1.5
+  knockbackStrength: 0

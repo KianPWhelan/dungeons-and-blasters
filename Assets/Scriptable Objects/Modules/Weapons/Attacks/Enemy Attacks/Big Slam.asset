@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Big Slam
   m_EditorClassIdentifier: 
-  attack: {fileID: 7880976810065528573, guid: a5e9d38070bfa944ca2a8174c28d2153, type: 3}
+  attack: {fileID: 6410624834205609692, guid: 28a9d32fd1bed8547829497ecd9ffa53, type: 3}
   effects:
   - {fileID: 11400000, guid: 69aa249e5b9178c498a08004e98639ce, type: 2}
+  useOverwriteTag: 0
+  overwriteTag: 
+  canCrit: 0
+  critOnCritBoxesOnly: 1
+  critChance: 1000
+  critMultiplier: 1.5
+  knockbackStrength: 0

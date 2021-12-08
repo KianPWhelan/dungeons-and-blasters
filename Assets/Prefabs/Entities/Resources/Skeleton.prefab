@@ -802,7 +802,6 @@ GameObject:
   - component: {fileID: 4999855669528970186}
   - component: {fileID: 9070468601821801596}
   - component: {fileID: 3727592679696396437}
-  - component: {fileID: 1843969509672146182}
   - component: {fileID: 1818002960377947092}
   - component: {fileID: 807876735642632598}
   - component: {fileID: 8302378377757365146}
@@ -960,7 +959,7 @@ MonoBehaviour:
   resistances: []
   isDead: 0
   startingHealth: 0
-  _health: 0
+  _health: 30
 --- !u!114 &3727592679696396437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,19 +993,6 @@ MonoBehaviour:
   _yPosition: 5
   _faceCamera: {fileID: 0}
   OnlyShowIfDamaged: 0
---- !u!114 &1843969509672146182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9070468601821801538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5dc61447fe53444aba0f6f220e20b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackResistance: 1
 --- !u!114 &1818002960377947092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,7 +1065,7 @@ MonoBehaviour:
   Offset: {x: 0, y: 0, z: 0}
   Hitboxes:
   - {fileID: 6216635865323158022}
-  - {fileID: 0}
+  - {fileID: 4533557172023434411}
 --- !u!136 &1077302827331312017
 CapsuleCollider:
   m_ObjectHideFlags: 0
