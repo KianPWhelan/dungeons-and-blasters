@@ -17,9 +17,14 @@ public class PlayerMovement : NetworkBehaviour
     [HideInInspector]
     public FPSCamera cam;
 
+    private StatusEffects statusEffects;
+    private float startingSpeed;
+
     public override void Spawned()
     {
         cc = GetComponent<NetworkCharacterController>();
+        statusEffects = GetComponent<StatusEffects>();
+        startingSpeed = cc.MaxSpeed;
         SetupCamera();
     }
 
@@ -62,6 +67,15 @@ public class PlayerMovement : NetworkBehaviour
             yaw += input.yaw;
             pitch += input.pitch;
         }
+
+        if(statusEffects.GetIsStunned())
+        {
+            return;
+        }
+
+        float speedMod = statusEffects.GetMoveSpeedMod();
+
+        cc.MaxSpeed = startingSpeed * speedMod;
 
         cc.Move(direction.normalized);
 
