@@ -20,6 +20,9 @@ public class PlayerMovement : NetworkBehaviour
     private StatusEffects statusEffects;
     private float startingSpeed;
 
+    [HideInInspector]
+    public static NetworkObject localPlayer;
+
     public override void Spawned()
     {
         cc = GetComponent<NetworkCharacterController>();

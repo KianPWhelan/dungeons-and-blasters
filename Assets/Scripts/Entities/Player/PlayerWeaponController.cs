@@ -8,15 +8,23 @@ public class PlayerWeaponController : NetworkBehaviour
     private WeaponHolder weaponHolder;
     private StatusEffects statusEffects;
 
+    public void Start()
+    {
+        if(!Object.HasInputAuthority)
+        {
+            return;
+        }
+
+        if (WeaponSelect.selection != null)
+        {
+            RPC_AddWeapon(WeaponSelect.selection.name);
+        }
+    }
+
     public override void Spawned()
     {
         statusEffects = GetComponent<StatusEffects>();
         weaponHolder = GetComponent<WeaponHolder>();
-
-        if(WeaponSelect.selection != null)
-        {
-            weaponHolder.AddWeapon(WeaponSelect.selection, "Enemy");
-        }
     }
 
     public override void FixedUpdateNetwork()
@@ -38,5 +46,11 @@ public class PlayerWeaponController : NetworkBehaviour
         {
             weaponHolder.UseWeapon(0, altAttack: true);
         }
+    }
+
+    [Rpc(sources: RpcSources.InputAuthority, targets: RpcTargets.All)]
+    private void RPC_AddWeapon(string name)
+    {
+        weaponHolder.AddWeapon((GameObject)Resources.Load(name), "Enemy");
     }
 }

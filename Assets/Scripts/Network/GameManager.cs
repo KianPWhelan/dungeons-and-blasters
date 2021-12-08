@@ -9,10 +9,19 @@ public class GameManager : NetworkBehaviour
     [SerializeField]
     private RoomGenerator roomGen;
 
+    public List<NetworkObject> players = new List<NetworkObject>();
+    public List<NetworkObject> dms = new List<NetworkObject>();
+
     public void SendRoomDataToClients()
     {
         RPC_LoadRoom(System.Text.Encoding.UTF8.GetBytes(RoomSelect.selection));
     }
+
+    //[Rpc(sources: RpcSources.All)]
+    //public void RPC_AddPlayer(NetworkObject player)
+    //{
+    //    players.Add(player);
+    //}
 
     [Rpc(sources: RpcSources.All, targets: RpcTargets.All)]
     private void RPC_LoadRoom(byte[] roomData)
@@ -32,5 +41,11 @@ public class GameManager : NetworkBehaviour
         //    StartCoroutine(CheckForNoEnemies());
         //    DungeonMasterController.LocalPlayerInstance.transform.position = startPoint + Vector3.up * 50;
         //}
+    }
+
+    private void MoveToStartPoint()
+    {
+        Vector3 startPoint = roomGen.GetStartPoint();
+
     }
 }

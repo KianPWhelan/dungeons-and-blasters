@@ -102,6 +102,7 @@ public class WeaponHolder : MonoBehaviour
 
     public void AddWeapon(GameObject weapon, string targetTag)
     {
+        weaponPrefabs.Add(weapon);
         var newWeapon = Instantiate(weapon, transform);
         newWeapon.GetComponent<Weapon>().owner = GetComponent<NetworkObject>();
         newWeapon.GetComponent<Weapon>().index = index;

@@ -734,6 +734,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   roomGen: {fileID: 1430218039}
+  players: []
+  dms: []
 --- !u!114 &808559634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,9 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84531b9db430dc84ca991327fe26bfc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 6568136409441646226, guid: 90c797d72a9f93841a647b4eca63f13b, type: 3}
-  dmPrefab: {fileID: 5506979797427814925, guid: 2c567280da0bab7489478b5ac5d95deb, type: 3}
-  isDungeonMaster: {fileID: 11400000, guid: c05388661befd1c43bede5bf6ab5253c, type: 2}
+  playerPrefab: {fileID: -7800242616977676054, guid: 1e79dbad2bc88b24d97fad1a1d0dd4e4, type: 3}
 --- !u!114 &1220868928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,7 +864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8578320676110025440, guid: 6b3dffc87caca3748b3786f3874820d6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8578320676110025441, guid: 6b3dffc87caca3748b3786f3874820d6, type: 3}
       propertyPath: m_RootOrder
