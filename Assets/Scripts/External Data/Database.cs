@@ -62,7 +62,7 @@ public class Database : MonoBehaviour
         {
             if (task.IsFaulted)
             {
-
+                Debug.LogError(task.Exception);
             }
 
             else if (task.IsCompleted)

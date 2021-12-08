@@ -10,7 +10,7 @@ public class StartGame : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        StartGameSequence();
+        //StartGameSequence();
     }
 
     public void StartGameSequence()
