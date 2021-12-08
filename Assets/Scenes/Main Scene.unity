@@ -466,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &489836708
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -747,6 +747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room Maker
       objectReference: {fileID: 0}
+    - target: {fileID: 8578320676110025440, guid: 6b3dffc87caca3748b3786f3874820d6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8578320676110025441, guid: 6b3dffc87caca3748b3786f3874820d6, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -833,7 +837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1506252316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -995,6 +999,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 1077302827331312017, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1818002960377947092, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: Flags
       value: 2561
@@ -1009,15 +1017,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6158585124440715376, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6158585124440715376, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8639724338631328462, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9070468601821801538, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: m_Name
@@ -1025,7 +1033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9070468601821801538, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9070468601821801593, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: m_RootOrder
@@ -1071,6 +1079,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9070468601821801595, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
+      propertyPath: aiModule
+      value: 
+      objectReference: {fileID: 11400000, guid: 967d28e58f26d8c4d9182fcac65f62b7, type: 2}
     - target: {fileID: 9070468601821801596, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: _health
       value: 100
@@ -1081,8 +1093,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9070468602472634553, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
-    - {fileID: 9070468601821801594, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
-    - {fileID: 9070468601821801541, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
 --- !u!1 &2077325123
 GameObject:

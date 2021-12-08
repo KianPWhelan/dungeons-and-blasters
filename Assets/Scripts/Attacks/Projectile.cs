@@ -232,7 +232,7 @@ public class Projectile : AttackComponent
 		Vector3 dir = vel.normalized;
 
 		List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
-		Runner.LagCompensation.RaycastAll(transform.position - 0.5f * dir, dir, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+		Runner.LagCompensation.RaycastAll(transform.position - 0.5f * dir, dir, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
 		ProcessHits(hits);
 
 		if(settings.performSafetyHitRegistration && lastPosition != null && transform != null)
@@ -260,11 +260,18 @@ public class Projectile : AttackComponent
 
 		foreach (LagCompensatedHit hit in hitArray)
 		{
+			Debug.Log(validTag);
 			//Debug.Log((hit.Hitbox != null) + " " + (hit.GameObject.tag == validTag) + " " + (hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority) + " " + (!hitList.Contains(hit.GameObject)));
 			// TODO: Stop projectile from hitting caster if caster has same target tag
 			if (hit.Hitbox != null && hit.Hitbox.Root.tag == validTag/* && hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority */&& !hitList.Contains(hit.Hitbox.Root.gameObject))
 			{
 				Debug.Log("Hit valid target");
+				
+				if(settings.attack.canCrit && (!settings.attack.critOnCritBoxesOnly || (hit.Hitbox.Root.tag == "Enemy" && hit.Hitbox.Root.GetComponent<EnemyGeneric>().critBox == hit.Hitbox)))
+                {
+					CalculateCrit(settings.attack);
+                }
+
 				settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod);
 				numHits++;
 				hitList.Add(hit.Hitbox.Root.gameObject);

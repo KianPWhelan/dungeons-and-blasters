@@ -167,6 +167,12 @@ public class AreaAttack : AttackComponent
             if (hit.Hitbox != null && hit.Hitbox.Root.tag == validTag/* && hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority */&& !hitList.Contains(hit.Hitbox.Root.gameObject))
             {
                 Debug.Log("Hit valid target");
+
+                if (settings.attack.canCrit && (!settings.attack.critOnCritBoxesOnly || (hit.Hitbox.Root.tag == "Enemy" && hit.Hitbox.Root.GetComponent<EnemyGeneric>().critBox == hit.Hitbox)))
+                {
+                    CalculateCrit(settings.attack);
+                }
+
                 settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod);
                 numHits++;
                 hitList.Add(hit.Hitbox.Root.gameObject);

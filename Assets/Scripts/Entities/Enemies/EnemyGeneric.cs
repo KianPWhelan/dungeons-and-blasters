@@ -45,7 +45,7 @@ public class EnemyGeneric : NetworkBehaviour
     public Animator animator;
 
     [Tooltip("The collider which will be used for critical points")]
-    public Collider critBox;
+    public Hitbox critBox;
 
     public State currentState;
 
