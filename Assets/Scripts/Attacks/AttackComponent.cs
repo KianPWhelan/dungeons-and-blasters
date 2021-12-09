@@ -5,18 +5,17 @@ using UnityEngine;
 
 public class AttackComponent : NetworkBehaviour
 {
-    [Networked]
     [HideInInspector]
-    public string validTag { get; set; }
-    [Networked]
+    public string validTag;
+
     [HideInInspector]
-    public float damageMod { get; set; }
-    [Networked]
+    public float damageMod;
+
     [HideInInspector]
-    public Vector3 destination { get; set; }
-    [Networked]
+    public Vector3 destination;
+
     [HideInInspector]
-    public bool useDestination { get; set; }
+    public bool useDestination;
 
     public virtual void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0, bool isAlt = false)
     {

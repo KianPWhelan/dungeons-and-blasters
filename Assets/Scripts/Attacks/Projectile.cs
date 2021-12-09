@@ -105,7 +105,7 @@ public class Projectile : AttackComponent
 
         if (destination != null)
         {
-            Debug.Log("Destination recieved: " + destination);
+
             this.destination = (Vector3)destination;
             useDestination = true;
             Debug.Log(useDestination);
@@ -121,14 +121,12 @@ public class Projectile : AttackComponent
 			return;
         }
 
-		Debug.Log("Spawned " + useDestination);
 		// Create lifetimer
 		lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
 
 		// Perform initial direction rotation
 		if(useDestination)
         {
-			Debug.Log("Using destination");
 			transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
 		}
 
@@ -235,9 +233,10 @@ public class Projectile : AttackComponent
 		Runner.LagCompensation.RaycastAll(transform.position - 0.5f * dir, dir, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
 		ProcessHits(hits);
 
-		if(settings.performSafetyHitRegistration && lastPosition != null && transform != null)
+		if(settings.performSafetyHitRegistration && lastPosition != null && transform != null && Object != null)
         {
 			hits = new List<LagCompensatedHit>();
+			//Debug.Log(transform + " " + lastPosition + " " + Object + " " + settings.hitMask);
 			Runner.LagCompensation.RaycastAll(lastPosition, (transform.position - lastPosition).normalized, Vector3.Distance(lastPosition, transform.position), Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
 			ProcessHits(hits);
 		}
@@ -305,7 +304,10 @@ public class Projectile : AttackComponent
 
 	private void DestroyProjectile()
     {
-		Runner.Despawn(Object);
+		if(Object != null)
+        {
+			Runner.Despawn(Object);
+		}
     }
 
 	private void ApplyEffectsOnEnd()
