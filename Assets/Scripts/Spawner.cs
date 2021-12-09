@@ -42,7 +42,7 @@ public class Spawner : NetworkBehaviour
         ));
     }
 
-    public void Spawn(GameObject prefab, GameObject self, object[] info, float delay, int ownerId, NetworkObject owner)
+    public void Spawn(GameObject prefab, GameObject self, object[] info, float delay, int ownerId, NetworkObject owner, bool isPlayer = false)
     {
         //if (!PhotonView.Find(ownerId).IsMine)
         //{
@@ -74,9 +74,15 @@ public class Spawner : NetworkBehaviour
 
         //else
         //{
+
         PlayerRef inputAuth = Object.InputAuthority;
         Quaternion rotation = self.transform.rotation;
         Vector3 position = self.transform.position;
+
+        if (isPlayer)
+        {
+
+        }
 
         if (owner != null)
         {

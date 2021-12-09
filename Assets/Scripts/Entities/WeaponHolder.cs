@@ -44,7 +44,7 @@ public class WeaponHolder : MonoBehaviour
         }
     }
 
-    public bool UseWeapon(int index, Vector3? destination = null, bool useDestination = false, bool altAttack = false)
+    public bool UseWeapon(int index, Vector3? destination = null, bool useDestination = false, bool altAttack = false, Quaternion? rotation = null, bool useRotation = false)
     {
         //if(!useDestination)
         //{
@@ -78,10 +78,10 @@ public class WeaponHolder : MonoBehaviour
         {
             if (altAttack)
             {
-                return weaponScripts[index].UseAlternate(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);
+                return weaponScripts[index].UseAlternate(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: rotation, weaponHolder: this);
             }
 
-            return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);
+            return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: rotation, weaponHolder: this);
         }
 
         else

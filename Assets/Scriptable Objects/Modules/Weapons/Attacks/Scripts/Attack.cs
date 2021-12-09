@@ -93,7 +93,7 @@ public class Attack : ScriptableObject
         {
             if (weaponHolder.isPlayer)
             {
-                spawner.Spawn(attack, weaponHolder.cam.gameObject, info, delay, 0, self.GetComponent<NetworkObject>());
+                spawner.Spawn(attack, self, info, delay, 0, self.GetComponent<NetworkObject>(), isPlayer: true);
             }
 
             else

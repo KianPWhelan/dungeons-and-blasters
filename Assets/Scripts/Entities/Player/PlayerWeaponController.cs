@@ -7,6 +7,7 @@ public class PlayerWeaponController : NetworkBehaviour
 {
     private WeaponHolder weaponHolder;
     private StatusEffects statusEffects;
+    private PlayerMovement playerMovement;
 
     public void Start()
     {
@@ -25,6 +26,7 @@ public class PlayerWeaponController : NetworkBehaviour
     {
         statusEffects = GetComponent<StatusEffects>();
         weaponHolder = GetComponent<WeaponHolder>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     public override void FixedUpdateNetwork()
@@ -38,14 +40,14 @@ public class PlayerWeaponController : NetworkBehaviour
         {
             if(input.IsDown(PlayerInput.BUTTON_FIRE))
             {
-                weaponHolder.UseWeapon(0);
+                weaponHolder.UseWeapon(0, useRotation: true, rotation: Quaternion.Euler((float) playerMovement.pitch, (float) playerMovement.yaw, 0));
             }
-        }
 
-        if (input.IsDown(PlayerInput.BUTTON_FIRE_ALT))
-        {
-            weaponHolder.UseWeapon(0, altAttack: true);
-        }
+            if (input.IsDown(PlayerInput.BUTTON_FIRE_ALT))
+            {
+                weaponHolder.UseWeapon(0, altAttack: true, useRotation: true, rotation: Quaternion.Euler((float)playerMovement.pitch, (float)playerMovement.yaw, 0));
+            }
+        } 
     }
 
     [Rpc(sources: RpcSources.InputAuthority, targets: RpcTargets.All)]
