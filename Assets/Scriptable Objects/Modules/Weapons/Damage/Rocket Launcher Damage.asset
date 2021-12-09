@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca7ca57bd6624c04596a7d0cf1597300, type: 3}
-  m_Name: Crystal of Cruelty Poison Damage
+  m_Name: Rocket Launcher Damage
   m_EditorClassIdentifier: 
-  damageType: {fileID: 11400000, guid: c06588acec91f354e97ab5a731754ecf, type: 2}
-  damage: 5
+  damageType: {fileID: 11400000, guid: fdfbd2e96b6024647b4001a2ed60c3bc, type: 2}
+  damage: 14

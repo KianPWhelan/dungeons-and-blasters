@@ -15,6 +15,7 @@ MonoBehaviour:
   attack: {fileID: 8523135143678805610, guid: ac5f8cd9c0ae4ef45ba74f2e4eea90b4, type: 3}
   effects:
   - {fileID: 11400000, guid: 8a09cf2810167e641bee3cfdf86ad68d, type: 2}
+  - {fileID: 11400000, guid: 2bf2157435063d3478c799d4195702f0, type: 2}
   useOverwriteTag: 0
   overwriteTag: 
   canCrit: 0

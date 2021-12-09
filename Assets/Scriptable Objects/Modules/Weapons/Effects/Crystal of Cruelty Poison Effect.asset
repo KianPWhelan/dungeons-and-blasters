@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0252b129c204c3842b67624c34c07acd, type: 3}
   m_Name: Crystal of Cruelty Poison Effect
   m_EditorClassIdentifier: 
-  damages: []
-  isStatusEffect: 0
-  interval: {fileID: 0}
-  duration: {fileID: 0}
-  stacks: 0
-  refreshDuration: 0
+  damages:
+  - {fileID: 11400000, guid: 430cdfaedb0c6244c92e2b5615dcca2d, type: 2}
+  isStatusEffect: 1
+  interval: {fileID: 11400000, guid: 4d3485d585a059f448910d015c7a8af8, type: 2}
+  duration: {fileID: 11400000, guid: f48dbadb85c79af418f92f7e704282c0, type: 2}
+  stacks: 1
+  refreshDuration: 1
   recursiveEffects: []
   useOverwriteTag: 0
   overwriteTag: 
@@ -25,4 +26,6 @@ MonoBehaviour:
   damageRecievedMod: 1
   moveSpeedMod: 1
   isStun: 0
-  resistanceMods: []
+  resistanceMods:
+  - damageType: {fileID: 0}
+    resistanceMod: 0
