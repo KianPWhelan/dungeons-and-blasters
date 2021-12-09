@@ -144,9 +144,16 @@ MonoBehaviour:
     subAttacksOnHit: 0
     subAttacksOnTip: 0
     subAttacksAtSurfaceNormal: 0
+    subAttacksCanOnlyProcOnce: 0
     applyEffectsOnEnd: 0
     applyEffectsOnTip: 0
-    offset: {x: 0, y: -0.2, z: 1}
+    offset: {x: 0, y: 0, z: 1}
+    ignoreRotationForOffset: 0
+    rotationOffset: {x: 0, y: 0, z: 0}
+    worldSpaceRotation: 0
+    reevaluateDestinationAfterOffset: 0
+    autoTarget: 0
+    spreadAffectsAutoTarget: 0
     canReflect: 0
     numReflections: 0
     canReflectOffValidTarget: 0
@@ -154,8 +161,12 @@ MonoBehaviour:
     applyEffectsOnReflect: 0
     subAttacksOnReflect: 0
     autoTargetOnReflect: 0
+    reflectRegardlessOfPierce: 0
     followOwner: 1
     length: 17
+    spread: 0
+    spreadAffectsReflection: 0
+    spreadOnlyAffectsReflection: 0
     hitMask:
       serializedVersion: 2
       m_Bits: 1

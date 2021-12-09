@@ -656,13 +656,13 @@ MonoBehaviour:
       m_Bits: 4294967295
     TriggerInteraction: 0
     AirControl: 1
-    Acceleration: 10
-    Braking: 10
-    BaseJumpImpulse: 5
-    MaxSpeed: 8
+    Acceleration: 50
+    Braking: 20
+    BaseJumpImpulse: 7
+    MaxSpeed: 13.5
     MaxSlope: 60
-    MaxSlopeSpeed: 5
-    _gravity: {x: 0, y: -9.81, z: 0}
+    MaxSlopeSpeed: 13.5
+    _gravity: {x: 0, y: -15.5, z: 0}
 --- !u!114 &6568136409441646239
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -222,7 +222,7 @@ MonoBehaviour:
     subAttacksOnEnd: 0
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 0
-    offset: {x: 0, y: 0, z: 2}
+    offset: {x: 0, y: 0, z: 0.2}
     followOwner: 0
     radius: 1
     hitMask:

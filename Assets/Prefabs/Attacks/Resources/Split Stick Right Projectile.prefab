@@ -142,8 +142,11 @@ MonoBehaviour:
     subAttacksOnEnd: 0
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 0
-    offset: {x: 0, y: 0, z: 3}
+    subAttacksCanOnlyProcOnce: 0
+    offset: {x: 0, y: 0, z: 1}
+    ignoreRotationForOffset: 0
     rotationOffset: {x: 0, y: 15, z: 0}
+    worldSpaceRotation: 0
     reevaluateDestinationAfterOffset: 0
     spread: 0
     length: 3
@@ -158,6 +161,7 @@ MonoBehaviour:
     applyEffectsOnEnd: 0
     lifetime: 4
     speed: 100
+    gravityStrength: 0
     homing: 0
     homingStrength: 0
     reevaluateHomingTargetConstantly: 0

@@ -239,7 +239,7 @@ MonoBehaviour:
     subAttacksOnEnd: 0
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 0
-    offset: {x: 0, y: 0, z: 2}
+    offset: {x: 0, y: 0, z: 1}
     followOwner: 0
     radius: 5
     hitMask:
@@ -252,3 +252,5 @@ MonoBehaviour:
     ignoreObstacles: 1
     applyEffectsOnEnd: 0
     lifetime: 0.5
+    gravityStrength: 0
+  _networkedVelocity: {x: 0, y: 0, z: 0}

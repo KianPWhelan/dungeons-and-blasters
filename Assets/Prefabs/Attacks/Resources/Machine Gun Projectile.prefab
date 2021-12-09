@@ -132,10 +132,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  _validTag: 
-  _damageMod: 0
-  _destination: {x: 0, y: 0, z: 0}
-  _useDestination: 0
+  validTag: 
+  damageMod: 0
+  destination: {x: 0, y: 0, z: 0}
+  useDestination: 0
   settings:
     attack: {fileID: 11400000, guid: c78cb276665cf2842b4c4f11596ffb48, type: 2}
     subAttacks: []
@@ -143,7 +143,7 @@ MonoBehaviour:
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 0
     subAttacksCanOnlyProcOnce: 0
-    offset: {x: 0, y: 0, z: 3}
+    offset: {x: 0, y: 0, z: 1}
     ignoreRotationForOffset: 0
     rotationOffset: {x: 0, y: 0, z: 0}
     worldSpaceRotation: 0

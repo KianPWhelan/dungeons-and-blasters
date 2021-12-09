@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 8523135143678805610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1668218538431988242}
   m_Father: {fileID: 0}
@@ -132,10 +132,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  _validTag: 
-  _damageMod: 0
-  _destination: {x: 0, y: 0, z: 0}
-  _useDestination: 0
+  validTag: 
+  damageMod: 0
+  destination: {x: 0, y: 0, z: 0}
+  useDestination: 0
   settings:
     attack: {fileID: 11400000, guid: b61d840bdd8b6de4e9988e372360c6c0, type: 2}
     subAttacks: []
@@ -143,7 +143,7 @@ MonoBehaviour:
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 0
     subAttacksCanOnlyProcOnce: 0
-    offset: {x: 0, y: 0, z: 3}
+    offset: {x: 0, y: 0, z: 1}
     ignoreRotationForOffset: 0
     rotationOffset: {x: 0, y: 0, z: 0}
     worldSpaceRotation: 0
