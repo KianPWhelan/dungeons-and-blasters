@@ -14,6 +14,12 @@ public class PlayerSpawnerScript : SimulationBehaviour, IPlayerJoined
     //[SerializeField]
     //private BoolVariable isDungeonMaster;
 
+    [SerializeField]
+    public static List<NetworkObject> players = new List<NetworkObject>();
+
+    [SerializeField]
+    public static List<NetworkObject> dms = new List<NetworkObject>();
+
     void IPlayerJoined.PlayerJoined(PlayerRef player)
     {
         Debug.Log("Player " + player + " joined the game");

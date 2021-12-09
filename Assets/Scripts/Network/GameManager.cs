@@ -41,11 +41,27 @@ public class GameManager : NetworkBehaviour
         //    StartCoroutine(CheckForNoEnemies());
         //    DungeonMasterController.LocalPlayerInstance.transform.position = startPoint + Vector3.up * 50;
         //}
+
+        if(Object.HasStateAuthority)
+        {
+            MoveToStartPoint();
+        }
     }
 
     private void MoveToStartPoint()
     {
+        Debug.Log("Moving players");
         Vector3 startPoint = roomGen.GetStartPoint();
+        Debug.Log("Start Point: " + startPoint);
 
+        foreach(NetworkObject player in PlayerSpawnerScript.players)
+        {
+            player.GetComponent<NetworkCharacterController>().Teleport(startPoint + Vector3.up * 50);
+        }
+
+        foreach(NetworkObject dm in PlayerSpawnerScript.dms)
+        {
+            dm.GetComponent<NetworkTransform>().Teleport(startPoint + Vector3.up * 50);
+        }
     }
 }
