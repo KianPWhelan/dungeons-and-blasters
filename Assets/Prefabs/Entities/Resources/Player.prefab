@@ -677,6 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   cam: {fileID: 0}
+  UI: {fileID: 2605582862138713523}
 --- !u!114 &6568136409441646232
 MonoBehaviour:
   m_ObjectHideFlags: 0
