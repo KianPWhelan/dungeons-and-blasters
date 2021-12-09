@@ -39,12 +39,14 @@ public class PlayerPrefabDecider : NetworkBehaviour
     {
         if (isDM == "true")
         {
+            Debug.Log("why1");
             var position = new Vector3(0, 50, 0);
             PlayerSpawnerScript.dms.Add(Runner.Spawn(dmPrefab, position, Quaternion.identity, Object.InputAuthority));
         }
 
         else
         {
+            Debug.Log("why2");
             var position = new Vector3(0, 10, 0);
             PlayerSpawnerScript.players.Add(Runner.Spawn(playerPrefab, position, Quaternion.identity, Object.InputAuthority));
         }
