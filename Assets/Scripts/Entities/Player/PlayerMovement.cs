@@ -20,6 +20,9 @@ public class PlayerMovement : NetworkBehaviour
     private StatusEffects statusEffects;
     private float startingSpeed;
 
+    [SerializeField]
+    private GameObject UI;
+
     [HideInInspector]
     public static NetworkObject localPlayer;
 
@@ -96,6 +99,11 @@ public class PlayerMovement : NetworkBehaviour
             Debug.Log("Setting camera target");
             localCamera.SetTarget(this);
             Runner.AddSimulationBehaviour(localCamera);
+        }
+
+        else
+        {
+            UI.SetActive(false);
         }
     }
 }
