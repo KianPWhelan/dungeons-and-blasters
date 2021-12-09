@@ -34,9 +34,8 @@ public class PlayerPrefabDecider : NetworkBehaviour
         }
     }
 
-    // Why tf can't this be a bool
     [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
-    private void RPC_WhyTheHellIsThisTheOnlyWayToDoThis(string isDM)
+    private void RPC_WhyTheHellIsThisTheOnlyWayToDoThis(string isDM/*Why tf can't this be a bool*/)
     {
         if (isDM == "true")
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
 using SnazzlebotTools.ENPCHealthBars;
+using UnityEngine.SceneManagement;
 
 public class Health : NetworkBehaviour
 {
@@ -132,6 +133,7 @@ public class Health : NetworkBehaviour
             {
                 //TODO: player death
                 //GetComponent<Controller>().GameOver();
+                Runner.Despawn(Object);
             }
 
             else

@@ -1197,7 +1197,7 @@ PrefabInstance:
     - target: {fileID: 9070468601821801595, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: aiModule
       value: 
-      objectReference: {fileID: 11400000, guid: 967d28e58f26d8c4d9182fcac65f62b7, type: 2}
+      objectReference: {fileID: 11400000, guid: a847dcfa4927ee84dabe21e6d954a71e, type: 2}
     - target: {fileID: 9070468601821801596, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
       propertyPath: _health
       value: 100
