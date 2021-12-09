@@ -353,6 +353,11 @@ public class Weapon : MonoBehaviour
 
     private void OnGUI()
     {
+        if(!owner.HasInputAuthority)
+        {
+            return;
+        }
+
         string text = "";
 
         if(useAmmo)

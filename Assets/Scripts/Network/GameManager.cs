@@ -57,7 +57,7 @@ public class GameManager : NetworkBehaviour
         foreach(NetworkObject player in PlayerSpawnerScript.players)
         {
             Debug.Log(player.name);
-            player.GetComponent<NetworkCharacterController>().Teleport(startPoint + Vector3.up * 5);
+            player.GetComponent<NetworkCharacterController>().Teleport(startPoint + Vector3.up * 50);
         }
 
         foreach(NetworkObject dm in PlayerSpawnerScript.dms)
