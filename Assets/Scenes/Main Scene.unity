@@ -854,6 +854,22 @@ PrefabInstance:
       propertyPath: genOnStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8578320676086862629, guid: 6b3dffc87caca3748b3786f3874820d6, type: 3}
+      propertyPath: m_UseGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578320676086862629, guid: 6b3dffc87caca3748b3786f3874820d6, type: 3}
+      propertyPath: m_LayerMask.m_Bits
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578320676086862631, guid: 6b3dffc87caca3748b3786f3874820d6, type: 3}
+      propertyPath: m_UseGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578320676086862631, guid: 6b3dffc87caca3748b3786f3874820d6, type: 3}
+      propertyPath: m_LayerMask.m_Bits
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 8578320676086862635, guid: 6b3dffc87caca3748b3786f3874820d6, type: 3}
       propertyPath: m_IsActive
       value: 1
