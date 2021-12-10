@@ -82,7 +82,8 @@ public class PlayerMovement : NetworkBehaviour
 
             if(transform.position.y < -500)
             {
-                cc.Teleport(startPoint + Vector3.up * 50);
+                cc.Teleport(startPoint + Vector3.up * 5);
+                cc.Velocity = Vector3.zero;
             }
         }
 
