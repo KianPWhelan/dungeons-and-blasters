@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -8413034521662373569}
   - component: {fileID: 7022136035370337551}
   m_Layer: 0
-  m_Name: High-Power Pulse Disintegrator
+  m_Name: Harmony in Unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1408869974651563792}
+  - {fileID: 4723961011007342798}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,30 +47,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rarity: 3
   attacks:
-  - attack: {fileID: 11400000, guid: 188d008ebb9724d49ad8fb5bf32db8ae, type: 2}
-    cooldown: 0.15
+  - attack: {fileID: 11400000, guid: 30f6d94d65b6e1947848a26c5d89f2c2, type: 2}
+    cooldown: 0
     delay: 0
-    attackIsDirectlyControlled: 0
-    audio:
-    - {fileID: 7022136035370337551}
+    attackIsDirectlyControlled: 1
+    audio: []
     time: 0
     isInUse: 0
-  alternateAttackWeapon: {fileID: 8386780276031723593}
+  alternateAttackWeapon: {fileID: 2765344844572082071}
   isAlternateAttack: 0
-  useAmmo: 1
+  useAmmo: 0
   ammo:
-    clipSize: 31
-    reloadSpeed: 1.85
+    clipSize: 10
+    reloadSpeed: 2
     value: 0
     reloading: 0
   useOverheat: 0
   overheat:
     limit: 100
-    rate: 10
+    rate: 0.2
     cooldown: 4
-    rechargeRate: 0.5
+    rechargeRate: 2
     rechargeTickRate: 0.1
-    rechargeDelay: 1
+    rechargeDelay: 0.6
     value: 0
     onCooldown: 0
     isRecharging: 0
@@ -93,12 +92,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131840301544516960}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: df0e60887b63f45c7801a38fccae1f8f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 368d73de5196323468b8270ca88919b4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.55
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -182,104 +181,108 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &9177546131254073718
+--- !u!1001 &3269226100237696680
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 7840905850007402086}
     m_Modifications:
-    - target: {fileID: -8413034521662373569, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
-      propertyPath: overheat.rate
-      value: 0.7
+    - target: {fileID: -8413034521662373569, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
+      propertyPath: useAmmo
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8413034521662373569, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: -8413034521662373569, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
+      propertyPath: ammo.clipSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8413034521662373569, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
+      propertyPath: ammo.reloadSpeed
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8413034521662373569, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: isAlternateAttack
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8413034521662373569, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
-      propertyPath: overheat.cooldown
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8413034521662373569, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
-      propertyPath: alternateAttackWeapon
+    - target: {fileID: -8413034521662373569, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
+      propertyPath: attacks.Array.data[0].attack
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: -8413034521662373569, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+      objectReference: {fileID: 11400000, guid: 3319b817dcefa1c4b8d1c4af2433eab6, type: 2}
+    - target: {fileID: -8413034521662373569, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: attacks.Array.data[0].cooldown
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: -8413034521662373569, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: -8413034521662373569, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: attacks.Array.data[0].audio.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131840301544516960, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
-      propertyPath: m_Name
-      value: High-Power Pulse Disintegrator Secondary
-      objectReference: {fileID: 0}
-    - target: {fileID: 7022136035370337551, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
-      propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7022136035370337551, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: -8413034521662373569, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
+      propertyPath: attacks.Array.data[0].audio.Array.data[0]
+      value: 
+      objectReference: {fileID: 5489109860289248167}
+    - target: {fileID: 2131840301544516960, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
+      propertyPath: m_Name
+      value: HiE Seconday Weapon
       objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: 7022136035370337551, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 46e4002e4b6074361a58bbd232a2cfd5, type: 3}
+    - target: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
+    - target: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
---- !u!4 &1408869974651563792 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
+--- !u!4 &4723961011007342798 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7840905850007402086, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
-  m_PrefabInstance: {fileID: 9177546131254073718}
+  m_CorrespondingSourceObject: {fileID: 7840905850007402086, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
+  m_PrefabInstance: {fileID: 3269226100237696680}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8386780276031723593 stripped
+--- !u!114 &2765344844572082071 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -8413034521662373569, guid: 32e1665c48e8c20448b5760e778bc0bc, type: 3}
-  m_PrefabInstance: {fileID: 9177546131254073718}
+  m_CorrespondingSourceObject: {fileID: -8413034521662373569, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
+  m_PrefabInstance: {fileID: 3269226100237696680}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -287,3 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527d39da56593224aa283bf3fc4155bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &5489109860289248167 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7022136035370337551, guid: e003f42726fe8eb4080ffaa79d27962d, type: 3}
+  m_PrefabInstance: {fileID: 3269226100237696680}
+  m_PrefabAsset: {fileID: 0}
