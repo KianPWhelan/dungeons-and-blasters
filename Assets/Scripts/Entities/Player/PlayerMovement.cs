@@ -26,6 +26,8 @@ public class PlayerMovement : NetworkBehaviour
     [HideInInspector]
     public static NetworkObject localPlayer;
 
+    private Vector3 startPoint;
+
     public override void Spawned()
     {
         cc = GetComponent<NetworkCharacterController>();
@@ -37,6 +39,11 @@ public class PlayerMovement : NetworkBehaviour
     public override void FixedUpdateNetwork()
     {
         ProcessInput();
+    }
+
+    public void SetStartPoint(Vector3 startPoint)
+    {
+        this.startPoint = startPoint;
     }
 
     private void ProcessInput()
@@ -72,6 +79,11 @@ public class PlayerMovement : NetworkBehaviour
 
             yaw += input.yaw;
             pitch += input.pitch;
+
+            if(transform.position.y < -500)
+            {
+                cc.Teleport(startPoint + Vector3.up * 50);
+            }
         }
 
         if(statusEffects.GetIsStunned())

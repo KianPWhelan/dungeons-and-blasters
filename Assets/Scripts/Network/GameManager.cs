@@ -58,6 +58,7 @@ public class GameManager : NetworkBehaviour
         {
             Debug.Log(player.name);
             player.GetComponent<NetworkCharacterController>().Teleport(startPoint + Vector3.up * 50);
+            player.GetComponent<PlayerMovement>().SetStartPoint(startPoint);
         }
 
         foreach(NetworkObject dm in PlayerSpawnerScript.dms)
