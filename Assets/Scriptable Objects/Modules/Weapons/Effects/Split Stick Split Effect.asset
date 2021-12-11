@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d697dfece3c4e3140ad84a97af774b38, type: 3}
-  m_Name: Split Stick Effect
+  m_Name: Split Stick Split Effect
   m_EditorClassIdentifier: 
   damages:
-  - {fileID: 11400000, guid: d484d3f7571f267499f534c863c1aaf5, type: 2}
+  - {fileID: 11400000, guid: 16ce6c8ee6ee4bc45aa4fd1831f91375, type: 2}
   isStatusEffect: 0
   interval: {fileID: 0}
   duration: {fileID: 0}

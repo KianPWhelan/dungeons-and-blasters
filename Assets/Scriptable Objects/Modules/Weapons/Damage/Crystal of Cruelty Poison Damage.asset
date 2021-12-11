@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Crystal of Cruelty Poison Damage
   m_EditorClassIdentifier: 
   damageType: {fileID: 11400000, guid: c06588acec91f354e97ab5a731754ecf, type: 2}
-  damage: 18
+  damage: 10
