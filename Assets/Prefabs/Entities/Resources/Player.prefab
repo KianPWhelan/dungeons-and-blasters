@@ -659,7 +659,7 @@ MonoBehaviour:
     Acceleration: 50
     Braking: 20
     BaseJumpImpulse: 7
-    MaxSpeed: 13.5
+    MaxSpeed: 14
     MaxSlope: 60
     MaxSlopeSpeed: 13.5
     _gravity: {x: 0, y: -15.5, z: 0}

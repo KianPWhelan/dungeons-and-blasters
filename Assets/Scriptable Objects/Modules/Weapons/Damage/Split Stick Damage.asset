@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Split Stick Damage
   m_EditorClassIdentifier: 
   damageType: {fileID: 11400000, guid: 7bbd629231f5f7b45b94cf12bfaee318, type: 2}
-  damage: 8
+  damage: 16

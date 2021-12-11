@@ -132,10 +132,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  _validTag: 
-  _damageMod: 0
-  _destination: {x: 0, y: 0, z: 0}
-  _useDestination: 0
+  validTag: 
+  damageMod: 0
+  destination: {x: 0, y: 0, z: 0}
+  useDestination: 0
   settings:
     attack: {fileID: 11400000, guid: 7056074493124e24f8f21717709f2533, type: 2}
     subAttacks:
@@ -150,7 +150,7 @@ MonoBehaviour:
     worldSpaceRotation: 1
     reevaluateDestinationAfterOffset: 0
     spread: 0
-    length: 1
+    length: 3
     hitMask:
       serializedVersion: 2
       m_Bits: 1
@@ -158,10 +158,10 @@ MonoBehaviour:
     numPierces: 100
     canMultiHitTarget: 0
     multiHitCooldown: 0
-    ignoreObstacles: 1
+    ignoreObstacles: 0
     applyEffectsOnEnd: 0
-    lifetime: 1.5
-    speed: 60
+    lifetime: 5
+    speed: 40
     gravityStrength: 0
     homing: 0
     homingStrength: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HiE Secondary Damage
   m_EditorClassIdentifier: 
   damageType: {fileID: 11400000, guid: 3b025aead7307684698d3beb5394ac8b, type: 2}
-  damage: 10
+  damage: 20

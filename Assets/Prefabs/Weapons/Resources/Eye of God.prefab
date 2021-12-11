@@ -50,23 +50,29 @@ MonoBehaviour:
   rarity: 4
   attacks:
   - attack: {fileID: 11400000, guid: ce800a1c0ae200c439d007d1d5b49f15, type: 2}
-    cooldown: 2.1
+    cooldown: 1.85
     delay: 0
+    attackIsDirectlyControlled: 0
     audio:
     - {fileID: -6404838742394968745}
     time: 0
+    isInUse: 0
   - attack: {fileID: 11400000, guid: 6af39e9f290c17f4e9ea9175b35a7797, type: 2}
-    cooldown: 2.1
-    delay: 0.5
+    cooldown: 1.85
+    delay: 0.15
+    attackIsDirectlyControlled: 0
     audio:
     - {fileID: 5692059013115608607}
     - {fileID: -7117506324849954799}
     - {fileID: -7587728636488343821}
     time: 0
+    isInUse: 0
+  alternateAttackWeapon: {fileID: 0}
+  isAlternateAttack: 0
   useAmmo: 1
   ammo:
     clipSize: 6
-    reloadSpeed: 2.5
+    reloadSpeed: 2.7
     value: 0
     reloading: 0
   useOverheat: 0
@@ -90,7 +96,8 @@ MonoBehaviour:
     decayTickRate: 0
     value: 0
   playAudioForEachAttack: 1
-  spinDecaying: 0
+  owner: {fileID: 0}
+  index: 0
 --- !u!82 &5692059013115608607
 AudioSource:
   m_ObjectHideFlags: 0
