@@ -161,7 +161,7 @@ MonoBehaviour:
     ignoreObstacles: 0
     applyEffectsOnEnd: 0
     lifetime: 8
-    speed: 12
+    speed: 24
     gravityStrength: 0.65
     homing: 0
     homingStrength: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Machine Gun Damage
   m_EditorClassIdentifier: 
   damageType: {fileID: 11400000, guid: fdfbd2e96b6024647b4001a2ed60c3bc, type: 2}
-  damage: 12
+  damage: 8.5

@@ -140,8 +140,8 @@ MonoBehaviour:
     attack: {fileID: 11400000, guid: 43d60c329500bd44c9ddb7a106165abe, type: 2}
     subAttacks:
     - {fileID: 11400000, guid: eb9cada7e2e39a3438ccab53b26123fe, type: 2}
-    subAttacksOnEnd: 0
-    subAttacksOnHit: 0
+    subAttacksOnEnd: 1
+    subAttacksOnHit: 1
     subAttacksAtSurfaceNormal: 0
     subAttacksCanOnlyProcOnce: 0
     offset: {x: 0, y: 0, z: 1}
