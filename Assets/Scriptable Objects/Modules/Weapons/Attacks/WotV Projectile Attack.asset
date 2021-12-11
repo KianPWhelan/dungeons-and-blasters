@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
-  m_Name: The Eye of God Attack
+  m_Name: WotV Projectile Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 8523135143678805610, guid: f9507bc43b157c94fa707f28b5d4711d, type: 3}
+  attack: {fileID: 8523135143678805610, guid: 397325c6c2eb4cc468678a41dd11e819, type: 3}
   effects:
-  - {fileID: 11400000, guid: 0f7678b163e49a74b94499acb2ce442b, type: 2}
-  - {fileID: 11400000, guid: 4f7b0dcfed8be3b43b85645db4f19781, type: 2}
+  - {fileID: 11400000, guid: 570d4b353a7d09141aef0482380a34ac, type: 2}
   useOverwriteTag: 0
   overwriteTag: 
   canCrit: 0
