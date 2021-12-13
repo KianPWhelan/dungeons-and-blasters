@@ -235,7 +235,7 @@ MonoBehaviour:
     multiHitCooldown: 0
     ignoreObstacles: 1
     applyEffectsOnEnd: 0
-    lifetime: 1.5
+    lifetime: 0.5
     gravityStrength: 0
   _networkedVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &-2129166209661966820

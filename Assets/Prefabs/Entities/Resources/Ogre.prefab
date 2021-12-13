@@ -469,9 +469,9 @@ MonoBehaviour:
   visionRange: 75
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:
-  - 35
+  - 40
   aggroRange: 50
-  desiredRange: 30
+  desiredRange: 40
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
