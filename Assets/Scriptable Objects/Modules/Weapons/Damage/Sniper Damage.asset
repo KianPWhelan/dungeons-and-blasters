@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Sniper Damage
   m_EditorClassIdentifier: 
   damageType: {fileID: 0}
-  damage: 20
+  damage: 40

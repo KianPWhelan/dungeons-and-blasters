@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Glacial Shard Damage
   m_EditorClassIdentifier: 
   damageType: {fileID: 11400000, guid: 488086799d80e4b47a58a81a783c3631, type: 2}
-  damage: 17
+  damage: 34

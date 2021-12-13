@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pew Staff Damage
   m_EditorClassIdentifier: 
   damageType: {fileID: 11400000, guid: 7bbd629231f5f7b45b94cf12bfaee318, type: 2}
-  damage: 6
+  damage: 12

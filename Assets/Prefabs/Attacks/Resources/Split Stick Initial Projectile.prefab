@@ -156,14 +156,14 @@ MonoBehaviour:
     hitMask:
       serializedVersion: 2
       m_Bits: 1
-    infinitePierce: 1
+    infinitePierce: 0
     numPierces: 0
-    canMultiHitTarget: 1
+    canMultiHitTarget: 0
     multiHitCooldown: 0
     ignoreObstacles: 0
     applyEffectsOnEnd: 0
     lifetime: 0.5
-    speed: 15
+    speed: 10
     gravityStrength: 0
     homing: 0
     homingStrength: 0

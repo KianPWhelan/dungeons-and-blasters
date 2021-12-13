@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 1359586224317021904}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 2253282343609411505}
   m_RootOrder: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
     subAttacksAtSurfaceNormal: 0
     offset: {x: 0, y: 0, z: 0.2}
     followOwner: 0
-    radius: 1
+    radius: 1.5
     hitMask:
       serializedVersion: 2
       m_Bits: 1

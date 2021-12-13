@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Fire Status Damage
   m_EditorClassIdentifier: 
   damageType: {fileID: 11400000, guid: 2c7a0c57032a63d4c88167b0edf2fc64, type: 2}
-  damage: 7
+  damage: 14

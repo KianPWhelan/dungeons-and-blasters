@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: The Eye of God Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 3807866404001653414, guid: 4f089237983b3ea40bd2feab446b3a9e, type: 3}
+  attack: {fileID: 8523135143678805610, guid: f9507bc43b157c94fa707f28b5d4711d, type: 3}
   effects:
   - {fileID: 11400000, guid: 0f7678b163e49a74b94499acb2ce442b, type: 2}
   - {fileID: 11400000, guid: 4f7b0dcfed8be3b43b85645db4f19781, type: 2}

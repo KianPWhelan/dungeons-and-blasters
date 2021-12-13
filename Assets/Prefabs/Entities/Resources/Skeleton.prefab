@@ -844,7 +844,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.75
-  m_Speed: 13
+  m_Speed: 11.2
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 1000
@@ -959,7 +959,7 @@ MonoBehaviour:
   resistances: []
   isDead: 0
   startingHealth: 0
-  _health: 30
+  _health: 60
 --- !u!114 &3727592679696396437
 MonoBehaviour:
   m_ObjectHideFlags: 0
