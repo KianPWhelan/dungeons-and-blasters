@@ -139,11 +139,12 @@ MonoBehaviour:
   useDestination: 0
   settings:
     attack: {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
-    subAttacks: []
-    subAttacksOnEnd: 0
+    subAttacks:
+    - {fileID: 11400000, guid: d5ace59d71fa7304db6a12f66bc42552, type: 2}
+    subAttacksOnEnd: 1
     subAttacksOnHit: 0
-    subAttacksAtSurfaceNormal: 0
-    subAttacksCanOnlyProcOnce: 0
+    subAttacksAtSurfaceNormal: 1
+    subAttacksCanOnlyProcOnce: 1
     offset: {x: 0, y: 0, z: 3}
     ignoreRotationForOffset: 0
     rotationOffset: {x: 0, y: 0, z: 0}

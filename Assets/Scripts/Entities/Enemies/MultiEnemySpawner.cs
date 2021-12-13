@@ -17,6 +17,8 @@ public class MultiEnemySpawner : EnemyGeneric
             return;
         }
 
+        var enemyManager = FindObjectOfType<EnemyManager>();
+
         //string name = enemyToSpawn.name;
         List<EnemyGeneric> newEnemies = new List<EnemyGeneric>();
 
@@ -24,7 +26,7 @@ public class MultiEnemySpawner : EnemyGeneric
         {
             var enemy = Runner.Spawn(enemyToSpawn, transform.position, Quaternion.identity);
             newEnemies.Add(enemy.GetComponent<EnemyGeneric>());
-            EnemyManager.enemies.Add(enemy);
+            enemyManager.AddEnemy(enemy);
         }
 
         StartCoroutine(DeclutterNextFrame(newEnemies));

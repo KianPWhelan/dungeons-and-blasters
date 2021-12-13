@@ -23,6 +23,8 @@ public class UnitSelector : MonoBehaviour
     [HideInInspector]
     public bool active;
 
+    private EnemyManager enemyManager;
+
     public Texture2D WhiteTexture
     {
         get
@@ -41,7 +43,7 @@ public class UnitSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //enemyManager = FindObjectOfType<EnemyManager>();
     }
 
     // Update is called once per frame

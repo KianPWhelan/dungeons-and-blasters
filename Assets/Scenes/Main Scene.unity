@@ -315,6 +315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 324928589}
   - component: {fileID: 324928588}
+  - component: {fileID: 324928590}
   m_Layer: 0
   m_Name: Enemy Manager
   m_TagString: Untagged
@@ -334,6 +335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718f7c3b5113b7d48b8b23eae3934fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  enemies: []
 --- !u!4 &324928589
 Transform:
   m_ObjectHideFlags: 0
@@ -348,6 +351,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &324928590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324928587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AoiMode: 0
+  DefaultPropertyGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AoiPosition: {fileID: 0}
+  Flags: 2561
+  NetworkGuid:
+    RawGuidValue: 80ce7ef8b8a64eb582f6b5a453072acf
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 324928588}
+  SimulationBehaviours: []
 --- !u!1 &385774556
 GameObject:
   m_ObjectHideFlags: 0

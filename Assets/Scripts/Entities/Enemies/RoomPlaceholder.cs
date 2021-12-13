@@ -14,9 +14,12 @@ public class RoomPlaceholder : MonoBehaviour
 
     private NetworkRunner runner;
 
+    private EnemyManager enemyManager;
+
     public void Start()
     {
         runner = FindObjectOfType<NetworkRunner>();
+        enemyManager = FindObjectOfType<EnemyManager>();
     }
 
     public void SpawnEnemies()
@@ -29,7 +32,7 @@ public class RoomPlaceholder : MonoBehaviour
         for(int i = 0; i < numToSpawn; i++)
         {
             var newEnemy = runner.Spawn(enemy, transform.position, Quaternion.identity);
-            EnemyManager.enemies.Add(newEnemy);
+            enemyManager.AddEnemy(newEnemy);
         }
 
         Destroy(gameObject);
