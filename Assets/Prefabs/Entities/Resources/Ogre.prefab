@@ -469,9 +469,9 @@ MonoBehaviour:
   visionRange: 75
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:
-  - 8
-  aggroRange: 20
-  desiredRange: 0
+  - 35
+  aggroRange: 50
+  desiredRange: 30
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
@@ -505,7 +505,7 @@ MonoBehaviour:
   resistances: []
   isDead: 0
   startingHealth: 0
-  _health: 400
+  _health: 750
 --- !u!114 &5002929920589353482
 MonoBehaviour:
   m_ObjectHideFlags: 0

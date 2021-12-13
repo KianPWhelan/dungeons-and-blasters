@@ -252,5 +252,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabSound: {fileID: 6137451349687365925, guid: c629cbc65d32d7f4d98619cad8e84341, type: 3}
   destroyWhenDone: 0
-  soundPrefabIsChild: 1
+  soundPrefabIsChild: 0
   pitchRandomMultiplier: 1
