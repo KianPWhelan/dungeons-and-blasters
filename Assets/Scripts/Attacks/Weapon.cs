@@ -353,7 +353,14 @@ public class Weapon : MonoBehaviour
 
     private void OnGUI()
     {
-        if(!owner.HasInputAuthority)
+        try
+        {
+            if (owner == null || !owner.HasInputAuthority)
+            {
+                return;
+            }
+        }
+        catch
         {
             return;
         }
