@@ -94,7 +94,16 @@ namespace Com.OfTomorrowInc.DMShooter
         /// </summary>
         public void Connect()
         {
-            SceneManager.LoadScene("Main Scene");
+            if(testLevel)
+            {
+                SceneManager.LoadScene("Test Scene");
+            }
+
+            else
+            {
+                SceneManager.LoadScene("Main Scene");
+            }
+            
             //progressLabel.SetActive(true);
             //controlPanel.SetActive(false);
 

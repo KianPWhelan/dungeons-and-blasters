@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 2015800446243150970}
   - component: {fileID: 3718568429739962849}
   - component: {fileID: 6816392553112776100}
+  - component: {fileID: 8086668204543537035}
   m_Layer: 0
   m_Name: Ogre
   m_TagString: Enemy
@@ -638,9 +639,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  BroadRadius: 0
+  BroadRadius: 5.5774965
   Offset: {x: 0, y: 0, z: 0}
-  Hitboxes: []
+  Hitboxes:
+  - {fileID: 894117301171691986}
+  - {fileID: 3466475689198451860}
+--- !u!136 &8086668204543537035
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002929920589353525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1 &5412309693851755267
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +705,7 @@ MonoBehaviour:
   SphereRadius: 0
   BoxExtents: {x: 0.6, y: 0.5, z: 0.4}
   Offset: {x: 0, y: 4.7, z: 0}
-  Root: {fileID: 0}
+  Root: {fileID: 6816392553112776100}
 --- !u!1 &7084687497412238649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1088,7 @@ MonoBehaviour:
   SphereRadius: 0
   BoxExtents: {x: 1, y: 2.1, z: 0.4}
   Offset: {x: 0, y: 2.1, z: 0}
-  Root: {fileID: 0}
+  Root: {fileID: 6816392553112776100}
 --- !u!1 &8941645569047403497
 GameObject:
   m_ObjectHideFlags: 0

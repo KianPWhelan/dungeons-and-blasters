@@ -118,10 +118,15 @@ public class Health : NetworkBehaviour
             statusMod = statusEffects.GetDamageRecievedMod();
         }
 
-        if(damageType != null && resistanceStorage.ContainsKey(damageType))
+        if (damageType != null && resistanceStorage.ContainsKey(damageType))
         {
             resistanceMod = resistanceStorage[damageType];
+        }
+
+        if(damageType != null)
+        { 
             resistanceMod *= statusEffects.GetResistanceMod(damageType);
+            Debug.Log("Resistance Mod: " + resistanceMod);
         }
 
         health += amount * statusMod * resistanceMod;

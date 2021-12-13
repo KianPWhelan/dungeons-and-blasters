@@ -128,7 +128,7 @@ public class AreaAttack : AttackComponent
     private void UpdateAttack()
     {
         List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
-        Runner.LagCompensation.OverlapSphere(transform.position, settings.radius, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+        Runner.LagCompensation.OverlapSphere(transform.position, settings.radius, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
         ProcessHits(hits);
 
         if (settings.gravityStrength > 0)
