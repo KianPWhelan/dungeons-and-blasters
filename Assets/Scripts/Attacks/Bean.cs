@@ -297,7 +297,7 @@ public class Bean : AttackComponent
 
         List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
         //Debug.Log("Position" + transform.position + " Rotation" + transform.rotation.eulerAngles);
-        Runner.LagCompensation.RaycastAll(transform.position, transform.forward, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+        Runner.LagCompensation.RaycastAll(transform.position, transform.forward, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
         var point = ProcessHits(hits);
 
         if(doSubAttacksOnTip)
@@ -508,7 +508,7 @@ public class Bean : AttackComponent
         lastForward = hit.Point + reflection * settings.length;
         List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
         //Debug.Log("Position" + transform.position + " Rotation" + transform.rotation.eulerAngles);
-        Runner.LagCompensation.RaycastAll(hit.Point + 0.2f * reflection, reflection, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+        Runner.LagCompensation.RaycastAll(hit.Point + 0.2f * reflection, reflection, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
         var point = ProcessHits(hits);
         return point;
     }

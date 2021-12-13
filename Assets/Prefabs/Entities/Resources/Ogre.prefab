@@ -638,9 +638,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  BroadRadius: 0
+  BroadRadius: 5.5774965
   Offset: {x: 0, y: 0, z: 0}
-  Hitboxes: []
+  Hitboxes:
+  - {fileID: 894117301171691986}
+  - {fileID: 3466475689198451860}
 --- !u!1 &5412309693851755267
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +690,7 @@ MonoBehaviour:
   SphereRadius: 0
   BoxExtents: {x: 0.6, y: 0.5, z: 0.4}
   Offset: {x: 0, y: 4.7, z: 0}
-  Root: {fileID: 0}
+  Root: {fileID: 6816392553112776100}
 --- !u!1 &7084687497412238649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1073,7 @@ MonoBehaviour:
   SphereRadius: 0
   BoxExtents: {x: 1, y: 2.1, z: 0.4}
   Offset: {x: 0, y: 2.1, z: 0}
-  Root: {fileID: 0}
+  Root: {fileID: 6816392553112776100}
 --- !u!1 &8941645569047403497
 GameObject:
   m_ObjectHideFlags: 0
