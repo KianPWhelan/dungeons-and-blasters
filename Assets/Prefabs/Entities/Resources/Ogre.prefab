@@ -538,6 +538,7 @@ MonoBehaviour:
   - {fileID: 6799523326527276700, guid: 32adb5e357b064f45bcd9b4b218624ea, type: 3}
   targetTags:
   - Player
+  - Player
   isPlayer: 0
   cam: {fileID: 0}
 --- !u!114 &6121908949935950882

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using Photon.Pun;
 using Fusion;
 
 [CreateAssetMenu(menuName = "Modules/AI/StandardAI")]
@@ -16,6 +15,11 @@ public class StandardAI : EnemyAI
         TryAndAttackWithAllWeapons(self, target, enemyGeneric);
 
         if(enemyGeneric.canAggro && target != null)
+        {
+            Aggro(self, target, enemyGeneric);
+        }
+
+        else if(enemyGeneric.isAggro && target != null)
         {
             Aggro(self, target, enemyGeneric);
         }
@@ -58,6 +62,7 @@ public class StandardAI : EnemyAI
     {
         float dist = Vector3.Distance(self.transform.position, target.transform.position);
         enemyGeneric.isAggro = true;
+        Debug.Log(dist);
 
         if (dist > enemyGeneric.desiredRange)
         {

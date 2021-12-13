@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718f7c3b5113b7d48b8b23eae3934fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
 --- !u!4 &324928589
 Transform:
   m_ObjectHideFlags: 0
@@ -369,7 +370,8 @@ MonoBehaviour:
   NetworkGuid:
     RawGuidValue: f24a47a996514375ad7374901a4bd802
   NestedObjects: []
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 324928588}
   SimulationBehaviours: []
 --- !u!1 &385774556
 GameObject:
@@ -656,7 +658,7 @@ PrefabInstance:
     - target: {fileID: 5002929920589353484, guid: bde9c07b022f0314289c7c6a26b22679, type: 3}
       propertyPath: aiModule
       value: 
-      objectReference: {fileID: 11400000, guid: 967d28e58f26d8c4d9182fcac65f62b7, type: 2}
+      objectReference: {fileID: 11400000, guid: a847dcfa4927ee84dabe21e6d954a71e, type: 2}
     - target: {fileID: 5002929920589353486, guid: bde9c07b022f0314289c7c6a26b22679, type: 3}
       propertyPath: m_RootOrder
       value: 1

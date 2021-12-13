@@ -46,7 +46,7 @@ public class EnemyManager : NetworkBehaviour
         foreach (EnemyGeneric e in temp)
         {
             enemies.Add(e.GetComponent<NetworkObject>());
-            Debug.LogError("Adding " + e.name);
+            Debug.Log("Adding " + e.name);
         }
     }
 }

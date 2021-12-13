@@ -220,7 +220,7 @@ public class EnemyGeneric : NetworkBehaviour
             return;
         }
 
-        Debug.Log("Adding to queue");
+        //Debug.Log("Adding to queue");
         //if()
         //{
             destinationQueue.Enqueue(position);
@@ -235,7 +235,7 @@ public class EnemyGeneric : NetworkBehaviour
             return;
         }
 
-        Debug.Log("Clearing queue");
+        //Debug.Log("Clearing queue");
         //if(photonView.IsMine)
         //{
             destinationQueue.Clear();
@@ -250,7 +250,7 @@ public class EnemyGeneric : NetworkBehaviour
             return;
         }
 
-        Debug.Log("Resetting path");
+        //Debug.Log("Resetting path");
         agent.ResetPath();
         //photonView.RPC("SetIsMoving", RpcTarget.All, false);
         moving = false;
@@ -264,7 +264,7 @@ public class EnemyGeneric : NetworkBehaviour
             return;
         }
 
-        Debug.Log("Following " + target.gameObject.name);
+        //Debug.Log("Following " + target.gameObject.name);
         followTarget = target.gameObject;
         //photonView.RPC("SetIsFollowing", RpcTarget.All, true);
         isFollowing = true;
@@ -279,7 +279,7 @@ public class EnemyGeneric : NetworkBehaviour
             return;
         }
 
-        Debug.Log("Canceling follow");
+        //Debug.Log("Canceling follow");
         //photonView.RPC("SetIsFollowing", RpcTarget.All, false);
         //photonView.RPC("SetIsMoving", RpcTarget.All, false);
         isFollowing = false;
