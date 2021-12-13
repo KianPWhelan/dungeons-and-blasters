@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7411641805199110818}
   - component: {fileID: -87548408096170912}
   m_Layer: 0
-  m_Name: Skeletons
+  m_Name: Skeleton Elites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,8 +82,8 @@ MonoBehaviour:
     _value: 0
   _networkedMoving:
     _value: 0
-  enemyToSpawn: {fileID: 1818002960377947092, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
-  numToSpawn: 4
+  enemyToSpawn: {fileID: 1818002960377947092, guid: 220b4b50d79cfe44791f846434f4c086, type: 3}
+  numToSpawn: 3
 --- !u!114 &-87548408096170912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   AoiPosition: {fileID: 0}
   Flags: 2305
   NetworkGuid:
-    RawGuidValue: 01488855835e9dc47aa8b6ab8c92c1f7
+    RawGuidValue: 84791315a11c3fb46ae93d5be4e53949
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 7411641805199110818}
