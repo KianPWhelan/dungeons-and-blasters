@@ -19,8 +19,9 @@ MonoBehaviour:
   duration: {fileID: 11400000, guid: cd6f4a88261db1f47b61aee025895b4f, type: 2}
   stacks: 5
   refreshDuration: 1
-  stackAmountIsRequiredForApplication: 1
+  stackAmountIsRequiredForApplication: 0
   effectStackApplicationData: []
+  onlyApplyOnce: 0
   recursiveEffects: []
   useOverwriteTag: 0
   overwriteTag: 
