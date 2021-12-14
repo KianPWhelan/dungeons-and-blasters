@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Necromancer Drain Field Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 0}
+  attack: {fileID: 6410624834205609692, guid: 834aa71643c66434d9cb02fbad2119d6, type: 3}
   effects:
   - {fileID: 11400000, guid: 37016b3b1d4b153479983e7587c7e3e0, type: 2}
   useOverwriteTag: 0
   overwriteTag: 
   canCrit: 0
   critOnCritBoxesOnly: 1
-  critChance: 1000
+  critChance: 1
   critMultiplier: 1.5
   knockbackStrength: 0
