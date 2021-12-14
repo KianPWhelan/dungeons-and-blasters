@@ -892,8 +892,9 @@ MonoBehaviour:
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:
   - 25
-  aggroRange: 25
-  desiredRange: 25
+  - 100
+  aggroRange: 100
+  desiredRange: 100
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
@@ -935,7 +936,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPrefabs:
   - {fileID: 6799523326527276700, guid: a118d5b48e8f45540b6f67186e3bf340, type: 3}
+  - {fileID: 1904180190962700800, guid: 7c187e5228818db478f97c570c48430b, type: 3}
   targetTags:
+  - Player
   - Player
   isPlayer: 0
   cam: {fileID: 0}
