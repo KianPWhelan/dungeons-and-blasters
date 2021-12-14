@@ -149,7 +149,7 @@ MonoBehaviour:
     worldSpaceRotation: 0
     reevaluateDestinationAfterOffset: 0
     spread: 1.5
-    length: 3
+    length: 1
     hitMask:
       serializedVersion: 2
       m_Bits: 1
