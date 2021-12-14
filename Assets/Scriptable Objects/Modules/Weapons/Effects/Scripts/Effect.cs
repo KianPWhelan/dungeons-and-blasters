@@ -27,6 +27,15 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     [Tooltip("When status effect is applied, resets duration if already applied (will reset duration of stack)")]
     public bool refreshDuration;
 
+    [Tooltip("If this is a status effect, will make this effect not apply its damage/recursive effects until <Num Stacks For Application> stacks have been applied")]
+    public bool stackAmountIsRequiredForApplication;
+
+    [Tooltip("List of status effects and how many of them are required if Stack Amount Is Required For Application is set to true")]
+    public List<StackApplicationData> effectStackApplicationData = new List<StackApplicationData>();
+
+    [Tooltip("If status effect, will remove itself from the target after damage/recursive effects are applied once")]
+    public bool onlyApplyOnce;
+
     [Tooltip("Additional effects that this effect applies")]
     [SerializeField]
     public List<Effect> recursiveEffects = new List<Effect>();
@@ -41,6 +50,19 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
 
     private bool warningDisplayed;
 
+    [System.Serializable]
+    public class StackApplicationData
+    {
+        [Tooltip("The type of status effects required")]
+        public Effect effect;
+
+        [Tooltip("How many stacks are needed")]
+        public int numStacksForApplication;
+
+        [Tooltip("When the main effect relying on this effect applies its damage/recursive effect, remove all stacks of this effect from the target")]
+        public bool removeEffectWhenTriggered;
+    }
+
     /// <summary>
     /// Applies all of the logic relating to the effect on the target
     /// </summary>
@@ -48,7 +70,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     /// <param name="health"></param>
     /// <param name="statusEffects"></param>
     /// <param name="targetTag"></param>
-    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false)
+    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false, float id = -1)
     {
         var tag = targetTag;
 
@@ -82,6 +104,11 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
             return;
         }
 
+        if(stackAmountIsRequiredForApplication && !HasEnoughStacks(statusEffects))
+        {
+            return;
+        }
+
         if (health != null && (target.tag == tag || tag == "none"))
         {
             // Apply damage first
@@ -100,6 +127,19 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
         foreach (Effect effect in recursiveEffects)
         {
             effect.ApplyEffect(target, health, statusEffects, location, rotation, tag);
+        }
+
+        if(isStatusEffect && onlyApplyOnce)
+        {
+            statusEffects.RemoveEffect(this, id);
+
+            if(stackAmountIsRequiredForApplication)
+            {
+                foreach(StackApplicationData data in effectStackApplicationData)
+                {
+                    statusEffects.RemoveEffect(data.effect, removeAllStacks: true);
+                }
+            }
         }
     }
 
@@ -133,5 +173,18 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     public void OnAfterDeserialize()
     {
         warningDisplayed = false;
+    }
+
+    public bool HasEnoughStacks(StatusEffects statusEffects)
+    {
+        foreach(StackApplicationData data in effectStackApplicationData)
+        {
+            if(statusEffects.GetStacks(data.effect) < data.numStacksForApplication)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

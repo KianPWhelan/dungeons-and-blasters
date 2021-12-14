@@ -18,6 +18,8 @@ public class StatusEffects : MonoBehaviour
 
     private int idCounter = 0;
 
+    private List<Identifier> remove;
+
     [Serializable]
     private class Identifier
     {
@@ -126,6 +128,21 @@ public class StatusEffects : MonoBehaviour
         return false;
     }
 
+    public int GetStacks(Effect effect)
+    {
+        int count = 0;
+
+        foreach(Identifier status in statusEffects)
+        {
+            if(status.effect == effect)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
     public void RefreshDuration(Effect effect)
     {
         foreach(Identifier status in statusEffects)
@@ -133,6 +150,61 @@ public class StatusEffects : MonoBehaviour
             if(status.effect == effect)
             {
                 effectDetails[status].durationTime = Time.time;
+            }
+        }
+    }
+
+    public void RemoveEffect(Effect effect, float id = -1, bool removeAllStacks = false)
+    {
+        if(removeAllStacks)
+        {
+            foreach (Identifier status in statusEffects)
+            {
+                if (status.effect == effect)
+                {
+                    if (remove == null)
+                    {
+                        remove = new List<Identifier>();
+                    }
+
+                    remove.Add(status);
+                }
+            }
+        }
+
+        else if(id == -1)
+        {
+            foreach(Identifier status in statusEffects)
+            {
+                if(status.effect == effect)
+                {
+                    if(remove == null)
+                    {
+                        remove = new List<Identifier>();
+                    }
+
+                    remove.Add(status);
+
+                    return;
+                }
+            }
+        }
+
+        else
+        {
+            foreach (Identifier status in statusEffects)
+            {
+                if (status.effect == effect && status.id == id)
+                {
+                    if (remove == null)
+                    {
+                        remove = new List<Identifier>();
+                    }
+
+                    remove.Add(status);
+
+                    return;
+                }
             }
         }
     }
@@ -227,7 +299,7 @@ public class StatusEffects : MonoBehaviour
 
     private void ProcessStatusEffects()
     {
-        List<Identifier> remove = null;
+        remove = null;
 
         foreach (Identifier effect in statusEffects)
         {
@@ -249,7 +321,7 @@ public class StatusEffects : MonoBehaviour
             {
                 if(!immunities.Contains(effect.effect))
                 {
-                    effect.effect.ApplyEffect(gameObject, gameObject.GetComponent<Health>(), this, transform.position, transform.rotation, effectDetails[effect].targetTag, effectDetails[effect].damageMod, true);
+                    effect.effect.ApplyEffect(gameObject, gameObject.GetComponent<Health>(), this, transform.position, transform.rotation, effectDetails[effect].targetTag, effectDetails[effect].damageMod, true, effect.id);
                     effectDetails[effect].intervalTime = currentTime;
                 }
             }

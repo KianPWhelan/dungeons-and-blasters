@@ -658,7 +658,7 @@ PrefabInstance:
     - target: {fileID: 5002929920589353484, guid: bde9c07b022f0314289c7c6a26b22679, type: 3}
       propertyPath: aiModule
       value: 
-      objectReference: {fileID: 11400000, guid: a847dcfa4927ee84dabe21e6d954a71e, type: 2}
+      objectReference: {fileID: 11400000, guid: 967d28e58f26d8c4d9182fcac65f62b7, type: 2}
     - target: {fileID: 5002929920589353486, guid: bde9c07b022f0314289c7c6a26b22679, type: 3}
       propertyPath: m_RootOrder
       value: 1
