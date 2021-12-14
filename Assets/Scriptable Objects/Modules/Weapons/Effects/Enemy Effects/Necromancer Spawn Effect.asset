@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba271dd823cc50442be50abf30f4ed39, type: 3}
-  m_Name: New Spawn Effect
+  m_Name: Necromancer Spawn Effect
   m_EditorClassIdentifier: 
   damages: []
   isStatusEffect: 0
-  interval: {fileID: 11400000, guid: 58f9c3d8207c6e64aaf3d0a5e31229ed, type: 2}
-  duration: {fileID: 11400000, guid: b4dfb7de97a992842b5446718f46573b, type: 2}
+  interval: {fileID: 0}
+  duration: {fileID: 0}
   stacks: 0
   refreshDuration: 0
   stackAmountIsRequiredForApplication: 0
