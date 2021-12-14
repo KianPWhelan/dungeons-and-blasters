@@ -36,9 +36,11 @@ public class AreaAttack : AttackComponent
         public Attack attack;
 
         public List<Attack> subAttacks = new List<Attack>();
+        public List<float> subAttackDelays = new List<float>();
         public bool subAttacksOnEnd;
         public bool subAttacksOnHit;
         public bool subAttacksAtSurfaceNormal;
+        public bool subAttacksCanOnlyProcOnce;
 
         public Vector3 offset;
 
@@ -58,6 +60,7 @@ public class AreaAttack : AttackComponent
     private Vector3 hitPoint;
     private Vector3 hitNormal;
     private NetworkObject owner;
+    private bool subAttacksHaveProced;
 
     public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0, bool isAlt = false)
     {
@@ -235,18 +238,36 @@ public class AreaAttack : AttackComponent
 
     private void SpawnSubAttacks()
     {
+        if (subAttacksHaveProced)
+        {
+            return;
+        }
+
+        subAttacksHaveProced = true;
+
+        int i = 0;
+
         foreach (Attack attack in settings.subAttacks)
         {
+            float delay = 0f;
+
+            if (settings.subAttackDelays.Count > i)
+            {
+                delay = settings.subAttackDelays[i];
+            }
+
             if (settings.subAttacksAtSurfaceNormal)
             {
                 Debug.Log("Spawning sub attacks");
-                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f);
+                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, delay, owner: owner);
             }
 
             else
             {
-                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f);
+                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: delay, owner: owner);
             }
+
+            i++;
         }
     }
 

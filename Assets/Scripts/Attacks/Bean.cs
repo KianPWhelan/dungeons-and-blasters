@@ -24,6 +24,7 @@ public class Bean : AttackComponent
         public Attack attack;
 
         public List<Attack> subAttacks = new List<Attack>();
+        public List<float> subAttackDelays = new List<float>();
         public bool subAttacksOnEnd;
         public bool subAttacksOnHit;
         public bool subAttacksOnTip;
@@ -583,18 +584,29 @@ public class Bean : AttackComponent
         }
 
         subAttacksHaveProced = true;
+        int i = 0;
+        
         foreach (Attack attack in settings.subAttacks)
         {
+            float delay = 0f;
+
+            if (settings.subAttackDelays.Count > i)
+            {
+                delay = settings.subAttackDelays[i];
+            }
+
             if (settings.subAttacksAtSurfaceNormal)
             {
                 Debug.Log("Spawning sub attacks");
-                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f);
+                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, delay, owner: owner);
             }
 
             else
             {
-                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f);
+                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: delay, owner: owner);
             }
+
+            i++;
         }
     }
 

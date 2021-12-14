@@ -57,6 +57,7 @@ public class Projectile : AttackComponent
 		public Attack attack;
 
 		public List<Attack> subAttacks = new List<Attack>();
+		public List<float> subAttackDelays = new List<float>();
 		public bool subAttacksOnEnd;
 		public bool subAttacksOnHit;
 		public bool subAttacksAtSurfaceNormal;
@@ -342,18 +343,29 @@ public class Projectile : AttackComponent
         }
 
 		subAttacksHaveProced = true;
+		int i = 0;
+
 		foreach(Attack attack in settings.subAttacks)
         {
-			if(settings.subAttacksAtSurfaceNormal)
+			float delay = 0f;
+
+			if (settings.subAttackDelays.Count > i)
+			{
+				delay = settings.subAttackDelays[i];
+			}
+
+			if (settings.subAttacksAtSurfaceNormal)
             {
 				Debug.Log("Spawning sub attacks");
-				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f, owner: owner);
+				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, delay, owner: owner);
 			}
 
 			else
             {
-				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f, destination: Vector3.negativeInfinity, owner: owner);
+				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: delay, destination: Vector3.negativeInfinity, owner: owner);
 			}
+
+			i++;
         }
     }
 

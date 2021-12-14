@@ -141,6 +141,7 @@ MonoBehaviour:
     attack: {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
     subAttacks:
     - {fileID: 11400000, guid: d5ace59d71fa7304db6a12f66bc42552, type: 2}
+    subAttackDelays: []
     subAttacksOnEnd: 1
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 1
