@@ -33,4 +33,17 @@ public class AttackComponent : NetworkBehaviour
             }
         }
     }
+
+    public float CalculateFalloff(float distance, float constant, bool isGain)
+    {
+        if(isGain)
+        {
+            return Mathf.Pow(constant, distance);
+        }
+
+        else
+        {
+            return 1f / Mathf.Pow(constant, distance);
+        }
+    }
 }

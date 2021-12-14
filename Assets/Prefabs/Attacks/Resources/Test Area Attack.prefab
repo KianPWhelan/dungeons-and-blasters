@@ -219,9 +219,11 @@ MonoBehaviour:
   settings:
     attack: {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
     subAttacks: []
+    subAttackDelays: []
     subAttacksOnEnd: 0
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 0
+    subAttacksCanOnlyProcOnce: 0
     offset: {x: 0, y: 0, z: 2}
     followOwner: 0
     radius: 2
@@ -235,5 +237,8 @@ MonoBehaviour:
     ignoreObstacles: 1
     applyEffectsOnEnd: 0
     lifetime: 3
-    gravityStrength: 1
+    gravityStrength: 0
+    useDamageFalloff: 1
+    damageFalloffConstance: 1.1
+    isDamageGain: 0
   _networkedVelocity: {x: 0, y: 0, z: 0}

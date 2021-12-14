@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: New Test Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 8523135143678805610, guid: b8fd07461fcf8484cb79fd49825105e1, type: 3}
+  attack: {fileID: 6410624834205609692, guid: ca4a646e6616b4b48a4335af32084a88, type: 3}
   effects:
-  - {fileID: 11400000, guid: 45449231fbb76104282d6eee27d2d37c, type: 2}
-  - {fileID: 11400000, guid: 58bcaeb39f296974c89a8e6bbe1ab741, type: 2}
+  - {fileID: 11400000, guid: a834b0da37ba35b47b23803319897aa4, type: 2}
   useOverwriteTag: 0
   overwriteTag: 
   canCrit: 0

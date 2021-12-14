@@ -55,6 +55,12 @@ public class AreaAttack : AttackComponent
         public bool applyEffectsOnEnd;
         public float lifetime;
         public float gravityStrength;
+
+        public bool useDamageFalloff;
+        [Tooltip("Outgoing damage mod formula is d * (1/(c^x)), where d is the incoming damage mod, c is the falloff constant, and x is the distance from the center")]
+        public float damageFalloffConstance = 1f;
+        [Tooltip("Damage mod is increased at further range instead of decreased. Outgoing damage mod formula is changes to d * c^x.")]
+        public bool isDamageGain;
     }
 
     private Vector3 hitPoint;
@@ -176,11 +182,21 @@ public class AreaAttack : AttackComponent
                     CalculateCrit(settings.attack);
                 }
 
-                settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod);
+                float falloffMod = 1f;
+                Vector3 point = GetPointOnBounds(hit);
+
+                if (settings.useDamageFalloff)
+                {
+                    falloffMod = CalculateFalloff(Vector3.Distance(transform.position, point), settings.damageFalloffConstance, settings.isDamageGain);
+                }
+
+                Debug.Log(falloffMod);
+
+                settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod * falloffMod);
                 numHits++;
                 hitList.Add(hit.Hitbox.Root.gameObject);
                 hitNormal = hit.Normal;
-                hitPoint = hit.Point;
+                hitPoint = point;
                 SubAttacksOnHit();
 
                 if (settings.canMultiHitTarget)
@@ -269,6 +285,18 @@ public class AreaAttack : AttackComponent
 
             i++;
         }
+    }
+
+    private Vector3 GetPointOnBounds(LagCompensatedHit hit)
+    {
+        Bounds bounds = new Bounds(hit.Hitbox.transform.position + hit.Hitbox.Offset, hit.Hitbox.BoxExtents);
+
+        if(bounds.Contains(transform.position))
+        {
+            return transform.position;
+        }
+
+        return bounds.ClosestPoint(transform.position);
     }
 
     private IEnumerator RemoveFromHitListDelay(GameObject hitObj)
