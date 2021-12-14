@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Skeleton Elite Sword Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 1904180190962700800, guid: cbdf7b1c422a5aa45be562323b063250, type: 3}
+  attack: {fileID: 6410624834205609692, guid: 80f7025e144ad334292759753cd339a6, type: 3}
   effects:
   - {fileID: 11400000, guid: 1ed205bdc6293e34e82476354e0fd0e1, type: 2}
   useOverwriteTag: 0

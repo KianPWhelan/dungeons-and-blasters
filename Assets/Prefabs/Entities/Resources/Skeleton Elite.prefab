@@ -117,7 +117,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 9}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 150, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8639724338631328462
@@ -990,7 +990,7 @@ MonoBehaviour:
   _levelColor: {r: 1, g: 1, b: 1, a: 1}
   _levelBackgroundSize: 25
   _levelFontSize: 14
-  _yPosition: 9
+  _yPosition: 5
   _faceCamera: {fileID: 0}
   OnlyShowIfDamaged: 0
 --- !u!114 &1818002960377947092
