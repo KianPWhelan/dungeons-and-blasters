@@ -901,7 +901,7 @@ MonoBehaviour:
   slottable: 0
   weaponHolder: {fileID: 0}
   followTarget: {fileID: 0}
-  canAggro: 0
+  canAggro: 1
   isAggro: 0
   _networkedIsFollowing:
     _value: 0
