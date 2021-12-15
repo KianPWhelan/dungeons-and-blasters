@@ -222,7 +222,7 @@ public class AreaAttack : AttackComponent
             {
                 // TODO: Ending effects/subattacks
                 hitNormal = hit.Normal;
-                hitPoint = hit.Point;
+                hitPoint = transform.position;
                 SubAttacksOnEnd();
                 ApplyEffectsOnEnd();
                 DestroyAttack();
