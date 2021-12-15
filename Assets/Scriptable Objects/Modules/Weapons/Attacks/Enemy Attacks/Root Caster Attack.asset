@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
+  m_Name: Root Caster Attack
+  m_EditorClassIdentifier: 
+  attack: {fileID: 8523135143678805610, guid: dd99e1be7e4b3ed4290038ef7be38933, type: 3}
+  effects:
+  - {fileID: 11400000, guid: 50d4b2e0b2d8bf342b27ff96eeb56869, type: 2}
+  useOverwriteTag: 0
+  overwriteTag: 
+  canCrit: 0
+  critOnCritBoxesOnly: 1
+  critChance: 1000
+  critMultiplier: 1.5
+  knockbackStrength: 0
