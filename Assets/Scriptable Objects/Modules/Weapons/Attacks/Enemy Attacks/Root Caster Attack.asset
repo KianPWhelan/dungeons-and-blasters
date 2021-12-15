@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: {fileID: 8523135143678805610, guid: dd99e1be7e4b3ed4290038ef7be38933, type: 3}
   effects:
-  - {fileID: 11400000, guid: 50d4b2e0b2d8bf342b27ff96eeb56869, type: 2}
+  - {fileID: 11400000, guid: e334a2d687f7f9e419a8b9f894000fd8, type: 2}
   useOverwriteTag: 0
   overwriteTag: 
   canCrit: 0

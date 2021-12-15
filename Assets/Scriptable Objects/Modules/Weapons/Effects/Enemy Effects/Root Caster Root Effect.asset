@@ -18,17 +18,14 @@ MonoBehaviour:
   duration: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
   stacks: 1
   refreshDuration: 0
-  stackAmountIsRequiredForApplication: 1
-  effectStackApplicationData:
-  - effect: {fileID: 11400000, guid: 50d4b2e0b2d8bf342b27ff96eeb56869, type: 2}
-    numStacksForApplication: 4
-    removeEffectWhenTriggered: 1
+  stackAmountIsRequiredForApplication: 0
+  effectStackApplicationData: []
   onlyApplyOnce: 0
   recursiveEffects: []
   useOverwriteTag: 0
   overwriteTag: 
   damageDealtMod: 0.5
   damageRecievedMod: 1
-  moveSpeedMod: 0.1
+  moveSpeedMod: 0
   isStun: 0
   resistanceMods: []
