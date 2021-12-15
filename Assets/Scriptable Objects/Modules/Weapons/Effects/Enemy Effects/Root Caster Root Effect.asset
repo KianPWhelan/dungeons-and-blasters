@@ -29,6 +29,6 @@ MonoBehaviour:
   overwriteTag: 
   damageDealtMod: 0.5
   damageRecievedMod: 1
-  moveSpeedMod: 0
+  moveSpeedMod: 0.1
   isStun: 0
   resistanceMods: []
