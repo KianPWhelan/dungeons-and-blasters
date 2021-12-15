@@ -31,6 +31,8 @@ public class Bean : AttackComponent
         public bool subAttacksAtSurfaceNormal;
         public bool subAttacksCanOnlyProcOnce;
 
+        public List<GameObject> visualEndEffects = new List<GameObject>();
+
         public bool applyEffectsOnEnd;
         public bool applyEffectsOnTip;
 
@@ -210,6 +212,11 @@ public class Bean : AttackComponent
         }
 
         TryGetComponent(out lineRenderer);
+    }
+
+    public override void Despawned(NetworkRunner runner, bool hasState)
+    {
+        SpawnVisualEndEffects();
     }
 
     public override void FixedUpdateNetwork()
@@ -629,6 +636,14 @@ public class Bean : AttackComponent
         else
         {
             targets.Add(i, temp.transform);
+        }
+    }
+
+    private void SpawnVisualEndEffects()
+    {
+        foreach (GameObject visual in settings.visualEndEffects)
+        {
+            Instantiate(visual, hitPoint, Quaternion.identity);
         }
     }
 

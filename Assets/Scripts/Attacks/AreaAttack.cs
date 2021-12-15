@@ -42,6 +42,8 @@ public class AreaAttack : AttackComponent
         public bool subAttacksAtSurfaceNormal;
         public bool subAttacksCanOnlyProcOnce;
 
+        public List<GameObject> visualEndEffects = new List<GameObject>();
+
         public Vector3 offset;
 
         public bool followOwner;
@@ -110,6 +112,11 @@ public class AreaAttack : AttackComponent
 
         // Adjust position to offset
         transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
+    }
+
+    public override void Despawned(NetworkRunner runner, bool hasState)
+    {
+        SpawnVisualEndEffects();
     }
 
     public override void FixedUpdateNetwork()
@@ -297,6 +304,14 @@ public class AreaAttack : AttackComponent
         }
 
         return bounds.ClosestPoint(transform.position);
+    }
+
+    private void SpawnVisualEndEffects()
+    {
+        foreach(GameObject visual in settings.visualEndEffects)
+        {
+            Instantiate(visual, hitPoint, Quaternion.identity);
+        }
     }
 
     private IEnumerator RemoveFromHitListDelay(GameObject hitObj)

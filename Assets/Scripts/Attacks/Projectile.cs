@@ -63,6 +63,8 @@ public class Projectile : AttackComponent
 		public bool subAttacksAtSurfaceNormal;
 		public bool subAttacksCanOnlyProcOnce;
 
+		public List<GameObject> visualEndEffects = new List<GameObject>();
+
 		public Vector3 offset;
 		public bool ignoreRotationForOffset;
 		public Vector3 rotationOffset;
@@ -175,6 +177,11 @@ public class Projectile : AttackComponent
         }
 
 		lastPosition = transform.position;
+	}
+
+	public override void Despawned(NetworkRunner runner, bool hasState)
+	{
+		SpawnVisualEndEffects();
 	}
 
 	public override void FixedUpdateNetwork()
@@ -386,6 +393,14 @@ public class Projectile : AttackComponent
 		else
 		{
 			target = temp.transform;
+		}
+	}
+
+	private void SpawnVisualEndEffects()
+	{
+		foreach (GameObject visual in settings.visualEndEffects)
+		{
+			Instantiate(visual, hitPoint, Quaternion.identity);
 		}
 	}
 
