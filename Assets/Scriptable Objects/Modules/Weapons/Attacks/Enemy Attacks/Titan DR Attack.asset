@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Titan DR Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 0}
+  attack: {fileID: 6410624834205609692, guid: ff1a0a60a2d4a994cbcdb09dbc72f168, type: 3}
   effects:
   - {fileID: 11400000, guid: 48fd4e693ea8a894b96c3a505194e960, type: 2}
   useOverwriteTag: 0

@@ -421,7 +421,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5002929920589353525}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 2.5
+  m_Radius: 3.5
   m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
@@ -537,7 +537,7 @@ MonoBehaviour:
   - {fileID: 6410624834205609692, guid: ff1a0a60a2d4a994cbcdb09dbc72f168, type: 3}
   - {fileID: 6410624834205609692, guid: 87d111d154c7bac4da833261e382d59e, type: 3}
   targetTags:
-  - Enemy
+  - Player
   - Player
   isPlayer: 0
   cam: {fileID: 0}
