@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2441455797662775794}
   - component: {fileID: 3752526106242634786}
   m_Layer: 0
-  m_Name: Hunter 1 Check Aura
+  m_Name: Hunter 1 Check Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
