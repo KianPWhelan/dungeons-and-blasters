@@ -145,7 +145,7 @@ MonoBehaviour:
     subAttacksAtSurfaceNormal: 0
     subAttacksCanOnlyProcOnce: 0
     visualEndEffects: []
-    offset: {x: 0, y: 0, z: 2}
+    offset: {x: 0, y: 0.9, z: 2}
     ignoreRotationForOffset: 0
     rotationOffset: {x: 0, y: 0, z: 0}
     worldSpaceRotation: 0
