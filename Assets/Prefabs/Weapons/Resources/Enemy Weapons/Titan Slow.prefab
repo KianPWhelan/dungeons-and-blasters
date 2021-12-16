@@ -82,7 +82,7 @@ MonoBehaviour:
     decayDelay: 0
     decayTickRate: 0
     value: 0
-  playAudioForEachAttack: 0
+  playAudioForEachAttack: 1
   owner: {fileID: 0}
   index: 0
 --- !u!82 &8327702763807512518
@@ -96,7 +96,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b9e6e3df79632c74c95d7319468ccbff, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
