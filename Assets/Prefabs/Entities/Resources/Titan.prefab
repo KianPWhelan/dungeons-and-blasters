@@ -470,9 +470,9 @@ MonoBehaviour:
   spawnSoundEffect: {fileID: 6137451349687365925, guid: 43486f4ce730bf2499bf642754f1932f, type: 3}
   ranges:
   - 30
-  - 200
-  aggroRange: 200
-  desiredRange: 200
+  - 100
+  aggroRange: 100
+  desiredRange: 100
   releventTransitions: []
   startingSpeed: 0
   statusEffects: {fileID: 0}
