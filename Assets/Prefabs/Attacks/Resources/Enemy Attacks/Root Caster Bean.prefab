@@ -26,8 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2884712574497503249}
+  m_Children: []
   m_Father: {fileID: 4789399767165305975}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42,9 +41,10 @@ GameObject:
   - component: {fileID: 4789399767165305975}
   - component: {fileID: 862568848026918501}
   - component: {fileID: 4171533552757744107}
-  - component: {fileID: 3228527924000341273}
+  - component: {fileID: 4768121883774698770}
+  - component: {fileID: -1692724994254798167}
   m_Layer: 0
-  m_Name: Shotgun Projectile
+  m_Name: Root Caster Bean
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,11 +84,11 @@ MonoBehaviour:
   AoiPosition: {fileID: 0}
   Flags: 2305
   NetworkGuid:
-    RawGuidValue: c319c39fb733ca843ab3d7e2e122b812
+    RawGuidValue: dd99e1be7e4b3ed4290038ef7be38933
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 4171533552757744107}
-  - {fileID: 3228527924000341273}
+  - {fileID: 4768121883774698770}
   SimulationBehaviours: []
 --- !u!114 &4171533552757744107
 MonoBehaviour:
@@ -119,7 +119,7 @@ MonoBehaviour:
     RotTeleportRadians: 1.5
   SyncScale: 0
   Space: 0
---- !u!114 &3228527924000341273
+--- !u!114 &4768121883774698770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8523135143678805610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c8ad420039576d49855323cfdfa18a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 901d160f44065b846b13c745f28e5817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
@@ -137,21 +137,37 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   useDestination: 0
   settings:
-    attack: {fileID: 11400000, guid: f0c9f52a2e0a01844a05a70206f2b5af, type: 2}
+    attack: {fileID: 11400000, guid: 657c5bb2081d5fb479b0022737c492b5, type: 2}
     subAttacks: []
     subAttackDelays: []
     subAttacksOnEnd: 0
     subAttacksOnHit: 0
+    subAttacksOnTip: 0
     subAttacksAtSurfaceNormal: 0
     subAttacksCanOnlyProcOnce: 0
     visualEndEffects: []
-    offset: {x: 0, y: 0, z: 1}
+    applyEffectsOnEnd: 0
+    applyEffectsOnTip: 0
+    offset: {x: 0, y: 0.4, z: 1}
     ignoreRotationForOffset: 0
     rotationOffset: {x: 0, y: 0, z: 0}
     worldSpaceRotation: 0
     reevaluateDestinationAfterOffset: 0
-    spread: 4.1
-    length: 1
+    autoTarget: 0
+    spreadAffectsAutoTarget: 0
+    canReflect: 0
+    numReflections: 0
+    canReflectOffValidTarget: 0
+    reflectOffValidTargetOnly: 0
+    applyEffectsOnReflect: 0
+    subAttacksOnReflect: 0
+    autoTargetOnReflect: 0
+    reflectRegardlessOfPierce: 0
+    followOwner: 0
+    length: 35
+    spread: 0
+    spreadAffectsReflection: 0
+    spreadOnlyAffectsReflection: 0
     hitMask:
       serializedVersion: 2
       m_Bits: 1
@@ -159,79 +175,104 @@ MonoBehaviour:
     numPierces: 0
     canMultiHitTarget: 0
     multiHitCooldown: 0
-    ignoreObstacles: 0
-    applyEffectsOnEnd: 0
-    lifetime: 2
-    speed: 500
-    gravityStrength: 0
-    homing: 0
-    homingStrength: 0
-    reevaluateHomingTargetConstantly: 0
-    performSafetyHitRegistration: 1
-  _networkedVelocity: {x: 0, y: 0, z: 0}
---- !u!1001 &4751420917514770873
-PrefabInstance:
+    ignoreObstacles: 1
+    directControlByOwner: 0
+    lifetime: 1
+--- !u!120 &-1692724994254798167
+LineRenderer:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1668218538431988242}
-    m_Modifications:
-    - target: {fileID: 7521615960007753932, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7634435954695572090, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_Name
-      value: BulletMissileYellow Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e97b981255406904dbdfc8482546ad37, type: 3}
---- !u!4 &2884712574497503249 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7636133453558358440, guid: e97b981255406904dbdfc8482546ad37, type: 3}
-  m_PrefabInstance: {fileID: 4751420917514770873}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523135143678805610}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 648b6ef50a963e04484faab775909827, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 0.4116228, b: 0, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0

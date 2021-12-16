@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7ca57bd6624c04596a7d0cf1597300, type: 3}
   m_Name: Purple Mage Damage
   m_EditorClassIdentifier: 
-  damageType: {fileID: 0}
+  damageType: {fileID: 11400000, guid: 7bbd629231f5f7b45b94cf12bfaee318, type: 2}
   damage: 10
