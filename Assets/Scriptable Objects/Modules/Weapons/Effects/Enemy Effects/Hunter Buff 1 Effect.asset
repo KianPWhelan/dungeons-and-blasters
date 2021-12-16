@@ -17,7 +17,7 @@ MonoBehaviour:
   interval: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
   duration: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
   stacks: 1
-  refreshDuration: 1
+  refreshDuration: 0
   stackAmountIsRequiredForApplication: 1
   effectStackApplicationData:
   - effect: {fileID: 11400000, guid: 9f7ad8ecff739994eaf068bcb49e830c, type: 2}
