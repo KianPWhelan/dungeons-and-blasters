@@ -49,6 +49,23 @@ public class StatusEffects : MonoBehaviour
         }
     }
 
+    public void Start()
+    {
+        foreach(Identifier i in statusEffects)
+        {
+            if (effectDetails.ContainsKey(i))
+            {
+                effectDetails[i].durationTime = Time.time;
+                effectDetails[i].damageMod = 1;
+            }
+
+            else
+            {
+                effectDetails.Add(i, new Container(Time.time, 0, tag, 1));
+            }
+        }
+    }
+
     // Update is called once per frame
     public void Update()
     {
