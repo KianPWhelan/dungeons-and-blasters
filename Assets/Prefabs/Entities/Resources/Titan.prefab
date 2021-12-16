@@ -460,7 +460,7 @@ MonoBehaviour:
   timeSinceLastStateChange: 0
   homingPoint: {fileID: 7381263163238750821}
   selectionHighlight: {fileID: 2473711240635612835}
-  animator: {fileID: 0}
+  animator: {fileID: 9500000, guid: d7555bcbd20494f4bacfa982ce1fe590, type: 3}
   critBox: {fileID: 3466475689198451860}
   currentState: {fileID: 0}
   cooldown: 12
