@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 87268235333745986}
   - component: {fileID: 3598190664229435555}
   - component: {fileID: 206754510708149442}
+  - component: {fileID: 4162258399778970105}
   m_Layer: 0
   m_Name: Titan Slow Area
   m_TagString: Untagged
@@ -162,6 +163,22 @@ MonoBehaviour:
     damageFalloffConstance: 1
     isDamageGain: 0
   _networkedVelocity: {x: 0, y: 0, z: 0}
+--- !u!114 &4162258399778970105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410624834205609692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8753c8177bc00bb4f8433dc249fa1cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabSound: {fileID: 6137451349687365925, guid: 057ccb045d3ff494f802c2675be1caed, type: 3}
+  destroyWhenDone: 1
+  soundPrefabIsChild: 0
+  pitchRandomMultiplier: 1
 --- !u!1001 &1723479473178605820
 PrefabInstance:
   m_ObjectHideFlags: 0

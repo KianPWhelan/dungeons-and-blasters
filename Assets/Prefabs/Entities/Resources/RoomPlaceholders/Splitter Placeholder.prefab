@@ -81,7 +81,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390172078278854730}
-  m_Text: Paired Hunter 1
+  m_Text: Titan
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 5146952790524304723}
   - component: {fileID: 8168094725693926115}
   m_Layer: 3
-  m_Name: Paired Hunter 1 Placeholder
+  m_Name: Splitter Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,9 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3be45791f82df4687abc16af58aa6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1818002960377947092, guid: ff387babfc03274499c5c62cdf6c76b1, type: 3}
+  enemy: {fileID: 1818002960377947092, guid: fd10ff1917b8b8d418cbf2b053394cd8, type: 3}
   cost: 2
-  numToSpawn: 1
+  numToSpawn: 2
 --- !u!135 &8168094725693926115
 SphereCollider:
   m_ObjectHideFlags: 0
