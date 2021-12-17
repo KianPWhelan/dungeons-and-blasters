@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Splitter Spawn 2 Effect
   m_EditorClassIdentifier: 
   damages: []
-  isStatusEffect: 0
-  interval: {fileID: 0}
-  duration: {fileID: 0}
+  isStatusEffect: 1
+  interval: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
+  duration: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
   stacks: 0
   refreshDuration: 0
   stackAmountIsRequiredForApplication: 0
