@@ -14,15 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damages: []
   isStatusEffect: 1
-  interval: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
-  duration: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
+  interval: {fileID: 11400000, guid: 4d3485d585a059f448910d015c7a8af8, type: 2}
+  duration: {fileID: 11400000, guid: 4d3485d585a059f448910d015c7a8af8, type: 2}
   stacks: 1
   refreshDuration: 0
-  stackAmountIsRequiredForApplication: 1
-  effectStackApplicationData:
-  - effect: {fileID: 11400000, guid: 95f1e787d83afd748ac48a9fa8fd5b93, type: 2}
-    numStacksForApplication: 1
-    removeEffectWhenTriggered: 0
+  stackAmountIsRequiredForApplication: 0
+  effectStackApplicationData: []
   onlyApplyOnce: 0
   recursiveEffects: []
   useOverwriteTag: 0

@@ -921,7 +921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusEffects:
-  - effect: {fileID: 11400000, guid: 91e2559eb65f03540a24b5710aa38f3f, type: 2}
+  - effect: {fileID: 11400000, guid: f0af13cea969cff4a94461875a0383d5, type: 2}
     id: -1
   immunities: []
 --- !u!114 &4999855669528970186
