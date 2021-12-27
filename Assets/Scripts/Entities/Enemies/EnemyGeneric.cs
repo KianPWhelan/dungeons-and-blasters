@@ -87,6 +87,9 @@ public class EnemyGeneric : NetworkBehaviour
     public WeaponHolder weaponHolder;
 
     [HideInInspector]
+    public Squad squad;
+
+    [HideInInspector]
     [Networked]
     public NetworkBool networkedIsFollowing { get; set; }
     private bool predictedIsFollowing;
@@ -110,6 +113,17 @@ public class EnemyGeneric : NetworkBehaviour
     {
         get => Object.IsPredictedSpawn ? predictedMoving : (bool)networkedMoving;
         set { if (Object.IsPredictedSpawn) predictedMoving = value; else networkedMoving = value; }
+    }
+
+    public void AssignSquad(Squad squad)
+    {
+        if (this.squad != null)
+        {
+            this.squad.RemoveUnit(this);
+        }
+
+        this.squad = squad;
+        squad.AddUnit(this);
     }
 
     // Start is called before the first frame update

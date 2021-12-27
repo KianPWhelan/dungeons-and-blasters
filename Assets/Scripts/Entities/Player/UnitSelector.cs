@@ -139,7 +139,8 @@ public class UnitSelector : MonoBehaviour
                 {
                     if(e == null)
                     {
-                        return;
+                        selectedUnits.Remove(e);
+                        continue;
                     }
 
                     if(queue)
@@ -158,6 +159,11 @@ public class UnitSelector : MonoBehaviour
                         e.AddToQueue(dest);
                         e.canAggro = false;
                     }
+                }
+
+                if(selectedUnits.Count > 0 && SquadManager.instance != null)
+                {
+                    SquadManager.instance.CreateSquad(selectedUnits);
                 }
             }
         }
