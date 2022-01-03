@@ -163,7 +163,7 @@ public class UnitSelector : MonoBehaviour
 
                 if(selectedUnits.Count > 0 && SquadManager.instance != null)
                 {
-                    SquadManager.instance.CreateSquad(selectedUnits);
+                    SquadManager.instance.CreateSquad(selectedUnits, dest);
                 }
             }
         }

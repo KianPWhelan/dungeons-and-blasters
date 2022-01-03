@@ -10,6 +10,8 @@ public class SquadManager : NetworkBehaviour
 
     public List<Squad> squads = new List<Squad>();
 
+    public List<Squad> squadsToDelete = new List<Squad>();
+
     public override void Spawned()
     {
         instance = this;
@@ -17,13 +19,18 @@ public class SquadManager : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        List<Squad> squadsToDelete = new List<Squad>();
+        squadsToDelete = new List<Squad>();
 
         foreach(Squad squad in squads)
         {
             if(squad.units.Count <= 0)
             {
                 squadsToDelete.Add(squad);
+            }
+
+            else
+            {
+                squad.Process();
             }
         }
 
@@ -33,7 +40,7 @@ public class SquadManager : NetworkBehaviour
         }
     }
 
-    public void CreateSquad(List<EnemyGeneric> units)
+    public void CreateSquad(List<EnemyGeneric> units, Vector3 destination)
     {
         if(!Object.HasStateAuthority)
         {
@@ -44,7 +51,7 @@ public class SquadManager : NetworkBehaviour
                 temp.Add(e.Object);
             }
 
-            RPC_CreateSquad(temp.ToArray());
+            RPC_CreateSquad(temp.ToArray(), destination);
             return;
         }
 
@@ -54,6 +61,9 @@ public class SquadManager : NetworkBehaviour
         {
             e.AssignSquad(squad);
         }
+
+        squad.Start();
+        squad.SetDestination(destination);
 
         squads.Add(squad);
     }
@@ -65,7 +75,7 @@ public class SquadManager : NetworkBehaviour
     }
 
     [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
-    private void RPC_CreateSquad(NetworkObject[] units)
+    private void RPC_CreateSquad(NetworkObject[] units, Vector3 destination)
     {
         List<EnemyGeneric> e = new List<EnemyGeneric>();
         
@@ -74,6 +84,6 @@ public class SquadManager : NetworkBehaviour
             e.Add(o.GetComponent<EnemyGeneric>());
         }
 
-        CreateSquad(e);
+        CreateSquad(e, destination);
     }
 }
