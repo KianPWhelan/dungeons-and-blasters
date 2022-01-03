@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Squad
 {
-    public List<EnemyGeneric> units;
+    public List<EnemyGeneric> units = new List<EnemyGeneric>();
 
     public Vector3 destination;
 
