@@ -40,22 +40,22 @@ public class MultiEnemySpawner : EnemyGeneric
             int offset = Random.Range(0, 4);
             if(offset == 0)
             {
-                e.MoveTo(transform.position + new Vector3(0f, 0f, e.agent.stoppingDistance + 0.05f));
+                e.agent.SetDestination(transform.position + new Vector3(0f, 0f, 0.2f + 0.05f));
             }
 
             else if(offset == 1)
             {
-                e.MoveTo(transform.position + new Vector3(0f, 0f, -e.agent.stoppingDistance - 0.05f));
+                e.agent.SetDestination(transform.position + new Vector3(0f, 0f, -0.2f - 0.05f));
             }
 
             else if(offset == 2)
             {
-                e.MoveTo(transform.position + new Vector3(e.agent.stoppingDistance + 0.05f, 0f, 0f));
+                e.agent.SetDestination(transform.position + new Vector3(0.2f + 0.05f, 0f, 0f));
             }
 
             else if(offset == 3)
             {
-                e.MoveTo(transform.position + new Vector3(-e.agent.stoppingDistance - 0.05f, 0f, 0f));
+                e.agent.SetDestination(transform.position + new Vector3(-0.2f - 0.05f, 0f, 0f));
             }
         }
 

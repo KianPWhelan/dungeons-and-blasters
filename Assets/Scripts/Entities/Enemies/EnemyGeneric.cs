@@ -119,6 +119,7 @@ public class EnemyGeneric : NetworkBehaviour
     public float avoidanceStrength = 1.5f;
 
     private bool reset;
+    private bool declutterCheck;
 
     public void AssignSquad(Squad squad)
     {
@@ -162,6 +163,12 @@ public class EnemyGeneric : NetworkBehaviour
         if(!Object.HasStateAuthority)
         {
             return;
+        }
+
+        if(!declutterCheck)
+        {
+            agent.ResetPath();
+            declutterCheck = true;
         }
 
         if(!moving)
