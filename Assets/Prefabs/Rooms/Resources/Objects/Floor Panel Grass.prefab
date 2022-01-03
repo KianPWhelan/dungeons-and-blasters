@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrassPlane3D_BrightGreen
       objectReference: {fileID: 0}
+    - target: {fileID: 7744100887029801740, guid: 83a2a588eee474796819a8d29b585c18, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83a2a588eee474796819a8d29b585c18, type: 3}
 --- !u!4 &1380484343734369629 stripped
