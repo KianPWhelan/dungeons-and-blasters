@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[OrderAfter(typeof(EnemyGeneric))]
 public class SquadManager : NetworkBehaviour
 {
     public static SquadManager instance;
