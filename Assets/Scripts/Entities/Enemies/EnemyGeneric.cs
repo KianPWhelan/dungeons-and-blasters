@@ -86,7 +86,7 @@ public class EnemyGeneric : NetworkBehaviour
     [HideInInspector]
     public WeaponHolder weaponHolder;
 
-    [HideInInspector]
+    //[HideInInspector]
     public Squad squad;
 
     [HideInInspector]

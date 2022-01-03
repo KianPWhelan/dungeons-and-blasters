@@ -16,12 +16,19 @@ public class SquadManager : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
+        List<Squad> squadsToDelete = new List<Squad>();
+
         foreach(Squad squad in squads)
         {
             if(squad.units.Count <= 0)
             {
-                DeleteSquad(squad);
+                squadsToDelete.Add(squad);
             }
+        }
+
+        foreach(Squad squad in squadsToDelete)
+        {
+            DeleteSquad(squad);
         }
     }
 
@@ -46,6 +53,8 @@ public class SquadManager : NetworkBehaviour
         {
             e.AssignSquad(squad);
         }
+
+        squads.Add(squad);
     }
 
     public void DeleteSquad(Squad squad)
