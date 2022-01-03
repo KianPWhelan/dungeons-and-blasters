@@ -140,11 +140,13 @@ MonoBehaviour:
   settings:
     attack: {fileID: 11400000, guid: 30f6d94d65b6e1947848a26c5d89f2c2, type: 2}
     subAttacks: []
+    subAttackDelays: []
     subAttacksOnEnd: 0
     subAttacksOnHit: 0
     subAttacksOnTip: 0
     subAttacksAtSurfaceNormal: 0
     subAttacksCanOnlyProcOnce: 0
+    visualEndEffects: []
     applyEffectsOnEnd: 0
     applyEffectsOnTip: 0
     offset: {x: 0, y: 0, z: 1}
@@ -170,8 +172,8 @@ MonoBehaviour:
     hitMask:
       serializedVersion: 2
       m_Bits: 1
-    infinitePierce: 1
-    numPierces: 100
+    infinitePierce: 0
+    numPierces: 0
     canMultiHitTarget: 1
     multiHitCooldown: 0.15
     ignoreObstacles: 0

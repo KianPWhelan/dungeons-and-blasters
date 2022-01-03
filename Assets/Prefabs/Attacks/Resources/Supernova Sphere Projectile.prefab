@@ -139,10 +139,12 @@ MonoBehaviour:
   settings:
     attack: {fileID: 11400000, guid: cd06f161c35b36b40b0dffe902ad9fdc, type: 2}
     subAttacks: []
+    subAttackDelays: []
     subAttacksOnEnd: 0
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 0
     subAttacksCanOnlyProcOnce: 0
+    visualEndEffects: []
     offset: {x: 0.7, y: -0.1, z: 2.5}
     ignoreRotationForOffset: 0
     rotationOffset: {x: 0, y: 0, z: 0}
@@ -164,7 +166,7 @@ MonoBehaviour:
     gravityStrength: 0
     homing: 1
     homingStrength: 600
-    reevaluateHomingTargetConstantly: 1
+    reevaluateHomingTargetConstantly: 0
     performSafetyHitRegistration: 0
   _networkedVelocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &8496597089926036257
