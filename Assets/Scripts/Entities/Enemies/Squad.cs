@@ -48,6 +48,19 @@ public class Squad
         this.destination = destination;
     }
 
+    public void SendAllUnitsToNextPoint(EnemyGeneric exception)
+    {
+        Debug.Log("Here");
+
+        foreach(EnemyGeneric e in units)
+        {
+            if(e != exception)
+            {
+                e.ProcessQueue(false);
+            }
+        }
+    }
+
     public void Start()
     {
         timer2 = Time.time;
@@ -55,21 +68,21 @@ public class Squad
 
     public void Process()
     { 
-        Debug.Log("Processing");
+        //Debug.Log("Processing");
 
         foreach (EnemyGeneric e in units)
         {
             sum += e.transform.position;
         }
 
-        Debug.Log("Sum " + sum);
+        //Debug.Log("Sum " + sum);
         Vector3 average = sum / units.Count;
         average = new Vector3(average.x, average.y, average.z);
-        Debug.Log("Average " + average);
-        Debug.Log("Destination " + destination);
+        //Debug.Log("Average " + average);
+        //Debug.Log("Destination " + destination);
         //Debug.Log(average + " " + destination + "  " + (1 + (0.00001 * Mathf.Pow(units.Count, 2))));
         var dist = Vector3.Distance(average, destination);
-        Debug.Log("Distance: " + dist);
+        //Debug.Log("Distance: " + dist);
 
         if (lastAverage.x == Mathf.NegativeInfinity)
         {
@@ -79,7 +92,7 @@ public class Squad
 
         if (Time.time - timer2 >= 0.5)
         {
-            Debug.Log("dist " + Vector3.Distance(average, lastAverage));
+            //Debug.Log("dist " + Vector3.Distance(average, lastAverage));
             distances.Add(Vector3.Distance(average, lastAverage));
             lastAverage = average;
             //Debug.Log("Last Average " + lastAverage);
@@ -114,7 +127,7 @@ public class Squad
             timeout = false;
             stopping = false;
             lastAverage = Vector3.negativeInfinity;
-            Debug.Log("Done");    
+            //Debug.Log("Done");    
 
             foreach (EnemyGeneric e in units)
             {
