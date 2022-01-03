@@ -245,7 +245,7 @@ public class Projectile : AttackComponent
         {
 			hits = new List<LagCompensatedHit>();
 			//Debug.Log(transform + " " + lastPosition + " " + Object + " " + settings.hitMask);
-			Runner.LagCompensation.RaycastAll(lastPosition, (transform.position - lastPosition).normalized, Vector3.Distance(lastPosition, transform.position), Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+			Runner.LagCompensation.RaycastAll(lastPosition, (transform.position - lastPosition).normalized, Vector3.Distance(lastPosition, transform.position), Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
 			ProcessHits(hits);
 		}
 
@@ -312,6 +312,8 @@ public class Projectile : AttackComponent
 
 	private void DestroyProjectile()
     {
+		Debug.Log("Mucho Bruh");
+
 		if(Object != null)
         {
 			Runner.Despawn(Object);
