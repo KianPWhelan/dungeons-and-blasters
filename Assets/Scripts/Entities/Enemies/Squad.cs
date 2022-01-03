@@ -17,7 +17,13 @@ public class Squad
 
     private List<float> distances = new List<float>();
 
+    private float timer1;
+
     private float timer2;
+
+    private bool timeout;
+
+    private bool stopping;
 
     public void AddUnit(EnemyGeneric unit)
     {
@@ -33,37 +39,98 @@ public class Squad
     {
         sum += change;
         numSums++;
+        Debug.Log("numSums: " + numSums);
     }
 
     public void SetDestination(Vector3 destination)
     {
+        Debug.Log("Destination Set: " + destination);
         this.destination = destination;
     }
 
-    public void Process()
+    public void Start()
     {
-        if(numSums >= units.Count)
+        timer2 = Time.time;
+    }
+
+    public void Process()
+    { 
+        Debug.Log("Processing");
+
+        foreach (EnemyGeneric e in units)
         {
-            Debug.Log("Processing");
-            //Vector3 average = sum / units.Count;
-            //average = new Vector3(average.x, average.y - 1.1f, average.z);
-            ////Debug.Log(average + " " + destination + "  " + (1 + (0.00001 * Mathf.Pow(units.Count, 2))));
-            //var dist = Vector3.Distance(average, destination);
+            sum += e.transform.position;
+        }
 
-            //if (lastAverage.x == Mathf.NegativeInfinity)
-            //{
-            //    lastAverage = average;
-            //    //Debug.Log("Last Average " + lastAverage);
-            //}
+        Debug.Log("Sum " + sum);
+        Vector3 average = sum / units.Count;
+        average = new Vector3(average.x, average.y, average.z);
+        Debug.Log("Average " + average);
+        Debug.Log("Destination " + destination);
+        //Debug.Log(average + " " + destination + "  " + (1 + (0.00001 * Mathf.Pow(units.Count, 2))));
+        var dist = Vector3.Distance(average, destination);
+        Debug.Log("Distance: " + dist);
 
-            //if (Time.time - timer2 >= 0.5)
-            //{
-            //    //Debug.Log("dist " + Vector3.Distance(average, lastAverage));
-            //    distances.Add(Vector3.Distance(average, lastAverage));
-            //    lastAverage = average;
-            //    //Debug.Log("Last Average " + lastAverage);
-            //    timer2 = Time.time;
-            //}
+        if (lastAverage.x == Mathf.NegativeInfinity)
+        {
+            lastAverage = average;
+            //Debug.Log("Last Average " + lastAverage);
+        }
+
+        if (Time.time - timer2 >= 0.5)
+        {
+            Debug.Log("dist " + Vector3.Distance(average, lastAverage));
+            distances.Add(Vector3.Distance(average, lastAverage));
+            lastAverage = average;
+            //Debug.Log("Last Average " + lastAverage);
+        timer2 = Time.time;
+        }
+
+        if (distances.Count >= 5)
+        {
+            float greatestDifference = 0;
+
+            foreach (float d in distances)
+            {
+                if (d > greatestDifference)
+                {
+                    greatestDifference = d;
+                }
+            }
+
+            distances = new List<float>();
+            Debug.Log(greatestDifference + " " + Mathf.Max(0.5f / Mathf.Pow(1.005f, units.Count), 0.3f));
+
+            if (greatestDifference < Mathf.Max(0.5f / Mathf.Pow(1.005f, units.Count), 0.3f))
+            {
+                timer1 = Time.time;
+                stopping = true;
+            }
+        }
+
+        if (dist < 1 + (0.00001 * Mathf.Pow(units.Count, 2)) || timeout)
+        {
+            //Debug.Log("Timeout " + timeout);
+            timeout = false;
+            stopping = false;
+            lastAverage = Vector3.negativeInfinity;
+            Debug.Log("Done");    
+
+            foreach (EnemyGeneric e in units)
+            {
+                e.ClearQueue();
+                e.ClearPath();
+                SquadManager.instance.squadsToDelete.Add(this);
+            }
+        }
+
+
+        sum = Vector3.zero;
+        numSums = 0;
+
+        if(Time.time - timer1 > 2 && stopping)
+        {
+            timeout = true;
         }
     }
 

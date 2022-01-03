@@ -115,6 +115,9 @@ public class EnemyGeneric : NetworkBehaviour
         set { if (Object.IsPredictedSpawn) predictedMoving = value; else networkedMoving = value; }
     }
 
+    public float avoidanceRadius = 1;
+    public float avoidanceStrength = 1.5f;
+
     public void AssignSquad(Squad squad)
     {
         if (this.squad != null)
@@ -203,6 +206,23 @@ public class EnemyGeneric : NetworkBehaviour
         }
 
         agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
+
+        if(moving)
+        {
+            var avoidanceVector = GetAvoidanceVector();
+
+            agent.velocity += avoidanceVector;
+
+            if (agent.velocity.magnitude > agent.speed)
+            {
+                agent.velocity = Vector3.ClampMagnitude(agent.velocity, agent.speed);
+            }
+        }
+
+        if (squad != null)
+        {
+            //squad.SumAndIncrement(transform.position);
+        }
 
         target = null;
         target = GetClosestVisible();
@@ -369,5 +389,39 @@ public class EnemyGeneric : NetworkBehaviour
         }
 
         return closest;
+    }
+
+    private Vector3 GetAvoidanceVector()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, avoidanceRadius, LayerMask.GetMask("Default"), queryTriggerInteraction: QueryTriggerInteraction.Collide);
+        Vector3 result = Vector3.zero;
+
+        foreach (Collider c in hits)
+        {
+            if (c.tag == "Enemy" && c.gameObject != gameObject)
+            {
+                //Debug.Log(c.name);
+                result += GetAvoidanceForHit(c);
+            }
+        }
+
+        //Debug.Log(result * avoidanceStrength);
+
+        return result * avoidanceStrength;
+    }
+
+    private Vector3 GetAvoidanceForHit(Collider c)
+    {
+        var v = transform.position - c.transform.position;
+        var d = v.magnitude;
+        //Debug.Log(d);
+        v.Normalize();
+
+        if (d == 0)
+        {
+            return v;
+        }
+
+        return v * (1f / d);
     }
 }
