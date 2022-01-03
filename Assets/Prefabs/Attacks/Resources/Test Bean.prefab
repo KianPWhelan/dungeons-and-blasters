@@ -139,25 +139,30 @@ MonoBehaviour:
   settings:
     attack: {fileID: 11400000, guid: 5a4fc1e6b2e13964f94f122d2373a339, type: 2}
     subAttacks: []
+    subAttackDelays: []
     subAttacksOnEnd: 0
     subAttacksOnHit: 0
     subAttacksOnTip: 0
     subAttacksAtSurfaceNormal: 0
+    subAttacksCanOnlyProcOnce: 0
+    visualEndEffects: []
     applyEffectsOnEnd: 0
     applyEffectsOnTip: 0
     offset: {x: 0, y: 0, z: 1}
+    ignoreRotationForOffset: 0
     rotationOffset: {x: 0, y: 0, z: 0}
     worldSpaceRotation: 0
     reevaluateDestinationAfterOffset: 0
-    autoTarget: 0
+    autoTarget: 1
     spreadAffectsAutoTarget: 0
-    canReflect: 1
-    numReflections: 2
-    canReflectOffValidTarget: 1
+    canReflect: 0
+    numReflections: 0
+    canReflectOffValidTarget: 0
     reflectOffValidTargetOnly: 0
     applyEffectsOnReflect: 0
     subAttacksOnReflect: 0
-    autoTargetOnReflect: 1
+    autoTargetOnReflect: 0
+    reflectRegardlessOfPierce: 0
     followOwner: 0
     length: 30
     spread: 0

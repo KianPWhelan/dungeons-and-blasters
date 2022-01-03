@@ -906,8 +906,8 @@ MonoBehaviour:
   followTarget: {fileID: 0}
   canAggro: 1
   isAggro: 0
-  avoidanceRadius: 0.3
-  avoidanceStrength: 0.75
+  avoidanceRadius: 2
+  avoidanceStrength: 1
   _networkedIsFollowing:
     _value: 0
   _networkedMoving:

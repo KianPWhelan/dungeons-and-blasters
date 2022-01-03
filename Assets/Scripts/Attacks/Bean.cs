@@ -619,8 +619,14 @@ public class Bean : AttackComponent
 
     private void GetAutoTarget(int i)
     {
-        var bruh = new List<Transform>(exclude);
-        bruh.AddRange(targets.Values.ToList());
+        List<Transform> bruh = null;
+
+        if(exclude != null)
+        {
+            bruh = new List<Transform>(exclude);
+            bruh.AddRange(targets.Values.ToList());
+        }
+        
         var temp = Helpers.FindClosest(transform, validTag, bruh);
 
         if(temp == null)

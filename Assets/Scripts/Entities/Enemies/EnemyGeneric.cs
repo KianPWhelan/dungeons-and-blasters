@@ -118,6 +118,9 @@ public class EnemyGeneric : NetworkBehaviour
     public float avoidanceRadius = 1;
     public float avoidanceStrength = 1.5f;
 
+    private bool reset;
+    private bool declutterCheck;
+
     public void AssignSquad(Squad squad)
     {
         if (this.squad != null)
@@ -162,6 +165,17 @@ public class EnemyGeneric : NetworkBehaviour
             return;
         }
 
+        if(!declutterCheck)
+        {
+            agent.ResetPath();
+            declutterCheck = true;
+        }
+
+        if(!moving)
+        {
+            reset = true;
+        }
+
         if(statusEffects.GetIsStunned() && agent.isActiveAndEnabled)
         {
             agent.ResetPath();
@@ -200,7 +214,8 @@ public class EnemyGeneric : NetworkBehaviour
             {
                 //if (!agent.hasPath)
                 //{
-                    ProcessQueue();
+
+                ProcessQueue();
                 //}
             }
         }
@@ -350,12 +365,22 @@ public class EnemyGeneric : NetworkBehaviour
         CancelFollow();
     }
 
-    private void ProcessQueue()
+    public void ProcessQueue(bool signal = true)
     {
         if(destinationQueue.Count > 0 && !isFollowing)
         {
             //Debug.Log("Processing Queue");
             MoveTo(destinationQueue.Dequeue());
+
+            if (signal && squad != null && !reset)
+            {
+                squad.SendAllUnitsToNextPoint(this);
+            }
+
+            else
+            {
+                reset = false;
+            }
         } 
 
         else if(moving)

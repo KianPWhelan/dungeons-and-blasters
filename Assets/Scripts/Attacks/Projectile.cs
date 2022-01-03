@@ -237,17 +237,17 @@ public class Projectile : AttackComponent
 		Vector3 vel = velocity;
 		Vector3 dir = vel.normalized;
 
+		if (settings.performSafetyHitRegistration && lastPosition != null && transform != null && Object != null)
+		{
+			var hitsz = new List<LagCompensatedHit>();
+			//Debug.Log(transform + " " + lastPosition + " " + Object + " " + settings.hitMask);
+			Runner.LagCompensation.RaycastAll(lastPosition, (transform.position - lastPosition).normalized, Vector3.Distance(lastPosition, transform.position), Object.InputAuthority, hitsz, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
+			ProcessHits(hitsz);
+		}
+
 		List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
 		Runner.LagCompensation.RaycastAll(transform.position - 0.5f * dir, dir, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
 		ProcessHits(hits);
-
-		if(settings.performSafetyHitRegistration && lastPosition != null && transform != null && Object != null)
-        {
-			hits = new List<LagCompensatedHit>();
-			//Debug.Log(transform + " " + lastPosition + " " + Object + " " + settings.hitMask);
-			Runner.LagCompensation.RaycastAll(lastPosition, (transform.position - lastPosition).normalized, Vector3.Distance(lastPosition, transform.position), Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
-			ProcessHits(hits);
-		}
 
 		lastPosition = transform.position;
 
@@ -312,6 +312,8 @@ public class Projectile : AttackComponent
 
 	private void DestroyProjectile()
     {
+		Debug.Log("Mucho Bruh");
+
 		if(Object != null)
         {
 			Runner.Despawn(Object);
