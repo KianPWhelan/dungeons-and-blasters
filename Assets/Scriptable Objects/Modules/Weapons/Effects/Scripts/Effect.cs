@@ -9,6 +9,9 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     [SerializeField]
     public List<Damage> damages = new List<Damage>();
 
+    [Tooltip("If the damage is negative (aka healing), how far over the starting health it can heal")]
+    public float overheal;
+
     [Tooltip("Status effects are applied to the target every defined iteration for the duration")]
     [SerializeField]
     public bool isStatusEffect;
@@ -114,7 +117,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
             // Apply damage first
             foreach (Damage damage in damages)
             {
-                damage.DoDamage(health, damageMod);
+                damage.DoDamage(health, damageMod, overheal);
             }
         }
 

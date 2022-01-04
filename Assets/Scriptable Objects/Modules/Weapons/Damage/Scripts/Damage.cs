@@ -13,8 +13,8 @@ public class Damage : ScriptableObject
     [SerializeField]
     private float damage;
 
-    public void DoDamage(Health hp, float damageMod)
+    public void DoDamage(Health hp, float damageMod, float overheal = 0f)
     {
-        hp.AdjustHealth(-damage * damageMod, damageType);
+        hp.AdjustHealth(-damage * damageMod, damageType, overheal);
     }
 }

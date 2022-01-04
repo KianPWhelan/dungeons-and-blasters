@@ -91,7 +91,7 @@ public class Health : NetworkBehaviour
     /// Adjusts health value by amount provided, can be negative
     /// </summary>
     /// <param name="amount"></param>
-    public void AdjustHealth(float amount, DamageType damageType = null)
+    public void AdjustHealth(float amount, DamageType damageType = null, float overheal = 0f)
     {
         if(!Object.HasStateAuthority)
         {
@@ -130,6 +130,12 @@ public class Health : NetworkBehaviour
         }
 
         health += amount * statusMod * resistanceMod;
+
+        if(health > startingHealth + overheal)
+        {
+            health = startingHealth;
+        }
+
         if(health <= 0)
         {
             isDead = true;
