@@ -113,17 +113,17 @@ public class Health : NetworkBehaviour
 
         var statusEffects = GetComponent<StatusEffects>();
 
-        if(statusEffects != null)
+        if(statusEffects != null && !damageType.immuneToStatusMod)
         {
             statusMod = statusEffects.GetDamageRecievedMod();
         }
 
-        if (damageType != null && resistanceStorage.ContainsKey(damageType))
+        if (damageType != null && resistanceStorage.ContainsKey(damageType) && !damageType.immuneToResistanceMod)
         {
             resistanceMod = resistanceStorage[damageType];
         }
 
-        if(damageType != null)
+        if(damageType != null && !damageType.immuneToResistanceMod)
         { 
             resistanceMod *= statusEffects.GetResistanceMod(damageType);
             Debug.Log("Resistance Mod: " + resistanceMod);

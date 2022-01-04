@@ -15,6 +15,13 @@ public class Damage : ScriptableObject
 
     public void DoDamage(Health hp, float damageMod, float overheal = 0f)
     {
-        hp.AdjustHealth(-damage * damageMod, damageType, overheal);
+        float dMod = 1;
+
+        if(!damageType.immuneToDamageMod)
+        {
+            dMod = damageMod;
+        }
+
+        hp.AdjustHealth(-damage * dMod, damageType, overheal);
     }
 }
