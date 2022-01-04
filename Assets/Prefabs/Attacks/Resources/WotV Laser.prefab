@@ -154,7 +154,7 @@ MonoBehaviour:
     rotationOffset: {x: 0, y: 0, z: 0}
     worldSpaceRotation: 0
     reevaluateDestinationAfterOffset: 0
-    autoTarget: 0
+    autoTarget: 1
     spreadAffectsAutoTarget: 0
     canReflect: 1
     numReflections: 5

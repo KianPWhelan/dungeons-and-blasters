@@ -47,7 +47,7 @@ MonoBehaviour:
   rarity: 0
   attacks:
   - attack: {fileID: 11400000, guid: 1f9d434f2a3e3f547b4f966b4eeabbe4, type: 2}
-    cooldown: 1
+    cooldown: 3.8
     delay: 0
     attackIsDirectlyControlled: 0
     audio: []
