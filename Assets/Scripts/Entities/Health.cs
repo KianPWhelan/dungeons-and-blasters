@@ -138,12 +138,12 @@ public class Health : NetworkBehaviour
             {
                 //TODO: player death
                 //GetComponent<Controller>().GameOver();
-                Runner.Despawn(Object);
+                StartCoroutine(KillEntity());
             }
 
             else
             {
-                Runner.Despawn(Object);
+                StartCoroutine(KillEntity());
             }            
         }
 
@@ -192,5 +192,11 @@ public class Health : NetworkBehaviour
     private void RPC_UpdateHealthBar(float health)
     {
         healthBar.Value = (int)health;
+    }
+
+    private IEnumerator KillEntity()
+    {
+        yield return new WaitForEndOfFrame();
+        Runner.Despawn(Object);
     }
 }

@@ -22,8 +22,8 @@ public class SpawnEffect : Effect
 
     public override void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false, float id = -1)
     {
-        Debug.Log("In spawn effect");
-        Debug.Log("Is Proc: " + isProc);
+        //Debug.Log("In spawn effect");
+        //Debug.Log("Is Proc: " + isProc);
 
         if(runner == null)
         {
@@ -68,7 +68,6 @@ public class SpawnEffect : Effect
                 location = health.transform.position;
             }
 
-            Debug.Log(location);
             var newUnit = runner.Spawn(unit, location.GetValueOrDefault(), rotation.GetValueOrDefault());
             enemyManager.AddEnemy(newUnit);
         }
