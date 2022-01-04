@@ -15,8 +15,8 @@ MonoBehaviour:
   damages: []
   overheal: 0
   isStatusEffect: 1
-  interval: {fileID: 11400000, guid: 41a50f4ab5fe2bf4788f0791b7738514, type: 2}
-  duration: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
+  interval: {fileID: 11400000, guid: 1ca1804f6f886af47acc0c317df1ff57, type: 2}
+  duration: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
   stacks: 1
   refreshDuration: 0
   stackAmountIsRequiredForApplication: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   recursiveEffects: []
   useOverwriteTag: 0
   overwriteTag: 
-  damageDealtMod: 1
+  damageDealtMod: 3
   damageRecievedMod: 1
   moveSpeedMod: 1
   isStun: 0

@@ -22,7 +22,8 @@ MonoBehaviour:
   stackAmountIsRequiredForApplication: 0
   effectStackApplicationData: []
   onlyApplyOnce: 0
-  recursiveEffects: []
+  recursiveEffects:
+  - {fileID: 11400000, guid: a5ed57ed7cee417479dd40587b3f7868, type: 2}
   useOverwriteTag: 0
   overwriteTag: 
   damageDealtMod: 1
