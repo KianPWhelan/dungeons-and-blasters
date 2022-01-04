@@ -130,6 +130,12 @@ public class Health : NetworkBehaviour
         }
 
         health += amount * statusMod * resistanceMod;
+
+        if(health > startingHealth)
+        {
+            health = startingHealth;
+        }
+
         if(health <= 0)
         {
             isDead = true;
