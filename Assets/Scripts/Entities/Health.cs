@@ -129,11 +129,21 @@ public class Health : NetworkBehaviour
             Debug.Log("Resistance Mod: " + resistanceMod);
         }
 
-        health += amount * statusMod * resistanceMod;
+        //health += amount * statusMod * resistanceMod;
 
-        if(health > startingHealth + overheal)
+        //if(health > startingHealth + overheal)
+        //{
+        //    health = startingHealth + overheal;
+        //}
+
+        if(health + amount * statusMod * resistanceMod > startingHealth + overheal)
         {
-            health = startingHealth;
+            health = Mathf.Max(startingHealth + overheal, health); 
+        }
+
+        else
+        {
+            health += amount * statusMod * resistanceMod;
         }
 
         if(health <= 0)
