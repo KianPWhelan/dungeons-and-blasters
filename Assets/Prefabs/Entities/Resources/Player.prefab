@@ -499,6 +499,7 @@ GameObject:
   - component: {fileID: 6568136409441646239}
   - component: {fileID: 6568136409441646232}
   - component: {fileID: 2514107562812016953}
+  - component: {fileID: -1473186079224903953}
   - component: {fileID: -7351547951631365699}
   - component: {fileID: 2395755498779721353}
   - component: {fileID: 3569761553960829501}
@@ -614,6 +615,7 @@ MonoBehaviour:
   - {fileID: 6568136409441646225}
   - {fileID: 6568136409441646239}
   - {fileID: 6568136409441646232}
+  - {fileID: -1473186079224903953}
   - {fileID: -7351547951631365699}
   - {fileID: 2395755498779721353}
   SimulationBehaviours: []
@@ -711,6 +713,21 @@ MonoBehaviour:
   targetTags: []
   isPlayer: 1
   cam: {fileID: 0}
+--- !u!114 &-1473186079224903953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568136409441646224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af59cb83c5222e4ca9c75de0142cc88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  equipmentPrefabs:
+  - {fileID: 2836387698916012643, guid: ed9fce561498c204c9115a483eb54d53, type: 3}
 --- !u!114 &-7351547951631365699
 MonoBehaviour:
   m_ObjectHideFlags: 0

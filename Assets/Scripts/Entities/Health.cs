@@ -9,7 +9,7 @@ public class Health : NetworkBehaviour
 {
     [SerializeField]
     [Networked]
-    private float health { get; set; }
+    public float health { get; set; }
 
     [Tooltip("Entity has infinite health")]
     [SerializeField]

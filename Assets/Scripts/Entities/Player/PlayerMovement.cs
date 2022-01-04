@@ -4,6 +4,7 @@ using UnityEngine;
 using Fusion;
 
 [OrderBefore(typeof(HitboxManager))]
+[OrderAfter(typeof(EquipmentHolder))]
 public class PlayerMovement : NetworkBehaviour
 {
     private NetworkCharacterController cc;
@@ -18,7 +19,8 @@ public class PlayerMovement : NetworkBehaviour
     public FPSCamera cam;
 
     private StatusEffects statusEffects;
-    private float startingSpeed;
+    [HideInInspector]
+    public float startingSpeed;
 
     [SerializeField]
     private GameObject UI;
