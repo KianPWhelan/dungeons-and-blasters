@@ -113,27 +113,37 @@ public class Health : NetworkBehaviour
 
         var statusEffects = GetComponent<StatusEffects>();
 
-        if(statusEffects != null)
+        if(statusEffects != null && !damageType.immuneToStatusMod)
         {
             statusMod = statusEffects.GetDamageRecievedMod();
         }
 
-        if (damageType != null && resistanceStorage.ContainsKey(damageType))
+        if (damageType != null && resistanceStorage.ContainsKey(damageType) && !damageType.immuneToResistanceMod)
         {
             resistanceMod = resistanceStorage[damageType];
         }
 
-        if(damageType != null)
+        if(damageType != null && !damageType.immuneToResistanceMod)
         { 
             resistanceMod *= statusEffects.GetResistanceMod(damageType);
             Debug.Log("Resistance Mod: " + resistanceMod);
         }
 
-        health += amount * statusMod * resistanceMod;
+        //health += amount * statusMod * resistanceMod;
 
-        if(health > startingHealth + overheal)
+        //if(health > startingHealth + overheal)
+        //{
+        //    health = startingHealth + overheal;
+        //}
+
+        if(health + amount * statusMod * resistanceMod > startingHealth + overheal)
         {
-            health = startingHealth;
+            health = Mathf.Max(startingHealth + overheal, health); 
+        }
+
+        else
+        {
+            health += amount * statusMod * resistanceMod;
         }
 
         if(health <= 0)

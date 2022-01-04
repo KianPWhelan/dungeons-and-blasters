@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ffe7ab748e57dd4fbc5faa0b406cf49, type: 3}
-  m_Name: Void
+  m_Script: {fileID: 11500000, guid: ca7ca57bd6624c04596a7d0cf1597300, type: 3}
+  m_Name: 5 Heal
   m_EditorClassIdentifier: 
-  immuneToStatusMod: 1
-  immuneToResistanceMod: 1
-  immuneToDamageMod: 1
+  damageType: {fileID: 11400000, guid: 54782f050174d024e96c0ee65e526c4b, type: 2}
+  damage: -5
