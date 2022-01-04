@@ -45,4 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpMod: 0
   speedMod: 0
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: 24ab0197b1d3f4347a66bd2655d93daf, type: 2}

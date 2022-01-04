@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6867c52c3fa8f4a83dcb290f5732ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpMod: -30
+  hpMod: 0
   speedMod: 0
   effects:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: fe3c1bdec2d1a734091226323ff417cb, type: 2}
+  - {fileID: 11400000, guid: 660d212739e8505419b811e365591e5a, type: 2}

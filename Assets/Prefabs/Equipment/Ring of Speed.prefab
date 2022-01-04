@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3070909372100760574}
   - component: {fileID: 6253602479078944973}
   m_Layer: 0
-  m_Name: Soulburn Artifact
+  m_Name: Ring of Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpMod: 0
-  speedMod: 0
+  speedMod: 1.4
   effects: []

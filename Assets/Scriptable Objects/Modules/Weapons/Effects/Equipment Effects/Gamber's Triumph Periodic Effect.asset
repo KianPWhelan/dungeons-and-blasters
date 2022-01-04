@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0252b129c204c3842b67624c34c07acd, type: 3}
-  m_Name: Charm of Minor Healing Effect
+  m_Name: Gamber's Triumph Periodic Effect
   m_EditorClassIdentifier: 
-  damages:
-  - {fileID: 11400000, guid: 33f5d88653ada444bbbfa43bb5962ea1, type: 2}
-  overheal: 30
+  damages: []
+  overheal: 0
   isStatusEffect: 1
-  interval: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
-  duration: {fileID: 11400000, guid: 489d78ab4e2f4be4384930ede5d0a30c, type: 2}
+  interval: {fileID: 11400000, guid: 41a50f4ab5fe2bf4788f0791b7738514, type: 2}
+  duration: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
   stacks: 1
   refreshDuration: 0
   stackAmountIsRequiredForApplication: 0

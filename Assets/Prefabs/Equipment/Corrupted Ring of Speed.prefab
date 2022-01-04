@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3070909372100760574}
   - component: {fileID: 6253602479078944973}
   m_Layer: 0
-  m_Name: Soulburn Artifact
+  m_Name: Corrupted Ring of Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpMod: 0
-  speedMod: 0
-  effects: []
+  speedMod: 2.8
+  effects:
+  - {fileID: 11400000, guid: 3e59e02e519aaa44aa9309ab83114f9a, type: 2}

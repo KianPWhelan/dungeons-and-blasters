@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3070909372100760574}
   - component: {fileID: 6253602479078944973}
   m_Layer: 0
-  m_Name: Soulburn Artifact
+  m_Name: Gambler's Triumph
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,4 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpMod: 0
   speedMod: 0
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: 5eedcd93337090940be11b4f7a27670b, type: 2}
+  - {fileID: 11400000, guid: 440e0c5471a4f0e4da5ea26208936825, type: 2}

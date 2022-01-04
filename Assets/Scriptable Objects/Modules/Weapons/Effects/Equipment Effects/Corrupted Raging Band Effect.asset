@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Corrupted Raging Band Effect
   m_EditorClassIdentifier: 
   damages: []
+  overheal: 0
   isStatusEffect: 1
   interval: {fileID: 11400000, guid: 1ca1804f6f886af47acc0c317df1ff57, type: 2}
   duration: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
-  stacks: 0
+  stacks: 1
   refreshDuration: 0
   stackAmountIsRequiredForApplication: 0
   effectStackApplicationData: []
