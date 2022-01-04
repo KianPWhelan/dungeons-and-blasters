@@ -58,11 +58,17 @@ public class SpawnEffect : Effect
 
         if (location == null)
         {
-            Debug.LogError("Called spawn effect with no location provided");
+            Debug.LogWarning("Called spawn effect with no location provided");
         }
 
         if(!spawnOnTargetDeath || (health != null && health.isDead))
         {
+            if(spawnOnTargetDeath && health != null)
+            {
+                location = health.transform.position;
+            }
+
+            Debug.Log(location);
             var newUnit = runner.Spawn(unit, location.GetValueOrDefault(), rotation.GetValueOrDefault());
             enemyManager.AddEnemy(newUnit);
         }
