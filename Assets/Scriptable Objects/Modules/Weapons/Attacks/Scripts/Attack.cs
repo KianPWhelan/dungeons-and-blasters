@@ -144,7 +144,7 @@ public class Attack : ScriptableObject
     /// Applies all effects to all targets
     /// </summary>
     /// <param name="targetTag"></param>
-    public void ApplyEffects(GameObject target, string targetTag, Vector3? location = null, Quaternion? rotation = null, float damageMod = 1)
+    public void ApplyEffects(GameObject target, string targetTag, Vector3? location = null, Quaternion? rotation = null, float damageMod = 1, NetworkObject owner = null)
     {
         Health health = null;
         StatusEffects statusEffects = null;
@@ -158,7 +158,7 @@ public class Attack : ScriptableObject
 
         foreach(Effect effect in effects)
         {
-            effect.ApplyEffect(target, health, statusEffects, location, rotation, targetTag, damageMod);
+            effect.ApplyEffect(target, health, statusEffects, location, rotation, targetTag, damageMod, owner: owner);
         }
     }
 }

@@ -20,7 +20,7 @@ public class SpawnEffect : Effect
 
     private bool addToEnemyList;
 
-    public override void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false, float id = -1)
+    public override void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false, float id = -1, NetworkObject owner = null)
     {
         //Debug.Log("In spawn effect");
         //Debug.Log("Is Proc: " + isProc);

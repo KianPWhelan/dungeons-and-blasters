@@ -91,7 +91,7 @@ public class Health : NetworkBehaviour
     /// Adjusts health value by amount provided, can be negative
     /// </summary>
     /// <param name="amount"></param>
-    public void AdjustHealth(float amount, DamageType damageType = null, float overheal = 0f)
+    public void AdjustHealth(float amount, DamageType damageType = null, float overheal = 0f, NetworkObject owner = null, float lifesteal = 0f)
     {
         if(!Object.HasStateAuthority)
         {
@@ -100,6 +100,7 @@ public class Health : NetworkBehaviour
 
         float statusMod = 1;
         float resistanceMod = 1;
+        float lastHealth = health;
 
         if(amount < 0)
         {
@@ -113,7 +114,7 @@ public class Health : NetworkBehaviour
 
         var statusEffects = GetComponent<StatusEffects>();
 
-        if(statusEffects != null && !damageType.immuneToStatusMod)
+        if(statusEffects != null && (damageType == null || !damageType.immuneToStatusMod))
         {
             statusMod = statusEffects.GetDamageRecievedMod();
         }
@@ -123,7 +124,7 @@ public class Health : NetworkBehaviour
             resistanceMod = resistanceStorage[damageType];
         }
 
-        if(damageType != null && !damageType.immuneToResistanceMod)
+        if(damageType != null && !damageType.immuneToResistanceMod && statusEffects != null)
         { 
             resistanceMod *= statusEffects.GetResistanceMod(damageType);
             Debug.Log("Resistance Mod: " + resistanceMod);
@@ -144,6 +145,39 @@ public class Health : NetworkBehaviour
         else
         {
             health += amount * statusMod * resistanceMod;
+        }
+
+        
+        Debug.Log(owner);
+        float lifestealPerc = lifesteal;
+
+        if (owner != null)
+        {
+            owner.TryGetComponent(out StatusEffects ownerStatusEffects);
+
+            if (ownerStatusEffects != null)
+            {
+                lifestealPerc += ownerStatusEffects.GetLifesteal();
+            }
+        }
+
+        if (lifestealPerc > 0 && owner != null)
+        {
+            Debug.Log("Lifesteal percentage " + lifestealPerc);
+
+            float diff = lastHealth - Mathf.Max(health, 0);
+            float lifestealAmount = diff * lifestealPerc;
+            Debug.Log("Lifesteal amount of " + lifestealAmount);
+            owner.TryGetComponent(out Health ownerHealth);
+
+            if(ownerHealth != null)
+            {
+                DamageType temp = new DamageType();
+                temp.immuneToDamageMod = true;
+                temp.immuneToResistanceMod = true;
+                temp.immuneToStatusMod = true;
+                ownerHealth.AdjustHealth(lifestealAmount, temp, overheal);
+            }
         }
 
         if(health <= 0)

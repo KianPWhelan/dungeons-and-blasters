@@ -199,7 +199,7 @@ public class AreaAttack : AttackComponent
 
                 Debug.Log(falloffMod);
 
-                settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod * falloffMod);
+                settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod * falloffMod, owner: owner);
                 numHits++;
                 hitList.Add(hit.Hitbox.Root.gameObject);
                 hitNormal = hit.Normal;
@@ -239,7 +239,7 @@ public class AreaAttack : AttackComponent
     {
         if (settings.applyEffectsOnEnd)
         {
-            settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod);
+            settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod, owner);
         }
     }
 

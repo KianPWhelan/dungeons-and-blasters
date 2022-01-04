@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
 [CreateAssetMenu(menuName = "Modules/Weapons/Damage/Damage")]
 public class Damage : ScriptableObject
@@ -13,7 +14,7 @@ public class Damage : ScriptableObject
     [SerializeField]
     private float damage;
 
-    public void DoDamage(Health hp, float damageMod, float overheal = 0f)
+    public void DoDamage(Health hp, float damageMod, float overheal = 0f, NetworkObject owner = null, float lifesteal = 0f)
     {
         float dMod = 1;
 
@@ -22,6 +23,6 @@ public class Damage : ScriptableObject
             dMod = damageMod;
         }
 
-        hp.AdjustHealth(-damage * dMod, damageType, overheal);
+        hp.AdjustHealth(-damage * dMod, damageType, overheal, owner, lifesteal);
     }
 }

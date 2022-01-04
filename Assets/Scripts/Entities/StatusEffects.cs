@@ -314,6 +314,23 @@ public class StatusEffects : MonoBehaviour
         return false;
     }
 
+    public float GetLifesteal()
+    {
+        float sum = 0f;
+
+        foreach(Identifier effect in statusEffects)
+        {
+            if(effect.effect is BuffEffect)
+            {
+                var temp = (BuffEffect)effect.effect;
+
+                sum += temp.buffLifesteal;
+            }
+        }
+
+        return sum;
+    }
+
     private void ProcessStatusEffects()
     {
         remove = null;

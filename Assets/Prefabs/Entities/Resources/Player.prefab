@@ -679,6 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   cam: {fileID: 0}
+  startingSpeed: 0
   UI: {fileID: 2605582862138713523}
 --- !u!114 &6568136409441646232
 MonoBehaviour:
@@ -727,7 +728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   equipmentPrefabs:
-  - {fileID: 2836387698916012643, guid: ed9fce561498c204c9115a483eb54d53, type: 3}
+  - {fileID: 3094463597184753441, guid: f40b99cabc5b4c64f8bd9af4af4ee932, type: 3}
 --- !u!114 &-7351547951631365699
 MonoBehaviour:
   m_ObjectHideFlags: 0

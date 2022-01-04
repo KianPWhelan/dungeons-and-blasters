@@ -1,3 +1,4 @@
+using Fusion;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,11 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     [SerializeField]
     public List<Damage> damages = new List<Damage>();
 
-    [Tooltip("If the damage is negative (aka healing), how far over the starting health it can heal")]
+    [Tooltip("If the damage is negative (aka healing), how far over the starting health it can heal (also affects lifesteal, different from Buff Lifesteal)")]
     public float overheal;
+
+    [Tooltip("Percentage of damage dealt by this effect to be returned to the caster as health, is affected by overheal (e.g. 0.1 lifesteal is 10%)")]
+    public float lifesteal;
 
     [Tooltip("Status effects are applied to the target every defined iteration for the duration")]
     [SerializeField]
@@ -73,7 +77,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
     /// <param name="health"></param>
     /// <param name="statusEffects"></param>
     /// <param name="targetTag"></param>
-    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false, float id = -1)
+    public virtual void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false, float id = -1, NetworkObject owner = null)
     {
         var tag = targetTag;
 
@@ -117,7 +121,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
             // Apply damage first
             foreach (Damage damage in damages)
             {
-                damage.DoDamage(health, damageMod, overheal);
+                damage.DoDamage(health, damageMod, overheal, owner, lifesteal);
             }
         }
 

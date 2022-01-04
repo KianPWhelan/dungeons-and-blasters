@@ -354,7 +354,7 @@ public class Bean : AttackComponent
                     CalculateCrit(settings.attack);
                 }
 
-                settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod);
+                settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod, owner: owner);
                 numHits++;
                 hitList.Add(hit.Hitbox.Root.gameObject);
                 hitNormal = hit.Normal;
@@ -530,7 +530,7 @@ public class Bean : AttackComponent
     {
         if (settings.applyEffectsOnEnd)
         {
-            settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod);
+            settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod, owner);
         }
     }
 
@@ -538,7 +538,7 @@ public class Bean : AttackComponent
     {
         if (settings.applyEffectsOnTip)
         {
-            settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod);
+            settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod, owner);
         }
     }
 
@@ -546,7 +546,7 @@ public class Bean : AttackComponent
     {
         if (settings.applyEffectsOnReflect)
         {
-            settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod);
+            settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod, owner);
         }
     }
 
