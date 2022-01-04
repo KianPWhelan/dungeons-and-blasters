@@ -61,6 +61,8 @@ public class SpawnEffect : Effect
             Debug.LogWarning("Called spawn effect with no location provided");
         }
 
+        //Debug.Log("Is Dead " + health.isDead);
+
         if(!spawnOnTargetDeath || (health != null && health.isDead))
         {
             if(spawnOnTargetDeath && health != null)
@@ -68,6 +70,7 @@ public class SpawnEffect : Effect
                 location = health.transform.position;
             }
 
+            //Debug.Log("Location " + location);
             var newUnit = runner.Spawn(unit, location.GetValueOrDefault(), rotation.GetValueOrDefault());
             enemyManager.AddEnemy(newUnit);
         }
