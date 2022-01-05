@@ -15,6 +15,7 @@ MonoBehaviour:
   damages:
   - {fileID: 11400000, guid: 0e94e56289d56a04b8f9f5592afbc921, type: 2}
   overheal: 0
+  lifesteal: 0
   isStatusEffect: 1
   interval: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
   duration: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
@@ -29,5 +30,6 @@ MonoBehaviour:
   damageDealtMod: 1.4
   damageRecievedMod: 1
   moveSpeedMod: 1
+  buffLifesteal: 0.01
   isStun: 0
   resistanceMods: []
