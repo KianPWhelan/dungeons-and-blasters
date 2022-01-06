@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7ca57bd6624c04596a7d0cf1597300, type: 3}
   m_Name: Soulburn Artifact Damage
   m_EditorClassIdentifier: 
-  damageType: {fileID: 11400000, guid: 54782f050174d024e96c0ee65e526c4b, type: 2}
+  damageType: {fileID: 11400000, guid: fdfbd2e96b6024647b4001a2ed60c3bc, type: 2}
   damage: 1

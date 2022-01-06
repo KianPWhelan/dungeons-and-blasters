@@ -30,6 +30,6 @@ MonoBehaviour:
   damageDealtMod: 1.4
   damageRecievedMod: 1
   moveSpeedMod: 1
-  buffLifesteal: 0.01
+  buffLifesteal: 0.03
   isStun: 0
   resistanceMods: []

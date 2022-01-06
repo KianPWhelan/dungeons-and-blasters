@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damages: []
   overheal: 0
+  lifesteal: 0
   isStatusEffect: 1
-  interval: {fileID: 11400000, guid: 1ca1804f6f886af47acc0c317df1ff57, type: 2}
+  interval: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
   duration: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
   stacks: 1
   refreshDuration: 0
@@ -28,5 +29,6 @@ MonoBehaviour:
   damageDealtMod: 3
   damageRecievedMod: 1
   moveSpeedMod: 1
+  buffLifesteal: 0
   isStun: 0
   resistanceMods: []

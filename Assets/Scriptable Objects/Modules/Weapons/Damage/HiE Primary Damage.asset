@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HiE Primary Damage
   m_EditorClassIdentifier: 
   damageType: {fileID: 11400000, guid: 51fee9fff272fe5408f21cac6812170c, type: 2}
-  damage: 6
+  damage: 5
