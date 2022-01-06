@@ -191,6 +191,7 @@ public class RoomGenerator : MonoBehaviour
             {
                 if(nodes[i, j].isObjOrigin && nodes[i, j].obj.GetComponent<RoomObject>().isStartingPoint)
                 {
+                    nodes[i, j].obj.SetActive(false);
                     return nodes[i, j].tile.transform.position;
                 }
             }
@@ -199,7 +200,7 @@ public class RoomGenerator : MonoBehaviour
         return Vector3.zero;
     }
 
-    public Vector3 GetExit()
+    public Vector3 GetAndDisableExit()
     {
         for(int i = 0; i < gridSize.x; i++)
         {
@@ -207,6 +208,7 @@ public class RoomGenerator : MonoBehaviour
             {
                 if(nodes[i, j].isObjOrigin && nodes[i, j].obj.GetComponent<RoomObject>().isExitPoint)
                 {
+                    nodes[i, j].obj.SetActive(false);
                     return nodes[i, j].tile.transform.position;
                 }
             }

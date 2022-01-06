@@ -83,7 +83,7 @@ public class GameManager : NetworkBehaviour
 
     private void SpawnExit()
     {
-        Vector3 point = roomGen.GetExit();
+        Vector3 point = roomGen.GetAndDisableExit();
         Runner.Spawn(exitPrefab, point);
     }
 
