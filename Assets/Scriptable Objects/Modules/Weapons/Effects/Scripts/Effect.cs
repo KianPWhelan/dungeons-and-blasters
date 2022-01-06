@@ -127,7 +127,7 @@ public class Effect : ScriptableObject, ISerializationCallbackReceiver
 
         else
         {
-            Debug.LogWarning("Target of effect has no health behavior");
+            Debug.Log("Target of effect has no health behavior or incorrect tag");
         }
 
         // Apply recursive effects
