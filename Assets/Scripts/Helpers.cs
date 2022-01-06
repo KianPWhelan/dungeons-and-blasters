@@ -185,4 +185,9 @@ public class Helpers
 
         return count;
     }
+
+    public static Vector3 RotateVectorByDegrees(Vector3 vector, float degrees, Vector3 axis)
+    {
+        return Quaternion.AngleAxis(degrees, axis) * vector;
+    }
 }
