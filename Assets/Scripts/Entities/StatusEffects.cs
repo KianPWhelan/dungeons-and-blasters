@@ -20,6 +20,8 @@ public class StatusEffects : MonoBehaviour
 
     private List<Identifier> remove;
 
+    private bool processing;
+
     [Serializable]
     private class Identifier
     {
@@ -173,6 +175,8 @@ public class StatusEffects : MonoBehaviour
 
     public void RemoveEffect(Effect effect, float id = -1, bool removeAllStacks = false)
     {
+        Debug.Log("Removing " + effect.name);
+
         if(removeAllStacks)
         {
             foreach (Identifier status in statusEffects)
@@ -335,8 +339,10 @@ public class StatusEffects : MonoBehaviour
     {
         remove = null;
 
-        foreach (Identifier effect in statusEffects)
+        for(int i = 0; i < statusEffects.Count; i++)
+        //foreach (Identifier effect in statusEffects)
         {
+            Identifier effect = statusEffects[i];
             var currentTime = Time.time;
 
             // If the effect has lasted its duration, remove it
