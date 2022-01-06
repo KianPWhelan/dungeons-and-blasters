@@ -9,6 +9,9 @@ public class GameManager : NetworkBehaviour
     [SerializeField]
     private RoomGenerator roomGen;
 
+    [SerializeField]
+    private NetworkObject exitPrefab;
+
     public List<NetworkObject> players = new List<NetworkObject>();
     public List<NetworkObject> dms = new List<NetworkObject>();
 
@@ -22,6 +25,14 @@ public class GameManager : NetworkBehaviour
     //{
     //    players.Add(player);
     //}
+
+    public override void FixedUpdateNetwork()
+    {
+        if(CheckSpawnersDead() && Exit.instance != null)
+        {
+            Exit.instance.Activate();
+        }
+    }
 
     [Rpc(sources: RpcSources.All, targets: RpcTargets.All)]
     private void RPC_LoadRoom(byte[] roomData)
@@ -45,6 +56,7 @@ public class GameManager : NetworkBehaviour
         if(Object.HasStateAuthority)
         {
             MoveToStartPoint();
+            SpawnExit();
         }
     }
 
@@ -67,5 +79,24 @@ public class GameManager : NetworkBehaviour
         {
             dm.GetComponent<NetworkTransform>().Teleport(startPoint + Vector3.up * 50);
         }
+    }
+
+    private void SpawnExit()
+    {
+        Vector3 point = roomGen.GetExit();
+        Runner.Spawn(exitPrefab, point);
+    }
+
+    private bool CheckSpawnersDead()
+    {
+        foreach(Object o in EnemyManager.spawners)
+        {
+            if(o != null)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

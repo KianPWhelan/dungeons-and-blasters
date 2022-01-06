@@ -7,6 +7,8 @@ public class EnemyManager : NetworkBehaviour
 {
     public static List<NetworkObject> enemies = new List<NetworkObject>();
 
+    public static List<NetworkObject> spawners = new List<NetworkObject>();
+
     public override void Spawned()
     {
         FindAllEnemies();

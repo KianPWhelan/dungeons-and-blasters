@@ -45,6 +45,7 @@ public class EnemySpawner : NetworkBehaviour
             return;
         }
 
+        EnemyManager.spawners.Add(Object);
         SetSpawnDelay();
         GenerateWeightedSpawnList();
     }
