@@ -245,9 +245,12 @@ public class Projectile : AttackComponent
 			ProcessHits(hitsz);
 		}
 
-		List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
-		Runner.LagCompensation.RaycastAll(transform.position - 0.5f * dir, dir, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
-		ProcessHits(hits);
+		if (Object != null)
+        {
+			List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
+			Runner.LagCompensation.RaycastAll(transform.position - 0.5f * dir, dir, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
+			ProcessHits(hits);
+		}
 
 		lastPosition = transform.position;
 
