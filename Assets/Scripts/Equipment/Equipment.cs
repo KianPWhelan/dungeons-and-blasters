@@ -69,7 +69,7 @@ public class Equipment : MonoBehaviour
         {
             foreach(Effect effect in effects)
             {
-                effect.ApplyEffect(gameObject, health, statusEffects, transform.position, transform.rotation, tag, 1);
+                effect.ApplyEffect(gameObject, health, statusEffects, transform.position, transform.rotation, "none", 1);
             }
         }
     }
