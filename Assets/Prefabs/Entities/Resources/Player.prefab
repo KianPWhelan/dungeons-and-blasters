@@ -728,7 +728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   equipmentPrefabs:
-  - {fileID: 2836387698916012643, guid: 565cdcc815e20ed498ae1379d1505f72, type: 3}
+  - {fileID: 2836387698916012643, guid: 8d8f93d2bde54d24784a2d72b8f23869, type: 3}
 --- !u!114 &-7351547951631365699
 MonoBehaviour:
   m_ObjectHideFlags: 0
