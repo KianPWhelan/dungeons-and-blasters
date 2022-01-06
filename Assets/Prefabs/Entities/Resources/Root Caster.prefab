@@ -900,9 +900,14 @@ MonoBehaviour:
   doNotUseAsAbility: 1
   slottable: 0
   weaponHolder: {fileID: 0}
+  squad:
+    units: []
+    destination: {x: 0, y: 0, z: 0}
   followTarget: {fileID: 0}
   canAggro: 1
   isAggro: 0
+  avoidanceRadius: 1.25
+  avoidanceStrength: 1
   _networkedIsFollowing:
     _value: 0
   _networkedMoving:
@@ -1011,7 +1016,7 @@ MonoBehaviour:
   AoiPosition: {fileID: 0}
   Flags: 2305
   NetworkGuid:
-    RawGuidValue: deef32390aa5a334cb646265f940dcf9
+    RawGuidValue: 5f8ea6e7f327fdb42a1ae5cdee4ad973
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 9070468601821801595}

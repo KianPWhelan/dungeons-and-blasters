@@ -88,7 +88,7 @@ public class UnitSelector : MonoBehaviour
                 {
                     EnemyGeneric e = enemy.GetComponent<EnemyGeneric>();
                     
-                    if(e.selectionHighlight != null)
+                    if(e.selectionHighlight != null && e.selectable)
                     {
                         e.selectionHighlight.SetActive(true);
                         selectedUnits.Add(e);

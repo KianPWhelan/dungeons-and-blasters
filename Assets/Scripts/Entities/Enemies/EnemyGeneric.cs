@@ -115,6 +115,7 @@ public class EnemyGeneric : NetworkBehaviour
         set { if (Object.IsPredictedSpawn) predictedMoving = value; else networkedMoving = value; }
     }
 
+    public bool selectable = true;
     public float avoidanceRadius = 1;
     public float avoidanceStrength = 1.5f;
 
