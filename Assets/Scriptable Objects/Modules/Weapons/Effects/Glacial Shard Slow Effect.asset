@@ -13,16 +13,22 @@ MonoBehaviour:
   m_Name: Glacial Shard Slow Effect
   m_EditorClassIdentifier: 
   damages: []
+  overheal: 0
+  lifesteal: 0
   isStatusEffect: 1
   interval: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
-  duration: {fileID: 11400000, guid: f1cd2b7b018260145aa4f8b7769ae797, type: 2}
+  duration: {fileID: 11400000, guid: 2ed1610e402e92446b3b69cbc005b1da, type: 2}
   stacks: 1
   refreshDuration: 1
+  stackAmountIsRequiredForApplication: 0
+  effectStackApplicationData: []
+  onlyApplyOnce: 0
   recursiveEffects: []
   useOverwriteTag: 0
   overwriteTag: 
   damageDealtMod: 1
   damageRecievedMod: 1
-  moveSpeedMod: 0.7
+  moveSpeedMod: 0.85
+  buffLifesteal: 0
   isStun: 0
   resistanceMods: []

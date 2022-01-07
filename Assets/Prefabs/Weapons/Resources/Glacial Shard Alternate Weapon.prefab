@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -2852612586718650695}
   - component: {fileID: -674482505882883507}
   m_Layer: 0
-  m_Name: Glacial Shard
+  m_Name: Glacial Shard Alternate Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7266826432908589191}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,15 +47,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rarity: 1
   attacks:
-  - attack: {fileID: 11400000, guid: ce06add3f00406041a9a3dc10df5f906, type: 2}
-    cooldown: 0
+  - attack: {fileID: 11400000, guid: 2883b2b7fc3c4ad4b93ab55b50a92c83, type: 2}
+    cooldown: 8
     delay: 0
-    attackIsDirectlyControlled: 1
+    attackIsDirectlyControlled: 0
     audio:
     - {fileID: -2852612586718650695}
     time: 0
     isInUse: 0
-  alternateAttackWeapon: {fileID: 231495427682275294}
+  alternateAttackWeapon: {fileID: 0}
   isAlternateAttack: 0
   useAmmo: 0
   ammo:
@@ -64,10 +63,10 @@ MonoBehaviour:
     reloadSpeed: 2
     value: 0
     reloading: 0
-  useOverheat: 1
+  useOverheat: 0
   overheat:
     limit: 100
-    rate: 0.23
+    rate: 17
     cooldown: 4
     rechargeRate: 2
     rechargeTickRate: 0.1
@@ -97,9 +96,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c193220d37539cb42b0fa61751627015, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4da5107d31ffe454093cefd24fb57cd2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -279,80 +278,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &578864767152049889
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7840905850007402086}
-    m_Modifications:
-    - target: {fileID: -8413034521662373569, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: isAlternateAttack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131840301544516960, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_Name
-      value: Glacial Shard Alternate Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9805db276ea8c274db0017b96366074c, type: 3}
---- !u!4 &7266826432908589191 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7840905850007402086, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-  m_PrefabInstance: {fileID: 578864767152049889}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &231495427682275294 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -8413034521662373569, guid: 9805db276ea8c274db0017b96366074c, type: 3}
-  m_PrefabInstance: {fileID: 578864767152049889}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 527d39da56593224aa283bf3fc4155bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

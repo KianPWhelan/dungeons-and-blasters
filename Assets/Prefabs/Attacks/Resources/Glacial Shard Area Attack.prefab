@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 5313314661618729827}
   - component: {fileID: 8815318677706171525}
   - component: {fileID: 1362018052376016599}
-  - component: {fileID: 6172352085422353900}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -59,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 1359586224317021904}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 2253282343609411505}
   m_RootOrder: 0
@@ -113,22 +112,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6172352085422353900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359586224317021904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8753c8177bc00bb4f8433dc249fa1cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabSound: {fileID: 1536363171231850, guid: a9cc9e78442170a458be322353cc7168, type: 3}
-  destroyWhenDone: 1
-  soundPrefabIsChild: 0
-  pitchRandomMultiplier: 1
 --- !u!1 &6410624834205609692
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +125,7 @@ GameObject:
   - component: {fileID: 3598190664229435555}
   - component: {fileID: 206754510708149442}
   m_Layer: 0
-  m_Name: Spell Bomb Explosion
+  m_Name: Glacial Shard Area Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,7 +164,7 @@ MonoBehaviour:
   AoiPosition: {fileID: 0}
   Flags: 2305
   NetworkGuid:
-    RawGuidValue: 51c7aa4803e99fb49819d32e4b7ac751
+    RawGuidValue: 645a48be40025884ab2344c1114460dc
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 3598190664229435555}
@@ -234,7 +217,7 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   useDestination: 0
   settings:
-    attack: {fileID: 11400000, guid: c7516b58cc95e0d4888f94812822a1c9, type: 2}
+    attack: {fileID: 11400000, guid: 2883b2b7fc3c4ad4b93ab55b50a92c83, type: 2}
     subAttacks: []
     subAttackDelays: []
     subAttacksOnEnd: 0
@@ -242,9 +225,9 @@ MonoBehaviour:
     subAttacksAtSurfaceNormal: 0
     subAttacksCanOnlyProcOnce: 0
     visualEndEffects: []
-    offset: {x: 0, y: 0, z: 1}
+    offset: {x: 0, y: 0, z: 0}
     followOwner: 0
-    radius: 5
+    radius: 14
     hitMask:
       serializedVersion: 2
       m_Bits: 1
@@ -254,9 +237,9 @@ MonoBehaviour:
     multiHitCooldown: 0
     ignoreObstacles: 1
     applyEffectsOnEnd: 0
-    lifetime: 0.5
+    lifetime: 0.2
     gravityStrength: 0
-    useDamageFalloff: 1
+    useDamageFalloff: 0
     damageFalloffConstance: 1.1
     isDamageGain: 0
   _networkedVelocity: {x: 0, y: 0, z: 0}
