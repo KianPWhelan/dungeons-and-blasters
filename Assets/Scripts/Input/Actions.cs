@@ -13,5 +13,6 @@ public enum Actions
     Right,
     Jump,
     Select,
-    Multi
+    Multi,
+    Swap,
 }

@@ -16,6 +16,7 @@ public struct PlayerInput : INetworkInput
     public const uint BUTTON_USE = 1 << 0;
     public const uint BUTTON_FIRE = 1 << 1;
     public const uint BUTTON_FIRE_ALT = 1 << 2;
+    public const uint BUTTON_SWAP_WEAPON = 1 << 10;
 
     // Additional movement controls
     public const uint BUTTON_JUMP = 1 << 7;

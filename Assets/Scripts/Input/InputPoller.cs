@@ -97,6 +97,11 @@ public class InputPoller : MonoBehaviour
             inputData.Buttons |= PlayerInput.BUTTON_MULTI;
         }
 
+        if(keybinds.bindings.TryGetValue(Actions.Swap, out key) && Input.GetKey(key))
+        {
+            inputData.Buttons |= PlayerInput.BUTTON_SWAP_WEAPON;
+        }
+
         if (!isDungeonMaster.runtimeValue)
         {
             if (fpsCamera == null)

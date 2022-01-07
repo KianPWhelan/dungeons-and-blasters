@@ -296,6 +296,11 @@ public class Bean : AttackComponent
         {
             transform.position = owner.transform.position;
             transform.rotation = owner.transform.rotation;
+            
+            if(owner.TryGetComponent(out PlayerMovement pm))
+            {
+                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + Vector3.right * (float)pm.pitch);
+            }
         }
 
         lastForward = transform.position + transform.forward * settings.length;
