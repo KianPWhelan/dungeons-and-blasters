@@ -159,6 +159,13 @@ public class Health : NetworkBehaviour
             {
                 lifestealPerc += ownerStatusEffects.GetLifesteal();
             }
+
+            owner.TryGetComponent(out PointsTracker pt);
+
+            if(pt != null && lastHealth - health > 0)
+            {
+                pt.GiveDamagePoints(lastHealth - health);
+            }
         }
 
         if (lifestealPerc > 0 && owner != null)
