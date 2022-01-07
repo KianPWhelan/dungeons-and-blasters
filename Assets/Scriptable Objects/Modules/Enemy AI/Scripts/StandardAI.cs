@@ -62,7 +62,7 @@ public class StandardAI : EnemyAI
     {
         float dist = Vector3.Distance(self.transform.position, target.transform.position);
         enemyGeneric.isAggro = true;
-        Debug.Log(dist);
+        //Debug.Log(dist);
 
         if (dist > enemyGeneric.desiredRange)
         {

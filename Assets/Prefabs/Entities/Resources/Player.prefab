@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: -7351547951631365699}
   - component: {fileID: 2395755498779721353}
   - component: {fileID: 3569761553960829501}
+  - component: {fileID: -3295479196488941718}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -618,6 +619,7 @@ MonoBehaviour:
   - {fileID: -1473186079224903953}
   - {fileID: -7351547951631365699}
   - {fileID: 2395755498779721353}
+  - {fileID: -3295479196488941718}
   SimulationBehaviours: []
 --- !u!114 &6568136409441646225
 MonoBehaviour:
@@ -777,3 +779,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusEffects: []
   immunities: []
+--- !u!114 &-3295479196488941718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568136409441646224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 495edee2fe7eef046ad3a7ce8366d520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  pointValues: {fileID: 11400000, guid: 4df45149c3cc1e3418ab6e1de22589a9, type: 2}
+  _points: 0
+  _damageDealt: 0

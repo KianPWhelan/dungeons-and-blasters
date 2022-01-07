@@ -30,11 +30,17 @@ public class PlayerMovement : NetworkBehaviour
 
     private Vector3 startPoint;
 
+    private PointsTracker pointsTracker;
+
+    private Vector3 lastPosition;
+
     public override void Spawned()
     {
         cc = GetComponent<NetworkCharacterController>();
         statusEffects = GetComponent<StatusEffects>();
         startingSpeed = cc.MaxSpeed;
+        pointsTracker = GetComponent<PointsTracker>();
+        lastPosition = transform.position;
         SetupCamera();
     }
 
@@ -101,6 +107,11 @@ public class PlayerMovement : NetworkBehaviour
         cc.Move(direction.normalized);
 
         transform.rotation = Quaternion.Euler(0, (float)yaw, 0);
+
+        if(Object.HasStateAuthority)
+        {
+            ProcessMovementPoints();
+        }
     }
 
     private void SetupCamera()
@@ -119,6 +130,16 @@ public class PlayerMovement : NetworkBehaviour
         else
         {
             UI.SetActive(false);
+        }
+    }
+
+    private void ProcessMovementPoints()
+    {
+        float diff = Vector3.Distance(transform.position, lastPosition);
+        if(diff > 0.1)
+        {
+            lastPosition = transform.position;
+            pointsTracker.GiveMovementPoints(diff);
         }
     }
 }
