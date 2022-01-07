@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba271dd823cc50442be50abf30f4ed39, type: 3}
+  m_Name: Studied Necromancer Spawn Effect
+  m_EditorClassIdentifier: 
+  damages: []
+  overheal: 0
+  lifesteal: 0
+  isStatusEffect: 0
+  interval: {fileID: 0}
+  duration: {fileID: 0}
+  stacks: 0
+  refreshDuration: 0
+  stackAmountIsRequiredForApplication: 0
+  effectStackApplicationData: []
+  onlyApplyOnce: 0
+  recursiveEffects: []
+  useOverwriteTag: 0
+  overwriteTag: 
+  unit: {fileID: 8433316566710526866, guid: dfcda4961b8e0434a847545259100452, type: 3}
+  spawnOnTargetDeath: 0

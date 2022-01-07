@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6255029211269556099}
   - component: {fileID: -8223087919462740042}
   m_Layer: 0
-  m_Name: Necromancer Summoning
+  m_Name: Studied Necromancer Summoning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rarity: 0
   attacks:
-  - attack: {fileID: 11400000, guid: e9b63fcb668baeb43b0addf55226f002, type: 2}
-    cooldown: 10
+  - attack: {fileID: 11400000, guid: e91e696f1ea6c2647be5d623c2de9a3c, type: 2}
+    cooldown: 15
     delay: 0
     attackIsDirectlyControlled: 0
     audio:
