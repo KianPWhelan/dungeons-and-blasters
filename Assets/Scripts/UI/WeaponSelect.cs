@@ -12,7 +12,12 @@ public class WeaponSelect : MonoBehaviour
     [SerializeField]
     private Inventory inventory;
 
+    [SerializeField]
+    private bool isSecondarySelection;
+
     public static GameObject selection;
+
+    public static GameObject selection2;
 
     private Dropdown dropdown;
     // Start is called before the first frame update
@@ -28,13 +33,30 @@ public class WeaponSelect : MonoBehaviour
         }
 
         dropdown.AddOptions(options);
-        selection = weapons[0];
+        if (isSecondarySelection)
+        {
+            selection2 = weapons[0];
+        }
+
+        else
+        {
+            selection = weapons[0];
+        }
         //ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
     }
 
     public void ChangeSelection()
     {
-        selection = weapons[dropdown.value];
+        if(isSecondarySelection)
+        {
+            selection2 = weapons[dropdown.value];
+        }
+
+        else
+        {
+            selection = weapons[dropdown.value];
+        }
+        
         //ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
     }
 
