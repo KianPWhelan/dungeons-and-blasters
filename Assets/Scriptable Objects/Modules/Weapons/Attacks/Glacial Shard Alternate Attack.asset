@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
-  m_Name: Glacial Shard Charge Attack
+  m_Name: Glacial Shard Alternate Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 8523135143678805610, guid: fed70677dff312141a8b8765cef51094, type: 3}
+  attack: {fileID: 6410624834205609692, guid: 645a48be40025884ab2344c1114460dc, type: 3}
   effects:
-  - {fileID: 11400000, guid: f2a9dc7f52abd9240a80916a05826e54, type: 2}
+  - {fileID: 11400000, guid: a434d028970250c40bb612e98e18db75, type: 2}
+  - {fileID: 11400000, guid: c81e0da6c373db84d8a2ec6d797f4b31, type: 2}
   useOverwriteTag: 0
   overwriteTag: 
   canCrit: 0

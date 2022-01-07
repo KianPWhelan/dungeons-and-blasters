@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0252b129c204c3842b67624c34c07acd, type: 3}
-  m_Name: Titan Slow Effect
+  m_Name: Glacial Shard Alternate Slow Effect
   m_EditorClassIdentifier: 
   damages: []
   overheal: 0
   lifesteal: 0
   isStatusEffect: 1
-  interval: {fileID: 11400000, guid: 2ed1610e402e92446b3b69cbc005b1da, type: 2}
+  interval: {fileID: 11400000, guid: 1ca1804f6f886af47acc0c317df1ff57, type: 2}
   duration: {fileID: 11400000, guid: 2ed1610e402e92446b3b69cbc005b1da, type: 2}
   stacks: 1
-  refreshDuration: 1
+  refreshDuration: 0
   stackAmountIsRequiredForApplication: 0
   effectStackApplicationData: []
   onlyApplyOnce: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   overwriteTag: 
   damageDealtMod: 1
   damageRecievedMod: 1
-  moveSpeedMod: 0.6
+  moveSpeedMod: 1
   buffLifesteal: 0
-  isStun: 0
+  isStun: 1
   resistanceMods: []

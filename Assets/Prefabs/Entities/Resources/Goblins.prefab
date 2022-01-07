@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7411641805199110818}
   - component: {fileID: -87548408096170912}
   m_Layer: 0
-  m_Name: Skeletons
+  m_Name: Goblins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,8 +88,8 @@ MonoBehaviour:
     _value: 0
   _networkedMoving:
     _value: 0
-  enemyToSpawn: {fileID: 1818002960377947092, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
-  numToSpawn: 2
+  enemyToSpawn: {fileID: 1818002960377947092, guid: 45f222c2cdd31164c8687945e957c8ea, type: 3}
+  numToSpawn: 4
 --- !u!114 &-87548408096170912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   AoiPosition: {fileID: 0}
   Flags: 2305
   NetworkGuid:
-    RawGuidValue: 01488855835e9dc47aa8b6ab8c92c1f7
+    RawGuidValue: 1d6ddd15bfb0f5f4394ade44368d9345
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 7411641805199110818}

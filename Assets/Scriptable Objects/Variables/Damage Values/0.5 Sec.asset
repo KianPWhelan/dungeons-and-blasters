@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f088ffb4a70f944d9b48f502281f171, type: 3}
-  m_Name: 1 Fifth Sec
+  m_Name: 0.5 Sec
   m_EditorClassIdentifier: 
-  initialValue: 0.2
-  runtimeValue: 0.2
+  initialValue: 0.5
+  runtimeValue: 0.5

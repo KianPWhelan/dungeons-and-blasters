@@ -215,16 +215,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  _validTag: 
-  _damageMod: 0
-  _destination: {x: 0, y: 0, z: 0}
-  _useDestination: 0
+  validTag: 
+  damageMod: 0
+  destination: {x: 0, y: 0, z: 0}
+  useDestination: 0
   settings:
     attack: {fileID: 11400000, guid: 52113116ca5183f4ca1ccc2609ed156e, type: 2}
     subAttacks: []
+    subAttackDelays: []
     subAttacksOnEnd: 0
     subAttacksOnHit: 0
     subAttacksAtSurfaceNormal: 0
+    subAttacksCanOnlyProcOnce: 0
+    visualEndEffects: []
     offset: {x: 0, y: 0, z: 0}
     followOwner: 0
     radius: 10
@@ -239,6 +242,9 @@ MonoBehaviour:
     applyEffectsOnEnd: 0
     lifetime: 3
     gravityStrength: 0
+    useDamageFalloff: 1
+    damageFalloffConstance: 1.1
+    isDamageGain: 0
   _networkedVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &7124195740134752485
 MonoBehaviour:

@@ -75,15 +75,21 @@ MonoBehaviour:
   doNotUseAsAbility: 1
   slottable: 1
   weaponHolder: {fileID: 0}
+  squad:
+    units: []
+    destination: {x: 0, y: 0, z: 0}
   followTarget: {fileID: 0}
   canAggro: 1
   isAggro: 0
+  selectable: 1
+  avoidanceRadius: 1
+  avoidanceStrength: 1.5
   _networkedIsFollowing:
     _value: 0
   _networkedMoving:
     _value: 0
   enemyToSpawn: {fileID: 1818002960377947092, guid: 220b4b50d79cfe44791f846434f4c086, type: 3}
-  numToSpawn: 3
+  numToSpawn: 2
 --- !u!114 &-87548408096170912
 MonoBehaviour:
   m_ObjectHideFlags: 0

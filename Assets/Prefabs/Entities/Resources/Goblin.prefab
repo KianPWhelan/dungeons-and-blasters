@@ -807,7 +807,7 @@ GameObject:
   - component: {fileID: 8302378377757365146}
   - component: {fileID: 1077302827331312017}
   m_Layer: 0
-  m_Name: Skeleton
+  m_Name: Goblin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -965,7 +965,7 @@ MonoBehaviour:
   resistances: []
   isDead: 0
   startingHealth: 0
-  _health: 75
+  _health: 45
 --- !u!114 &3727592679696396437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   AoiPosition: {fileID: 0}
   Flags: 2305
   NetworkGuid:
-    RawGuidValue: 6d955e9e7484e0047ac21bc5bd83af81
+    RawGuidValue: 45f222c2cdd31164c8687945e957c8ea
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 9070468601821801595}
