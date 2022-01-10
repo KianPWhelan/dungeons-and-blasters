@@ -157,6 +157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stair01
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010953139060, guid: d3591fd369ccacc4ba20b2cc0aad6c1c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4000012150092822, guid: d3591fd369ccacc4ba20b2cc0aad6c1c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -278,6 +282,10 @@ PrefabInstance:
     - target: {fileID: 3258546702556851051, guid: 0f09556d9abe21f4180495fa5722193b, type: 3}
       propertyPath: m_Name
       value: Block 1x1x2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258546702556851051, guid: 0f09556d9abe21f4180495fa5722193b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4007248095932801899, guid: 0f09556d9abe21f4180495fa5722193b, type: 3}
       propertyPath: m_Enabled

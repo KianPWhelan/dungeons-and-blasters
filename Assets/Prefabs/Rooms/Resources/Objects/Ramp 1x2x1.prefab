@@ -249,6 +249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ramp box collider
       objectReference: {fileID: 0}
+    - target: {fileID: 3258546702556851051, guid: 5dad55c1d8d08ed41baa3f266ade29d5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3998312526897360911, guid: 5dad55c1d8d08ed41baa3f266ade29d5, type: 3}
       propertyPath: m_Size.x
       value: 1.6
