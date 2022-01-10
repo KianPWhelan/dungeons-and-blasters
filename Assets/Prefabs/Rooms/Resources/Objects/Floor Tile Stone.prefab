@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882a648b760f6e8488008187128b4f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilesOccupied: {x: 0, y: 0}
+  tilesOccupied: {x: 1, y: 1}
   isStartingPoint: 0
   isExitPoint: 0
   doNotUse: 0
