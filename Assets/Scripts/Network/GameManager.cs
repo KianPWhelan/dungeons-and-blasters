@@ -28,7 +28,7 @@ public class GameManager : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        if(CheckSpawnersDead() && Exit.instance != null)
+        if(CheckSpawnersDead() && Exit.instance != null && Object.HasStateAuthority)
         {
             Exit.instance.Activate();
         }
