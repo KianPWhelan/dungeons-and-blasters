@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
+using Fusion;
 using SnazzlebotTools.ENPCHealthBars;
+using UnityEngine.SceneManagement;
 
-public class Health : MonoBehaviourPunCallbacks
+public class Health : NetworkBehaviour
 {
-    [Tooltip("FloatVariable reference for health point (Leave blank to use normal float)")]
-    private FloatVariable health;
-
-    [Tooltip("Normal float, does not exist outside of behavior")]
     [SerializeField]
-    private float floatHealth;
+    [Networked]
+    public float health { get; set; }
 
     [Tooltip("Entity has infinite health")]
     [SerializeField]
@@ -55,7 +53,7 @@ public class Health : MonoBehaviourPunCallbacks
     [HideInInspector]
     public float startingHealth;
 
-    public void Start()
+    public override void Spawned()
     {
         TryGetComponent(out healthBar);
 
@@ -65,16 +63,7 @@ public class Health : MonoBehaviourPunCallbacks
             healthBar = null;
         }
         
-        if(health != null)
-        {
-            startingHealth = health.initialValue;
-        }
-
-        else
-        {
-            startingHealth = floatHealth;
-        }
-
+        startingHealth = health;
 
         if(healthBar != null)
         {
@@ -87,9 +76,9 @@ public class Health : MonoBehaviourPunCallbacks
             healthBar.FaceCamera = Controller.LocalPlayerInstance.GetComponent<Controller>().playerCam.GetComponent<Camera>();
         }
 
-        else if(healthBar != null && DungeonMasterController.LocalPlayerInstance != null)
+        else if(healthBar != null && DungeonMasterControllerDepricated.LocalPlayerInstance != null)
         {
-            healthBar.FaceCamera = DungeonMasterController.LocalPlayerInstance.GetComponent<DungeonMasterController>().camera;
+            healthBar.FaceCamera = DungeonMasterControllerDepricated.LocalPlayerInstance.GetComponent<DungeonMasterControllerDepricated>().camera;
         }
 
         foreach(ResistanceContainer resistance in resistances)
@@ -102,14 +91,20 @@ public class Health : MonoBehaviourPunCallbacks
     /// Adjusts health value by amount provided, can be negative
     /// </summary>
     /// <param name="amount"></param>
-    public void AdjustHealth(float amount, DamageType damageType = null)
+    public void AdjustHealth(float amount, DamageType damageType = null, float overheal = 0f, NetworkObject owner = null, float lifesteal = 0f)
     {
+        if(!Object.HasStateAuthority)
+        {
+            return;
+        }
+
         float statusMod = 1;
         float resistanceMod = 1;
+        float lastHealth = health;
 
         if(amount < 0)
         {
-            PlayHitEffects();
+            RPC_PlayHitEffects();
         }
 
         if(infiniteHealth)
@@ -119,56 +114,99 @@ public class Health : MonoBehaviourPunCallbacks
 
         var statusEffects = GetComponent<StatusEffects>();
 
-        if(statusEffects != null)
+        if(statusEffects != null && (damageType == null || !damageType.immuneToStatusMod))
         {
             statusMod = statusEffects.GetDamageRecievedMod();
         }
 
-        if(damageType != null && resistanceStorage.ContainsKey(damageType))
+        if (damageType != null && resistanceStorage.ContainsKey(damageType) && !damageType.immuneToResistanceMod)
         {
             resistanceMod = resistanceStorage[damageType];
-            resistanceMod *= statusEffects.GetResistanceMod(damageType);
         }
 
-        if(health != null)
-        {
-            health.runtimeValue += amount * statusMod * resistanceMod;
-            if(health.runtimeValue <= 0)
-            {
-                isDead = true;
-            }
+        if(damageType != null && !damageType.immuneToResistanceMod && statusEffects != null)
+        { 
+            resistanceMod *= statusEffects.GetResistanceMod(damageType);
+            Debug.Log("Resistance Mod: " + resistanceMod);
+        }
 
-            if (healthBar != null)
-            {
-                healthBar.Value = (int)health.runtimeValue;
-            }
+        //health += amount * statusMod * resistanceMod;
+
+        //if(health > startingHealth + overheal)
+        //{
+        //    health = startingHealth + overheal;
+        //}
+
+        if(health + amount * statusMod * resistanceMod > startingHealth + overheal)
+        {
+            health = Mathf.Max(startingHealth + overheal, health); 
         }
 
         else
         {
-            floatHealth += amount * statusMod * resistanceMod;
-            if(floatHealth <= 0)
+            health += amount * statusMod * resistanceMod;
+        }
+
+        
+        Debug.Log(owner);
+        float lifestealPerc = lifesteal;
+
+        if (owner != null)
+        {
+            owner.TryGetComponent(out StatusEffects ownerStatusEffects);
+
+            if (ownerStatusEffects != null)
             {
-                isDead = true;
-
-                if(photonView.IsMine)
-                {
-                    if(isPlayer)
-                    {
-                        GetComponent<Controller>().GameOver();
-                    }
-
-                    else
-                    {
-                        PhotonNetwork.Destroy(gameObject);
-                    }            
-                }
+                lifestealPerc += ownerStatusEffects.GetLifesteal();
             }
 
-            if (healthBar != null)
+            owner.TryGetComponent(out PointsTracker pt);
+
+            if(pt != null && lastHealth - health > 0)
             {
-                healthBar.Value = (int)floatHealth;
+                pt.GiveDamagePoints(lastHealth - health);
             }
+        }
+
+        if (lifestealPerc > 0 && owner != null)
+        {
+            Debug.Log("Lifesteal percentage " + lifestealPerc);
+
+            float diff = lastHealth - Mathf.Max(health, 0);
+            float lifestealAmount = diff * lifestealPerc;
+            Debug.Log("Lifesteal amount of " + lifestealAmount);
+            owner.TryGetComponent(out Health ownerHealth);
+
+            if(ownerHealth != null)
+            {
+                DamageType temp = new DamageType();
+                temp.immuneToDamageMod = true;
+                temp.immuneToResistanceMod = true;
+                temp.immuneToStatusMod = true;
+                ownerHealth.AdjustHealth(lifestealAmount, temp, overheal);
+            }
+        }
+
+        if(health <= 0)
+        {
+            isDead = true;
+
+            if(isPlayer)
+            {
+                //TODO: player death
+                //GetComponent<Controller>().GameOver();
+                StartCoroutine(KillEntity());
+            }
+
+            else
+            {
+                StartCoroutine(KillEntity());
+            }            
+        }
+
+        if (healthBar != null && Object != null)
+        {
+            RPC_UpdateHealthBar(health);
         }
     }
 
@@ -179,36 +217,23 @@ public class Health : MonoBehaviourPunCallbacks
             return Mathf.Infinity;
         }
 
-        if(health != null)
-        {
-            return health.runtimeValue;
-        }
-
-        return floatHealth;
+        return health;
     }
 
     public void SetHealth(float value)
     {
-        if (health != null)
-        {
-            health.initialValue = value;
-            health.runtimeValue = value;
-        }
-
-        else
-        {
-            floatHealth = value;
-        }
+        health = value;
     }
 
-    private void PlayHitEffects()
+    [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.InputAuthority)]
+    private void RPC_PlayHitEffects()
     {
         if(hitSoundEffect == null)
         {
             return;
         }
 
-        if(isPlayer && photonView.IsMine)
+        if(isPlayer)
         {
             hitEffect.SetActive(true);
             hitEffect.GetComponent<HitFade>().StartFade();
@@ -218,5 +243,17 @@ public class Health : MonoBehaviourPunCallbacks
         var m_Source = m_Sound.GetComponent<AudioSource>();
         float life = m_Source.clip.length / m_Source.pitch;
         Destroy(m_Sound, life);
+    }
+
+    [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.All)]
+    private void RPC_UpdateHealthBar(float health)
+    {
+        healthBar.Value = (int)health;
+    }
+
+    private IEnumerator KillEntity()
+    {
+        yield return new WaitForEndOfFrame();
+        Runner.Despawn(Object);
     }
 }

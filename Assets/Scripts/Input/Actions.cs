@@ -11,5 +11,8 @@ public enum Actions
     Backwards,
     Left,
     Right,
-    Jump
+    Jump,
+    Select,
+    Multi,
+    Swap,
 }

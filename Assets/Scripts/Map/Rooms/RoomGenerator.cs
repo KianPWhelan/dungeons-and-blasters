@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using Fusion;
 using Com.OfTomorrowInc.DMShooter;
 
 public class RoomGenerator : MonoBehaviour
@@ -95,6 +96,7 @@ public class RoomGenerator : MonoBehaviour
         {
             if(node.isObjOrigin)
             {
+                Debug.Log("Loading " + node.obj);
                 AddObjectToNode(node.gridLocation, Resources.Load<GameObject>("Objects/" + node.obj), node.objOrientation);
             }
         }
@@ -130,7 +132,7 @@ public class RoomGenerator : MonoBehaviour
             }
         }
 
-        GameManager.single.enemiesHaveSpawned = true;
+        //GameManagerDeprecated.single.enemiesHaveSpawned = true;
     }
 
     public void GenerateGrid()
@@ -189,6 +191,24 @@ public class RoomGenerator : MonoBehaviour
             {
                 if(nodes[i, j].isObjOrigin && nodes[i, j].obj.GetComponent<RoomObject>().isStartingPoint)
                 {
+                    nodes[i, j].obj.SetActive(false);
+                    return nodes[i, j].tile.transform.position;
+                }
+            }
+        }
+
+        return Vector3.zero;
+    }
+
+    public Vector3 GetAndDisableExit()
+    {
+        for(int i = 0; i < gridSize.x; i++)
+        {
+            for(int j = 0; j < gridSize.y; j++)
+            {
+                if(nodes[i, j].isObjOrigin && nodes[i, j].obj.GetComponent<RoomObject>().isExitPoint)
+                {
+                    nodes[i, j].obj.SetActive(false);
                     return nodes[i, j].tile.transform.position;
                 }
             }

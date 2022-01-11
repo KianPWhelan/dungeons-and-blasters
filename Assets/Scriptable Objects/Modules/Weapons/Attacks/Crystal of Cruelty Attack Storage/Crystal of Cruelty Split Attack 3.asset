@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
+  m_Name: Crystal of Cruelty Split Attack 3
+  m_EditorClassIdentifier: 
+  attack: {fileID: 8523135143678805610, guid: 7f668dc978bfb7b4f92040bfec43dfd4, type: 3}
+  effects:
+  - {fileID: 11400000, guid: 8a09cf2810167e641bee3cfdf86ad68d, type: 2}
+  - {fileID: 11400000, guid: 2bf2157435063d3478c799d4195702f0, type: 2}
+  useOverwriteTag: 0
+  overwriteTag: 
+  canCrit: 0
+  critOnCritBoxesOnly: 1
+  critChance: 1000
+  critMultiplier: 1.5
+  knockbackStrength: 0

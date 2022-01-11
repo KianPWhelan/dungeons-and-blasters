@@ -9,7 +9,7 @@ public class Helpers
     /// Gets the closest game object with the desired tag
     /// </summary>
     /// <returns></returns>
-    public static GameObject FindClosest(Transform myPosition, string tag)
+    public static GameObject FindClosest(Transform myPosition, string tag, List<Transform> exclude = null)
     {
         GameObject[] gos;
         gos = GameObject.FindGameObjectsWithTag(tag);
@@ -20,7 +20,7 @@ public class Helpers
         {
             Vector3 diff = go.transform.position - position;
             float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance && go.transform != myPosition)
+            if (curDistance < distance && go.transform != myPosition && (exclude == null || !exclude.Contains(go.transform)))
             {
                 closest = go;
                 distance = curDistance;
@@ -77,11 +77,11 @@ public class Helpers
         return closest;
     }
 
-        /// <summary>
-        /// Gets the closest game object with the desired tag
-        /// </summary>
-        /// <returns></returns>
-        public static List<GameObject> FindAllInRange(Transform myPosition, float range, string tag)
+    /// <summary>
+    /// Gets the closest game object with the desired tag
+    /// </summary>
+    /// <returns></returns>
+    public static List<GameObject> FindAllInRange(Transform myPosition, float range, string tag)
     {
         GameObject[] gos;
         gos = GameObject.FindGameObjectsWithTag(tag);
@@ -184,5 +184,10 @@ public class Helpers
         }
 
         return count;
+    }
+
+    public static Vector3 RotateVectorByDegrees(Vector3 vector, float degrees, Vector3 axis)
+    {
+        return Quaternion.AngleAxis(degrees, axis) * vector;
     }
 }

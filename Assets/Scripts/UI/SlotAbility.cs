@@ -11,7 +11,7 @@ public class SlotAbility : MonoBehaviour
 
     public GameObject slotPanel;
 
-    public DungeonMasterController controller;
+    public DungeonMasterControllerDepricated controller;
 
     public float size;
 

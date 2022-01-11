@@ -450,9 +450,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330ecda54bd98f24bab14bf2b5bfda4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons: []
+  weaponPrefabs: []
   targetTags: []
   isPlayer: 1
+  cam: {fileID: 0}
 --- !u!114 &-7539197072369980240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9991c3553723674380690d791df1343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatHealth: 100
+  _interpolationDataSource: 0
   infiniteHealth: 0
   isPlayer: 1
   hitSoundEffect: {fileID: 6137451349687365925, guid: 320271e8712c0b844ad3a6667523939f, type: 3}
@@ -473,6 +474,7 @@ MonoBehaviour:
   resistances: []
   isDead: 0
   startingHealth: 0
+  _health: 0
 --- !u!114 &-9066426888992374240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,7 +1141,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 4
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!1 &6018256651156512829
 GameObject:
   m_ObjectHideFlags: 0

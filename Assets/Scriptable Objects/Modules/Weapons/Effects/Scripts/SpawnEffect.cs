@@ -1,23 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
+using Fusion;
 
 [CreateAssetMenu(menuName = "Modules/Weapons/Effects/SpawnEffect")]
 public class SpawnEffect : Effect
 {
     [Tooltip("Prefab of unit to spawn")]
     [SerializeField]
-    private GameObject unit;
+    private NetworkObject unit;
 
     [Tooltip("Spawn when the target is dead (If not set as status effect, will only apply on the frame the target was hit)")]
     [SerializeField]
     private bool spawnOnTargetDeath;
 
-    public override void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false)
+    private NetworkRunner runner;
+
+    private EnemyManager enemyManager;
+
+    private bool addToEnemyList;
+
+    public override void ApplyEffect(GameObject target, Health health, StatusEffects statusEffects, Vector3? location, Quaternion? rotation, string targetTag = "none", float damageMod = 1, bool isProc = false, float id = -1, NetworkObject owner = null)
     {
-        Debug.Log("In spawn effect");
-        Debug.Log("Is Proc: " + isProc);
+        //Debug.Log("In spawn effect");
+        //Debug.Log("Is Proc: " + isProc);
+
+        if(runner == null)
+        {
+            runner = FindObjectOfType<NetworkRunner>();
+        }
+
+        if(unit.TryGetComponent(out EnemyGeneric e))
+        {
+            enemyManager = FindObjectOfType<EnemyManager>();
+        }
 
         var tag = targetTag;
 
@@ -42,12 +58,21 @@ public class SpawnEffect : Effect
 
         if (location == null)
         {
-            Debug.LogError("Called spawn effect with no location provided");
+            Debug.LogWarning("Called spawn effect with no location provided");
         }
+
+        //Debug.Log("Is Dead " + health.isDead);
 
         if(!spawnOnTargetDeath || (health != null && health.isDead))
         {
-            PhotonNetwork.Instantiate(unit.name, location.GetValueOrDefault(), rotation.GetValueOrDefault(), 0);
+            if(spawnOnTargetDeath && health != null)
+            {
+                location = health.transform.position;
+            }
+
+            //Debug.Log("Location " + location);
+            var newUnit = runner.Spawn(unit, location.GetValueOrDefault(), rotation.GetValueOrDefault());
+            enemyManager.AddEnemy(newUnit);
         }
     }
 }

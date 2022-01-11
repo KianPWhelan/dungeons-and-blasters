@@ -13,9 +13,16 @@ MonoBehaviour:
   m_Name: New Spawn Effect
   m_EditorClassIdentifier: 
   damages: []
-  isStatusEffect: 0
-  interval: {fileID: 11400000, guid: 58f9c3d8207c6e64aaf3d0a5e31229ed, type: 2}
-  duration: {fileID: 11400000, guid: b4dfb7de97a992842b5446718f46573b, type: 2}
+  isStatusEffect: 1
+  interval: {fileID: 11400000, guid: 1ca1804f6f886af47acc0c317df1ff57, type: 2}
+  duration: {fileID: 11400000, guid: cd6f4a88261db1f47b61aee025895b4f, type: 2}
+  stacks: 1
+  refreshDuration: 0
+  stackAmountIsRequiredForApplication: 0
+  effectStackApplicationData: []
+  onlyApplyOnce: 0
   recursiveEffects: []
-  unit: {fileID: 9070468601821801538, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
-  spawnOnTargetDeath: 0
+  useOverwriteTag: 0
+  overwriteTag: 
+  unit: {fileID: 1818002960377947092, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
+  spawnOnTargetDeath: 1

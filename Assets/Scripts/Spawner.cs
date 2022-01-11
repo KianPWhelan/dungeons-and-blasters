@@ -12,7 +12,7 @@ public class Spawner : NetworkBehaviour
     /// <param name="position"></param>
     /// <param name="rotation"></param>
     /// <param name="info"></param>
-    public void Spawn(GameObject prefab, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId)
+    public void Spawn(GameObject prefab, Vector3 position, Quaternion rotation, object[] info, float delay, int ownerId, NetworkObject owner)
     {
         //if (!PhotonView.Find(ownerId).IsMine)
         //{
@@ -23,22 +23,26 @@ public class Spawner : NetworkBehaviour
 
         // photonView.RPC("LocalInstantiate", RpcTarget.All, objectName, position, rotation, info, delay, ownerId);
 
-        Debug.Log("Destination");
-        Debug.Log(info[3]);
+        PlayerRef inputAuth = Object.InputAuthority;
+
+        if(owner != null)
+        {
+            inputAuth = owner.InputAuthority;
+        }
 
         StartCoroutine(Helpers.Timeout(
             () =>
             {
-                Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, Object.InputAuthority, (Runner, obj) =>
+                Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, inputAuth, (Runner, obj) =>
                 {
-                    obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3]);
+                    obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner, (int)info[4], (int)info[5], (bool)info[6]);
                 });
             },
             delay
         ));
     }
 
-    public void Spawn(GameObject prefab, GameObject self, object[] info, float delay, int ownerId)
+    public void Spawn(GameObject prefab, GameObject self, object[] info, float delay, int ownerId, NetworkObject owner, bool isPlayer = false)
     {
         //if (!PhotonView.Find(ownerId).IsMine)
         //{
@@ -49,7 +53,10 @@ public class Spawner : NetworkBehaviour
 
         // photonView.RPC("LocalInstantiate", RpcTarget.All, objectName, position, rotation, info, delay, ownerId);
 
-        Debug.Log("Bruh");
+        //Debug.Log("Bruh");
+        //Debug.Log(self.transform.position);
+        //Debug.Log(self.transform.rotation);
+        //Debug.Log(self.name);
 
         //if(useOverrideRotation)
         //{
@@ -67,12 +74,33 @@ public class Spawner : NetworkBehaviour
 
         //else
         //{
-            StartCoroutine(Helpers.Timeout(
+
+        PlayerRef inputAuth = Object.InputAuthority;
+        Quaternion rotation = self.transform.rotation;
+        Vector3 position = self.transform.position;
+
+        if (isPlayer)
+        {
+
+        }
+
+        if (owner != null)
+        {
+            inputAuth = owner.InputAuthority;
+
+            if(owner.TryGetBehaviour(out PlayerMovement p))
+            {
+                rotation = Quaternion.Euler((float)p.pitch, (float)p.yaw, 0);
+                position = owner.transform.position;
+            }
+        }
+
+        StartCoroutine(Helpers.Timeout(
                 () =>
                 {
-                    Runner.Spawn(prefab.GetComponent<NetworkObject>(), self.transform.position, self.transform.rotation, Object.InputAuthority, (Runner, obj) =>
+                    Runner.Spawn(prefab.GetComponent<NetworkObject>(), position, rotation, inputAuth, (Runner, obj) =>
                     {
-                        obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3]);
+                        obj.GetComponent<AttackComponent>().InitNetworkState((string)info[1], (float)info[2], info[3], owner, (int)info[4], (int)info[5], (bool)info[6]);
                     });
                 },
                 delay

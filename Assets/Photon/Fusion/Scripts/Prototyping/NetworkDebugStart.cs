@@ -520,7 +520,8 @@ public class NetworkDebugStart : Fusion.Behaviour {
       Scene = scene,
       SessionName = DefaultRoomName,
       Initialized = initialized,
-      SceneObjectProvider = sceneObjectProvider
+      SceneObjectProvider = sceneObjectProvider,
+      CustomLobbyName = "Custom Lobby",
     });
   }
 

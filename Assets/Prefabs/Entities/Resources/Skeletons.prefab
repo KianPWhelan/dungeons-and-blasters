@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7411641805199110819}
   - component: {fileID: 7411641805199110818}
-  - component: {fileID: 7411641805199110821}
+  - component: {fileID: -87548408096170912}
   m_Layer: 0
   m_Name: Skeletons
   m_TagString: Untagged
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8e8962f1940974692ece183d817341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
   rarity: 0
   size: 0
   uniqueId: 
@@ -73,16 +74,23 @@ MonoBehaviour:
   statusEffects: {fileID: 0}
   doNotUseAsAbility: 1
   slottable: 1
-  moving: 0
-  photonView: {fileID: 0}
   weaponHolder: {fileID: 0}
-  isFollowing: 0
+  squad:
+    units: []
+    destination: {x: 0, y: 0, z: 0}
   followTarget: {fileID: 0}
   canAggro: 1
   isAggro: 0
-  enemyToSpawn: {fileID: 9070468601821801538, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
-  numToSpawn: 5
---- !u!114 &7411641805199110821
+  selectable: 1
+  avoidanceRadius: 1
+  avoidanceStrength: 1.5
+  _networkedIsFollowing:
+    _value: 0
+  _networkedMoving:
+    _value: 0
+  enemyToSpawn: {fileID: 1818002960377947092, guid: 6d955e9e7484e0047ac21bc5bd83af81, type: 3}
+  numToSpawn: 2
+--- !u!114 &-87548408096170912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,16 +99,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7411641805199110820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
+  AoiMode: 0
+  DefaultPropertyGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AoiPosition: {fileID: 0}
+  Flags: 2305
+  NetworkGuid:
+    RawGuidValue: 01488855835e9dc47aa8b6ab8c92c1f7
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 7411641805199110818}
+  SimulationBehaviours: []

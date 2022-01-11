@@ -49,9 +49,13 @@ MonoBehaviour:
   - attack: {fileID: 11400000, guid: 856506d765aa2b744b930ed2ea3af1e7, type: 2}
     cooldown: 0.7
     delay: 0
+    attackIsDirectlyControlled: 0
     audio:
     - {fileID: -306696347247249082}
     time: 0
+    isInUse: 0
+  alternateAttackWeapon: {fileID: 0}
+  isAlternateAttack: 0
   useAmmo: 0
   ammo:
     clipSize: 10
@@ -61,11 +65,11 @@ MonoBehaviour:
   useOverheat: 1
   overheat:
     limit: 100
-    rate: 18
-    cooldown: 5
+    rate: 14
+    cooldown: 4
     rechargeRate: 2
     rechargeTickRate: 0.1
-    rechargeDelay: 0.3
+    rechargeDelay: 0.6
     value: 0
     onCooldown: 0
     isRecharging: 0
@@ -79,7 +83,8 @@ MonoBehaviour:
     decayTickRate: 0
     value: 0
   playAudioForEachAttack: 0
-  spinDecaying: 0
+  owner: {fileID: 0}
+  index: 0
 --- !u!82 &-306696347247249082
 AudioSource:
   m_ObjectHideFlags: 0

@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Photon.Pun;
 using Com.OfTomorrowInc.DMShooter;
 
 public class WeaponSelect : MonoBehaviour
 {
     [SerializeField]
-    private List<WeaponDeprecated> weapons = new List<WeaponDeprecated>();
+    private List<GameObject> weapons = new List<GameObject>();
 
     [SerializeField]
     private Inventory inventory;
 
-    public WeaponDeprecated selection;
+    [SerializeField]
+    private bool isSecondarySelection;
+
+    public static GameObject selection;
+
+    public static GameObject selection2;
 
     private Dropdown dropdown;
     // Start is called before the first frame update
@@ -23,28 +27,41 @@ public class WeaponSelect : MonoBehaviour
         dropdown.ClearOptions();
         List<Dropdown.OptionData> options = new List<Dropdown.OptionData>();
 
-        foreach(WeaponDeprecated weapon in weapons)
+        foreach(GameObject weapon in weapons)
         {
             options.Add(new Dropdown.OptionData(weapon.name));
         }
 
         dropdown.AddOptions(options);
-        selection = weapons[0];
+        if (isSecondarySelection)
+        {
+            selection2 = weapons[0];
+        }
+
+        else
+        {
+            selection = weapons[0];
+        }
         //ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
-        Launcher.clientHash.Add("weapon", selection.name);
-        PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
     }
 
     public void ChangeSelection()
     {
-        selection = weapons[dropdown.value];
+        if(isSecondarySelection)
+        {
+            selection2 = weapons[dropdown.value];
+        }
+
+        else
+        {
+            selection = weapons[dropdown.value];
+        }
+        
         //ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
-        Launcher.clientHash["weapon"] = selection.name;
-        PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
     }
 
     public void OnDisable()
     {
-        inventory.weapons.Add(selection);
+        //inventory.weapons.Add(selection);
     }
 }

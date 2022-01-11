@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fusion;
 
 public class WeaponHolder : MonoBehaviour
 {
@@ -23,13 +24,18 @@ public class WeaponHolder : MonoBehaviour
     [HideInInspector]
     public FPSCamera cam;
 
+    private int index;
+
     public void Start()
     {
         for(int i = 0; i < weaponPrefabs.Count; i++)
         {
             var weapon = weaponPrefabs[i];
             var newWeapon = Instantiate(weapon, transform);
+            newWeapon.GetComponent<Weapon>().owner = GetComponent<NetworkObject>();
+            newWeapon.GetComponent<Weapon>().index = i;
             weaponScripts.Add(newWeapon.GetComponent<Weapon>());
+            index++;
         }
 
         if(isPlayer)
@@ -38,7 +44,7 @@ public class WeaponHolder : MonoBehaviour
         }
     }
 
-    public bool UseWeapon(int index, Vector3? destination = null, bool useDestination = false, bool altAttack = false)
+    public bool UseWeapon(int index, Vector3? destination = null, bool useDestination = false, bool altAttack = false, Quaternion? rotation = null, bool useRotation = false)
     {
         //if(!useDestination)
         //{
@@ -68,12 +74,20 @@ public class WeaponHolder : MonoBehaviour
         //    return false;
         //}
 
-        if(altAttack)
+        if(isPlayer)
         {
-            
+            if (altAttack)
+            {
+                return weaponScripts[index].UseAlternate(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: rotation, weaponHolder: this);
+            }
+
+            return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: rotation, weaponHolder: this);
         }
 
-        return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, useRotation: true, rotation: cam.transform.rotation, weaponHolder: this);
+        else
+        {
+            return weaponScripts[index].Use(gameObject, targetTags[index], useDestination, destination, weaponHolder: this);
+        }
     }
 
     //public void UseWeapon(string weaponName)
@@ -86,9 +100,14 @@ public class WeaponHolder : MonoBehaviour
         return weaponScripts;
     }
 
-    public void AddWeapon(Weapon weapon, string targetTag)
+    public void AddWeapon(GameObject weapon, string targetTag)
     {
-        weaponScripts.Add(weapon);
+        weaponPrefabs.Add(weapon);
+        var newWeapon = Instantiate(weapon, transform);
+        newWeapon.GetComponent<Weapon>().owner = GetComponent<NetworkObject>();
+        newWeapon.GetComponent<Weapon>().index = index;
+        weaponScripts.Add(newWeapon.GetComponent<Weapon>());
+        index++;
         targetTags.Add(targetTag);
     }
 

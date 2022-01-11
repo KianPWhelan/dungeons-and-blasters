@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Supernova Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 3807866404001653414, guid: 22b9e182504de4c4c97d5e965ecc45f4, type: 3}
+  attack: {fileID: 8523135143678805610, guid: 1388a337456508d41bd7dc85d1ed3966, type: 3}
   effects:
   - {fileID: 11400000, guid: 5f3b2fd64523b8345a5c8683461243d1, type: 2}
   useOverwriteTag: 0
@@ -21,3 +21,4 @@ MonoBehaviour:
   critOnCritBoxesOnly: 1
   critChance: 1000
   critMultiplier: 1.5
+  knockbackStrength: 0

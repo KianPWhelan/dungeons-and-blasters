@@ -46,8 +46,8 @@ public class Database : MonoBehaviour
             {
                 DataSnapshot snapshot = task.Result;
                 json.value = snapshot.GetRawJsonValue();
-                Debug.Log("Here");
-                Debug.Log(json.value);
+                //Debug.Log("Here");
+                //Debug.Log(json.value);
             };
         });
 
@@ -62,7 +62,7 @@ public class Database : MonoBehaviour
         {
             if (task.IsFaulted)
             {
-
+                Debug.LogError(task.Exception);
             }
 
             else if (task.IsCompleted)

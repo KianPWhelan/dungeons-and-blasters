@@ -5,19 +5,26 @@ using Fusion;
 
 public struct PlayerInput : INetworkInput
 {
-    // Interaction controls
-    public const uint BUTTON_USE = 1 << 0;
-    public const uint BUTTON_FIRE = 1 << 1;
-    public const uint BUTTON_FIRE_ALT = 1 << 2;
-
     // Directional controls
     public const uint BUTTON_FORWARD = 1 << 3;
     public const uint BUTTON_BACKWARDS = 1 << 4;
     public const uint BUTTON_LEFT = 1 << 5;
     public const uint BUTTON_RIGHT = 1 << 6;
 
+    // PLAYER CONTROLS
+    // Interaction controls
+    public const uint BUTTON_USE = 1 << 0;
+    public const uint BUTTON_FIRE = 1 << 1;
+    public const uint BUTTON_FIRE_ALT = 1 << 2;
+    public const uint BUTTON_SWAP_WEAPON = 1 << 10;
+
     // Additional movement controls
     public const uint BUTTON_JUMP = 1 << 7;
+
+    // DM CONTROLS
+    // Interaction controls
+    public const uint BUTTON_SELECT = 1 << 8;
+    public const uint BUTTON_MULTI = 1 << 9;
 
     // All buttons
     public uint Buttons;
@@ -25,6 +32,8 @@ public struct PlayerInput : INetworkInput
     // Camera controls
     public Angle yaw;
     public Angle pitch;
+    public float deltaScroll;
+    public Vector3 mousePoint;
 
     // Helper functions
     public bool IsUp(uint button)

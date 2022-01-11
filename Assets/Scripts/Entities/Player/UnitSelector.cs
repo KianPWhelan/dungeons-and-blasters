@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Com.OfTomorrowInc.DMShooter;
+using Fusion;
 
 public class UnitSelector : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class UnitSelector : MonoBehaviour
     private bool isDragging;
 
     private Vector3 mousePos;
+
+    [HideInInspector]
+    public bool active;
+
+    private EnemyManager enemyManager;
 
     public Texture2D WhiteTexture
     {
@@ -37,13 +43,16 @@ public class UnitSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //enemyManager = FindObjectOfType<EnemyManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        HandleInputs();
+        if(active)
+        {
+            HandleInputs();
+        }
     }
 
     private void OnGUI()
@@ -56,7 +65,7 @@ public class UnitSelector : MonoBehaviour
         }
     }
 
-    private void HandleInputs()
+    public void HandleInputs()
     {
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -73,13 +82,13 @@ public class UnitSelector : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.Mouse0))
         {
-            foreach(GameObject enemy in GameManager.enemies)
+            foreach(NetworkObject enemy in EnemyManager.enemies)
             {
                 if(enemy != null && IsWithinSelectionBounds(enemy.transform))
                 {
                     EnemyGeneric e = enemy.GetComponent<EnemyGeneric>();
                     
-                    if(e.selectionHighlight != null)
+                    if(e.selectionHighlight != null && e.selectable)
                     {
                         e.selectionHighlight.SetActive(true);
                         selectedUnits.Add(e);
@@ -102,8 +111,9 @@ public class UnitSelector : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
+            Debug.Log("bruh0");
             Vector3 dest = GetMousePoint();
-            GameObject follow = TryFollow();
+            NetworkObject follow = TryFollow();
             bool queue = false;
 
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
@@ -129,23 +139,31 @@ public class UnitSelector : MonoBehaviour
                 {
                     if(e == null)
                     {
-                        return;
+                        selectedUnits.Remove(e);
+                        continue;
                     }
 
                     if(queue)
                     {
+                        //Debug.Log("bruh1");
                         e.AddToQueue(dest);
                         e.canAggro = false;
                     }
 
                     else
                     {
+                        //Debug.Log("bruh2");
                         e.ClearQueue();
                         e.ClearPath();
                         e.CancelFollow();
                         e.AddToQueue(dest);
                         e.canAggro = false;
                     }
+                }
+
+                if(selectedUnits.Count > 0 && SquadManager.instance != null)
+                {
+                    SquadManager.instance.CreateSquad(selectedUnits, dest);
                 }
             }
         }
@@ -168,7 +186,7 @@ public class UnitSelector : MonoBehaviour
         return Vector3.negativeInfinity;
     }
 
-    private GameObject TryFollow()
+    private NetworkObject TryFollow()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -177,7 +195,7 @@ public class UnitSelector : MonoBehaviour
         {
             if(hit.transform.gameObject.tag == "Enemy" || hit.transform.gameObject.tag == "Player")
             {
-                return hit.transform.gameObject;
+                return hit.transform.gameObject.GetComponent<NetworkObject>();
             }
         }
 

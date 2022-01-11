@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
+using Fusion;
 
 [CreateAssetMenu(menuName = "Modules/Weapons/Attacks/Attack")]
 public class Attack : ScriptableObject
 {
     [Tooltip("Object pool for attack game objects which are used to gather targets")]
     [SerializeField]
-    private GameObject attack;
+    public GameObject attack;
 
     [Tooltip("Effects that the attack inflicts")]
     [SerializeField]
@@ -40,7 +40,7 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(GameObject self, float delay, Vector3? destination = null, string targetTag = "none", bool useSelfAsParent = true, bool useOverrideRotation = false, Quaternion? overrideRotation = null, bool useSelfForPositioning = false, WeaponHolder weaponHolder = null)
+    public void PerformAttack(GameObject self, float delay, Vector3? destination = null, string targetTag = "none", bool useSelfAsParent = true, bool useOverrideRotation = false, Quaternion? overrideRotation = null, bool useSelfForPositioning = false, WeaponHolder weaponHolder = null, bool directControl = false, int weaponIndex = 0, int attackIndex = 0, bool isAlt = false)
     {
         // Debug.Log("Using Attack " + name);
         var tag = targetTag;
@@ -69,12 +69,12 @@ public class Attack : ScriptableObject
 
         if(useSelfAsParent)
         {
-            info = new object[] { 0, tag, damageMod, destination.GetValueOrDefault() };
+            info = new object[] { 0, tag, damageMod, destination.GetValueOrDefault(), weaponIndex, attackIndex, isAlt };
         }
 
         else
         {
-            info = new object[] { null, tag, damageMod, destination.GetValueOrDefault() };
+            info = new object[] { null, tag, damageMod, destination.GetValueOrDefault(), weaponIndex, attackIndex, isAlt };
         }
 
         if(destination.GetValueOrDefault().x == Vector3.negativeInfinity.x)
@@ -93,18 +93,18 @@ public class Attack : ScriptableObject
         {
             if (weaponHolder.isPlayer)
             {
-                spawner.Spawn(attack, weaponHolder.cam.gameObject, info, delay, 0);
+                spawner.Spawn(attack, self, info, delay, 0, self.GetComponent<NetworkObject>(), isPlayer: true);
             }
 
             else
             {
-                spawner.Spawn(attack, self, info, delay, 0);
+                spawner.Spawn(attack, self, info, delay, 0, self.GetComponent<NetworkObject>());
             }
         }
 
         else
         {
-            spawner.Spawn(attack, self.transform.position, rotation, info, delay, 0);
+            spawner.Spawn(attack, self.transform.position, rotation, info, delay, 0, self.GetComponent<NetworkObject>());
         }
 
     }
@@ -112,7 +112,7 @@ public class Attack : ScriptableObject
     /// <summary>
     /// Performs the actual attack in the scene
     /// </summary>
-    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, int ownerId, Vector3? destination = null, string targetTag = "none", float delay = 0)
+    public void PerformAttack(Vector3 selfPosition, Quaternion selfRotation, float damageMod, int ownerId, Vector3? destination = null, string targetTag = "none", float delay = 0, NetworkObject owner = null)
     {
         var tag = targetTag;
 
@@ -130,21 +130,21 @@ public class Attack : ScriptableObject
         // Debug.Log("Performing attack");
         // Debug.Log(attack);
         object[] info;
-        info = new object[] { null, tag, damageMod, destination.GetValueOrDefault() };
+        info = new object[] { null, tag, damageMod, destination.GetValueOrDefault(), 0, 0, false };
 
         if (destination.GetValueOrDefault().x == Vector3.negativeInfinity.x)
         {
             info[3] = null;
         }
 
-        spawner.Spawn(attack, selfPosition, selfRotation, info, delay, ownerId);
+        spawner.Spawn(attack, selfPosition, selfRotation, info, delay, ownerId, owner);
     }
 
     /// <summary>
     /// Applies all effects to all targets
     /// </summary>
     /// <param name="targetTag"></param>
-    public void ApplyEffects(GameObject target, string targetTag, Vector3? location = null, Quaternion? rotation = null, float damageMod = 1)
+    public void ApplyEffects(GameObject target, string targetTag, Vector3? location = null, Quaternion? rotation = null, float damageMod = 1, NetworkObject owner = null)
     {
         Health health = null;
         StatusEffects statusEffects = null;
@@ -158,7 +158,7 @@ public class Attack : ScriptableObject
 
         foreach(Effect effect in effects)
         {
-            effect.ApplyEffect(target, health, statusEffects, location, rotation, targetTag, damageMod);
+            effect.ApplyEffect(target, health, statusEffects, location, rotation, targetTag, damageMod, owner: owner);
         }
     }
 }

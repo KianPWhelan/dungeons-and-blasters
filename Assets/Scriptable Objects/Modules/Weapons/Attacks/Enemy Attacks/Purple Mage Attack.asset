@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Purple Mage Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 323206637372966561, guid: deb6b65b9a5e721418bca0025dfd7ed9, type: 3}
+  attack: {fileID: 8523135143678805610, guid: 12deaa02f540ec34688bb6b51c5d42c0, type: 3}
   effects:
   - {fileID: 11400000, guid: 8593d6278653f02439b78368e30d057e, type: 2}
   useOverwriteTag: 0
   overwriteTag: 
+  canCrit: 0
+  critOnCritBoxesOnly: 1
+  critChance: 1000
+  critMultiplier: 1.5
+  knockbackStrength: 0

@@ -11,7 +11,7 @@ public class RoomSelect : MonoBehaviour
     [SerializeField]
     private List<string> rooms = new List<string>();
 
-    public string selection;
+    public static string selection;
 
     private Dropdown dropdown;
     // Start is called before the first frame update
@@ -24,8 +24,8 @@ public class RoomSelect : MonoBehaviour
         options.Add(new Dropdown.OptionData("No Rooms"));
 
         dropdown.AddOptions(options);
-        Launcher.clientHash.Add("room", "");
-        PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
+        //Launcher.clientHash.Add("room", "");
+        //PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
         //selection = maps[0];
         ////ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
         //Launcher.clientHash.Add("map", selection);
@@ -36,8 +36,8 @@ public class RoomSelect : MonoBehaviour
     {
         selection = rooms[dropdown.value];
         //ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
-        Launcher.clientHash["room"] = JsonConvert.DeserializeObject<RoomData>(selection).name;
-        PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
+        //Launcher.clientHash["room"] = JsonConvert.DeserializeObject<RoomData>(selection).name;
+        //PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
     }
 
     public void AddMap(string roomJson)
@@ -81,7 +81,7 @@ public class RoomSelect : MonoBehaviour
         dropdown.AddOptions(options);
         selection = rooms[0];
         //ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
-        Launcher.clientHash["room"] = JsonConvert.DeserializeObject<RoomData>(selection).name;
-        PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
+        //Launcher.clientHash["room"] = JsonConvert.DeserializeObject<RoomData>(selection).name;
+        //PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
     }
 }

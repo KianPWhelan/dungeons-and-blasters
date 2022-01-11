@@ -18,6 +18,10 @@ public class StatusEffects : MonoBehaviour
 
     private int idCounter = 0;
 
+    private List<Identifier> remove;
+
+    private bool processing;
+
     [Serializable]
     private class Identifier
     {
@@ -44,6 +48,23 @@ public class StatusEffects : MonoBehaviour
             this.intervalTime = intervalTime;
             this.targetTag = targetTag;
             this.damageMod = damageMod;
+        }
+    }
+
+    public void Start()
+    {
+        foreach(Identifier i in statusEffects)
+        {
+            if (effectDetails.ContainsKey(i))
+            {
+                effectDetails[i].durationTime = Time.time;
+                effectDetails[i].damageMod = 1;
+            }
+
+            else
+            {
+                effectDetails.Add(i, new Container(Time.time, 0, tag, 1));
+            }
         }
     }
 
@@ -126,6 +147,21 @@ public class StatusEffects : MonoBehaviour
         return false;
     }
 
+    public int GetStacks(Effect effect)
+    {
+        int count = 0;
+
+        foreach(Identifier status in statusEffects)
+        {
+            if(status.effect == effect)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
     public void RefreshDuration(Effect effect)
     {
         foreach(Identifier status in statusEffects)
@@ -133,6 +169,63 @@ public class StatusEffects : MonoBehaviour
             if(status.effect == effect)
             {
                 effectDetails[status].durationTime = Time.time;
+            }
+        }
+    }
+
+    public void RemoveEffect(Effect effect, float id = -1, bool removeAllStacks = false)
+    {
+        Debug.Log("Removing " + effect.name);
+
+        if(removeAllStacks)
+        {
+            foreach (Identifier status in statusEffects)
+            {
+                if (status.effect == effect)
+                {
+                    if (remove == null)
+                    {
+                        remove = new List<Identifier>();
+                    }
+
+                    remove.Add(status);
+                }
+            }
+        }
+
+        else if(id == -1)
+        {
+            foreach(Identifier status in statusEffects)
+            {
+                if(status.effect == effect)
+                {
+                    if(remove == null)
+                    {
+                        remove = new List<Identifier>();
+                    }
+
+                    remove.Add(status);
+
+                    return;
+                }
+            }
+        }
+
+        else
+        {
+            foreach (Identifier status in statusEffects)
+            {
+                if (status.effect == effect && status.id == id)
+                {
+                    if (remove == null)
+                    {
+                        remove = new List<Identifier>();
+                    }
+
+                    remove.Add(status);
+
+                    return;
+                }
             }
         }
     }
@@ -225,12 +318,31 @@ public class StatusEffects : MonoBehaviour
         return false;
     }
 
+    public float GetLifesteal()
+    {
+        float sum = 0f;
+
+        foreach(Identifier effect in statusEffects)
+        {
+            if(effect.effect is BuffEffect)
+            {
+                var temp = (BuffEffect)effect.effect;
+
+                sum += temp.buffLifesteal;
+            }
+        }
+
+        return sum;
+    }
+
     private void ProcessStatusEffects()
     {
-        List<Identifier> remove = null;
+        remove = null;
 
-        foreach (Identifier effect in statusEffects)
+        for(int i = 0; i < statusEffects.Count; i++)
+        //foreach (Identifier effect in statusEffects)
         {
+            Identifier effect = statusEffects[i];
             var currentTime = Time.time;
 
             // If the effect has lasted its duration, remove it
@@ -249,7 +361,7 @@ public class StatusEffects : MonoBehaviour
             {
                 if(!immunities.Contains(effect.effect))
                 {
-                    effect.effect.ApplyEffect(gameObject, gameObject.GetComponent<Health>(), this, transform.position, transform.rotation, effectDetails[effect].targetTag, effectDetails[effect].damageMod, true);
+                    effect.effect.ApplyEffect(gameObject, gameObject.GetComponent<Health>(), this, transform.position, transform.rotation, effectDetails[effect].targetTag, effectDetails[effect].damageMod, true, effect.id);
                     effectDetails[effect].intervalTime = currentTime;
                 }
             }

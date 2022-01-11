@@ -45,7 +45,7 @@ public class EnemyGeneric : NetworkBehaviour
     public Animator animator;
 
     [Tooltip("The collider which will be used for critical points")]
-    public Collider critBox;
+    public Hitbox critBox;
 
     public State currentState;
 
@@ -86,6 +86,9 @@ public class EnemyGeneric : NetworkBehaviour
     [HideInInspector]
     public WeaponHolder weaponHolder;
 
+    //[HideInInspector]
+    public Squad squad;
+
     [HideInInspector]
     [Networked]
     public NetworkBool networkedIsFollowing { get; set; }
@@ -105,11 +108,28 @@ public class EnemyGeneric : NetworkBehaviour
 
     [Networked]
     public NetworkBool networkedMoving { get; set; }
-    private bool predictedMoving;
-    private bool moving
+    private bool moving;
+
+    public bool selectable = true;
+    public float avoidanceRadius = 1;
+    public float avoidanceStrength = 1.5f;
+
+    private bool reset;
+    private bool declutterCheck;
+
+    public bool logger;
+
+
+
+    public void AssignSquad(Squad squad)
     {
-        get => Object.IsPredictedSpawn ? predictedMoving : (bool)networkedMoving;
-        set { if (Object.IsPredictedSpawn) predictedMoving = value; else networkedMoving = value; }
+        if (this.squad != null)
+        {
+            this.squad.RemoveUnit(this);
+        }
+
+        this.squad = squad;
+        squad.AddUnit(this);
     }
 
     // Start is called before the first frame update
@@ -145,6 +165,17 @@ public class EnemyGeneric : NetworkBehaviour
             return;
         }
 
+        if(!declutterCheck)
+        {
+            agent.ResetPath();
+            declutterCheck = true;
+        }
+
+        if(!moving)
+        {
+            reset = true;
+        }
+
         if(statusEffects.GetIsStunned() && agent.isActiveAndEnabled)
         {
             agent.ResetPath();
@@ -177,18 +208,41 @@ public class EnemyGeneric : NetworkBehaviour
             }
         }
 
-        if(agent.isActiveAndEnabled && agent.pathStatus == NavMeshPathStatus.PathComplete && !isFollowing)
+        if(agent.isActiveAndEnabled && agent.pathStatus == NavMeshPathStatus.PathComplete && !isFollowing && (moving || destinationQueue.Count > 0))
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
+                if(logger)
+                {
+                    Debug.Log("Bruh " + gameObject.GetInstanceID() + " remDist: " + agent.remainingDistance + " stopDist: " + agent.stoppingDistance + " isActive: " + agent.isActiveAndEnabled + " pathStat: " + agent.pathStatus + " isFoll: " + isFollowing);
+                }
+                
                 //if (!agent.hasPath)
                 //{
-                    ProcessQueue();
+
+                ProcessQueue();
                 //}
             }
         }
 
         agent.speed = startingSpeed * statusEffects.GetMoveSpeedMod();
+
+        if(moving)
+        {
+            var avoidanceVector = GetAvoidanceVector();
+
+            agent.velocity += avoidanceVector;
+
+            if (agent.velocity.magnitude > agent.speed)
+            {
+                agent.velocity = Vector3.ClampMagnitude(agent.velocity, agent.speed);
+            }
+        }
+
+        if (squad != null)
+        {
+            //squad.SumAndIncrement(transform.position);
+        }
 
         target = null;
         target = GetClosestVisible();
@@ -214,6 +268,13 @@ public class EnemyGeneric : NetworkBehaviour
 
     public void AddToQueue(Vector3 position)
     {
+        if(!Object.HasStateAuthority)
+        {
+            RPC_AddToQueue(position);
+            return;
+        }
+
+        //Debug.Log("Adding to queue");
         //if()
         //{
             destinationQueue.Enqueue(position);
@@ -222,6 +283,13 @@ public class EnemyGeneric : NetworkBehaviour
 
     public void ClearQueue()
     {
+        if(!Object.HasStateAuthority)
+        {
+            RPC_ClearQueue();
+            return;
+        }
+
+        //Debug.Log("Clearing queue");
         //if(photonView.IsMine)
         //{
             destinationQueue.Clear();
@@ -230,14 +298,28 @@ public class EnemyGeneric : NetworkBehaviour
 
     public void ClearPath()
     {
+        if(!Object.HasStateAuthority)
+        {
+            RPC_ClearPath();
+            return;
+        }
+
+        //Debug.Log("Resetting path");
         agent.ResetPath();
         //photonView.RPC("SetIsMoving", RpcTarget.All, false);
         moving = false;
     }
 
-    public void FollowEntity(GameObject target)
+    public void FollowEntity(NetworkObject target)
     {
-        followTarget = target;
+        if(!Object.HasStateAuthority)
+        {
+            RPC_FollowEntity(target);
+            return;
+        }
+
+        //Debug.Log("Following " + target.gameObject.name);
+        followTarget = target.gameObject;
         //photonView.RPC("SetIsFollowing", RpcTarget.All, true);
         isFollowing = true;
         moving = true;
@@ -245,23 +327,71 @@ public class EnemyGeneric : NetworkBehaviour
 
     public void CancelFollow()
     {
+        if(!Object.HasStateAuthority)
+        {
+            RPC_CancelFollow();
+            return;
+        }
+
+        //Debug.Log("Canceling follow");
         //photonView.RPC("SetIsFollowing", RpcTarget.All, false);
         //photonView.RPC("SetIsMoving", RpcTarget.All, false);
         isFollowing = false;
         moving = false;
     }
 
-    private void ProcessQueue()
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+    private void RPC_AddToQueue(Vector3 position)
+    {
+        AddToQueue(position);
+    }
+
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+    private void RPC_ClearQueue()
+    {
+        ClearQueue();
+    }
+
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+    private void RPC_ClearPath()
+    {
+        ClearPath();
+    }
+
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+    private void RPC_FollowEntity(NetworkObject target)
+    {
+        FollowEntity(target);
+    }
+
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
+    private void RPC_CancelFollow()
+    {
+        CancelFollow();
+    }
+
+    public void ProcessQueue(bool signal = true)
     {
         if(destinationQueue.Count > 0 && !isFollowing)
         {
             //Debug.Log("Processing Queue");
             MoveTo(destinationQueue.Dequeue());
+
+            if (signal && squad != null && !reset)
+            {
+                squad.SendAllUnitsToNextPoint(this);
+            }
+
+            else
+            {
+                reset = false;
+            }
         } 
 
         else if(moving)
         {
-            //Debug.Log("Here");
+            if(logger)
+                Debug.Log("Bruh");
             //photonView.RPC("SetIsMoving", RpcTarget.All, false);
             moving = false;
             canAggro = true;
@@ -270,7 +400,7 @@ public class EnemyGeneric : NetworkBehaviour
 
     private GameObject GetClosestVisible()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, aggroRange, LayerMask.GetMask(targetType));
+        Collider[] hits = Physics.OverlapSphere(transform.position, aggroRange, LayerMask.GetMask(targetType), QueryTriggerInteraction.Collide);
 
         GameObject closest = null;
         float dist = Mathf.Infinity;
@@ -279,16 +409,50 @@ public class EnemyGeneric : NetworkBehaviour
         {
             if(Helpers.CheckLineOfSight(transform, hit.transform, Mathf.Infinity) && hit.gameObject != closest)
             {
-                float thisDist = Vector3.Distance(transform.position, hit.transform.position);
+                float thisDist = Vector3.Distance(transform.position, hit.transform.parent.position);
 
                 if(thisDist < dist)
                 {
                     dist = thisDist;
-                    closest = hit.gameObject;
+                    closest = hit.transform.parent.gameObject;
                 }
             }
         }
 
         return closest;
+    }
+
+    private Vector3 GetAvoidanceVector()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, avoidanceRadius, LayerMask.GetMask("Default"), queryTriggerInteraction: QueryTriggerInteraction.Collide);
+        Vector3 result = Vector3.zero;
+
+        foreach (Collider c in hits)
+        {
+            if (c.tag == "Enemy" && c.gameObject != gameObject)
+            {
+                //Debug.Log(c.name);
+                result += GetAvoidanceForHit(c);
+            }
+        }
+
+        //Debug.Log(result * avoidanceStrength);
+
+        return result * avoidanceStrength;
+    }
+
+    private Vector3 GetAvoidanceForHit(Collider c)
+    {
+        var v = transform.position - c.transform.position;
+        var d = v.magnitude;
+        //Debug.Log(d);
+        v.Normalize();
+
+        if (d == 0)
+        {
+            return v;
+        }
+
+        return v * (1f / d);
     }
 }

@@ -126,4 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674b7ce901a3f724cbc29cf998d9922a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keybinds: {fileID: 11400000, guid: 0adf5d589f3416745b927f2ce794be52, type: 2}
+  playerKeybinds: {fileID: 11400000, guid: 0adf5d589f3416745b927f2ce794be52, type: 2}
+  dmKeybinds: {fileID: 11400000, guid: 47a4531377126bc42871c46fd6bfd860, type: 2}
+  isDungeonMaster: {fileID: 11400000, guid: c05388661befd1c43bede5bf6ab5253c, type: 2}

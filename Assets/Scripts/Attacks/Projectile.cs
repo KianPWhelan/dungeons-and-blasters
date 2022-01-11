@@ -49,18 +49,26 @@ public class Projectile : AttackComponent
 
 	private Vector3 hitPoint;
 
+	private NetworkObject owner;
+
 	[System.Serializable]
 	public class ProjectileSettings
 	{
 		public Attack attack;
 
 		public List<Attack> subAttacks = new List<Attack>();
+		public List<float> subAttackDelays = new List<float>();
 		public bool subAttacksOnEnd;
 		public bool subAttacksOnHit;
 		public bool subAttacksAtSurfaceNormal;
+		public bool subAttacksCanOnlyProcOnce;
+
+		public List<GameObject> visualEndEffects = new List<GameObject>();
 
 		public Vector3 offset;
+		public bool ignoreRotationForOffset;
 		public Vector3 rotationOffset;
+		public bool worldSpaceRotation;
 		public bool reevaluateDestinationAfterOffset;
 		public float spread;
 
@@ -74,6 +82,7 @@ public class Projectile : AttackComponent
 		public bool applyEffectsOnEnd;
 		public float lifetime;
 		public float speed;
+		public float gravityStrength;
 
 		public bool homing;
 		public float homingStrength;
@@ -84,9 +93,10 @@ public class Projectile : AttackComponent
 	}
 
 	private Transform target;
+	private bool subAttacksHaveProced;
 
-	public override void InitNetworkState(string validTag, float damageMod, object destination)
-	{
+	public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0, bool isAlt = false)
+    {
 		base.InitNetworkState(validTag, damageMod, destination);
 		//Object = GetComponent<NetworkObject>();
 		//Debug.LogWarning("Object:");
@@ -98,23 +108,28 @@ public class Projectile : AttackComponent
 
         if (destination != null)
         {
-            Debug.Log("Destination recieved: " + destination);
+
             this.destination = (Vector3)destination;
             useDestination = true;
             Debug.Log(useDestination);
         }
-    }
+
+		this.owner = owner;
+	}
 
 	public override void Spawned()
 	{
-		Debug.Log("Spawned " + useDestination);
+		if(!Object.HasStateAuthority)
+        {
+			return;
+        }
+
 		// Create lifetimer
 		lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
 
 		// Perform initial direction rotation
 		if(useDestination)
         {
-			Debug.Log("Using destination");
 			transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
 		}
 
@@ -122,16 +137,33 @@ public class Projectile : AttackComponent
 		Vector3 accuracyOffset = Random.insideUnitCircle * settings.spread;
 
 		// Adjust position to offset
-		transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
+		if(settings.ignoreRotationForOffset)
+        {
+			transform.position += settings.offset;
+        }
+
+		else
+        {
+			transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
+		}
 
 		// Adjust rotation offset
-		transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + settings.rotationOffset + accuracyOffset);
+		if(settings.worldSpaceRotation)
+        {
+			transform.rotation = Quaternion.Euler(settings.rotationOffset + accuracyOffset);
+        }
+
+		else
+        {
+			transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + settings.rotationOffset + accuracyOffset);
+		}
 
 		// Reevaluate rotation towards directions
 		if(settings.reevaluateDestinationAfterOffset)
         {
 			Debug.Log("reevaluating direction");
 			transform.rotation = Quaternion.LookRotation((destination - transform.position).normalized);
+			transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + accuracyOffset);
 		}
 
 		// Set velocity
@@ -147,8 +179,18 @@ public class Projectile : AttackComponent
 		lastPosition = transform.position;
 	}
 
+	public override void Despawned(NetworkRunner runner, bool hasState)
+	{
+		SpawnVisualEndEffects();
+	}
+
 	public override void FixedUpdateNetwork()
 	{
+		if (!Object.HasStateAuthority)
+		{
+			return;
+		}
+
 		if (!lifeTimer.Expired(Runner))
 		{
 			UpdateProjectile();
@@ -179,24 +221,34 @@ public class Projectile : AttackComponent
 			GetHomingTarget();
         }
 
-		if(settings.homing)
+		if(settings.homing && target != null)
         {
 			Quaternion newDir = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation((target.position - transform.position).normalized), settings.homingStrength * Runner.DeltaTime);
 			transform.rotation = newDir;
 			velocity = transform.forward * settings.speed;
         }
 
+		if(settings.gravityStrength > 0)
+        {
+			velocity = new Vector3(velocity.x, velocity.y - (9.8f * settings.gravityStrength * Runner.DeltaTime), velocity.z);
+			transform.LookAt(transform.position + velocity * Runner.DeltaTime);
+        }
+
 		Vector3 vel = velocity;
 		Vector3 dir = vel.normalized;
 
-		List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
-		Runner.LagCompensation.RaycastAll(transform.position - 0.5f * dir, dir, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
-		ProcessHits(hits);
+		if (settings.performSafetyHitRegistration && lastPosition != null && transform != null && Object != null)
+		{
+			var hitsz = new List<LagCompensatedHit>();
+			//Debug.Log(transform + " " + lastPosition + " " + Object + " " + settings.hitMask);
+			Runner.LagCompensation.RaycastAll(lastPosition, (transform.position - lastPosition).normalized, Vector3.Distance(lastPosition, transform.position), Object.InputAuthority, hitsz, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
+			ProcessHits(hitsz);
+		}
 
-		if(settings.performSafetyHitRegistration && lastPosition != null && transform != null)
+		if (Object != null)
         {
-			hits = new List<LagCompensatedHit>();
-			Runner.LagCompensation.RaycastAll(lastPosition, (transform.position - lastPosition).normalized, Vector3.Distance(lastPosition, transform.position), Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+			List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
+			Runner.LagCompensation.RaycastAll(transform.position - 0.5f * dir, dir, settings.length, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
 			ProcessHits(hits);
 		}
 
@@ -218,12 +270,19 @@ public class Projectile : AttackComponent
 
 		foreach (LagCompensatedHit hit in hitArray)
 		{
+			Debug.Log(validTag);
 			//Debug.Log((hit.Hitbox != null) + " " + (hit.GameObject.tag == validTag) + " " + (hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority) + " " + (!hitList.Contains(hit.GameObject)));
 			// TODO: Stop projectile from hitting caster if caster has same target tag
 			if (hit.Hitbox != null && hit.Hitbox.Root.tag == validTag/* && hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority */&& !hitList.Contains(hit.Hitbox.Root.gameObject))
 			{
 				Debug.Log("Hit valid target");
-				settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod);
+				
+				if(settings.attack.canCrit && (!settings.attack.critOnCritBoxesOnly || (hit.Hitbox.Root.tag == "Enemy" && hit.Hitbox.Root.GetComponent<EnemyGeneric>().critBox == hit.Hitbox)))
+                {
+					CalculateCrit(settings.attack);
+                }
+
+				settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod, owner: owner);
 				numHits++;
 				hitList.Add(hit.Hitbox.Root.gameObject);
 				hitNormal = hit.Normal;
@@ -256,14 +315,19 @@ public class Projectile : AttackComponent
 
 	private void DestroyProjectile()
     {
-		Runner.Despawn(Object);
+		Debug.Log("Mucho Bruh");
+
+		if(Object != null)
+        {
+			Runner.Despawn(Object);
+		}
     }
 
 	private void ApplyEffectsOnEnd()
     {
 		if (settings.applyEffectsOnEnd)
 		{
-			settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod);
+			settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod, owner);
 		}
 	}
 
@@ -285,24 +349,46 @@ public class Projectile : AttackComponent
 
 	private void SpawnSubAttacks()
     {
+		if (subAttacksHaveProced)
+        {
+			return;
+        }
+
+		subAttacksHaveProced = true;
+		int i = 0;
+
 		foreach(Attack attack in settings.subAttacks)
         {
-			if(settings.subAttacksAtSurfaceNormal)
+			float delay = 0f;
+
+			if (settings.subAttackDelays.Count > i)
+			{
+				delay = settings.subAttackDelays[i];
+			}
+
+			if (settings.subAttacksAtSurfaceNormal)
             {
 				Debug.Log("Spawning sub attacks");
-				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f);
+				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, delay, owner: owner);
 			}
 
 			else
             {
-				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f, destination: Vector3.negativeInfinity);
+				attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: delay, destination: Vector3.negativeInfinity, owner: owner);
 			}
+
+			i++;
         }
     }
 
 	private void GetHomingTarget()
     {
 		var temp = Helpers.FindClosest(transform, validTag);
+
+		if (temp == null)
+		{
+			return;
+		}
 
 		if (temp.TryGetComponent(out EnemyGeneric e) && e.homingPoint != null)
 		{
@@ -312,6 +398,14 @@ public class Projectile : AttackComponent
 		else
 		{
 			target = temp.transform;
+		}
+	}
+
+	private void SpawnVisualEndEffects()
+	{
+		foreach (GameObject visual in settings.visualEndEffects)
+		{
+			Instantiate(visual, hitPoint, Quaternion.identity);
 		}
 	}
 

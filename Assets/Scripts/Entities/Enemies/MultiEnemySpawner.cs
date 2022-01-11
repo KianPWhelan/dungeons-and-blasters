@@ -1,30 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
+using Fusion;
 using Com.OfTomorrowInc.DMShooter;
 
 public class MultiEnemySpawner : EnemyGeneric
 {
-    public GameObject enemyToSpawn;
+    public NetworkObject enemyToSpawn;
     public int numToSpawn;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Spawned()
     {
-        if(!gameObject.GetPhotonView().IsMine)
+        if(!Object.HasStateAuthority)
         {
             return;
         }
 
-        string name = enemyToSpawn.name;
+        var enemyManager = FindObjectOfType<EnemyManager>();
+
+        //string name = enemyToSpawn.name;
         List<EnemyGeneric> newEnemies = new List<EnemyGeneric>();
 
         for(int i = 0; i < numToSpawn; i++)
         {
-            var enemy = PhotonNetwork.Instantiate(name, transform.position, Quaternion.identity);
+            var enemy = Runner.Spawn(enemyToSpawn, transform.position, Quaternion.identity);
             newEnemies.Add(enemy.GetComponent<EnemyGeneric>());
-            GameManager.enemies.Add(enemy);
+            enemyManager.AddEnemy(enemy);
         }
 
         StartCoroutine(DeclutterNextFrame(newEnemies));
@@ -38,25 +40,25 @@ public class MultiEnemySpawner : EnemyGeneric
             int offset = Random.Range(0, 4);
             if(offset == 0)
             {
-                e.MoveTo(transform.position + new Vector3(0f, 0f, e.agent.stoppingDistance + 0.05f));
+                e.agent.SetDestination(transform.position + new Vector3(0f, 0f, 0.2f + 0.05f));
             }
 
             else if(offset == 1)
             {
-                e.MoveTo(transform.position + new Vector3(0f, 0f, -e.agent.stoppingDistance - 0.05f));
+                e.agent.SetDestination(transform.position + new Vector3(0f, 0f, -0.2f - 0.05f));
             }
 
             else if(offset == 2)
             {
-                e.MoveTo(transform.position + new Vector3(e.agent.stoppingDistance + 0.05f, 0f, 0f));
+                e.agent.SetDestination(transform.position + new Vector3(0.2f + 0.05f, 0f, 0f));
             }
 
             else if(offset == 3)
             {
-                e.MoveTo(transform.position + new Vector3(-e.agent.stoppingDistance - 0.05f, 0f, 0f));
+                e.agent.SetDestination(transform.position + new Vector3(-0.2f - 0.05f, 0f, 0f));
             }
         }
 
-        PhotonNetwork.Destroy(gameObject);
+        Runner.Despawn(Object);
     }
 }

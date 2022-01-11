@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d697dfece3c4e3140ad84a97af774b38, type: 3}
+  m_Name: Hunter 2 Blank Effect
+  m_EditorClassIdentifier: 
+  damages: []
+  isStatusEffect: 1
+  interval: {fileID: 11400000, guid: 1ca1804f6f886af47acc0c317df1ff57, type: 2}
+  duration: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
+  stacks: 1
+  refreshDuration: 0
+  stackAmountIsRequiredForApplication: 1
+  effectStackApplicationData:
+  - effect: {fileID: 11400000, guid: 95f1e787d83afd748ac48a9fa8fd5b93, type: 2}
+    numStacksForApplication: 1
+    removeEffectWhenTriggered: 0
+  onlyApplyOnce: 0
+  recursiveEffects:
+  - {fileID: 11400000, guid: 91e2559eb65f03540a24b5710aa38f3f, type: 2}
+  useOverwriteTag: 0
+  overwriteTag: 

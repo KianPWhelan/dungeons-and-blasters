@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ffe7ab748e57dd4fbc5faa0b406cf49, type: 3}
   m_Name: Void
   m_EditorClassIdentifier: 
+  immuneToStatusMod: 1
+  immuneToResistanceMod: 1
+  immuneToDamageMod: 1

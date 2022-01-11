@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: Glacial Shard Attack
   m_EditorClassIdentifier: 
-  attack: {fileID: 3807866404001653414, guid: 7ce0f2e606e05d94a982b1a1c03165f0, type: 3}
+  attack: {fileID: 8523135143678805610, guid: 66b371a3ec0dbbf42a292bdbf46a540f, type: 3}
   effects:
   - {fileID: 11400000, guid: d22a4812b2437c247a9450f59334add6, type: 2}
   - {fileID: 11400000, guid: fb4f95c5235b1334aa745a352635e067, type: 2}

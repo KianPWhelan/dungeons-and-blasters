@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0252b129c204c3842b67624c34c07acd, type: 3}
+  m_Name: Soulburn Artifact Effect
+  m_EditorClassIdentifier: 
+  damages:
+  - {fileID: 11400000, guid: 0e94e56289d56a04b8f9f5592afbc921, type: 2}
+  overheal: 0
+  lifesteal: 0
+  isStatusEffect: 1
+  interval: {fileID: 11400000, guid: f41aa7d6a7691fd4aaa59039f447d3bf, type: 2}
+  duration: {fileID: 11400000, guid: 88b132915da07d94291bf613a659d0da, type: 2}
+  stacks: 1
+  refreshDuration: 0
+  stackAmountIsRequiredForApplication: 0
+  effectStackApplicationData: []
+  onlyApplyOnce: 0
+  recursiveEffects: []
+  useOverwriteTag: 0
+  overwriteTag: 
+  damageDealtMod: 1.4
+  damageRecievedMod: 1
+  moveSpeedMod: 1
+  buffLifesteal: 0.03
+  isStun: 0
+  resistanceMods: []

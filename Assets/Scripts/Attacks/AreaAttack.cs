@@ -15,6 +15,15 @@ public class AreaAttack : AttackComponent
         set { if (Object.IsPredictedSpawn) predictedLifeTimer = value; else networkedLifeTimer = value; }
     }
 
+    [Networked]
+    public Vector3 networkedVelocity { get; set; }
+    private Vector3 predictedVelocity;
+    public Vector3 velocity
+    {
+        get => Object.IsPredictedSpawn ? predictedVelocity : networkedVelocity;
+        set { if (Object.IsPredictedSpawn) predictedVelocity = value; else networkedVelocity = value; }
+    }
+
     private List<GameObject> hitList = new List<GameObject>();
 
     private int numHits;
@@ -27,12 +36,17 @@ public class AreaAttack : AttackComponent
         public Attack attack;
 
         public List<Attack> subAttacks = new List<Attack>();
+        public List<float> subAttackDelays = new List<float>();
         public bool subAttacksOnEnd;
         public bool subAttacksOnHit;
         public bool subAttacksAtSurfaceNormal;
+        public bool subAttacksCanOnlyProcOnce;
+
+        public List<GameObject> visualEndEffects = new List<GameObject>();
 
         public Vector3 offset;
 
+        public bool followOwner;
         public float radius;
         public LayerMask hitMask;
         public bool infinitePierce;
@@ -42,12 +56,21 @@ public class AreaAttack : AttackComponent
         public bool ignoreObstacles;
         public bool applyEffectsOnEnd;
         public float lifetime;
+        public float gravityStrength;
+
+        public bool useDamageFalloff;
+        [Tooltip("Outgoing damage mod formula is d * (1/(c^x)), where d is the incoming damage mod, c is the falloff constant, and x is the distance from the center")]
+        public float damageFalloffConstance = 1f;
+        [Tooltip("Damage mod is increased at further range instead of decreased. Outgoing damage mod formula is changes to d * c^x.")]
+        public bool isDamageGain;
     }
 
     private Vector3 hitPoint;
     private Vector3 hitNormal;
+    private NetworkObject owner;
+    private bool subAttacksHaveProced;
 
-    public override void InitNetworkState(string validTag, float damageMod, object destination)
+    public override void InitNetworkState(string validTag, float damageMod, object destination, NetworkObject owner = null, int weaponIndex = 0, int attackIndex = 0, bool isAlt = false)
     {
         base.InitNetworkState(validTag, damageMod, destination);
         //Object = GetComponent<NetworkObject>();
@@ -65,10 +88,17 @@ public class AreaAttack : AttackComponent
             useDestination = true;
             Debug.Log(useDestination);
         }
+
+        this.owner = owner;
     }
 
     public override void Spawned()
     {
+        if (!Object.HasStateAuthority)
+        {
+            return;
+        }
+
         Debug.Log("Spawned " + useDestination);
         // Create lifetimer
         lifeTimer = TickTimer.CreateFromSeconds(Runner, settings.lifetime);
@@ -84,8 +114,18 @@ public class AreaAttack : AttackComponent
         transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
     }
 
+    public override void Despawned(NetworkRunner runner, bool hasState)
+    {
+        SpawnVisualEndEffects();
+    }
+
     public override void FixedUpdateNetwork()
     {
+        if (!Object.HasStateAuthority)
+        {
+            return;
+        }
+
         if (!lifeTimer.Expired(Runner))
         {
             UpdateAttack();
@@ -104,8 +144,31 @@ public class AreaAttack : AttackComponent
     private void UpdateAttack()
     {
         List<LagCompensatedHit> hits = new List<LagCompensatedHit>();
-        Runner.LagCompensation.OverlapSphere(transform.position, settings.radius, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX);
+        Runner.LagCompensation.OverlapSphere(transform.position, settings.radius, Object.InputAuthority, hits, settings.hitMask.value, options: HitOptions.IncludePhysX, queryTriggerInteraction: QueryTriggerInteraction.Ignore);
         ProcessHits(hits);
+
+        if (settings.gravityStrength > 0)
+        {
+            velocity = new Vector3(velocity.x, velocity.y - (9.8f * settings.gravityStrength * Runner.DeltaTime), velocity.z);
+            transform.LookAt(transform.position + velocity * Runner.DeltaTime);
+
+            try
+            {
+                transform.position += velocity * Runner.DeltaTime;
+            }
+
+            catch
+            { }
+        }
+
+        if (settings.followOwner)
+        {
+            transform.position = owner.transform.position;
+            transform.rotation = owner.transform.rotation;
+
+            // Adjust position to offset
+            transform.position += (transform.forward * settings.offset.z) + (transform.right * settings.offset.x) + (transform.up * settings.offset.y);
+        }
     }
 
     private void ProcessHits(List<LagCompensatedHit> hits)
@@ -120,11 +183,27 @@ public class AreaAttack : AttackComponent
             if (hit.Hitbox != null && hit.Hitbox.Root.tag == validTag/* && hit.Hitbox.Root.Object.InputAuthority != Object.InputAuthority */&& !hitList.Contains(hit.Hitbox.Root.gameObject))
             {
                 Debug.Log("Hit valid target");
-                settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod);
+
+                if (settings.attack.canCrit && (!settings.attack.critOnCritBoxesOnly || (hit.Hitbox.Root.tag == "Enemy" && hit.Hitbox.Root.GetComponent<EnemyGeneric>().critBox == hit.Hitbox)))
+                {
+                    CalculateCrit(settings.attack);
+                }
+
+                float falloffMod = 1f;
+                Vector3 point = GetPointOnBounds(hit);
+
+                if (settings.useDamageFalloff)
+                {
+                    falloffMod = CalculateFalloff(Vector3.Distance(transform.position, point), settings.damageFalloffConstance, settings.isDamageGain);
+                }
+
+                Debug.Log(falloffMod);
+
+                settings.attack.ApplyEffects(hit.Hitbox.Root.gameObject, validTag, damageMod: damageMod * falloffMod, owner: owner);
                 numHits++;
                 hitList.Add(hit.Hitbox.Root.gameObject);
                 hitNormal = hit.Normal;
-                hitPoint = hit.Point;
+                hitPoint = point;
                 SubAttacksOnHit();
 
                 if (settings.canMultiHitTarget)
@@ -143,7 +222,7 @@ public class AreaAttack : AttackComponent
             {
                 // TODO: Ending effects/subattacks
                 hitNormal = hit.Normal;
-                hitPoint = hit.Point;
+                hitPoint = transform.position;
                 SubAttacksOnEnd();
                 ApplyEffectsOnEnd();
                 DestroyAttack();
@@ -160,7 +239,7 @@ public class AreaAttack : AttackComponent
     {
         if (settings.applyEffectsOnEnd)
         {
-            settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod);
+            settings.attack.ApplyEffects(null, validTag, hitPoint, transform.rotation, damageMod, owner);
         }
     }
 
@@ -182,18 +261,56 @@ public class AreaAttack : AttackComponent
 
     private void SpawnSubAttacks()
     {
+        if (subAttacksHaveProced)
+        {
+            return;
+        }
+
+        subAttacksHaveProced = true;
+
+        int i = 0;
+
         foreach (Attack attack in settings.subAttacks)
         {
+            float delay = 0f;
+
+            if (settings.subAttackDelays.Count > i)
+            {
+                delay = settings.subAttackDelays[i];
+            }
+
             if (settings.subAttacksAtSurfaceNormal)
             {
                 Debug.Log("Spawning sub attacks");
-                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, 0f);
+                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, hitPoint + hitNormal, validTag, delay, owner: owner);
             }
 
             else
             {
-                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: 0f);
+                attack.PerformAttack(hitPoint, transform.rotation, damageMod, 0, targetTag: validTag, delay: delay, owner: owner);
             }
+
+            i++;
+        }
+    }
+
+    private Vector3 GetPointOnBounds(LagCompensatedHit hit)
+    {
+        Bounds bounds = new Bounds(hit.Hitbox.transform.position + hit.Hitbox.Offset, hit.Hitbox.BoxExtents);
+
+        if(bounds.Contains(transform.position))
+        {
+            return transform.position;
+        }
+
+        return bounds.ClosestPoint(transform.position);
+    }
+
+    private void SpawnVisualEndEffects()
+    {
+        foreach(GameObject visual in settings.visualEndEffects)
+        {
+            Instantiate(visual, hitPoint, Quaternion.identity);
         }
     }
 

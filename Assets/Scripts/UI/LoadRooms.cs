@@ -16,7 +16,7 @@ public class LoadRooms : MonoBehaviour
 
         foreach (string s in rooms)
         {
-            Debug.Log(s);
+            //Debug.Log(s);
             selection.AddMap(s);
         }
     }

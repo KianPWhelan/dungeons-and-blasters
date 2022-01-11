@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86d59c5770e9f641917f5ddfd897bcc, type: 3}
   m_Name: I believe i can fly
   m_EditorClassIdentifier: 
-  attack: {fileID: 3807866404001653414, guid: f1d673cae36ef4548b27c6ae7d6e524c, type: 3}
+  attack: {fileID: 8523135143678805610, guid: fc0bb866ac0d87d479cdc8b1c3d42b5d, type: 3}
   effects:
   - {fileID: 11400000, guid: 95fc50a8d01a5cb4ca8c298d3bc88df2, type: 2}
   useOverwriteTag: 0

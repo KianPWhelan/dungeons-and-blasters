@@ -56,7 +56,7 @@ public class FPSCamera : SimulationBehaviour, IBeforeUpdate
         if (lockCursor)
         {
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
