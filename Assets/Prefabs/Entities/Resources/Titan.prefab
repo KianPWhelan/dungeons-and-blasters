@@ -421,7 +421,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5002929920589353525}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 3.5
+  m_Radius: 1.8
   m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
@@ -485,6 +485,7 @@ MonoBehaviour:
   followTarget: {fileID: 0}
   canAggro: 1
   isAggro: 0
+  selectable: 1
   avoidanceRadius: 1.25
   avoidanceStrength: 1
   _networkedIsFollowing:
