@@ -55,6 +55,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3258546702556851050}
     m_Modifications:
+    - target: {fileID: 3117741974962877966, guid: 83a2a588eee474796819a8d29b585c18, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159292573937020546, guid: 83a2a588eee474796819a8d29b585c18, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5857054427452572275, guid: 83a2a588eee474796819a8d29b585c18, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -116,8 +124,16 @@ PrefabInstance:
       value: GrassPlane3D_BrightGreen
       objectReference: {fileID: 0}
     - target: {fileID: 7744100887029801740, guid: 83a2a588eee474796819a8d29b585c18, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744100887029801740, guid: 83a2a588eee474796819a8d29b585c18, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883415554912965523, guid: 83a2a588eee474796819a8d29b585c18, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83a2a588eee474796819a8d29b585c18, type: 3}

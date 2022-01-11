@@ -46,8 +46,8 @@ public class Database : MonoBehaviour
             {
                 DataSnapshot snapshot = task.Result;
                 json.value = snapshot.GetRawJsonValue();
-                Debug.Log("Here");
-                Debug.Log(json.value);
+                //Debug.Log("Here");
+                //Debug.Log(json.value);
             };
         });
 

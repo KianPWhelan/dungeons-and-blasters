@@ -24,8 +24,8 @@ public class RoomSelect : MonoBehaviour
         options.Add(new Dropdown.OptionData("No Rooms"));
 
         dropdown.AddOptions(options);
-        Launcher.clientHash.Add("room", "");
-        PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
+        //Launcher.clientHash.Add("room", "");
+        //PhotonNetwork.LocalPlayer.SetCustomProperties(Launcher.clientHash);
         //selection = maps[0];
         ////ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
         //Launcher.clientHash.Add("map", selection);

@@ -108,12 +108,7 @@ public class EnemyGeneric : NetworkBehaviour
 
     [Networked]
     public NetworkBool networkedMoving { get; set; }
-    private bool predictedMoving;
-    private bool moving
-    {
-        get => Object.IsPredictedSpawn ? predictedMoving : (bool)networkedMoving;
-        set { if (Object.IsPredictedSpawn) predictedMoving = value; else networkedMoving = value; }
-    }
+    private bool moving;
 
     public bool selectable = true;
     public float avoidanceRadius = 1;
@@ -121,6 +116,10 @@ public class EnemyGeneric : NetworkBehaviour
 
     private bool reset;
     private bool declutterCheck;
+
+    public bool logger;
+
+
 
     public void AssignSquad(Squad squad)
     {
@@ -209,10 +208,15 @@ public class EnemyGeneric : NetworkBehaviour
             }
         }
 
-        if(agent.isActiveAndEnabled && agent.pathStatus == NavMeshPathStatus.PathComplete && !isFollowing)
+        if(agent.isActiveAndEnabled && agent.pathStatus == NavMeshPathStatus.PathComplete && !isFollowing && (moving || destinationQueue.Count > 0))
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
+                if(logger)
+                {
+                    Debug.Log("Bruh " + gameObject.GetInstanceID() + " remDist: " + agent.remainingDistance + " stopDist: " + agent.stoppingDistance + " isActive: " + agent.isActiveAndEnabled + " pathStat: " + agent.pathStatus + " isFoll: " + isFollowing);
+                }
+                
                 //if (!agent.hasPath)
                 //{
 
@@ -386,7 +390,8 @@ public class EnemyGeneric : NetworkBehaviour
 
         else if(moving)
         {
-            //Debug.Log("Here");
+            if(logger)
+                Debug.Log("Bruh");
             //photonView.RPC("SetIsMoving", RpcTarget.All, false);
             moving = false;
             canAggro = true;

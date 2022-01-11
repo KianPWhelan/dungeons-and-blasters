@@ -145,14 +145,14 @@ public class UnitSelector : MonoBehaviour
 
                     if(queue)
                     {
-                        Debug.Log("bruh1");
+                        //Debug.Log("bruh1");
                         e.AddToQueue(dest);
                         e.canAggro = false;
                     }
 
                     else
                     {
-                        Debug.Log("bruh2");
+                        //Debug.Log("bruh2");
                         e.ClearQueue();
                         e.ClearPath();
                         e.CancelFollow();
